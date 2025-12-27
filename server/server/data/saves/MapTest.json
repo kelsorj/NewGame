@@ -1,6 +1,6 @@
 {
   "name": "MapTest",
-  "currentRoom": "withywindle",
+  "currentRoom": "bombadil_house",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -22,12 +22,13 @@
     "brandywine_bridge",
     "old_forest_entrance",
     "old_forest_depth",
-    "withywindle"
+    "withywindle",
+    "bombadil_house"
   ],
   "recentRooms": [
-    "brandywine_bridge",
     "old_forest_entrance",
     "old_forest_depth",
-    "withywindle"
+    "withywindle",
+    "bombadil_house"
   ]
 }

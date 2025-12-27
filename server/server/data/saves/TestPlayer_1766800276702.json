@@ -1,6 +1,6 @@
 {
-  "name": "SaveUITest",
-  "currentRoom": "old_forest_depth",
+  "name": "TestPlayer_1766800276702",
+  "currentRoom": "green_dragon",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -8,8 +8,7 @@
   "baseAttack": 5,
   "baseDefense": 2,
   "inventory": [
-    "rusty_dagger",
-    "walking_stick"
+    "rusty_dagger"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -19,14 +18,12 @@
   "visitedRooms": [
     "bag_end",
     "hobbiton_square",
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth"
+    "green_dragon"
   ],
   "recentRooms": [
     "hobbiton_square",
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth"
+    "green_dragon",
+    "hobbiton_square",
+    "green_dragon"
   ]
 }
