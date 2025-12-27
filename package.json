@@ -16,6 +16,8 @@
     "test:server": "npm test --workspace=server",
     "test:client": "npm test --workspace=client",
     "test:e2e": "playwright test",
+    "test:e2e:existing": "SKIP_WEBSERVER=true playwright test",
+    "test:e2e:clean": "./scripts/kill-ports.sh && playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",

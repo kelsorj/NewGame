@@ -12,6 +12,9 @@
     "carrot",
     "health_potion",
     "old_map",
+    "silver_coin",
+    "walking_stick",
+    "lembas_bread",
     "silver_coin"
   ],
   "equipment": {},
@@ -21,10 +24,13 @@
   "gold": 10,
   "visitedRooms": [
     "brandywine_bridge",
-    "hobbiton_square"
+    "hobbiton_square",
+    "bag_end"
   ],
   "recentRooms": [
     "brandywine_bridge",
+    "hobbiton_square",
+    "bag_end",
     "hobbiton_square"
   ]
 }

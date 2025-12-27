@@ -8,8 +8,25 @@ import { WebSocket } from 'ws';
 test.describe('WebSocket API Tests', () => {
   let ws;
 
-  test.beforeEach(() => {
+  test.beforeEach(async () => {
     ws = new WebSocket('ws://localhost:3001');
+
+    // Wait for connection to open
+    await new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        reject(new Error('WebSocket connection timeout - make sure server is running on port 3001'));
+      }, 5000);
+
+      ws.on('open', () => {
+        clearTimeout(timeout);
+        resolve();
+      });
+
+      ws.on('error', (error) => {
+        clearTimeout(timeout);
+        reject(new Error(`WebSocket connection failed: ${error.message}. Make sure server is running on port 3001`));
+      });
+    });
   });
 
   test.afterEach(() => {
@@ -19,25 +36,15 @@ test.describe('WebSocket API Tests', () => {
   });
 
   test('can connect to WebSocket server', async () => {
-    await new Promise((resolve, reject) => {
-      ws.on('open', () => {
-        expect(ws.readyState).toBe(WebSocket.OPEN);
-        resolve();
-      });
-
-      ws.on('error', reject);
-      
-      setTimeout(() => reject(new Error('Connection timeout')), 5000);
-    });
+    // Connection is already established in beforeEach
+    expect(ws.readyState).toBe(WebSocket.OPEN);
   });
 
   test('can join game and receive player state', async () => {
     const messages = [];
 
-    await new Promise((resolve) => {
-      ws.on('open', () => {
-        ws.send(JSON.stringify({ type: 'join', playerName: 'TestPlayer' }));
-      });
+    await new Promise((resolve, reject) => {
+      ws.send(JSON.stringify({ type: 'join', playerName: 'TestPlayer' }));
 
       ws.on('message', (data) => {
         const message = JSON.parse(data.toString());
@@ -51,7 +58,7 @@ test.describe('WebSocket API Tests', () => {
         }
       });
 
-      setTimeout(() => resolve(), 5000);
+      setTimeout(() => reject(new Error('Join timeout')), 5000);
     });
 
     expect(messages.length).toBeGreaterThan(0);
@@ -60,10 +67,8 @@ test.describe('WebSocket API Tests', () => {
   test('can send commands and receive responses', async () => {
     const messages = [];
 
-    await new Promise((resolve) => {
-      ws.on('open', () => {
-        ws.send(JSON.stringify({ type: 'join', playerName: 'CommandTest' }));
-      });
+    await new Promise((resolve, reject) => {
+      ws.send(JSON.stringify({ type: 'join', playerName: 'CommandTest' }));
 
       ws.on('message', (data) => {
         const message = JSON.parse(data.toString());
@@ -80,7 +85,7 @@ test.describe('WebSocket API Tests', () => {
         }
       });
 
-      setTimeout(() => resolve(), 5000);
+      setTimeout(() => reject(new Error('Command timeout')), 5000);
     });
   });
 
@@ -90,24 +95,36 @@ test.describe('WebSocket API Tests', () => {
     const messages1 = [];
     const messages2 = [];
 
+    // Wait for both connections to open
     await Promise.all([
-      new Promise((resolve) => {
-        ws1.on('open', () => {
-          ws1.send(JSON.stringify({ type: 'join', playerName: 'Player1' }));
-        });
+      new Promise((resolve, reject) => {
+        ws1.on('open', () => resolve());
+        ws1.on('error', reject);
+        setTimeout(() => reject(new Error('WS1 timeout')), 5000);
+      }),
+      new Promise((resolve, reject) => {
+        ws2.on('open', () => resolve());
+        ws2.on('error', reject);
+        setTimeout(() => reject(new Error('WS2 timeout')), 5000);
+      })
+    ]);
+
+    await Promise.all([
+      new Promise((resolve, reject) => {
+        ws1.send(JSON.stringify({ type: 'join', playerName: 'Player1' }));
         ws1.on('message', (data) => {
           messages1.push(JSON.parse(data.toString()));
           if (messages1.length >= 2) resolve();
         });
+        setTimeout(() => reject(new Error('Player1 timeout')), 5000);
       }),
-      new Promise((resolve) => {
-        ws2.on('open', () => {
-          ws2.send(JSON.stringify({ type: 'join', playerName: 'Player2' }));
-        });
+      new Promise((resolve, reject) => {
+        ws2.send(JSON.stringify({ type: 'join', playerName: 'Player2' }));
         ws2.on('message', (data) => {
           messages2.push(JSON.parse(data.toString()));
           if (messages2.length >= 2) resolve();
         });
+        setTimeout(() => reject(new Error('Player2 timeout')), 5000);
       })
     ]);
 
