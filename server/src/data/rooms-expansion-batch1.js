@@ -4,7 +4,7 @@
 
 export const shireExpansion = {
     // THE SHIRE EXPANSION - More Hobbit Villages
-    
+
     tuckborough: {
         name: "Tuckborough",
         description: "The ancestral home of the Took family. The Great Smials tunnel deep into the hillside. Hobbits bustle about, and you can hear music and laughter from the many hobbit-holes.",
@@ -36,7 +36,8 @@ export const shireExpansion = {
             north: 'mayor_office',
             east: 'hobbiton_square',
             south: 'waymeet',
-            west: 'tookbank'
+            west: 'tookbank',
+            northwest: 'havens_approach'
         },
         items: ['mayor_badge', 'shire_map'],
         enemies: []
@@ -152,7 +153,7 @@ export const shireExpansion = {
     },
 
     // BUCKLAND EXPANSION
-    
+
     bucklebury: {
         name: "Bucklebury",
         description: "The main village of Buckland, east of the Brandywine. The hobbits here are more adventurous, having contact with the outside world.",
@@ -217,7 +218,7 @@ export const shireExpansion = {
     },
 
     // OLD FOREST EXPANSION
-    
+
     // Note: bombadil_house already exists, so we expand from it
     bombadil_garden: {
         name: "Tom's Garden",
@@ -238,19 +239,8 @@ export const shireExpansion = {
         enemies: []
     },
 
-    old_forest_exit: {
-        name: "Old Forest - Eastern Exit",
-        description: "You've made it through the Old Forest! The trees thin out, and you can see open country ahead.",
-        exits: {
-            west: 'willow_clearing',
-            east: 'barrow_downs_approach'
-        },
-        items: ['forest_trophy'],
-        enemies: []
-    },
-
     // BARROW-DOWNS EXPANSION
-    
+
     barrow_downs_approach: {
         name: "Approach to the Barrow-downs",
         description: "The land rises into hills covered with ancient barrows. A sense of dread fills the air. The dead sleep here, but not peacefully.",
@@ -320,7 +310,7 @@ export const shireExpansion = {
     },
 
     // ERIADOR EXPANSION - Bree-land
-    
+
     combe: {
         name: "Combe",
         description: "A small village near Bree. The people here are friendly but cautious of strangers. The inn serves good ale.",
@@ -368,7 +358,7 @@ export const shireExpansion = {
     },
 
     // FORNOST - Ruined City of Arnor
-    
+
     fornost_approach: {
         name: "Approach to Fornost",
         description: "The road leads to the ruins of Fornost Erain, the ancient capital of Arnor. The city lies in ruins, destroyed long ago by the Witch-king.",
@@ -429,7 +419,7 @@ export const shireExpansion = {
     },
 
     // ANNÚMINAS - Ancient Capital
-    
+
     annuminas_approach: {
         name: "Approach to Annúminas",
         description: "The road leads to the ruins of Annúminas, the first capital of Arnor. The city lies on the shores of Lake Evendim, now mostly underwater.",
