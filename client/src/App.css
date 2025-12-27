@@ -356,6 +356,15 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--border);
   text-shadow: 0 0 5px var(--glow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.online-count {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: normal;
 }
 
 .status-message {

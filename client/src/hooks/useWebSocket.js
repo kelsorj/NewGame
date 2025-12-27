@@ -7,6 +7,7 @@ export const useWebSocket = (url) => {
     const savedState = typeof window !== 'undefined' ? localStorage.getItem('playerState') : null;
     const [playerState, setPlayerState] = useState(savedState ? JSON.parse(savedState) : null);
     const [playerId, setPlayerId] = useState(null);
+    const [activePlayers, setActivePlayers] = useState(0);
     const wsRef = useRef(null);
     const reconnectTimeoutRef = useRef(null);
 
@@ -28,8 +29,10 @@ export const useWebSocket = (url) => {
 
         ws.onmessage = (event) => {
             try {
-                const data = JSON.parse(event.data);
-                handleMessage(data);
+                if (messageHandlerRef.current) {
+                    const data = JSON.parse(event.data);
+                    messageHandlerRef.current(data);
+                }
             } catch (error) {
                 console.error('Error parsing message:', error);
             }
@@ -56,16 +59,19 @@ export const useWebSocket = (url) => {
         wsRef.current = ws;
     }, [url]);
 
-    const handleMessage = (data) => {
+    const messageHandlerRef = useRef(null);
+
+    const handleMessage = useCallback((data) => {
         switch (data.type) {
             case 'connected':
+                console.log('Client received connected message:', data);
                 setMessages(prev => [...prev, { type: 'system', text: data.message }]);
                 break;
 
             case 'joined':
                 setPlayerId(data.playerId);
-                // Attempt to load saved state from server
-                fetch(`http://localhost:3001/load/${data.playerId}`)
+                // Attempt to load saved state from server (using name, which we stored in joinedNameRef)
+                fetch(`http://localhost:3001/load/${joinedNameRef.current}`)
                     .then(res => {
                         if (!res.ok) throw new Error('No saved state');
                         return res.json();
@@ -84,6 +90,10 @@ export const useWebSocket = (url) => {
                         setPlayerState(data.playerState);
                         localStorage.setItem('playerState', JSON.stringify(data.playerState));
                     });
+                if (data.activePlayers !== undefined) {
+                    console.log('Client setting activePlayers to:', data.activePlayers);
+                    setActivePlayers(data.activePlayers);
+                }
                 setMessages(prev => [...prev, {
                     type: 'system',
                     text: data.message
@@ -95,6 +105,10 @@ export const useWebSocket = (url) => {
                     type: 'game',
                     text: data.message
                 }]);
+                if (data.activePlayers !== undefined) {
+                    console.log('Client setting activePlayers (via game_output) to:', data.activePlayers);
+                    setActivePlayers(data.activePlayers);
+                }
                 if (data.playerState) {
                     setPlayerState(data.playerState);
                     // Persist to localStorage after each update
@@ -109,6 +123,13 @@ export const useWebSocket = (url) => {
                 }]);
                 break;
 
+            case 'player_count_update':
+                if (data.activePlayers !== undefined) {
+                    console.log('Client setting activePlayers (via player_count_update) to:', data.activePlayers);
+                    setActivePlayers(data.activePlayers);
+                }
+                break;
+
             case 'error':
                 setMessages(prev => [...prev, {
                     type: 'error',
@@ -119,7 +140,12 @@ export const useWebSocket = (url) => {
             default:
                 console.log('Unknown message type:', data.type);
         }
-    };
+    }, [setMessages, setPlayerId, setPlayerState, setActivePlayers]);
+
+    // Keep the ref updated with the latest handler
+    useEffect(() => {
+        messageHandlerRef.current = handleMessage;
+    }, [handleMessage]);
 
     const sendMessage = useCallback((type, payload) => {
         if (wsRef.current?.readyState === WebSocket.OPEN) {
@@ -171,6 +197,7 @@ export const useWebSocket = (url) => {
         messages,
         playerState,
         playerId,
+        activePlayers,
         joinGame,
         sendCommand,
         clearMessages

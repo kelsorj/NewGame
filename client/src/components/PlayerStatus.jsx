@@ -1,7 +1,7 @@
 // PlayerStatus Component - Shows player stats
 import { formatItem } from '../utils/formatItem.js';
 
-export const PlayerStatus = ({ playerState }) => {
+export const PlayerStatus = ({ playerState, activePlayers = 0 }) => {
     if (!playerState) {
         return (
             <div className="player-status">
@@ -20,7 +20,10 @@ export const PlayerStatus = ({ playerState }) => {
 
     return (
         <div className="player-status">
-            <div className="status-header">⚔️  {playerState.name}</div>
+            <div className="status-header">
+                <span>⚔️  {playerState.name}</span>
+                <span className="online-count">👥 {activePlayers} Online</span>
+            </div>
 
             <div className="stat-group">
                 <div className="stat-row">

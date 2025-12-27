@@ -17,6 +17,7 @@ function App() {
         isConnected,
         messages,
         playerState,
+        activePlayers,
         joinGame,
         sendCommand
     } = useWebSocket(WS_URL);
@@ -120,7 +121,7 @@ function App() {
 
                 {hasJoined && (
                     <div className="sidebar">
-                        <PlayerStatus playerState={playerState} />
+                        <PlayerStatus playerState={playerState} activePlayers={activePlayers} />
                         <WorldMap playerState={playerState} />
 
                         <div className="help-panel">

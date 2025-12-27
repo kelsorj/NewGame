@@ -97,6 +97,7 @@ export class GameWebSocketServer {
                 type: 'joined',
                 playerId: result.playerId,
                 playerState: result.playerState,
+                activePlayers: this.gameState.getActivePlayers(),
                 message: result.message
             });
 
@@ -118,6 +119,12 @@ export class GameWebSocketServer {
                 `${playerName} has entered the realm!`,
                 result.playerId
             );
+
+            // Broadcast new player count to everyone
+            this.broadcast({
+                type: 'player_count_update',
+                activePlayers: this.gameState.getActivePlayers()
+            });
 
             console.log(`Player joined: ${playerName} (${result.playerId})`);
         } else {
@@ -147,7 +154,8 @@ export class GameWebSocketServer {
         this.sendToClient(ws, {
             type: 'game_output',
             message: result.message,
-            playerState
+            playerState,
+            activePlayers: this.gameState.getActivePlayers()
         });
     }
 
@@ -159,6 +167,12 @@ export class GameWebSocketServer {
             // Immediately remove player and persist state
             this.playerManager.removePlayer(playerId);
             this.connectionToPlayer.delete(ws);
+
+            // Broadcast new player count to everyone
+            this.broadcast({
+                type: 'player_count_update',
+                activePlayers: this.gameState.getActivePlayers()
+            });
         }
 
         console.log('WebSocket connection closed');
