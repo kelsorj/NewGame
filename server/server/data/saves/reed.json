@@ -1,6 +1,6 @@
 {
   "name": "reed",
-  "currentRoom": "old_forest_entrance",
+  "currentRoom": "withywindle",
   "hp": -76,
   "maxHp": 100,
   "attack": 5,
@@ -29,12 +29,17 @@
     "hobbiton_square",
     "bag_end",
     "green_dragon",
-    "old_forest_entrance"
+    "old_forest_entrance",
+    "old_forest_depth",
+    "withywindle"
   ],
   "recentRooms": [
-    "green_dragon",
-    "hobbiton_square",
     "brandywine_bridge",
-    "old_forest_entrance"
+    "old_forest_entrance",
+    "old_forest_depth",
+    "withywindle"
+  ],
+  "achievements": [
+    "first_steps"
   ]
 }

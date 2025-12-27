@@ -11,3 +11,4 @@ playwright/.cache/
 test-results/**/*.zip
 test-results/**/*.webm
 playwright-report/**/*.zip
+server/server/data/saves/reed.json
