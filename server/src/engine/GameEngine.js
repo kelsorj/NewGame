@@ -32,7 +32,9 @@ export class GameEngine {
             solvedPuzzles: [],
             exp: 0,
             level: 1,
-            gold: 10
+            gold: 10,
+            visitedRooms: ['bag_end'], // Track all visited rooms
+            recentRooms: ['bag_end'] // Track last 3-4 rooms for map display
         };
     }
 
@@ -59,7 +61,23 @@ export class GameEngine {
             case 'west':
             case 'up':
             case 'down':
-                const direction = verb === 'go' || verb === 'move' ? args[0] : verb;
+            case 'n':
+            case 's':
+            case 'e':
+            case 'w':
+            case 'u':
+            case 'd':
+                let direction;
+                if (verb === 'go' || verb === 'move') {
+                    direction = args[0] || '';
+                } else {
+                    direction = verb;
+                }
+                // Map shortcuts to full direction names
+                direction = this.normalizeDirection(direction);
+                if (!direction) {
+                    return { message: "I don't understand that direction. Use north, south, east, west, up, or down (or n, s, e, w, u, d)." };
+                }
                 return this.handleMove(playerId, direction, playerState);
 
             case 'take':
@@ -126,7 +144,27 @@ export class GameEngine {
 
         if (result.success) {
             if (this.roomSystem.canEnterRoom(result.roomId, playerState)) {
+                const previousRoom = playerState.currentRoom;
                 playerState.currentRoom = result.roomId;
+                
+                // Track visited rooms
+                if (!playerState.visitedRooms) {
+                    playerState.visitedRooms = [previousRoom];
+                }
+                if (!playerState.visitedRooms.includes(result.roomId)) {
+                    playerState.visitedRooms.push(result.roomId);
+                }
+                
+                // Track recent rooms (last 4)
+                if (!playerState.recentRooms) {
+                    playerState.recentRooms = [previousRoom];
+                }
+                playerState.recentRooms.push(result.roomId);
+                // Keep only last 4 rooms
+                if (playerState.recentRooms.length > 4) {
+                    playerState.recentRooms.shift();
+                }
+                
                 const newRoomDesc = this.roomSystem.getRoomDescription(result.roomId, {});
                 return {
                     message: `${result.message}\n${newRoomDesc}`,

@@ -161,6 +161,22 @@ export const puzzles = {
             items: ['mithril_chain'],
             exp: 75
         }
+    },
+
+    // MORDOR PUZZLES
+    destroy_ring: {
+        name: "Destroy the One Ring",
+        description: "You stand at the Crack of Doom. The One Ring must be cast into the fire. But the Ring's power is overwhelming - it whispers to you, tempts you. To destroy it, you must speak the words that will break its hold. What must you do?",
+        hint: "The Ring was forged here. Only here can it be unmade. You must cast it into the fire...",
+        solutionType: "contains",
+        solution: ["cast", "throw", "drop", "destroy", "fire", "doom", "unmake"],
+        successMessage: "With a final act of will, you cast the Ring into the fire! The One Ring is destroyed! Sauron's power is broken! Middle Earth is saved!",
+        failMessage: "The Ring's power is too strong. You cannot bring yourself to destroy it.",
+        requirements: [{ type: 'item', item: 'one_ring' }],
+        rewards: {
+            exp: 1000,
+            items: ['ring_of_power_fragment']
+        }
     }
 };
 

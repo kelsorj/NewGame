@@ -27,6 +27,14 @@ export class PlayerManager {
         if (!playerState) {
             // No saved state, create a fresh player
             playerState = this.gameEngine.createNewPlayer(playerName);
+        } else {
+            // Ensure visited rooms arrays exist for backward compatibility
+            if (!playerState.visitedRooms) {
+                playerState.visitedRooms = playerState.currentRoom ? [playerState.currentRoom] : ['bag_end'];
+            }
+            if (!playerState.recentRooms) {
+                playerState.recentRooms = playerState.currentRoom ? [playerState.currentRoom] : ['bag_end'];
+            }
         }
 
         // Add to game state (this will insert the new playerId)

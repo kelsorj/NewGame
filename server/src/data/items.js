@@ -381,5 +381,338 @@ export const items = {
         type: "treasure",
         description: "A bag of stolen coins and trinkets hoarded by goblins.",
         value: 100
+    },
+
+    // GONDOR ITEMS
+    ancient_gondorian_coin: {
+        name: "Ancient Gondorian Coin",
+        type: "treasure",
+        description: "A coin from the days when Osgiliath was great. The White Tree is still visible.",
+        value: 50
+    },
+
+    gondorian_banner: {
+        name: "Gondorian Banner",
+        type: "quest",
+        description: "A banner bearing the White Tree of Gondor. A symbol of hope.",
+        value: 100
+    },
+
+    white_tree_sapling: {
+        name: "White Tree Sapling",
+        type: "quest",
+        description: "A young sapling of the White Tree of Gondor. It must be planted in the Citadel.",
+        value: 0
+    },
+
+    gondorian_sword: {
+        name: "Gondorian Sword",
+        type: "weapon",
+        description: "A well-forged blade of Gondor. The White Tree is etched into the hilt.",
+        bonus: 10,
+        value: 300
+    },
+
+    healing_herbs: {
+        name: "Healing Herbs",
+        type: "potion",
+        description: "Herbs from the Houses of Healing. They restore vitality.",
+        effect: "heal",
+        power: 25,
+        value: 20
+    },
+
+    gondorian_armor: {
+        name: "Gondorian Armor",
+        type: "armor",
+        description: "Fine plate armor of Gondor, white and silver. The White Tree is embossed on the breastplate.",
+        bonus: 11,
+        value: 400
+    },
+
+    ancient_tapestry: {
+        name: "Ancient Tapestry",
+        type: "treasure",
+        description: "A tapestry depicting the history of Gondor. Priceless to collectors.",
+        value: 500
+    },
+
+    gondorian_crown: {
+        name: "Gondorian Crown",
+        type: "treasure",
+        description: "A crown of the Stewards of Gondor. Simple but elegant.",
+        value: 800
+    },
+
+    palantir_of_minas_tirith: {
+        name: "Palantír of Minas Tirith",
+        type: "quest",
+        description: "A seeing-stone. It shows distant places, but beware - the Dark Lord may be watching.",
+        value: 0
+    },
+
+    steward_crown: {
+        name: "Steward's Crown",
+        type: "treasure",
+        description: "The crown of the Stewards of Gondor. A symbol of their long rule.",
+        value: 1000
+    },
+
+    steward_ring: {
+        name: "Steward's Ring",
+        type: "quest",
+        description: "The ring of the Stewards, passed down through generations.",
+        value: 500
+    },
+
+    ancient_scroll: {
+        name: "Ancient Scroll",
+        type: "quest",
+        description: "A scroll containing the history of Gondor and the line of the Stewards.",
+        value: 0
+    },
+
+    // MORDOR ITEMS
+    tower_key: {
+        name: "Tower Key",
+        type: "key",
+        description: "A key to the Tower of Cirith Ungol. It glows faintly with dark magic.",
+        value: 0
+    },
+
+    sting_glow: {
+        name: "Sting's Glow",
+        type: "quest",
+        description: "The glow of Sting, the elven blade. It glows blue when orcs are near.",
+        value: 0
+    },
+
+    dark_ring_fragment: {
+        name: "Dark Ring Fragment",
+        type: "quest",
+        description: "A fragment of dark power from Barad-dûr. It pulses with evil.",
+        value: 0
+    },
+
+    sauron_armor_fragment: {
+        name: "Sauron's Armor Fragment",
+        type: "treasure",
+        description: "A fragment of the Dark Lord's armor. It still radiates malice.",
+        value: 2000
+    },
+
+    fire_crystal: {
+        name: "Fire Crystal",
+        type: "material",
+        description: "A crystal of pure fire from Mount Doom. It burns without consuming itself.",
+        value: 300
+    },
+
+    lava_stone: {
+        name: "Lava Stone",
+        type: "material",
+        description: "A stone hardened from the lava of Mount Doom. It retains heat.",
+        value: 150
+    },
+
+    fish_bone: {
+        name: "Fish Bone",
+        type: "treasure",
+        description: "A fish bone, left behind by Gollum. Not very valuable, but it tells a story.",
+        value: 1
+    },
+
+    precious_ring: {
+        name: "Precious Ring",
+        type: "quest",
+        description: "A ring that Gollum called 'precious'. It's not the One Ring, but it has power.",
+        value: 0
+    },
+
+    shadow_crystal: {
+        name: "Shadow Crystal",
+        type: "material",
+        description: "A crystal of pure shadow from Sauron's power. It seems to drink the light.",
+        value: 1000
+    },
+
+    // PATHS OF THE DEAD ITEMS
+    oath_stone: {
+        name: "Oath Stone",
+        type: "quest",
+        description: "A stone bearing an ancient oath. The dead are bound by it.",
+        value: 0
+    },
+
+    dead_crown: {
+        name: "Crown of the Dead King",
+        type: "treasure",
+        description: "The crown of the King of the Dead. It glows with spectral light.",
+        value: 600
+    },
+
+    ancient_sword: {
+        name: "Ancient Sword",
+        type: "weapon",
+        description: "A sword from the Army of the Dead. It is cold to the touch.",
+        bonus: 8,
+        value: 200
+    },
+
+    kings_blade: {
+        name: "King's Blade",
+        type: "weapon",
+        description: "The blade of the King of the Dead. It cuts through shadow and flesh alike.",
+        bonus: 15,
+        value: 800
+    },
+
+    // SHELOB ITEMS
+    shelob_fang: {
+        name: "Shelob's Fang",
+        type: "weapon",
+        description: "One of Shelob's massive fangs, still dripping with venom. A deadly weapon.",
+        bonus: 12,
+        value: 600
+    },
+
+    ancient_web: {
+        name: "Ancient Web",
+        type: "material",
+        description: "Web from Shelob's lair. Stronger than steel, it never rots.",
+        value: 400
+    },
+
+    spider_venom: {
+        name: "Spider Venom",
+        type: "potion",
+        description: "Deadly venom from a giant spider. Can be used as a weapon or antidote.",
+        effect: "poison",
+        power: 30,
+        value: 150
+    },
+
+    orc_spear: {
+        name: "Orc Spear",
+        type: "weapon",
+        description: "A long spear used by warg riders. Crude but effective.",
+        bonus: 7,
+        value: 80
+    },
+
+    troll_hammer: {
+        name: "Troll Hammer",
+        type: "weapon",
+        description: "A massive hammer wielded by a troll. Too heavy for most, but devastating.",
+        bonus: 16,
+        value: 500
+    },
+
+    // ROHAN ITEMS
+    rohirric_sword: {
+        name: "Rohirric Sword",
+        type: "weapon",
+        description: "A fine blade of Rohan, curved and deadly. The horse-lords know their craft.",
+        bonus: 11,
+        value: 350
+    },
+
+    horn_of_rohan: {
+        name: "Horn of Rohan",
+        type: "quest",
+        description: "A great horn of Rohan. When blown, it can be heard for leagues. 'Where now the horse and the rider?'",
+        value: 400
+    },
+
+    helms_hammer: {
+        name: "Helm's Hammer",
+        type: "weapon",
+        description: "The legendary hammer of Helm Hammerhand. It has never failed in battle.",
+        bonus: 13,
+        value: 600
+    },
+
+    // GLITTERING CAVES ITEMS
+    cave_crystal: {
+        name: "Cave Crystal",
+        type: "material",
+        description: "A beautiful crystal from the Glittering Caves. It sparkles with inner light.",
+        value: 200
+    },
+
+    cave_pearl: {
+        name: "Cave Pearl",
+        type: "treasure",
+        description: "A perfect pearl formed in the Glittering Caves. It glows softly.",
+        value: 500
+    },
+
+    star_gem: {
+        name: "Star Gem",
+        type: "treasure",
+        description: "A gem that seems to contain a star. It is priceless.",
+        value: 2000
+    },
+
+    // FANGORN ITEMS
+    entdraught: {
+        name: "Entdraught",
+        type: "potion",
+        description: "The drink of the Ents. It makes you feel taller and stronger, and you can understand the speech of trees.",
+        effect: "heal",
+        power: 40,
+        value: 300
+    },
+
+    ent_staff: {
+        name: "Ent Staff",
+        type: "weapon",
+        description: "A staff carved from an ancient tree by the Ents. It is alive and grows leaves.",
+        bonus: 10,
+        value: 400
+    },
+
+    ancient_oak_heart: {
+        name: "Ancient Oak Heart",
+        type: "quest",
+        description: "The heartwood of an ancient oak from Fangorn. It pulses with slow, deep life.",
+        value: 500
+    },
+
+    // ISENGARD ITEMS
+    broken_staff: {
+        name: "Broken Staff",
+        type: "quest",
+        description: "The broken staff of Saruman. Its power is gone, but it tells a story of betrayal.",
+        value: 0
+    },
+
+    saruman_scrolls: {
+        name: "Saruman's Scrolls",
+        type: "quest",
+        description: "Scrolls containing Saruman's studies of the Rings of Power and the lore of Middle Earth.",
+        value: 1000
+    },
+
+    palantir: {
+        name: "Palantír",
+        type: "quest",
+        description: "A Seeing Stone, one of seven created in ancient Númenor. Gazing into it is dangerous - Sauron may be watching.",
+        value: 5000
+    },
+
+    // RING ITEMS
+    one_ring: {
+        name: "The One Ring",
+        type: "quest",
+        description: "The One Ring to rule them all. It whispers to you, promising power. But it must be destroyed.",
+        value: 0
+    },
+
+    ring_of_power_fragment: {
+        name: "Ring of Power Fragment",
+        type: "quest",
+        description: "A fragment of the One Ring, destroyed in the fires of Mount Doom. It no longer has power, but it is a reminder of what was accomplished.",
+        value: 0
     }
 };

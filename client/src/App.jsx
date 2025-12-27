@@ -4,6 +4,7 @@ import { useWebSocket } from './hooks/useWebSocket';
 import { GameDisplay } from './components/GameDisplay';
 import { CommandInput } from './components/CommandInput';
 import { PlayerStatus } from './components/PlayerStatus';
+import { WorldMap } from './components/WorldMap';
 import './App.css';
 
 const WS_URL = 'ws://localhost:3001';
@@ -120,6 +121,7 @@ function App() {
                 {hasJoined && (
                     <div className="sidebar">
                         <PlayerStatus playerState={playerState} />
+                        <WorldMap playerState={playerState} />
 
                         <div className="help-panel">
                             <div className="help-header">💡 Quick Commands</div>

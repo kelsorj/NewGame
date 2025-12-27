@@ -200,6 +200,98 @@ export const enemies = {
         defense: 10,
         exp: 150,
         loot: ['ancient_pearl', 'water_stone']
+    },
+
+    // PATHS OF THE DEAD
+    dead_men: {
+        name: "Dead Man of Dunharrow",
+        description: "A spectral warrior, bound by an ancient oath. Its eyes burn with green fire, and its blade is cold as death.",
+        hp: 60,
+        attack: 12,
+        defense: 5,
+        exp: 50,
+        loot: ['ancient_sword', 'oath_stone']
+    },
+
+    dead_king: {
+        name: "King of the Dead",
+        description: "The spectral king of the Oathbreakers. Crowned in shadow, he wields a blade that cuts the living. His oath binds him to this place until it is fulfilled.",
+        hp: 100,
+        attack: 18,
+        defense: 8,
+        exp: 150,
+        loot: ['dead_crown', 'kings_blade']
+    },
+
+    // MORDOR ENEMIES
+    warg_rider: {
+        name: "Warg Rider",
+        description: "An orc mounted on a massive warg. They move as one, a deadly combination of orcish cunning and warg ferocity.",
+        hp: 65,
+        attack: 15,
+        defense: 8,
+        exp: 70,
+        loot: ['warg_pelt', 'orc_spear', 'silver_coin']
+    },
+
+    troll_guard: {
+        name: "Troll Guard",
+        description: "A massive troll in crude armor, standing guard at the Black Gate. It wields a hammer the size of a man.",
+        hp: 150,
+        attack: 20,
+        defense: 15,
+        exp: 180,
+        loot: ['troll_hide', 'troll_hammer', 'gold_treasure']
+    },
+
+    spider_guard: {
+        name: "Giant Spider Guard",
+        description: "A massive spider, larger than a horse. Its many eyes gleam with malice, and venom drips from its fangs.",
+        hp: 80,
+        attack: 16,
+        defense: 9,
+        exp: 90,
+        loot: ['spider_silk', 'spider_venom', 'health_potion']
+    },
+
+    shelob: {
+        name: "Shelob",
+        description: "The Great Spider, last child of Ungoliant! A horror of the First Age, she has grown fat on the flesh of orcs and men. Her webs are everywhere, and her stinger drips with poison.",
+        hp: 200,
+        attack: 22,
+        defense: 12,
+        exp: 300,
+        loot: ['shelob_fang', 'ancient_web', 'spider_venom', 'health_potion']
+    },
+
+    lava_elemental: {
+        name: "Lava Elemental",
+        description: "A creature of living fire and molten rock. It moves like liquid flame, leaving scorched ground in its wake.",
+        hp: 90,
+        attack: 18,
+        defense: 7,
+        exp: 100,
+        loot: ['fire_crystal', 'lava_stone']
+    },
+
+    gollum_final: {
+        name: "Gollum",
+        description: "The wretched creature, consumed by the Ring. His eyes burn with madness and desire. 'My precious...' he hisses.",
+        hp: 40,
+        attack: 8,
+        defense: 3,
+        exp: 60,
+        loot: ['fish_bone', 'precious_ring']
+    },
+
+    sauron_manifestation: {
+        name: "Sauron's Manifestation",
+        description: "A fragment of the Dark Lord's power made manifest. Dark flames wreathe a form of shadow and malice. The Eye watches through it.",
+        hp: 250,
+        attack: 28,
+        defense: 18,
+        exp: 500,
+        loot: ['dark_ring_fragment', 'sauron_armor_fragment', 'shadow_crystal']
     }
 };
 

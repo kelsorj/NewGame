@@ -755,5 +755,200 @@ export const rooms = {
         exits: { down: 'orthanc_base' },
         items: ['saruman_scrolls', 'palantir'],
         enemies: []
+    },
+
+    // GONDOR - The Realm of the Stewards
+    osgiliath_ruins: {
+        name: "Ruins of Osgiliath",
+        description: "The once-great city of Osgiliath lies in ruins. The Anduin flows through the middle, and broken bridges span the water. Orcs patrol the eastern bank. The road to Minas Tirith lies west.",
+        exits: { west: 'pelennor_fields', east: 'morgul_vale' },
+        items: ['ancient_gondorian_coin'],
+        enemies: ['orc_warrior', 'orc_scout']
+    },
+
+    pelennor_fields: {
+        name: "Pelennor Fields",
+        description: "The great fields before Minas Tirith. Farmland stretches to the walls of the White City. The Rammas Echor - the outer wall - has been breached in places. You can see the White Tower rising in the distance.",
+        exits: { east: 'osgiliath_ruins', west: 'minas_tirith_gates', north: 'rath_dinen' },
+        items: ['gondorian_banner'],
+        enemies: ['orc_warrior']
+    },
+
+    minas_tirith_gates: {
+        name: "Gates of Minas Tirith",
+        description: "The Great Gate of Minas Tirith, the White City. Seven tiers rise above you, each level higher than the last. The White Tower of Ecthelion pierces the sky. Guards in white and silver stand watch.",
+        exits: { east: 'pelennor_fields', up: 'first_level' },
+        items: [],
+        enemies: []
+    },
+
+    first_level: {
+        name: "First Level - Minas Tirith",
+        description: "The lowest level of the city. Houses and shops line the streets. The White Tree fountain stands in the center. The way up leads to the Citadel.",
+        exits: { down: 'minas_tirith_gates', up: 'second_level' },
+        items: ['white_tree_sapling'],
+        enemies: []
+    },
+
+    second_level: {
+        name: "Second Level - Minas Tirith",
+        description: "Houses of stone and wood, built into the mountainside. The streets are clean and well-kept. You can see the Citadel above.",
+        exits: { down: 'first_level', up: 'third_level' },
+        items: ['gondorian_sword'],
+        enemies: []
+    },
+
+    third_level: {
+        name: "Third Level - Minas Tirith",
+        description: "The level of the Houses of Healing. White buildings with gardens. The air is filled with the scent of athelas.",
+        exits: { down: 'second_level', up: 'fourth_level' },
+        items: ['athelas', 'healing_herbs'],
+        enemies: []
+    },
+
+    fourth_level: {
+        name: "Fourth Level - Minas Tirith",
+        description: "Barracks and armories. The soldiers of Gondor train here. You hear the ring of steel on steel.",
+        exits: { down: 'third_level', up: 'fifth_level' },
+        items: ['gondorian_armor'],
+        enemies: []
+    },
+
+    fifth_level: {
+        name: "Fifth Level - Minas Tirith",
+        description: "The level of the Great Hall. Tapestries depicting the history of Gondor line the walls.",
+        exits: { down: 'fourth_level', up: 'sixth_level' },
+        items: ['ancient_tapestry'],
+        enemies: []
+    },
+
+    sixth_level: {
+        name: "Sixth Level - Minas Tirith",
+        description: "The level of the Citadel. The White Tower looms above. This is the heart of Gondor.",
+        exits: { down: 'fifth_level', up: 'white_tower' },
+        items: ['gondorian_crown'],
+        enemies: []
+    },
+
+    white_tower: {
+        name: "White Tower of Ecthelion",
+        description: "The highest point of Minas Tirith. From here you can see for leagues in every direction. The throne of the Stewards stands empty, awaiting the return of the King.",
+        exits: { down: 'sixth_level' },
+        items: ['palantir_of_minas_tirith', 'steward_crown'],
+        enemies: []
+    },
+
+    rath_dinen: {
+        name: "Rath Dínen - Street of the Dead",
+        description: "The silent street where the Kings and Stewards of Gondor are laid to rest. Tombs line both sides. A sense of ancient majesty and sorrow fills the air.",
+        exits: { south: 'pelennor_fields', east: 'house_of_stewards' },
+        items: [],
+        enemies: []
+    },
+
+    house_of_stewards: {
+        name: "House of the Stewards",
+        description: "The tomb of the Stewards of Gondor. White marble and silver. The tombs of Denethor and his forefathers lie here.",
+        exits: { west: 'rath_dinen' },
+        items: ['steward_ring', 'ancient_scroll'],
+        enemies: []
+    },
+
+    // MORDOR - The Land of Shadow
+    morgul_vale: {
+        name: "Morgul Vale",
+        description: "A dark valley leading to Mordor. The air is foul and the ground is poisoned. The Tower of Cirith Ungol looms ahead. A sense of dread fills you.",
+        exits: { west: 'osgiliath_ruins', east: 'cirith_ungol', south: 'morgul_pass' },
+        items: [],
+        enemies: ['orc_warrior', 'orc_scout', 'ringwraith']
+    },
+
+    morgul_pass: {
+        name: "Morgul Pass",
+        description: "A narrow pass through the mountains. The path is treacherous and watched. The very stones seem to whisper of evil.",
+        exits: { north: 'morgul_vale', east: 'cirith_ungol' },
+        items: ['morgul_blade'],
+        enemies: ['orc_warrior', 'spider_guard']
+    },
+
+    cirith_ungol: {
+        name: "Cirith Ungol - Tower of the Spider",
+        description: "A great tower built into the mountainside. Shelob's lair lies below. The tower is dark and foreboding, its windows like empty eyes.",
+        exits: { west: 'morgul_vale', south: 'morgul_pass', down: 'shelob_lair', east: 'mordor_plains' },
+        items: ['tower_key'],
+        enemies: ['orc_warrior', 'orc_warrior']
+    },
+
+    shelob_lair: {
+        name: "Shelob's Lair",
+        description: "A vast web-filled cave. Sticky strands cover every surface. In the darkness, you sense something huge and hungry moving. The stench is overwhelming.",
+        exits: { up: 'cirith_ungol', east: 'tunnel_exit' },
+        items: [],
+        enemies: ['shelob']
+    },
+
+    tunnel_exit: {
+        name: "Tunnel Exit",
+        description: "You emerge from the tunnel into the desolation of Mordor. The land is barren and black. Mount Doom looms in the distance, belching smoke and fire.",
+        exits: { west: 'shelob_lair', east: 'mordor_plains' },
+        items: ['sting_glow'],
+        enemies: []
+    },
+
+    mordor_plains: {
+        name: "Plains of Mordor",
+        description: "A wasteland of ash and rock. Nothing grows here. The sky is dark with smoke. Orc patrols march in the distance. Mount Doom dominates the horizon.",
+        exits: { west: 'cirith_ungol', east: 'black_gate', south: 'mount_doom_approach' },
+        items: [],
+        enemies: ['orc_warrior', 'orc_warrior', 'warg_rider']
+    },
+
+    black_gate: {
+        name: "The Black Gate of Mordor",
+        description: "The Morannon - the great gate of Mordor. Two massive towers flank an iron gate. The ground before it is littered with bones. This is the only way into the Dark Land.",
+        exits: { west: 'mordor_plains', east: 'barad_dur_approach' },
+        items: [],
+        enemies: ['orc_warrior', 'orc_warrior', 'orc_warrior', 'troll_guard']
+    },
+
+    barad_dur_approach: {
+        name: "Approach to Barad-dûr",
+        description: "The Dark Tower of Sauron rises impossibly high, wreathed in shadow and flame. The Eye watches from above. The very air burns with malice.",
+        exits: { west: 'black_gate', east: 'barad_dur_base' },
+        items: [],
+        enemies: ['ringwraith', 'ringwraith', 'orc_warrior']
+    },
+
+    barad_dur_base: {
+        name: "Base of Barad-dûr",
+        description: "The foundation of the Dark Tower. The ground is cracked and black. Fires burn in pits. This is the heart of Sauron's power.",
+        exits: { west: 'barad_dur_approach', up: 'barad_dur_chamber' },
+        items: ['dark_ring_fragment'],
+        enemies: ['ringwraith', 'orc_warrior']
+    },
+
+    barad_dur_chamber: {
+        name: "Chamber of the Dark Lord",
+        description: "The highest chamber of Barad-dûr. The Eye of Sauron burns here, seeing all. The One Ring was forged in the fires below. This is where the fate of Middle Earth will be decided.",
+        exits: { down: 'barad_dur_base' },
+        items: ['sauron_armor_fragment'],
+        enemies: ['sauron_manifestation']
+    },
+
+    mount_doom_approach: {
+        name: "Approach to Mount Doom",
+        description: "Orodruin - the Mountain of Fire. Lava flows down its sides. The air is thick with ash and the stench of sulfur. The path to the summit is treacherous.",
+        exits: { north: 'mordor_plains', up: 'mount_doom_summit' },
+        items: [],
+        enemies: ['lava_elemental']
+    },
+
+    mount_doom_summit: {
+        name: "Summit of Mount Doom",
+        description: "The Crack of Doom. A chasm of fire at the heart of the mountain. This is where the One Ring was forged, and where it must be destroyed. The heat is unbearable.",
+        exits: { down: 'mount_doom_approach' },
+        items: [],
+        enemies: ['gollum_final'],
+        puzzle: 'destroy_ring'
     }
 };
