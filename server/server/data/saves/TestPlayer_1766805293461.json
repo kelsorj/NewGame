@@ -1,6 +1,6 @@
 {
-  "name": "SaveUITest",
-  "currentRoom": "withywindle",
+  "name": "TestPlayer_1766805293461",
+  "currentRoom": "trollshaws",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -9,7 +9,8 @@
   "baseDefense": 2,
   "inventory": [
     "rusty_dagger",
-    "walking_stick"
+    "lembas_bread",
+    "brass_key"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -19,18 +20,23 @@
   "visitedRooms": [
     "bag_end",
     "hobbiton_square",
+    "green_dragon",
     "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "bree_gate",
+    "bree_square",
+    "bree_east_road",
+    "last_bridge",
+    "trollshaws"
   ],
   "recentRooms": [
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "bree_square",
+    "bree_east_road",
+    "last_bridge",
+    "trollshaws"
   ],
   "achievements": [
     "first_steps"
-  ]
+  ],
+  "enemiesDefeated": 0,
+  "bossesDefeated": []
 }

@@ -3,6 +3,9 @@ import { RoomSystem } from './RoomSystem.js';
 import { CombatSystem } from './CombatSystem.js';
 import { InventorySystem } from './InventorySystem.js';
 import { PuzzleSystem } from './PuzzleSystem.js';
+import { ProgressionSystem } from './ProgressionSystem.js';
+import { AchievementSystem } from './AchievementSystem.js';
+import { CraftingSystem } from './CraftingSystem.js';
 import { findMatchingId } from '../utils/normalizeItemName.js';
 import { rooms } from '../data/rooms.js';
 import { items } from '../data/items.js';
@@ -15,6 +18,9 @@ export class GameEngine {
         this.combatSystem = new CombatSystem(enemies);
         this.inventorySystem = new InventorySystem(items);
         this.puzzleSystem = new PuzzleSystem(puzzles);
+        this.progressionSystem = new ProgressionSystem();
+        this.achievementSystem = new AchievementSystem();
+        this.craftingSystem = new CraftingSystem(items);
         this.gameState = gameState;
     }
 
@@ -54,7 +60,10 @@ export class GameEngine {
             level: 1,
             gold: 10,
             visitedRooms: ['bag_end'], // Track all visited rooms
-            recentRooms: ['bag_end'] // Track last 3-4 rooms for map display
+            recentRooms: ['bag_end'], // Track last 3-4 rooms for map display
+            achievements: [], // Track unlocked achievements
+            enemiesDefeated: 0, // Track combat stats
+            bossesDefeated: [] // Track boss defeats
         };
     }
 
@@ -133,6 +142,17 @@ export class GameEngine {
             case 'puzzles':
                 return { message: this.puzzleSystem.showPuzzleProgress(playerState) };
 
+            case 'achievements':
+            case 'ach':
+                return this.handleAchievements(playerState);
+
+            case 'craft':
+            case 'combine':
+                return this.handleCraft(args, playerState);
+
+            case 'recipes':
+                return this.handleRecipes(playerState);
+
             case 'stats':
             case 'status':
                 return this.handleStats(playerState);
@@ -187,8 +207,18 @@ export class GameEngine {
                 }
                 
                 const newRoomDesc = this.roomSystem.getRoomDescription(result.roomId, {}, this.gameState);
+                
+                // Check for achievements after movement
+                const newAchievements = this.achievementSystem.checkAchievements(playerState);
+                let message = `${result.message}\n${newRoomDesc}`;
+                
+                // Add achievement messages if any unlocked
+                for (const achievement of newAchievements) {
+                    message += '\n' + this.achievementSystem.getAchievementMessage(achievement);
+                }
+                
                 return {
-                    message: `${result.message}\n${newRoomDesc}`,
+                    message,
                     roomChanged: true
                 };
             } else {
@@ -221,6 +251,16 @@ export class GameEngine {
                 const matchedId = findMatchingId(itemName, roomState.items);
                 if (matchedId) {
                     this.gameState.removeItemFromRoom(playerState.currentRoom, matchedId);
+                }
+                
+                // Check for achievements after taking item
+                const newAchievements = this.achievementSystem.checkAchievements(playerState);
+                if (newAchievements.length > 0) {
+                    let message = result.message;
+                    for (const achievement of newAchievements) {
+                        message += '\n' + this.achievementSystem.getAchievementMessage(achievement);
+                    }
+                    return { ...result, message };
                 }
             }
             
@@ -278,7 +318,40 @@ export class GameEngine {
 
             if (result.combatOver && result.victory && result.loot) {
                 playerState.inventory.push(...result.loot);
-                playerState.exp += result.exp || 0;
+                
+                // Track enemy defeat
+                if (!playerState.enemiesDefeated) playerState.enemiesDefeated = 0;
+                playerState.enemiesDefeated++;
+                
+                // Check if it was a boss (enemy with high exp or special name)
+                const enemy = this.combatSystem.getEnemy(result.enemyType);
+                if (enemy && (enemy.exp >= 200 || enemy.name.toLowerCase().includes('balrog') || 
+                    enemy.name.toLowerCase().includes('sauron') || enemy.name.toLowerCase().includes('ringwraith'))) {
+                    if (!playerState.bossesDefeated) playerState.bossesDefeated = [];
+                    const bossId = enemy.name.toLowerCase().replace(/\s+/g, '_');
+                    if (!playerState.bossesDefeated.includes(bossId)) {
+                        playerState.bossesDefeated.push(bossId);
+                    }
+                }
+                
+                // Add experience and check for level ups
+                const progression = this.progressionSystem.addExperience(playerState, result.exp || 0);
+                let message = result.message;
+                
+                // Add level up messages if player leveled up
+                if (progression.leveledUp) {
+                    for (const levelUp of progression.levelUps) {
+                        message += '\n' + this.progressionSystem.getLevelUpMessage(levelUp);
+                    }
+                }
+                
+                // Check for achievements
+                const newAchievements = this.achievementSystem.checkAchievements(playerState);
+                for (const achievement of newAchievements) {
+                    message += '\n' + this.achievementSystem.getAchievementMessage(achievement);
+                }
+                
+                return { message };
             }
 
             return { message: result.message };
@@ -314,6 +387,31 @@ export class GameEngine {
         const result = this.puzzleSystem.attemptPuzzle(puzzleId, solution, playerState);
 
         if (result.solved && result.success) {
+            // Get exp reward from puzzle
+            const puzzle = this.puzzleSystem.getPuzzle(puzzleId);
+            const expGain = puzzle?.rewards?.exp || 0;
+            
+            // Add experience and check for level ups
+            if (expGain > 0) {
+                const progression = this.progressionSystem.addExperience(playerState, expGain);
+                let message = result.message;
+                
+                // Add level up messages if player leveled up
+                if (progression.leveledUp) {
+                    for (const levelUp of progression.levelUps) {
+                        message += '\n' + this.progressionSystem.getLevelUpMessage(levelUp);
+                    }
+                }
+                
+                // Check for achievements after solving puzzle
+                const newAchievements = this.achievementSystem.checkAchievements(playerState);
+                for (const achievement of newAchievements) {
+                    message += '\n' + this.achievementSystem.getAchievementMessage(achievement);
+                }
+                
+                return { message, puzzleSolved: true };
+            }
+            
             // Check if this unlocks anything
             return { message: result.message, puzzleSolved: true };
         }
@@ -327,9 +425,18 @@ export class GameEngine {
         stats += `❤️  HP: ${playerState.hp}/${playerState.maxHp}\n`;
         stats += `⚔️  Attack: ${playerState.attack}\n`;
         stats += `🛡️  Defense: ${playerState.defense}\n`;
-        stats += `📈 Level: ${playerState.level} (${playerState.exp} XP)\n`;
-        stats += `💰 Gold: ${playerState.gold}\n`;
-        stats += `🧩 Puzzles Solved: ${playerState.solvedPuzzles.length}\n`;
+        
+        // Show level and exp progress
+        const currentLevel = playerState.level || 1;
+        const currentExp = playerState.exp || 0;
+        const expNeeded = this.progressionSystem.getExpForNextLevel(currentLevel);
+        stats += `📈 Level: ${currentLevel} (${currentExp} XP)\n`;
+        stats += `   Next Level: ${expNeeded - currentExp} XP needed\n`;
+        
+        stats += `💰 Gold: ${playerState.gold || 0}\n`;
+        stats += `🎒 Inventory: ${playerState.inventory.length} items\n`;
+        stats += `🧩 Puzzles Solved: ${playerState.solvedPuzzles?.length || 0}\n`;
+        stats += `🗺️  Rooms Visited: ${playerState.visitedRooms?.length || 0}\n`;
 
         if (playerState.equipment && Object.keys(playerState.equipment).length > 0) {
             stats += `\n⚔️  Equipment:\n`;
@@ -339,6 +446,74 @@ export class GameEngine {
         }
 
         return { message: stats };
+    }
+
+    handleAchievements(playerState) {
+        const progress = this.achievementSystem.getAchievementProgress(playerState);
+        let message = `\n🏆 Achievements\n`;
+        message += `━━━━━━━━━━━━━━━━━━━━\n`;
+        message += `Unlocked: ${progress.unlocked}/${progress.total} (${progress.percentage}%)\n\n`;
+
+        if (progress.achievements.length === 0) {
+            message += `No achievements unlocked yet. Keep playing to unlock them!\n`;
+        } else {
+            message += `Unlocked Achievements:\n`;
+            for (const achievement of progress.achievements) {
+                message += `  🏆 ${achievement.name}\n`;
+                message += `     ${achievement.description}\n`;
+            }
+        }
+
+        return { message };
+    }
+
+    handleCraft(ingredients, playerState) {
+        if (ingredients.length < 2) {
+            return { message: "Crafting requires at least 2 items. Usage: craft <item1> <item2> [item3...]" };
+        }
+
+        // Normalize ingredient names
+        const normalizedIngredients = ingredients.map(ing => {
+            // Try to find matching item in inventory
+            const matched = findMatchingId(ing, playerState.inventory || []);
+            return matched || ing;
+        });
+
+        const result = this.craftingSystem.craft(normalizedIngredients, playerState);
+        
+        // Check for achievements after crafting
+        if (result.success) {
+            const newAchievements = this.achievementSystem.checkAchievements(playerState);
+            if (newAchievements.length > 0) {
+                let message = result.message;
+                for (const achievement of newAchievements) {
+                    message += '\n' + this.achievementSystem.getAchievementMessage(achievement);
+                }
+                return { ...result, message };
+            }
+        }
+        
+        return result;
+    }
+
+    handleRecipes(playerState) {
+        const recipes = this.craftingSystem.getAvailableRecipes(playerState);
+        let message = `\n📜 Available Crafting Recipes\n`;
+        message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+        if (recipes.length === 0) {
+            message += `No recipes available yet. Level up to unlock more recipes!\n`;
+        } else {
+            for (const recipe of recipes) {
+                const status = recipe.canCraft ? '✅' : '❌';
+                message += `${status} ${recipe.description}\n`;
+                message += `   Ingredients: ${recipe.ingredients.join(', ')}\n`;
+                message += `   Level Required: ${recipe.level}\n`;
+                message += `   Result: ${recipe.result}\n\n`;
+            }
+        }
+
+        return { message };
     }
 
     handleHelp() {
@@ -364,6 +539,13 @@ export class GameEngine {
 🧩 Puzzles:
   solve <puzzle> <answer> - Attempt puzzle solution
   puzzles             - Show puzzle progress
+
+🔨 Crafting:
+  craft <item1> <item2> - Combine items to create new items
+  recipes             - Show available crafting recipes
+
+🏆 Progression:
+  achievements, ach   - Show unlocked achievements
 
 📊 Character:
   stats               - Show character stats

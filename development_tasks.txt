@@ -73,9 +73,9 @@ npm run test:all
  ✅ Add magic items (rings, swords, artifacts, phials, mirrors, palantíri)
  ✅ Create complex puzzle chains (Moria gateway, Ring destruction)
  ✅ Add special encounters (Balrog, Ringwraith, Watcher, Goblin Chieftain, Shelob, Sauron)
- ⏳ Implement character progression (basic leveling exists, needs expansion)
- ⏳ Add achievements system
- ⏳ Enhance combat with special abilities
- ⏳ Add crafting system
+ ✅ Implement character progression (leveling system with stat increases, exp tracking)
+ ✅ Add achievements system (20+ achievements across multiple categories)
+ ✅ Enhance combat with special abilities (critical hits based on level)
+ ✅ Add crafting system (8+ recipes for weapons, potions, armor, special items)
  ✅ Expand treasure varieties (many new items added)
  ✅ Create boss encounters (Balrog, Ringwraith, Watcher, Goblin Chieftain, Shelob, Sauron)

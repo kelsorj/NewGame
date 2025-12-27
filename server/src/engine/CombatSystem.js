@@ -46,10 +46,21 @@ export class CombatSystem {
         // Player attacks
         const playerWeapon = this.getEquippedWeapon(playerState);
         const playerAttack = (playerState.attack || 5) + (playerWeapon?.bonus || 0);
-        const playerDamage = Math.max(1, playerAttack - (enemy.defense || 0));
+        
+        // Special abilities: Critical hit chance (10% base, increases with level)
+        const critChance = 0.1 + ((playerState.level || 1) - 1) * 0.01;
+        const isCritical = Math.random() < critChance;
+        
+        let playerDamage = Math.max(1, playerAttack - (enemy.defense || 0));
+        
+        if (isCritical) {
+            playerDamage = Math.floor(playerDamage * 2);
+            messages.push(`💥 CRITICAL HIT! You strike ${enemy.name} for ${playerDamage} damage!`);
+        } else {
+            messages.push(`🗡️  You strike ${enemy.name} for ${playerDamage} damage!`);
+        }
 
         enemy.currentHp -= playerDamage;
-        messages.push(`🗡️  You strike ${enemy.name} for ${playerDamage} damage!`);
 
         // Check if enemy defeated
         if (enemy.currentHp <= 0) {
@@ -71,6 +82,7 @@ export class CombatSystem {
                 victory: true,
                 loot,
                 exp: expGain,
+                enemyType: enemy.type, // Include enemy type for tracking
                 message: messages.join('\n')
             };
         }
@@ -142,5 +154,9 @@ export class CombatSystem {
     getEquippedWeapon(playerState) {
         // Find equipped weapon in inventory
         return playerState.equipment?.weapon || null;
+    }
+
+    getEnemy(enemyType) {
+        return this.enemies[enemyType];
     }
 }

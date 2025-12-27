@@ -48,9 +48,7 @@ export class PuzzleSystem {
                     playerState.inventory.push(...puzzle.rewards.items);
                     message += `\n🎁 You receive: ${puzzle.rewards.items.join(', ')}`;
                 }
-                if (puzzle.rewards.exp) {
-                    message += `\n📈 You gain ${puzzle.rewards.exp} experience!`;
-                }
+                // Note: Experience is handled by GameEngine.handleSolve to trigger level ups
             }
 
             return {

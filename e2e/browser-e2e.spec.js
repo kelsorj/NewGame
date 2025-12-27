@@ -142,5 +142,67 @@ test.describe('Browser E2E Tests', () => {
     // Should see load confirmation and be back at previous location - check the last game message
     await expect(page.locator('.message.message-game').last()).toContainText(/loaded|Welcome/i);
   });
+
+  test('stats command shows progression info', async ({ page }) => {
+    await expect(page.locator('.status-connected')).toBeVisible({ timeout: 10000 });
+    await page.fill('input[placeholder*="name"]', 'StatsUITest');
+    await page.click('button:has-text("Begin Adventure")');
+    await page.waitForTimeout(500);
+
+    // Check stats
+    await page.fill('.command-input', 'stats');
+    await page.press('.command-input', 'Enter');
+    await page.waitForTimeout(500);
+
+    // Should see level, HP, attack, defense info
+    await expect(page.locator('.message.message-game').last()).toContainText(/Level|HP|Attack|Defense/i);
+  });
+
+  test('achievements command works in UI', async ({ page }) => {
+    await expect(page.locator('.status-connected')).toBeVisible({ timeout: 10000 });
+    await page.fill('input[placeholder*="name"]', 'AchievementUITest');
+    await page.click('button:has-text("Begin Adventure")');
+    await page.waitForTimeout(500);
+
+    // Check achievements
+    await page.fill('.command-input', 'achievements');
+    await page.press('.command-input', 'Enter');
+    await page.waitForTimeout(500);
+
+    // Should see achievements display
+    await expect(page.locator('.message.message-game').last()).toContainText(/Achievements|Unlocked/i);
+  });
+
+  test('recipes command works in UI', async ({ page }) => {
+    await expect(page.locator('.status-connected')).toBeVisible({ timeout: 10000 });
+    await page.fill('input[placeholder*="name"]', 'RecipesUITest');
+    await page.click('button:has-text("Begin Adventure")');
+    await page.waitForTimeout(500);
+
+    // Check recipes
+    await page.fill('.command-input', 'recipes');
+    await page.press('.command-input', 'Enter');
+    await page.waitForTimeout(500);
+
+    // Should see recipes display
+    await expect(page.locator('.message.message-game').last()).toContainText(/Recipes|Crafting/i);
+  });
+
+  test('craft command works in UI', async ({ page }) => {
+    await expect(page.locator('.status-connected')).toBeVisible({ timeout: 10000 });
+    await page.fill('input[placeholder*="name"]', 'CraftUITest');
+    await page.click('button:has-text("Begin Adventure")');
+    await page.waitForTimeout(500);
+
+    // Try crafting (will likely fail due to missing items, but command should work)
+    await page.fill('.command-input', 'craft item1 item2');
+    await page.press('.command-input', 'Enter');
+    await page.waitForTimeout(500);
+
+    // Should get a response (either success or error message)
+    const lastMessage = await page.locator('.message.message-game').last().textContent();
+    expect(lastMessage).toBeTruthy();
+    expect(lastMessage.length).toBeGreaterThan(0);
+  });
 });
 

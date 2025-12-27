@@ -1,5 +1,5 @@
 {
-  "name": "StatusTest",
+  "name": "ProgressionTest_1766805066837",
   "currentRoom": "bag_end",
   "hp": 100,
   "maxHp": 100,
@@ -8,9 +8,7 @@
   "baseAttack": 5,
   "baseDefense": 2,
   "inventory": [
-    "rusty_dagger",
-    "walking_stick",
-    "walking_stick"
+    "rusty_dagger"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -22,8 +20,5 @@
   ],
   "recentRooms": [
     "bag_end"
-  ],
-  "achievements": [
-    "first_steps"
   ]
 }

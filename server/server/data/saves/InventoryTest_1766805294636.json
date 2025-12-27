@@ -1,6 +1,6 @@
 {
-  "name": "SaveUITest",
-  "currentRoom": "withywindle",
+  "name": "InventoryTest_1766805294636",
+  "currentRoom": "hobbiton_square",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -9,7 +9,7 @@
   "baseDefense": 2,
   "inventory": [
     "rusty_dagger",
-    "walking_stick"
+    "silver_coin"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -18,19 +18,15 @@
   "gold": 10,
   "visitedRooms": [
     "bag_end",
-    "hobbiton_square",
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "hobbiton_square"
   ],
   "recentRooms": [
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "bag_end",
+    "hobbiton_square"
   ],
   "achievements": [
     "first_steps"
-  ]
+  ],
+  "enemiesDefeated": 0,
+  "bossesDefeated": []
 }

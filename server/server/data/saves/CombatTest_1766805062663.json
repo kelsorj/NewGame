@@ -1,15 +1,14 @@
 {
-  "name": "SaveUITest",
-  "currentRoom": "withywindle",
-  "hp": 100,
+  "name": "CombatTest_1766805062663",
+  "currentRoom": "old_forest_entrance",
+  "hp": 28,
   "maxHp": 100,
   "attack": 5,
   "defense": 2,
   "baseAttack": 5,
   "baseDefense": 2,
   "inventory": [
-    "rusty_dagger",
-    "walking_stick"
+    "rusty_dagger"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -20,17 +19,12 @@
     "bag_end",
     "hobbiton_square",
     "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "old_forest_entrance"
   ],
   "recentRooms": [
+    "bag_end",
+    "hobbiton_square",
     "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
-  ],
-  "achievements": [
-    "first_steps"
+    "old_forest_entrance"
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "name": "StatusTest",
-  "currentRoom": "bag_end",
+  "name": "SaveTest_1766805296560",
+  "currentRoom": "hobbiton_square",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -8,9 +8,7 @@
   "baseAttack": 5,
   "baseDefense": 2,
   "inventory": [
-    "rusty_dagger",
-    "walking_stick",
-    "walking_stick"
+    "rusty_dagger"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -18,12 +16,14 @@
   "level": 1,
   "gold": 10,
   "visitedRooms": [
-    "bag_end"
+    "bag_end",
+    "hobbiton_square"
   ],
   "recentRooms": [
-    "bag_end"
+    "bag_end",
+    "hobbiton_square"
   ],
-  "achievements": [
-    "first_steps"
-  ]
+  "achievements": [],
+  "enemiesDefeated": 0,
+  "bossesDefeated": []
 }
