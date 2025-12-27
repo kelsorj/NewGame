@@ -13,3 +13,5 @@ test-results/**/*.webm
 playwright-report/**/*.zip
 server/server/data/saves/reed.json
 server/server/data/saves/*
+server/server/data/saves/MapTest.json
+server/server/data/saves/StatusTest.json

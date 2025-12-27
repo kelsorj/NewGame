@@ -1,6 +1,6 @@
 {
   "name": "MapTest",
-  "currentRoom": "bombadil_house",
+  "currentRoom": "barrow_downs_approach",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -23,12 +23,17 @@
     "old_forest_entrance",
     "old_forest_depth",
     "withywindle",
-    "bombadil_house"
+    "bombadil_house",
+    "old_forest_exit",
+    "barrow_downs_approach"
   ],
   "recentRooms": [
-    "old_forest_entrance",
-    "old_forest_depth",
     "withywindle",
-    "bombadil_house"
+    "bombadil_house",
+    "old_forest_exit",
+    "barrow_downs_approach"
+  ],
+  "achievements": [
+    "explorer"
   ]
 }
