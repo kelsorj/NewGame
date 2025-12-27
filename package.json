@@ -15,6 +15,11 @@
     "test": "npm test --workspaces",
     "test:server": "npm test --workspace=server",
     "test:client": "npm test --workspace=client",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:all": "npm run test:server && npm run test:client && npm run test:e2e",
     "pm2:start": "pm2 start ecosystem.config.js",
     "pm2:stop": "pm2 stop ecosystem.config.js",
     "pm2:restart": "pm2 restart ecosystem.config.js",
@@ -27,6 +32,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@playwright/test": "^1.40.0",
     "concurrently": "^8.2.2"
   }
 }

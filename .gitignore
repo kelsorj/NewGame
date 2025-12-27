@@ -4,3 +4,6 @@ dist/
 *.log
 .env
 coverage/
+test-results/
+playwright-report/
+playwright/.cache/
