@@ -7,3 +7,7 @@ coverage/
 test-results/
 playwright-report/
 playwright/.cache/
+# Keep test-results and playwright-report for local debugging, but ignore large files
+test-results/**/*.zip
+test-results/**/*.webm
+playwright-report/**/*.zip

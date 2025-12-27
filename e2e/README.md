@@ -27,9 +27,36 @@ npm run test:e2e:headed
 # Debug tests
 npm run test:e2e:debug
 
+# Run with full trace capture (for debugging)
+npm run test:e2e:trace
+
+# View HTML report (after running tests)
+npm run test:e2e:report
+# Then open browser to: http://localhost:9323
+
 # Run specific test file
 npx playwright test game-walkthrough.spec.js
 ```
+
+## Viewing Test Results
+
+After running tests, you can view the HTML report:
+
+```bash
+npm run test:e2e:report
+```
+
+Or open directly:
+```bash
+open playwright-report/index.html
+```
+
+The HTML report includes:
+- ✅ Test results with pass/fail status
+- 📸 Screenshots (captured on failure)
+- 🎥 Videos (captured on failure)
+- 📊 Traces (for step-by-step debugging)
+- 🔍 Console logs and network requests
 
 ## Test Structure
 
@@ -84,11 +111,47 @@ Results are uploaded as artifacts and can be viewed in the GitHub Actions tab.
 
 ## Debugging Failed Tests
 
-1. **View HTML Report**: After tests run, open `playwright-report/index.html`
-2. **Use UI Mode**: `npm run test:e2e:ui` for interactive debugging
-3. **Use Debug Mode**: `npm run test:e2e:debug` to step through tests
-4. **Check Screenshots**: Failed tests automatically capture screenshots
-5. **View Traces**: Use `npx playwright show-trace trace.zip` to see detailed execution
+1. **View HTML Report**: 
+   ```bash
+   npm run test:e2e:report
+   # or
+   open playwright-report/index.html
+   ```
+   The report shows screenshots, videos, and traces for failed tests.
+
+2. **Use UI Mode**: 
+   ```bash
+   npm run test:e2e:ui
+   ```
+   Interactive mode with live browser and step-by-step execution.
+
+3. **Use Debug Mode**: 
+   ```bash
+   npm run test:e2e:debug
+   ```
+   Opens Playwright Inspector for step-by-step debugging.
+
+4. **Run with Full Traces**: 
+   ```bash
+   npm run test:e2e:trace
+   ```
+   Captures full traces for all tests (useful for debugging).
+
+5. **View Traces**: 
+   ```bash
+   npx playwright show-trace test-results/[test-name]/trace.zip
+   ```
+   Or click "Trace" in the HTML report to view step-by-step execution.
+
+6. **Check Screenshots**: 
+   - Screenshots are automatically captured on failure
+   - Located in `test-results/[test-name]/`
+   - Also viewable in the HTML report
+
+7. **Check Videos**: 
+   - Videos are captured on failure
+   - Located in `test-results/[test-name]/`
+   - Viewable in the HTML report
 
 ## Adding New Tests
 

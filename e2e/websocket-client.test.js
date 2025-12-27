@@ -43,10 +43,10 @@ test.describe('WebSocket API Tests', () => {
         const message = JSON.parse(data.toString());
         messages.push(message);
 
-        if (message.type === 'player_state') {
-          expect(message.state).toBeTruthy();
-          expect(message.state.name).toBe('TestPlayer');
-          expect(message.state.currentRoom).toBe('bag_end');
+        if (message.type === 'joined' && message.playerState) {
+          expect(message.playerState).toBeTruthy();
+          expect(message.playerState.name).toBe('TestPlayer');
+          expect(message.playerState.currentRoom).toBe('bag_end');
           resolve();
         }
       });
@@ -69,7 +69,7 @@ test.describe('WebSocket API Tests', () => {
         const message = JSON.parse(data.toString());
         messages.push(message);
 
-        if (message.type === 'player_state') {
+        if (message.type === 'joined') {
           // Now send a command
           ws.send(JSON.stringify({ type: 'command', command: 'look' }));
         }

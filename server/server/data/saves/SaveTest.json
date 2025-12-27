@@ -1,6 +1,6 @@
 {
   "name": "SaveTest",
-  "currentRoom": "hobbiton_square",
+  "currentRoom": "brandywine_bridge",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -17,10 +17,12 @@
   "gold": 10,
   "visitedRooms": [
     "bag_end",
-    "hobbiton_square"
+    "hobbiton_square",
+    "brandywine_bridge"
   ],
   "recentRooms": [
     "bag_end",
-    "hobbiton_square"
+    "hobbiton_square",
+    "brandywine_bridge"
   ]
 }

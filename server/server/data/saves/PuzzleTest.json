@@ -1,6 +1,6 @@
 {
   "name": "PuzzleTest",
-  "currentRoom": "old_forest_entrance",
+  "currentRoom": "withywindle",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -19,12 +19,14 @@
     "bag_end",
     "hobbiton_square",
     "brandywine_bridge",
-    "old_forest_entrance"
+    "old_forest_entrance",
+    "old_forest_depth",
+    "withywindle"
   ],
   "recentRooms": [
-    "bag_end",
-    "hobbiton_square",
     "brandywine_bridge",
-    "old_forest_entrance"
+    "old_forest_entrance",
+    "old_forest_depth",
+    "withywindle"
   ]
 }

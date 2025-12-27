@@ -8,7 +8,8 @@
   "baseAttack": 5,
   "baseDefense": 2,
   "inventory": [
-    "rusty_dagger"
+    "rusty_dagger",
+    "lembas_bread"
   ],
   "equipment": {},
   "solvedPuzzles": [],

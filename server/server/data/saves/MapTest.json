@@ -1,6 +1,6 @@
 {
   "name": "MapTest",
-  "currentRoom": "brandywine_bridge",
+  "currentRoom": "withywindle",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -19,12 +19,15 @@
     "bag_end",
     "hobbiton_square",
     "green_dragon",
-    "brandywine_bridge"
+    "brandywine_bridge",
+    "old_forest_entrance",
+    "old_forest_depth",
+    "withywindle"
   ],
   "recentRooms": [
-    "hobbiton_square",
-    "green_dragon",
-    "hobbiton_square",
-    "brandywine_bridge"
+    "brandywine_bridge",
+    "old_forest_entrance",
+    "old_forest_depth",
+    "withywindle"
   ]
 }
