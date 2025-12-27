@@ -1,6 +1,6 @@
 {
-  "name": "SaveUITest",
-  "currentRoom": "withywindle",
+  "name": "MapTest_1766804362933",
+  "currentRoom": "brandywine_bridge",
   "hp": 100,
   "maxHp": 100,
   "attack": 5,
@@ -8,8 +8,7 @@
   "baseAttack": 5,
   "baseDefense": 2,
   "inventory": [
-    "rusty_dagger",
-    "walking_stick"
+    "rusty_dagger"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -19,15 +18,13 @@
   "visitedRooms": [
     "bag_end",
     "hobbiton_square",
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "green_dragon",
+    "brandywine_bridge"
   ],
   "recentRooms": [
-    "brandywine_bridge",
-    "old_forest_entrance",
-    "old_forest_depth",
-    "withywindle"
+    "hobbiton_square",
+    "green_dragon",
+    "hobbiton_square",
+    "brandywine_bridge"
   ]
 }

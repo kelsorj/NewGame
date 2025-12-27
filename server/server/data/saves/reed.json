@@ -1,7 +1,7 @@
 {
   "name": "reed",
-  "currentRoom": "hobbiton_square",
-  "hp": 100,
+  "currentRoom": "old_forest_entrance",
+  "hp": -76,
   "maxHp": 100,
   "attack": 5,
   "defense": 2,
@@ -15,7 +15,9 @@
     "silver_coin",
     "walking_stick",
     "lembas_bread",
-    "silver_coin"
+    "silver_coin",
+    "old_map",
+    "health_potion"
   ],
   "equipment": {},
   "solvedPuzzles": [],
@@ -25,12 +27,14 @@
   "visitedRooms": [
     "brandywine_bridge",
     "hobbiton_square",
-    "bag_end"
+    "bag_end",
+    "green_dragon",
+    "old_forest_entrance"
   ],
   "recentRooms": [
-    "brandywine_bridge",
+    "green_dragon",
     "hobbiton_square",
-    "bag_end",
-    "hobbiton_square"
+    "brandywine_bridge",
+    "old_forest_entrance"
   ]
 }

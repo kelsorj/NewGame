@@ -17,6 +17,8 @@
     "test:client": "npm test --workspace=client",
     "test:e2e": "playwright test",
     "test:e2e:existing": "SKIP_WEBSERVER=true playwright test",
+    "test:e2e:check": "node -e \"const http=require('http');http.get('http://localhost:3001/health',(r)=>{process.exit(r.statusCode===200?0:1)}).on('error',()=>process.exit(1))\" && echo '✅ Server is running' || echo '❌ Server not running - start with: npm run dev'",
+    "test:e2e:ws-check": "node e2e/test-websocket-connection.js",
     "test:e2e:clean": "./scripts/kill-ports.sh && playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",

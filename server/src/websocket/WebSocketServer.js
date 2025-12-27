@@ -13,8 +13,8 @@ export class GameWebSocketServer {
     }
 
     setupWebSocket() {
-        this.wss.on('connection', (ws) => {
-            console.log('New WebSocket connection');
+        this.wss.on('connection', (ws, req) => {
+            console.log('New WebSocket connection from:', req.socket.remoteAddress);
 
             ws.on('message', (data) => {
                 this.handleMessage(ws, data);
@@ -33,6 +33,12 @@ export class GameWebSocketServer {
                 type: 'connected',
                 message: 'Connected to Middle Earth Adventure Server'
             });
+        });
+
+        this.wss.on('error', (error) => {
+            console.error('WebSocket Server error:', error);
+            console.error('Error code:', error.code);
+            console.error('Error message:', error.message);
         });
 
         console.log('WebSocket server initialized');

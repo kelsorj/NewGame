@@ -24,7 +24,8 @@ test.describe('WebSocket API Tests', () => {
 
       ws.on('error', (error) => {
         clearTimeout(timeout);
-        reject(new Error(`WebSocket connection failed: ${error.message}. Make sure server is running on port 3001`));
+        const errorMsg = error.message || error.code || 'Unknown error';
+        reject(new Error(`WebSocket connection failed: ${errorMsg} (code: ${error.code || 'N/A'}). Make sure server is running on port 3001 and accepting WebSocket connections.`));
       });
     });
   });

@@ -82,11 +82,11 @@ console.log('✓ Game State initialized');
 console.log('✓ WebSocket Server initialized');
 
 // Start server
-server.listen(PORT, '127.0.0.1', () => {
+server.listen(PORT, () => {
     console.log(`\n🏔️  MIDDLE EARTH ADVENTURE SERVER 🏔️`);
     console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
-    console.log(`🌐 Server running on localhost:${PORT}`);
-    console.log(`🔌 WebSocket ready for connections`);
+    console.log(`🌐 Server running on port ${PORT}`);
+    console.log(`🔌 WebSocket ready for connections at ws://localhost:${PORT}`);
     console.log(`📊 Health check: http://localhost:${PORT}/health`);
     console.log(`📈 Stats: http://localhost:${PORT}/stats`);
     console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`);

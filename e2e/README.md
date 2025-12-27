@@ -1,171 +1,135 @@
-# E2E Testing with Playwright
+# E2E Testing Guide
 
-This directory contains end-to-end tests for the Middle Earth Adventure game using Playwright.
+## ⚠️ IMPORTANT: Start Servers First!
 
-## Setup
+**All tests require the game servers to be running.** The tests will check if servers are running and give you helpful error messages if they're not.
+
+## Quick Start
+
+1. **Start the servers** (in a separate terminal):
+   ```bash
+   npm run dev
+   ```
+
+2. **Wait for servers to be ready** - you should see:
+   - `🌐 Server running on localhost:3001`
+   - Client dev server running on `http://localhost:3000`
+
+3. **Run the tests**:
+   ```bash
+   npm run test:e2e
+   ```
+
+## Prerequisites
+
+### Start the Servers
+
+In a separate terminal, run:
 
 ```bash
-# Install dependencies (includes Playwright)
-npm install
+# Start both server and client
+npm run dev
 
-# Install Playwright browsers
-npx playwright install
+# Or start them separately:
+# Terminal 1: npm run dev:server  (runs on port 3001)
+# Terminal 2: npm run dev:client  (runs on port 3000)
+```
+
+Wait for both servers to be ready:
+- Server should show: `🌐 Server running on localhost:3001`
+- Client should show: `Local: http://localhost:3000`
+
+### Verify Servers Are Running
+
+```bash
+# Check server health
+curl http://localhost:3001/health
+
+# Check if ports are in use
+lsof -ti:3001  # Should show a process ID
+lsof -ti:3000  # Should show a process ID
 ```
 
 ## Running Tests
+
+Once servers are running:
 
 ```bash
 # Run all E2E tests
 npm run test:e2e
 
-# Run tests in UI mode (interactive)
+# Run specific test suites
+npm run test:e2e -- --grep "WebSocket API Tests"
+npm run test:e2e -- --grep "Game Walkthrough"
+npm run test:e2e -- --grep "Browser E2E Tests"
+
+# Run with UI mode (interactive)
 npm run test:e2e:ui
 
-# Run tests in headed mode (see browser)
+# Run in headed mode (see browser)
 npm run test:e2e:headed
 
-# Debug tests
+# Debug mode
 npm run test:e2e:debug
-
-# Run with full trace capture (for debugging)
-npm run test:e2e:trace
-
-# View HTML report (after running tests)
-npm run test:e2e:report
-# Then open browser to: http://localhost:9323
-
-# Run specific test file
-npx playwright test game-walkthrough.spec.js
 ```
+
+## Test Suites
+
+### WebSocket API Tests
+- Direct WebSocket protocol tests (no browser)
+- Tests connection, join, commands, multiple players
+
+### Browser E2E Tests
+- Full browser automation tests
+- Tests UI interactions, forms, displays
+
+### Game Walkthrough Tests
+- Complete game flow from start to finish
+- Tests navigation, items, combat, puzzles, save/load
+
+## Troubleshooting
+
+### "WebSocket connection failed" or "EPERM" error
+- **Solution 1**: Restart the server - it may need to be restarted after code changes
+  ```bash
+  # Stop the server (Ctrl+C), then:
+  npm run dev:server
+  ```
+
+- **Solution 2**: Test WebSocket connection directly
+  ```bash
+  npm run test:e2e:ws-check
+  ```
+  This will tell you if WebSocket connections are working.
+
+- **Solution 3**: Check if server is running
+  ```bash
+  curl http://localhost:3001/health
+  npm run test:e2e:check
+  ```
+
+### "Process from config.webServer was not able to start"
+- **Solution**: This is normal if servers are already running
+- The config is set to reuse existing servers
+
+### Tests timeout
+- **Solution**: Make sure both servers are fully started before running tests
+- Wait for startup messages before running tests
+
+### Port already in use
+- **Solution**: Kill existing processes or use different ports
+- `lsof -ti:3001 | xargs kill -9` (be careful!)
 
 ## Viewing Test Results
 
-After running tests, you can view the HTML report:
-
 ```bash
+# View HTML report
 npm run test:e2e:report
+
+# Open report in browser
+npm run test:e2e:report:file
 ```
 
-Or open directly:
-```bash
-open playwright-report/index.html
-```
+## CI/CD
 
-The HTML report includes:
-- ✅ Test results with pass/fail status
-- 📸 Screenshots (captured on failure)
-- 🎥 Videos (captured on failure)
-- 📊 Traces (for step-by-step debugging)
-- 🔍 Console logs and network requests
-
-## Test Structure
-
-### `game-walkthrough.spec.js`
-Comprehensive walkthrough tests that:
-- Test complete game flow from start to finish
-- Verify navigation, inventory, combat, puzzles
-- Test save/load functionality
-- Verify map tracking
-- Test error handling
-
-### `websocket-client.test.js`
-Direct WebSocket API tests:
-- Connection handling
-- Command processing
-- Multiplayer support
-- Protocol compliance
-
-### `browser-e2e.spec.js`
-Browser-based UI tests:
-- User interface interactions
-- Visual elements
-- Player status updates
-- World map display
-- Save/load through UI
-
-## Test Coverage
-
-The E2E tests cover:
-- ✅ Game initialization and joining
-- ✅ Navigation and movement
-- ✅ Item management (take, drop, use)
-- ✅ Inventory system
-- ✅ Combat system
-- ✅ Puzzle solving
-- ✅ Save/load functionality
-- ✅ Map tracking
-- ✅ Direction shortcuts
-- ✅ Item name normalization (spaces vs underscores)
-- ✅ Error handling
-- ✅ Multiplayer support
-- ✅ UI interactions
-
-## Continuous Integration
-
-Tests run automatically on:
-- Push to main/develop branches
-- Pull requests
-- Manual trigger via workflow_dispatch
-
-Results are uploaded as artifacts and can be viewed in the GitHub Actions tab.
-
-## Debugging Failed Tests
-
-1. **View HTML Report**: 
-   ```bash
-   npm run test:e2e:report
-   # or
-   open playwright-report/index.html
-   ```
-   The report shows screenshots, videos, and traces for failed tests.
-
-2. **Use UI Mode**: 
-   ```bash
-   npm run test:e2e:ui
-   ```
-   Interactive mode with live browser and step-by-step execution.
-
-3. **Use Debug Mode**: 
-   ```bash
-   npm run test:e2e:debug
-   ```
-   Opens Playwright Inspector for step-by-step debugging.
-
-4. **Run with Full Traces**: 
-   ```bash
-   npm run test:e2e:trace
-   ```
-   Captures full traces for all tests (useful for debugging).
-
-5. **View Traces**: 
-   ```bash
-   npx playwright show-trace test-results/[test-name]/trace.zip
-   ```
-   Or click "Trace" in the HTML report to view step-by-step execution.
-
-6. **Check Screenshots**: 
-   - Screenshots are automatically captured on failure
-   - Located in `test-results/[test-name]/`
-   - Also viewable in the HTML report
-
-7. **Check Videos**: 
-   - Videos are captured on failure
-   - Located in `test-results/[test-name]/`
-   - Viewable in the HTML report
-
-## Adding New Tests
-
-1. Create a new test file in `e2e/` directory
-2. Import test utilities: `import { test, expect } from '@playwright/test'`
-3. Use the WebSocket helper or browser automation as needed
-4. Follow existing test patterns for consistency
-
-## Best Practices
-
-- Tests should be independent and not rely on execution order
-- Use descriptive test names
-- Include both positive and negative test cases
-- Test edge cases and error conditions
-- Keep tests focused on specific functionality
-- Use appropriate timeouts for async operations
-
+For CI environments, the tests will automatically start servers using the `webServer` configuration in `playwright.config.js`.
