@@ -10,11 +10,31 @@ import { enemies } from '../data/enemies.js';
 import { puzzles } from '../data/puzzles.js';
 
 export class GameEngine {
-    constructor() {
+    constructor(gameState = null) {
         this.roomSystem = new RoomSystem(rooms);
         this.combatSystem = new CombatSystem(enemies);
         this.inventorySystem = new InventorySystem(items);
         this.puzzleSystem = new PuzzleSystem(puzzles);
+        this.gameState = gameState;
+    }
+
+    normalizeDirection(dir) {
+        if (!dir) return null;
+        const directionMap = {
+            'n': 'north',
+            's': 'south',
+            'e': 'east',
+            'w': 'west',
+            'u': 'up',
+            'd': 'down',
+            'north': 'north',
+            'south': 'south',
+            'east': 'east',
+            'west': 'west',
+            'up': 'up',
+            'down': 'down'
+        };
+        return directionMap[dir.toLowerCase()] || null;
     }
 
     createNewPlayer(playerName) {
@@ -134,7 +154,8 @@ export class GameEngine {
     handleLook(playerId, playerState) {
         const description = this.roomSystem.getRoomDescription(
             playerState.currentRoom,
-            { playersInRoom: [] } // TODO: Add multiplayer player tracking
+            { playersInRoom: [] }, // TODO: Add multiplayer player tracking
+            this.gameState
         );
         return { message: description };
     }
@@ -165,7 +186,7 @@ export class GameEngine {
                     playerState.recentRooms.shift();
                 }
                 
-                const newRoomDesc = this.roomSystem.getRoomDescription(result.roomId, {});
+                const newRoomDesc = this.roomSystem.getRoomDescription(result.roomId, {}, this.gameState);
                 return {
                     message: `${result.message}\n${newRoomDesc}`,
                     roomChanged: true
@@ -182,14 +203,58 @@ export class GameEngine {
 
     handleTake(itemName, playerState) {
         const room = this.roomSystem.getRoom(playerState.currentRoom);
-        const result = this.inventorySystem.takeItem(itemName, playerState, room);
-        return { message: result.message };
+        
+        // Get current room state
+        if (this.gameState) {
+            const roomState = this.gameState.getRoomState(
+                playerState.currentRoom,
+                room.items || [],
+                room.enemies || []
+            );
+            // Use room state items instead of room.items
+            const tempRoom = { ...room, items: roomState.items };
+            const result = this.inventorySystem.takeItem(itemName, playerState, tempRoom);
+            
+            // Update room state if item was taken
+            if (result.success) {
+                // Find the matched item ID from the room state
+                const matchedId = findMatchingId(itemName, roomState.items);
+                if (matchedId) {
+                    this.gameState.removeItemFromRoom(playerState.currentRoom, matchedId);
+                }
+            }
+            
+            return { message: result.message };
+        } else {
+            // Fallback if gameState not available
+            const result = this.inventorySystem.takeItem(itemName, playerState, room);
+            return { message: result.message };
+        }
     }
 
     handleDrop(itemName, playerState) {
         const room = this.roomSystem.getRoom(playerState.currentRoom);
-        const result = this.inventorySystem.dropItem(itemName, playerState, room);
-        return { message: result.message };
+        
+        // Get current room state
+        if (this.gameState) {
+            const roomState = this.gameState.getRoomState(
+                playerState.currentRoom,
+                room.items || [],
+                room.enemies || []
+            );
+            // Use room state items - pass reference so dropItem can modify it
+            const tempRoom = { ...room, items: roomState.items };
+            const result = this.inventorySystem.dropItem(itemName, playerState, tempRoom);
+            
+            // Room state is already updated since we passed roomState.items by reference
+            // dropItem modifies room.items which is roomState.items
+            
+            return { message: result.message };
+        } else {
+            // Fallback if gameState not available
+            const result = this.inventorySystem.dropItem(itemName, playerState, room);
+            return { message: result.message };
+        }
     }
 
     handleInventory(playerState) {

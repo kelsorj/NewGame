@@ -7,6 +7,11 @@ export class PlayerManager {
         this.gameState = gameState;
         this.gameEngine = gameEngine;
         this.sessionTimeouts = new Map(); // playerId -> timeout
+        
+        // Ensure gameEngine has reference to gameState
+        if (gameEngine) {
+            gameEngine.gameState = gameState;
+        }
     }
 
     createPlayer(playerName, ws) {

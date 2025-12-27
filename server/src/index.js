@@ -73,8 +73,8 @@ app.get('/stats', (req, res) => {
 
 // Initialize game systems
 console.log('Initializing Middle Earth Adventure Server...');
-const gameEngine = new GameEngine();
 const gameState = new GameState();
+const gameEngine = new GameEngine(gameState);
 const wsServer = new GameWebSocketServer(server, gameState, gameEngine);
 
 console.log('✓ Game Engine initialized');

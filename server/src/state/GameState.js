@@ -4,6 +4,7 @@ export class GameState {
         this.players = new Map(); // playerId -> playerState
         this.playerConnections = new Map(); // playerId -> WebSocket
         this.playerNames = new Map(); // playerId -> playerName
+        this.roomStates = new Map(); // roomId -> { items: [...], enemies: [...] }
     }
 
     addPlayer(playerId, playerName, playerState, ws) {
@@ -65,5 +66,38 @@ export class GameState {
         return this.players.size;
     }
 
+    // Room state management - track items/enemies that have been removed
+    getRoomState(roomId, defaultItems = [], defaultEnemies = []) {
+        if (!this.roomStates.has(roomId)) {
+            // Initialize room state with default items/enemies
+            this.roomStates.set(roomId, {
+                items: [...defaultItems],
+                enemies: [...defaultEnemies]
+            });
+        }
+        return this.roomStates.get(roomId);
+    }
 
+    removeItemFromRoom(roomId, itemId) {
+        const roomState = this.getRoomState(roomId);
+        const index = roomState.items.indexOf(itemId);
+        if (index > -1) {
+            roomState.items.splice(index, 1);
+        }
+    }
+
+    addItemToRoom(roomId, itemId) {
+        const roomState = this.getRoomState(roomId);
+        if (!roomState.items.includes(itemId)) {
+            roomState.items.push(itemId);
+        }
+    }
+
+    removeEnemyFromRoom(roomId, enemyId) {
+        const roomState = this.getRoomState(roomId);
+        const index = roomState.enemies.indexOf(enemyId);
+        if (index > -1) {
+            roomState.enemies.splice(index, 1);
+        }
+    }
 }

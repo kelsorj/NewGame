@@ -10,7 +10,7 @@ export class RoomSystem {
     return this.rooms[roomId];
   }
 
-  getRoomDescription(roomId, playerState) {
+  getRoomDescription(roomId, playerState, gameState = null) {
     const room = this.rooms[roomId];
     if (!room) return "You are nowhere... this shouldn't happen!";
 
@@ -22,20 +22,30 @@ export class RoomSystem {
       description += `\n🚪 Exits: ${exits.join(', ')}`;
     }
 
+    // Get current room state (items/enemies that are actually present)
+    let currentItems = room.items || [];
+    let currentEnemies = room.enemies || [];
+    
+    if (gameState) {
+      const roomState = gameState.getRoomState(roomId, room.items || [], room.enemies || []);
+      currentItems = roomState.items;
+      currentEnemies = roomState.enemies;
+    }
+
     // Show items in room
-    if (room.items && room.items.length > 0) {
-      const formattedItems = room.items.map(item => formatItem(item)).join(', ');
+    if (currentItems && currentItems.length > 0) {
+      const formattedItems = currentItems.map(item => formatItem(item)).join(', ');
       description += `\n\n✨ You see: ${formattedItems}`;
     }
 
     // Show enemies in room
-    if (room.enemies && room.enemies.length > 0) {
-      const formattedEnemies = room.enemies.map(enemy => formatItem(enemy)).join(', ');
+    if (currentEnemies && currentEnemies.length > 0) {
+      const formattedEnemies = currentEnemies.map(enemy => formatItem(enemy)).join(', ');
       description += `\n\n⚔️  Enemies: ${formattedEnemies}`;
     }
 
     // Show other players in room
-    const otherPlayers = playerState.playersInRoom || [];
+    const otherPlayers = playerState?.playersInRoom || [];
     if (otherPlayers.length > 0) {
       description += `\n\n👥 Players here: ${otherPlayers.join(', ')}`;
     }
