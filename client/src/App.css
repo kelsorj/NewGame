@@ -492,32 +492,109 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.map-content {
-  color: var(--text-muted);
+.map-location-info {
   font-size: 14px;
-  line-height: 1.6;
-  font-family: 'VT323', monospace;
-  white-space: pre-wrap;
-  margin: 0;
-  padding: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  background: var(--bg-primary);
+  border-radius: 4px;
+}
+
+.map-container {
   background: var(--bg-primary);
   border-radius: 4px;
   border: 1px solid var(--border);
-  max-height: 200px;
-  overflow-y: auto;
+  max-height: 400px;
+  overflow: auto;
+  padding: 0;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
-.map-content::-webkit-scrollbar {
-  width: 6px;
+.map-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.map-content::-webkit-scrollbar-track {
-  background: var(--bg-tertiary);
+.map-container::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
 }
 
-.map-content::-webkit-scrollbar-thumb {
+.map-container::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+.map-container::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.map-grid {
+  margin: 0 auto;
+}
+
+.map-slot {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(42, 63, 95, 0.1);
+  border-radius: 4px;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.map-slot.has-room {
+  background: rgba(42, 63, 95, 0.3);
+  border: 1px solid var(--border);
+}
+
+.map-slot.is-current {
+  background: rgba(0, 255, 136, 0.2);
+  border: 2px solid var(--text-primary);
+  box-shadow: 0 0 10px var(--glow);
+  z-index: 1;
+}
+
+.map-slot.empty {
+  opacity: 0.2;
+}
+
+.room-marker {
+  color: var(--text-muted);
+}
+
+.player-marker {
+  filter: drop-shadow(0 0 5px var(--glow));
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+.map-footer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.map-content.empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* Help Panel */

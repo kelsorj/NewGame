@@ -7,10 +7,8 @@ export const rohanExpansion = {
     westfold_plains: {
         name: "Westfold Plains",
         description: "The western reaches of Rohan, where the grass is shorter and the wind carries the scent of the sea. The White Mountains loom to the south.",
-        exits: {
-            east: 'rohan_plains',
-            west: 'helms_gate'
-        },
+        exits: { east: 'rohan_plains',
+            west: 'helms_gate', east: 'deep_coomb'  },
         items: ['wild_grass'],
         enemies: ['warg_rider']
     },
@@ -49,10 +47,8 @@ export const rohanExpansion = {
     snowbourn_banks: {
         name: "Banks of the Snowbourn",
         description: "The river Snowbourn flows down from the mountains through Edoras. Its waters are cold and clear, tumbling over white stones.",
-        exits: {
-            south: 'edoras_gates',
-            north: 'rohan_plains'
-        },
+        exits: { south: 'edoras_gates',
+            north: 'rohan_plains', north: 'edoras_gates'  },
         items: ['river_stone'],
         enemies: []
     },
@@ -92,9 +88,7 @@ export const rohanExpansion = {
     hidden_valley_white_mountains: {
         name: "Hidden Valley in the White Mountains",
         description: "A secluded nook in the mountains, shielded from the wind. A small spring of sweet water trickles from the rock.",
-        exits: {
-            east: 'dunharrow'
-        },
+        exits: { east: 'dunharrow', southeast: 'dunharrow'  },
         items: ['sweet_water'],
         enemies: []
     },
@@ -102,10 +96,8 @@ export const rohanExpansion = {
     deeping_stream_upper: {
         name: "Upper Deeping Stream",
         description: "Further up the gorge from Helm's Deep, the stream is narrower and swifter. It flows from deep within the mountains.",
-        exits: {
-            west: 'helms_deep_interior',
-            east: 'glittering_caves'
-        },
+        exits: { west: 'helms_deep_interior',
+            east: 'glittering_caves', southwest: 'helms_deep_interior'  },
         items: ['crystal_pebble'],
         enemies: []
     },
@@ -123,10 +115,8 @@ export const rohanExpansion = {
     deep_coomb: {
         name: "The Deep Coomb",
         description: "The valley leading up to the Deeping Wall. It is a natural bottleneck, perfect for defense.",
-        exits: {
-            east: 'helms_gate',
-            west: 'westfold_plains'
-        },
+        exits: { east: 'helms_gate',
+            west: 'westfold_plains', west: 'helms_gate'  },
         items: ['broken_shield'],
         enemies: ['uruk_hai_scout']
     },

@@ -40,9 +40,7 @@ export const lothlorienFangornExpansion = {
     elven_craft_hall: {
         name: "Hall of the Galadhrim Craftsmen",
         description: "A large flet where elven artisans craft their legendary ropes, cloaks, and jewelry. The work is done with such grace it seems like magic.",
-        exits: {
-            down: 'caras_galadhon'
-        },
+        exits: { down: 'caras_galadhon', southeast: 'caras_galadhon'  },
         items: ['elven_rope', 'silver_thimble'],
         enemies: []
     },
@@ -128,10 +126,8 @@ export const lothlorienFangornExpansion = {
     entwash_headwaters: {
         name: "Headwaters of the Entwash",
         description: "Where the Entwash river springs from the roots of the Misty Mountains. The water is cold enough to chill the bone.",
-        exits: {
-            north: 'fangorn_depths',
-            south: 'entwash'
-        },
+        exits: { north: 'fangorn_depths',
+            south: 'entwash', northeast: 'fangorn_depths'  },
         items: ['mountain_crystal'],
         enemies: []
     },

@@ -17,10 +17,8 @@ export const newRegionsExpansion = {
     havens_approach: {
         name: "Approach to Mithlond",
         description: "A wide, white road leads down to the sea. The air is salty and filled with the sound of gulls.",
-        exits: {
-            west: 'grey_havens_docks',
-            east: 'michel_delving'
-        },
+        exits: { west: 'grey_havens_docks',
+            east: 'michel_delving', southeast: 'michel_delving'  },
         items: ['sea_shell'],
         enemies: []
     },

@@ -29,7 +29,8 @@ export const rooms = {
             east: 'green_dragon',
             south: 'brandywine_bridge',
             west: 'bywater',
-            northwest: 'tuckborough'
+            northwest: 'tuckborough',
+            southwest: 'michel_delving'
         },
         items: ['silver_coin'],
         enemies: []
@@ -104,7 +105,7 @@ export const rooms = {
         exits: {
             north: 'brandywine_bridge',
             south: 'old_forest_depth',
-            west: 'scary'
+            west: 'scary', north: 'scary'
         },
         items: [],
         enemies: ['huorn']
@@ -116,7 +117,7 @@ export const rooms = {
         exits: {
             north: 'old_forest_entrance',
             south: 'withywindle',
-            northwest: 'old_forest_buckland_entrance'
+            northwest: 'old_forest_buckland_entrance', north: 'old_forest_buckland_entrance'
         },
         items: ['ancient_acorn'],
         enemies: []
@@ -164,7 +165,8 @@ export const rooms = {
             east: 'bree_east_road',
             south: 'combe',
             southwest: 'staddle',
-            northwest: 'tuckborough' // Wait, tuckborough is far away. Combe is fine.
+            northwest: 'tuckborough',
+            northeast: 'staddle'
         },
         items: ['brass_key'],
         enemies: []
@@ -186,7 +188,7 @@ export const rooms = {
             east: 'midgewater_marshes',
             northwest: 'archet',
             west: 'combe',
-            south: 'staddle'
+            south: 'staddle', north: 'combe', north: 'archet'
         },
         items: ['forest_berry'],
         enemies: ['brigand', 'wild_wolf']
@@ -198,7 +200,8 @@ export const rooms = {
         exits: {
             west: 'bree_square',
             south: 'weathertop_base',
-            east: 'last_bridge'
+            east: 'last_bridge',
+            north: 'fornost_approach', east: 'fornost_approach'
         },
         items: [],
         enemies: []
@@ -218,7 +221,7 @@ export const rooms = {
     weathertop_summit: {
         name: "Weathertop Summit",
         description: "The ruined tower atop Weathertop. Ancient stones lie scattered, and burn marks scar the ground. The view stretches for miles in all directions. You feel eyes watching you from the shadows. A fire pit shows recent use.",
-        exits: { down: 'weathertop_base', southwest: 'weathertop_approach' },
+        exits: { down: 'weathertop_base', southwest: 'weathertop_approach', down: 'weathertop_approach' },
         items: ['athelas', 'watchtower_lens', 'ancient_rune'],
         enemies: ['ringwraith'],
         puzzle: 'tower_inscription'
@@ -251,7 +254,7 @@ export const rooms = {
         description: "A stone bridge crossing the Hoarwell river. The river rushes below, and the road continues east toward Rivendell.",
         exits: {
             west: 'bree_east_road',
-            east: 'trollshaws'
+            east: 'trollshaws', west: 'weatherhills'
         },
         items: ['elven_berries'],
         enemies: []
@@ -309,7 +312,7 @@ export const rooms = {
             north: 'rivendell_library',
             south: 'rivendell_guest_house',
             east: 'rivendell_gardens',
-            southeast: 'rivendell_forge'
+            southeast: 'rivendell_forge', south: 'rivendell_forge'
         },
         items: ['mithril_mail', 'miruvor'],
         enemies: []
@@ -327,7 +330,7 @@ export const rooms = {
     rivendell_forge: {
         name: "Rivendell Forge",
         description: "An elven smithy where legendary weapons were crafted. The forge still glows with magical fire.",
-        exits: { north: 'rivendell_hall', south: 'hollin_gate' },
+        exits: { north: 'rivendell_hall', south: 'hollin_gate', northwest: 'rivendell_hall' },
         items: ['elvish_blade'],
         enemies: []
     },
@@ -376,7 +379,7 @@ export const rooms = {
     balin_tomb: {
         name: "Chamber of Mazarbul - Balin's Tomb",
         description: "A square chamber with a shaft of light falling through a crack in the ceiling. A great stone chest stands in the center - the tomb of Balin, Lord of Moria. A tattered book lies beside it.",
-        exits: { west: 'twenty_first_hall' },
+        exits: { west: 'twenty_first_hall', southwest: 'twenty_first_hall' },
         items: ['book_of_mazarbul', 'mithril_chain', 'balin_crown'],
         enemies: [],
         puzzle: 'chamber_records'
@@ -393,7 +396,7 @@ export const rooms = {
     sixth_level: {
         name: "Sixth Level - Goblin Territory",
         description: "The goblins have claimed this level. Crude fortifications block the passages. You hear guttural voices and the clatter of weapons.",
-        exits: { up: 'seventh_level', down: 'fifth_level', east: 'goblin_warren' },
+        exits: { up: 'seventh_level', down: 'fifth_level', east: 'goblin_warren', up: 'minas_tirith_houses_of_healing', west: 'goblin_warren' },
         items: [],
         enemies: ['goblin', 'goblin', 'goblin_chieftain']
     },
@@ -441,7 +444,7 @@ export const rooms = {
     second_level: {
         name: "Second Level - Abandoned Mines",
         description: "Vast mines stretch out in all directions. The dwarves delved greedily and deep here, seeking mithril. Something changed when they delved too deep...",
-        exits: { up: 'third_level', down: 'first_level', south: 'mithril mine' },
+        exits: { up: 'third_level', down: 'first_level', south: 'mithril mine', south: 'mithril_mine' },
         items: ['pickaxe'],
         enemies: ['goblin', 'orc_warrior']
     },
@@ -457,7 +460,7 @@ export const rooms = {
     first_level: {
         name: "First Level - The Lowest Deep",
         description: "The deepest level of Moria. The heat is oppressive now. Far below, you sense something ancient and terrible stirring in darkness. This is the place they should never have delved.",
-        exits: { up: 'second_level', east: 'bridge_of_khazad_dum', down: 'nameless_tunnels' },
+        exits: { up: 'second_level', east: 'bridge_of_khazad_dum', down: 'nameless_tunnels', down: 'minas_tirith_stables', south: 'endless_stair_bottom' },
         items: [],
         enemies: ['orc_warrior', 'goblin']
     },
@@ -489,7 +492,7 @@ export const rooms = {
     dimrill_dale: {
         name: "Dimrill Dale",
         description: "A hidden valley on the eastern side of the Misty Mountains. The Mirrormere lake lies still and dark, reflecting the mountain peaks. This was once the heart of the Dwarven realm.",
-        exits: { north: 'east_gate_moria', south: 'lothlorien_border' },
+        exits: { north: 'east_gate_moria', south: 'lothlorien_border', west: 'silverlode_crossing' },
         items: ['mirrormere_water'],
         enemies: []
     },
@@ -545,7 +548,7 @@ export const rooms = {
             south: 'niphredil_meadow',
             east: 'silverlode_banks',
             west: 'galadhrm_flet_1',
-            southeast: 'caras_galadhon'
+            southeast: 'caras_galadhon', south: 'caras_galadhon'
         },
         items: ['golden_leaf', 'silver_bark'],
         enemies: []
@@ -559,7 +562,7 @@ export const rooms = {
             up: 'galadriel_court',
             west: 'singing_groves',
             east: 'mallorn_sanctuary',
-            northwest: 'elven_craft_hall'
+            northwest: 'elven_craft_hall', up: 'elven_craft_hall', northwest: 'cerin_amroth'
         },
         items: ['lembas_bread', 'miruvor'],
         enemies: []
@@ -588,7 +591,7 @@ export const rooms = {
         exits: {
             west: 'cerin_amroth',
             south: 'celebrant_banks',
-            east: 'silverlode_crossing'
+            east: 'silverlode_crossing', south: 'anduin_approach'
         },
         items: ['elanor_flower', 'crystal_water'],
         enemies: []
@@ -610,7 +613,7 @@ export const rooms = {
     anduin_midstream: {
         name: "Anduin - Midstream",
         description: "You drift on the Great River. The current is strong. Wild forested hills rise on either bank, and to the east, the dark eaves of Mirkwood loom.",
-        exits: { north: 'anduin_approach', south: 'rauros_falls_approach', east: 'mirkwood_edge' },
+        exits: { north: 'anduin_approach', south: 'rauros_falls_approach', east: 'mirkwood_edge', south: 'wold_of_rohan' },
         items: [],
         enemies: []
     },
@@ -643,7 +646,7 @@ export const rooms = {
     gap_of_rohan: {
         name: "Gap of Rohan",
         description: "A wide pass between the Misty Mountains and the White Mountains. The wind sweeps across endless grasslands. This is the realm of Rohan, land of the horse-lords.",
-        exits: { north: 'rauros_falls_approach', east: 'rohan_plains', south: 'fangorn_border' },
+        exits: { north: 'rauros_falls_approach', east: 'rohan_plains', south: 'fangorn_border', south: 'isengard_gates' },
         items: [],
         enemies: ['uruk_hai', 'warg_rider']
     },
@@ -656,7 +659,7 @@ export const rooms = {
             east: 'eastfold_plains',
             south: 'snowbourn_banks',
             north: 'west_emnet',
-            northeast: 'edoras_approach'
+            northeast: 'edoras_approach', west: 'gap_of_rohan', south: 'fangorn_eaves'
         },
         items: ['wild_horse'],
         enemies: ['wild_horse_aggressive']
@@ -665,7 +668,7 @@ export const rooms = {
     edoras_approach: {
         name: "Road to Edoras",
         description: "A broad road leads up to the hill-city of Edoras. You can see the Golden Hall of Meduseld shining on the hilltop, its roof thatched with gold.",
-        exits: { west: 'rohan_plains', up: 'edoras_gates', south: 'aldburg' },
+        exits: { west: 'rohan_plains', up: 'edoras_gates', south: 'aldburg', southwest: 'rohan_plains' },
         items: [],
         enemies: []
     },
@@ -673,7 +676,7 @@ export const rooms = {
     edoras_gates: {
         name: "Gates of Edoras",
         description: "The gates of the capital of Rohan. Guards in mail stand watch. Beyond, the city climbs the hill toward the Golden Hall.",
-        exits: { down: 'edoras_approach', north: 'meduseld', south: 'snowbourn_banks' },
+        exits: { down: 'edoras_approach', north: 'meduseld', south: 'snowbourn_banks', north: 'snowbourn_banks' },
         items: [],
         enemies: []
     },
@@ -721,7 +724,7 @@ export const rooms = {
     helms_gate: {
         name: "Helm's Gate",
         description: "The entrance to Helm's Deep, a great gorge cut into the White Mountains. Massive walls block the way - the Deeping Wall. This fortress has never fallen.",
-        exits: { east: 'deep_coomb', west: 'helms_deep_interior' },
+        exits: { east: 'deep_coomb', west: 'helms_deep_interior', east: 'westfold_plains', west: 'deep_coomb' },
         items: [],
         enemies: ['uruk_hai', 'uruk_hai', 'uruk_hai']
     },
@@ -737,7 +740,7 @@ export const rooms = {
     glittering_caves: {
         name: "Glittering Caves of Aglarond",
         description: "Vast caverns filled with formations of crystal and stone. Columns of calcite rise like trees. The walls sparkle with a thousand gems. 'Such beauty!' Gimli would say.",
-        exits: { up: 'helms_deep_interior' },
+        exits: { up: 'helms_deep_interior', west: 'deeping_stream_upper' },
         items: ['cave_crystal', 'cave_pearl', 'star_gem'],
         enemies: []
     },
@@ -746,7 +749,7 @@ export const rooms = {
     fangorn_border: {
         name: "Edge of Fangorn Forest",
         description: "The ancient forest of Fangorn stretches before you. The trees are impossibly old and tall. A sense of watchfulness pervades the air. You hear creaking and groaning from deep within.",
-        exits: { north: 'gap_of_rohan', east: 'fangorn_eaves', south: 'fangorn_hidden_path' },
+        exits: { north: 'gap_of_rohan', east: 'fangorn_eaves', south: 'fangorn_hidden_path', south: 'west_emnet', southeast: 'fangorn_eaves' },
         items: [],
         enemies: []
     },
@@ -762,7 +765,7 @@ export const rooms = {
     fangorn_depths: {
         name: "Deep in Fangorn",
         description: "The heart of the ancient forest. Trees so old their names are forgotten crowd close. Time moves differently here. You hear a sound like slow, deep laughter.",
-        exits: { south: 'entmoot_circle', east: 'skinbark_grove', southwest: 'entwash_headwaters' },
+        exits: { south: 'entmoot_circle', east: 'skinbark_grove', southwest: 'entwash_headwaters', south: 'entwash_headwaters' },
         items: ['ancient_oak_heart'],
         enemies: []
     },
@@ -784,7 +787,7 @@ export const rooms = {
     entwash: {
         name: "The Entwash",
         description: "A river flowing from Fangorn Forest into the plains. The water is clear and cold. Great willow trees line the banks.",
-        exits: { north: 'wellinghall', east: 'east_emnet' },
+        exits: { north: 'wellinghall', east: 'east_emnet', north: 'entwash_headwaters' },
         items: [],
         enemies: []
     },
@@ -930,7 +933,7 @@ export const rooms = {
     morgul_pass: {
         name: "Morgul Pass",
         description: "A narrow pass through the mountains. The path is treacherous and watched. The very stones seem to whisper of evil.",
-        exits: { north: 'morgul_vale', east: 'cirith_ungol' },
+        exits: { north: 'morgul_vale', east: 'cirith_ungol', north: 'cirith_ungol' },
         items: ['morgul_blade'],
         enemies: ['orc_warrior', 'spider_guard']
     },
@@ -938,7 +941,7 @@ export const rooms = {
     cirith_ungol: {
         name: "Cirith Ungol - Tower of the Spider",
         description: "A great tower built into the mountainside. Shelob's lair lies below. The tower is dark and foreboding, its windows like empty eyes.",
-        exits: { west: 'morgul_vale', south: 'morgul_pass', down: 'shelob_lair', east: 'mordor_plains' },
+        exits: { west: 'morgul_vale', south: 'morgul_pass', down: 'shelob_lair', east: 'mordor_plains', west: 'morgul_pass' },
         items: ['tower_key'],
         enemies: ['orc_warrior', 'orc_warrior']
     },
@@ -962,7 +965,7 @@ export const rooms = {
     mordor_plains: {
         name: "Plains of Mordor",
         description: "A wasteland of ash and rock. Nothing grows here. The sky is dark with smoke. Orc patrols march in the distance. Mount Doom dominates the horizon.",
-        exits: { west: 'cirith_ungol', east: 'black_gate', south: 'gorgoroth_plateau', north: 'durthang_fortress' },
+        exits: { west: 'cirith_ungol', east: 'black_gate', south: 'gorgoroth_plateau', north: 'durthang_fortress', west: 'tunnel_exit' },
         items: [],
         enemies: ['orc_warrior', 'orc_warrior', 'warg_rider']
     },
@@ -978,7 +981,7 @@ export const rooms = {
     barad_dur_approach: {
         name: "Approach to Barad-dûr",
         description: "The Dark Tower of Sauron rises impossibly high, wreathed in shadow and flame. The Eye watches from above. The very air burns with malice.",
-        exits: { west: 'black_gate', east: 'barad_dur_base' },
+        exits: { west: 'black_gate', east: 'barad_dur_base', west: 'gorgoroth_plateau' },
         items: [],
         enemies: ['ringwraith', 'ringwraith', 'orc_warrior']
     },
@@ -986,7 +989,7 @@ export const rooms = {
     barad_dur_base: {
         name: "Base of Barad-dûr",
         description: "The foundation of the Dark Tower. The ground is cracked and black. Fires burn in pits. This is the heart of Sauron's power.",
-        exits: { west: 'barad_dur_approach', up: 'barad_dur_throne_room' },
+        exits: { west: 'barad_dur_approach', up: 'barad_dur_throne_room', up: 'barad_dur_chamber' },
         items: ['dark_ring_fragment'],
         enemies: ['ringwraith', 'orc_warrior']
     },

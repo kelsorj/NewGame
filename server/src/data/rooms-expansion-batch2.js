@@ -10,7 +10,7 @@ export const moriaRivendellExpansion = {
         exits: {
             west: 'rivendell_hall',
             east: 'waterfall_walkway',
-            north: 'hall_of_fire'
+            north: 'hall_of_fire_guest'
         },
         items: ['elanor_flower', 'silver_leaf'],
         enemies: []
@@ -218,9 +218,7 @@ export const moriaRivendellExpansion = {
     khazad_dum_chasm_view: {
         name: "Chasm Viewpoint",
         description: "A side ledge that offers a terrifying view of the bottomless chasm over which the bridge spans. The air is hot and smells of ancient fire.",
-        exits: {
-            west: 'bridge_of_khazad_dum'
-        },
+        exits: { west: 'bridge_of_khazad_dum', southwest: 'bridge_of_khazad_dum'  },
         items: ['scorched_stone'],
         enemies: []
     },

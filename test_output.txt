@@ -6,40 +6,5 @@
 
 Running 1 test using 1 worker
 
-[1A[2K[1/1] [chromium] › e2e/multiplayer.spec.js:4:9 › Multiplayer Functionality › two players can see each other and chat
-[1A[2K[chromium] › e2e/multiplayer.spec.js:4:9 › Multiplayer Functionality › two players can see each other and chat
-[PAGE A] [vite] connecting...
-
-[1A[2K[PAGE A] [vite] connected.
-
-[1A[2K[PAGE A] WebSocket connected
-
-[1A[2K[PAGE A] Client received connected message: {type: connected, message: Connected to Middle Earth Adventure Server}
-
-[1A[2K[PAGE A] Client setting activePlayers to: 1
-
-[1A[2K[PAGE A] Client setting activePlayers (via player_count_update) to: 1
-
-[1A[2K[PAGE B] [vite] connecting...
-
-[1A[2K[PAGE B] [vite] connected.
-
-[1A[2K[PAGE B] WebSocket connected
-
-[1A[2K[PAGE B] Client received connected message: {type: connected, message: Connected to Middle Earth Adventure Server}
-
-[1A[2K[PAGE A] Client setting activePlayers (via player_count_update) to: 2
-
-[1A[2K[PAGE B] Client setting activePlayers to: 2
-
-[1A[2K[PAGE B] Client setting activePlayers (via player_count_update) to: 2
-
-[1A[2K[PAGE A] Client setting activePlayers (via game_output) to: 2
-
-[1A[2K[PAGE B] Client setting activePlayers (via game_output) to: 2
-
-[1A[2K[PAGE B] Client setting activePlayers (via game_output) to: 2
-
-[1A[2K[PAGE B] Client setting activePlayers (via player_count_update) to: 1
-
-[1A[2K  1 passed (1.9s)
+[1A[2K[1/1] [chromium] › e2e/worldmap.spec.js:4:9 › World Map Visualization › should show visited rooms in a grid and highlight current position
+[1A[2K  1 passed (2.7s)

@@ -28,9 +28,7 @@ export const gondorMordorExpansion = {
     minas_tirith_stables: {
         name: "Stables of Minas Tirith",
         description: "The great stables on the first level of the city. Strong horses of Gondor are kept here, ready for the messengers of the King.",
-        exits: {
-            up: 'first_level'
-        },
+        exits: { up: 'first_level', south: 'first_level'  },
         items: ['horse_brush'],
         enemies: []
     },
@@ -38,9 +36,7 @@ export const gondorMordorExpansion = {
     minas_tirith_houses_of_healing: {
         name: "Houses of Healing",
         description: "A place of quiet and rest on the sixth level of the city. The scent of athelas is strong here. Many wounded from the war are cared for by the healers.",
-        exits: {
-            down: 'sixth_level'
-        },
+        exits: { down: 'sixth_level', south: 'sixth_level'  },
         items: ['athelas_leaf', 'bandage'],
         enemies: []
     },
@@ -68,9 +64,7 @@ export const gondorMordorExpansion = {
     lossarnach_valleys: {
         name: "Valleys of Lossarnach",
         description: "The 'flower-valley' of Gondor. It is a rich land of orchards and gardens, providing food for the capital.",
-        exits: {
-            west: 'pelennor_fields'
-        },
+        exits: { west: 'pelennor_fields', southwest: 'pelennor_fields'  },
         items: ['apple', 'pear'],
         enemies: []
     },
@@ -80,10 +74,8 @@ export const gondorMordorExpansion = {
     minas_morgul_gates: {
         name: "Gates of Minas Morgul",
         description: "The terrifying entrance to the city of the Nazgûl. The bridge is flanked by huge, carven figures with white, empty eyes. A sickly green light glows from the walls.",
-        exits: {
-            west: 'morgul_vale',
-            east: 'minas_morgul_interior'
-        },
+        exits: { west: 'morgul_vale',
+            east: 'minas_morgul_interior', southwest: 'morgul_vale'  },
         items: ['cursed_coin'],
         enemies: ['morgul_orc']
     },

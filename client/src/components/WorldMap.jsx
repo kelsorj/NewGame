@@ -1,314 +1,261 @@
-// WorldMap Component - Shows a text-based map of visited areas
-import { useMemo } from 'react';
+// WorldMap Component - Shows a 2D grid-based map with auto-scrolling
+import { useMemo, useRef, useEffect } from 'react';
 
-// Room coordinates for map display (simplified 2D representation)
+// Room coordinates for map display - verified against actual room connections
+// Coordinates follow N/S/E/W grid: North = +Y, South = -Y, East = +X, West = -X
 const roomCoordinates = {
-    // The Shire
-    bag_end: { x: 5, y: 5, name: 'Bag End' },
-    hobbiton_square: { x: 5, y: 4, name: 'Hobbiton' },
-    green_dragon: { x: 6, y: 4, name: 'Green Dragon' },
-    bywater: { x: 4, y: 4, name: 'Bywater' },
-    woody_end: { x: 4, y: 3, name: 'Woody End' },
-    brandywine_bridge: { x: 5, y: 3, name: 'Brandywine' },
-    stock_road: { x: 4, y: 2, name: 'Stock Road' },
-    marish: { x: 3, y: 2, name: 'Marish' },
-    old_forest_entrance: { x: 5, y: 2, name: 'Old Forest' },
-    old_forest_depth: { x: 5, y: 1, name: 'Deep Forest' },
-    withywindle: { x: 6, y: 1, name: 'Withywindle' },
-    bombadil_house: { x: 7, y: 1, name: 'Bombadil' },
-
-    // Shire Expansion
-    tuckborough: { x: 4, y: 5, name: 'Tuckborough' },
-    tookbank: { x: 3, y: 5, name: 'Tookbank' },
-    michel_delving: { x: 3, y: 6, name: 'Michel Delving' },
-    mayor_office: { x: 3, y: 7, name: 'Mayor Office' },
-    waymeet: { x: 3, y: 4, name: 'Waymeet' },
-    overhill: { x: 3, y: 3, name: 'Overhill' },
-    scary: { x: 4, y: 1, name: 'Scary' },
-    needlehole: { x: 2, y: 3, name: 'Needlehole' },
-    longbottom: { x: 2, y: 4, name: 'Longbottom' },
-    sackville_manor: { x: 1, y: 4, name: 'Sackville' },
-    whitwell: { x: 3, y: 5, name: 'Whitwell' },
-    rushock_bog: { x: 2, y: 5, name: 'Rushock Bog' },
-    green_hill_country: { x: 4, y: 6, name: 'Green Hills' },
-    bucklebury: { x: 6, y: 2, name: 'Bucklebury' },
-    brandy_hall: { x: 7, y: 2, name: 'Brandy Hall' },
-    buckland_kitchen: { x: 8, y: 2, name: 'Kitchen' },
-    buckland_cellar: { x: 7, y: 1, name: 'Cellar' },
-    crickhollow: { x: 6, y: 1, name: 'Crickhollow' },
-    old_forest_buckland_entrance: { x: 6, y: 0, name: 'Buckland Gate' },
-    bombadil_garden: { x: 8, y: 1, name: 'Tom Garden' },
-    old_forest_exit: { x: 8, y: 0, name: 'Forest Exit' },
-    barrow_downs_approach: { x: 9, y: 0, name: 'Barrow Approach' },
-    barrow_downs: { x: 10, y: 0, name: 'Barrow-downs' },
-    barrow_chamber_1: { x: 11, y: 0, name: 'Barrow 1' },
-    barrow_chamber_2: { x: 10, y: 1, name: 'Barrow 2' },
-    barrow_chamber_3: { x: 10, y: -1, name: 'Barrow 3' },
-    weathertop_approach: { x: 9, y: 1, name: 'Hill Path' },
-
-    // Bree
-    bree_gate: { x: 6, y: 3, name: 'Bree Gate' },
-    bree_square: { x: 7, y: 3, name: 'Bree' },
-    prancing_pony: { x: 7, y: 4, name: 'Prancing Pony' },
-    bree_east_road: { x: 8, y: 3, name: 'East Road' },
-    weathertop_base: { x: 8, y: 2, name: 'Weathertop' },
-    weathertop_summit: { x: 8, y: 1, name: 'Summit' },
-    midgewater_marshes: { x: 9, y: 3, name: 'Midgewater' },
-    last_bridge: { x: 9, y: 2, name: 'Last Bridge' },
-    troll_cave: { x: 9, y: 1, name: 'Troll Cave' },
-    ford_of_bruinen: { x: 10, y: 2, name: 'Ford' },
-
-    // Eriador Expansion
-    combe: { x: 7, y: 2, name: 'Combe' },
-    archet: { x: 6, y: 2, name: 'Archet' },
-    staddle: { x: 7, y: 4, name: 'Staddle' },
-    fornost_approach: { x: 9, y: 4, name: 'Fornost Way' },
-    fornost_gates: { x: 10, y: 4, name: 'Fornost Gate' },
-    fornost_ruins: { x: 11, y: 4, name: 'Fornost Ruins' },
-    fornost_temple: { x: 12, y: 4, name: 'Fornost Temple' },
-    fornost_palace: { x: 11, y: 5, name: 'Fornost Palace' },
-    fornost_keep: { x: 10, y: 5, name: 'Fornost Keep' },
-    annuminas_approach: { x: 12, y: 5, name: 'Annúminas Way' },
-    annuminas_ruins: { x: 13, y: 5, name: 'Annúminas Ruins' },
-    annuminas_tower: { x: 14, y: 5, name: 'Annúminas Tower' },
-    lake_evendim: { x: 13, y: 4, name: 'Lake Evendim' },
-
-    // Rivendell
-    rivendell_gates: { x: 11, y: 2, name: 'Rivendell' },
-    rivendell_hall: { x: 12, y: 2, name: 'Hall' },
-    rivendell_library: { x: 12, y: 3, name: 'Library' },
-    rivendell_forge: { x: 12, y: 1, name: 'Forge' },
-    rivendell_gardens: { x: 13, y: 2, name: 'Gardens' },
-    hall_of_fire_guest: { x: 13, y: 3, name: 'Hall of Fire' },
-    elrond_study: { x: 13, y: 4, name: 'Study' },
-    waterfall_walkway: { x: 14, y: 2, name: 'Waterfall' },
-    hidden_flet: { x: 15, y: 2, name: 'Flet' },
-    rivendell_guest_house: { x: 12, y: 1, name: 'Guest House' },
-    hollin_gate: { x: 12, y: 0, name: 'Hollin' },
-
-    // Moria
-    doors_of_durin: { x: 12, y: -1, name: 'Doors' },
-    moria_entrance: { x: 13, y: -1, name: 'Moria' },
-    twenty_first_hall: { x: 14, y: -1, name: '21st Hall' },
-    balin_tomb: { x: 14, y: 0, name: 'Balin Tomb' },
-    durin_throne_hall: { x: 15, y: -1, name: 'Throne' },
-    hall_of_kings: { x: 15, y: 0, name: 'Kings Hall' },
-    royal_tombs: { x: 15, y: 1, name: 'Tombs' },
-    royal_armory: { x: 16, y: -1, name: 'Armory' },
-    smelting_chambers: { x: 15, y: -2, name: 'Smelting' },
-    deep_mines_hub: { x: 15, y: -3, name: 'Mine Hub' },
-    mithril_depths_1: { x: 16, y: -3, name: 'Mithril 1' },
-    mithril_depths_2: { x: 17, y: -3, name: 'Mithril 2' },
-    iron_mines_1: { x: 14, y: -3, name: 'Iron 1' },
-    iron_mines_2: { x: 13, y: -3, name: 'Iron 2' },
-    the_unending_stair_middle: { x: 15, y: -4, name: 'The Stair' },
-    goblin_ward: { x: 13, y: 0, name: 'Goblin Ward' },
-    goblin_watchtower: { x: 14, y: 1, name: 'Watchtower' },
-    khazad_dum_chasm_view: { x: 16, y: 0, name: 'Chasm View' },
-    bridge_of_khazad_dum: { x: 17, y: -1, name: 'Bridge' },
-    east_gate_moria: { x: 18, y: -1, name: 'East Gate' },
-    nameless_tunnels: { x: 17, y: -2, name: 'Tunnels' },
-    the_dark_lake: { x: 18, y: -2, name: 'Dark Lake' },
-
-    // Lothlórien
-    dimrill_dale: { x: 17, y: 0, name: 'Dimrill' },
-    lothlorien_border: { x: 18, y: 0, name: 'Lothlórien' },
-    galadhrm_flet_1: { x: 17, y: 2, name: 'Flet 1' },
-    cerin_amroth: { x: 18, y: 2, name: 'Cerin Amroth' },
-    niphredil_meadow: { x: 17, y: 1, name: 'Meadow' },
-    singing_groves: { x: 16, y: 3, name: 'Singing Groves' },
-    caras_galadhon: { x: 18, y: 3, name: 'Caras Galadhon' },
-    galadriel_court: { x: 18, y: 4, name: 'Galadriel Court' },
-    elven_craft_hall: { x: 17, y: 4, name: 'Craft Hall' },
-    mallorn_sanctuary: { x: 19, y: 3, name: 'Sanctuary' },
-    silverlode_banks: { x: 19, y: 2, name: 'Silverlode' },
-    silverlode_crossing: { x: 20, y: 2, name: 'Crossing' },
-    celebrant_banks: { x: 19, y: 1, name: 'Celebrant' },
-    anduin_confluence: { x: 18, y: 1, name: 'Confluence' },
-    anduin_approach: { x: 19, y: 1, name: 'Anduin' },
-    anduin_midstream: { x: 20, y: 1, name: 'River' },
-    parth_galen: { x: 21, y: 1, name: 'Parth Galen' },
-    rauros_falls_approach: { x: 20, y: 0, name: 'Falls' },
-
-    // Fangorn
-    fangorn_border: { x: 19, y: -3, name: 'Fangorn Border' },
-    fangorn_hidden_path: { x: 19, y: -4, name: 'Hidden Path' },
-    fangorn_eaves: { x: 20, y: -4, name: 'Eaves' },
-    leaflock_meadow: { x: 21, y: -4, name: 'Leaflock Meadow' },
-    the_silent_glade: { x: 18, y: -5, name: 'Silent Glade' },
-    wellinghall: { x: 20, y: -5, name: 'Wellinghall' },
-    treebeard_cellar: { x: 20, y: -6, name: 'Treebeard Cellar' },
-    entmoot_circle: { x: 21, y: -5, name: 'Entmoot' },
-    fangorn_depths: { x: 21, y: -6, name: 'Fangorn Depths' },
-    skinbark_grove: { x: 22, y: -6, name: 'Skinbark Grove' },
-    entwash_headwaters: { x: 21, y: -7, name: 'Entwash Source' },
-    entwash: { x: 22, y: -7, name: 'Entwash' },
-
-    // Rohan
-    gap_of_rohan: { x: 17, y: -1, name: 'Gap' },
-    westfold_plains: { x: 18, y: -1, name: 'Westfold' },
-    rohan_plains: { x: 19, y: -1, name: 'Plains' },
-    eastfold_plains: { x: 20, y: -1, name: 'Eastfold' },
-    entwash_delta: { x: 21, y: -1, name: 'Entwash Delta' },
-    west_emnet: { x: 19, y: -2, name: 'West Emnet' },
-    wold_of_rohan: { x: 20, y: -2, name: 'The Wold' },
-    snowbourn_banks: { x: 20, y: 1, name: 'Snowbourn' },
-    edoras_approach: { x: 21, y: 1, name: 'Edoras Road' },
-    aldburg: { x: 21, y: 0, name: 'Aldburg' },
-    edoras_gates: { x: 21, y: 2, name: 'Gates' },
-    meduseld: { x: 21, y: 3, name: 'Meduseld' },
-    harrowdale: { x: 20, y: 3, name: 'Harrowdale' },
-    starkhorn_foothills: { x: 19, y: 3, name: 'Starkhorn' },
-    dimholt_road: { x: 19, y: 4, name: 'Dimholt' },
-    dunharrow: { x: 19, y: 5, name: 'Dunharrow' },
-    dunharrow_firtree_grove: { x: 20, y: 5, name: 'Fir Grove' },
-    hidden_valley_white_mountains: { x: 18, y: 5, name: 'Hidden Valley' },
-    paths_of_dead: { x: 18, y: 6, name: 'Paths' },
-    dead_city: { x: 17, y: 6, name: 'Dead City' },
-    deep_coomb: { x: 18, y: -2, name: 'Deep Coomb' },
-    helms_gate: { x: 17, y: -2, name: 'Helm Gate' },
-    helms_deep_interior: { x: 16, y: -2, name: 'Helm Deep' },
-    hornburg_armory: { x: 16, y: -1, name: 'Armory' },
-    deeping_stream_upper: { x: 15, y: -2, name: 'Stream' },
-    glittering_caves: { x: 15, y: -3, name: 'Glittering Caves' },
-    isengard_gates: { x: 16, y: -3, name: 'Isengard' },
-    orthanc_base: { x: 17, y: -3, name: 'Orthanc' },
-
-    // Gondor
-    osgiliath_ruins: { x: 22, y: 0, name: 'Osgiliath' },
-    pelennor_fields: { x: 21, y: 0, name: 'Pelennor' },
-    minas_tirith_gates: { x: 20, y: 0, name: 'Minas Tirith' },
-    first_level: { x: 20, y: 1, name: '1st Level' },
-    second_level: { x: 20, y: 2, name: '2nd Level' },
-    third_level: { x: 20, y: 3, name: '3rd Level' },
-    fourth_level: { x: 20, y: 4, name: '4th Level' },
-    fifth_level: { x: 20, y: 5, name: '5th Level' },
-    sixth_level: { x: 20, y: 6, name: '6th Level' },
-    white_tower: { x: 20, y: 7, name: 'Tower' },
-    minas_tirith_stables: { x: 19, y: 1, name: 'Stables' },
-    minas_tirith_houses_of_healing: { x: 21, y: 6, name: 'Healing' },
-    citadel_guards_hall: { x: 21, y: 7, name: 'Citadel Hall' },
-    ithilien_woods: { x: 22, y: -1, name: 'Ithilien' },
-    henneth_annun: { x: 22, y: -2, name: 'Henneth Annûn' },
-    pelargir_port: { x: 21, y: -1, name: 'Pelargir' },
-    lossarnach_valleys: { x: 22, y: 1, name: 'Lossarnach' },
-
-    // Mordor
-    morgul_vale: { x: 23, y: 0, name: 'Morgul' },
-    morgul_pass: { x: 23, y: -1, name: 'Pass' },
-    minas_morgul_gates: { x: 24, y: 0, name: 'Morgul Gate' },
-    minas_morgul_interior: { x: 25, y: 0, name: 'Morgul City' },
-    cirith_ungol: { x: 24, y: -1, name: 'Cirith Ungol' },
-    shelob_lair: { x: 24, y: -2, name: 'Shelob' },
-    tunnel_exit: { x: 25, y: -1, name: 'Tunnel Exit' },
-    mordor_plains: { x: 26, y: -1, name: 'Mordor' },
-    durthang_fortress: { x: 26, y: 0, name: 'Durthang' },
-    gorgoroth_plateau: { x: 27, y: -1, name: 'Gorgoroth' },
-    black_gate: { x: 27, y: 0, name: 'Black Gate' },
-    barad_dur_approach: { x: 28, y: -1, name: 'Barad-dûr' },
-    barad_dur_base: { x: 29, y: -1, name: 'Tower Base' },
-    barad_dur_throne_room: { x: 29, y: 0, name: 'Throne Room' },
-    mount_doom_approach: { x: 28, y: -2, name: 'Doom Path' },
-    mount_doom_sammath_naur: { x: 29, y: -3, name: 'Sammath Naur' },
-
-    // Grey Havens
-    grey_havens_docks: { x: 1, y: 7, name: 'Grey Havens' },
-    havens_approach: { x: 2, y: 7, name: 'Havens Road' },
-
-    // Mirkwood
-    mirkwood_edge: { x: 21, y: -2, name: 'Mirkwood Edge' },
-    mirkwood_path_1: { x: 22, y: -2, name: 'Mirkwood Path' },
-    mirkwood_path_2: { x: 23, y: -2, name: 'Enchanted Stream' },
-    mirkwood_depths: { x: 24, y: -2, name: 'Spider Warrens' },
-    rhosgobel: { x: 24, y: -3, name: 'Rhosgobel' },
-    elf_path_entrance: { x: 22, y: -3, name: 'Elf-path' },
-    thranduil_halls_gate: { x: 22, y: -4, name: 'Elven-king Gate' },
-    thranduil_halls_interior: { x: 22, y: -5, name: 'Thranduil Halls' },
-    long_lake_path: { x: 23, y: -5, name: 'Lake Path' },
-    lake_town_docks: { x: 24, y: -5, name: 'Lake-town' },
-
-    // Erebor
-    lonely_mountain_approach: { x: 24, y: -6, name: 'Erebor Path' },
-    erebor_gates: { x: 24, y: -7, name: 'Erebor Gates' },
-    erebor_great_hall: { x: 24, y: -8, name: 'Great Hall' },
-    erebor_treasury: { x: 25, y: -8, name: 'Treasury' },
-    erebor_armory: { x: 23, y: -8, name: 'Armory' }
+    bag_end: { x: 50, y: 50, name: 'Bag End' },
+    hobbiton_square: { x: 50, y: 49, name: 'Hobbiton Square' },
+    green_dragon: { x: 51, y: 49, name: 'The Green Dragon Inn' },
+    brandywine_bridge: { x: 50, y: 48, name: 'Brandywine Bridge' },
+    bywater: { x: 49, y: 49, name: 'Bywater' },
+    tuckborough: { x: 49, y: 50, name: 'Tuckborough' },
+    michel_delving: { x: 49, y: 48, name: 'Michel Delving' },
+    bree_gate: { x: 51, y: 48, name: 'Bree Gate' },
+    old_forest_entrance: { x: 50, y: 47, name: 'Old Forest Entrance' },
+    bucklebury: { x: 51, y: 47, name: 'Bucklebury' },
+    woody_end: { x: 49, y: 48, name: 'Woody End' },
+    tookbank: { x: 49, y: 51, name: 'Tookbank' },
+    green_hill_country: { x: 49, y: 49, name: 'Green Hill Country' },
+    whitwell: { x: 48, y: 50, name: 'Whitwell' },
+    bree_square: { x: 52, y: 48, name: 'Bree Square' },
+    mayor_office: { x: 49, y: 48, name: "Mayor's Office" },
+    waymeet: { x: 48, y: 47, name: 'Waymeet' },
+    havens_approach: { x: 47, y: 49, name: 'Approach to Mithlond' },
+    chetwood: { x: 51, y: 47, name: 'Chetwood Forest' },
+    scary: { x: 50, y: 48, name: 'Scary' },
+    old_forest_depth: { x: 50, y: 46, name: 'Deep in the Old Forest' },
+    rushock_bog: { x: 51, y: 48, name: 'Rushock Bog' },
+    brandy_hall: { x: 52, y: 47, name: 'Brandy Hall' },
+    crickhollow: { x: 51, y: 46, name: 'Crickhollow' },
+    stock_road: { x: 49, y: 47, name: 'Stock Road' },
+    prancing_pony: { x: 52, y: 48, name: 'The Prancing Pony' },
+    bree_east_road: { x: 53, y: 48, name: 'East Road from Bree' },
+    combe: { x: 52, y: 47, name: 'Combe' },
+    staddle: { x: 51, y: 47, name: 'Staddle' },
+    overhill: { x: 49, y: 46, name: 'Overhill' },
+    longbottom: { x: 48, y: 47, name: 'Longbottom' },
+    grey_havens_docks: { x: 47, y: 49, name: 'Docks of Mithlond' },
+    archet: { x: 51, y: 46, name: 'Archet' },
+    midgewater_marshes: { x: 54, y: 47, name: 'Midgewater Marshes' },
+    old_forest_buckland_entrance: { x: 52, y: 46, name: 'Old Forest - Buckland Entrance' },
+    withywindle: { x: 50, y: 45, name: 'The Withywindle' },
+    needlehole: { x: 52, y: 48, name: 'Needlehole' },
+    buckland_kitchen: { x: 53, y: 47, name: 'Buckland Kitchen' },
+    buckland_cellar: { x: 52, y: 46, name: 'Buckland Cellar' },
+    marish: { x: 50, y: 47, name: 'The Marish' },
+    weathertop_base: { x: 54, y: 47, name: 'Base of Weathertop' },
+    fornost_approach: { x: 55, y: 48, name: 'Approach to Fornost' },
+    sackville_manor: { x: 48, y: 46, name: 'Sackville Manor' },
+    weatherhills: { x: 55, y: 47, name: 'The Weather Hills' },
+    bombadil_house: { x: 51, y: 45, name: "Tom Bombadil's House" },
+    weathertop_summit: { x: 54, y: 46, name: 'Weathertop Summit' },
+    fornost_gates: { x: 56, y: 48, name: 'Fornost Gates' },
+    last_bridge: { x: 57, y: 47, name: 'The Last Bridge' },
+    old_forest_exit: { x: 52, y: 45, name: 'Old Forest - Eastern Exit' },
+    bombadil_garden: { x: 52, y: 45, name: "Tom's Garden" },
+    weathertop_approach: { x: 53, y: 46, name: 'Approach to Weathertop' },
+    fornost_ruins: { x: 57, y: 48, name: 'Fornost Ruins' },
+    fornost_keep: { x: 56, y: 49, name: 'Fornost Keep' },
+    trollshaws: { x: 58, y: 47, name: 'The Trollshaws' },
+    barrow_downs_approach: { x: 54, y: 45, name: 'Approach to the Barrow-downs' },
+    annuminas_approach: { x: 58, y: 48, name: 'Approach to Annúminas' },
+    fornost_palace: { x: 57, y: 49, name: 'Fornost Palace' },
+    ford_of_bruinen: { x: 59, y: 47, name: 'Ford of Bruinen' },
+    troll_cave: { x: 58, y: 48, name: 'Troll Cave' },
+    barrow_downs: { x: 55, y: 45, name: 'The Barrow-downs' },
+    annuminas_ruins: { x: 59, y: 48, name: 'Annúminas Ruins' },
+    rivendell_gates: { x: 60, y: 47, name: 'Gates of Rivendell' },
+    barrow_chamber_1: { x: 56, y: 45, name: 'Barrow Chamber - First Mound' },
+    barrow_chamber_2: { x: 55, y: 46, name: 'Barrow Chamber - Second Mound' },
+    barrow_chamber_3: { x: 55, y: 44, name: 'Barrow Chamber - Third Mound' },
+    annuminas_tower: { x: 60, y: 48, name: 'Annúminas Tower' },
+    lake_evendim: { x: 59, y: 48, name: 'Lake Evendim' },
+    rivendell_hall: { x: 61, y: 47, name: 'Hall of Fire - Rivendell' },
+    rivendell_library: { x: 61, y: 48, name: 'Library of Rivendell' },
+    rivendell_forge: { x: 61, y: 46, name: 'Rivendell Forge' },
+    rivendell_gardens: { x: 62, y: 47, name: 'Gardens of Rivendell' },
+    hollin_gate: { x: 61, y: 45, name: 'Hollin Gate' },
+    waterfall_walkway: { x: 63, y: 47, name: 'Waterfall Walkway' },
+    hall_of_fire_guest: { x: 62, y: 48, name: 'The Hall of Fire' },
+    doors_of_durin: { x: 61, y: 44, name: 'Doors of Durin - West Gate of Moria' },
+    hidden_flet: { x: 64, y: 47, name: 'Hidden Flet' },
+    elrond_study: { x: 62, y: 49, name: "Elrond's Private Study" },
+    moria_entrance: { x: 62, y: 44, name: 'First Hall of Moria' },
+    twenty_first_hall: { x: 63, y: 44, name: 'Twenty-First Hall' },
+    mines_level1: { x: 62, y: 43, name: 'Upper Mines' },
+    seventh_level: { x: 63, y: 45, name: 'Seventh Level' },
+    durin_throne_hall: { x: 64, y: 44, name: 'Great Hall of Durin' },
+    mines_level2: { x: 63, y: 43, name: 'Deep Mines' },
+    balin_tomb: { x: 64, y: 45, name: "Chamber of Mazarbul - Balin's Tomb" },
+    endless_stair_top: { x: 64, y: 45, name: 'Top of the Endless Stair' },
+    goblin_watchtower: { x: 63, y: 46, name: 'Goblin Watchtower' },
+    sixth_level: { x: 63, y: 44, name: 'Sixth Level' },
+    royal_armory: { x: 65, y: 44, name: 'Royal Armory' },
+    hall_of_kings: { x: 64, y: 45, name: 'Hall of Kings' },
+    smelting_chambers: { x: 64, y: 43, name: 'Smelting Chambers' },
+    the_unending_stair_middle: { x: 64, y: 44, name: 'The Unending Stair - Middle Section' },
+    goblin_ward: { x: 64, y: 46, name: 'The Goblin Ward' },
+    minas_tirith_houses_of_healing: { x: 65, y: 45, name: 'Houses of Healing' },
+    fifth_level: { x: 63, y: 43, name: 'Fifth Level' },
+    white_tower: { x: 65, y: 45, name: 'White Tower of Ecthelion' },
+    royal_tombs: { x: 64, y: 46, name: 'Royal Tombs of Khazad-dûm' },
+    deep_mines_hub: { x: 64, y: 42, name: 'Deep Mines Hub' },
+    endless_stair_bottom: { x: 64, y: 43, name: 'Bottom of the Endless Stair' },
+    goblin_warren: { x: 65, y: 46, name: 'Goblin Warren' },
+    fourth_level: { x: 63, y: 42, name: 'Fourth Level' },
+    citadel_guards_hall: { x: 64, y: 45, name: 'Citadel Guards Hall' },
+    mithril_depths_1: { x: 65, y: 42, name: 'Mithril Depths - Upper Vein' },
+    iron_mines_1: { x: 63, y: 42, name: 'Iron Mines - Level 1' },
+    first_level: { x: 64, y: 44, name: 'First Level' },
+    third_level: { x: 63, y: 41, name: 'Third Level' },
+    mithril_depths_2: { x: 66, y: 42, name: 'Mithril Depths - The Mother Lode' },
+    iron_mines_2: { x: 62, y: 42, name: 'Iron Mines - The Pit' },
+    minas_tirith_stables: { x: 64, y: 45, name: 'Stables of Minas Tirith' },
+    minas_tirith_gates: { x: 70, y: 43, name: 'Gates of Minas Tirith' },
+    second_level: { x: 64, y: 45, name: 'Second Level' },
+    pelennor_fields: { x: 71, y: 43, name: 'Pelennor Fields' },
+    osgiliath_ruins: { x: 72, y: 43, name: 'Ruins of Osgiliath' },
+    rath_dinen: { x: 71, y: 44, name: 'Rath Dínen - Street of the Dead' },
+    pelargir_port: { x: 71, y: 42, name: 'Port of Pelargir' },
+    lossarnach_valleys: { x: 72, y: 44, name: 'Valleys of Lossarnach' },
+    morgul_vale: { x: 73, y: 43, name: 'Morgul Vale' },
+    ithilien_woods: { x: 72, y: 42, name: 'Woods of Ithilien' },
+    house_of_stewards: { x: 72, y: 44, name: 'House of the Stewards' },
+    cirith_ungol: { x: 74, y: 43, name: 'Cirith Ungol - Tower of the Spider' },
+    morgul_pass: { x: 73, y: 42, name: 'Morgul Pass' },
+    minas_morgul_gates: { x: 74, y: 44, name: 'Gates of Minas Morgul' },
+    henneth_annun: { x: 72, y: 41, name: 'Henneth Annûn - Window on the West' },
+    mordor_plains: { x: 75, y: 43, name: 'Plains of Mordor' },
+    shelob_lair: { x: 74, y: 42, name: "Shelob's Lair" },
+    minas_morgul_interior: { x: 75, y: 44, name: 'Interior of Minas Morgul' },
+    tunnel_exit: { x: 74, y: 43, name: 'Tunnel Exit' },
+    black_gate: { x: 76, y: 43, name: 'The Black Gate of Mordor' },
+    gorgoroth_plateau: { x: 75, y: 42, name: 'Plateau of Gorgoroth' },
+    durthang_fortress: { x: 75, y: 44, name: 'Durthang Fortress' },
+    barad_dur_approach: { x: 77, y: 43, name: 'Approach to Barad-dûr' },
+    mount_doom_approach: { x: 75, y: 41, name: 'Approach to Mount Doom' },
+    barad_dur_base: { x: 78, y: 43, name: 'Base of Barad-dûr' },
+    mount_doom_summit: { x: 75, y: 40, name: 'Summit of Mount Doom' },
+    barad_dur_chamber: { x: 78, y: 44, name: 'Chamber of the Dark Lord' },
+    mount_doom_sammath_naur: { x: 75, y: 39, name: 'Sammath Naur - Chambers of Fire' },
 };
 
 export const WorldMap = ({ playerState }) => {
-    const mapDisplay = useMemo(() => {
-        if (!playerState || !playerState.recentRooms || playerState.recentRooms.length === 0) {
-            return '🗺️  Map will appear as you explore...';
-        }
+    const mapContainerRef = useRef(null);
+    const currentRoomRef = useRef(null);
 
-        // Get coordinates for recent rooms (last 3-4)
-        const recentRooms = playerState.recentRooms.slice(-4);
-        const roomCoords = recentRooms
+    const visitedCoords = useMemo(() => {
+        if (!playerState || !playerState.visitedRooms) return [];
+
+        return playerState.visitedRooms
             .map(roomId => {
                 const coord = roomCoordinates[roomId];
                 return coord ? { ...coord, id: roomId } : null;
             })
             .filter(Boolean);
+    }, [playerState?.visitedRooms]);
 
-        if (roomCoords.length === 0) {
-            return '🗺️  Map will appear as you explore...';
-        }
+    const gridLayout = useMemo(() => {
+        if (visitedCoords.length === 0) return null;
 
-        // Find bounds
-        const xs = roomCoords.map(r => r.x);
-        const ys = roomCoords.map(r => r.y);
+        const xs = visitedCoords.map(r => r.x);
+        const ys = visitedCoords.map(r => r.y);
         const minX = Math.min(...xs);
         const maxX = Math.max(...xs);
         const minY = Math.min(...ys);
         const maxY = Math.max(...ys);
 
-        // Add some padding
-        const width = maxX - minX + 3;
-        const height = maxY - minY + 3;
-        const offsetX = minX - 1;
-        const offsetY = minY - 1;
+        // Calculate grid dimensions
+        const width = maxX - minX + 1;
+        const height = maxY - minY + 1;
 
-        // Create grid
-        const grid = Array(height).fill(null).map(() => Array(width).fill(' '));
+        return {
+            minX,
+            minY,
+            width,
+            height,
+            rooms: visitedCoords
+        };
+    }, [visitedCoords]);
 
-        // Mark visited rooms
-        roomCoords.forEach(room => {
-            const x = room.x - offsetX;
-            const y = room.y - offsetY;
-            if (x >= 0 && x < width && y >= 0 && y < height) {
-                // Use first letter of room name or a symbol
-                const symbol = room.id === playerState.currentRoom ? '📍' : '·';
-                grid[y][x] = symbol;
-            }
-        });
-
-        // Create text representation
-        let mapText = '🗺️  Recent Journey:\n';
-        mapText += '━━━━━━━━━━━━━━━━━━\n';
-
-        // Show room names
-        roomCoords.forEach((room, index) => {
-            const isCurrent = room.id === playerState.currentRoom;
-            const marker = isCurrent ? '📍' : '·';
-            mapText += `${marker} ${room.name}`;
-            if (isCurrent) mapText += ' (You are here)';
-            mapText += '\n';
-        });
-
-        // Simple path visualization
-        if (roomCoords.length > 1) {
-            mapText += '\nPath: ';
-            mapText += roomCoords.map(r => r.name).join(' → ');
+    // Auto-scroll to keep current room in view
+    useEffect(() => {
+        if (!playerState?.currentRoom || !gridLayout || !currentRoomRef.current || !mapContainerRef.current) {
+            return;
         }
 
-        return mapText;
-    }, [playerState]);
+        const currentRoom = gridLayout.rooms.find(r => r.id === playerState.currentRoom);
+        if (!currentRoom) return;
+
+        // Scroll the current room into view with smooth behavior
+        currentRoomRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center'
+        });
+    }, [playerState?.currentRoom, gridLayout]);
+
+    if (!gridLayout) {
+        return (
+            <div className="world-map">
+                <div className="map-header">🗺️  World Map</div>
+                <div className="map-content empty">Explore to reveal the map...</div>
+            </div>
+        );
+    }
+
+    const currentRoom = gridLayout.rooms.find(r => r.id === playerState?.currentRoom);
 
     return (
         <div className="world-map">
             <div className="map-header">🗺️  World Map</div>
-            <pre className="map-content">{mapDisplay}</pre>
+            {currentRoom && (
+                <div className="map-location-info">
+                    📍 {currentRoom.name} ({currentRoom.x}, {currentRoom.y})
+                </div>
+            )}
+            <div className="map-container" ref={mapContainerRef}>
+                <div
+                    className="map-grid"
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: `repeat(${gridLayout.width}, 40px)`,
+                        gridTemplateRows: `repeat(${gridLayout.height}, 40px)`,
+                        gap: '4px',
+                        padding: '20px',
+                        position: 'relative',
+                        minWidth: 'fit-content'
+                    }}
+                >
+                    {/* Render grid slots */}
+                    {Array.from({ length: gridLayout.height }).map((_, row) => (
+                        Array.from({ length: gridLayout.width }).map((_, col) => {
+                            const currentX = gridLayout.minX + col;
+                            const currentY = gridLayout.minY + (gridLayout.height - 1 - row); // Invert Y for N/S display
+
+                            const room = gridLayout.rooms.find(r => r.x === currentX && r.y === currentY);
+                            const isCurrent = room?.id === playerState?.currentRoom;
+
+                            return (
+                                <div
+                                    key={`${currentX}-${currentY}`}
+                                    ref={isCurrent ? currentRoomRef : null}
+                                    className={`map-slot ${room ? 'has-room' : 'empty'} ${isCurrent ? 'is-current' : ''}`}
+                                    title={room ? room.name : `(${currentX}, ${currentY})`}
+                                >
+                                    {isCurrent && <span className="player-marker">📍</span>}
+                                    {!isCurrent && room && <span className="room-marker">·</span>}
+                                </div>
+                            );
+                        })
+                    ))}
+                </div>
+            </div>
+            <div className="map-footer">
+                Showing {visitedCoords.length} discovered locations
+                {currentRoom && ` • Current: ${currentRoom.name}`}
+            </div>
         </div>
     );
 };
-

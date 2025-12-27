@@ -8,12 +8,10 @@ export const shireExpansion = {
     tuckborough: {
         name: "Tuckborough",
         description: "The ancestral home of the Took family. The Great Smials tunnel deep into the hillside. Hobbits bustle about, and you can hear music and laughter from the many hobbit-holes.",
-        exits: {
-            north: 'tookbank',
-            east: 'hobbiton_square',
+        exits: { north: 'tookbank',
+            southeast: 'hobbiton_square',
             south: 'green_hill_country',
-            west: 'whitwell'
-        },
+            west: 'whitwell', southeast: 'bree_square'  },
         items: ['took_pipe', 'hobbit_ale'],
         enemies: []
     },
@@ -34,7 +32,7 @@ export const shireExpansion = {
         description: "The largest town in the Shire. The marketplace is bustling with hobbits buying and selling. The Mayor's office stands prominently in the town square.",
         exits: {
             north: 'mayor_office',
-            east: 'hobbiton_square',
+            northeast: 'hobbiton_square',
             south: 'waymeet',
             west: 'tookbank',
             northwest: 'havens_approach'
@@ -79,10 +77,8 @@ export const shireExpansion = {
     scary: {
         name: "Scary",
         description: "A tiny hamlet near the Old Forest. The hobbits here are more cautious than most, having lived so close to the dark woods.",
-        exits: {
-            west: 'overhill',
-            south: 'old_forest_entrance'
-        },
+        exits: { west: 'overhill',
+            south: 'old_forest_entrance', east: 'old_forest_entrance'  },
         items: ['warding_charm'],
         enemies: []
     },
@@ -90,10 +86,8 @@ export const shireExpansion = {
     needlehole: {
         name: "Needlehole",
         description: "A small village known for its skilled craftsmen. The sound of hammers and saws fills the air.",
-        exits: {
-            north: 'overhill',
-            east: 'rushock_bog'
-        },
+        exits: { north: 'overhill',
+            east: 'rushock_bog', west: 'rushock_bog'  },
         items: ['craftsman_tools'],
         enemies: []
     },
@@ -131,11 +125,9 @@ export const shireExpansion = {
     rushock_bog: {
         name: "Rushock Bog",
         description: "A marshy area with strange plants and insects. The ground squelches underfoot. Few hobbits venture here.",
-        exits: {
-            north: 'whitwell',
+        exits: { north: 'whitwell',
             east: 'needlehole',
-            south: 'bucklebury'
-        },
+            south: 'bucklebury', west: 'needlehole'  },
         items: ['bog_herb'],
         enemies: ['giant_midge_swarm']
     },
@@ -143,11 +135,9 @@ export const shireExpansion = {
     green_hill_country: {
         name: "Green Hill Country",
         description: "Rolling green hills dotted with hobbit-holes. This is some of the most beautiful countryside in the Shire.",
-        exits: {
-            north: 'tuckborough',
+        exits: { north: 'tuckborough',
             east: 'bucklebury',
-            south: 'crickhollow'
-        },
+            south: 'crickhollow', south: 'bucklebury'  },
         items: ['wildflower_bouquet'],
         enemies: []
     },
@@ -157,12 +147,10 @@ export const shireExpansion = {
     bucklebury: {
         name: "Bucklebury",
         description: "The main village of Buckland, east of the Brandywine. The hobbits here are more adventurous, having contact with the outside world.",
-        exits: {
-            north: 'green_hill_country',
+        exits: { north: 'green_hill_country',
             east: 'brandy_hall',
             south: 'crickhollow',
-            west: 'brandywine_bridge'
-        },
+            west: 'brandywine_bridge', north: 'rushock_bog', west: 'green_hill_country', northwest: 'brandywine_bridge'  },
         items: ['buckland_ale'],
         enemies: []
     },
@@ -200,7 +188,7 @@ export const shireExpansion = {
         description: "A small hobbit-hole in Buckland. It looks cozy and welcoming, with a well-tended garden.",
         exits: {
             north: 'bucklebury',
-            east: 'old_forest_buckland_entrance'
+            east: 'old_forest_buckland_entrance', north: 'green_hill_country'
         },
         items: ['garden_tool'],
         enemies: []
@@ -209,10 +197,8 @@ export const shireExpansion = {
     old_forest_buckland_entrance: {
         name: "Old Forest - Buckland Entrance",
         description: "Another entrance to the Old Forest, this one from Buckland. The trees seem even more menacing here.",
-        exits: {
-            west: 'crickhollow',
-            south: 'old_forest_depth'
-        },
+        exits: { west: 'crickhollow',
+            south: 'old_forest_depth', southeast: 'old_forest_depth'  },
         items: [],
         enemies: ['huorn']
     },
@@ -223,7 +209,7 @@ export const shireExpansion = {
     bombadil_garden: {
         name: "Tom's Garden",
         description: "A beautiful garden full of strange and wonderful plants. Tom Bombadil tends it with care, and everything grows in abundance.",
-        exits: { west: 'bombadil_house' }, // connects to existing bombadil_house
+        exits: { west: 'bombadil_house', southwest: 'bombadil_house'  }, // connects to existing bombadil_house
         items: ['magical_herb', 'garden_seed'],
         enemies: []
     },
@@ -293,10 +279,8 @@ export const shireExpansion = {
     weathertop_approach: {
         name: "Approach to Weathertop",
         description: "The hill of Weathertop rises ahead. You can see the ruins of an ancient watchtower at the summit. This was once a place of great importance.",
-        exits: {
-            south: 'barrow_downs_approach',
-            up: 'weathertop_summit'
-        },
+        exits: { south: 'barrow_downs_approach',
+            up: 'weathertop_summit', northeast: 'weathertop_summit'  },
         items: [],
         enemies: []
     },
@@ -314,11 +298,9 @@ export const shireExpansion = {
     combe: {
         name: "Combe",
         description: "A small village near Bree. The people here are friendly but cautious of strangers. The inn serves good ale.",
-        exits: {
-            east: 'bree_square',
-            west: 'archet',
-            south: 'chetwood'
-        },
+        exits: { west: 'archet',
+            south: 'chetwood',
+            north: 'bree_square', east: 'chetwood'  },
         items: ['combe_ale'],
         enemies: []
     },
@@ -326,10 +308,8 @@ export const shireExpansion = {
     archet: {
         name: "Archet",
         description: "A tiny hamlet surrounded by woods. The people keep to themselves and are suspicious of outsiders.",
-        exits: {
-            east: 'combe',
-            south: 'chetwood'
-        },
+        exits: { east: 'combe',
+            south: 'chetwood', southeast: 'chetwood'  },
         items: ['wooden_whistle'],
         enemies: []
     },
@@ -349,10 +329,8 @@ export const shireExpansion = {
     staddle: {
         name: "Staddle",
         description: "A farming village. The people here are hardworking and honest. Fields of grain stretch in all directions.",
-        exits: {
-            north: 'chetwood',
-            east: 'bree_square'
-        },
+        exits: { north: 'chetwood',
+            southwest: 'bree_square', northeast: 'bree_square'  },
         items: ['grain_sack', 'farm_tool'],
         enemies: []
     },
@@ -364,7 +342,7 @@ export const shireExpansion = {
         description: "The road leads to the ruins of Fornost Erain, the ancient capital of Arnor. The city lies in ruins, destroyed long ago by the Witch-king.",
         exits: {
             west: 'bree_east_road',
-            east: 'fornost_gates'
+            east: 'fornost_gates', south: 'bree_east_road'
         },
         items: [],
         enemies: []
@@ -385,11 +363,9 @@ export const shireExpansion = {
     fornost_ruins: {
         name: "Fornost Ruins",
         description: "The ruined streets of the ancient city. Buildings have collapsed, and nature is reclaiming the stone. Something moves in the shadows.",
-        exits: {
-            west: 'fornost_gates',
+        exits: { west: 'fornost_gates',
             east: 'fornost_temple',
-            north: 'fornost_palace'
-        },
+            north: 'fornost_palace', east: 'annuminas_approach'  },
         items: ['ancient_coin', 'ruined_artifact'],
         enemies: ['orc_warrior', 'warg']
     },
