@@ -1,0 +1,22 @@
+{
+  "name": "reed",
+  "currentRoom": "hobbiton_square",
+  "hp": 100,
+  "maxHp": 100,
+  "attack": 5,
+  "defense": 2,
+  "baseAttack": 5,
+  "baseDefense": 2,
+  "inventory": [
+    "rusty_dagger",
+    "carrot",
+    "health_potion",
+    "old_map",
+    "silver_coin"
+  ],
+  "equipment": {},
+  "solvedPuzzles": [],
+  "exp": 0,
+  "level": 1,
+  "gold": 10
+}
