@@ -1,0 +1,44 @@
+{
+  "name": "FullWorldTest_1766813442058",
+  "currentRoom": "hollin_gate",
+  "hp": 100,
+  "maxHp": 100,
+  "attack": 5,
+  "defense": 2,
+  "baseAttack": 5,
+  "baseDefense": 2,
+  "inventory": [
+    "rusty_dagger"
+  ],
+  "equipment": {},
+  "solvedPuzzles": [],
+  "exp": 0,
+  "level": 1,
+  "gold": 10,
+  "visitedRooms": [
+    "bag_end",
+    "hobbiton_square",
+    "brandywine_bridge",
+    "bree_gate",
+    "bree_square",
+    "bree_east_road",
+    "last_bridge",
+    "trollshaws",
+    "ford_of_bruinen",
+    "rivendell_gates",
+    "rivendell_hall",
+    "rivendell_forge",
+    "hollin_gate"
+  ],
+  "recentRooms": [
+    "rivendell_gates",
+    "rivendell_hall",
+    "rivendell_forge",
+    "hollin_gate"
+  ],
+  "achievements": [
+    "explorer"
+  ],
+  "enemiesDefeated": 0,
+  "bossesDefeated": []
+}

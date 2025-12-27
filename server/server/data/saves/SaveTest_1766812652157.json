@@ -1,0 +1,29 @@
+{
+  "name": "SaveTest_1766812652157",
+  "currentRoom": "hobbiton_square",
+  "hp": 100,
+  "maxHp": 100,
+  "attack": 5,
+  "defense": 2,
+  "baseAttack": 5,
+  "baseDefense": 2,
+  "inventory": [
+    "rusty_dagger"
+  ],
+  "equipment": {},
+  "solvedPuzzles": [],
+  "exp": 0,
+  "level": 1,
+  "gold": 10,
+  "visitedRooms": [
+    "bag_end",
+    "hobbiton_square"
+  ],
+  "recentRooms": [
+    "bag_end",
+    "hobbiton_square"
+  ],
+  "achievements": [],
+  "enemiesDefeated": 0,
+  "bossesDefeated": []
+}
