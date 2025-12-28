@@ -797,7 +797,7 @@ export const MapEditor3DCanvas = () => {
 
     return (
         <div className="map-editor-3d" style={{ 
-            padding: '20px', 
+            padding: '0', 
             fontFamily: 'monospace', 
             height: '100vh', 
             overflow: 'hidden', 
@@ -810,9 +810,22 @@ export const MapEditor3DCanvas = () => {
             left: 0, 
             right: 0, 
             bottom: 0,
-            margin: 0
+            margin: 0,
+            display: 'flex',
+            flexDirection: 'column'
         }}>
-            <div style={{ marginBottom: '20px', position: 'sticky', top: 0, background: '#0f0f1e', zIndex: 100, padding: '15px', width: '100%', boxSizing: 'border-box' }}>
+            <div style={{ 
+                flexShrink: 0,
+                position: 'sticky', 
+                top: 0, 
+                background: '#0f0f1e', 
+                zIndex: 100, 
+                padding: '15px', 
+                width: '100%', 
+                boxSizing: 'border-box',
+                maxHeight: '40vh',
+                overflowY: 'auto'
+            }}>
                 <h1 style={{ margin: '0 0 15px 0', fontSize: '24px' }}>🗺️ World Map Editor - 3D Canvas View</h1>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '15px', flexWrap: 'wrap' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -878,74 +891,81 @@ export const MapEditor3DCanvas = () => {
                 </div>
             </div>
 
-            <canvas
-                ref={canvasRef}
-                style={{
-                    width: '100%',
-                    minWidth: '100%',
-                    maxWidth: '100%',
-                    height: 'calc(100vh - 250px)',
-                    minHeight: '500px',
-                    maxHeight: 'calc(100vh - 250px)',
-                    background: '#0a0a1a',
-                    border: '2px solid #16213e',
-                    borderRadius: '5px',
-                    cursor: isDragging ? 'grabbing' : 'grab',
-                    display: 'block',
-                    boxSizing: 'border-box',
-                    flexShrink: 0
-                }}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-                onContextMenu={(e) => e.preventDefault()}
-            />
-
-            {overlaps.length > 0 && (
-                <div style={{ marginTop: '20px', background: '#ff4444', padding: '10px', borderRadius: '5px' }}>
-                    <strong>Overlaps Detected:</strong>
-                    {overlaps.map((ov, idx) => (
-                        <div key={idx} style={{ marginTop: '5px' }}>
-                            <strong>{ov.coordinate}:</strong> {ov.rooms.map(r => r.name || r.id).join(', ')}
-                        </div>
-                    ))}
-                </div>
-            )}
-
-            <div style={{ marginTop: '20px' }}>
-                <button 
-                    onClick={loadMapData}
-                    style={{ padding: '10px 20px', marginRight: '10px', cursor: 'pointer' }}
-                >
-                    Refresh
-                </button>
-                <button 
-                    onClick={loadOverlaps}
-                    style={{ padding: '10px 20px', marginRight: '10px', cursor: 'pointer' }}
-                >
-                    Check Overlaps
-                </button>
-                <button 
-                    onClick={async () => {
-                        try {
-                            const response = await fetch(`${API_BASE}/cleanup`, { method: 'POST' });
-                            const data = await response.json();
-                            if (data.success) {
-                                alert(`Cleaned up ${data.removedCount} non-adjacent exits, added ${data.addedCount} missing connections`);
-                                await loadMapData();
-                                loadOverlaps();
-                            } else {
-                                alert(`Error: ${data.error}`);
-                            }
-                        } catch (err) {
-                            alert(`Error: ${err.message}`);
-                        }
+            <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', padding: '0 20px' }}>
+                <canvas
+                    ref={canvasRef}
+                    style={{
+                        width: '100%',
+                        minWidth: '100%',
+                        maxWidth: '100%',
+                        flex: 1,
+                        minHeight: '400px',
+                        background: '#0a0a1a',
+                        border: '2px solid #16213e',
+                        borderRadius: '5px',
+                        cursor: isDragging ? 'grabbing' : 'grab',
+                        display: 'block',
+                        boxSizing: 'border-box'
                     }}
-                    style={{ padding: '10px 20px', marginRight: '10px', cursor: 'pointer', background: '#ff6b6b', color: '#fff', border: 'none' }}
-                >
-                    Cleanup Non-Adjacent Exits
-                </button>
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseUp}
+                    onContextMenu={(e) => e.preventDefault()}
+                />
+            </div>
+
+            <div style={{ 
+                flexShrink: 0,
+                padding: '20px',
+                background: '#0f0f1e',
+                borderTop: '2px solid #16213e'
+            }}>
+                {overlaps.length > 0 && (
+                    <div style={{ marginBottom: '15px', background: '#ff4444', padding: '10px', borderRadius: '5px' }}>
+                        <strong>Overlaps Detected:</strong>
+                        {overlaps.map((ov, idx) => (
+                            <div key={idx} style={{ marginTop: '5px' }}>
+                                <strong>{ov.coordinate}:</strong> {ov.rooms.map(r => r.name || r.id).join(', ')}
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                    <button 
+                        onClick={loadMapData}
+                        style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
+                    >
+                        Refresh
+                    </button>
+                    <button 
+                        onClick={loadOverlaps}
+                        style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
+                    >
+                        Check Overlaps
+                    </button>
+                    <button 
+                        onClick={async () => {
+                            try {
+                                const response = await fetch(`${API_BASE}/cleanup`, { method: 'POST' });
+                                const data = await response.json();
+                                if (data.success) {
+                                    alert(`Cleaned up ${data.removedCount} non-adjacent exits, added ${data.addedCount} missing connections`);
+                                    await loadMapData();
+                                    loadOverlaps();
+                                } else {
+                                    alert(`Error: ${data.error}`);
+                                }
+                            } catch (err) {
+                                alert(`Error: ${err.message}`);
+                            }
+                        }}
+                        style={{ padding: '10px 20px', cursor: 'pointer', background: '#ff6b6b', color: '#fff', border: 'none', borderRadius: '4px' }}
+                    >
+                        Cleanup Non-Adjacent Exits
+                    </button>
+                </div>
             </div>
         </div>
     );
