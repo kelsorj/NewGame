@@ -81,7 +81,7 @@ export const gondorMordorExpansion = {
     gorgoroth_plateau: {
         name: "Plateau of Gorgoroth",
         description: "A vast, blasted plain of ash and rock. The air is thick with smoke from Mount Doom. Orc-camps are scattered across the desert.",
-        exits: { north: 'mordor_plains', south: 'mount_doom_approach', west: 'shelob_lair', northwest: 'cirith_ungol' },
+        exits: { north: 'mordor_plains', south: 'mount_doom_approach', west: 'shelob_lair', northwest: 'cirith_ungol', east: 'barad_dur_approach' },
         items: ['scorched_bone'],
         enemies: ['orc_soldier', 'orc_soldier']
     },

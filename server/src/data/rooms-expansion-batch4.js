@@ -7,7 +7,7 @@ export const rohanExpansion = {
     westfold_plains: {
         name: "Westfold Plains",
         description: "The western reaches of Rohan, where the grass is shorter and the wind carries the scent of the sea. The White Mountains loom to the south.",
-        exits: { south: 'thranduil_halls_gate', east: 'eastfold_plains', west: 'lake_town_docks', northwest: 'lonely_mountain_approach', southeast: 'dead_city', southwest: 'long_lake_path' },
+        exits: { south: 'thranduil_halls_gate', east: 'eastfold_plains', west: 'lake_town_docks', northwest: 'lonely_mountain_approach', southeast: 'dead_city', southwest: 'long_lake_path', southeast: 'rohan_plains' },
         items: ['wild_grass'],
         enemies: ['warg_rider']
     },
@@ -15,7 +15,7 @@ export const rohanExpansion = {
     eastfold_plains: {
         name: "Eastfold Plains",
         description: "The eastern reaches of Rohan, stretching toward the Great River. The land is low and fertile, dotted with small homesteads.",
-        exits: { south: 'dead_city', east: 'elven_craft_hall', west: 'westfold_plains', northeast: 'niphredil_meadow', southeast: 'paths_of_dead', southwest: 'thranduil_halls_gate' },
+        exits: { south: 'dead_city', east: 'elven_craft_hall', west: 'westfold_plains', northeast: 'niphredil_meadow', southeast: 'paths_of_dead', southwest: 'thranduil_halls_gate', southwest: 'rohan_plains' },
         items: ['sheaf_of_wheat'],
         enemies: []
     },

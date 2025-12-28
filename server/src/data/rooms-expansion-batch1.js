@@ -24,7 +24,7 @@ export const shireExpansion = {
     michel_delving: {
         name: "Michel Delving",
         description: "Michel Delving is the largest town in the Shire, a bustling center of commerce and government that serves as the unofficial capital of hobbit lands. The town is built into and around a series of hills, with hobbit-holes of all sizes dotting the landscape. The marketplace is the heart of the town, a great open square where hobbits from all over the Shire come to buy and sell their wares. Stalls line the square, displaying everything from fresh produce and baked goods to handcrafted items, fine pipeweed, and the occasional trinket from distant lands. The air is filled with the sounds of haggling, laughter, and the calls of merchants advertising their goods. The Mayor's office stands prominently in the town square, a larger-than-usual hobbit-hole with an official-looking round door and a sign that swings in the breeze. The building is well-maintained and clearly important, and you can see hobbits coming and going on official business. The streets are wide and well-paved, and the whole town has an air of prosperity and contentment that speaks to the success of hobbit society.",
-        exits: { north: 'green_hill_country', south: 'marish', east: 'brandywine_bridge', west: 'mayor_office', northeast: 'scary', northwest: 'bywater', southeast: 'old_forest_entrance' },
+        exits: { north: 'green_hill_country', south: 'marish', east: 'brandywine_bridge', west: 'mayor_office', northeast: 'scary', northwest: 'bywater', southeast: 'old_forest_entrance', southwest: 'whitwell' },
         items: ['mayor_badge', 'shire_map'],
         enemies: []
     },
@@ -114,7 +114,7 @@ export const shireExpansion = {
     bucklebury: {
         name: "Bucklebury",
         description: "Bucklebury is the main village of Buckland, a region east of the Brandywine River that serves as a bridge between the Shire and the wider world. The hobbits here are more adventurous than their cousins in the Shire proper, having regular contact with travelers from Bree and beyond. The village has a slightly different character than typical Shire settlements—the hobbit-holes are still round and comfortable, but there's a sense of readiness, of being prepared for the unexpected. The Brandybuck family, who founded the settlement, are known for their curiosity and their willingness to explore beyond the borders of the Shire. The village square is smaller than Michel Delving but no less lively, with a market that specializes in goods from both the Shire and the outside world. You can see signs of this contact everywhere—strange plants in gardens, unusual tools, and the occasional item that clearly came from far away. The air carries the mingled scents of the Shire—pipeweed, fresh bread, wildflowers—and something else, something that speaks of adventure and the wider world beyond the river.",
-        exits: { north: 'bree_east_road', east: 'old_forest_exit', west: 'crickhollow', northeast: 'barrow_downs_approach', northwest: 'old_forest_depth', southeast: 'weathertop_summit', southwest: 'bombadil_house' },
+        exits: { north: 'bree_east_road', east: 'old_forest_exit', west: 'crickhollow', northeast: 'barrow_downs_approach', northwest: 'old_forest_depth', southeast: 'weathertop_summit', southwest: 'bombadil_house', south: 'brandy_hall' },
         items: ['buckland_ale'],
         enemies: []
     },
@@ -122,7 +122,7 @@ export const shireExpansion = {
     brandy_hall: {
         name: "Brandy Hall",
         description: "Brandy Hall is the ancestral home of the Brandybuck family, and it's unlike any other hobbit-hole in the Shire. It's more like a small underground town than a single dwelling, with dozens of rooms, corridors, and tunnels that extend deep into the hillside. The main entrance is a grand affair, with a large round door and a porch that's wide enough for several hobbits to stand comfortably. Inside, the corridors branch in all directions, leading to bedrooms, kitchens, pantries, wine cellars, libraries, and gathering halls. The walls are lined with portraits of Brandybuck ancestors, maps of the Shire and beyond, and the occasional trophy from some long-ago adventure. The air is filled with the scent of good food, fine wine, and the comfortable smell of a well-lived-in home. Despite its size, Brandy Hall manages to feel cozy rather than overwhelming, with each room designed for comfort and hospitality. The Brandybucks are famous for their wine-making, and the cellars are said to contain vintages that are older than some hobbits. This is a place of history, family, and the adventurous spirit that defines the Brandybuck name.",
-        exits: { south: 'old_forest_buckland_entrance' },
+        exits: { north: 'bucklebury', south: 'old_forest_buckland_entrance' },
         items: ['brandybuck_heirloom', 'old_wine'],
         enemies: []
     },
@@ -223,7 +223,7 @@ export const shireExpansion = {
     weathertop_approach: {
         name: "Approach to Weathertop",
         description: "The hill of Weathertop rises ahead. You can see the ruins of an ancient watchtower at the summit. This was once a place of great importance.",
-        exits: {  },
+        exits: { north: 'weathertop_base' },
         items: [],
         enemies: []
     },
@@ -283,7 +283,7 @@ export const shireExpansion = {
     fornost_gates: {
         name: "Fornost Gates",
         description: "The great gates of Fornost stand before you, or rather, what remains of them. Once magnificent portals that welcomed travelers to the capital of the North Kingdom, they now hang broken and askew, their massive wooden panels splintered and weathered by centuries of exposure. The iron bands that once reinforced them are rusted and broken, and the great hinges that held them in place are twisted and bent. Beyond the gates lies the ruined city, its streets and buildings visible through the gaping opening. The ruins stretch out before you like a testament to the fall of the North Kingdom, a reminder that even the greatest of civilizations can be brought low. The stones of the gatehouse are covered in moss and lichen, and you can see where ancient carvings have been worn away by time. The air here is heavy with the weight of history, and you can't help but feel a sense of loss and melancholy. This was once a place of power and glory, but now it stands as a monument to defeat and the passage of time. The silence is broken only by the wind whistling through the broken gates and the occasional sound of something moving in the ruins beyond.",
-        exits: { east: 'weatherhills', southeast: 'buckland_cellar' },
+        exits: { east: 'weatherhills', southeast: 'buckland_cellar', south: 'fornost_ruins' },
         items: ['ancient_key'],
         enemies: ['orc_scout']
     },
@@ -291,7 +291,7 @@ export const shireExpansion = {
     fornost_ruins: {
         name: "Fornost Ruins",
         description: "The ruined streets of the ancient city. Buildings have collapsed, and nature is reclaiming the stone. Something moves in the shadows.",
-        exits: { north: 'fornost_palace' },
+        exits: { north: 'fornost_palace', south: 'fornost_gates' },
         items: ['ancient_coin', 'ruined_artifact'],
         enemies: ['orc_warrior', 'warg']
     },
@@ -307,7 +307,7 @@ export const shireExpansion = {
     fornost_palace: {
         name: "Fornost Palace",
         description: "The ruins of the royal palace. Once magnificent, now only broken walls and empty halls remain.",
-        exits: { south: 'fornost_ruins' },
+        exits: { south: 'fornost_ruins', up: 'fornost_keep' },
         items: ['royal_seal', 'palace_treasure'],
         enemies: ['ringwraith']
     },
@@ -315,7 +315,7 @@ export const shireExpansion = {
     fornost_keep: {
         name: "Fornost Keep",
         description: "The highest point of the ruined city. The keep still stands, though damaged. From here you can see the entire ruined city.",
-        exits: {  },
+        exits: { down: 'fornost_palace' },
         items: ['keep_banner', 'ancient_map'],
         enemies: ['orc_warrior']
     },
@@ -333,7 +333,7 @@ export const shireExpansion = {
     annuminas_ruins: {
         name: "Annúminas Ruins",
         description: "The ruins of Annúminas, the first capital of Arnor, rise from the waters of Lake Evendim like the bones of a drowned city. The ancient capital is now mostly submerged, its streets and lower buildings lost beneath the dark, still waters of the lake. Only the highest structures remain above water—towers, spires, and the upper floors of great buildings that once housed the kings and lords of the North Kingdom. The stone is weathered and covered in moss, and the architecture speaks of a time when elven and human craftsmanship reached their peak. The lake reflects the ruins eerily, creating a mirror image that seems to extend the city into the depths below. The water is dark and still, its surface broken only by the occasional ripple or the movement of some unseen creature. The air is heavy with moisture and carries the scent of water, stone, and something else—something ancient and sorrowful. This is a place of great beauty and great sadness, where the glory of the past is preserved in ruin, a monument to what was and what might have been. The silence here is profound, broken only by the sound of water lapping against stone and the distant cry of waterfowl.",
-        exits: { north: 'annuminas_approach', south: 'ford_of_bruinen', east: 'annuminas_tower', southeast: 'rivendell_gates', southwest: 'trollshaws' },
+        exits: { north: 'annuminas_approach', south: 'ford_of_bruinen', east: 'annuminas_tower', southeast: 'rivendell_gates', southwest: 'trollshaws', north: 'lake_evendim' },
         items: ['ancient_artifact'],
         enemies: ['water_wraith']
     },
@@ -349,7 +349,7 @@ export const shireExpansion = {
     lake_evendim: {
         name: "Lake Evendim",
         description: "A vast, beautiful lake. The ruins of Annúminas can be seen beneath the clear water. The lake is said to be enchanted.",
-        exits: {  },
+        exits: { south: 'annuminas_ruins' },
         items: ['lake_pearl', 'enchanted_water'],
         enemies: ['water_wraith']
     }

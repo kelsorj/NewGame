@@ -31,7 +31,7 @@ export const moriaRivendellExpansion = {
     waterfall_walkway: {
         name: "Waterfall Walkway",
         description: "A narrow bridge of stone that hangs over a spectacular waterfall. The mist rises to dampen your face, and the roar of the water is deafening but beautiful.",
-        exits: { north: 'hollin_gate' },
+        exits: { north: 'hollin_gate', south: 'rivendell_gates' },
         items: ['crystalline_water'],
         enemies: []
     },
@@ -73,7 +73,7 @@ export const moriaRivendellExpansion = {
     royal_tombs: {
         name: "Royal Tombs of Khazad-dûm",
         description: "The final resting place of the kings of Durin's line. The stone sarcophagi are intricately carved and covered in ancient dwarven runes.",
-        exits: { south: 'endless_stair_top', east: 'goblin_warren', west: 'balin_tomb', northeast: 'iron_mines_2', northwest: 'moria_entrance', southeast: 'hall_of_kings', southwest: 'mines_level2' },
+        exits: { south: 'endless_stair_top', east: 'goblin_warren', west: 'balin_tomb', northeast: 'iron_mines_2', northwest: 'moria_entrance', southeast: 'hall_of_kings', southwest: 'mines_level2', south: 'durin_chamber' },
         items: ['ancient_crown', 'mithril_ring'],
         enemies: ['dwarven_wraith']
     },

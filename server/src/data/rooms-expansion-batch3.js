@@ -63,7 +63,7 @@ export const lothlorienFangornExpansion = {
     anduin_confluence: {
         name: "Confluence of Rivers",
         description: "Where the Silverlode meets the Great River Anduin. The waters swirl together, one crystal clear and the other deep and powerful.",
-        exits: { north: 'fangorn_eaves', south: 'celebrant_banks', east: 'grey_havens_docks', west: 'wellinghall', northeast: 'mirkwood_edge', northwest: 'entwash_delta', southwest: 'mallorn_sanctuary' },
+        exits: { north: 'fangorn_eaves', south: 'celebrant_banks', east: 'grey_havens_docks', west: 'wellinghall', northeast: 'mirkwood_edge', northwest: 'entwash_delta', southwest: 'mallorn_sanctuary', south: 'anduin_midstream' },
         items: ['river_reeds'],
         enemies: []
     },

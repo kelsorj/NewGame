@@ -7,7 +7,7 @@ export const newRegionsExpansion = {
     grey_havens_docks: {
         name: "Docks of Mithlond",
         description: "The white towers of the Grey Havens rise above the western sea. Elven ships, slim and white, are moored at the docks, waiting for the final journey to the West.",
-        exits: { north: 'mirkwood_edge', west: 'anduin_confluence', northwest: 'fangorn_eaves', southwest: 'celebrant_banks' },
+        exits: { north: 'mirkwood_edge', west: 'anduin_confluence', northwest: 'fangorn_eaves', southwest: 'celebrant_banks', west: 'havens_approach' },
         items: ['elven_ship_model'],
         enemies: []
     },
@@ -15,7 +15,7 @@ export const newRegionsExpansion = {
     havens_approach: {
         name: "Approach to Mithlond",
         description: "A wide, white road leads down to the sea. The air is salty and filled with the sound of gulls.",
-        exits: { northeast: 'whitwell' },
+        exits: { northeast: 'whitwell', east: 'grey_havens_docks' },
         items: ['sea_shell'],
         enemies: []
     },
