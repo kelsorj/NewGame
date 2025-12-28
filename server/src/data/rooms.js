@@ -15,7 +15,7 @@ export const rooms = {
     // THE SHIRE - Starting Area
     bag_end: {
         name: "Bag End",
-        description: "You stand in the cozy hobbit-hole of Bag End. Round windows let in cheerful sunlight, and the smell of pipeweed lingers in the air. A large round door leads outside to the garden.",
+        description: "You stand in the cozy hobbit-hole of Bag End, the most comfortable dwelling in all the Shire. Round windows set deep in the hillside let in cheerful sunlight that dances across polished wooden floors. The smell of fine pipeweed lingers in the air, mingling with the scent of fresh bread from the kitchen. Shelves line the walls, filled with books, maps, and curiosities from distant lands. A large round green door, painted a cheerful yellow, leads outside to the well-tended garden where flowers bloom in riotous colors. This is a place of peace and contentment, where one could easily lose track of time reading, eating, and enjoying the simple pleasures of life.",
         exits: { south: 'woody_end', east: 'sackville_manor' },
         items: ['walking_stick', 'lembas_bread'],
         enemies: []
@@ -23,7 +23,7 @@ export const rooms = {
 
     hobbiton_square: {
         name: "Hobbiton Square",
-        description: "The heart of Hobbiton bustles with hobbits going about their business. The Green Dragon Inn stands to the east, and Bag End lies to the north. A road leads south toward the Brandywine Bridge.",
+        description: "The heart of Hobbiton bustles with cheerful activity as hobbits go about their daily business. Market stalls line the square, displaying fresh produce, handcrafted goods, and the finest pipeweed in the Shire. Children play near the central fountain, their laughter mixing with the chatter of neighbors exchanging news and pleasantries. The Green Dragon Inn stands prominently to the east, its sign creaking gently in the breeze, while the famous Bag End lies nestled in the hill to the north. A well-maintained road leads south toward the Brandywine Bridge, and the air is filled with the comforting smells of baking bread, blooming flowers, and the rich earth of the Shire.",
         exits: { south: 'staddle', east: 'green_dragon' },
         items: ['silver_coin'],
         enemies: []
@@ -31,7 +31,7 @@ export const rooms = {
 
     green_dragon: {
         name: "The Green Dragon Inn",
-        description: "A warm, welcoming tavern filled with the sounds of laughter and clinking mugs. The fireplace crackles merrily. The bartender eyes you with a knowing smile.",
+        description: "A warm, welcoming tavern that serves as the social heart of Hobbiton. The interior is cozy and inviting, with low-beamed ceilings and walls lined with portraits of famous hobbits. A great fireplace crackles merrily in the corner, casting dancing shadows across the worn wooden tables. The sounds of laughter, clinking mugs, and animated conversation fill the air. Patrons sit in comfortable chairs, sharing stories and enjoying pints of the finest ale in the Shire. The bartender, a portly hobbit with a well-groomed mustache, eyes you with a knowing smile as he polishes a glass. The scent of roasted meat, fresh bread, and pipeweed creates an atmosphere of perfect contentment.",
         exits: { west: 'hobbiton_square', southwest: 'staddle' },
         items: ['health_potion', 'old_map'],
         enemies: []
@@ -39,7 +39,7 @@ export const rooms = {
 
     bywater: {
         name: "Bywater",
-        description: "A small village on the Water. Smoke rises from chimneys, and you hear the sound of a mill wheel turning. The road continues north to Hobbiton.",
+        description: "A charming small village nestled along the banks of the Water, a gentle stream that flows through the heart of the Shire. Smoke rises lazily from numerous chimneys, each marking a cozy hobbit-hole where families gather for their evening meals. The rhythmic sound of a mill wheel turning provides a steady, comforting backdrop to village life. Hobbits tend their gardens, children play by the water's edge, and the air carries the mingled scents of wildflowers, fresh hay, and baking bread. The road, well-trodden and friendly, continues north toward Hobbiton, while the village itself exudes an atmosphere of peaceful, unhurried contentment that seems to slow time itself.",
         exits: { south: 'mayor_office', east: 'green_hill_country', northeast: 'tuckborough', southeast: 'michel_delving' },
         items: ['rope'],
         enemies: []
@@ -47,7 +47,7 @@ export const rooms = {
 
     woody_end: {
         name: "Woody End",
-        description: "The edge of the woodland. Trees grow thick here, and you hear strange rustlings in the undergrowth. An old path leads deeper into the forest.",
+        description: "The edge of the woodland marks a transition from the safe, cultivated lands of the Shire to something wilder and more mysterious. Ancient trees grow thick here, their gnarled branches creating a canopy that filters the sunlight into dappled patterns on the forest floor. Strange rustlings echo from the undergrowth—whether from small creatures, the wind, or something more sinister, it's impossible to tell. The air grows cooler and carries the earthy scent of damp leaves and decaying wood. An old, barely visible path winds deeper into the forest, its stones worn smooth by countless years. There's a sense of watchfulness here, as if the very trees are aware of your presence and not entirely welcoming.",
         exits: { north: 'bag_end', northeast: 'sackville_manor' },
         items: [],
         enemies: ['wild_wolf']
@@ -55,7 +55,7 @@ export const rooms = {
 
     brandywine_bridge: {
         name: "Brandywine Bridge",
-        description: "An ancient stone bridge crossing the Brandywine River. The water flows swiftly beneath. To the south lies the Old Forest, dark and forbidding. East leads to Bree.",
+        description: "An ancient stone bridge arches gracefully over the Brandywine River, its weathered stones bearing the marks of countless seasons and travelers. The water flows swiftly beneath, clear and cold, carrying leaves and the occasional fallen branch downstream. The bridge itself is wide enough for carts and has stood for generations, a testament to hobbit craftsmanship and the peaceful nature of the Shire. To the south, the Old Forest looms dark and forbidding, its ancient trees seeming to watch with malevolent intent. To the east, the road leads toward Bree and the wider world beyond. The air here carries the fresh scent of running water and the distant, unsettling murmur of the forest. This is a place of transition, where the safety of the Shire gives way to the unknown.",
         exits: { north: 'scary', south: 'old_forest_entrance', east: 'combe', west: 'michel_delving', northeast: 'rushock_bog', northwest: 'green_hill_country', southeast: 'fornost_approach', southwest: 'marish' },
         items: [],
         enemies: []
@@ -63,7 +63,7 @@ export const rooms = {
 
     stock_road: {
         name: "Stock Road",
-        description: "A winding country road through farmland. You can see the lights of Stock village in the distance.",
+        description: "A winding country road meanders through some of the most fertile farmland in the Shire. Fields of golden wheat sway gently in the breeze, while vegetable gardens burst with the colors of ripening produce. The road itself is well-maintained, its surface packed earth and gravel that has been trodden smooth by generations of hobbit feet, cart wheels, and the occasional pony. In the distance, the warm lights of Stock village twinkle like stars, promising hospitality and good cheer. The air is rich with the scent of earth, growing things, and the distant aroma of cooking fires. Rolling hills stretch to the horizon, dotted with the round doors of hobbit-holes, each with its own garden and smoke rising from its chimney.",
         exits: { south: 'overhill', east: 'archet', west: 'longbottom', southwest: 'waymeet' },
         items: ['carrot'],
         enemies: []
@@ -71,7 +71,7 @@ export const rooms = {
 
     marish: {
         name: "The Marish",
-        description: "Marshy lowlands near the Brandywine. The ground is soft and waterlogged. Strange lights flicker in the distance.",
+        description: "The marshy lowlands near the Brandywine create a landscape unlike any other in the Shire. The ground is soft and waterlogged, squelching unpleasantly beneath your feet with each step. Thick reeds and cattails sway in the breeze, their rustling creating an eerie, whispering sound. Strange, phosphorescent lights flicker in the distance—will-o'-the-wisps that dance and vanish, leading unwary travelers astray. The air is heavy with moisture and carries the distinct smell of stagnant water, decaying vegetation, and something else, something ancient and unsettling. Mist clings to the ground even in daylight, and the few trees that grow here are twisted and gnarled, their roots exposed like skeletal fingers. This is a place where the normal rules of the Shire seem to bend, where shadows linger longer and sounds carry strangely across the water.",
         exits: { north: 'michel_delving', south: 'old_forest_depth', east: 'old_forest_entrance', northeast: 'brandywine_bridge', northwest: 'mayor_office', southeast: 'bree_east_road', southwest: 'archet' },
         items: ['mysterious_stone'],
         enemies: ['marsh_phantom']
@@ -79,7 +79,7 @@ export const rooms = {
 
     old_forest_entrance: {
         name: "Old Forest Entrance",
-        description: "The trees here are ancient and twisted, their branches reaching out like gnarled fingers. A feeling of watchfulness pervades the air. Few hobbits dare enter.",
+        description: "The threshold of the Old Forest marks a boundary between the known world and something far older and more dangerous. The trees here are ancient beyond reckoning, their trunks twisted into grotesque shapes and their branches reaching out like gnarled, grasping fingers. The canopy overhead is so thick that even at midday, only dim, green-tinged light filters through, creating an atmosphere of perpetual twilight. A feeling of watchfulness pervades the air—not the friendly awareness of the Shire, but something malevolent and patient. The very ground seems to shift, paths appearing and disappearing as if the forest itself is alive and aware. Few hobbits dare enter this place, and those who do often return changed, speaking of trees that move and whispers on the wind. The silence here is heavy, broken only by the creaking of branches and the rustle of unseen things moving in the shadows.",
         exits: { north: 'brandywine_bridge', south: 'bree_east_road', east: 'fornost_approach', west: 'marish', northeast: 'combe', northwest: 'michel_delving', southeast: 'barrow_downs_approach', southwest: 'old_forest_depth' },
         items: [],
         enemies: ['huorn']
@@ -87,7 +87,7 @@ export const rooms = {
 
     old_forest_depth: {
         name: "Deep in the Old Forest",
-        description: "The forest closes in around you. The trees seem almost alive, and you hear whispers on the wind. A clearing lies ahead with a great willow tree.",
+        description: "Deep within the Old Forest, the world outside seems like a distant memory. The trees close in around you, their trunks so thick and close together that you must weave between them. The canopy overhead is so dense that you lose all sense of direction, and the light that filters through is dim and sickly green. The trees themselves seem almost alive—you catch glimpses of movement in your peripheral vision, branches shifting when you're not looking directly at them. Whispers drift on the wind, words in languages long forgotten, speaking of ancient grudges and the slow, patient anger of growing things. The air is heavy and still, thick with the scent of decay and something else, something that makes your skin crawl. In the distance, a clearing opens up, dominated by a great willow tree whose branches trail in dark, still water. The tree seems to watch you, and you have the distinct impression that it is not friendly.",
         exits: { north: 'marish', south: 'crickhollow', east: 'bree_east_road', west: 'archet', northeast: 'old_forest_entrance', southeast: 'bucklebury' },
         items: ['ancient_acorn'],
         enemies: []
@@ -95,7 +95,7 @@ export const rooms = {
 
     withywindle: {
         name: "The Withywindle",
-        description: "A lazy river flows through a deep dell. An enormous willow tree stands at the water's edge, its roots reaching into the dark water. You feel an overwhelming drowsiness.",
+        description: "The Withywindle flows lazily through a deep, shadowed dell, its waters dark and slow-moving. An enormous willow tree, ancient beyond measure, stands at the water's edge like a sentinel of the Old Forest. Its massive trunk is gnarled and twisted, and its long, trailing branches dip into the dark water, creating ripples that seem to move against the current. The tree's roots, thick as a hobbit's arm, reach into the water like grasping fingers. As you stand here, an overwhelming drowsiness begins to creep over you—not the pleasant tiredness of a long day's work, but something deeper, more insidious. The air itself seems heavy with sleep, and the gentle murmur of the water sounds like a lullaby. The willow's leaves rustle softly, and you have the distinct, unsettling feeling that the tree is aware of you, watching, waiting. This is Old Man Willow, and he is not to be trusted.",
         exits: { south: 'needlehole', east: 'bombadil_house', northeast: 'crickhollow', northwest: 'overhill' },
         items: [],
         enemies: ['old_man_willow'],
@@ -104,7 +104,7 @@ export const rooms = {
 
     bombadil_house: {
         name: "Tom Bombadil's House",
-        description: "A cheerful cottage in a clearing. Flowers bloom all around, and you hear singing from within: 'Hey dol! merry dol! ring a dong dillo!' The door stands open.",
+        description: "A cheerful cottage stands in a sunlit clearing, an island of light and warmth in the shadowed depths of the Old Forest. The building itself seems to have grown from the earth, its walls covered in flowering vines and its roof thatched with living grass. Flowers bloom in riotous profusion all around—elanor, niphredil, and many others whose names you don't know, creating a carpet of color and scent. From within, you hear a merry voice singing: 'Hey dol! merry dol! ring a dong dillo!' The song is infectious, filling you with a sense of joy and safety you haven't felt since leaving the Shire. The round door stands open, inviting you in, and through it you can see a cozy interior filled with comfortable furniture, a crackling fire, and the warm presence of Tom Bombadil himself. This is a place of refuge, where the dark things of the forest dare not come.",
         exits: { north: 'crickhollow', west: 'withywindle', northeast: 'bucklebury', southeast: 'weathertop_base', southwest: 'needlehole' },
         items: ['bombadil_gift', 'health_potion'],
         enemies: []
@@ -113,7 +113,7 @@ export const rooms = {
     // BREE & WEATHERTOP
     bree_gate: {
         name: "Bree Gate",
-        description: "The western gate of Bree, a village of Men. The gatekeeper watches you suspiciously. Town stretches out before you, and you can see The Prancing Pony inn.",
+        description: "The western gate of Bree stands as a threshold between the wild lands and the last outpost of civilization before the Shire. The gate itself is sturdy, built of weathered wood and iron bands, and bears the marks of many seasons. A gatekeeper, a grizzled man with watchful eyes, stands guard, eyeing you with the suspicious wariness that comes from living on the edge of dangerous lands. Beyond the gate, the village of Bree stretches out before you—a place where Men and hobbits live side by side, their houses built into the hillside. The streets are narrow and winding, and the air carries the mingled scents of cooking fires, horses, and the distant promise of ale. The Prancing Pony inn stands prominently at the center of town, its sign creaking in the breeze, a beacon of warmth and hospitality in this borderland settlement.",
         exits: {  },
         items: [],
         enemies: []
@@ -121,7 +121,7 @@ export const rooms = {
 
     bree_square: {
         name: "Bree Square",
-        description: "The center of Bree. Shops and houses line the square. The Prancing Pony inn stands prominently with its sign swinging in the breeze.",
+        description: "The center of Bree bustles with the activity of a border town where travelers from all corners of Middle-earth pass through. Shops and houses line the square, their architecture a mix of human and hobbit styles—some buildings tall and narrow, others low and round. Merchants call out their wares, offering everything from fresh produce to weapons and supplies for the road ahead. The cobblestones underfoot are worn smooth by countless feet, and the air is filled with the sounds of conversation, the clatter of hooves, and the distant ringing of a blacksmith's hammer. The Prancing Pony inn stands prominently at one end of the square, its sign swinging in the breeze and depicting a white horse rearing on its hind legs. This is a place of commerce and community, where news from distant lands is exchanged and travelers find rest before continuing their journeys into the wild lands beyond.",
         exits: { north: 'prancing_pony', south: 'bombadil_garden', west: 'combe', northwest: 'rushock_bog', southwest: 'fornost_approach' },
         items: ['brass_key'],
         enemies: []
@@ -129,7 +129,7 @@ export const rooms = {
 
     prancing_pony: {
         name: "The Prancing Pony",
-        description: "A busy inn filled with travelers and locals. The innkeeper, Barliman Butterbur, hurries between tables. You notice a hooded figure in the corner watching you intently.",
+        description: "The Prancing Pony is a busy, welcoming inn that serves as the social heart of Bree. The interior is warm and inviting, with low-beamed ceilings and walls lined with maps, trophies, and the occasional weapon left behind by travelers. A great fireplace dominates one wall, its flames casting dancing shadows across the worn wooden tables. The inn is filled with a mix of travelers and locals—hobbits sharing news from the Shire, merchants discussing trade routes, and rangers keeping to the shadows. The innkeeper, Barliman Butterbur, a portly man with a harried expression, hurries between tables, balancing trays of food and mugs of ale, his apron stained with the evidence of a busy day. The air is thick with the smells of roasting meat, fresh bread, pipeweed, and ale. In a dark corner, you notice a hooded figure watching you intently, their face hidden in shadow but their attention unmistakable. This is a place where secrets are shared and alliances are formed, where the fate of Middle-earth might be decided over a pint of ale.",
         exits: { south: 'bree_square', west: 'rushock_bog', northwest: 'staddle', southwest: 'combe' },
         items: ['ranger_cloak'],
         enemies: []
@@ -137,7 +137,7 @@ export const rooms = {
 
     chetwood: {
         name: "Chetwood Forest",
-        description: "A wild woodland surrounding Bree. The trees are thick and you hear wolves howling in the distance. Bandits are known to hide here.",
+        description: "Chetwood is a wild woodland that surrounds Bree, a place where civilization gives way to the untamed wilderness. The trees grow thick and close together, their branches interlocking overhead to create a canopy that filters the sunlight into dim, shifting patterns. The undergrowth is dense and tangled, making travel difficult and providing perfect cover for those who wish to remain unseen. In the distance, you hear the haunting howl of wolves, a sound that raises the hair on the back of your neck and reminds you that you are far from the safety of the Shire. The air carries the scent of damp earth, decaying leaves, and something else—the faint smell of woodsmoke that might indicate a hidden camp. Bandits are known to hide in these woods, preying on unwary travelers who venture too far from the protection of Bree. Every rustle of leaves, every snap of a twig, makes you wonder if you're being watched.",
         exits: { north: 'barrow_chamber_2', east: 'barrow_downs', west: 'buckland_kitchen', northwest: 'weathertop_summit' },
         items: ['forest_berry'],
         enemies: ['brigand', 'wild_wolf']
@@ -145,7 +145,7 @@ export const rooms = {
 
     bree_east_road: {
         name: "East Road from Bree",
-        description: "The Great East Road stretches before you. To the south, you can see the ominous hill of Weathertop rising against the sky.",
+        description: "The Great East Road stretches before you, a ribbon of packed earth and stone that has carried travelers for countless generations. This is one of the oldest and most important roads in Middle-earth, connecting the Shire in the west to lands far to the east. The road itself is wide and well-maintained, though it shows signs of heavy use—ruts from cart wheels, the occasional discarded item, and the marks of many feet. To the south, the ominous hill of Weathertop rises against the sky like a broken tooth, its summit crowned with the ruins of an ancient watchtower. The hill seems to watch over the road, a silent sentinel that has witnessed both the passage of peaceful travelers and the movements of dark forces. The landscape around you is a mix of rolling hills, patches of forest, and open grassland, and the air carries the scent of wildflowers, dust, and the distant promise of adventure—or danger.",
         exits: { north: 'old_forest_entrance', south: 'bucklebury', east: 'barrow_downs_approach', west: 'old_forest_depth', northeast: 'fornost_approach', northwest: 'marish', southeast: 'old_forest_exit', southwest: 'crickhollow' },
         items: [],
         enemies: []
@@ -153,7 +153,7 @@ export const rooms = {
 
     weathertop_base: {
         name: "Base of Weathertop",
-        description: "The ancient watchtower of Amon Sûl looms above you. Stone ruins are scattered about, and you feel a sense of ancient evil. A path winds up the hillside.",
+        description: "At the base of Weathertop, the ancient watchtower of Amon Sûl looms above you like a broken crown against the sky. The hill itself is steep and rocky, covered in rough grass and scattered boulders. Stone ruins are scattered about the base—broken walls, tumbled pillars, and fragments of what was once a great fortress. These ruins speak of a time when this was a place of power and importance, a watchtower that guarded the borders of the North Kingdom. Now, it stands as a monument to fallen glory, its stones weathered by countless seasons and scarred by ancient battles. You feel a sense of ancient evil here, a lingering presence that makes the air feel heavy and cold. The very ground seems to remember the darkness that once passed this way. A narrow, winding path leads up the hillside toward the summit, and you can't shake the feeling that you're being watched from above.",
         exits: { east: 'buckland_kitchen', northeast: 'weathertop_summit', northwest: 'bombadil_house' },
         items: ['ancient_blade'],
         enemies: ['orc_scout']
@@ -161,7 +161,7 @@ export const rooms = {
 
     weathertop_summit: {
         name: "Weathertop Summit",
-        description: "The ruined tower atop Weathertop. Ancient stones lie scattered, and burn marks scar the ground. The view stretches for miles in all directions. You feel eyes watching you from the shadows. A fire pit shows recent use.",
+        description: "The ruined tower atop Weathertop stands as a broken monument to a lost age. Ancient stones lie scattered across the summit, their edges worn smooth by wind and rain, their surfaces covered in moss and lichen. Burn marks scar the ground in several places, dark patches where fires once burned—some ancient, some disturbingly recent. The view from here is breathtaking, stretching for miles in all directions: to the west, the green lands of the Shire; to the east, the dark forests and hills of the wild lands; to the north and south, rolling countryside that seems to go on forever. But despite the beauty of the view, you feel eyes watching you from the shadows. There's a presence here, something cold and malevolent that makes your skin crawl. A fire pit shows recent use, its ashes still warm, and you can't help but wonder who—or what—was here before you. This is a place of power, and power draws both good and evil.",
         exits: { north: 'old_forest_exit', south: 'buckland_kitchen', east: 'barrow_chamber_2', northeast: 'last_bridge', northwest: 'bucklebury', southeast: 'chetwood', southwest: 'weathertop_base' },
         items: ['athelas', 'watchtower_lens', 'ancient_rune'],
         enemies: ['ringwraith'],
@@ -170,7 +170,7 @@ export const rooms = {
 
     midgewater_marshes: {
         name: "Midgewater Marshes",
-        description: "A miserable, swampy wasteland. Clouds of midges buzz around your head, and the ground squelches beneath your feet. Will-o'-wisps dance in the distance.",
+        description: "The Midgewater Marshes are a miserable, swampy wasteland that stretches for miles, a place where the very ground seems to conspire against travelers. The marsh is a maze of stagnant pools, quaking bogs, and patches of treacherous ground that look solid but will swallow you up to your knees. Clouds of midges buzz incessantly around your head, their tiny wings creating a maddening drone that makes it impossible to think clearly. The ground squelches unpleasantly beneath your feet with every step, and the air is thick with the stench of decay, stagnant water, and something else—something that makes your stomach turn. Will-o'-the-wisps dance in the distance, their pale, flickering lights leading unwary travelers deeper into the marsh, where they become hopelessly lost. The sky overhead is often overcast, and even when the sun shines, it seems weak and distant. This is a place to be crossed quickly, if at all, and you can't help but feel that something ancient and hungry lurks beneath the murky waters.",
         exits: { south: 'barrow_chamber_1', northeast: 'buckland_cellar' },
         items: [],
         enemies: ['giant_midge_swarm']
@@ -178,7 +178,7 @@ export const rooms = {
 
     weatherhills: {
         name: "The Weather Hills",
-        description: "Rolling hills covered in rough grass and stone. Ancient barrows dot the landscape, remnants of long-dead kings.",
+        description: "The Weather Hills are a range of rolling hills covered in rough grass and scattered stones, a landscape that seems both beautiful and forbidding. The hills rise and fall like waves frozen in time, their slopes covered in heather and gorse that bloom in shades of purple and gold during the warmer months. Ancient barrows dot the landscape like great, grass-covered mounds, each one the final resting place of a long-dead king or warrior from ages past. These barrows are old beyond reckoning, their stones weathered smooth and covered in moss and lichen. Standing stones, some still upright and others fallen, mark the boundaries of these ancient graves, and the air here carries a sense of age and memory. The wind that sweeps across these hills seems to whisper of ancient battles, forgotten kingdoms, and the restless spirits of those who sleep beneath the earth. This is a place where the past feels very close, and you can't shake the feeling that you're being watched by eyes that closed long ago.",
         exits: { south: 'buckland_cellar', west: 'fornost_gates', southeast: 'barrow_chamber_3' },
         items: ['barrow_treasure'],
         enemies: ['barrow_wight']
@@ -186,7 +186,7 @@ export const rooms = {
 
     last_bridge: {
         name: "The Last Bridge",
-        description: "A stone bridge crossing the Hoarwell river. The river rushes below, and the road continues east toward Rivendell.",
+        description: "The Last Bridge spans the Hoarwell River, a graceful arch of stone that has stood for centuries, connecting the lands of the North to the hidden valley of Rivendell. The bridge itself is a work of art, its stones fitted together with such precision that it seems to have grown from the earth rather than been built by hands. The river rushes below, its waters clear and cold, tumbling over rocks and creating a constant, soothing roar. The sound of the water, combined with the fresh, clean air, creates a sense of peace and renewal. On the far side of the bridge, the road continues east toward Rivendell, winding through hills and forests that grow more beautiful and more wild with each passing mile. The bridge marks a transition point—behind you, the dangers of the wild lands; ahead, the promise of sanctuary in the Last Homely House. Elven berries grow along the riverbank, their sweet scent carried on the breeze, a sign that you're drawing closer to elven lands.",
         exits: { south: 'barrow_chamber_2', west: 'old_forest_exit', northwest: 'barrow_downs_approach', southwest: 'weathertop_summit' },
         items: ['elven_berries'],
         enemies: []
@@ -195,7 +195,7 @@ export const rooms = {
     // TROLLSHAWS & RIVENDELL
     trollshaws: {
         name: "The Trollshaws",
-        description: "A wild, hilly region. Three large stone trolls stand frozen in a clearing, turned to stone by sunlight. Their treasure must be nearby.",
+        description: "The Trollshaws are a wild, hilly region where the land rises and falls in great swells, covered in thick forests and rocky outcroppings. The trees here are ancient and gnarled, their branches twisted into strange shapes by wind and weather. In a clearing ahead, three enormous stone figures stand frozen in grotesque poses—trolls, turned to stone by the light of the rising sun. Their faces are contorted in expressions of surprise and anger, their massive forms looming over the landscape like monuments to a moment of hubris. The stone itself is weathered and covered in moss, but the detail is still clear enough to see the crude features and the rough clothing they wore. Their treasure must be nearby, hidden in some cave or hollow, waiting for a brave soul to claim it. The air here carries the scent of pine, damp earth, and something else—the faint, lingering smell of troll that makes your stomach turn.",
         exits: { east: 'ford_of_bruinen', west: 'troll_cave', northeast: 'annuminas_ruins', southwest: 'fornost_temple' },
         items: [],
         enemies: []
@@ -203,7 +203,7 @@ export const rooms = {
 
     troll_cave: {
         name: "Troll Cave",
-        description: "A dank cave reeking of troll. Bones litter the floor. In the dim light, you see a chest partially buried in the debris.",
+        description: "The troll cave is a dank, foul-smelling hollow that reeks of troll—a stench so powerful it makes your eyes water and your stomach churn. The cave is large, its ceiling lost in shadow, and the walls are rough stone covered in slime and filth. Bones litter the floor, some large enough to be from horses or cattle, others disturbingly small. The remains of crude furniture—a table made from a split log, a chair that's little more than a boulder—stand abandoned in the gloom. In the dim light filtering from the cave entrance, you can see a chest partially buried in the debris, its surface scratched and dented but still clearly valuable. The chest is locked, and you can't help but wonder what treasures the trolls hoarded before meeting their stony fate. The air is thick and heavy, and every sound echoes strangely in the confined space.",
         exits: { south: 'fornost_temple', east: 'trollshaws' },
         items: ['sting', 'orcrist', 'gold_treasure'],
         enemies: [],
@@ -212,7 +212,7 @@ export const rooms = {
 
     ford_of_bruinen: {
         name: "Ford of Bruinen",
-        description: "A shallow ford across the Loudwater river. On the far bank, you can see the hidden valley of Rivendell. The water sparkles with an otherworldly light.",
+        description: "The Ford of Bruinen spans the Loudwater River, a place where the water runs shallow over smooth stones, creating a natural crossing point. The river itself is wide and swift, its waters clear and cold, tumbling over rocks and creating a constant, soothing roar. The ford is marked by ancient stepping stones that have been worn smooth by countless feet, and the water sparkles with an otherworldly light that seems to come from within the river itself. On the far bank, you can see the hidden valley of Rivendell—Imladris, the Last Homely House—nestled among the mountains like a jewel. The valley is filled with golden light even when the sun is hidden, and you can hear the distant sound of waterfalls and elven voices raised in song. The air here is fresh and clean, carrying the scent of pine, wildflowers, and something else—something that speaks of peace and sanctuary. This is a place of transition, where the dangers of the wild lands give way to the safety of elven protection.",
         exits: { north: 'annuminas_ruins', east: 'rivendell_gates', west: 'trollshaws', northeast: 'annuminas_tower', southeast: 'elrond_study' },
         items: [],
         enemies: []
@@ -220,7 +220,7 @@ export const rooms = {
 
     rivendell_gates: {
         name: "Gates of Rivendell",
-        description: "Hidden gates lead into the Last Homely House. Waterfalls cascade around you, and elven voices sing in the distance. You feel peace wash over you.",
+        description: "The hidden gates of Rivendell are not gates in the traditional sense, but rather a natural archway formed by two great trees whose branches have grown together over centuries. The entrance is marked by subtle elven runes carved into the living wood, visible only to those who know where to look. Waterfalls cascade around you on all sides, their mist creating rainbows in the air and filling the valley with a constant, musical roar. The water flows in streams and rivulets, creating a network of small bridges and walkways that connect the various buildings. Elven voices sing in the distance, their songs carrying on the breeze like something from a dream—melodies that speak of ancient wisdom, eternal beauty, and the sorrow of a people who have seen too much. As you stand here, a profound sense of peace washes over you, as if all the cares and dangers of the world outside have been left behind. This is Imladris, the Last Homely House, and it lives up to its name.",
         exits: { north: 'annuminas_tower', south: 'elrond_study', west: 'ford_of_bruinen', northwest: 'annuminas_ruins', southeast: 'rivendell_guest_house' },
         items: [],
         enemies: []
@@ -228,7 +228,7 @@ export const rooms = {
 
     rivendell_hall: {
         name: "Hall of Fire - Rivendell",
-        description: "A magnificent hall with a great fire burning eternally in the center. Elven lords sit in counsel, and maps and ancient books line the walls. Elrond Half-elven regards you warmly.",
+        description: "The Hall of Fire is a magnificent chamber that serves as the heart of Rivendell. A great fire burns eternally in the center of the hall, its flames never dying, casting warm, golden light across the room. The fire is magical, fed by no visible fuel, and its light seems to have a quality that soothes the soul and sharpens the mind. Elven lords sit in counsel around the fire, their faces ageless and wise, discussing matters of great importance with voices that carry the weight of millennia. Maps and ancient books line the walls, their pages filled with knowledge gathered over countless ages. Tapestries depicting the history of Middle-earth hang between the bookshelves, their threads still vibrant after centuries. Elrond Half-elven, Lord of Rivendell, regards you warmly from his seat, his eyes holding the wisdom of both elves and men, and the sorrow of one who has seen the rise and fall of kingdoms. The air is filled with the scent of pine, old books, and something else—the very essence of elven magic that makes this place feel outside of time itself.",
         exits: { north: 'elrond_study', east: 'rivendell_forge', west: 'rivendell_library', northeast: 'rivendell_guest_house', southwest: 'hall_of_fire_guest' },
         items: ['mithril_mail', 'miruvor'],
         enemies: []
@@ -236,7 +236,7 @@ export const rooms = {
 
     rivendell_library: {
         name: "Library of Rivendell",
-        description: "Countless scrolls and books fill this peaceful room. The knowledge of ages is stored here. You could spend years reading these tomes.",
+        description: "The Library of Rivendell is a peaceful sanctuary of knowledge, a room that seems to stretch beyond the physical boundaries of the building itself. Countless scrolls and books fill the space, arranged on shelves that reach toward a ceiling lost in shadow. The books are bound in leather and cloth, their pages filled with elegant elven script, maps of forgotten lands, and illustrations that seem to move in the flickering candlelight. The knowledge of ages is stored here—histories of kingdoms long fallen, accounts of battles won and lost, treatises on magic and lore, and stories that have been passed down through countless generations. The air is thick with the scent of old paper, leather bindings, and the faint smell of preservation spells. You could spend years reading these tomes and still not exhaust their wisdom. Soft light filters through windows that look out over the valley, and comfortable chairs are placed throughout the room, inviting you to sit and lose yourself in the accumulated knowledge of the elves. This is a place where time seems to stand still, where the past and present merge into a single, eternal moment.",
         exits: { south: 'hall_of_fire_guest', east: 'rivendell_hall', northeast: 'elrond_study' },
         items: ['ancient_tome', 'scroll_of_wisdom'],
         enemies: [],
@@ -245,7 +245,7 @@ export const rooms = {
 
     rivendell_forge: {
         name: "Rivendell Forge",
-        description: "An elven smithy where legendary weapons were crafted. The forge still glows with magical fire.",
+        description: "The Rivendell Forge is an elven smithy where legendary weapons and armor were crafted by master smiths whose skill has never been matched. The forge itself is a work of art, its structure built to channel both natural fire and elven magic. The forge still glows with magical fire that burns with an otherworldly blue-white light, its flames never consuming fuel but drawing power from the very essence of the valley. Anvils of mithril and steel stand ready, their surfaces marked by countless hammer blows. Tools hang on the walls—hammers, tongs, files, and other implements—each one perfectly crafted and maintained. The air is warm and carries the scent of hot metal, coal, and something else—the faint, sweet smell of elven magic that infuses everything crafted here. Shelves display examples of the smiths' work: blades that seem to glow with inner light, armor that appears to be woven from starlight, and jewelry of such delicate beauty that it seems impossible to have been made by mortal hands. This is where Andúril was reforged, where the weapons of heroes were crafted, and where the art of elven smithing reached its highest form.",
         exits: { north: 'rivendell_guest_house', west: 'rivendell_hall', northwest: 'elrond_study' },
         items: ['elvish_blade'],
         enemies: []
@@ -254,7 +254,7 @@ export const rooms = {
     //MORIA - The Mines of Moria
     hollin_gate: {
         name: "Hollin Gate",
-        description: "The western approach to Moria. You stand before a sheer cliff face beside a dark lake. In the rock, barely visible, are the outlines of great doors.",
+        description: "The western approach to Moria is a place of stark, forbidding beauty. You stand before a sheer cliff face that rises hundreds of feet into the air, its surface of dark, weathered stone. Beside you, a dark lake stretches out, its waters so still and black that they seem to absorb all light, reflecting nothing. The lake is surrounded by ancient, gnarled trees that seem to lean away from the water as if in fear. In the rock face, barely visible at first glance, are the outlines of great doors—the West-gate of Moria, the Doors of Durin. The doors are massive, carved from the living rock, and covered in intricate designs that glow faintly with an inner light when the moon shines upon them. The air here is heavy and still, and there's a sense of watchfulness—not just from the doors themselves, but from something in the dark water. The Watcher in the Water lurks beneath the surface, its presence felt rather than seen, a guardian of the gate that has claimed many unwary travelers.",
         exits: { south: 'waterfall_walkway' },
         items: ['mithril_fragment'],
         enemies: ['watcher_in_water']
@@ -262,7 +262,7 @@ export const rooms = {
 
     doors_of_durin: {
         name: "Doors of Durin - West Gate of Moria",
-        description: "The great Doors of Durin, Lord of Moria! Under the moon they shine. Ithildin script glows faintly: 'Speak, friend, and enter.' The doors stand shut, blocking the way into darkness.",
+        description: "The great Doors of Durin, Lord of Moria, stand before you in all their ancient glory. Carved from a single piece of mithril-adorned stone, the doors are a masterpiece of dwarven craftsmanship, their surfaces covered in intricate designs of stars, hammers, anvils, and the tree of the High Elves. Under the light of the moon, the doors shine with an ethereal silver glow, for they are inscribed with ithildin—a substance that only reveals itself in starlight and moonlight. The script glows faintly, forming words in both elvish and dwarvish: 'Speak, friend, and enter.' The doors stand shut, massive and immovable, blocking the way into the darkness of Moria. They have not been opened in many years, and the riddle they present must be solved before entry is granted. The air around the doors carries the weight of ages, and you can feel the presence of the great kingdom that once lay beyond—Khazad-dûm, the greatest of all dwarven realms, now fallen to darkness and shadow.",
         exits: { south: 'seventh_level', east: 'moria_entrance', southeast: 'balin_tomb' },
         items: [],
         enemies: [],
@@ -272,7 +272,7 @@ export const rooms = {
 
     moria_entrance: {
         name: "First Hall of Moria",
-        description: "You step into darkness. The vast hall is pitch black, your torchlight barely penetrating the gloom. Columns of stone rise into shadows above. A sense of ancient grandeur mixed with decay fills the air.",
+        description: "You step into darkness, and the world outside seems to vanish behind you. The vast hall of the First Hall of Moria stretches before you, so large that your torchlight barely penetrates the gloom, creating a small island of light in an ocean of shadow. The hall is pitch black, its ceiling lost in darkness high above. Massive columns of stone rise like the trunks of petrified trees, their surfaces carved with intricate dwarven runes and designs that speak of a time when this was a place of light and life. The columns support a ceiling you cannot see, but you can feel the weight of the mountain above pressing down. A sense of ancient grandeur mixed with decay fills the air—the smell of stone, dust, and something else, something that speaks of things long dead. The floor is paved with great stone blocks, worn smooth by countless feet, and you can see the remains of what once were magnificent decorations: broken statues, tattered banners, and the scattered remnants of a civilization that reached heights few have ever achieved. This is Khazad-dûm, the Dwarrowdelf, and you have entered a tomb.",
         exits: { south: 'balin_tomb', west: 'doors_of_durin', northeast: 'goblin_ward', southeast: 'royal_tombs', southwest: 'seventh_level' },
         items: ['old_torch', 'dwarven_helm'],
         enemies: ['goblin', 'goblin']
@@ -377,7 +377,7 @@ export const rooms = {
 
     bridge_of_khazad_dum: {
         name: "Bridge of Khazad-dûm",
-        description: "A narrow bridge of stone, carved from the living rock, spanning a bottomless chasm. Below, fire and smoke rise from unfathomable depths. This is a place of doom.",
+        description: "The Bridge of Khazad-dûm is a narrow span of stone, carved from the living rock itself, that stretches across a bottomless chasm. The bridge is wide enough for only one person to cross at a time, and there are no railings—one misstep means a fall into the abyss below. The chasm itself is a void of darkness, so deep that light cannot reach its bottom. From the depths, fire and smoke rise in great plumes, their heat making the air shimmer and carrying the stench of sulfur and ancient evil. The flames cast an eerie, flickering light across the bridge and the surrounding stone, creating dancing shadows that seem to move with a life of their own. The sound of the fire is a constant roar, like the breath of some great beast, and you can feel the heat even from the bridge. This is a place of doom, where many have met their end, and where the greatest of all dangers in Moria waits. The bridge itself is ancient, its surface worn smooth by countless feet, and you can see where it has been repaired over the centuries. This is where Durin's Bane was encountered, where the Fellowship was tested, and where the fate of many has been decided.",
         exits: { north: 'minas_tirith_houses_of_healing', south: 'minas_tirith_gates', east: 'mithril_depths_1', west: 'the_unending_stair_middle', northeast: 'citadel_guards_hall', northwest: 'hall_of_kings', southeast: 'white_tower' },
         items: [],
         enemies: ['durin_bane']

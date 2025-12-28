@@ -6,7 +6,7 @@ export const lothlorienFangornExpansion = {
 
     galadhrm_flet_1: {
         name: "Galadhrim Flet - Western Watch",
-        description: "A high platform built into a golden mallorn tree. From here, the Sentinels of Lórien keep watch over the western borders. The air is clear and carries the scent of elanor flowers.",
+        description: "The Galadhrim Flet is a high platform built into the branches of a golden mallorn tree, one of the many watch posts that guard the borders of Lothlórien. The platform is constructed with elven artistry, its planks fitted together so perfectly that they seem to have grown from the tree itself. From here, the Sentinels of Lórien keep watch over the western borders, their keen eyes scanning the lands beyond for any sign of danger. The view is breathtaking—you can see for miles across the Golden Wood, with the mallorn trees stretching out like a sea of gold and silver. The air is clear and pure, carrying the scent of elanor flowers and the subtle magic that permeates all of Lothlórien. The platform is large enough for several elves to stand comfortably, and you can see where weapons and supplies are stored in cleverly hidden compartments. Rope ladders and walkways connect this flet to others in the surrounding trees, creating a network of elevated paths that allow the Galadhrim to move through their realm without ever touching the ground. This is a place of vigilance and beauty, where the duty of watchfulness is combined with the natural splendor of the elven realm.",
         exits: { north: 'khazad_dum_chasm_view', south: 'starkhorn_foothills', northeast: 'leaflock_meadow', southeast: 'dunharrow_firtree_grove', southwest: 'aldburg' },
         items: ['elven_bow', 'elven_arrow'],
         enemies: []

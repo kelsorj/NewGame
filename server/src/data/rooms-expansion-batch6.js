@@ -24,7 +24,7 @@ export const newRegionsExpansion = {
 
     mirkwood_edge: {
         name: "Edge of Mirkwood",
-        description: "The Great Forest looms before you, dark and silent. The trees are gnarled and covered in hanging moss. A narrow path leads into the gloom.",
+        description: "The Great Forest of Mirkwood looms before you, a wall of darkness and silence that seems to absorb all light and sound. The trees are ancient and gnarled, their trunks twisted into grotesque shapes, their branches heavy with hanging moss that sways in the slightest breeze. The forest has a malevolent presence, as if it's aware of you and not entirely friendly. The canopy overhead is so thick that even at the edge, you can see how the light dims and the shadows deepen just a few steps in. A narrow path leads into the gloom, its entrance marked by two great trees whose branches have grown together to form a natural archway. The path itself is overgrown and barely visible, as if the forest is trying to reclaim it. The air at the edge carries the scent of damp earth, decaying leaves, and something else—something that makes your skin crawl. This is a place where the normal rules of the world seem to bend, where time moves strangely, and where travelers can become hopelessly lost. The forest has a reputation for swallowing those who enter and never letting them go, and standing here, you can understand why.",
         exits: { north: 'mirkwood_path_1', south: 'grey_havens_docks', west: 'fangorn_eaves', northwest: 'the_silent_glade', southwest: 'anduin_confluence' },
         items: ['black_mushroom'],
         enemies: []
@@ -114,7 +114,7 @@ export const newRegionsExpansion = {
 
     erebor_gates: {
         name: "Main Gates of Erebor",
-        description: "A massive archway of stone, once ornate but now weathered and broken. The Forest River flows out from beneath the gates.",
+        description: "The Main Gates of Erebor stand before you, a massive archway of stone that once served as the grand entrance to the Lonely Mountain and the greatest dwarven kingdom in the north. The gates were once ornate beyond description, covered in intricate carvings of dwarven history, runes of power, and symbols of the line of Durin. Now, they are weathered and broken, their surfaces scarred by the passage of time, the attack of the dragon Smaug, and the battles that followed. Despite the damage, you can still see traces of the former glory—fragments of carvings, the remains of decorative elements, and the sheer scale of the construction speaks to the skill and ambition of the dwarves who built it. The Forest River flows out from beneath the gates, its waters clear and cold, emerging from the depths of the mountain itself. The gates are now guarded once more, for the dwarves have reclaimed their ancestral home, and you can see the signs of recent repairs and fortifications. The air here carries the scent of stone, water, and the distant promise of the treasures that lie within the mountain. This is a place of history, loss, and renewal—a testament to the resilience of the dwarven people.",
         exits: { north: 'erebor_great_hall', south: 'lonely_mountain_approach', northeast: 'erebor_treasury', northwest: 'erebor_armory' },
         items: ['dwarven_rune_stone'],
         enemies: ['dwarven_sentry']

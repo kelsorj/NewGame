@@ -6,7 +6,7 @@ export const moriaRivendellExpansion = {
 
     rivendell_gardens: {
         name: "Gardens of Rivendell",
-        description: "A peaceful garden where rare flowers from across Middle Earth bloom. The sound of many waterfalls creates a constant, soothing harmony. Stone benches are placed under ancient trees.",
+        description: "The Gardens of Rivendell are a peaceful sanctuary where rare flowers from across Middle-earth bloom in perfect harmony. The gardens are laid out with elven artistry, each plant placed to create a living tapestry of color, scent, and form. Flowers that grow nowhere else in Middle-earth flourish here—elanor with its golden petals, niphredil with its pale white blooms, and many others whose names are known only to the elves. The sound of many waterfalls creates a constant, soothing harmony, their waters cascading down from the mountains and flowing through the gardens in carefully designed channels. Stone benches, carved with intricate elven designs, are placed under ancient trees whose branches form natural canopies. The air is filled with the mingled scents of flowers, fresh water, and the subtle magic that permeates all of Rivendell. Butterflies and birds move through the gardens, adding their own music to the symphony of nature. This is a place where time seems to stand still, where the cares of the world fade away, and where one can find peace and renewal simply by being present.",
         exits: { north: 'hall_of_fire_guest' },
         items: ['elanor_flower', 'silver_leaf'],
         enemies: []
@@ -56,7 +56,7 @@ export const moriaRivendellExpansion = {
 
     durin_throne_hall: {
         name: "Great Hall of Durin",
-        description: "A massive hall that served as the primary seat of power for the Dwarven Kings. The throne of Durin, carved from a single block of stone, sits empty at the far end.",
+        description: "The Great Hall of Durin is a massive chamber that once served as the primary seat of power for the Dwarven Kings of Khazad-dûm. The hall is vast beyond comprehension, its ceiling lost in darkness high above, supported by columns of stone so large that they seem like the trunks of petrified trees. The walls are covered in intricate carvings depicting the history of the dwarves—scenes of mining, crafting, battle, and the great deeds of Durin's line. At the far end of the hall, the throne of Durin sits empty, carved from a single block of mithril-adorned stone. The throne is massive, designed for a king of legendary stature, and it's covered in runes and symbols that speak of power and authority. Despite the darkness and decay that now fills Moria, the throne still radiates a sense of majesty and ancient power. The floor is paved with great stone blocks, and you can see where banners once hung from the walls, their remnants now tattered and faded. This was once the heart of the greatest dwarven kingdom in Middle-earth, and even in ruin, it speaks of the glory that once was. The air is heavy with the weight of history, and you can almost hear the echoes of ancient councils and the voices of kings long dead.",
         exits: { north: 'mines_level2', south: 'smelting_chambers', east: 'royal_armory', northeast: 'endless_stair_top', northwest: 'twenty_first_hall', southeast: 'endless_stair_bottom' },
         items: ['dwarven_scepter', 'gold_coin'],
         enemies: ['orc_warrior', 'orc_warrior']
