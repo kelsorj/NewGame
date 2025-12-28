@@ -1,0 +1,81 @@
+================================================================================
+                    DETAILED WALKTHROUGH TO MORDOR
+                    From Bag End to The Black Gate
+================================================================================
+
+Starting Location: Bag End
+Starting Coordinates: (0, 0, 0)
+
+================================================================================
+
+Step 1: From Bag End
+         Current Location: (0, 0, 0)
+         Command: west
+         (or: go west)
+         To: Mayor's Office
+         New Location: (-1, 0, 0)
+         Description: A well-appointed office with official documents and maps of the Shire. The Mayor's chair sits empty,...
+
+Step 2: From Mayor's Office
+         Current Location: (-1, 0, 0)
+         Command: northwest
+         (or: go northwest)
+         To: Buckland Cellar
+         New Location: (-2, 1, 0)
+         Description: A vast wine cellar with barrels stacked to the ceiling. The Brandybucks are famous for their wine-ma...
+
+Step 3: From Buckland Cellar
+         Current Location: (-2, 1, 0)
+         Command: northwest
+         (or: go northwest)
+         To: Annúminas Tower
+         New Location: (-3, 2, 0)
+         Description: The highest tower of the ancient city, still standing above the water. The view of Lake Evendim is b...
+
+Step 4: From Annúminas Tower
+         Current Location: (-3, 2, 0)
+         Command: northwest
+         (or: go northwest)
+         To: Hidden Path in Fangorn
+         New Location: (-4, 3, 0)
+         Description: A narrow trail through the thickest part of the forest. The trees seem to lean in, their branches in...
+
+Step 5: From Hidden Path in Fangorn
+         Current Location: (-4, 3, 0)
+         Command: northwest
+         (or: go northwest)
+         To: Rhosgobel - Home of Radagast
+         New Location: (-5, 4, 0)
+         Description: A small, thatched house built around an old tree. Birds and squirrels are everywhere, and the air is...
+
+Step 6: From Rhosgobel - Home of Radagast
+         Current Location: (-5, 4, 0)
+         Command: northwest
+         (or: go northwest)
+         To: Durin's Chamber
+         New Location: (-6, 5, 0)
+         Description: A sacred chamber dedicated to Durin the Deathless, eldest of the Seven Fathers of the Dwarves. His l...
+
+Step 7: From Durin's Chamber
+         Current Location: (-6, 5, 0)
+         Command: northwest
+         (or: go northwest)
+         To: The Black Gate of Mordor
+         New Location: (-7, 6, 0)
+         Description: The Morannon - the great gate of Mordor. Two massive towers flank an iron gate. The ground before it...
+
+================================================================================
+✅ ARRIVED AT THE BLACK GATE OF MORDOR!
+   Total Steps: 7
+   Final Coordinates: (-7, 6, 0)
+================================================================================
+
+QUICK COMMAND LIST:
+-------------------
+1. west
+2. northwest
+3. northwest
+4. northwest
+5. northwest
+6. northwest
+7. northwest

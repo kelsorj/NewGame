@@ -5,6 +5,7 @@ import { GameDisplay } from './components/GameDisplay';
 import { CommandInput } from './components/CommandInput';
 import { PlayerStatus } from './components/PlayerStatus';
 import { WorldMap } from './components/WorldMap';
+import { MapEditor } from './components/MapEditor';
 import './App.css';
 
 const WS_URL = 'ws://localhost:3001';
@@ -12,6 +13,7 @@ const WS_URL = 'ws://localhost:3001';
 function App() {
     const [playerName, setPlayerName] = useState('');
     const [hasJoined, setHasJoined] = useState(false);
+    const [showEditor, setShowEditor] = useState(false);
 
     const {
         isConnected,
@@ -34,8 +36,50 @@ function App() {
         sendCommand(command);
     };
 
+    // Show editor if URL has ?editor=true or if showEditor is true
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('editor') === 'true' || showEditor) {
+        return (
+            <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0, overflow: 'hidden' }}>
+                <div style={{ padding: '10px', background: '#1a1a2e', borderBottom: '2px solid #4a9eff', position: 'relative', zIndex: 1000 }}>
+                    <button 
+                        onClick={() => {
+                            setShowEditor(false);
+                            window.history.pushState({}, '', '/');
+                        }}
+                        style={{ padding: '10px 20px', cursor: 'pointer', marginRight: '10px' }}
+                    >
+                        ← Back to Game
+                    </button>
+                    <strong>World Map Editor</strong>
+                </div>
+                <MapEditor />
+            </div>
+        );
+    }
+
     return (
         <div className="app">
+            <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}>
+                <button
+                    onClick={() => {
+                        setShowEditor(true);
+                        window.history.pushState({}, '', '?editor=true');
+                    }}
+                    style={{
+                        padding: '8px 16px',
+                        background: '#4a9eff',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: '12px'
+                    }}
+                    title="Open Map Editor"
+                >
+                    🗺️ Editor
+                </button>
+            </div>
             <div className="game-container">
                 <div className="main-panel">
                     <div className="header">

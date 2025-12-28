@@ -5,6 +5,7 @@ import { GameEngine } from './engine/GameEngine.js';
 import { GameState } from './state/GameState.js';
 import { GameWebSocketServer } from './websocket/WebSocketServer.js';
 import { SaveManager } from './state/SaveManager.js';
+import * as mapEditor from './api/mapEditor.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -70,6 +71,14 @@ app.get('/stats', (req, res) => {
         ...wsServer.getStats()
     });
 });
+
+// Map Editor API endpoints
+app.get('/api/map/data', mapEditor.getMapData);
+app.post('/api/map/coordinates', mapEditor.updateRoomCoordinates);
+app.post('/api/map/exits', mapEditor.updateRoomExits);
+app.get('/api/map/overlaps', mapEditor.getOverlaps);
+app.post('/api/map/cleanup', mapEditor.cleanupExits);
+app.post('/api/map/apply', mapEditor.applyChanges);
 
 // Initialize game systems
 console.log('Initializing Middle Earth Adventure Server...');
