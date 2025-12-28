@@ -102,12 +102,20 @@ export class GameEngine {
             case 'west':
             case 'up':
             case 'down':
+            case 'northeast':
+            case 'northwest':
+            case 'southeast':
+            case 'southwest':
             case 'n':
             case 's':
             case 'e':
             case 'w':
             case 'u':
             case 'd':
+            case 'ne':
+            case 'nw':
+            case 'se':
+            case 'sw':
                 let direction;
                 if (verb === 'go' || verb === 'move') {
                     direction = args[0] || '';
@@ -117,7 +125,7 @@ export class GameEngine {
                 // Map shortcuts to full direction names
                 direction = this.normalizeDirection(direction);
                 if (!direction) {
-                    return { message: "I don't understand that direction. Use north, south, east, west, up, or down (or n, s, e, w, u, d)." };
+                    return { message: "I don't understand that direction. Use north, south, east, west, northeast, northwest, southeast, southwest, up, or down (or n, s, e, w, ne, nw, se, sw, u, d)." };
                 }
                 return this.handleMove(playerId, direction, playerState);
 

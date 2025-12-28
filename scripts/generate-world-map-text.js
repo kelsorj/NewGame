@@ -252,3 +252,4 @@ console.log(`   Rooms with coordinates: ${Object.keys(coordinates).length}`);
 console.log(`   Rooms missing coordinates: ${roomsWithoutCoords.length}`);
 console.log(`   Coordinate conflicts: ${conflicts.length}`);
 
+

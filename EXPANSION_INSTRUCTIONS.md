@@ -69,3 +69,4 @@ cp server/src/data/rooms.js server/src/data/rooms.js.backup
 # Then manually edit rooms.js to add the new rooms
 ```
 
+

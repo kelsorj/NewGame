@@ -57,3 +57,4 @@ console.log('2. Add rooms to rooms.js following the template');
 console.log('3. Run connectivity check');
 console.log('4. Update tests');
 
+

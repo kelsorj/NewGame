@@ -130,3 +130,4 @@ if (conflicts.length > 0) {
     console.log(`\n✅ No coordinate conflicts!`);
 }
 
+

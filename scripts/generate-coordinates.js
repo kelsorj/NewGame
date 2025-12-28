@@ -201,3 +201,4 @@ const reportPath = join(__dirname, '../COORDINATE_GENERATION_REPORT.txt');
 writeFileSync(reportPath, report, 'utf-8');
 console.log(`   Report: ${reportPath}`);
 
+

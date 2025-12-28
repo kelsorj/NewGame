@@ -42,3 +42,4 @@ console.log('   then Room B should have X coordinate = Room A X - 1\n');
 console.log('Note: Some rooms may have non-standard connections (up/down,');
 console.log('diagonal exits like northwest, etc.) which need special handling.\n');
 
+

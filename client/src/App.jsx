@@ -120,23 +120,28 @@ function App() {
                 </div>
 
                 {hasJoined && (
-                    <div className="sidebar">
-                        <PlayerStatus playerState={playerState} activePlayers={activePlayers} />
-                        <WorldMap playerState={playerState} />
+                    <>
+                        <div className="left-sidebar">
+                            <PlayerStatus playerState={playerState} activePlayers={activePlayers} />
 
-                        <div className="help-panel">
-                            <div className="help-header">💡 Quick Commands</div>
-                            <div className="help-commands">
-                                <div><code>look</code> - Examine surroundings</div>
-                                <div><code>go [dir]</code> - Move direction</div>
-                                <div><code>take [item]</code> - Pick up item</div>
-                                <div><code>inventory</code> - View items</div>
-                                <div><code>attack [enemy]</code> - Fight</div>
-                                <div><code>use [item]</code> - Use/equip</div>
-                                <div><code>help</code> - Full command list</div>
+                            <div className="help-panel">
+                                <div className="help-header">💡 Quick Commands</div>
+                                <div className="help-commands">
+                                    <div><code>look</code> - Examine surroundings</div>
+                                    <div><code>go [dir]</code> - Move direction</div>
+                                    <div><code>take [item]</code> - Pick up item</div>
+                                    <div><code>inventory</code> - View items</div>
+                                    <div><code>attack [enemy]</code> - Fight</div>
+                                    <div><code>use [item]</code> - Use/equip</div>
+                                    <div><code>help</code> - Full command list</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                        <div className="right-sidebar">
+                            <WorldMap playerState={playerState} />
+                        </div>
+                    </>
                 )}
             </div>
         </div>
