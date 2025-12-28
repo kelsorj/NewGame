@@ -1,0 +1,2020 @@
+{
+  "newExits": {
+    "tuckborough": {
+      "south": "bag_end",
+      "north": "waymeet",
+      "east": "overhill",
+      "west": "scary",
+      "northeast": "needlehole"
+    },
+    "tookbank": {
+      "north": "bag_end",
+      "south": "longbottom",
+      "east": "sackville_manor",
+      "west": "whitwell",
+      "southeast": "rushock_bog"
+    },
+    "michel_delving": {
+      "west": "bag_end",
+      "east": "green_hill_country",
+      "northeast": "bucklebury",
+      "southeast": "brandy_hall"
+    },
+    "mayor_office": {
+      "east": "bag_end",
+      "west": "buckland_kitchen",
+      "northwest": "buckland_cellar",
+      "southwest": "crickhollow"
+    },
+    "waymeet": {
+      "south": "tuckborough",
+      "north": "old_forest_buckland_entrance",
+      "west": "bombadil_garden",
+      "northeast": "old_forest_exit",
+      "northwest": "barrow_downs_approach"
+    },
+    "overhill": {
+      "west": "tuckborough",
+      "northeast": "barrow_downs"
+    },
+    "scary": {
+      "east": "tuckborough",
+      "northwest": "barrow_chamber_1"
+    },
+    "needlehole": {
+      "southwest": "tuckborough",
+      "northeast": "barrow_chamber_2"
+    },
+    "longbottom": {
+      "north": "tookbank",
+      "south": "barrow_chamber_3",
+      "west": "weathertop_approach",
+      "southeast": "weathertop_summit",
+      "southwest": "combe"
+    },
+    "sackville_manor": {
+      "west": "tookbank",
+      "southeast": "archet"
+    },
+    "whitwell": {
+      "east": "tookbank",
+      "southwest": "chetwood"
+    },
+    "rushock_bog": {
+      "northwest": "tookbank",
+      "southeast": "staddle"
+    },
+    "green_hill_country": {
+      "west": "michel_delving",
+      "east": "fornost_approach",
+      "northeast": "fornost_gates",
+      "southeast": "fornost_ruins"
+    },
+    "bucklebury": {
+      "southwest": "michel_delving",
+      "northeast": "fornost_temple"
+    },
+    "brandy_hall": {
+      "northwest": "michel_delving",
+      "southeast": "fornost_palace"
+    },
+    "buckland_kitchen": {
+      "east": "mayor_office",
+      "west": "fornost_keep",
+      "northwest": "annuminas_approach",
+      "southwest": "annuminas_ruins"
+    },
+    "buckland_cellar": {
+      "southeast": "mayor_office",
+      "northwest": "annuminas_tower"
+    },
+    "crickhollow": {
+      "northeast": "mayor_office",
+      "southwest": "lake_evendim"
+    },
+    "old_forest_buckland_entrance": {
+      "south": "waymeet",
+      "north": "rivendell_gardens",
+      "northeast": "hall_of_fire_guest",
+      "northwest": "elrond_study"
+    },
+    "bombadil_garden": {
+      "east": "waymeet",
+      "northwest": "waterfall_walkway"
+    },
+    "old_forest_exit": {
+      "southwest": "waymeet",
+      "northeast": "hidden_flet"
+    },
+    "barrow_downs_approach": {
+      "southeast": "waymeet",
+      "northwest": "rivendell_guest_house"
+    },
+    "barrow_downs": {
+      "southwest": "overhill",
+      "northeast": "durin_throne_hall"
+    },
+    "barrow_chamber_1": {
+      "southeast": "scary",
+      "northwest": "hall_of_kings"
+    },
+    "barrow_chamber_2": {
+      "southwest": "needlehole",
+      "northeast": "royal_tombs"
+    },
+    "barrow_chamber_3": {
+      "north": "longbottom",
+      "south": "royal_armory",
+      "southeast": "smelting_chambers",
+      "southwest": "deep_mines_hub"
+    },
+    "weathertop_approach": {
+      "east": "longbottom",
+      "southwest": "mithril_depths_1"
+    },
+    "weathertop_summit": {
+      "northwest": "longbottom",
+      "southeast": "mithril_depths_2"
+    },
+    "combe": {
+      "northeast": "longbottom",
+      "southwest": "iron_mines_1"
+    },
+    "archet": {
+      "northwest": "sackville_manor",
+      "southeast": "iron_mines_2"
+    },
+    "chetwood": {
+      "northeast": "whitwell",
+      "southwest": "the_unending_stair_middle"
+    },
+    "staddle": {
+      "northwest": "rushock_bog",
+      "southeast": "goblin_ward"
+    },
+    "fornost_approach": {
+      "west": "green_hill_country",
+      "east": "goblin_watchtower",
+      "northeast": "khazad_dum_chasm_view",
+      "southeast": "nameless_tunnels"
+    },
+    "fornost_gates": {
+      "southwest": "green_hill_country",
+      "northeast": "the_dark_lake"
+    },
+    "fornost_ruins": {
+      "northwest": "green_hill_country",
+      "southeast": "galadhrm_flet_1"
+    },
+    "fornost_temple": {
+      "southwest": "bucklebury",
+      "northeast": "niphredil_meadow"
+    },
+    "fornost_palace": {
+      "northwest": "brandy_hall",
+      "southeast": "singing_groves"
+    },
+    "fornost_keep": {
+      "east": "buckland_kitchen",
+      "west": "elven_craft_hall",
+      "northwest": "mallorn_sanctuary",
+      "southwest": "silverlode_crossing"
+    },
+    "annuminas_approach": {
+      "southeast": "buckland_kitchen",
+      "northwest": "celebrant_banks"
+    },
+    "annuminas_ruins": {
+      "northeast": "buckland_kitchen",
+      "southwest": "anduin_confluence"
+    },
+    "annuminas_tower": {
+      "southeast": "buckland_cellar",
+      "northwest": "fangorn_hidden_path"
+    },
+    "lake_evendim": {
+      "northeast": "crickhollow",
+      "southwest": "the_silent_glade"
+    },
+    "rivendell_gardens": {
+      "south": "old_forest_buckland_entrance",
+      "north": "entmoot_circle",
+      "northeast": "entwash_headwaters",
+      "northwest": "treebeard_cellar"
+    },
+    "hall_of_fire_guest": {
+      "southwest": "old_forest_buckland_entrance",
+      "northeast": "skinbark_grove"
+    },
+    "elrond_study": {
+      "southeast": "old_forest_buckland_entrance",
+      "northwest": "leaflock_meadow"
+    },
+    "waterfall_walkway": {
+      "southeast": "bombadil_garden",
+      "northwest": "westfold_plains"
+    },
+    "hidden_flet": {
+      "southwest": "old_forest_exit",
+      "northeast": "eastfold_plains"
+    },
+    "rivendell_guest_house": {
+      "southeast": "barrow_downs_approach",
+      "northwest": "entwash_delta"
+    },
+    "durin_throne_hall": {
+      "southwest": "barrow_downs",
+      "northeast": "aldburg"
+    },
+    "hall_of_kings": {
+      "southeast": "barrow_chamber_1",
+      "northwest": "snowbourn_banks"
+    },
+    "royal_tombs": {
+      "southwest": "barrow_chamber_2",
+      "northeast": "starkhorn_foothills"
+    },
+    "royal_armory": {
+      "north": "barrow_chamber_3",
+      "south": "dimholt_road",
+      "southeast": "dunharrow_firtree_grove",
+      "southwest": "hidden_valley_white_mountains"
+    },
+    "smelting_chambers": {
+      "northwest": "barrow_chamber_3",
+      "southeast": "deeping_stream_upper"
+    },
+    "deep_mines_hub": {
+      "northeast": "barrow_chamber_3",
+      "southwest": "hornburg_armory"
+    },
+    "mithril_depths_1": {
+      "northeast": "weathertop_approach",
+      "southwest": "deep_coomb"
+    },
+    "mithril_depths_2": {
+      "northwest": "weathertop_summit",
+      "southeast": "west_emnet"
+    },
+    "iron_mines_1": {
+      "northeast": "combe",
+      "southwest": "wold_of_rohan"
+    },
+    "iron_mines_2": {
+      "northwest": "archet",
+      "southeast": "ithilien_woods"
+    },
+    "the_unending_stair_middle": {
+      "northeast": "chetwood",
+      "southwest": "henneth_annun"
+    },
+    "goblin_ward": {
+      "northwest": "staddle",
+      "southeast": "minas_tirith_stables"
+    },
+    "goblin_watchtower": {
+      "west": "fornost_approach",
+      "east": "minas_tirith_houses_of_healing",
+      "northeast": "citadel_guards_hall",
+      "southeast": "pelargir_port"
+    },
+    "khazad_dum_chasm_view": {
+      "southwest": "fornost_approach",
+      "northeast": "lossarnach_valleys"
+    },
+    "nameless_tunnels": {
+      "northwest": "fornost_approach",
+      "southeast": "minas_morgul_gates"
+    },
+    "the_dark_lake": {
+      "southwest": "fornost_gates",
+      "northeast": "minas_morgul_interior"
+    },
+    "galadhrm_flet_1": {
+      "northwest": "fornost_ruins",
+      "southeast": "gorgoroth_plateau"
+    },
+    "niphredil_meadow": {
+      "southwest": "fornost_temple",
+      "northeast": "mount_doom_sammath_naur"
+    },
+    "singing_groves": {
+      "northwest": "fornost_palace",
+      "southeast": "barad_dur_throne_room"
+    },
+    "elven_craft_hall": {
+      "east": "fornost_keep",
+      "west": "durthang_fortress",
+      "northwest": "grey_havens_docks",
+      "southwest": "havens_approach"
+    },
+    "mallorn_sanctuary": {
+      "southeast": "fornost_keep",
+      "northwest": "mirkwood_edge"
+    },
+    "silverlode_crossing": {
+      "northeast": "fornost_keep",
+      "southwest": "mirkwood_path_1"
+    },
+    "celebrant_banks": {
+      "southeast": "annuminas_approach",
+      "northwest": "mirkwood_path_2"
+    },
+    "anduin_confluence": {
+      "northeast": "annuminas_ruins",
+      "southwest": "mirkwood_depths"
+    },
+    "fangorn_hidden_path": {
+      "southeast": "annuminas_tower",
+      "northwest": "rhosgobel"
+    },
+    "the_silent_glade": {
+      "northeast": "lake_evendim",
+      "southwest": "elf_path_entrance"
+    },
+    "entmoot_circle": {
+      "south": "rivendell_gardens",
+      "north": "thranduil_halls_gate",
+      "northeast": "thranduil_halls_interior",
+      "northwest": "long_lake_path"
+    },
+    "entwash_headwaters": {
+      "southwest": "rivendell_gardens",
+      "northeast": "lake_town_docks"
+    },
+    "treebeard_cellar": {
+      "southeast": "rivendell_gardens",
+      "northwest": "lonely_mountain_approach"
+    },
+    "skinbark_grove": {
+      "southwest": "hall_of_fire_guest",
+      "northeast": "erebor_gates"
+    },
+    "leaflock_meadow": {
+      "southeast": "elrond_study",
+      "northwest": "erebor_great_hall"
+    },
+    "westfold_plains": {
+      "southeast": "waterfall_walkway",
+      "northwest": "erebor_treasury"
+    },
+    "eastfold_plains": {
+      "southwest": "hidden_flet",
+      "northeast": "erebor_armory"
+    },
+    "entwash_delta": {
+      "southeast": "rivendell_guest_house",
+      "northwest": "hobbiton_square"
+    },
+    "aldburg": {
+      "southwest": "durin_throne_hall",
+      "northeast": "green_dragon"
+    },
+    "snowbourn_banks": {
+      "southeast": "hall_of_kings",
+      "northwest": "bywater"
+    },
+    "starkhorn_foothills": {
+      "southwest": "royal_tombs",
+      "northeast": "woody_end"
+    },
+    "dimholt_road": {
+      "north": "royal_armory",
+      "south": "brandywine_bridge",
+      "southeast": "stock_road",
+      "southwest": "marish"
+    },
+    "dunharrow_firtree_grove": {
+      "northwest": "royal_armory",
+      "southeast": "old_forest_entrance"
+    },
+    "hidden_valley_white_mountains": {
+      "northeast": "royal_armory",
+      "southwest": "old_forest_depth"
+    },
+    "deeping_stream_upper": {
+      "northwest": "smelting_chambers",
+      "southeast": "withywindle"
+    },
+    "hornburg_armory": {
+      "northeast": "deep_mines_hub",
+      "southwest": "bombadil_house"
+    },
+    "deep_coomb": {
+      "northeast": "mithril_depths_1",
+      "southwest": "bree_gate"
+    },
+    "west_emnet": {
+      "northwest": "mithril_depths_2",
+      "southeast": "bree_square"
+    },
+    "wold_of_rohan": {
+      "northeast": "iron_mines_1",
+      "southwest": "prancing_pony"
+    },
+    "ithilien_woods": {
+      "northwest": "iron_mines_2",
+      "southeast": "bree_east_road"
+    },
+    "henneth_annun": {
+      "northeast": "the_unending_stair_middle",
+      "southwest": "weathertop_base"
+    },
+    "minas_tirith_stables": {
+      "northwest": "goblin_ward",
+      "southeast": "midgewater_marshes"
+    },
+    "minas_tirith_houses_of_healing": {
+      "west": "goblin_watchtower",
+      "east": "weatherhills",
+      "northeast": "last_bridge",
+      "southeast": "trollshaws"
+    },
+    "citadel_guards_hall": {
+      "southwest": "goblin_watchtower",
+      "northeast": "troll_cave"
+    },
+    "pelargir_port": {
+      "northwest": "goblin_watchtower",
+      "southeast": "ford_of_bruinen"
+    },
+    "lossarnach_valleys": {
+      "southwest": "khazad_dum_chasm_view",
+      "northeast": "rivendell_gates"
+    },
+    "minas_morgul_gates": {
+      "northwest": "nameless_tunnels",
+      "southeast": "rivendell_hall"
+    },
+    "minas_morgul_interior": {
+      "southwest": "the_dark_lake",
+      "northeast": "rivendell_library"
+    },
+    "gorgoroth_plateau": {
+      "northwest": "galadhrm_flet_1",
+      "southeast": "rivendell_forge"
+    },
+    "mount_doom_sammath_naur": {
+      "southwest": "niphredil_meadow",
+      "northeast": "hollin_gate"
+    },
+    "barad_dur_throne_room": {
+      "northwest": "singing_groves",
+      "southeast": "doors_of_durin"
+    },
+    "durthang_fortress": {
+      "east": "elven_craft_hall",
+      "west": "moria_entrance",
+      "northwest": "twenty_first_hall",
+      "southwest": "balin_tomb"
+    },
+    "grey_havens_docks": {
+      "southeast": "elven_craft_hall",
+      "northwest": "seventh_level"
+    },
+    "havens_approach": {
+      "northeast": "elven_craft_hall",
+      "southwest": "sixth_level"
+    },
+    "mirkwood_edge": {
+      "southeast": "mallorn_sanctuary",
+      "northwest": "goblin_warren"
+    },
+    "mirkwood_path_1": {
+      "northeast": "silverlode_crossing",
+      "southwest": "fifth_level"
+    },
+    "mirkwood_path_2": {
+      "southeast": "celebrant_banks",
+      "northwest": "fourth_level"
+    },
+    "mirkwood_depths": {
+      "northeast": "anduin_confluence",
+      "southwest": "third_level"
+    },
+    "rhosgobel": {
+      "southeast": "fangorn_hidden_path",
+      "northwest": "durin_chamber"
+    },
+    "elf_path_entrance": {
+      "northeast": "the_silent_glade",
+      "southwest": "second_level"
+    },
+    "thranduil_halls_gate": {
+      "south": "entmoot_circle",
+      "north": "mithril_mine",
+      "northeast": "first_level",
+      "northwest": "bridge_of_khazad_dum"
+    },
+    "thranduil_halls_interior": {
+      "southwest": "entmoot_circle",
+      "northeast": "east_gate_approach"
+    },
+    "long_lake_path": {
+      "southeast": "entmoot_circle",
+      "northwest": "east_gate_moria"
+    },
+    "lake_town_docks": {
+      "southwest": "entwash_headwaters",
+      "northeast": "dimrill_dale"
+    },
+    "lonely_mountain_approach": {
+      "southeast": "treebeard_cellar",
+      "northwest": "mines_level1"
+    },
+    "erebor_gates": {
+      "southwest": "skinbark_grove",
+      "northeast": "mines_level2"
+    },
+    "erebor_great_hall": {
+      "southeast": "leaflock_meadow",
+      "northwest": "endless_stair_top"
+    },
+    "erebor_treasury": {
+      "southeast": "westfold_plains",
+      "northwest": "endless_stair_bottom"
+    },
+    "erebor_armory": {
+      "southwest": "eastfold_plains",
+      "northeast": "lothlorien_border"
+    },
+    "bag_end": {
+      "north": "tuckborough",
+      "south": "tookbank",
+      "east": "michel_delving",
+      "west": "mayor_office"
+    },
+    "hobbiton_square": {
+      "southeast": "entwash_delta",
+      "northwest": "cerin_amroth"
+    },
+    "green_dragon": {
+      "southwest": "aldburg",
+      "northeast": "caras_galadhon"
+    },
+    "bywater": {
+      "southeast": "snowbourn_banks",
+      "northwest": "galadriel_court"
+    },
+    "woody_end": {
+      "southwest": "starkhorn_foothills",
+      "northeast": "mirror_chamber"
+    },
+    "brandywine_bridge": {
+      "north": "dimholt_road",
+      "south": "silverlode_banks",
+      "southeast": "anduin_approach",
+      "southwest": "anduin_midstream"
+    },
+    "stock_road": {
+      "northwest": "dimholt_road",
+      "southeast": "parth_galen"
+    },
+    "marish": {
+      "northeast": "dimholt_road",
+      "southwest": "amon_hen"
+    },
+    "old_forest_entrance": {
+      "northwest": "dunharrow_firtree_grove",
+      "southeast": "rauros_falls_approach"
+    },
+    "old_forest_depth": {
+      "northeast": "hidden_valley_white_mountains",
+      "southwest": "gap_of_rohan"
+    },
+    "withywindle": {
+      "northwest": "deeping_stream_upper",
+      "southeast": "rohan_plains"
+    },
+    "bombadil_house": {
+      "northeast": "hornburg_armory",
+      "southwest": "edoras_approach"
+    },
+    "bree_gate": {
+      "northeast": "deep_coomb",
+      "southwest": "edoras_gates"
+    },
+    "bree_square": {
+      "northwest": "west_emnet",
+      "southeast": "meduseld"
+    },
+    "prancing_pony": {
+      "northeast": "wold_of_rohan",
+      "southwest": "harrowdale"
+    },
+    "bree_east_road": {
+      "northwest": "ithilien_woods",
+      "southeast": "dunharrow"
+    },
+    "weathertop_base": {
+      "northeast": "henneth_annun",
+      "southwest": "paths_of_dead"
+    },
+    "midgewater_marshes": {
+      "northwest": "minas_tirith_stables",
+      "southeast": "dead_city"
+    },
+    "weatherhills": {
+      "west": "minas_tirith_houses_of_healing",
+      "east": "helms_gate",
+      "northeast": "helms_deep_interior",
+      "southeast": "glittering_caves"
+    },
+    "last_bridge": {
+      "southwest": "minas_tirith_houses_of_healing",
+      "northeast": "fangorn_border"
+    },
+    "trollshaws": {
+      "northwest": "minas_tirith_houses_of_healing",
+      "southeast": "fangorn_eaves"
+    },
+    "troll_cave": {
+      "southwest": "citadel_guards_hall",
+      "northeast": "fangorn_depths"
+    },
+    "ford_of_bruinen": {
+      "northwest": "pelargir_port",
+      "southeast": "wellinghall"
+    },
+    "rivendell_gates": {
+      "southwest": "lossarnach_valleys",
+      "northeast": "entwash"
+    },
+    "rivendell_hall": {
+      "northwest": "minas_morgul_gates",
+      "southeast": "east_emnet"
+    },
+    "rivendell_library": {
+      "southwest": "minas_morgul_interior",
+      "northeast": "isengard_gates"
+    },
+    "rivendell_forge": {
+      "northwest": "gorgoroth_plateau",
+      "southeast": "orthanc_base"
+    },
+    "hollin_gate": {
+      "southwest": "mount_doom_sammath_naur",
+      "northeast": "orthanc_chamber"
+    },
+    "doors_of_durin": {
+      "northwest": "barad_dur_throne_room",
+      "southeast": "osgiliath_ruins"
+    },
+    "moria_entrance": {
+      "east": "durthang_fortress",
+      "west": "pelennor_fields",
+      "northwest": "minas_tirith_gates",
+      "southwest": "white_tower"
+    },
+    "twenty_first_hall": {
+      "southeast": "durthang_fortress",
+      "northwest": "rath_dinen"
+    },
+    "balin_tomb": {
+      "northeast": "durthang_fortress",
+      "southwest": "house_of_stewards"
+    },
+    "seventh_level": {
+      "southeast": "grey_havens_docks",
+      "northwest": "morgul_vale"
+    },
+    "sixth_level": {
+      "northeast": "havens_approach",
+      "southwest": "morgul_pass"
+    },
+    "goblin_warren": {
+      "southeast": "mirkwood_edge",
+      "northwest": "cirith_ungol"
+    },
+    "fifth_level": {
+      "northeast": "mirkwood_path_1",
+      "southwest": "shelob_lair"
+    },
+    "fourth_level": {
+      "southeast": "mirkwood_path_2",
+      "northwest": "tunnel_exit"
+    },
+    "third_level": {
+      "northeast": "mirkwood_depths",
+      "southwest": "mordor_plains"
+    },
+    "durin_chamber": {
+      "southeast": "rhosgobel",
+      "northwest": "black_gate"
+    },
+    "second_level": {
+      "northeast": "elf_path_entrance",
+      "southwest": "barad_dur_approach"
+    },
+    "mithril_mine": {
+      "south": "thranduil_halls_gate",
+      "north": "barad_dur_base",
+      "northeast": "barad_dur_chamber",
+      "northwest": "mount_doom_approach"
+    },
+    "first_level": {
+      "southwest": "thranduil_halls_gate",
+      "northeast": "mount_doom_summit"
+    },
+    "bridge_of_khazad_dum": {
+      "southeast": "thranduil_halls_gate"
+    },
+    "east_gate_approach": {
+      "southwest": "thranduil_halls_interior"
+    },
+    "east_gate_moria": {
+      "southeast": "long_lake_path"
+    },
+    "dimrill_dale": {
+      "southwest": "lake_town_docks"
+    },
+    "mines_level1": {
+      "southeast": "lonely_mountain_approach"
+    },
+    "mines_level2": {
+      "southwest": "erebor_gates"
+    },
+    "endless_stair_top": {
+      "southeast": "erebor_great_hall"
+    },
+    "endless_stair_bottom": {
+      "southeast": "erebor_treasury"
+    },
+    "lothlorien_border": {
+      "southwest": "erebor_armory"
+    },
+    "cerin_amroth": {
+      "southeast": "hobbiton_square"
+    },
+    "caras_galadhon": {
+      "southwest": "green_dragon"
+    },
+    "galadriel_court": {
+      "southeast": "bywater"
+    },
+    "mirror_chamber": {
+      "southwest": "woody_end"
+    },
+    "silverlode_banks": {
+      "north": "brandywine_bridge"
+    },
+    "anduin_approach": {
+      "northwest": "brandywine_bridge"
+    },
+    "anduin_midstream": {
+      "northeast": "brandywine_bridge"
+    },
+    "parth_galen": {
+      "northwest": "stock_road"
+    },
+    "amon_hen": {
+      "northeast": "marish"
+    },
+    "rauros_falls_approach": {
+      "northwest": "old_forest_entrance"
+    },
+    "gap_of_rohan": {
+      "northeast": "old_forest_depth"
+    },
+    "rohan_plains": {
+      "northwest": "withywindle"
+    },
+    "edoras_approach": {
+      "northeast": "bombadil_house"
+    },
+    "edoras_gates": {
+      "northeast": "bree_gate"
+    },
+    "meduseld": {
+      "northwest": "bree_square"
+    },
+    "harrowdale": {
+      "northeast": "prancing_pony"
+    },
+    "dunharrow": {
+      "northwest": "bree_east_road"
+    },
+    "paths_of_dead": {
+      "northeast": "weathertop_base"
+    },
+    "dead_city": {
+      "northwest": "midgewater_marshes"
+    },
+    "helms_gate": {
+      "west": "weatherhills"
+    },
+    "helms_deep_interior": {
+      "southwest": "weatherhills"
+    },
+    "glittering_caves": {
+      "northwest": "weatherhills"
+    },
+    "fangorn_border": {
+      "southwest": "last_bridge"
+    },
+    "fangorn_eaves": {
+      "northwest": "trollshaws"
+    },
+    "fangorn_depths": {
+      "southwest": "troll_cave"
+    },
+    "wellinghall": {
+      "northwest": "ford_of_bruinen"
+    },
+    "entwash": {
+      "southwest": "rivendell_gates"
+    },
+    "east_emnet": {
+      "northwest": "rivendell_hall"
+    },
+    "isengard_gates": {
+      "southwest": "rivendell_library"
+    },
+    "orthanc_base": {
+      "northwest": "rivendell_forge"
+    },
+    "orthanc_chamber": {
+      "southwest": "hollin_gate"
+    },
+    "osgiliath_ruins": {
+      "northwest": "doors_of_durin"
+    },
+    "pelennor_fields": {
+      "east": "moria_entrance"
+    },
+    "minas_tirith_gates": {
+      "southeast": "moria_entrance"
+    },
+    "white_tower": {
+      "northeast": "moria_entrance"
+    },
+    "rath_dinen": {
+      "southeast": "twenty_first_hall"
+    },
+    "house_of_stewards": {
+      "northeast": "balin_tomb"
+    },
+    "morgul_vale": {
+      "southeast": "seventh_level"
+    },
+    "morgul_pass": {
+      "northeast": "sixth_level"
+    },
+    "cirith_ungol": {
+      "southeast": "goblin_warren"
+    },
+    "shelob_lair": {
+      "northeast": "fifth_level"
+    },
+    "tunnel_exit": {
+      "southeast": "fourth_level"
+    },
+    "mordor_plains": {
+      "northeast": "third_level"
+    },
+    "black_gate": {
+      "southeast": "durin_chamber"
+    },
+    "barad_dur_approach": {
+      "northeast": "second_level"
+    },
+    "barad_dur_base": {
+      "south": "mithril_mine"
+    },
+    "barad_dur_chamber": {
+      "southwest": "mithril_mine"
+    },
+    "mount_doom_approach": {
+      "southeast": "mithril_mine"
+    },
+    "mount_doom_summit": {
+      "southwest": "first_level"
+    }
+  },
+  "coordinates": {
+    "bag_end": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "tuckborough": {
+      "x": 0,
+      "y": 1,
+      "z": 0
+    },
+    "tookbank": {
+      "x": 0,
+      "y": -1,
+      "z": 0
+    },
+    "michel_delving": {
+      "x": 1,
+      "y": 0,
+      "z": 0
+    },
+    "mayor_office": {
+      "x": -1,
+      "y": 0,
+      "z": 0
+    },
+    "waymeet": {
+      "x": 0,
+      "y": 2,
+      "z": 0
+    },
+    "overhill": {
+      "x": 1,
+      "y": 1,
+      "z": 0
+    },
+    "scary": {
+      "x": -1,
+      "y": 1,
+      "z": 0
+    },
+    "needlehole": {
+      "x": 1,
+      "y": 2,
+      "z": 0
+    },
+    "longbottom": {
+      "x": 0,
+      "y": -2,
+      "z": 0
+    },
+    "sackville_manor": {
+      "x": 1,
+      "y": -1,
+      "z": 0
+    },
+    "whitwell": {
+      "x": -1,
+      "y": -1,
+      "z": 0
+    },
+    "rushock_bog": {
+      "x": 1,
+      "y": -2,
+      "z": 0
+    },
+    "green_hill_country": {
+      "x": 2,
+      "y": 0,
+      "z": 0
+    },
+    "bucklebury": {
+      "x": 2,
+      "y": 1,
+      "z": 0
+    },
+    "brandy_hall": {
+      "x": 2,
+      "y": -1,
+      "z": 0
+    },
+    "buckland_kitchen": {
+      "x": -2,
+      "y": 0,
+      "z": 0
+    },
+    "buckland_cellar": {
+      "x": -2,
+      "y": 1,
+      "z": 0
+    },
+    "crickhollow": {
+      "x": -2,
+      "y": -1,
+      "z": 0
+    },
+    "old_forest_buckland_entrance": {
+      "x": 0,
+      "y": 3,
+      "z": 0
+    },
+    "bombadil_garden": {
+      "x": -1,
+      "y": 2,
+      "z": 0
+    },
+    "old_forest_exit": {
+      "x": 1,
+      "y": 3,
+      "z": 0
+    },
+    "barrow_downs_approach": {
+      "x": -1,
+      "y": 3,
+      "z": 0
+    },
+    "barrow_downs": {
+      "x": 2,
+      "y": 2,
+      "z": 0
+    },
+    "barrow_chamber_1": {
+      "x": -2,
+      "y": 2,
+      "z": 0
+    },
+    "barrow_chamber_2": {
+      "x": 2,
+      "y": 3,
+      "z": 0
+    },
+    "barrow_chamber_3": {
+      "x": 0,
+      "y": -3,
+      "z": 0
+    },
+    "weathertop_approach": {
+      "x": -1,
+      "y": -2,
+      "z": 0
+    },
+    "weathertop_summit": {
+      "x": 1,
+      "y": -3,
+      "z": 0
+    },
+    "combe": {
+      "x": -1,
+      "y": -3,
+      "z": 0
+    },
+    "archet": {
+      "x": 2,
+      "y": -2,
+      "z": 0
+    },
+    "chetwood": {
+      "x": -2,
+      "y": -2,
+      "z": 0
+    },
+    "staddle": {
+      "x": 2,
+      "y": -3,
+      "z": 0
+    },
+    "fornost_approach": {
+      "x": 3,
+      "y": 0,
+      "z": 0
+    },
+    "fornost_gates": {
+      "x": 3,
+      "y": 1,
+      "z": 0
+    },
+    "fornost_ruins": {
+      "x": 3,
+      "y": -1,
+      "z": 0
+    },
+    "fornost_temple": {
+      "x": 3,
+      "y": 2,
+      "z": 0
+    },
+    "fornost_palace": {
+      "x": 3,
+      "y": -2,
+      "z": 0
+    },
+    "fornost_keep": {
+      "x": -3,
+      "y": 0,
+      "z": 0
+    },
+    "annuminas_approach": {
+      "x": -3,
+      "y": 1,
+      "z": 0
+    },
+    "annuminas_ruins": {
+      "x": -3,
+      "y": -1,
+      "z": 0
+    },
+    "annuminas_tower": {
+      "x": -3,
+      "y": 2,
+      "z": 0
+    },
+    "lake_evendim": {
+      "x": -3,
+      "y": -2,
+      "z": 0
+    },
+    "rivendell_gardens": {
+      "x": 0,
+      "y": 4,
+      "z": 0
+    },
+    "hall_of_fire_guest": {
+      "x": 1,
+      "y": 4,
+      "z": 0
+    },
+    "elrond_study": {
+      "x": -1,
+      "y": 4,
+      "z": 0
+    },
+    "waterfall_walkway": {
+      "x": -2,
+      "y": 3,
+      "z": 0
+    },
+    "hidden_flet": {
+      "x": 2,
+      "y": 4,
+      "z": 0
+    },
+    "rivendell_guest_house": {
+      "x": -2,
+      "y": 4,
+      "z": 0
+    },
+    "durin_throne_hall": {
+      "x": 3,
+      "y": 3,
+      "z": 0
+    },
+    "hall_of_kings": {
+      "x": -3,
+      "y": 3,
+      "z": 0
+    },
+    "royal_tombs": {
+      "x": 3,
+      "y": 4,
+      "z": 0
+    },
+    "royal_armory": {
+      "x": 0,
+      "y": -4,
+      "z": 0
+    },
+    "smelting_chambers": {
+      "x": 1,
+      "y": -4,
+      "z": 0
+    },
+    "deep_mines_hub": {
+      "x": -1,
+      "y": -4,
+      "z": 0
+    },
+    "mithril_depths_1": {
+      "x": -2,
+      "y": -3,
+      "z": 0
+    },
+    "mithril_depths_2": {
+      "x": 2,
+      "y": -4,
+      "z": 0
+    },
+    "iron_mines_1": {
+      "x": -2,
+      "y": -4,
+      "z": 0
+    },
+    "iron_mines_2": {
+      "x": 3,
+      "y": -3,
+      "z": 0
+    },
+    "the_unending_stair_middle": {
+      "x": -3,
+      "y": -3,
+      "z": 0
+    },
+    "goblin_ward": {
+      "x": 3,
+      "y": -4,
+      "z": 0
+    },
+    "goblin_watchtower": {
+      "x": 4,
+      "y": 0,
+      "z": 0
+    },
+    "khazad_dum_chasm_view": {
+      "x": 4,
+      "y": 1,
+      "z": 0
+    },
+    "nameless_tunnels": {
+      "x": 4,
+      "y": -1,
+      "z": 0
+    },
+    "the_dark_lake": {
+      "x": 4,
+      "y": 2,
+      "z": 0
+    },
+    "galadhrm_flet_1": {
+      "x": 4,
+      "y": -2,
+      "z": 0
+    },
+    "niphredil_meadow": {
+      "x": 4,
+      "y": 3,
+      "z": 0
+    },
+    "singing_groves": {
+      "x": 4,
+      "y": -3,
+      "z": 0
+    },
+    "elven_craft_hall": {
+      "x": -4,
+      "y": 0,
+      "z": 0
+    },
+    "mallorn_sanctuary": {
+      "x": -4,
+      "y": 1,
+      "z": 0
+    },
+    "silverlode_crossing": {
+      "x": -4,
+      "y": -1,
+      "z": 0
+    },
+    "celebrant_banks": {
+      "x": -4,
+      "y": 2,
+      "z": 0
+    },
+    "anduin_confluence": {
+      "x": -4,
+      "y": -2,
+      "z": 0
+    },
+    "fangorn_hidden_path": {
+      "x": -4,
+      "y": 3,
+      "z": 0
+    },
+    "the_silent_glade": {
+      "x": -4,
+      "y": -3,
+      "z": 0
+    },
+    "entmoot_circle": {
+      "x": 0,
+      "y": 5,
+      "z": 0
+    },
+    "entwash_headwaters": {
+      "x": 1,
+      "y": 5,
+      "z": 0
+    },
+    "treebeard_cellar": {
+      "x": -1,
+      "y": 5,
+      "z": 0
+    },
+    "skinbark_grove": {
+      "x": 2,
+      "y": 5,
+      "z": 0
+    },
+    "leaflock_meadow": {
+      "x": -2,
+      "y": 5,
+      "z": 0
+    },
+    "westfold_plains": {
+      "x": -3,
+      "y": 4,
+      "z": 0
+    },
+    "eastfold_plains": {
+      "x": 3,
+      "y": 5,
+      "z": 0
+    },
+    "entwash_delta": {
+      "x": -3,
+      "y": 5,
+      "z": 0
+    },
+    "aldburg": {
+      "x": 4,
+      "y": 4,
+      "z": 0
+    },
+    "snowbourn_banks": {
+      "x": -4,
+      "y": 4,
+      "z": 0
+    },
+    "starkhorn_foothills": {
+      "x": 4,
+      "y": 5,
+      "z": 0
+    },
+    "dimholt_road": {
+      "x": 0,
+      "y": -5,
+      "z": 0
+    },
+    "dunharrow_firtree_grove": {
+      "x": 1,
+      "y": -5,
+      "z": 0
+    },
+    "hidden_valley_white_mountains": {
+      "x": -1,
+      "y": -5,
+      "z": 0
+    },
+    "deeping_stream_upper": {
+      "x": 2,
+      "y": -5,
+      "z": 0
+    },
+    "hornburg_armory": {
+      "x": -2,
+      "y": -5,
+      "z": 0
+    },
+    "deep_coomb": {
+      "x": -3,
+      "y": -4,
+      "z": 0
+    },
+    "west_emnet": {
+      "x": 3,
+      "y": -5,
+      "z": 0
+    },
+    "wold_of_rohan": {
+      "x": -3,
+      "y": -5,
+      "z": 0
+    },
+    "ithilien_woods": {
+      "x": 4,
+      "y": -4,
+      "z": 0
+    },
+    "henneth_annun": {
+      "x": -4,
+      "y": -4,
+      "z": 0
+    },
+    "minas_tirith_stables": {
+      "x": 4,
+      "y": -5,
+      "z": 0
+    },
+    "minas_tirith_houses_of_healing": {
+      "x": 5,
+      "y": 0,
+      "z": 0
+    },
+    "citadel_guards_hall": {
+      "x": 5,
+      "y": 1,
+      "z": 0
+    },
+    "pelargir_port": {
+      "x": 5,
+      "y": -1,
+      "z": 0
+    },
+    "lossarnach_valleys": {
+      "x": 5,
+      "y": 2,
+      "z": 0
+    },
+    "minas_morgul_gates": {
+      "x": 5,
+      "y": -2,
+      "z": 0
+    },
+    "minas_morgul_interior": {
+      "x": 5,
+      "y": 3,
+      "z": 0
+    },
+    "gorgoroth_plateau": {
+      "x": 5,
+      "y": -3,
+      "z": 0
+    },
+    "mount_doom_sammath_naur": {
+      "x": 5,
+      "y": 4,
+      "z": 0
+    },
+    "barad_dur_throne_room": {
+      "x": 5,
+      "y": -4,
+      "z": 0
+    },
+    "durthang_fortress": {
+      "x": -5,
+      "y": 0,
+      "z": 0
+    },
+    "grey_havens_docks": {
+      "x": -5,
+      "y": 1,
+      "z": 0
+    },
+    "havens_approach": {
+      "x": -5,
+      "y": -1,
+      "z": 0
+    },
+    "mirkwood_edge": {
+      "x": -5,
+      "y": 2,
+      "z": 0
+    },
+    "mirkwood_path_1": {
+      "x": -5,
+      "y": -2,
+      "z": 0
+    },
+    "mirkwood_path_2": {
+      "x": -5,
+      "y": 3,
+      "z": 0
+    },
+    "mirkwood_depths": {
+      "x": -5,
+      "y": -3,
+      "z": 0
+    },
+    "rhosgobel": {
+      "x": -5,
+      "y": 4,
+      "z": 0
+    },
+    "elf_path_entrance": {
+      "x": -5,
+      "y": -4,
+      "z": 0
+    },
+    "thranduil_halls_gate": {
+      "x": 0,
+      "y": 6,
+      "z": 0
+    },
+    "thranduil_halls_interior": {
+      "x": 1,
+      "y": 6,
+      "z": 0
+    },
+    "long_lake_path": {
+      "x": -1,
+      "y": 6,
+      "z": 0
+    },
+    "lake_town_docks": {
+      "x": 2,
+      "y": 6,
+      "z": 0
+    },
+    "lonely_mountain_approach": {
+      "x": -2,
+      "y": 6,
+      "z": 0
+    },
+    "erebor_gates": {
+      "x": 3,
+      "y": 6,
+      "z": 0
+    },
+    "erebor_great_hall": {
+      "x": -3,
+      "y": 6,
+      "z": 0
+    },
+    "erebor_treasury": {
+      "x": -4,
+      "y": 5,
+      "z": 0
+    },
+    "erebor_armory": {
+      "x": 4,
+      "y": 6,
+      "z": 0
+    },
+    "hobbiton_square": {
+      "x": -4,
+      "y": 6,
+      "z": 0
+    },
+    "green_dragon": {
+      "x": 5,
+      "y": 5,
+      "z": 0
+    },
+    "bywater": {
+      "x": -5,
+      "y": 5,
+      "z": 0
+    },
+    "woody_end": {
+      "x": 5,
+      "y": 6,
+      "z": 0
+    },
+    "brandywine_bridge": {
+      "x": 0,
+      "y": -6,
+      "z": 0
+    },
+    "stock_road": {
+      "x": 1,
+      "y": -6,
+      "z": 0
+    },
+    "marish": {
+      "x": -1,
+      "y": -6,
+      "z": 0
+    },
+    "old_forest_entrance": {
+      "x": 2,
+      "y": -6,
+      "z": 0
+    },
+    "old_forest_depth": {
+      "x": -2,
+      "y": -6,
+      "z": 0
+    },
+    "withywindle": {
+      "x": 3,
+      "y": -6,
+      "z": 0
+    },
+    "bombadil_house": {
+      "x": -3,
+      "y": -6,
+      "z": 0
+    },
+    "bree_gate": {
+      "x": -4,
+      "y": -5,
+      "z": 0
+    },
+    "bree_square": {
+      "x": 4,
+      "y": -6,
+      "z": 0
+    },
+    "prancing_pony": {
+      "x": -4,
+      "y": -6,
+      "z": 0
+    },
+    "bree_east_road": {
+      "x": 5,
+      "y": -5,
+      "z": 0
+    },
+    "weathertop_base": {
+      "x": -5,
+      "y": -5,
+      "z": 0
+    },
+    "midgewater_marshes": {
+      "x": 5,
+      "y": -6,
+      "z": 0
+    },
+    "weatherhills": {
+      "x": 6,
+      "y": 0,
+      "z": 0
+    },
+    "last_bridge": {
+      "x": 6,
+      "y": 1,
+      "z": 0
+    },
+    "trollshaws": {
+      "x": 6,
+      "y": -1,
+      "z": 0
+    },
+    "troll_cave": {
+      "x": 6,
+      "y": 2,
+      "z": 0
+    },
+    "ford_of_bruinen": {
+      "x": 6,
+      "y": -2,
+      "z": 0
+    },
+    "rivendell_gates": {
+      "x": 6,
+      "y": 3,
+      "z": 0
+    },
+    "rivendell_hall": {
+      "x": 6,
+      "y": -3,
+      "z": 0
+    },
+    "rivendell_library": {
+      "x": 6,
+      "y": 4,
+      "z": 0
+    },
+    "rivendell_forge": {
+      "x": 6,
+      "y": -4,
+      "z": 0
+    },
+    "hollin_gate": {
+      "x": 6,
+      "y": 5,
+      "z": 0
+    },
+    "doors_of_durin": {
+      "x": 6,
+      "y": -5,
+      "z": 0
+    },
+    "moria_entrance": {
+      "x": -6,
+      "y": 0,
+      "z": 0
+    },
+    "twenty_first_hall": {
+      "x": -6,
+      "y": 1,
+      "z": 0
+    },
+    "balin_tomb": {
+      "x": -6,
+      "y": -1,
+      "z": 0
+    },
+    "seventh_level": {
+      "x": -6,
+      "y": 2,
+      "z": 0
+    },
+    "sixth_level": {
+      "x": -6,
+      "y": -2,
+      "z": 0
+    },
+    "goblin_warren": {
+      "x": -6,
+      "y": 3,
+      "z": 0
+    },
+    "fifth_level": {
+      "x": -6,
+      "y": -3,
+      "z": 0
+    },
+    "fourth_level": {
+      "x": -6,
+      "y": 4,
+      "z": 0
+    },
+    "third_level": {
+      "x": -6,
+      "y": -4,
+      "z": 0
+    },
+    "durin_chamber": {
+      "x": -6,
+      "y": 5,
+      "z": 0
+    },
+    "second_level": {
+      "x": -6,
+      "y": -5,
+      "z": 0
+    },
+    "mithril_mine": {
+      "x": 0,
+      "y": 7,
+      "z": 0
+    },
+    "first_level": {
+      "x": 1,
+      "y": 7,
+      "z": 0
+    },
+    "bridge_of_khazad_dum": {
+      "x": -1,
+      "y": 7,
+      "z": 0
+    },
+    "east_gate_approach": {
+      "x": 2,
+      "y": 7,
+      "z": 0
+    },
+    "east_gate_moria": {
+      "x": -2,
+      "y": 7,
+      "z": 0
+    },
+    "dimrill_dale": {
+      "x": 3,
+      "y": 7,
+      "z": 0
+    },
+    "mines_level1": {
+      "x": -3,
+      "y": 7,
+      "z": 0
+    },
+    "mines_level2": {
+      "x": 4,
+      "y": 7,
+      "z": 0
+    },
+    "endless_stair_top": {
+      "x": -4,
+      "y": 7,
+      "z": 0
+    },
+    "endless_stair_bottom": {
+      "x": -5,
+      "y": 6,
+      "z": 0
+    },
+    "lothlorien_border": {
+      "x": 5,
+      "y": 7,
+      "z": 0
+    },
+    "cerin_amroth": {
+      "x": -5,
+      "y": 7,
+      "z": 0
+    },
+    "caras_galadhon": {
+      "x": 6,
+      "y": 6,
+      "z": 0
+    },
+    "galadriel_court": {
+      "x": -6,
+      "y": 6,
+      "z": 0
+    },
+    "mirror_chamber": {
+      "x": 6,
+      "y": 7,
+      "z": 0
+    },
+    "silverlode_banks": {
+      "x": 0,
+      "y": -7,
+      "z": 0
+    },
+    "anduin_approach": {
+      "x": 1,
+      "y": -7,
+      "z": 0
+    },
+    "anduin_midstream": {
+      "x": -1,
+      "y": -7,
+      "z": 0
+    },
+    "parth_galen": {
+      "x": 2,
+      "y": -7,
+      "z": 0
+    },
+    "amon_hen": {
+      "x": -2,
+      "y": -7,
+      "z": 0
+    },
+    "rauros_falls_approach": {
+      "x": 3,
+      "y": -7,
+      "z": 0
+    },
+    "gap_of_rohan": {
+      "x": -3,
+      "y": -7,
+      "z": 0
+    },
+    "rohan_plains": {
+      "x": 4,
+      "y": -7,
+      "z": 0
+    },
+    "edoras_approach": {
+      "x": -4,
+      "y": -7,
+      "z": 0
+    },
+    "edoras_gates": {
+      "x": -5,
+      "y": -6,
+      "z": 0
+    },
+    "meduseld": {
+      "x": 5,
+      "y": -7,
+      "z": 0
+    },
+    "harrowdale": {
+      "x": -5,
+      "y": -7,
+      "z": 0
+    },
+    "dunharrow": {
+      "x": 6,
+      "y": -6,
+      "z": 0
+    },
+    "paths_of_dead": {
+      "x": -6,
+      "y": -6,
+      "z": 0
+    },
+    "dead_city": {
+      "x": 6,
+      "y": -7,
+      "z": 0
+    },
+    "helms_gate": {
+      "x": 7,
+      "y": 0,
+      "z": 0
+    },
+    "helms_deep_interior": {
+      "x": 7,
+      "y": 1,
+      "z": 0
+    },
+    "glittering_caves": {
+      "x": 7,
+      "y": -1,
+      "z": 0
+    },
+    "fangorn_border": {
+      "x": 7,
+      "y": 2,
+      "z": 0
+    },
+    "fangorn_eaves": {
+      "x": 7,
+      "y": -2,
+      "z": 0
+    },
+    "fangorn_depths": {
+      "x": 7,
+      "y": 3,
+      "z": 0
+    },
+    "wellinghall": {
+      "x": 7,
+      "y": -3,
+      "z": 0
+    },
+    "entwash": {
+      "x": 7,
+      "y": 4,
+      "z": 0
+    },
+    "east_emnet": {
+      "x": 7,
+      "y": -4,
+      "z": 0
+    },
+    "isengard_gates": {
+      "x": 7,
+      "y": 5,
+      "z": 0
+    },
+    "orthanc_base": {
+      "x": 7,
+      "y": -5,
+      "z": 0
+    },
+    "orthanc_chamber": {
+      "x": 7,
+      "y": 6,
+      "z": 0
+    },
+    "osgiliath_ruins": {
+      "x": 7,
+      "y": -6,
+      "z": 0
+    },
+    "pelennor_fields": {
+      "x": -7,
+      "y": 0,
+      "z": 0
+    },
+    "minas_tirith_gates": {
+      "x": -7,
+      "y": 1,
+      "z": 0
+    },
+    "white_tower": {
+      "x": -7,
+      "y": -1,
+      "z": 0
+    },
+    "rath_dinen": {
+      "x": -7,
+      "y": 2,
+      "z": 0
+    },
+    "house_of_stewards": {
+      "x": -7,
+      "y": -2,
+      "z": 0
+    },
+    "morgul_vale": {
+      "x": -7,
+      "y": 3,
+      "z": 0
+    },
+    "morgul_pass": {
+      "x": -7,
+      "y": -3,
+      "z": 0
+    },
+    "cirith_ungol": {
+      "x": -7,
+      "y": 4,
+      "z": 0
+    },
+    "shelob_lair": {
+      "x": -7,
+      "y": -4,
+      "z": 0
+    },
+    "tunnel_exit": {
+      "x": -7,
+      "y": 5,
+      "z": 0
+    },
+    "mordor_plains": {
+      "x": -7,
+      "y": -5,
+      "z": 0
+    },
+    "black_gate": {
+      "x": -7,
+      "y": 6,
+      "z": 0
+    },
+    "barad_dur_approach": {
+      "x": -7,
+      "y": -6,
+      "z": 0
+    },
+    "barad_dur_base": {
+      "x": 0,
+      "y": 8,
+      "z": 0
+    },
+    "barad_dur_chamber": {
+      "x": 1,
+      "y": 8,
+      "z": 0
+    },
+    "mount_doom_approach": {
+      "x": -1,
+      "y": 8,
+      "z": 0
+    },
+    "mount_doom_summit": {
+      "x": 2,
+      "y": 8,
+      "z": 0
+    }
+  },
+  "stats": {
+    "totalRooms": 223,
+    "connectedRooms": 223,
+    "reachableRooms": 223,
+    "totalConnections": 444,
+    "correctConnections": 444,
+    "accuracy": 100,
+    "overlaps": 0
+  }
+}

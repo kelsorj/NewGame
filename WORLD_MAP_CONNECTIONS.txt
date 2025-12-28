@@ -1,0 +1,2521 @@
+================================================================================
+COMPLETE WORLD MAP - ALL LOCATIONS AND CONNECTIONS
+================================================================================
+
+Total Locations: 223
+Generated: 2025-12-28T01:26:05.841Z
+
+
+================================================================================
+THE SHIRE (18 locations)
+================================================================================
+
+Bag End [bag_end]
+--------------------------------------------------------------------------------
+Description: You stand in the cozy hobbit-hole of Bag End, the most comfortable dwelling in all the Shire. Round windows set deep in the hillside let in cheerful sunlight that dances across polished wooden floors....
+Connections:
+  east         -> Sackville Manor [sackville_manor]
+  south        -> Woody End [woody_end]
+Items: walking_stick, lembas_bread
+
+Brandy Hall [brandy_hall]
+--------------------------------------------------------------------------------
+Description: Brandy Hall is the ancestral home of the Brandybuck family, and it's unlike any other hobbit-hole in the Shire. It's more like a small underground town than a single dwelling, with dozens of rooms, co...
+Connections:
+  north        -> Bucklebury [bucklebury]
+  south        -> Old Forest - Buckland Entrance [old_forest_buckland_entrance]
+Items: brandybuck_heirloom, old_wine
+
+Brandywine Bridge [brandywine_bridge]
+--------------------------------------------------------------------------------
+Description: An ancient stone bridge arches gracefully over the Brandywine River, its weathered stones bearing the marks of countless seasons and travelers. The water flows swiftly beneath, clear and cold, carryin...
+Connections:
+  east         -> Combe [combe]
+  north        -> Scary [scary]
+  northeast    -> Rushock Bog [rushock_bog]
+  northwest    -> Green Hill Country [green_hill_country]
+  south        -> Old Forest Entrance [old_forest_entrance]
+  southeast    -> Approach to Fornost [fornost_approach]
+  southwest    -> The Marish [marish]
+  west         -> Michel Delving [michel_delving]
+
+Bucklebury [bucklebury]
+--------------------------------------------------------------------------------
+Description: Bucklebury is the main village of Buckland, a region east of the Brandywine River that serves as a bridge between the Shire and the wider world. The hobbits here are more adventurous than their cousin...
+Connections:
+  east         -> Old Forest - Eastern Exit [old_forest_exit]
+  north        -> East Road from Bree [bree_east_road]
+  northeast    -> Approach to the Barrow-downs [barrow_downs_approach]
+  northwest    -> Deep in the Old Forest [old_forest_depth]
+  south        -> Brandy Hall [brandy_hall]
+  southeast    -> Weathertop Summit [weathertop_summit]
+  southwest    -> Tom Bombadil's House [bombadil_house]
+  west         -> Crickhollow [crickhollow]
+Items: buckland_ale
+
+Bywater [bywater]
+--------------------------------------------------------------------------------
+Description: A charming small village nestled along the banks of the Water, a gentle stream that flows through the heart of the Shire. Smoke rises lazily from numerous chimneys, each marking a cozy hobbit-hole whe...
+Connections:
+  east         -> Green Hill Country [green_hill_country]
+  northeast    -> Tuckborough [tuckborough]
+  south        -> Mayor's Office [mayor_office]
+  southeast    -> Michel Delving [michel_delving]
+Items: rope
+
+Crickhollow [crickhollow]
+--------------------------------------------------------------------------------
+Description: A small hobbit-hole in Buckland. It looks cozy and welcoming, with a well-tended garden.
+Connections:
+  east         -> Bucklebury [bucklebury]
+  north        -> Deep in the Old Forest [old_forest_depth]
+  northeast    -> East Road from Bree [bree_east_road]
+  northwest    -> Archet [archet]
+  south        -> Tom Bombadil's House [bombadil_house]
+  southwest    -> The Withywindle [withywindle]
+Items: garden_tool
+
+Green Hill Country [green_hill_country]
+--------------------------------------------------------------------------------
+Description: Rolling green hills dotted with hobbit-holes. This is some of the most beautiful countryside in the Shire.
+Connections:
+  east         -> Scary [scary]
+  north        -> Tuckborough [tuckborough]
+  south        -> Michel Delving [michel_delving]
+  southeast    -> Brandywine Bridge [brandywine_bridge]
+  southwest    -> Mayor's Office [mayor_office]
+  west         -> Bywater [bywater]
+Items: wildflower_bouquet
+
+Hobbiton Square [hobbiton_square]
+--------------------------------------------------------------------------------
+Description: The heart of Hobbiton bustles with cheerful activity as hobbits go about their daily business. Market stalls line the square, displaying fresh produce, handcrafted goods, and the finest pipeweed in th...
+Connections:
+  east         -> The Green Dragon Inn [green_dragon]
+  south        -> Staddle [staddle]
+Items: silver_coin
+
+Longbottom [longbottom]
+--------------------------------------------------------------------------------
+Description: Famous for its pipe-weed farms. The fields stretch for miles, and the sweet smell of tobacco fills the air.
+Connections:
+  east         -> Stock Road [stock_road]
+  south        -> Waymeet [waymeet]
+  southeast    -> Overhill [overhill]
+Items: longbottom_leaf, pipeweed_pouch
+
+Michel Delving [michel_delving]
+--------------------------------------------------------------------------------
+Description: Michel Delving is the largest town in the Shire, a bustling center of commerce and government that serves as the unofficial capital of hobbit lands. The town is built into and around a series of hills...
+Connections:
+  east         -> Brandywine Bridge [brandywine_bridge]
+  north        -> Green Hill Country [green_hill_country]
+  northeast    -> Scary [scary]
+  northwest    -> Bywater [bywater]
+  south        -> The Marish [marish]
+  southeast    -> Old Forest Entrance [old_forest_entrance]
+  southwest    -> Whitwell [whitwell]
+  west         -> Mayor's Office [mayor_office]
+Items: mayor_badge, shire_map
+
+Needlehole [needlehole]
+--------------------------------------------------------------------------------
+Description: A small village known for its skilled craftsmen. The sound of hammers and saws fills the air.
+Connections:
+  north        -> The Withywindle [withywindle]
+  northeast    -> Tom Bombadil's House [bombadil_house]
+Items: craftsman_tools
+
+Overhill [overhill]
+--------------------------------------------------------------------------------
+Description: A small village on a hill overlooking the Shire. The hobbits here are known for their excellent view and hospitality.
+Connections:
+  north        -> Stock Road [stock_road]
+  northeast    -> Archet [archet]
+  northwest    -> Longbottom [longbottom]
+  southeast    -> The Withywindle [withywindle]
+  west         -> Waymeet [waymeet]
+Items: spyglass
+
+Rushock Bog [rushock_bog]
+--------------------------------------------------------------------------------
+Description: A marshy area with strange plants and insects. The ground squelches underfoot. Few hobbits venture here.
+Connections:
+  east         -> The Prancing Pony [prancing_pony]
+  north        -> Staddle [staddle]
+  south        -> Combe [combe]
+  southeast    -> Bree Square [bree_square]
+  southwest    -> Brandywine Bridge [brandywine_bridge]
+  west         -> Scary [scary]
+Items: bog_herb
+Enemies: giant_midge_swarm
+
+Sackville Manor [sackville_manor]
+--------------------------------------------------------------------------------
+Description: An ostentatious hobbit-hole belonging to the Sackville-Bagginses. Everything is overly decorated and pretentious.
+Connections:
+  northeast    -> Waymeet [waymeet]
+  southwest    -> Woody End [woody_end]
+  west         -> Bag End [bag_end]
+Items: silver_spoon, fancy_doorknob
+
+Scary [scary]
+--------------------------------------------------------------------------------
+Description: A tiny hamlet near the Old Forest. The hobbits here are more cautious than most, having lived so close to the dark woods.
+Connections:
+  east         -> Rushock Bog [rushock_bog]
+  northeast    -> Staddle [staddle]
+  northwest    -> Tuckborough [tuckborough]
+  south        -> Brandywine Bridge [brandywine_bridge]
+  southeast    -> Combe [combe]
+  southwest    -> Michel Delving [michel_delving]
+  west         -> Green Hill Country [green_hill_country]
+Items: warding_charm
+
+Tuckborough [tuckborough]
+--------------------------------------------------------------------------------
+Description: Tuckborough is the ancestral home of the Took family, one of the most prominent and adventurous families in the Shire. The Great Smials tunnel deep into the hillside, creating a vast network of interc...
+Connections:
+  north        -> Tookbank [tookbank]
+  south        -> Green Hill Country [green_hill_country]
+  southeast    -> Scary [scary]
+  southwest    -> Bywater [bywater]
+Items: took_pipe, hobbit_ale
+
+Waymeet [waymeet]
+--------------------------------------------------------------------------------
+Description: A crossroads where several roads meet. A signpost points in all directions. Travelers often rest here before continuing their journey.
+Connections:
+  east         -> Overhill [overhill]
+  north        -> Longbottom [longbottom]
+  northeast    -> Stock Road [stock_road]
+  southwest    -> Sackville Manor [sackville_manor]
+Items: travelers_guide
+
+Whitwell [whitwell]
+--------------------------------------------------------------------------------
+Description: A peaceful village with a beautiful well in the center. The water is said to be the purest in the Shire.
+Connections:
+  southwest    -> Approach to Mithlond [havens_approach]
+Items: pure_water
+
+
+================================================================================
+BREE-LAND (7 locations)
+================================================================================
+
+Archet [archet]
+--------------------------------------------------------------------------------
+Description: A tiny hamlet surrounded by woods. The people keep to themselves and are suspicious of outsiders.
+Connections:
+  east         -> Deep in the Old Forest [old_forest_depth]
+  northeast    -> The Marish [marish]
+  southeast    -> Crickhollow [crickhollow]
+  southwest    -> Overhill [overhill]
+  west         -> Stock Road [stock_road]
+Items: wooden_whistle
+
+East Road from Bree [bree_east_road]
+--------------------------------------------------------------------------------
+Description: The Great East Road stretches before you, a ribbon of packed earth and stone that has carried travelers for countless generations. This is one of the oldest and most important roads in Middle-earth, c...
+Connections:
+  east         -> Approach to the Barrow-downs [barrow_downs_approach]
+  north        -> Old Forest Entrance [old_forest_entrance]
+  northeast    -> Approach to Fornost [fornost_approach]
+  northwest    -> The Marish [marish]
+  south        -> Bucklebury [bucklebury]
+  southeast    -> Old Forest - Eastern Exit [old_forest_exit]
+  southwest    -> Crickhollow [crickhollow]
+  west         -> Deep in the Old Forest [old_forest_depth]
+
+Bree Gate [bree_gate]
+--------------------------------------------------------------------------------
+Description: The western gate of Bree stands as a threshold between the wild lands and the last outpost of civilization before the Shire. The gate itself is sturdy, built of weathered wood and iron bands, and bear...
+Connections:
+  east         -> Bree Square [bree_square]
+
+Bree Square [bree_square]
+--------------------------------------------------------------------------------
+Description: The center of Bree bustles with the activity of a border town where travelers from all corners of Middle-earth pass through. Shops and houses line the square, their architecture a mix of human and hob...
+Connections:
+  north        -> The Prancing Pony [prancing_pony]
+  northwest    -> Rushock Bog [rushock_bog]
+  south        -> Tom's Garden [bombadil_garden]
+  southwest    -> Approach to Fornost [fornost_approach]
+  west         -> Bree Gate [bree_gate]
+Items: brass_key
+
+Combe [combe]
+--------------------------------------------------------------------------------
+Description: A small village near Bree. The people here are friendly but cautious of strangers. The inn serves good ale.
+Connections:
+  east         -> Bree Square [bree_square]
+  north        -> Rushock Bog [rushock_bog]
+  northeast    -> The Prancing Pony [prancing_pony]
+  northwest    -> Scary [scary]
+  south        -> Approach to Fornost [fornost_approach]
+  southeast    -> Tom's Garden [bombadil_garden]
+  southwest    -> Old Forest Entrance [old_forest_entrance]
+  west         -> Brandywine Bridge [brandywine_bridge]
+Items: combe_ale
+
+The Prancing Pony [prancing_pony]
+--------------------------------------------------------------------------------
+Description: The Prancing Pony is a busy, welcoming inn that serves as the social heart of Bree. The interior is warm and inviting, with low-beamed ceilings and walls lined with maps, trophies, and the occasional ...
+Connections:
+  northwest    -> Staddle [staddle]
+  south        -> Bree Square [bree_square]
+  southwest    -> Combe [combe]
+  west         -> Rushock Bog [rushock_bog]
+Items: ranger_cloak
+
+Staddle [staddle]
+--------------------------------------------------------------------------------
+Description: A farming village. The people here are hardworking and honest. Fields of grain stretch in all directions.
+Connections:
+  north        -> Hobbiton Square [hobbiton_square]
+  northeast    -> The Green Dragon Inn [green_dragon]
+  south        -> Rushock Bog [rushock_bog]
+  southeast    -> The Prancing Pony [prancing_pony]
+  southwest    -> Scary [scary]
+Items: grain_sack, farm_tool
+
+
+================================================================================
+OLD FOREST & BARROW-DOWNS (12 locations)
+================================================================================
+
+Barrow Chamber - First Mound [barrow_chamber_1]
+--------------------------------------------------------------------------------
+Description: A dark chamber within an ancient barrow. Old weapons and treasures lie scattered about. The air is cold and still.
+Connections:
+  north        -> Midgewater Marshes [midgewater_marshes]
+  southwest    -> The Barrow-downs [barrow_downs]
+Items: ancient_sword, barrow_treasure
+Enemies: barrow_wight
+
+Barrow Chamber - Second Mound [barrow_chamber_2]
+--------------------------------------------------------------------------------
+Description: Another burial chamber, this one larger. Stone coffins line the walls. Something moves in the shadows.
+Connections:
+  north        -> The Last Bridge [last_bridge]
+  northwest    -> Old Forest - Eastern Exit [old_forest_exit]
+  south        -> Chetwood Forest [chetwood]
+  southeast    -> The Barrow-downs [barrow_downs]
+  southwest    -> Buckland Kitchen [buckland_kitchen]
+  west         -> Weathertop Summit [weathertop_summit]
+Items: ancient_shield, barrow_gold
+Enemies: barrow_wight
+
+Barrow Chamber - Third Mound [barrow_chamber_3]
+--------------------------------------------------------------------------------
+Description: The largest of the barrow chambers. A great stone table sits in the center, covered with ancient artifacts.
+Connections:
+  northwest    -> The Weather Hills [weatherhills]
+  west         -> Buckland Cellar [buckland_cellar]
+Items: barrow_blade, ancient_crown
+Enemies: barrow_wight
+
+The Barrow-downs [barrow_downs]
+--------------------------------------------------------------------------------
+Description: Ancient burial mounds dot the landscape. Mist clings to the ground, and you hear whispers on the wind. This is a place of the dead.
+Connections:
+  northeast    -> Barrow Chamber - First Mound [barrow_chamber_1]
+  northwest    -> Barrow Chamber - Second Mound [barrow_chamber_2]
+  west         -> Chetwood Forest [chetwood]
+Enemies: barrow_wight
+
+Approach to the Barrow-downs [barrow_downs_approach]
+--------------------------------------------------------------------------------
+Description: The land rises into hills covered with ancient barrows. A sense of dread fills the air. The dead sleep here, but not peacefully.
+Connections:
+  north        -> Approach to Fornost [fornost_approach]
+  northeast    -> Tom's Garden [bombadil_garden]
+  northwest    -> Old Forest Entrance [old_forest_entrance]
+  south        -> Old Forest - Eastern Exit [old_forest_exit]
+  southeast    -> The Last Bridge [last_bridge]
+  southwest    -> Bucklebury [bucklebury]
+  west         -> East Road from Bree [bree_east_road]
+
+Tom's Garden [bombadil_garden]
+--------------------------------------------------------------------------------
+Description: A beautiful garden full of strange and wonderful plants. Tom Bombadil tends it with care, and everything grows in abundance.
+Connections:
+  north        -> Bree Square [bree_square]
+  northwest    -> Combe [combe]
+  southwest    -> Approach to the Barrow-downs [barrow_downs_approach]
+  west         -> Approach to Fornost [fornost_approach]
+Items: magical_herb, garden_seed
+
+Tom Bombadil's House [bombadil_house]
+--------------------------------------------------------------------------------
+Description: A cheerful cottage stands in a sunlit clearing, an island of light and warmth in the shadowed depths of the Old Forest. The building itself seems to have grown from the earth, its walls covered in flo...
+Connections:
+  north        -> Crickhollow [crickhollow]
+  northeast    -> Bucklebury [bucklebury]
+  southeast    -> Base of Weathertop [weathertop_base]
+  southwest    -> Needlehole [needlehole]
+  west         -> The Withywindle [withywindle]
+Items: bombadil_gift, health_potion
+
+Old Forest - Buckland Entrance [old_forest_buckland_entrance]
+--------------------------------------------------------------------------------
+Description: Another entrance to the Old Forest, this one from Buckland. The trees seem even more menacing here.
+Connections:
+  north        -> Brandy Hall [brandy_hall]
+Enemies: huorn
+
+Deep in the Old Forest [old_forest_depth]
+--------------------------------------------------------------------------------
+Description: Deep within the Old Forest, the world outside seems like a distant memory. The trees close in around you, their trunks so thick and close together that you must weave between them. The canopy overhead...
+Connections:
+  east         -> East Road from Bree [bree_east_road]
+  north        -> The Marish [marish]
+  northeast    -> Old Forest Entrance [old_forest_entrance]
+  south        -> Crickhollow [crickhollow]
+  southeast    -> Bucklebury [bucklebury]
+  west         -> Archet [archet]
+Items: ancient_acorn
+
+Old Forest Entrance [old_forest_entrance]
+--------------------------------------------------------------------------------
+Description: The threshold of the Old Forest marks a boundary between the known world and something far older and more dangerous. The trees here are ancient beyond reckoning, their trunks twisted into grotesque sh...
+Connections:
+  east         -> Approach to Fornost [fornost_approach]
+  north        -> Brandywine Bridge [brandywine_bridge]
+  northeast    -> Combe [combe]
+  northwest    -> Michel Delving [michel_delving]
+  south        -> East Road from Bree [bree_east_road]
+  southeast    -> Approach to the Barrow-downs [barrow_downs_approach]
+  southwest    -> Deep in the Old Forest [old_forest_depth]
+  west         -> The Marish [marish]
+Enemies: huorn
+
+Old Forest - Eastern Exit [old_forest_exit]
+--------------------------------------------------------------------------------
+Description: You've made it through the Old Forest! The trees thin out, and you can see open country ahead.
+Connections:
+  east         -> The Last Bridge [last_bridge]
+  north        -> Approach to the Barrow-downs [barrow_downs_approach]
+  northwest    -> East Road from Bree [bree_east_road]
+  south        -> Weathertop Summit [weathertop_summit]
+  southeast    -> Barrow Chamber - Second Mound [barrow_chamber_2]
+  west         -> Bucklebury [bucklebury]
+Items: forest_trophy
+
+The Withywindle [withywindle]
+--------------------------------------------------------------------------------
+Description: The Withywindle flows lazily through a deep, shadowed dell, its waters dark and slow-moving. An enormous willow tree, ancient beyond measure, stands at the water's edge like a sentinel of the Old Fore...
+Connections:
+  east         -> Tom Bombadil's House [bombadil_house]
+  northeast    -> Crickhollow [crickhollow]
+  northwest    -> Overhill [overhill]
+  south        -> Needlehole [needlehole]
+Enemies: old_man_willow
+
+
+================================================================================
+RIVENDELL & TROLLSHAWS (14 locations)
+================================================================================
+
+Approach to Annúminas [annuminas_approach]
+--------------------------------------------------------------------------------
+Description: The road leads to the ruins of Annúminas, the first capital of Arnor. The city lies on the shores of Lake Evendim, now mostly underwater.
+Connections:
+  south        -> Annúminas Ruins [annuminas_ruins]
+  southeast    -> Annúminas Tower [annuminas_tower]
+
+Annúminas Ruins [annuminas_ruins]
+--------------------------------------------------------------------------------
+Description: The ruins of Annúminas, the first capital of Arnor, rise from the waters of Lake Evendim like the bones of a drowned city. The ancient capital is now mostly submerged, its streets and lower buildings ...
+Connections:
+  east         -> Annúminas Tower [annuminas_tower]
+  north        -> Lake Evendim [lake_evendim]
+  south        -> Ford of Bruinen [ford_of_bruinen]
+  southeast    -> Gates of Rivendell [rivendell_gates]
+  southwest    -> The Trollshaws [trollshaws]
+Items: ancient_artifact
+Enemies: water_wraith
+
+Annúminas Tower [annuminas_tower]
+--------------------------------------------------------------------------------
+Description: The highest tower of the ancient city, still standing above the water. The view of Lake Evendim is breathtaking.
+Connections:
+  northwest    -> Approach to Annúminas [annuminas_approach]
+  south        -> Gates of Rivendell [rivendell_gates]
+  southwest    -> Ford of Bruinen [ford_of_bruinen]
+  west         -> Annúminas Ruins [annuminas_ruins]
+Items: tower_crystal, ancient_compass
+
+Elrond's Private Study [elrond_study]
+--------------------------------------------------------------------------------
+Description: A circular room filled with ancient maps and star-charts. Elrond Half-elven spends much of his time here, contemplating the fate of Middle Earth.
+Connections:
+  east         -> The Guest House [rivendell_guest_house]
+  north        -> Gates of Rivendell [rivendell_gates]
+  northwest    -> Ford of Bruinen [ford_of_bruinen]
+  south        -> Hall of Fire - Rivendell [rivendell_hall]
+  southeast    -> Rivendell Forge [rivendell_forge]
+  southwest    -> Library of Rivendell [rivendell_library]
+Items: vilya_reflection, ancient_map
+
+Ford of Bruinen [ford_of_bruinen]
+--------------------------------------------------------------------------------
+Description: The Ford of Bruinen spans the Loudwater River, a place where the water runs shallow over smooth stones, creating a natural crossing point. The river itself is wide and swift, its waters clear and cold...
+Connections:
+  east         -> Gates of Rivendell [rivendell_gates]
+  north        -> Annúminas Ruins [annuminas_ruins]
+  northeast    -> Annúminas Tower [annuminas_tower]
+  southeast    -> Elrond's Private Study [elrond_study]
+  west         -> The Trollshaws [trollshaws]
+
+The Last Bridge [last_bridge]
+--------------------------------------------------------------------------------
+Description: The Last Bridge spans the Hoarwell River, a graceful arch of stone that has stood for centuries, connecting the lands of the North to the hidden valley of Rivendell. The bridge itself is a work of art...
+Connections:
+  east         -> The Trollshaws [trollshaws]
+  northwest    -> Approach to the Barrow-downs [barrow_downs_approach]
+  south        -> Barrow Chamber - Second Mound [barrow_chamber_2]
+  southwest    -> Weathertop Summit [weathertop_summit]
+  west         -> Old Forest - Eastern Exit [old_forest_exit]
+Items: elven_berries
+
+Rivendell Forge [rivendell_forge]
+--------------------------------------------------------------------------------
+Description: The Rivendell Forge is an elven smithy where legendary weapons and armor were crafted by master smiths whose skill has never been matched. The forge itself is a work of art, its structure built to cha...
+Connections:
+  north        -> The Guest House [rivendell_guest_house]
+  northwest    -> Elrond's Private Study [elrond_study]
+  west         -> Hall of Fire - Rivendell [rivendell_hall]
+Items: elvish_blade
+
+Gardens of Rivendell [rivendell_gardens]
+--------------------------------------------------------------------------------
+Description: The Gardens of Rivendell are a peaceful sanctuary where rare flowers from across Middle-earth bloom in perfect harmony. The gardens are laid out with elven artistry, each plant placed to create a livi...
+Connections:
+  north        -> The Hall of Fire [hall_of_fire_guest]
+Items: elanor_flower, silver_leaf
+
+Gates of Rivendell [rivendell_gates]
+--------------------------------------------------------------------------------
+Description: The hidden gates of Rivendell are not gates in the traditional sense, but rather a natural archway formed by two great trees whose branches have grown together over centuries. The entrance is marked b...
+Connections:
+  north        -> Annúminas Tower [annuminas_tower]
+  northeast    -> Waterfall Walkway [waterfall_walkway]
+  northwest    -> Annúminas Ruins [annuminas_ruins]
+  south        -> Elrond's Private Study [elrond_study]
+  southeast    -> The Guest House [rivendell_guest_house]
+  west         -> Ford of Bruinen [ford_of_bruinen]
+
+The Guest House [rivendell_guest_house]
+--------------------------------------------------------------------------------
+Description: A comfortable lodging for travelers of all races. The beds are soft and the air is filled with the scent of pine and lavender.
+Connections:
+  northwest    -> Gates of Rivendell [rivendell_gates]
+  south        -> Rivendell Forge [rivendell_forge]
+  southwest    -> Hall of Fire - Rivendell [rivendell_hall]
+  west         -> Elrond's Private Study [elrond_study]
+Items: fresh_linen, healing_salve
+
+Hall of Fire - Rivendell [rivendell_hall]
+--------------------------------------------------------------------------------
+Description: The Hall of Fire is a magnificent chamber that serves as the heart of Rivendell. A great fire burns eternally in the center of the hall, its flames never dying, casting warm, golden light across the r...
+Connections:
+  east         -> Rivendell Forge [rivendell_forge]
+  north        -> Elrond's Private Study [elrond_study]
+  northeast    -> The Guest House [rivendell_guest_house]
+  southwest    -> The Hall of Fire [hall_of_fire_guest]
+  west         -> Library of Rivendell [rivendell_library]
+Items: mithril_mail, miruvor
+
+Library of Rivendell [rivendell_library]
+--------------------------------------------------------------------------------
+Description: The Library of Rivendell is a peaceful sanctuary of knowledge, a room that seems to stretch beyond the physical boundaries of the building itself. Countless scrolls and books fill the space, arranged ...
+Connections:
+  east         -> Hall of Fire - Rivendell [rivendell_hall]
+  northeast    -> Elrond's Private Study [elrond_study]
+  south        -> The Hall of Fire [hall_of_fire_guest]
+Items: ancient_tome, scroll_of_wisdom
+
+Troll Cave [troll_cave]
+--------------------------------------------------------------------------------
+Description: The troll cave is a dank, foul-smelling hollow that reeks of troll—a stench so powerful it makes your eyes water and your stomach churn. The cave is large, its ceiling lost in shadow, and the walls ar...
+Connections:
+  east         -> The Trollshaws [trollshaws]
+  south        -> Fornost Temple [fornost_temple]
+Items: sting, orcrist, gold_treasure
+
+The Trollshaws [trollshaws]
+--------------------------------------------------------------------------------
+Description: The Trollshaws are a wild, hilly region where the land rises and falls in great swells, covered in thick forests and rocky outcroppings. The trees here are ancient and gnarled, their branches twisted ...
+Connections:
+  east         -> Ford of Bruinen [ford_of_bruinen]
+  northeast    -> Annúminas Ruins [annuminas_ruins]
+  southwest    -> Fornost Temple [fornost_temple]
+  west         -> Troll Cave [troll_cave]
+
+
+================================================================================
+MORIA (30 locations)
+================================================================================
+
+Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+--------------------------------------------------------------------------------
+Description: A square chamber with a shaft of light falling through a crack in the ceiling. A great stone chest stands in the center - the tomb of Balin, Lord of Moria. A tattered book lies beside it.
+Connections:
+  east         -> Royal Tombs of Khazad-dûm [royal_tombs]
+  north        -> First Hall of Moria [moria_entrance]
+  northwest    -> Doors of Durin - West Gate of Moria [doors_of_durin]
+  south        -> Deep Mines [mines_level2]
+  southeast    -> Top of the Endless Stair [endless_stair_top]
+  southwest    -> Twenty-First Hall [twenty_first_hall]
+  west         -> Seventh Level [seventh_level]
+Items: book_of_mazarbul, mithril_chain, balin_crown
+
+Bridge of Khazad-dûm [bridge_of_khazad_dum]
+--------------------------------------------------------------------------------
+Description: The Bridge of Khazad-dûm is a narrow span of stone, carved from the living rock itself, that stretches across a bottomless chasm. The bridge is wide enough for only one person to cross at a time, and ...
+Connections:
+  east         -> Mithril Depths - Upper Vein [mithril_depths_1]
+  north        -> Houses of Healing [minas_tirith_houses_of_healing]
+  northeast    -> Citadel Guards Hall [citadel_guards_hall]
+  northwest    -> Hall of Kings [hall_of_kings]
+  south        -> Gates of Minas Tirith [minas_tirith_gates]
+  southeast    -> White Tower of Ecthelion [white_tower]
+  west         -> The Unending Stair - Middle Section [the_unending_stair_middle]
+Enemies: durin_bane
+
+Deep Mines Hub [deep_mines_hub]
+--------------------------------------------------------------------------------
+Description: A central point where several mining tunnels converge. Ropes, pulleys, and broken carts litter the floor.
+Connections:
+  east         -> The Mithril Vein [mithril_mine]
+  northeast    -> The Dark Lake [the_dark_lake]
+  northwest    -> Hidden Flet [hidden_flet]
+  south        -> Second Level - Minas Tirith [second_level]
+  southeast    -> Fourth Level - Minas Tirith [fourth_level]
+  southwest    -> Iron Mines - The Pit [iron_mines_2]
+Items: rusty_pickaxe
+Enemies: cave_troll
+
+Dimrill Dale [dimrill_dale]
+--------------------------------------------------------------------------------
+Description: A hidden valley on the eastern side of the Misty Mountains. The Mirrormere lake lies still and dark, reflecting the mountain peaks. This was once the heart of the Dwarven realm.
+Connections:
+  east         -> Morgul Vale [morgul_vale]
+  north        -> Port of Pelargir [pelargir_port]
+  northeast    -> Woods of Ithilien [ithilien_woods]
+  northwest    -> Border of Lothlórien [lothlorien_border]
+  south        -> Henneth Annûn - Window on the West [henneth_annun]
+Items: mirrormere_water
+
+Doors of Durin - West Gate of Moria [doors_of_durin]
+--------------------------------------------------------------------------------
+Description: The great Doors of Durin, Lord of Moria, stand before you in all their ancient glory. Carved from a single piece of mithril-adorned stone, the doors are a masterpiece of dwarven craftsmanship, their s...
+Connections:
+  east         -> First Hall of Moria [moria_entrance]
+  south        -> Seventh Level [seventh_level]
+  southeast    -> Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+  west         -> Hollin Gate [hollin_gate]
+
+Durin's Chamber [durin_chamber]
+--------------------------------------------------------------------------------
+Description: A sacred chamber dedicated to Durin the Deathless, eldest of the Seven Fathers of the Dwarves. His likeness is carved into the rock, crowned and bearing the tools of his craft.
+Connections:
+  east         -> Great Hall of Durin [durin_throne_hall]
+  north        -> Royal Tombs of Khazad-dûm [royal_tombs]
+Items: durin_axe, seven_stars_token
+
+Great Hall of Durin [durin_throne_hall]
+--------------------------------------------------------------------------------
+Description: The Great Hall of Durin is a massive chamber that once served as the primary seat of power for the Dwarven Kings of Khazad-dûm. The hall is vast beyond comprehension, its ceiling lost in darkness high...
+Connections:
+  east         -> Royal Armory [royal_armory]
+  north        -> Deep Mines [mines_level2]
+  northeast    -> Top of the Endless Stair [endless_stair_top]
+  northwest    -> Twenty-First Hall [twenty_first_hall]
+  south        -> Smelting Chambers [smelting_chambers]
+  southeast    -> Bottom of the Endless Stair [endless_stair_bottom]
+Items: dwarven_scepter, gold_coin
+Enemies: orc_warrior, orc_warrior
+
+Approach to the East Gate [east_gate_approach]
+--------------------------------------------------------------------------------
+Description: The halls grow lighter. Ahead you can see daylight - the East Gate! Freedom from the darkness of Moria is at hand.
+Connections:
+  east         -> East Gate of Moria [east_gate_moria]
+Items: health_potion, lembas_bread
+
+East Gate of Moria [east_gate_moria]
+--------------------------------------------------------------------------------
+Description: You stumble out into daylight, half-blinded after the darkness. The Dimrill Dale spreads below, and beyond rise the peaks of the Misty Mountains.
+Connections:
+  east         -> Interior of Minas Morgul [minas_morgul_interior]
+  north        -> Rath Dínen - Street of the Dead [rath_dinen]
+  northwest    -> Mithril Depths - The Mother Lode [mithril_depths_2]
+  south        -> Ruins of Osgiliath [osgiliath_ruins]
+  southeast    -> Durthang Fortress [durthang_fortress]
+  southwest    -> Tunnel Exit [tunnel_exit]
+  west         -> Approach to the East Gate [east_gate_approach]
+
+Bottom of the Endless Stair [endless_stair_bottom]
+--------------------------------------------------------------------------------
+Description: After a seemingly endless descent, you reach the bottom of the stair. Ancient halls stretch in all directions.
+Connections:
+  north        -> Royal Armory [royal_armory]
+  northeast    -> The Unending Stair - Middle Section [the_unending_stair_middle]
+  northwest    -> Great Hall of Durin [durin_throne_hall]
+  west         -> Smelting Chambers [smelting_chambers]
+Items: ancient_key
+Enemies: orc_warrior
+
+Top of the Endless Stair [endless_stair_top]
+--------------------------------------------------------------------------------
+Description: An impossibly long spiral staircase winds down into darkness, carved from a single stone pillar. The dwarves built wonders that will never be matched.
+Connections:
+  east         -> Hall of Kings [hall_of_kings]
+  north        -> Royal Tombs of Khazad-dûm [royal_tombs]
+  northeast    -> Goblin Warren [goblin_warren]
+  northwest    -> Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+  south        -> Royal Armory [royal_armory]
+  southeast    -> The Unending Stair - Middle Section [the_unending_stair_middle]
+  southwest    -> Great Hall of Durin [durin_throne_hall]
+  west         -> Deep Mines [mines_level2]
+
+The Goblin Ward [goblin_ward]
+--------------------------------------------------------------------------------
+Description: A section of the mines that has been crudeley reinforced by the goblins. Gutteral voices echo through the tunnels.
+Connections:
+  north        -> Goblin Watchtower [goblin_watchtower]
+  northeast    -> Hidden Flet [hidden_flet]
+  southeast    -> Iron Mines - The Pit [iron_mines_2]
+  southwest    -> First Hall of Moria [moria_entrance]
+Items: goblin_scimitar
+Enemies: goblin_sentry, goblin_sentry
+
+Goblin Warren [goblin_warren]
+--------------------------------------------------------------------------------
+Description: A warren of small tunnels and chambers where the goblins nest. Bones and filth litter the floor. The smell is overwhelming.
+Connections:
+  east         -> Third Level - Minas Tirith [third_level]
+  north        -> Iron Mines - The Pit [iron_mines_2]
+  northeast    -> Second Level - Minas Tirith [second_level]
+  south        -> Hall of Kings [hall_of_kings]
+  southeast    -> Houses of Healing [minas_tirith_houses_of_healing]
+  southwest    -> Top of the Endless Stair [endless_stair_top]
+  west         -> Royal Tombs of Khazad-dûm [royal_tombs]
+Items: goblin_treasure, rusty_armor
+Enemies: goblin, goblin, orc_warrior
+
+Goblin Watchtower [goblin_watchtower]
+--------------------------------------------------------------------------------
+Description: A crude structure built from stolen dwarven stones and wood. It overlooks the Seventh Level.
+Connections:
+  east         -> Hidden Flet [hidden_flet]
+  south        -> The Goblin Ward [goblin_ward]
+Items: black_arrow
+Enemies: goblin_archer
+
+Hollin Gate [hollin_gate]
+--------------------------------------------------------------------------------
+Description: The western approach to Moria is a place of stark, forbidding beauty. You stand before a sheer cliff face that rises hundreds of feet into the air, its surface of dark, weathered stone. Beside you, a ...
+Connections:
+  east         -> Doors of Durin - West Gate of Moria [doors_of_durin]
+  south        -> Waterfall Walkway [waterfall_walkway]
+Items: mithril_fragment
+Enemies: watcher_in_water
+
+Iron Mines - Level 1 [iron_mines_1]
+--------------------------------------------------------------------------------
+Description: The source of the iron that armed the dwarven legions. The air is thick with red dust.
+Connections:
+  north        -> Valleys of Lossarnach [lossarnach_valleys]
+  south        -> Rath Dínen - Street of the Dead [rath_dinen]
+  southwest    -> Mithril Depths - The Mother Lode [mithril_depths_2]
+Items: heavy_iron_ore
+
+Iron Mines - The Pit [iron_mines_2]
+--------------------------------------------------------------------------------
+Description: A deep pit where the richest iron was extracted. The descent is steep and dangerous.
+Connections:
+  east         -> Second Level - Minas Tirith [second_level]
+  northeast    -> Deep Mines Hub [deep_mines_hub]
+  northwest    -> The Goblin Ward [goblin_ward]
+  south        -> Goblin Warren [goblin_warren]
+  southeast    -> Third Level - Minas Tirith [third_level]
+  southwest    -> Royal Tombs of Khazad-dûm [royal_tombs]
+Items: pure_iron_ore
+Enemies: giant_spider
+
+Chasm Viewpoint [khazad_dum_chasm_view]
+--------------------------------------------------------------------------------
+Description: A side ledge that offers a terrifying view of the bottomless chasm over which the bridge spans. The air is hot and smells of ancient fire.
+Connections:
+  east         -> Leaflock's Meadow [leaflock_meadow]
+  north        -> The Paths of the Dead [paths_of_dead]
+  northeast    -> Singing Groves [singing_groves]
+  northwest    -> City of the Dead [dead_city]
+  south        -> Galadhrim Flet - Western Watch [galadhrm_flet_1]
+Items: scorched_stone
+
+Upper Mines [mines_level1]
+--------------------------------------------------------------------------------
+Description: Mining tunnels from the upper levels. Tools and carts lie abandoned as if the miners left in great haste.
+Connections:
+  east         -> Twenty-First Hall [twenty_first_hall]
+  south        -> Deep Mines [mines_level2]
+Items: miners_lamp, iron_ore
+Enemies: goblin, goblin
+
+Deep Mines [mines_level2]
+--------------------------------------------------------------------------------
+Description: Deeper mining tunnels. The walls glitter with veins of various ores. The dwarves were master miners.
+Connections:
+  east         -> Top of the Endless Stair [endless_stair_top]
+  north        -> Upper Mines [mines_level1]
+  northeast    -> Royal Tombs of Khazad-dûm [royal_tombs]
+  northwest    -> Seventh Level [seventh_level]
+  south        -> Great Hall of Durin [durin_throne_hall]
+  southeast    -> Royal Armory [royal_armory]
+  west         -> Twenty-First Hall [twenty_first_hall]
+Items: silver_ore, copper_ore
+Enemies: cave_troll, goblin
+
+Mithril Depths - Upper Vein [mithril_depths_1]
+--------------------------------------------------------------------------------
+Description: A tunnel carved through the hard rock in search of the elusive mithril. Tiny flecks of silver still glitter in the walls.
+Connections:
+  east         -> Pelennor Fields [pelennor_fields]
+  north        -> Citadel Guards Hall [citadel_guards_hall]
+  northeast    -> Mithril Depths - The Mother Lode [mithril_depths_2]
+  northwest    -> Houses of Healing [minas_tirith_houses_of_healing]
+  south        -> White Tower of Ecthelion [white_tower]
+  southeast    -> Tunnel Exit [tunnel_exit]
+  southwest    -> Gates of Minas Tirith [minas_tirith_gates]
+  west         -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+Items: mithril_pebble
+Enemies: goblin_miner
+
+Mithril Depths - The Mother Lode [mithril_depths_2]
+--------------------------------------------------------------------------------
+Description: A vast cavern where the greatest vein of mithril was ever found. The walls are a shimmering tapestry of natural silver.
+Connections:
+  east         -> Rath Dínen - Street of the Dead [rath_dinen]
+  northeast    -> Iron Mines - Level 1 [iron_mines_1]
+  northwest    -> Sixth Level - Minas Tirith [sixth_level]
+  south        -> Pelennor Fields [pelennor_fields]
+  southeast    -> East Gate of Moria [east_gate_moria]
+  southwest    -> Mithril Depths - Upper Vein [mithril_depths_1]
+  west         -> Citadel Guards Hall [citadel_guards_hall]
+Items: mithril_shard, star_gem
+Enemies: moria_stalker
+
+The Mithril Vein [mithril_mine]
+--------------------------------------------------------------------------------
+Description: At last! A seam of mithril - the truest silver, more precious than gold. It gleams in your torchlight like starlight frozen in stone.
+Connections:
+  east         -> Fifth Level - Minas Tirith [fifth_level]
+  north        -> The Dark Lake [the_dark_lake]
+  northeast    -> The Nameless Tunnels [nameless_tunnels]
+  south        -> Fourth Level - Minas Tirith [fourth_level]
+  southwest    -> Second Level - Minas Tirith [second_level]
+  west         -> Deep Mines Hub [deep_mines_hub]
+Items: mithril_ore, mithril_ore, mithril_nugget
+
+First Hall of Moria [moria_entrance]
+--------------------------------------------------------------------------------
+Description: You step into darkness, and the world outside seems to vanish behind you. The vast hall of the First Hall of Moria stretches before you, so large that your torchlight barely penetrates the gloom, crea...
+Connections:
+  northeast    -> The Goblin Ward [goblin_ward]
+  south        -> Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+  southeast    -> Royal Tombs of Khazad-dûm [royal_tombs]
+  southwest    -> Seventh Level [seventh_level]
+  west         -> Doors of Durin - West Gate of Moria [doors_of_durin]
+Items: old_torch, dwarven_helm
+Enemies: goblin, goblin
+
+The Nameless Tunnels [nameless_tunnels]
+--------------------------------------------------------------------------------
+Description: Dark, narrow tunnels below the lowest level of Moria. These were not carved by dwarves, but by things older and more terrible.
+Connections:
+  south        -> Fifth Level - Minas Tirith [fifth_level]
+  southwest    -> The Mithril Vein [mithril_mine]
+  west         -> The Dark Lake [the_dark_lake]
+Items: slime_puddle
+Enemies: nameless_thing
+
+Royal Armory [royal_armory]
+--------------------------------------------------------------------------------
+Description: A vast chamber once filled with the finest weapons and armor crafted by dwarven smiths. Most has been looted, but some relics remain hidden in the dust.
+Connections:
+  east         -> The Unending Stair - Middle Section [the_unending_stair_middle]
+  north        -> Top of the Endless Stair [endless_stair_top]
+  northeast    -> Hall of Kings [hall_of_kings]
+  northwest    -> Deep Mines [mines_level2]
+  south        -> Bottom of the Endless Stair [endless_stair_bottom]
+  southwest    -> Smelting Chambers [smelting_chambers]
+  west         -> Great Hall of Durin [durin_throne_hall]
+Items: heavy_dwarven_axe, iron_shield
+Enemies: orc_captain
+
+Royal Tombs of Khazad-dûm [royal_tombs]
+--------------------------------------------------------------------------------
+Description: The final resting place of the kings of Durin's line. The stone sarcophagi are intricately carved and covered in ancient dwarven runes.
+Connections:
+  east         -> Goblin Warren [goblin_warren]
+  northeast    -> Iron Mines - The Pit [iron_mines_2]
+  northwest    -> First Hall of Moria [moria_entrance]
+  south        -> Durin's Chamber [durin_chamber]
+  southeast    -> Hall of Kings [hall_of_kings]
+  southwest    -> Deep Mines [mines_level2]
+  west         -> Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+Items: ancient_crown, mithril_ring
+Enemies: dwarven_wraith
+
+Smelting Chambers [smelting_chambers]
+--------------------------------------------------------------------------------
+Description: Huge furnaces once blazed here, melting the ores brought up from the deep mines. The heat is long gone, but the smell of sulfur remains.
+Connections:
+  east         -> Bottom of the Endless Stair [endless_stair_bottom]
+  north        -> Great Hall of Durin [durin_throne_hall]
+  northeast    -> Royal Armory [royal_armory]
+Items: iron_bar, coal
+Enemies: goblin, goblin
+
+The Dark Lake [the_dark_lake]
+--------------------------------------------------------------------------------
+Description: A vast underground lake where the water is as black as ink. Strange, sightless fish swim in the depths.
+Connections:
+  east         -> The Nameless Tunnels [nameless_tunnels]
+  south        -> The Mithril Vein [mithril_mine]
+  southeast    -> Fifth Level - Minas Tirith [fifth_level]
+  southwest    -> Deep Mines Hub [deep_mines_hub]
+Items: glowing_mushroom
+Enemies: water_creature
+
+The Unending Stair - Middle Section [the_unending_stair_middle]
+--------------------------------------------------------------------------------
+Description: The great stair continues its spiral. You are far below the peaks and far above the roots of the mountains.
+Connections:
+  east         -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+  north        -> Hall of Kings [hall_of_kings]
+  northeast    -> Houses of Healing [minas_tirith_houses_of_healing]
+  northwest    -> Top of the Endless Stair [endless_stair_top]
+  southeast    -> Gates of Minas Tirith [minas_tirith_gates]
+  southwest    -> Bottom of the Endless Stair [endless_stair_bottom]
+  west         -> Royal Armory [royal_armory]
+
+
+================================================================================
+LOTHLÓRIEN (12 locations)
+================================================================================
+
+Caras Galadhon - City of the Trees [caras_galadhon]
+--------------------------------------------------------------------------------
+Description: The great city of the Galadhrim, built among the massive mallorn trees. Platforms and flets are connected by rope ladders and walkways. The largest tree holds the halls of Celeborn and Galadriel.
+Connections:
+  east         -> Anduin River - Lothlórien Quays [anduin_approach]
+  north        -> Cerin Amroth [cerin_amroth]
+  northeast    -> Banks of the Silverlode [silverlode_banks]
+  southeast    -> Anduin - Midstream [anduin_midstream]
+  southwest    -> Court of Galadriel [galadriel_court]
+  west         -> Chamber of the Mirror [mirror_chamber]
+Items: lembas_bread, miruvor
+
+Cerin Amroth [cerin_amroth]
+--------------------------------------------------------------------------------
+Description: A high hill crowned with two great trees. Their bark is silver and gold, and their leaves are golden. Between them runs a white stair. The air itself seems to shimmer.
+Connections:
+  east         -> Banks of the Silverlode [silverlode_banks]
+  north        -> Border of Lothlórien [lothlorien_border]
+  south        -> Caras Galadhon - City of the Trees [caras_galadhon]
+  southeast    -> Anduin River - Lothlórien Quays [anduin_approach]
+  southwest    -> Chamber of the Mirror [mirror_chamber]
+Items: golden_leaf, silver_bark
+
+Hall of the Galadhrim Craftsmen [elven_craft_hall]
+--------------------------------------------------------------------------------
+Description: A large flet where elven artisans craft their legendary ropes, cloaks, and jewelry. The work is done with such grace it seems like magic.
+Connections:
+  east         -> Hidden Path in Fangorn [fangorn_hidden_path]
+  north        -> Meadow of Niphredil [niphredil_meadow]
+  northeast    -> Headwaters of the Entwash [entwash_headwaters]
+  south        -> The Paths of the Dead [paths_of_dead]
+  southeast    -> Singing Groves [singing_groves]
+  southwest    -> City of the Dead [dead_city]
+  west         -> Eastfold Plains [eastfold_plains]
+Items: elven_rope, silver_thimble
+
+Galadhrim Flet - Western Watch [galadhrm_flet_1]
+--------------------------------------------------------------------------------
+Description: The Galadhrim Flet is a high platform built into the branches of a golden mallorn tree, one of the many watch posts that guard the borders of Lothlórien. The platform is constructed with elven artistr...
+Connections:
+  north        -> Chasm Viewpoint [khazad_dum_chasm_view]
+  northeast    -> Leaflock's Meadow [leaflock_meadow]
+  south        -> Foothills of the Starkhorn [starkhorn_foothills]
+  southeast    -> Fir-tree Grove - Dunharrow [dunharrow_firtree_grove]
+  southwest    -> Aldburg [aldburg]
+Items: elven_bow, elven_arrow
+
+Court of Galadriel [galadriel_court]
+--------------------------------------------------------------------------------
+Description: High in the tallest mallorn stands the chamber of the Lord and Lady of Lórien. Lady Galadriel regards you with eyes of timeless wisdom. A silver basin filled with water stands nearby - the Mirror of G...
+Connections:
+  north        -> Chamber of the Mirror [mirror_chamber]
+  northeast    -> Caras Galadhon - City of the Trees [caras_galadhon]
+Items: phial_of_galadriel, elven_rope
+
+Border of Lothlórien [lothlorien_border]
+--------------------------------------------------------------------------------
+Description: Golden mallorn trees rise before you, marking the borders of the elven realm of Lothlórien. You sense you are being watched.
+Connections:
+  northeast    -> Henneth Annûn - Window on the West [henneth_annun]
+  south        -> Cerin Amroth [cerin_amroth]
+  southeast    -> Banks of the Silverlode [silverlode_banks]
+  southwest    -> Dimrill Dale [dimrill_dale]
+
+The Mallorn Sanctuary [mallorn_sanctuary]
+--------------------------------------------------------------------------------
+Description: A quiet space deep within the city of trees, reserved for those seeking healing and rest. The golden light here is particularly strong.
+Connections:
+  east         -> Banks of the Celebrant [celebrant_banks]
+  north        -> Wellinghall - Hall of the Ents [wellinghall]
+  northeast    -> Confluence of Rivers [anduin_confluence]
+  northwest    -> Leaflock's Meadow [leaflock_meadow]
+  south        -> Upper Deeping Stream [deeping_stream_upper]
+  southeast    -> The Deep Coomb [deep_coomb]
+  southwest    -> Fir-tree Grove - Dunharrow [dunharrow_firtree_grove]
+Items: athelas_extract, healing_herbs
+
+Chamber of the Mirror [mirror_chamber]
+--------------------------------------------------------------------------------
+Description: A quiet chamber where Galadriel's Mirror stands - a silver basin on a pedestal. The water within shows visions of things that were, things that are, and some things that have not yet come to pass.
+Connections:
+  east         -> Caras Galadhon - City of the Trees [caras_galadhon]
+  northeast    -> Cerin Amroth [cerin_amroth]
+  south        -> Court of Galadriel [galadriel_court]
+
+Meadow of Niphredil [niphredil_meadow]
+--------------------------------------------------------------------------------
+Description: A beautiful meadow filled with pale niphredil flowers that seem to glow with their own light. A small stream of crystalline water winds through the grass.
+Connections:
+  east         -> Headwaters of the Entwash [entwash_headwaters]
+  north        -> The Dimholt Road [dimholt_road]
+  northeast    -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  northwest    -> Banks of the Snowbourn [snowbourn_banks]
+  south        -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+  southeast    -> Hidden Path in Fangorn [fangorn_hidden_path]
+  southwest    -> Eastfold Plains [eastfold_plains]
+Items: niphredil_flower
+
+Banks of the Silverlode [silverlode_banks]
+--------------------------------------------------------------------------------
+Description: The river Celebrant, called Silverlode, flows swiftly with crystalline water. Its banks are lined with golden elanor flowers and pale niphredil.
+Connections:
+  northeast    -> Morgul Pass [morgul_pass]
+  northwest    -> Border of Lothlórien [lothlorien_border]
+  south        -> Anduin River - Lothlórien Quays [anduin_approach]
+  southeast    -> Parth Galen [parth_galen]
+  southwest    -> Caras Galadhon - City of the Trees [caras_galadhon]
+  west         -> Cerin Amroth [cerin_amroth]
+Items: elanor_flower, crystal_water
+
+Silverlode Crossing [silverlode_crossing]
+--------------------------------------------------------------------------------
+Description: A place where the river Silverlode is shallow enough to cross via a series of ancient white stones. The water flows swiftly around them.
+Connections:
+  east         -> Entmoot Circle - Derndingle [entmoot_circle]
+  north        -> Hornburg Armory [hornburg_armory]
+  northeast    -> West Emnet [west_emnet]
+  northwest    -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  south        -> Entrance to the Elf-path [elf_path_entrance]
+  southeast    -> The Silent Glade [the_silent_glade]
+  southwest    -> Hidden Path in Fangorn [fangorn_hidden_path]
+  west         -> Headwaters of the Entwash [entwash_headwaters]
+Items: white_river_stone
+
+Singing Groves [singing_groves]
+--------------------------------------------------------------------------------
+Description: A grove of trees where the wind through the leaves sounds like distant elven voices. It is a place for meditation and song.
+Connections:
+  east         -> Entwash Delta [entwash_delta]
+  north        -> Hidden Path in Fangorn [fangorn_hidden_path]
+  northeast    -> Entrance to the Elf-path [elf_path_entrance]
+  northwest    -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+  south        -> Leaflock's Meadow [leaflock_meadow]
+  southeast    -> Wellinghall - Hall of the Ents [wellinghall]
+  southwest    -> Chasm Viewpoint [khazad_dum_chasm_view]
+  west         -> The Paths of the Dead [paths_of_dead]
+Items: elven_flute
+
+
+================================================================================
+ROHAN (31 locations)
+================================================================================
+
+Aldburg [aldburg]
+--------------------------------------------------------------------------------
+Description: An ancient settlement of Rohan, once the home of Eorl the Young. Its walls are of stone and wood, weathered by centuries of wind.
+Connections:
+  east         -> Foothills of the Starkhorn [starkhorn_foothills]
+  northeast    -> Galadhrim Flet - Western Watch [galadhrm_flet_1]
+  northwest    -> Treebeard's Storage [treebeard_cellar]
+  south        -> Dunharrow [dunharrow]
+Items: ancient_rohirric_coin
+
+Amon Hen - Hill of Sight [amon_hen]
+--------------------------------------------------------------------------------
+Description: Ancient stone steps lead to a high seat. From here, one can see far across Middle Earth in all directions - if one dares to look.
+Connections:
+  north        -> Parth Galen [parth_galen]
+  northwest    -> Anduin River - Lothlórien Quays [anduin_approach]
+  south        -> Harrowdale [harrowdale]
+  southeast    -> Meduseld - The Golden Hall [meduseld]
+  southwest    -> Approach to Rauros Falls [rauros_falls_approach]
+  west         -> Anduin - Midstream [anduin_midstream]
+Items: seeing_helm
+
+Anduin River - Lothlórien Quays [anduin_approach]
+--------------------------------------------------------------------------------
+Description: The Great River Anduin flows majestically southward. Elven boats are moored here, waiting to carry travelers downstream.
+Connections:
+  east         -> Parth Galen [parth_galen]
+  north        -> Banks of the Silverlode [silverlode_banks]
+  northwest    -> Cerin Amroth [cerin_amroth]
+  south        -> Anduin - Midstream [anduin_midstream]
+  southeast    -> Amon Hen - Hill of Sight [amon_hen]
+  west         -> Caras Galadhon - City of the Trees [caras_galadhon]
+Items: elven_boat
+
+Anduin - Midstream [anduin_midstream]
+--------------------------------------------------------------------------------
+Description: You drift on the Great River. The current is strong. Wild forested hills rise on either bank, and to the east, the dark eaves of Mirkwood loom.
+Connections:
+  east         -> Amon Hen - Hill of Sight [amon_hen]
+  north        -> Anduin River - Lothlórien Quays [anduin_approach]
+  northeast    -> Parth Galen [parth_galen]
+  northwest    -> Caras Galadhon - City of the Trees [caras_galadhon]
+  south        -> Approach to Rauros Falls [rauros_falls_approach]
+  southeast    -> Confluence of Rivers [anduin_confluence]
+
+The Deep Coomb [deep_coomb]
+--------------------------------------------------------------------------------
+Description: The valley leading up to the Deeping Wall. It is a natural bottleneck, perfect for defense.
+Connections:
+  east         -> The Wold [wold_of_rohan]
+  north        -> Banks of the Celebrant [celebrant_banks]
+  northwest    -> The Mallorn Sanctuary [mallorn_sanctuary]
+  southeast    -> East Emnet [east_emnet]
+  west         -> Upper Deeping Stream [deeping_stream_upper]
+Items: broken_shield
+Enemies: uruk_hai_scout
+
+Upper Deeping Stream [deeping_stream_upper]
+--------------------------------------------------------------------------------
+Description: Further up the gorge from Helm's Deep, the stream is narrower and swifter. It flows from deep within the mountains.
+Connections:
+  east         -> The Deep Coomb [deep_coomb]
+  north        -> The Mallorn Sanctuary [mallorn_sanctuary]
+  northeast    -> Banks of the Celebrant [celebrant_banks]
+  southwest    -> Helm's Deep [helms_deep_interior]
+  west         -> Fir-tree Grove - Dunharrow [dunharrow_firtree_grove]
+Items: crystal_pebble
+
+The Dimholt Road [dimholt_road]
+--------------------------------------------------------------------------------
+Description: A dark road lined with ancient, weather-worn standing stones. It leads toward the Dark Door under the mountain.
+Connections:
+  east         -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  north        -> Helm's Gate [helms_gate]
+  northeast    -> Glittering Caves of Aglarond [glittering_caves]
+  south        -> Meadow of Niphredil [niphredil_meadow]
+  southeast    -> Headwaters of the Entwash [entwash_headwaters]
+  west         -> Banks of the Snowbourn [snowbourn_banks]
+Enemies: ghostly_whisper
+
+Dunharrow [dunharrow]
+--------------------------------------------------------------------------------
+Description: An ancient fortress carved into the mountainside. Standing stones line the path - the Púkel-men, relics of an older age. The Dark Door looms at the head of the valley.
+Connections:
+  north        -> Aldburg [aldburg]
+  northeast    -> Foothills of the Starkhorn [starkhorn_foothills]
+  south        -> Helm's Gate [helms_gate]
+Items: ancient_stones
+
+Fir-tree Grove - Dunharrow [dunharrow_firtree_grove]
+--------------------------------------------------------------------------------
+Description: A dark grove of fir trees near the encampment of Dunharrow. The shadows here are deep even at midday.
+Connections:
+  east         -> Upper Deeping Stream [deeping_stream_upper]
+  northeast    -> The Mallorn Sanctuary [mallorn_sanctuary]
+  northwest    -> Galadhrim Flet - Western Watch [galadhrm_flet_1]
+  south        -> Helm's Deep [helms_deep_interior]
+  west         -> Foothills of the Starkhorn [starkhorn_foothills]
+Items: fir_cone
+
+East Emnet [east_emnet]
+--------------------------------------------------------------------------------
+Description: The eastern plains of Rohan. Grass waves in the wind like a green sea. You can see riders in the distance - the rohirrim on patrol.
+Connections:
+  north        -> The Wold [wold_of_rohan]
+  northwest    -> The Deep Coomb [deep_coomb]
+
+Eastfold Plains [eastfold_plains]
+--------------------------------------------------------------------------------
+Description: The eastern reaches of Rohan, stretching toward the Great River. The land is low and fertile, dotted with small homesteads.
+Connections:
+  east         -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+  northeast    -> Meadow of Niphredil [niphredil_meadow]
+  south        -> City of the Dead [dead_city]
+  southeast    -> The Paths of the Dead [paths_of_dead]
+  southwest    -> The Plains of Rohan [rohan_plains]
+  west         -> Westfold Plains [westfold_plains]
+Items: sheaf_of_wheat
+
+Road to Edoras [edoras_approach]
+--------------------------------------------------------------------------------
+Description: A broad road leads up to the hill-city of Edoras. You can see the Golden Hall of Meduseld shining on the hilltop, its roof thatched with gold.
+Connections:
+  north        -> Meduseld - The Golden Hall [meduseld]
+  northwest    -> Harrowdale [harrowdale]
+  south        -> Gates of Edoras [edoras_gates]
+  southwest    -> Base of Orthanc [orthanc_base]
+  west         -> The Plains of Rohan [rohan_plains]
+
+Gates of Edoras [edoras_gates]
+--------------------------------------------------------------------------------
+Description: The gates of the capital of Rohan. Guards in mail stand watch. Beyond, the city climbs the hill toward the Golden Hall.
+Connections:
+  north        -> Road to Edoras [edoras_approach]
+  northwest    -> The Plains of Rohan [rohan_plains]
+  west         -> Base of Orthanc [orthanc_base]
+
+Gap of Rohan [gap_of_rohan]
+--------------------------------------------------------------------------------
+Description: A wide pass between the Misty Mountains and the White Mountains. The wind sweeps across endless grasslands. This is the realm of Rohan, land of the horse-lords.
+Connections:
+  east         -> The Plains of Rohan [rohan_plains]
+  north        -> Approach to Rauros Falls [rauros_falls_approach]
+  northeast    -> Harrowdale [harrowdale]
+  south        -> Gates of Isengard [isengard_gates]
+  southeast    -> Base of Orthanc [orthanc_base]
+Enemies: uruk_hai, warg_rider
+
+Glittering Caves of Aglarond [glittering_caves]
+--------------------------------------------------------------------------------
+Description: Vast caverns filled with formations of crystal and stone. Columns of calcite rise like trees. The walls sparkle with a thousand gems. 'Such beauty!' Gimli would say.
+Connections:
+  east         -> Deep in Fangorn [fangorn_depths]
+  south        -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  southeast    -> Hornburg Armory [hornburg_armory]
+  southwest    -> The Dimholt Road [dimholt_road]
+  west         -> Helm's Gate [helms_gate]
+Items: cave_crystal, cave_pearl, star_gem
+
+Harrowdale [harrowdale]
+--------------------------------------------------------------------------------
+Description: A dark valley leading up into the mountains. The road continues to the Dimholt - the Door of the Dead. Few dare venture there.
+Connections:
+  east         -> Meduseld - The Golden Hall [meduseld]
+  north        -> Amon Hen - Hill of Sight [amon_hen]
+  northwest    -> Anduin - Midstream [anduin_midstream]
+  south        -> The Plains of Rohan [rohan_plains]
+  southeast    -> Road to Edoras [edoras_approach]
+  southwest    -> Gap of Rohan [gap_of_rohan]
+  west         -> Approach to Rauros Falls [rauros_falls_approach]
+
+Helm's Deep [helms_deep_interior]
+--------------------------------------------------------------------------------
+Description: A deep gorge with sheer walls. The Deeping Stream flows through. The Hornburg towers above - a great fortress. Caves delve deep into the mountain - the Glittering Caves of Aglarond.
+Connections:
+  north        -> Fir-tree Grove - Dunharrow [dunharrow_firtree_grove]
+  northeast    -> Upper Deeping Stream [deeping_stream_upper]
+  northwest    -> Foothills of the Starkhorn [starkhorn_foothills]
+Items: helms_hammer
+
+Helm's Gate [helms_gate]
+--------------------------------------------------------------------------------
+Description: The entrance to Helm's Deep, a great gorge cut into the White Mountains. Massive walls block the way - the Deeping Wall. This fortress has never fallen.
+Connections:
+  east         -> Glittering Caves of Aglarond [glittering_caves]
+  north        -> Dunharrow [dunharrow]
+  south        -> The Dimholt Road [dimholt_road]
+  southeast    -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  southwest    -> Banks of the Snowbourn [snowbourn_banks]
+Enemies: uruk_hai, uruk_hai, uruk_hai
+
+Hornburg Armory [hornburg_armory]
+--------------------------------------------------------------------------------
+Description: The armory of the great fortress. Shields and spears line the stone walls, ready for the defense of the Mark.
+Connections:
+  east         -> West Emnet [west_emnet]
+  north        -> Deep in Fangorn [fangorn_depths]
+  northeast    -> The Entwash [entwash]
+  northwest    -> Glittering Caves of Aglarond [glittering_caves]
+  south        -> Silverlode Crossing [silverlode_crossing]
+  southeast    -> Entmoot Circle - Derndingle [entmoot_circle]
+  southwest    -> Headwaters of the Entwash [entwash_headwaters]
+  west         -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+Items: rohirric_spear, round_shield
+
+Gates of Isengard [isengard_gates]
+--------------------------------------------------------------------------------
+Description: The ring of Isengard - a great circular wall of stone. Within stands Orthanc, the black tower of Saruman. Smoke and flame rise from forges beneath. The gates are broken, smashed by the Ents.
+Connections:
+  east         -> Base of Orthanc [orthanc_base]
+  north        -> Gap of Rohan [gap_of_rohan]
+  northeast    -> The Plains of Rohan [rohan_plains]
+  south        -> Orthanc - Saruman's  Chamber [orthanc_chamber]
+  southwest    -> Edge of Fangorn Forest [fangorn_border]
+Enemies: uruk_hai, uruk_hai
+
+Meduseld - The Golden Hall [meduseld]
+--------------------------------------------------------------------------------
+Description: The great hall of Théoden King. Pillars of wood support a roof thatched with gold. Long tables line the hall, and banners of the mark hang from the rafters. The throne stands on a dais.
+Connections:
+  northwest    -> Amon Hen - Hill of Sight [amon_hen]
+  south        -> Road to Edoras [edoras_approach]
+  southwest    -> The Plains of Rohan [rohan_plains]
+  west         -> Harrowdale [harrowdale]
+Items: rohirric_sword, horn_of_rohan
+
+Base of Orthanc [orthanc_base]
+--------------------------------------------------------------------------------
+Description: The tower of Orthanc rises 500 feet, black and adamantine. It has four sheer faces and four sharp corners. No ladder or stair reaches its peak. This was Saruman's fortress.
+Connections:
+  east         -> Gates of Edoras [edoras_gates]
+  north        -> The Plains of Rohan [rohan_plains]
+  northeast    -> Road to Edoras [edoras_approach]
+  northwest    -> Gap of Rohan [gap_of_rohan]
+  southwest    -> Orthanc - Saruman's  Chamber [orthanc_chamber]
+  west         -> Gates of Isengard [isengard_gates]
+Items: broken_staff
+
+Orthanc - Saruman's  Chamber [orthanc_chamber]
+--------------------------------------------------------------------------------
+Description: The high chamber of Orthanc. Great windows look out in all directions. Books and diagrams are scattered about - Saruman's studies of the old lore. A palantír once stood here.
+Connections:
+  north        -> Gates of Isengard [isengard_gates]
+  northeast    -> Base of Orthanc [orthanc_base]
+  west         -> Edge of Fangorn Forest [fangorn_border]
+Items: saruman_scrolls, palantir
+
+Parth Galen [parth_galen]
+--------------------------------------------------------------------------------
+Description: A green lawn beside the Anduin. A hill rises nearby - Amon Hen, the Hill of Sight. This is where the Fellowship was broken.
+Connections:
+  northwest    -> Banks of the Silverlode [silverlode_banks]
+  south        -> Amon Hen - Hill of Sight [amon_hen]
+  southwest    -> Anduin - Midstream [anduin_midstream]
+  west         -> Anduin River - Lothlórien Quays [anduin_approach]
+Enemies: uruk_hai, uruk_hai
+
+Approach to Rauros Falls [rauros_falls_approach]
+--------------------------------------------------------------------------------
+Description: The roar of the great falls fills the air. Mist rises like smoke. This is Rauros, where Anduin plunges down from Nen Hithoel.
+Connections:
+  east         -> Harrowdale [harrowdale]
+  north        -> Anduin - Midstream [anduin_midstream]
+  northeast    -> Amon Hen - Hill of Sight [amon_hen]
+  south        -> Gap of Rohan [gap_of_rohan]
+  southeast    -> The Plains of Rohan [rohan_plains]
+
+The Plains of Rohan [rohan_plains]
+--------------------------------------------------------------------------------
+Description: Endless grasslands stretch to the horizon. Wild horses run free across the plains. In the distance, you see smoke rising from settlements.
+Connections:
+  east         -> Road to Edoras [edoras_approach]
+  north        -> Harrowdale [harrowdale]
+  northeast    -> Eastfold Plains [eastfold_plains]
+  northwest    -> Westfold Plains [westfold_plains]
+  south        -> Base of Orthanc [orthanc_base]
+  southeast    -> Gates of Edoras [edoras_gates]
+  southwest    -> Gates of Isengard [isengard_gates]
+  west         -> Gap of Rohan [gap_of_rohan]
+Items: wild_horse
+Enemies: wild_horse_aggressive
+
+Banks of the Snowbourn [snowbourn_banks]
+--------------------------------------------------------------------------------
+Description: The river Snowbourn flows down from the mountains through Edoras. Its waters are cold and clear, tumbling over white stones.
+Connections:
+  east         -> The Dimholt Road [dimholt_road]
+  northeast    -> Helm's Gate [helms_gate]
+  northwest    -> The Treasury of Erebor [erebor_treasury]
+  southeast    -> Meadow of Niphredil [niphredil_meadow]
+Items: river_stone
+
+Foothills of the Starkhorn [starkhorn_foothills]
+--------------------------------------------------------------------------------
+Description: The land rises steeply toward the peak of the Starkhorn. The air is thinning, and the wind is cold.
+Connections:
+  east         -> Fir-tree Grove - Dunharrow [dunharrow_firtree_grove]
+  north        -> Galadhrim Flet - Western Watch [galadhrm_flet_1]
+  southeast    -> Helm's Deep [helms_deep_interior]
+  southwest    -> Dunharrow [dunharrow]
+  west         -> Aldburg [aldburg]
+Items: mountain_flower
+
+West Emnet [west_emnet]
+--------------------------------------------------------------------------------
+Description: The vast grasslands west of the Entwash. The horizon seems infinitely far away in every direction.
+Connections:
+  north        -> The Entwash [entwash]
+  northwest    -> Deep in Fangorn [fangorn_depths]
+  south        -> Entmoot Circle - Derndingle [entmoot_circle]
+  southeast    -> Mirkwood Path - The Enchanted Stream [mirkwood_path_2]
+  southwest    -> Silverlode Crossing [silverlode_crossing]
+  west         -> Hornburg Armory [hornburg_armory]
+Items: wild_horse_hair
+Enemies: wild_horse
+
+Westfold Plains [westfold_plains]
+--------------------------------------------------------------------------------
+Description: The western reaches of Rohan, where the grass is shorter and the wind carries the scent of the sea. The White Mountains loom to the south.
+Connections:
+  east         -> Eastfold Plains [eastfold_plains]
+  northwest    -> Approach to the Lonely Mountain [lonely_mountain_approach]
+  south        -> Gate of the Elven-king [thranduil_halls_gate]
+  southeast    -> The Plains of Rohan [rohan_plains]
+  southwest    -> Path to Long Lake [long_lake_path]
+  west         -> Lake-town Docks [lake_town_docks]
+Items: wild_grass
+Enemies: warg_rider
+
+The Wold [wold_of_rohan]
+--------------------------------------------------------------------------------
+Description: The northernmost part of Rohan, a high plateau of rough grass and stone. It is a lonely land, often swept by cold winds from the north.
+Connections:
+  northwest    -> Banks of the Celebrant [celebrant_banks]
+  south        -> East Emnet [east_emnet]
+  west         -> The Deep Coomb [deep_coomb]
+Items: ancient_arrowhead
+Enemies: orc_raider
+
+
+================================================================================
+FANGORN (13 locations)
+================================================================================
+
+Entmoot Circle - Derndingle [entmoot_circle]
+--------------------------------------------------------------------------------
+Description: A wide, bowl-shaped clearing surrounded by a high hedge of evergreen trees. This is where the Ents meet to discuss the affairs of the forest.
+Connections:
+  east         -> Mirkwood Path - The Enchanted Stream [mirkwood_path_2]
+  north        -> West Emnet [west_emnet]
+  northwest    -> Hornburg Armory [hornburg_armory]
+  south        -> The Silent Glade [the_silent_glade]
+  southeast    -> Mirkwood Path - The Old Forest Road [mirkwood_path_1]
+  southwest    -> Entrance to the Elf-path [elf_path_entrance]
+  west         -> Silverlode Crossing [silverlode_crossing]
+Items: ent_leaf
+
+The Entwash [entwash]
+--------------------------------------------------------------------------------
+Description: A river flowing from Fangorn Forest into the plains. The water is clear and cold. Great willow trees line the banks.
+Connections:
+  south        -> West Emnet [west_emnet]
+  southwest    -> Hornburg Armory [hornburg_armory]
+  west         -> Deep in Fangorn [fangorn_depths]
+
+Entwash Delta [entwash_delta]
+--------------------------------------------------------------------------------
+Description: Where the Entwash river breaks into many channels before flowing into the Anduin. The ground is marshy and thick with reeds.
+Connections:
+  east         -> Eaves of Fangorn [fangorn_eaves]
+  north        -> Entrance to the Elf-path [elf_path_entrance]
+  northeast    -> The Silent Glade [the_silent_glade]
+  northwest    -> Hidden Path in Fangorn [fangorn_hidden_path]
+  south        -> Wellinghall - Hall of the Ents [wellinghall]
+  southeast    -> Confluence of Rivers [anduin_confluence]
+  southwest    -> Leaflock's Meadow [leaflock_meadow]
+  west         -> Singing Groves [singing_groves]
+Items: river_reed
+Enemies: marsh_adder
+
+Headwaters of the Entwash [entwash_headwaters]
+--------------------------------------------------------------------------------
+Description: Where the Entwash river springs from the roots of the Misty Mountains. The water is cold enough to chill the bone.
+Connections:
+  east         -> Silverlode Crossing [silverlode_crossing]
+  north        -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  northeast    -> Hornburg Armory [hornburg_armory]
+  northwest    -> The Dimholt Road [dimholt_road]
+  south        -> Hidden Path in Fangorn [fangorn_hidden_path]
+  southeast    -> Entrance to the Elf-path [elf_path_entrance]
+  southwest    -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+  west         -> Meadow of Niphredil [niphredil_meadow]
+Items: mountain_crystal
+
+Edge of Fangorn Forest [fangorn_border]
+--------------------------------------------------------------------------------
+Description: The ancient forest of Fangorn stretches before you. The trees are impossibly old and tall. A sense of watchfulness pervades the air. You hear creaking and groaning from deep within.
+Connections:
+  east         -> Orthanc - Saruman's  Chamber [orthanc_chamber]
+  northeast    -> Gates of Isengard [isengard_gates]
+  west         -> Eaves of Fangorn [fangorn_eaves]
+
+Deep in Fangorn [fangorn_depths]
+--------------------------------------------------------------------------------
+Description: The heart of the ancient forest. Trees so old their names are forgotten crowd close. Time moves differently here. You hear a sound like slow, deep laughter.
+Connections:
+  east         -> The Entwash [entwash]
+  south        -> Hornburg Armory [hornburg_armory]
+  southeast    -> West Emnet [west_emnet]
+  southwest    -> Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+  west         -> Glittering Caves of Aglarond [glittering_caves]
+Items: ancient_oak_heart
+
+Eaves of Fangorn [fangorn_eaves]
+--------------------------------------------------------------------------------
+Description: Just within the edge of the forest. Great beech trees tower overhead. Shadows deepen quickly here. Something is moving between the trees...
+Connections:
+  east         -> Edge of Mirkwood [mirkwood_edge]
+  north        -> The Silent Glade [the_silent_glade]
+  northeast    -> Mirkwood Path - The Old Forest Road [mirkwood_path_1]
+  northwest    -> Entrance to the Elf-path [elf_path_entrance]
+  south        -> Confluence of Rivers [anduin_confluence]
+  southeast    -> Docks of Mithlond [grey_havens_docks]
+  southwest    -> Edge of Fangorn Forest [fangorn_border]
+  west         -> Entwash Delta [entwash_delta]
+Items: entdraught
+
+Hidden Path in Fangorn [fangorn_hidden_path]
+--------------------------------------------------------------------------------
+Description: A narrow trail through the thickest part of the forest. The trees seem to lean in, their branches interlocking overhead like a gothic cathedral.
+Connections:
+  east         -> Entrance to the Elf-path [elf_path_entrance]
+  north        -> Headwaters of the Entwash [entwash_headwaters]
+  northeast    -> Silverlode Crossing [silverlode_crossing]
+  northwest    -> Meadow of Niphredil [niphredil_meadow]
+  south        -> Singing Groves [singing_groves]
+  southeast    -> Entwash Delta [entwash_delta]
+  southwest    -> The Paths of the Dead [paths_of_dead]
+  west         -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+Items: ancient_bark
+
+Leaflock's Meadow [leaflock_meadow]
+--------------------------------------------------------------------------------
+Description: A sunny spot in the forest where Leaflock, an Ent who has become very 'tree-ish', often sleeps. He is almost indistinguishable from the trees around him.
+Connections:
+  east         -> Wellinghall - Hall of the Ents [wellinghall]
+  north        -> Singing Groves [singing_groves]
+  northeast    -> Entwash Delta [entwash_delta]
+  northwest    -> The Paths of the Dead [paths_of_dead]
+  southeast    -> The Mallorn Sanctuary [mallorn_sanctuary]
+  southwest    -> Galadhrim Flet - Western Watch [galadhrm_flet_1]
+  west         -> Chasm Viewpoint [khazad_dum_chasm_view]
+Items: rare_wildflower
+
+Skinbark's Grove [skinbark_grove]
+--------------------------------------------------------------------------------
+Description: The domain of Skinbark, one of the oldest Ents. Many of the trees here have been scarred by orcs, and there is a sense of anger in the soil.
+Connections:
+  north        -> Gate of the Elven-king [thranduil_halls_gate]
+  northeast    -> City of the Dead [dead_city]
+  northwest    -> Path to Long Lake [long_lake_path]
+  south        -> Treebeard's Storage [treebeard_cellar]
+  west         -> Thranduil's Halls [thranduil_halls_interior]
+Items: charred_wood
+Enemies: orc_scout
+
+The Silent Glade [the_silent_glade]
+--------------------------------------------------------------------------------
+Description: An opening in the forest where no bird sings and the wind does not blow. The silence here is heavy and thick with age.
+Connections:
+  east         -> Mirkwood Path - The Old Forest Road [mirkwood_path_1]
+  north        -> Entmoot Circle - Derndingle [entmoot_circle]
+  northeast    -> Mirkwood Path - The Enchanted Stream [mirkwood_path_2]
+  northwest    -> Silverlode Crossing [silverlode_crossing]
+  south        -> Eaves of Fangorn [fangorn_eaves]
+  southeast    -> Edge of Mirkwood [mirkwood_edge]
+  southwest    -> Entwash Delta [entwash_delta]
+  west         -> Entrance to the Elf-path [elf_path_entrance]
+Items: ancient_root
+Enemies: huorn
+
+Treebeard's Storage [treebeard_cellar]
+--------------------------------------------------------------------------------
+Description: A large hollow beneath the roots of an enormous oak tree. Stone jars filled with entdraught are kept here.
+Connections:
+  north        -> Skinbark's Grove [skinbark_grove]
+  northwest    -> Thranduil's Halls [thranduil_halls_interior]
+  southeast    -> Aldburg [aldburg]
+Items: entdraught, stone_jar
+
+Wellinghall - Hall of the Ents [wellinghall]
+--------------------------------------------------------------------------------
+Description: A great natural amphitheater among the trees. A clear stream cascades down the rocks. Treebeard the Ent dwells here - oldest of living things in Middle Earth. 'Hroom, hom!' he grumbles.
+Connections:
+  east         -> Confluence of Rivers [anduin_confluence]
+  north        -> Entwash Delta [entwash_delta]
+  northeast    -> Eaves of Fangorn [fangorn_eaves]
+  northwest    -> Singing Groves [singing_groves]
+  south        -> The Mallorn Sanctuary [mallorn_sanctuary]
+  southeast    -> Banks of the Celebrant [celebrant_banks]
+  west         -> Leaflock's Meadow [leaflock_meadow]
+Items: ent_staff
+
+
+================================================================================
+GONDOR (13 locations)
+================================================================================
+
+Citadel Guards Hall [citadel_guards_hall]
+--------------------------------------------------------------------------------
+Description: A hall on the seventh level, near the White Tower. The Guards of the Citadel, in their black livery and silver helms, stand in silent vigilance.
+Connections:
+  east         -> Mithril Depths - The Mother Lode [mithril_depths_2]
+  north        -> Sixth Level - Minas Tirith [sixth_level]
+  northwest    -> Third Level - Minas Tirith [third_level]
+  south        -> Mithril Depths - Upper Vein [mithril_depths_1]
+  southeast    -> Pelennor Fields [pelennor_fields]
+  southwest    -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+  west         -> Houses of Healing [minas_tirith_houses_of_healing]
+Items: silver_helm_crest
+
+Henneth Annûn - Window on the West [henneth_annun]
+--------------------------------------------------------------------------------
+Description: A secret refuge of the Rangers of Ithilien, hidden behind a thin curtain of falling water. The cave is cool and dry.
+Connections:
+  north        -> Dimrill Dale [dimrill_dale]
+  northeast    -> Morgul Vale [morgul_vale]
+  southeast    -> Morgul Pass [morgul_pass]
+  southwest    -> Border of Lothlórien [lothlorien_border]
+Items: ranger_cloak, bow_of_ithilien
+
+House of the Stewards [house_of_stewards]
+--------------------------------------------------------------------------------
+Description: The tomb of the Stewards of Gondor. White marble and silver. The tombs of Denethor and his forefathers lie here.
+Connections:
+  west         -> Rath Dínen - Street of the Dead [rath_dinen]
+Items: steward_ring, ancient_scroll
+
+Woods of Ithilien [ithilien_woods]
+--------------------------------------------------------------------------------
+Description: A fair land of trees and flowers, even so close to the shadow of Mordor. The air is filled with the scent of herbs and resins.
+Connections:
+  east         -> Gates of Minas Morgul [minas_morgul_gates]
+  north        -> Tunnel Exit [tunnel_exit]
+  northeast    -> Ruins of Osgiliath [osgiliath_ruins]
+  northwest    -> White Tower of Ecthelion [white_tower]
+  south        -> Morgul Vale [morgul_vale]
+  southeast    -> Cirith Ungol - Tower of the Spider [cirith_ungol]
+  southwest    -> Dimrill Dale [dimrill_dale]
+  west         -> Port of Pelargir [pelargir_port]
+Items: herbs, wild_berry
+
+Valleys of Lossarnach [lossarnach_valleys]
+--------------------------------------------------------------------------------
+Description: The 'flower-valley' of Gondor. It is a rich land of orchards and gardens, providing food for the capital.
+Connections:
+  northwest    -> Fifth Level - Minas Tirith [fifth_level]
+  south        -> Iron Mines - Level 1 [iron_mines_1]
+Items: apple, pear
+
+Gates of Minas Tirith [minas_tirith_gates]
+--------------------------------------------------------------------------------
+Description: The Great Gate of Minas Tirith, the White City. Seven tiers rise above you, each level higher than the last. The White Tower of Ecthelion pierces the sky. Guards in white and silver stand watch.
+Connections:
+  east         -> White Tower of Ecthelion [white_tower]
+  north        -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+  northeast    -> Mithril Depths - Upper Vein [mithril_depths_1]
+  northwest    -> The Unending Stair - Middle Section [the_unending_stair_middle]
+  southeast    -> Port of Pelargir [pelargir_port]
+
+Houses of Healing [minas_tirith_houses_of_healing]
+--------------------------------------------------------------------------------
+Description: A place of quiet and rest on the sixth level of the city. The scent of athelas is strong here. Many wounded from the war are cared for by the healers.
+Connections:
+  east         -> Citadel Guards Hall [citadel_guards_hall]
+  north        -> Third Level - Minas Tirith [third_level]
+  northeast    -> Sixth Level - Minas Tirith [sixth_level]
+  northwest    -> Goblin Warren [goblin_warren]
+  south        -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+  southeast    -> Mithril Depths - Upper Vein [mithril_depths_1]
+  southwest    -> The Unending Stair - Middle Section [the_unending_stair_middle]
+  west         -> Hall of Kings [hall_of_kings]
+Items: athelas_leaf, bandage
+
+Stables of Minas Tirith [minas_tirith_stables]
+--------------------------------------------------------------------------------
+Description: The great stables on the first level of the city. Strong horses of Gondor are kept here, ready for the messengers of the King.
+Connections:
+  south        -> First Level - Minas Tirith [first_level]
+Items: horse_brush
+
+Ruins of Osgiliath [osgiliath_ruins]
+--------------------------------------------------------------------------------
+Description: The once-great city of Osgiliath lies in ruins. The Anduin flows through the middle, and broken bridges span the water. Orcs patrol the eastern bank. The road to Minas Tirith lies west.
+Connections:
+  east         -> Durthang Fortress [durthang_fortress]
+  north        -> East Gate of Moria [east_gate_moria]
+  northeast    -> Interior of Minas Morgul [minas_morgul_interior]
+  northwest    -> Pelennor Fields [pelennor_fields]
+  south        -> Gates of Minas Morgul [minas_morgul_gates]
+  southwest    -> Woods of Ithilien [ithilien_woods]
+  west         -> Tunnel Exit [tunnel_exit]
+Items: ancient_gondorian_coin
+Enemies: orc_warrior, orc_scout
+
+Port of Pelargir [pelargir_port]
+--------------------------------------------------------------------------------
+Description: The great port of Gondor on the Anduin. Ships from across the sea dock here, bringing goods and news from afar.
+Connections:
+  east         -> Woods of Ithilien [ithilien_woods]
+  north        -> White Tower of Ecthelion [white_tower]
+  northeast    -> Tunnel Exit [tunnel_exit]
+  northwest    -> Gates of Minas Tirith [minas_tirith_gates]
+  south        -> Dimrill Dale [dimrill_dale]
+  southeast    -> Morgul Vale [morgul_vale]
+Items: sea_shell, foreign_coin
+
+Pelennor Fields [pelennor_fields]
+--------------------------------------------------------------------------------
+Description: The great fields before Minas Tirith. Farmland stretches to the walls of the White City. The Rammas Echor - the outer wall - has been breached in places. You can see the White Tower rising in the dist...
+Connections:
+  east         -> East Gate of Moria [east_gate_moria]
+  north        -> Mithril Depths - The Mother Lode [mithril_depths_2]
+  northeast    -> Rath Dínen - Street of the Dead [rath_dinen]
+  northwest    -> Citadel Guards Hall [citadel_guards_hall]
+  south        -> Tunnel Exit [tunnel_exit]
+  southeast    -> Ruins of Osgiliath [osgiliath_ruins]
+  southwest    -> White Tower of Ecthelion [white_tower]
+  west         -> Mithril Depths - Upper Vein [mithril_depths_1]
+Items: gondorian_banner
+Enemies: orc_warrior
+
+Rath Dínen - Street of the Dead [rath_dinen]
+--------------------------------------------------------------------------------
+Description: The silent street where the Kings and Stewards of Gondor are laid to rest. Tombs line both sides. A sense of ancient majesty and sorrow fills the air.
+Connections:
+  east         -> House of the Stewards [house_of_stewards]
+  north        -> Iron Mines - Level 1 [iron_mines_1]
+  south        -> East Gate of Moria [east_gate_moria]
+  southeast    -> Interior of Minas Morgul [minas_morgul_interior]
+  southwest    -> Pelennor Fields [pelennor_fields]
+  west         -> Mithril Depths - The Mother Lode [mithril_depths_2]
+
+White Tower of Ecthelion [white_tower]
+--------------------------------------------------------------------------------
+Description: The highest point of Minas Tirith. From here you can see for leagues in every direction. The throne of the Stewards stands empty, awaiting the return of the King.
+Connections:
+  east         -> Tunnel Exit [tunnel_exit]
+  north        -> Mithril Depths - Upper Vein [mithril_depths_1]
+  northeast    -> Pelennor Fields [pelennor_fields]
+  northwest    -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+  south        -> Port of Pelargir [pelargir_port]
+  southeast    -> Woods of Ithilien [ithilien_woods]
+  west         -> Gates of Minas Tirith [minas_tirith_gates]
+Items: palantir_of_minas_tirith, steward_crown
+
+
+================================================================================
+MORDOR (17 locations)
+================================================================================
+
+Approach to Barad-dûr [barad_dur_approach]
+--------------------------------------------------------------------------------
+Description: The Dark Tower of Sauron rises impossibly high, wreathed in shadow and flame. The Eye watches from above. The very air burns with malice.
+Connections:
+  east         -> Base of Barad-dûr [barad_dur_base]
+  west         -> Plateau of Gorgoroth [gorgoroth_plateau]
+Enemies: ringwraith, ringwraith, orc_warrior
+
+Base of Barad-dûr [barad_dur_base]
+--------------------------------------------------------------------------------
+Description: The foundation of the Dark Tower. The ground is cracked and black. Fires burn in pits. This is the heart of Sauron's power.
+Connections:
+  east         -> Approach to Barad-dûr [barad_dur_approach]
+  southwest    -> Throne Room of Barad-dûr [barad_dur_throne_room]
+  west         -> Chamber of the Dark Lord [barad_dur_chamber]
+Items: dark_ring_fragment
+Enemies: ringwraith, orc_warrior
+
+Chamber of the Dark Lord [barad_dur_chamber]
+--------------------------------------------------------------------------------
+Description: The highest chamber of Barad-dûr. The Eye of Sauron burns here, seeing all. The One Ring was forged in the fires below. This is where the fate of Middle Earth will be decided.
+Connections:
+  east         -> Base of Barad-dûr [barad_dur_base]
+  south        -> Throne Room of Barad-dûr [barad_dur_throne_room]
+Items: sauron_armor_fragment
+Enemies: sauron_manifestation
+
+Throne Room of Barad-dûr [barad_dur_throne_room]
+--------------------------------------------------------------------------------
+Description: The seat of the Dark Lord. A massive shadow looms over the throne. The Eye is always watching.
+Connections:
+  north        -> Chamber of the Dark Lord [barad_dur_chamber]
+  northeast    -> Base of Barad-dûr [barad_dur_base]
+Items: eye_of_sauron_artifact
+Enemies: sauron_embodiment
+
+The Black Gate of Mordor [black_gate]
+--------------------------------------------------------------------------------
+Description: The Morannon - the great gate of Mordor. Two massive towers flank an iron gate. The ground before it is littered with bones. This is the only way into the Dark Land.
+Connections:
+  east         -> Plateau of Gorgoroth [gorgoroth_plateau]
+  south        -> Plains of Mordor [mordor_plains]
+Enemies: orc_warrior, orc_warrior, orc_warrior, troll_guard
+
+Cirith Ungol - Tower of the Spider [cirith_ungol]
+--------------------------------------------------------------------------------
+Description: A great tower built into the mountainside. Shelob's lair lies below. The tower is dark and foreboding, its windows like empty eyes.
+Connections:
+  east         -> Plains of Mordor [mordor_plains]
+  north        -> Gates of Minas Morgul [minas_morgul_gates]
+  northwest    -> Woods of Ithilien [ithilien_woods]
+  south        -> Shelob's Lair [shelob_lair]
+  southeast    -> Plateau of Gorgoroth [gorgoroth_plateau]
+  west         -> Morgul Vale [morgul_vale]
+Items: tower_key
+Enemies: orc_warrior, orc_warrior
+
+Durthang Fortress [durthang_fortress]
+--------------------------------------------------------------------------------
+Description: An old fortress on the northern edge of the Ephel Dúath, now used as a major garrison for orcs.
+Connections:
+  north        -> Interior of Minas Morgul [minas_morgul_interior]
+  northwest    -> East Gate of Moria [east_gate_moria]
+  southwest    -> Gates of Minas Morgul [minas_morgul_gates]
+  west         -> Ruins of Osgiliath [osgiliath_ruins]
+Items: black_armor_piece
+Enemies: orc_captain
+
+Plateau of Gorgoroth [gorgoroth_plateau]
+--------------------------------------------------------------------------------
+Description: A vast, blasted plain of ash and rock. The air is thick with smoke from Mount Doom. Orc-camps are scattered across the desert.
+Connections:
+  east         -> Approach to Barad-dûr [barad_dur_approach]
+  north        -> Plains of Mordor [mordor_plains]
+  northwest    -> Cirith Ungol - Tower of the Spider [cirith_ungol]
+  south        -> Approach to Mount Doom [mount_doom_approach]
+  west         -> Shelob's Lair [shelob_lair]
+Items: scorched_bone
+Enemies: orc_soldier, orc_soldier
+
+Gates of Minas Morgul [minas_morgul_gates]
+--------------------------------------------------------------------------------
+Description: The terrifying entrance to the city of the Nazgûl. The bridge is flanked by huge, carven figures with white, empty eyes. A sickly green light glows from the walls.
+Connections:
+  north        -> Ruins of Osgiliath [osgiliath_ruins]
+  northeast    -> Durthang Fortress [durthang_fortress]
+  northwest    -> Tunnel Exit [tunnel_exit]
+  south        -> Cirith Ungol - Tower of the Spider [cirith_ungol]
+  southeast    -> Plains of Mordor [mordor_plains]
+  southwest    -> Morgul Vale [morgul_vale]
+  west         -> Woods of Ithilien [ithilien_woods]
+Items: cursed_coin
+Enemies: morgul_orc
+
+Interior of Minas Morgul [minas_morgul_interior]
+--------------------------------------------------------------------------------
+Description: A city of nightmare. The buildings are twisted and silent, and the air is cold with a deathly chill.
+Connections:
+  northwest    -> Rath Dínen - Street of the Dead [rath_dinen]
+  south        -> Durthang Fortress [durthang_fortress]
+  southwest    -> Ruins of Osgiliath [osgiliath_ruins]
+  west         -> East Gate of Moria [east_gate_moria]
+Items: morgul_blade_shard
+Enemies: nazgul_wraith
+
+Plains of Mordor [mordor_plains]
+--------------------------------------------------------------------------------
+Description: A wasteland of ash and rock. Nothing grows here. The sky is dark with smoke. Orc patrols march in the distance. Mount Doom dominates the horizon.
+Connections:
+  north        -> The Black Gate of Mordor [black_gate]
+  northwest    -> Gates of Minas Morgul [minas_morgul_gates]
+  south        -> Plateau of Gorgoroth [gorgoroth_plateau]
+  southwest    -> Shelob's Lair [shelob_lair]
+  west         -> Cirith Ungol - Tower of the Spider [cirith_ungol]
+Enemies: orc_warrior, orc_warrior, warg_rider
+
+Morgul Pass [morgul_pass]
+--------------------------------------------------------------------------------
+Description: A narrow pass through the mountains. The path is treacherous and watched. The very stones seem to whisper of evil.
+Connections:
+  northeast    -> Shelob's Lair [shelob_lair]
+  northwest    -> Henneth Annûn - Window on the West [henneth_annun]
+  southwest    -> Banks of the Silverlode [silverlode_banks]
+Items: morgul_blade
+Enemies: orc_warrior, spider_guard
+
+Morgul Vale [morgul_vale]
+--------------------------------------------------------------------------------
+Description: A dark valley leading to Mordor. The air is foul and the ground is poisoned. The Tower of Cirith Ungol looms ahead. A sense of dread fills you.
+Connections:
+  east         -> Cirith Ungol - Tower of the Spider [cirith_ungol]
+  north        -> Woods of Ithilien [ithilien_woods]
+  northeast    -> Gates of Minas Morgul [minas_morgul_gates]
+  northwest    -> Port of Pelargir [pelargir_port]
+  southeast    -> Shelob's Lair [shelob_lair]
+  southwest    -> Henneth Annûn - Window on the West [henneth_annun]
+  west         -> Dimrill Dale [dimrill_dale]
+Enemies: orc_warrior, orc_scout, ringwraith
+
+Approach to Mount Doom [mount_doom_approach]
+--------------------------------------------------------------------------------
+Description: Orodruin - the Mountain of Fire. Lava flows down its sides. The air is thick with ash and the stench of sulfur. The path to the summit is treacherous.
+Connections:
+  north        -> Plateau of Gorgoroth [gorgoroth_plateau]
+  northwest    -> Shelob's Lair [shelob_lair]
+  south        -> Summit of Mount Doom [mount_doom_summit]
+Enemies: lava_elemental
+
+Sammath Naur - Chambers of Fire [mount_doom_sammath_naur]
+--------------------------------------------------------------------------------
+Description: The heart of the volcano. A narrow path leads over the Crack of Doom, where the One Ring was forged. The heat is unbearable.
+Connections:
+  north        -> Summit of Mount Doom [mount_doom_summit]
+Items: magma_rock
+Enemies: gollum_shadow
+
+Summit of Mount Doom [mount_doom_summit]
+--------------------------------------------------------------------------------
+Description: The Crack of Doom. A chasm of fire at the heart of the mountain. This is where the One Ring was forged, and where it must be destroyed. The heat is unbearable.
+Connections:
+  north        -> Approach to Mount Doom [mount_doom_approach]
+  south        -> Sammath Naur - Chambers of Fire [mount_doom_sammath_naur]
+Enemies: gollum_final
+
+Shelob's Lair [shelob_lair]
+--------------------------------------------------------------------------------
+Description: A vast web-filled cave. Sticky strands cover every surface. In the darkness, you sense something huge and hungry moving. The stench is overwhelming.
+Connections:
+  east         -> Plateau of Gorgoroth [gorgoroth_plateau]
+  north        -> Cirith Ungol - Tower of the Spider [cirith_ungol]
+  northeast    -> Plains of Mordor [mordor_plains]
+  northwest    -> Morgul Vale [morgul_vale]
+  southeast    -> Approach to Mount Doom [mount_doom_approach]
+  southwest    -> Morgul Pass [morgul_pass]
+Enemies: shelob
+
+
+================================================================================
+MIRKWOOD & EREBOR (17 locations)
+================================================================================
+
+Entrance to the Elf-path [elf_path_entrance]
+--------------------------------------------------------------------------------
+Description: A narrower, more secret path that leads toward the Kingdom of Thranduil. It is marked with subtle elven runes.
+Connections:
+  east         -> The Silent Glade [the_silent_glade]
+  north        -> Silverlode Crossing [silverlode_crossing]
+  northeast    -> Entmoot Circle - Derndingle [entmoot_circle]
+  northwest    -> Headwaters of the Entwash [entwash_headwaters]
+  south        -> Entwash Delta [entwash_delta]
+  southeast    -> Eaves of Fangorn [fangorn_eaves]
+  southwest    -> Singing Groves [singing_groves]
+  west         -> Hidden Path in Fangorn [fangorn_hidden_path]
+Items: elven_marker
+
+The Mountain Armory [erebor_armory]
+--------------------------------------------------------------------------------
+Description: Racks of axes, mail-shirts, and shields line the walls. The dwarves of the mountain were famous for their craftsmanship.
+Connections:
+  east         -> Great Hall of Thráin [erebor_great_hall]
+  southeast    -> Main Gates of Erebor [erebor_gates]
+Items: fine_dwarven_axe, mithril_filigree
+
+Main Gates of Erebor [erebor_gates]
+--------------------------------------------------------------------------------
+Description: The Main Gates of Erebor stand before you, a massive archway of stone that once served as the grand entrance to the Lonely Mountain and the greatest dwarven kingdom in the north. The gates were once o...
+Connections:
+  north        -> Great Hall of Thráin [erebor_great_hall]
+  northeast    -> The Treasury of Erebor [erebor_treasury]
+  northwest    -> The Mountain Armory [erebor_armory]
+  south        -> Approach to the Lonely Mountain [lonely_mountain_approach]
+Items: dwarven_rune_stone
+Enemies: dwarven_sentry
+
+Great Hall of Thráin [erebor_great_hall]
+--------------------------------------------------------------------------------
+Description: A vast chamber of incredible size, its ceiling supported by massive pillars of carved stone. The wealth of the mountain was once stored here.
+Connections:
+  east         -> The Treasury of Erebor [erebor_treasury]
+  south        -> Main Gates of Erebor [erebor_gates]
+  west         -> The Mountain Armory [erebor_armory]
+Items: gold_nugget
+
+The Treasury of Erebor [erebor_treasury]
+--------------------------------------------------------------------------------
+Description: A huge cavern once filled with piles of gold, jewels, and the Arkenstone. Most is gone, but the glint of treasure still remains in the cracks.
+Connections:
+  southeast    -> Banks of the Snowbourn [snowbourn_banks]
+  southwest    -> Main Gates of Erebor [erebor_gates]
+  west         -> Great Hall of Thráin [erebor_great_hall]
+Items: precious_gem, emerald
+Enemies: cave_troll
+
+Docks of Mithlond [grey_havens_docks]
+--------------------------------------------------------------------------------
+Description: The white towers of the Grey Havens rise above the western sea. Elven ships, slim and white, are moored at the docks, waiting for the final journey to the West.
+Connections:
+  north        -> Edge of Mirkwood [mirkwood_edge]
+  northwest    -> Eaves of Fangorn [fangorn_eaves]
+  southwest    -> Banks of the Celebrant [celebrant_banks]
+  west         -> Approach to Mithlond [havens_approach]
+Items: elven_ship_model
+
+Approach to Mithlond [havens_approach]
+--------------------------------------------------------------------------------
+Description: A wide, white road leads down to the sea. The air is salty and filled with the sound of gulls.
+Connections:
+  east         -> Docks of Mithlond [grey_havens_docks]
+  northeast    -> Whitwell [whitwell]
+Items: sea_shell
+
+Lake-town Docks [lake_town_docks]
+--------------------------------------------------------------------------------
+Description: The city of Esgaroth, built on wooden piles above the waters of the Long Lake. Boats are moored at the docks, and merchants cry their wares.
+Connections:
+  east         -> Westfold Plains [westfold_plains]
+  north        -> Approach to the Lonely Mountain [lonely_mountain_approach]
+  south        -> Path to Long Lake [long_lake_path]
+  southeast    -> Gate of the Elven-king [thranduil_halls_gate]
+Items: fish_scale, merchant_permit
+
+Approach to the Lonely Mountain [lonely_mountain_approach]
+--------------------------------------------------------------------------------
+Description: The Great Peak of Erebor looms ahead, its summit often hidden in clouds. The land here is scarred and blackened - the Desolation of Smaug.
+Connections:
+  north        -> Main Gates of Erebor [erebor_gates]
+  south        -> Lake-town Docks [lake_town_docks]
+  southeast    -> Westfold Plains [westfold_plains]
+Items: dragon_scale_fragment
+
+Path to Long Lake [long_lake_path]
+--------------------------------------------------------------------------------
+Description: The path leaves the forest and follows the Forest River toward the east. The sky is visible again, and the air is cooler.
+Connections:
+  east         -> Gate of the Elven-king [thranduil_halls_gate]
+  north        -> Lake-town Docks [lake_town_docks]
+  northeast    -> Westfold Plains [westfold_plains]
+  south        -> Thranduil's Halls [thranduil_halls_interior]
+  southeast    -> Skinbark's Grove [skinbark_grove]
+Items: river_reed
+
+Mirkwood Depths - Spider Warrens [mirkwood_depths]
+--------------------------------------------------------------------------------
+Description: The thickest part of the forest. Massive webs stretch between the trees, some containing large, struggling cocoons. Multiple pairs of eyes watch you from the dark.
+Connections:
+  north        -> Rhosgobel - Home of Radagast [rhosgobel]
+  southwest    -> Mirkwood Path - The Enchanted Stream [mirkwood_path_2]
+Items: spider_silk
+Enemies: giant_spider, giant_spider
+
+Edge of Mirkwood [mirkwood_edge]
+--------------------------------------------------------------------------------
+Description: The Great Forest of Mirkwood looms before you, a wall of darkness and silence that seems to absorb all light and sound. The trees are ancient and gnarled, their trunks twisted into grotesque shapes, t...
+Connections:
+  north        -> Mirkwood Path - The Old Forest Road [mirkwood_path_1]
+  northwest    -> The Silent Glade [the_silent_glade]
+  south        -> Docks of Mithlond [grey_havens_docks]
+  southwest    -> Confluence of Rivers [anduin_confluence]
+  west         -> Eaves of Fangorn [fangorn_eaves]
+Items: black_mushroom
+
+Mirkwood Path - The Old Forest Road [mirkwood_path_1]
+--------------------------------------------------------------------------------
+Description: The ancient road is now overgrown and broken. The canopy overhead is so thick that constant twilight reigns below.
+Connections:
+  north        -> Mirkwood Path - The Enchanted Stream [mirkwood_path_2]
+  northwest    -> Entmoot Circle - Derndingle [entmoot_circle]
+  south        -> Edge of Mirkwood [mirkwood_edge]
+  southwest    -> Eaves of Fangorn [fangorn_eaves]
+  west         -> The Silent Glade [the_silent_glade]
+Items: broken_cobweb
+Enemies: giant_spider
+
+Mirkwood Path - The Enchanted Stream [mirkwood_path_2]
+--------------------------------------------------------------------------------
+Description: A dark, sluggish stream crosses the path. A bridge once stood here, but only rotten timbers remain. The water looks deep and dangerous.
+Connections:
+  northeast    -> Mirkwood Depths - Spider Warrens [mirkwood_depths]
+  northwest    -> West Emnet [west_emnet]
+  south        -> Mirkwood Path - The Old Forest Road [mirkwood_path_1]
+  southwest    -> The Silent Glade [the_silent_glade]
+  west         -> Entmoot Circle - Derndingle [entmoot_circle]
+Items: enchanted_water_vial
+
+Rhosgobel - Home of Radagast [rhosgobel]
+--------------------------------------------------------------------------------
+Description: A small, thatched house built around an old tree. Birds and squirrels are everywhere, and the air is filled with the scent of wild herbs.
+Connections:
+  south        -> Mirkwood Depths - Spider Warrens [mirkwood_depths]
+Items: bird_feather, herbal_poultice
+
+Gate of the Elven-king [thranduil_halls_gate]
+--------------------------------------------------------------------------------
+Description: A massive stone archway carved into a hillside. Great beech trees surround the entrance, and the sound of a rushing river can be heard within.
+Connections:
+  east         -> City of the Dead [dead_city]
+  north        -> Westfold Plains [westfold_plains]
+  northeast    -> Eastfold Plains [eastfold_plains]
+  northwest    -> Lake-town Docks [lake_town_docks]
+  south        -> Skinbark's Grove [skinbark_grove]
+  southwest    -> Thranduil's Halls [thranduil_halls_interior]
+  west         -> Path to Long Lake [long_lake_path]
+Items: beech_leaf
+Enemies: elven_guard
+
+Thranduil's Halls [thranduil_halls_interior]
+--------------------------------------------------------------------------------
+Description: A vast underground palace of stone pillars and winding passages. The air is fresh, and the sound of music echoes through the halls.
+Connections:
+  east         -> Skinbark's Grove [skinbark_grove]
+  north        -> Path to Long Lake [long_lake_path]
+  northeast    -> Gate of the Elven-king [thranduil_halls_gate]
+  southeast    -> Treebeard's Storage [treebeard_cellar]
+Items: elven_wine_bowl
+
+
+================================================================================
+OTHER (39 locations)
+================================================================================
+
+Confluence of Rivers [anduin_confluence]
+--------------------------------------------------------------------------------
+Description: Where the Silverlode meets the Great River Anduin. The waters swirl together, one crystal clear and the other deep and powerful.
+Connections:
+  east         -> Docks of Mithlond [grey_havens_docks]
+  north        -> Eaves of Fangorn [fangorn_eaves]
+  northeast    -> Edge of Mirkwood [mirkwood_edge]
+  northwest    -> Entwash Delta [entwash_delta]
+  south        -> Anduin - Midstream [anduin_midstream]
+  southwest    -> The Mallorn Sanctuary [mallorn_sanctuary]
+  west         -> Wellinghall - Hall of the Ents [wellinghall]
+Items: river_reeds
+
+Buckland Cellar [buckland_cellar]
+--------------------------------------------------------------------------------
+Description: A vast wine cellar with barrels stacked to the ceiling. The Brandybucks are famous for their wine-making.
+Connections:
+  east         -> Barrow Chamber - Third Mound [barrow_chamber_3]
+  north        -> The Weather Hills [weatherhills]
+  northwest    -> Fornost Gates [fornost_gates]
+  southwest    -> Midgewater Marshes [midgewater_marshes]
+Items: aged_wine, wine_cork
+
+Buckland Kitchen [buckland_kitchen]
+--------------------------------------------------------------------------------
+Description: A massive kitchen where the Brandybucks prepare feasts. The ovens are always warm, and the smell of baking bread fills the air.
+Connections:
+  east         -> Chetwood Forest [chetwood]
+  north        -> Weathertop Summit [weathertop_summit]
+  northeast    -> Barrow Chamber - Second Mound [barrow_chamber_2]
+  west         -> Base of Weathertop [weathertop_base]
+Items: fresh_bread, honey_cake
+
+Banks of the Celebrant [celebrant_banks]
+--------------------------------------------------------------------------------
+Description: Further downstream from the Silverlode, the river Celebrant widens. The banks are covered in thick moss and golden leaves.
+Connections:
+  north        -> Confluence of Rivers [anduin_confluence]
+  northeast    -> Docks of Mithlond [grey_havens_docks]
+  northwest    -> Wellinghall - Hall of the Ents [wellinghall]
+  south        -> The Deep Coomb [deep_coomb]
+  southeast    -> The Wold [wold_of_rohan]
+  southwest    -> Upper Deeping Stream [deeping_stream_upper]
+  west         -> The Mallorn Sanctuary [mallorn_sanctuary]
+Items: golden_moss
+
+Chetwood Forest [chetwood]
+--------------------------------------------------------------------------------
+Description: Chetwood is a wild woodland that surrounds Bree, a place where civilization gives way to the untamed wilderness. The trees grow thick and close together, their branches interlocking overhead to create...
+Connections:
+  east         -> The Barrow-downs [barrow_downs]
+  north        -> Barrow Chamber - Second Mound [barrow_chamber_2]
+  northwest    -> Weathertop Summit [weathertop_summit]
+  west         -> Buckland Kitchen [buckland_kitchen]
+Items: forest_berry
+Enemies: brigand, wild_wolf
+
+City of the Dead [dead_city]
+--------------------------------------------------------------------------------
+Description: An underground city of the dead. Countless skeletons in ancient armor line the walls, waiting... waiting for the king to return and fulfill their oath.
+Connections:
+  east         -> The Paths of the Dead [paths_of_dead]
+  north        -> Eastfold Plains [eastfold_plains]
+  northeast    -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+  northwest    -> Westfold Plains [westfold_plains]
+  southeast    -> Chasm Viewpoint [khazad_dum_chasm_view]
+  southwest    -> Skinbark's Grove [skinbark_grove]
+  west         -> Gate of the Elven-king [thranduil_halls_gate]
+Items: oath_stone, dead_crown
+
+Fifth Level - Minas Tirith [fifth_level]
+--------------------------------------------------------------------------------
+Description: The level of the Great Hall. Tapestries depicting the history of Gondor line the walls.
+Connections:
+  down         -> Fourth Level - Minas Tirith [fourth_level]
+  north        -> The Nameless Tunnels [nameless_tunnels]
+  northwest    -> The Dark Lake [the_dark_lake]
+  southeast    -> Valleys of Lossarnach [lossarnach_valleys]
+  southwest    -> Fourth Level - Minas Tirith [fourth_level]
+  up           -> Sixth Level - Minas Tirith [sixth_level]
+  west         -> The Mithril Vein [mithril_mine]
+Items: ancient_tapestry
+
+First Level - Minas Tirith [first_level]
+--------------------------------------------------------------------------------
+Description: The lowest level of the city. Houses and shops line the streets. The White Tree fountain stands in the center. The way up leads to the Citadel.
+Connections:
+  down         -> Gates of Minas Tirith [minas_tirith_gates]
+  north        -> Stables of Minas Tirith [minas_tirith_stables]
+  up           -> Second Level - Minas Tirith [second_level]
+Items: white_tree_sapling
+
+Approach to Fornost [fornost_approach]
+--------------------------------------------------------------------------------
+Description: The road leads toward the ruins of Fornost Erain, the ancient capital of the North Kingdom of Arnor. As you travel along the path, the landscape begins to change—the cheerful green of the Shire gives ...
+Connections:
+  east         -> Tom's Garden [bombadil_garden]
+  north        -> Combe [combe]
+  northeast    -> Bree Square [bree_square]
+  northwest    -> Brandywine Bridge [brandywine_bridge]
+  south        -> Approach to the Barrow-downs [barrow_downs_approach]
+  southwest    -> East Road from Bree [bree_east_road]
+  west         -> Old Forest Entrance [old_forest_entrance]
+
+Fornost Gates [fornost_gates]
+--------------------------------------------------------------------------------
+Description: The great gates of Fornost stand before you, or rather, what remains of them. Once magnificent portals that welcomed travelers to the capital of the North Kingdom, they now hang broken and askew, thei...
+Connections:
+  east         -> The Weather Hills [weatherhills]
+  south        -> Fornost Ruins [fornost_ruins]
+  southeast    -> Buckland Cellar [buckland_cellar]
+Items: ancient_key
+Enemies: orc_scout
+
+Fornost Keep [fornost_keep]
+--------------------------------------------------------------------------------
+Description: The highest point of the ruined city. The keep still stands, though damaged. From here you can see the entire ruined city.
+Connections:
+  down         -> Fornost Palace [fornost_palace]
+Items: keep_banner, ancient_map
+Enemies: orc_warrior
+
+Fornost Palace [fornost_palace]
+--------------------------------------------------------------------------------
+Description: The ruins of the royal palace. Once magnificent, now only broken walls and empty halls remain.
+Connections:
+  south        -> Fornost Ruins [fornost_ruins]
+  up           -> Fornost Keep [fornost_keep]
+Items: royal_seal, palace_treasure
+Enemies: ringwraith
+
+Fornost Ruins [fornost_ruins]
+--------------------------------------------------------------------------------
+Description: The ruined streets of the ancient city. Buildings have collapsed, and nature is reclaiming the stone. Something moves in the shadows.
+Connections:
+  north        -> Fornost Palace [fornost_palace]
+  south        -> Fornost Gates [fornost_gates]
+Items: ancient_coin, ruined_artifact
+Enemies: orc_warrior, warg
+
+Fornost Temple [fornost_temple]
+--------------------------------------------------------------------------------
+Description: A ruined temple, its roof collapsed. Ancient altars and statues remain, covered in moss and vines.
+Connections:
+  north        -> Troll Cave [troll_cave]
+  northeast    -> The Trollshaws [trollshaws]
+Items: temple_relic, ancient_scroll
+Enemies: barrow_wight
+
+Fourth Level - Minas Tirith [fourth_level]
+--------------------------------------------------------------------------------
+Description: Barracks and armories. The soldiers of Gondor train here. You hear the ring of steel on steel.
+Connections:
+  down         -> Third Level - Minas Tirith [third_level]
+  north        -> The Mithril Vein [mithril_mine]
+  northeast    -> Fifth Level - Minas Tirith [fifth_level]
+  northwest    -> Deep Mines Hub [deep_mines_hub]
+  south        -> Sixth Level - Minas Tirith [sixth_level]
+  southwest    -> Third Level - Minas Tirith [third_level]
+  up           -> Fifth Level - Minas Tirith [fifth_level]
+  west         -> Second Level - Minas Tirith [second_level]
+Items: gondorian_armor
+
+The Green Dragon Inn [green_dragon]
+--------------------------------------------------------------------------------
+Description: A warm, welcoming tavern that serves as the social heart of Hobbiton. The interior is cozy and inviting, with low-beamed ceilings and walls lined with portraits of famous hobbits. A great fireplace cr...
+Connections:
+  southwest    -> Staddle [staddle]
+  west         -> Hobbiton Square [hobbiton_square]
+Items: health_potion, old_map
+
+The Hall of Fire [hall_of_fire_guest]
+--------------------------------------------------------------------------------
+Description: A great hall where a fire is always burning. On either side of the hearth are pillows and carpets where elves sit and listen to songs and tales. The atmosphere is one of profound peace.
+Connections:
+  north        -> Library of Rivendell [rivendell_library]
+  northeast    -> Hall of Fire - Rivendell [rivendell_hall]
+  south        -> Gardens of Rivendell [rivendell_gardens]
+Items: harp, ancient_scroll
+
+Hall of Kings [hall_of_kings]
+--------------------------------------------------------------------------------
+Description: A long gallery lined with statues of the great kings of Moria. Their stone eyes seem to watch you with ancient pride and sorrow.
+Connections:
+  east         -> Houses of Healing [minas_tirith_houses_of_healing]
+  north        -> Goblin Warren [goblin_warren]
+  northeast    -> Third Level - Minas Tirith [third_level]
+  northwest    -> Royal Tombs of Khazad-dûm [royal_tombs]
+  south        -> The Unending Stair - Middle Section [the_unending_stair_middle]
+  southeast    -> Bridge of Khazad-dûm [bridge_of_khazad_dum]
+  southwest    -> Royal Armory [royal_armory]
+  west         -> Top of the Endless Stair [endless_stair_top]
+Items: king_statuette
+
+Hidden Flet [hidden_flet]
+--------------------------------------------------------------------------------
+Description: A platform built high in the branches of a massive pine tree. From here, you can see the entire valley of Imladris stretching out below.
+Connections:
+  southeast    -> Deep Mines Hub [deep_mines_hub]
+  southwest    -> The Goblin Ward [goblin_ward]
+  west         -> Goblin Watchtower [goblin_watchtower]
+Items: elven_spyglass
+
+Hidden Valley in the White Mountains [hidden_valley_white_mountains]
+--------------------------------------------------------------------------------
+Description: A secluded nook in the mountains, shielded from the wind. A small spring of sweet water trickles from the rock.
+Connections:
+  east         -> Hornburg Armory [hornburg_armory]
+  north        -> Glittering Caves of Aglarond [glittering_caves]
+  northeast    -> Deep in Fangorn [fangorn_depths]
+  northwest    -> Helm's Gate [helms_gate]
+  south        -> Headwaters of the Entwash [entwash_headwaters]
+  southeast    -> Silverlode Crossing [silverlode_crossing]
+  southwest    -> Meadow of Niphredil [niphredil_meadow]
+  west         -> The Dimholt Road [dimholt_road]
+Items: sweet_water
+
+Lake Evendim [lake_evendim]
+--------------------------------------------------------------------------------
+Description: A vast, beautiful lake. The ruins of Annúminas can be seen beneath the clear water. The lake is said to be enchanted.
+Connections:
+  south        -> Annúminas Ruins [annuminas_ruins]
+Items: lake_pearl, enchanted_water
+Enemies: water_wraith
+
+The Marish [marish]
+--------------------------------------------------------------------------------
+Description: The marshy lowlands near the Brandywine create a landscape unlike any other in the Shire. The ground is soft and waterlogged, squelching unpleasantly beneath your feet with each step. Thick reeds and ...
+Connections:
+  east         -> Old Forest Entrance [old_forest_entrance]
+  north        -> Michel Delving [michel_delving]
+  northeast    -> Brandywine Bridge [brandywine_bridge]
+  northwest    -> Mayor's Office [mayor_office]
+  south        -> Deep in the Old Forest [old_forest_depth]
+  southeast    -> East Road from Bree [bree_east_road]
+  southwest    -> Archet [archet]
+Items: mysterious_stone
+Enemies: marsh_phantom
+
+Mayor's Office [mayor_office]
+--------------------------------------------------------------------------------
+Description: A well-appointed office with official documents and maps of the Shire. The Mayor's chair sits empty, waiting for the next election.
+Connections:
+  east         -> Michel Delving [michel_delving]
+  north        -> Bywater [bywater]
+  northeast    -> Green Hill Country [green_hill_country]
+  southeast    -> The Marish [marish]
+Items: official_seal, shire_census
+
+Midgewater Marshes [midgewater_marshes]
+--------------------------------------------------------------------------------
+Description: The Midgewater Marshes are a miserable, swampy wasteland that stretches for miles, a place where the very ground seems to conspire against travelers. The marsh is a maze of stagnant pools, quaking bog...
+Connections:
+  northeast    -> Buckland Cellar [buckland_cellar]
+  south        -> Barrow Chamber - First Mound [barrow_chamber_1]
+Enemies: giant_midge_swarm
+
+The Paths of the Dead [paths_of_dead]
+--------------------------------------------------------------------------------
+Description: A black tunnel leads into the mountain. Cold air breathes out from the darkness. Whispers echo in languages long forgotten. Only the dead dwell here.
+Connections:
+  east         -> Singing Groves [singing_groves]
+  north        -> Hall of the Galadhrim Craftsmen [elven_craft_hall]
+  northeast    -> Hidden Path in Fangorn [fangorn_hidden_path]
+  northwest    -> Eastfold Plains [eastfold_plains]
+  south        -> Chasm Viewpoint [khazad_dum_chasm_view]
+  southeast    -> Leaflock's Meadow [leaflock_meadow]
+  west         -> City of the Dead [dead_city]
+Enemies: dead_men, dead_men, dead_king
+
+Second Level - Minas Tirith [second_level]
+--------------------------------------------------------------------------------
+Description: Houses of stone and wood, built into the mountainside. The streets are clean and well-kept. You can see the Citadel above.
+Connections:
+  down         -> First Level - Minas Tirith [first_level]
+  east         -> Fourth Level - Minas Tirith [fourth_level]
+  north        -> Deep Mines Hub [deep_mines_hub]
+  northeast    -> The Mithril Vein [mithril_mine]
+  south        -> Third Level - Minas Tirith [third_level]
+  southeast    -> Sixth Level - Minas Tirith [sixth_level]
+  southwest    -> Goblin Warren [goblin_warren]
+  up           -> Third Level - Minas Tirith [third_level]
+  west         -> Iron Mines - The Pit [iron_mines_2]
+Items: gondorian_sword
+
+Seventh Level [seventh_level]
+--------------------------------------------------------------------------------
+Description: A maze of passages and chambers. You hear the sound of drums echoing from below: 'doom, doom.' Torchlight flickers on ancient walls.
+Connections:
+  east         -> Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+  north        -> Doors of Durin - West Gate of Moria [doors_of_durin]
+  northeast    -> First Hall of Moria [moria_entrance]
+  south        -> Twenty-First Hall [twenty_first_hall]
+  southeast    -> Deep Mines [mines_level2]
+Enemies: goblin, orc_warrior, orc_warrior
+
+Sixth Level - Minas Tirith [sixth_level]
+--------------------------------------------------------------------------------
+Description: The level of the Citadel. The White Tower looms above. This is the heart of Gondor.
+Connections:
+  down         -> Fifth Level - Minas Tirith [fifth_level]
+  north        -> Fourth Level - Minas Tirith [fourth_level]
+  northwest    -> Second Level - Minas Tirith [second_level]
+  south        -> Citadel Guards Hall [citadel_guards_hall]
+  southeast    -> Mithril Depths - The Mother Lode [mithril_depths_2]
+  southwest    -> Houses of Healing [minas_tirith_houses_of_healing]
+  up           -> White Tower of Ecthelion [white_tower]
+  west         -> Third Level - Minas Tirith [third_level]
+Items: gondorian_crown
+
+Stock Road [stock_road]
+--------------------------------------------------------------------------------
+Description: A winding country road meanders through some of the most fertile farmland in the Shire. Fields of golden wheat sway gently in the breeze, while vegetable gardens burst with the colors of ripening prod...
+Connections:
+  east         -> Archet [archet]
+  south        -> Overhill [overhill]
+  southwest    -> Waymeet [waymeet]
+  west         -> Longbottom [longbottom]
+Items: carrot
+
+Third Level - Minas Tirith [third_level]
+--------------------------------------------------------------------------------
+Description: The level of the Houses of Healing. White buildings with gardens. The air is filled with the scent of athelas.
+Connections:
+  down         -> Second Level - Minas Tirith [second_level]
+  east         -> Sixth Level - Minas Tirith [sixth_level]
+  north        -> Second Level - Minas Tirith [second_level]
+  northeast    -> Fourth Level - Minas Tirith [fourth_level]
+  northwest    -> Iron Mines - The Pit [iron_mines_2]
+  south        -> Houses of Healing [minas_tirith_houses_of_healing]
+  southeast    -> Citadel Guards Hall [citadel_guards_hall]
+  southwest    -> Hall of Kings [hall_of_kings]
+  up           -> Fourth Level - Minas Tirith [fourth_level]
+  west         -> Goblin Warren [goblin_warren]
+Items: athelas, healing_herbs
+
+Tookbank [tookbank]
+--------------------------------------------------------------------------------
+Description: A small hill with several hobbit-holes. The Took family has lived here for generations. The view of the Shire is magnificent.
+Connections:
+  south        -> Tuckborough [tuckborough]
+Items: ancient_coin
+
+Tunnel Exit [tunnel_exit]
+--------------------------------------------------------------------------------
+Description: You emerge from the tunnel into the desolation of Mordor. The land is barren and black. Mount Doom looms in the distance, belching smoke and fire.
+Connections:
+  east         -> Ruins of Osgiliath [osgiliath_ruins]
+  north        -> Pelennor Fields [pelennor_fields]
+  northeast    -> East Gate of Moria [east_gate_moria]
+  northwest    -> Mithril Depths - Upper Vein [mithril_depths_1]
+  south        -> Woods of Ithilien [ithilien_woods]
+  southeast    -> Gates of Minas Morgul [minas_morgul_gates]
+  southwest    -> Port of Pelargir [pelargir_port]
+  west         -> White Tower of Ecthelion [white_tower]
+Items: sting_glow
+
+Twenty-First Hall [twenty_first_hall]
+--------------------------------------------------------------------------------
+Description: A massive hall supported by huge pillars. The ceiling is lost in darkness high above. Three passages lead deeper into Moria. Faded dwarven runes cover the walls.
+Connections:
+  east         -> Deep Mines [mines_level2]
+  north        -> Seventh Level [seventh_level]
+  northeast    -> Chamber of Mazarbul - Balin's Tomb [balin_tomb]
+  southeast    -> Great Hall of Durin [durin_throne_hall]
+Items: ancient_hammer, iron_ore
+Enemies: orc_warrior, goblin
+
+Waterfall Walkway [waterfall_walkway]
+--------------------------------------------------------------------------------
+Description: A narrow bridge of stone that hangs over a spectacular waterfall. The mist rises to dampen your face, and the roar of the water is deafening but beautiful.
+Connections:
+  north        -> Hollin Gate [hollin_gate]
+  south        -> Gates of Rivendell [rivendell_gates]
+Items: crystalline_water
+
+The Weather Hills [weatherhills]
+--------------------------------------------------------------------------------
+Description: The Weather Hills are a range of rolling hills covered in rough grass and scattered stones, a landscape that seems both beautiful and forbidding. The hills rise and fall like waves frozen in time, the...
+Connections:
+  south        -> Buckland Cellar [buckland_cellar]
+  southeast    -> Barrow Chamber - Third Mound [barrow_chamber_3]
+  west         -> Fornost Gates [fornost_gates]
+Items: barrow_treasure
+Enemies: barrow_wight
+
+Approach to Weathertop [weathertop_approach]
+--------------------------------------------------------------------------------
+Description: The hill of Weathertop rises ahead. You can see the ruins of an ancient watchtower at the summit. This was once a place of great importance.
+Connections:
+  north        -> Base of Weathertop [weathertop_base]
+
+Base of Weathertop [weathertop_base]
+--------------------------------------------------------------------------------
+Description: At the base of Weathertop, the ancient watchtower of Amon Sûl looms above you like a broken crown against the sky. The hill itself is steep and rocky, covered in rough grass and scattered boulders. St...
+Connections:
+  east         -> Buckland Kitchen [buckland_kitchen]
+  northeast    -> Weathertop Summit [weathertop_summit]
+  northwest    -> Tom Bombadil's House [bombadil_house]
+  south        -> Approach to Weathertop [weathertop_approach]
+Items: ancient_blade
+Enemies: orc_scout
+
+Weathertop Summit [weathertop_summit]
+--------------------------------------------------------------------------------
+Description: The ruined tower atop Weathertop stands as a broken monument to a lost age. Ancient stones lie scattered across the summit, their edges worn smooth by wind and rain, their surfaces covered in moss and...
+Connections:
+  east         -> Barrow Chamber - Second Mound [barrow_chamber_2]
+  north        -> Old Forest - Eastern Exit [old_forest_exit]
+  northeast    -> The Last Bridge [last_bridge]
+  northwest    -> Bucklebury [bucklebury]
+  south        -> Buckland Kitchen [buckland_kitchen]
+  southeast    -> Chetwood Forest [chetwood]
+  southwest    -> Base of Weathertop [weathertop_base]
+Items: athelas, watchtower_lens, ancient_rune
+Enemies: ringwraith
+
+Woody End [woody_end]
+--------------------------------------------------------------------------------
+Description: The edge of the woodland marks a transition from the safe, cultivated lands of the Shire to something wilder and more mysterious. Ancient trees grow thick here, their gnarled branches creating a canop...
+Connections:
+  north        -> Bag End [bag_end]
+  northeast    -> Sackville Manor [sackville_manor]
+Enemies: wild_wolf
+
+
+================================================================================
+CONNECTION SUMMARY
+================================================================================
+
+Total Rooms: 223
+Rooms with exits: 223
+Rooms without exits (dead ends): 0
+Total connections: 1062
+Average connections per room: 4.76
+
+================================================================================
+REACHABILITY VERIFICATION
+================================================================================
+
+Starting from: Bag End
+Reachable rooms: 223
+Total rooms: 223
+
+✅ ALL ROOMS ARE REACHABLE FROM BAG END!

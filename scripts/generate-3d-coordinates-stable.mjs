@@ -311,10 +311,8 @@ for (let pass = 0; pass < 30; pass++) {
     
     if (rate === lastSatisfaction) {
         stableCount++;
-        // Continue for a few more passes even if stable, to try to improve
-        if (stableCount >= 5 && improvements === 0) {
-            console.log(`  Pass ${pass + 1}: ${satisfied}/${total} (${rate}%) - stable, continuing with aggressive mode`);
-            // Switch to more aggressive mode for remaining passes
+        if (stableCount >= 3) {
+            console.log(`  Pass ${pass + 1}: ${satisfied}/${total} (${rate}%) - stable, stopping`);
             break;
         }
     } else {
@@ -326,95 +324,11 @@ for (let pass = 0; pass < 30; pass++) {
     if (pass % 5 === 0 || improvements > 0) {
         console.log(`  Pass ${pass + 1}: ${satisfied}/${total} (${rate}%) - ${improvements} improvements`);
     }
-}
-
-// Final aggressive pass - try to fix remaining mismatches
-console.log('Phase 4: Final aggressive pass for remaining mismatches...');
-const remainingMismatches = [];
-for (const constraint of constraints) {
-    if (!coordinates[constraint.from] || !coordinates[constraint.to]) continue;
-    const from = coordinates[constraint.from];
-    const to = coordinates[constraint.to];
-    const expected = {
-        x: from.x + constraint.vector.x,
-        y: from.y + constraint.vector.y,
-        z: from.z + constraint.vector.z
-    };
-    if (to.x !== expected.x || to.y !== expected.y || to.z !== expected.z) {
-        remainingMismatches.push(constraint);
-    }
-}
-
-// Sort by priority (cardinal first)
-remainingMismatches.sort((a, b) => a.priority - b.priority);
-
-let aggressiveImprovements = 0;
-for (let attempt = 0; attempt < 3; attempt++) {
-    for (const constraint of remainingMismatches) {
-        const fromCoord = coordinates[constraint.from];
-        const currentCoord = coordinates[constraint.to];
-        const expectedX = fromCoord.x + constraint.vector.x;
-        const expectedY = fromCoord.y + constraint.vector.y;
-        const expectedZ = fromCoord.z + constraint.vector.z;
-        
-        // Check if already satisfied
-        if (currentCoord.x === expectedX && 
-            currentCoord.y === expectedY && 
-            currentCoord.z === expectedZ) {
-            continue;
-        }
-        
-        // Try to move, even if it means moving blocking rooms more aggressively
-        if (isCoordAvailable(expectedX, expectedY, expectedZ, constraint.to)) {
-            const oldKey = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
-            roomAtCoord.delete(oldKey);
-            coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
-            roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
-            aggressiveImprovements++;
-        } else {
-            // More aggressive: move blocking room even if it's closer to bag_end
-            const blockingId = roomAtCoord.get(`${expectedX},${expectedY},${expectedZ}`);
-            if (blockingId && constraint.priority === 1) { // Only for cardinal directions
-                for (let r = 1; r <= 5; r++) {
-                    let moved = false;
-                    for (let dx = -r; dx <= r; dx++) {
-                        for (let dy = -r; dy <= r; dy++) {
-                            if (Math.abs(dx) === r || Math.abs(dy) === r) {
-                                const newX = expectedX + dx;
-                                const newY = expectedY + dy;
-                                const newZ = expectedZ;
-                                if (isCoordAvailable(newX, newY, newZ, blockingId)) {
-                                    const blockCoord = coordinates[blockingId];
-                                    const oldKey = `${blockCoord.x},${blockCoord.y},${blockCoord.z}`;
-                                    roomAtCoord.delete(oldKey);
-                                    coordinates[blockingId] = { x: newX, y: newY, z: newZ };
-                                    roomAtCoord.set(`${newX},${newY},${newZ}`, blockingId);
-                                    
-                                    const oldKey2 = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
-                                    roomAtCoord.delete(oldKey2);
-                                    coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
-                                    roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
-                                    aggressiveImprovements++;
-                                    moved = true;
-                                    break;
-                                }
-                            }
-                        }
-                        if (moved) break;
-                    }
-                    if (moved) break;
-                }
-            }
-        }
-    }
     
-    if (aggressiveImprovements === 0) break;
+    if (improvements === 0 && stableCount >= 2) break;
 }
 
-if (aggressiveImprovements > 0) {
-    console.log(`  Fixed ${aggressiveImprovements} additional constraints`);
-}
-
+// Normalize coordinates
 // Normalize coordinates
 let minX = 0, maxX = 0, minY = 0, maxY = 0, minZ = 0, maxZ = 0;
 for (const coord of Object.values(coordinates)) {

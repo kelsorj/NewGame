@@ -25,7 +25,6 @@ const coordinates = {};
 const roomAtCoord = new Map();
 const constraints = [];
 const assignedOrder = [];
-const distancesFromBagEnd = {}; // Track shortest path distance from bag_end
 
 // Build all constraints
 console.log('Building constraint graph...');
@@ -48,26 +47,6 @@ for (const [roomId, room] of Object.entries(rooms)) {
 constraints.sort((a, b) => a.priority - b.priority);
 console.log(`Found ${constraints.length} constraints`);
 
-// Calculate distances from bag_end using BFS
-console.log('Calculating distances from bag_end...');
-const distQueue = [{ roomId: 'bag_end', dist: 0 }];
-const distVisited = new Set(['bag_end']);
-distancesFromBagEnd['bag_end'] = 0;
-
-while (distQueue.length > 0) {
-    const { roomId, dist } = distQueue.shift();
-    const room = rooms[roomId];
-    if (!room || !room.exits) continue;
-    
-    for (const targetId of Object.values(room.exits)) {
-        if (!distVisited.has(targetId)) {
-            distVisited.add(targetId);
-            distancesFromBagEnd[targetId] = dist + 1;
-            distQueue.push({ roomId: targetId, dist: dist + 1 });
-        }
-    }
-}
-
 function isCoordAvailable(x, y, z, excludeRoomId = null) {
     const key = `${x},${y},${z}`;
     return !roomAtCoord.has(key) || roomAtCoord.get(key) === excludeRoomId;
@@ -79,7 +58,7 @@ function assignCoordinate(roomId, x, y, z, force = false) {
     
     if (existing && existing !== roomId && !force) {
         // Find nearby available spot
-        for (let r = 1; r <= 3; r++) {
+        for (let r = 1; r <= 5; r++) {
             for (let dx = -r; dx <= r; dx++) {
                 for (let dy = -r; dy <= r; dy++) {
                     if (Math.abs(dx) === r || Math.abs(dy) === r) {
@@ -115,7 +94,7 @@ function assignCoordinate(roomId, x, y, z, force = false) {
     return { x, y, z, adjusted: false };
 }
 
-// Phase 1: Initial assignment from bag_end with distance-based priority
+// Phase 1: Initial assignment from bag_end
 console.log('Phase 1: Initial assignment from bag_end...');
 const queue = [{ roomId: 'bag_end', depth: 0 }];
 const visited = new Set(['bag_end']);
@@ -130,18 +109,14 @@ while (queue.length > 0) {
     
     const currentCoord = coordinates[roomId];
     
-    // Process exits in priority order (cardinal first, then by distance)
+    // Process exits in priority order
     const exits = Object.entries(room.exits)
         .map(([dir, targetId]) => ({
             dir,
             targetId,
-            priority: directionPriority[dir] || 10,
-            distance: distancesFromBagEnd[targetId] || 999
+            priority: directionPriority[dir] || 10
         }))
-        .sort((a, b) => {
-            if (a.priority !== b.priority) return a.priority - b.priority;
-            return a.distance - b.distance;
-        });
+        .sort((a, b) => a.priority - b.priority);
     
     for (const { dir, targetId } of exits) {
         if (visited.has(targetId)) continue;
@@ -171,10 +146,10 @@ for (const roomId of Object.keys(rooms)) {
 
 console.log(`Assigned ${Object.keys(coordinates).length} rooms`);
 
-// Phase 3: Stable iterative refinement
-console.log('Phase 3: Stable iterative refinement...');
+// Phase 3: Multi-pass constraint satisfaction with conflict resolution
+console.log('Phase 3: Multi-pass constraint satisfaction...');
 
-// Build constraint groups by target room
+// Build constraint map by target room
 const constraintsByTarget = new Map();
 for (const constraint of constraints) {
     if (!constraintsByTarget.has(constraint.to)) {
@@ -183,110 +158,87 @@ for (const constraint of constraints) {
     constraintsByTarget.get(constraint.to).push(constraint);
 }
 
-// For each room with multiple constraints, pick the best one to satisfy
-function getBestConstraintForRoom(roomId) {
-    const roomConstraints = constraintsByTarget.get(roomId) || [];
-    if (roomConstraints.length === 0) return null;
+// Multiple refinement passes
+for (let majorPass = 0; majorPass < 5; majorPass++) {
+    console.log(`  Major pass ${majorPass + 1}...`);
     
-    // Filter to only constraints where source room is already assigned
-    const validConstraints = roomConstraints.filter(c => coordinates[c.from]);
-    
-    if (validConstraints.length === 0) return null;
-    
-    // Sort by: priority (cardinal first), then by distance from bag_end (closer = better)
-    validConstraints.sort((a, b) => {
-        if (a.priority !== b.priority) return a.priority - b.priority;
-        const aDist = distancesFromBagEnd[a.from] || 999;
-        const bDist = distancesFromBagEnd[b.from] || 999;
-        return aDist - bDist;
-    });
-    
-    return validConstraints[0];
-}
-
-// Multiple refinement passes with stability checks
-let lastSatisfaction = 0;
-let stableCount = 0;
-
-for (let pass = 0; pass < 30; pass++) {
-    let improvements = 0;
-    
-    // Process each room and try to satisfy its best constraint
-    const roomsToProcess = Array.from(constraintsByTarget.keys())
-        .filter(roomId => coordinates[roomId])
-        .sort((a, b) => {
-            // Process rooms closer to bag_end first
-            const aDist = distancesFromBagEnd[a] || 999;
-            const bDist = distancesFromBagEnd[b] || 999;
-            return aDist - bDist;
-        });
-    
-    for (const roomId of roomsToProcess) {
-        const bestConstraint = getBestConstraintForRoom(roomId);
-        if (!bestConstraint) continue;
+    // Process constraints in priority order, multiple sub-passes
+    for (let subPass = 0; subPass < 10; subPass++) {
+        let improvements = 0;
         
-        const fromCoord = coordinates[bestConstraint.from];
-        const currentCoord = coordinates[roomId];
-        const expectedX = fromCoord.x + bestConstraint.vector.x;
-        const expectedY = fromCoord.y + bestConstraint.vector.y;
-        const expectedZ = fromCoord.z + bestConstraint.vector.z;
-        
-        // Check if already satisfied
-        if (currentCoord.x === expectedX && 
-            currentCoord.y === expectedY && 
-            currentCoord.z === expectedZ) {
-            continue;
-        }
-        
-        // Try to move to expected position
-        if (isCoordAvailable(expectedX, expectedY, expectedZ, roomId)) {
-            const oldKey = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
-            roomAtCoord.delete(oldKey);
-            coordinates[roomId] = { x: expectedX, y: expectedY, z: expectedZ };
-            roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, roomId);
-            improvements++;
-        } else {
-            // Target occupied - try to move blocking room if it has lower priority
-            const blockingId = roomAtCoord.get(`${expectedX},${expectedY},${expectedZ}`);
-            if (blockingId) {
-                const blockingDist = distancesFromBagEnd[blockingId] || 999;
-                const roomDist = distancesFromBagEnd[roomId] || 999;
-                
-                // Move blocking room if it's further from bag_end or has lower priority constraint
-                if (blockingDist > roomDist || (bestConstraint.priority === 1 && blockingDist >= roomDist)) {
-                    // Find new spot for blocking room
-                    for (let r = 1; r <= 3; r++) {
+        // Process cardinal directions first, then diagonals
+        for (const constraint of constraints) {
+            if (!coordinates[constraint.from] || !coordinates[constraint.to]) continue;
+            
+            const fromCoord = coordinates[constraint.from];
+            const expectedX = fromCoord.x + constraint.vector.x;
+            const expectedY = fromCoord.y + constraint.vector.y;
+            const expectedZ = fromCoord.z + constraint.vector.z;
+            
+            const currentCoord = coordinates[constraint.to];
+            
+            // Check if already satisfied
+            if (currentCoord.x === expectedX && 
+                currentCoord.y === expectedY && 
+                currentCoord.z === expectedZ) {
+                continue;
+            }
+            
+            const fromPriority = assignedOrder.indexOf(constraint.from);
+            const toPriority = assignedOrder.indexOf(constraint.to);
+            
+            // Try to satisfy this constraint
+            if (isCoordAvailable(expectedX, expectedY, expectedZ, constraint.to)) {
+                // Simple case: target coordinate is free
+                const oldKey = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
+                roomAtCoord.delete(oldKey);
+                coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
+                roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
+                improvements++;
+            } else {
+                // Target coordinate is occupied - try to resolve conflict
+                const blockingId = roomAtCoord.get(`${expectedX},${expectedY},${expectedZ}`);
+                if (blockingId) {
+                    const blockingPriority = assignedOrder.indexOf(blockingId);
+                    
+                    // If blocking room has lower priority, try to move it
+                    if (blockingPriority > toPriority || (constraint.priority === 1 && subPass >= 3)) {
+                        // Find new spot for blocking room
                         let moved = false;
-                        for (let dx = -r; dx <= r; dx++) {
-                            for (let dy = -r; dy <= r; dy++) {
-                                if (Math.abs(dx) === r || Math.abs(dy) === r) {
-                                    const newX = expectedX + dx;
-                                    const newY = expectedY + dy;
-                                    const newZ = expectedZ;
-                                    if (isCoordAvailable(newX, newY, newZ, blockingId)) {
-                                        const blockCoord = coordinates[blockingId];
-                                        const oldKey = `${blockCoord.x},${blockCoord.y},${blockCoord.z}`;
-                                        roomAtCoord.delete(oldKey);
-                                        coordinates[blockingId] = { x: newX, y: newY, z: newZ };
-                                        roomAtCoord.set(`${newX},${newY},${newZ}`, blockingId);
-                                        
-                                        const oldKey2 = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
-                                        roomAtCoord.delete(oldKey2);
-                                        coordinates[roomId] = { x: expectedX, y: expectedY, z: expectedZ };
-                                        roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, roomId);
-                                        improvements++;
-                                        moved = true;
-                                        break;
+                        for (let r = 1; r <= 3 && !moved; r++) {
+                            for (let dx = -r; dx <= r; dx++) {
+                                for (let dy = -r; dy <= r; dy++) {
+                                    if (Math.abs(dx) === r || Math.abs(dy) === r) {
+                                        const newX = expectedX + dx;
+                                        const newY = expectedY + dy;
+                                        const newZ = expectedZ;
+                                        if (isCoordAvailable(newX, newY, newZ, blockingId)) {
+                                            const blockCoord = coordinates[blockingId];
+                                            const oldKey = `${blockCoord.x},${blockCoord.y},${blockCoord.z}`;
+                                            roomAtCoord.delete(oldKey);
+                                            coordinates[blockingId] = { x: newX, y: newY, z: newZ };
+                                            roomAtCoord.set(`${newX},${newY},${newZ}`, blockingId);
+                                            
+                                            // Now move target room
+                                            const oldKey2 = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
+                                            roomAtCoord.delete(oldKey2);
+                                            coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
+                                            roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
+                                            improvements++;
+                                            moved = true;
+                                            break;
+                                        }
                                     }
                                 }
+                                if (moved) break;
                             }
-                            if (moved) break;
                         }
-                        if (moved) break;
                     }
                 }
             }
         }
+        
+        if (improvements === 0) break;
     }
     
     // Check satisfaction rate
@@ -308,111 +260,111 @@ for (let pass = 0; pass < 30; pass++) {
     }
     
     const rate = Math.round(satisfied / total * 100);
+    console.log(`    Satisfaction: ${satisfied}/${total} (${rate}%)`);
     
-    if (rate === lastSatisfaction) {
-        stableCount++;
-        // Continue for a few more passes even if stable, to try to improve
-        if (stableCount >= 5 && improvements === 0) {
-            console.log(`  Pass ${pass + 1}: ${satisfied}/${total} (${rate}%) - stable, continuing with aggressive mode`);
-            // Switch to more aggressive mode for remaining passes
-            break;
-        }
-    } else {
-        stableCount = 0;
-    }
-    
-    lastSatisfaction = rate;
-    
-    if (pass % 5 === 0 || improvements > 0) {
-        console.log(`  Pass ${pass + 1}: ${satisfied}/${total} (${rate}%) - ${improvements} improvements`);
-    }
+    if (rate >= 99) break; // Stop if we're at 99%+
 }
 
-// Final aggressive pass - try to fix remaining mismatches
+// Phase 4: Final aggressive pass for remaining mismatches
 console.log('Phase 4: Final aggressive pass for remaining mismatches...');
-const remainingMismatches = [];
-for (const constraint of constraints) {
-    if (!coordinates[constraint.from] || !coordinates[constraint.to]) continue;
-    const from = coordinates[constraint.from];
-    const to = coordinates[constraint.to];
-    const expected = {
-        x: from.x + constraint.vector.x,
-        y: from.y + constraint.vector.y,
-        z: from.z + constraint.vector.z
-    };
-    if (to.x !== expected.x || to.y !== expected.y || to.z !== expected.z) {
-        remainingMismatches.push(constraint);
-    }
-}
+let finalImprovements = 1;
+let finalIterations = 0;
 
-// Sort by priority (cardinal first)
-remainingMismatches.sort((a, b) => a.priority - b.priority);
-
-let aggressiveImprovements = 0;
-for (let attempt = 0; attempt < 3; attempt++) {
-    for (const constraint of remainingMismatches) {
+while (finalImprovements > 0 && finalIterations < 50) {
+    finalImprovements = 0;
+    finalIterations++;
+    
+    // Get all unsatisfied constraints, sorted by priority
+    const unsatisfied = constraints
+        .filter(c => {
+            if (!coordinates[c.from] || !coordinates[c.to]) return false;
+            const from = coordinates[c.from];
+            const to = coordinates[c.to];
+            const expected = {
+                x: from.x + c.vector.x,
+                y: from.y + c.vector.y,
+                z: from.z + c.vector.z
+            };
+            return to.x !== expected.x || to.y !== expected.y || to.z !== expected.z;
+        })
+        .sort((a, b) => a.priority - b.priority);
+    
+    for (const constraint of unsatisfied) {
         const fromCoord = coordinates[constraint.from];
         const currentCoord = coordinates[constraint.to];
         const expectedX = fromCoord.x + constraint.vector.x;
         const expectedY = fromCoord.y + constraint.vector.y;
         const expectedZ = fromCoord.z + constraint.vector.z;
         
-        // Check if already satisfied
-        if (currentCoord.x === expectedX && 
-            currentCoord.y === expectedY && 
-            currentCoord.z === expectedZ) {
-            continue;
-        }
-        
-        // Try to move, even if it means moving blocking rooms more aggressively
+        // Try to move the target room, even if it means moving other rooms
         if (isCoordAvailable(expectedX, expectedY, expectedZ, constraint.to)) {
             const oldKey = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
             roomAtCoord.delete(oldKey);
             coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
             roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
-            aggressiveImprovements++;
+            finalImprovements++;
         } else {
-            // More aggressive: move blocking room even if it's closer to bag_end
+            // Try to move blocking room more aggressively
             const blockingId = roomAtCoord.get(`${expectedX},${expectedY},${expectedZ}`);
-            if (blockingId && constraint.priority === 1) { // Only for cardinal directions
-                for (let r = 1; r <= 5; r++) {
-                    let moved = false;
-                    for (let dx = -r; dx <= r; dx++) {
-                        for (let dy = -r; dy <= r; dy++) {
-                            if (Math.abs(dx) === r || Math.abs(dy) === r) {
-                                const newX = expectedX + dx;
-                                const newY = expectedY + dy;
-                                const newZ = expectedZ;
-                                if (isCoordAvailable(newX, newY, newZ, blockingId)) {
-                                    const blockCoord = coordinates[blockingId];
-                                    const oldKey = `${blockCoord.x},${blockCoord.y},${blockCoord.z}`;
-                                    roomAtCoord.delete(oldKey);
-                                    coordinates[blockingId] = { x: newX, y: newY, z: newZ };
-                                    roomAtCoord.set(`${newX},${newY},${newZ}`, blockingId);
-                                    
-                                    const oldKey2 = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
-                                    roomAtCoord.delete(oldKey2);
-                                    coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
-                                    roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
-                                    aggressiveImprovements++;
-                                    moved = true;
-                                    break;
+            if (blockingId) {
+                const blockingPriority = assignedOrder.indexOf(blockingId);
+                const toPriority = assignedOrder.indexOf(constraint.to);
+                
+                // Be more aggressive about moving blocking rooms
+                if (blockingPriority >= toPriority || constraint.priority === 1) {
+                    for (let r = 1; r <= 5; r++) {
+                        let moved = false;
+                        for (let dx = -r; dx <= r; dx++) {
+                            for (let dy = -r; dy <= r; dy++) {
+                                if (Math.abs(dx) === r || Math.abs(dy) === r) {
+                                    const newX = expectedX + dx;
+                                    const newY = expectedY + dy;
+                                    const newZ = expectedZ;
+                                    if (isCoordAvailable(newX, newY, newZ, blockingId)) {
+                                        const blockCoord = coordinates[blockingId];
+                                        const oldKey = `${blockCoord.x},${blockCoord.y},${blockCoord.z}`;
+                                        roomAtCoord.delete(oldKey);
+                                        coordinates[blockingId] = { x: newX, y: newY, z: newZ };
+                                        roomAtCoord.set(`${newX},${newY},${newZ}`, blockingId);
+                                        
+                                        const oldKey2 = `${currentCoord.x},${currentCoord.y},${currentCoord.z}`;
+                                        roomAtCoord.delete(oldKey2);
+                                        coordinates[constraint.to] = { x: expectedX, y: expectedY, z: expectedZ };
+                                        roomAtCoord.set(`${expectedX},${expectedY},${expectedZ}`, constraint.to);
+                                        finalImprovements++;
+                                        moved = true;
+                                        break;
+                                    }
                                 }
                             }
+                            if (moved) break;
                         }
                         if (moved) break;
                     }
-                    if (moved) break;
                 }
             }
         }
     }
     
-    if (aggressiveImprovements === 0) break;
-}
-
-if (aggressiveImprovements > 0) {
-    console.log(`  Fixed ${aggressiveImprovements} additional constraints`);
+    if (finalIterations % 10 === 0) {
+        let satisfied = 0;
+        let total = 0;
+        for (const constraint of constraints) {
+            if (!coordinates[constraint.from] || !coordinates[constraint.to]) continue;
+            total++;
+            const from = coordinates[constraint.from];
+            const to = coordinates[constraint.to];
+            const expected = {
+                x: from.x + constraint.vector.x,
+                y: from.y + constraint.vector.y,
+                z: from.z + constraint.vector.z
+            };
+            if (to.x === expected.x && to.y === expected.y && to.z === expected.z) {
+                satisfied++;
+            }
+        }
+        console.log(`    Iteration ${finalIterations}: ${satisfied}/${total} (${Math.round(satisfied/total*100)}%)`);
+    }
 }
 
 // Normalize coordinates
@@ -442,9 +394,12 @@ for (const [id, coord] of Object.entries(coordinates)) {
 // Final verification
 let satisfied = 0;
 let total = 0;
+const remainingMismatches = [];
+
 for (const constraint of constraints) {
     if (!finalCoords[constraint.from] || !finalCoords[constraint.to]) continue;
     total++;
+    
     const from = finalCoords[constraint.from];
     const to = finalCoords[constraint.to];
     const expected = {
@@ -452,12 +407,32 @@ for (const constraint of constraints) {
         y: from.y + constraint.vector.y,
         z: from.z + constraint.vector.z
     };
+    
     if (to.x === expected.x && to.y === expected.y && to.z === expected.z) {
         satisfied++;
+    } else {
+        remainingMismatches.push(constraint);
     }
 }
 
 console.log(`\nFinal constraint satisfaction: ${satisfied}/${total} (${Math.round(satisfied/total*100)}%)`);
+console.log(`Remaining mismatches: ${remainingMismatches.length}`);
+
+if (remainingMismatches.length > 0 && remainingMismatches.length <= 20) {
+    console.log('\nRemaining mismatches:');
+    remainingMismatches.slice(0, 10).forEach(m => {
+        const from = finalCoords[m.from];
+        const to = finalCoords[m.to];
+        const expected = {
+            x: from.x + m.vector.x,
+            y: from.y + m.vector.y,
+            z: from.z + m.vector.z
+        };
+        console.log(`  ${rooms[m.from].name} -> ${m.direction} -> ${rooms[m.to].name}`);
+        console.log(`    Expected: (${expected.x}, ${expected.y}, ${expected.z})`);
+        console.log(`    Actual: (${to.x}, ${to.y}, ${to.z})`);
+    });
+}
 
 // Check overlaps
 const overlapMap = new Map();
@@ -473,7 +448,7 @@ if (overlaps.length > 0) {
     console.log(`\n✅ No overlaps!`);
 }
 
-// Generate WorldMap.jsx (same as before)
+// Generate WorldMap.jsx
 let output = `// WorldMap Component - Shows a 3D grid-based map with auto-scrolling
 import { useMemo, useRef, useEffect, useState } from 'react';
 
@@ -654,5 +629,5 @@ export const WorldMap = ({ playerState }) => {
 `;
 
 writeFileSync('client/src/components/WorldMap.jsx', output);
-console.log('\n✅ Generated client/src/components/WorldMap.jsx');
+console.log('\n✅ Generated client/src/components/WorldMap.jsx with improved constraint satisfaction');
 
