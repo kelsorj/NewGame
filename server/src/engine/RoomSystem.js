@@ -1,9 +1,41 @@
 // Room System - Manages locations and navigation in Middle Earth
 import { formatItem } from '../utils/formatItem.js';
 
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load exits from the map editor's JSON file
+function loadExitsFromMapEditor() {
+    try {
+        const coordData = JSON.parse(readFileSync(
+            path.join(__dirname, '../../../scripts/linear-world-connections.json'),
+            'utf8'
+        ));
+        return coordData.newExits || {};
+    } catch (err) {
+        console.error('Error loading exits from map editor:', err);
+        return {};
+    }
+}
+
 export class RoomSystem {
   constructor(rooms) {
-    this.rooms = rooms;
+    // Load exits from map editor and merge with room data
+    const editorExits = loadExitsFromMapEditor();
+    
+    // Create a merged rooms object with updated exits
+    this.rooms = {};
+    for (const [roomId, room] of Object.entries(rooms)) {
+        this.rooms[roomId] = {
+            ...room,
+            // Use exits from editor if available, otherwise use original exits
+            exits: editorExits[roomId] || room.exits || {}
+        };
+    }
   }
 
   getRoom(roomId) {

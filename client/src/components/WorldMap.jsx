@@ -1,8 +1,32 @@
 // WorldMap Component - Shows a 3D grid-based map with auto-scrolling
 import { useMemo, useRef, useEffect, useState } from 'react';
 
-// Room coordinates - LINEAR SNAKE-LIKE PATH
-const roomCoordinates = {
+// Load coordinates from map editor's JSON file
+async function loadRoomCoordinates() {
+    try {
+        const response = await fetch('http://localhost:3001/api/map/data');
+        const data = await response.json();
+        if (data.success && data.rooms) {
+            const coords = {};
+            data.rooms.forEach(room => {
+                coords[room.id] = {
+                    x: room.x,
+                    y: room.y,
+                    z: room.z,
+                    name: room.name,
+                    exits: room.exits || {}
+                };
+            });
+            return coords;
+        }
+    } catch (err) {
+        console.error('Error loading room coordinates:', err);
+    }
+    return {};
+}
+
+// Fallback hardcoded coordinates (will be replaced by loaded data)
+const fallbackRoomCoordinates = {
     aldburg: { x: 9, y: 5, z: 0, name: 'Aldburg' },
     amon_hen: { x: 21, y: 16, z: 0, name: 'Amon Hen - Hill of Sight' },
     anduin_approach: { x: 6, y: 0, z: 0, name: 'Anduin River - Lothlórien Quays' },
@@ -232,6 +256,16 @@ export const WorldMap = ({ playerState }) => {
     const mapContainerRef = useRef(null);
     const currentRoomRef = useRef(null);
     const [selectedLevel, setSelectedLevel] = useState(null);
+    const [roomCoordinates, setRoomCoordinates] = useState(fallbackRoomCoordinates);
+
+    // Load coordinates from map editor on mount
+    useEffect(() => {
+        loadRoomCoordinates().then(coords => {
+            if (Object.keys(coords).length > 0) {
+                setRoomCoordinates(coords);
+            }
+        });
+    }, []);
 
     const visitedCoords = useMemo(() => {
         if (!playerState || !playerState.visitedRooms) return [];
@@ -242,7 +276,7 @@ export const WorldMap = ({ playerState }) => {
                 return coord ? { ...coord, id: roomId } : null;
             })
             .filter(Boolean);
-    }, [playerState?.visitedRooms]);
+    }, [playerState?.visitedRooms, roomCoordinates]);
 
     const levels = useMemo(() => {
         const levelSet = new Set(visitedCoords.map(r => r.z));
@@ -254,7 +288,7 @@ export const WorldMap = ({ playerState }) => {
         if (!playerState?.currentRoom) return levels[0] || 0;
         const currentRoom = roomCoordinates[playerState.currentRoom];
         return currentRoom ? currentRoom.z : levels[0] || 0;
-    }, [selectedLevel, playerState?.currentRoom, levels]);
+    }, [selectedLevel, playerState?.currentRoom, levels, roomCoordinates]);
 
     const levelRooms = useMemo(() => {
         return visitedCoords.filter(r => r.z === currentLevel);
@@ -345,7 +379,8 @@ export const WorldMap = ({ playerState }) => {
                         gap: '4px',
                         padding: '20px',
                         position: 'relative',
-                        minWidth: 'fit-content'
+                        minWidth: 'fit-content',
+                        overflow: 'visible'
                     }}
                 >
                     {Array.from({ length: gridLayout.height }).map((_, row) => (
@@ -355,16 +390,66 @@ export const WorldMap = ({ playerState }) => {
 
                             const room = gridLayout.rooms.find(r => r.x === currentX && r.y === currentY);
                             const isCurrent = room?.id === playerState?.currentRoom;
+                            
+                            // Get exits for this room to show connection indicators
+                            const roomExits = room?.exits || {};
+                            const exitDirs = Object.keys(roomExits);
+                            
+                            // Calculate positions for exit indicators (including diagonals)
+                            const exitIndicators = [];
+                            exitDirs.forEach(dir => {
+                                const targetId = roomExits[dir];
+                                if (!targetId) return;
+                                
+                                const targetRoom = roomCoordinates[targetId];
+                                if (targetRoom && targetRoom.z === currentLevel) {
+                                    const dx = targetRoom.x - currentX;
+                                    const dy = targetRoom.y - currentY;
+                                    
+                                    // Only show if adjacent (including diagonals like northeast)
+                                    if (Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && (dx !== 0 || dy !== 0)) {
+                                        exitIndicators.push({ dir, dx, dy, targetId });
+                                    }
+                                }
+                            });
 
                             return (
                                 <div
                                     key={`${currentX}-${currentY}`}
                                     ref={isCurrent ? currentRoomRef : null}
                                     className={`map-slot ${room ? 'has-room' : 'empty'} ${isCurrent ? 'is-current' : ''}`}
-                                    title={room ? room.name : `(${currentX}, ${currentY}, ${currentLevel})`}
+                                    title={room ? `${room.name}${exitDirs.length > 0 ? ` - Exits: ${exitDirs.join(', ')}` : ''}` : `(${currentX}, ${currentY}, ${currentLevel})`}
+                                    style={{ position: 'relative', overflow: 'visible' }}
                                 >
                                     {isCurrent && <span className="player-marker">📍</span>}
                                     {!isCurrent && room && <span className="room-marker">·</span>}
+                                    
+                                    {/* Draw connection lines to adjacent rooms (including diagonals) */}
+                                    {room && exitIndicators.map(({ dir, dx, dy, targetId }, idx) => {
+                                        const angle = Math.atan2(-dy, dx) * 180 / Math.PI; // Negative dy because Y increases downward in screen space
+                                        const length = Math.sqrt(dx * dx + dy * dy) * 44; // 40px cell + 4px gap
+                                        const centerX = 20; // Center of 40px cell
+                                        const centerY = 20;
+                                        
+                                        return (
+                                            <div
+                                                key={`${dir}-${targetId}-${idx}`}
+                                                style={{
+                                                    position: 'absolute',
+                                                    left: `${centerX}px`,
+                                                    top: `${centerY}px`,
+                                                    width: `${length}px`,
+                                                    height: '2px',
+                                                    background: 'rgba(74, 158, 255, 0.4)',
+                                                    transformOrigin: '0 50%',
+                                                    transform: `rotate(${angle}deg)`,
+                                                    pointerEvents: 'none',
+                                                    zIndex: 0
+                                                }}
+                                                title={`${dir} to ${roomCoordinates[targetId]?.name || targetId}`}
+                                            />
+                                        );
+                                    })}
                                 </div>
                             );
                         })
