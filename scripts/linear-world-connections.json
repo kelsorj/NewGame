@@ -5,12 +5,12 @@
       "east": "tookbank"
     },
     "tookbank": {
-      "west": "tuckborough",
-      "east": "michel_delving"
+      "east": "michel_delving",
+      "west": "tuckborough"
     },
     "michel_delving": {
-      "west": "tookbank",
-      "east": "waymeet"
+      "east": "waymeet",
+      "west": "tookbank"
     },
     "mayor_office": {
       "up": "dimrill_dale",

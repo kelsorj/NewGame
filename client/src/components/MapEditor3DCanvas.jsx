@@ -43,8 +43,8 @@ export const MapEditor3DCanvas = () => {
     const [draggedRoom, setDraggedRoom] = useState(null);
     const canvasRef = useRef(null);
     const [camera, setCamera] = useState({
-        angleX: -30,
-        angleY: 45,
+        angleX: 180,
+        angleY: 0, // Start with North at top
         zoom: 1,
         offsetX: 0,
         offsetY: 0
@@ -53,6 +53,7 @@ export const MapEditor3DCanvas = () => {
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
     const [hoveredRoom, setHoveredRoom] = useState(null);
+    const [dragStartWorldPos, setDragStartWorldPos] = useState(null);
 
     // Load map data
     useEffect(() => {
@@ -181,7 +182,7 @@ export const MapEditor3DCanvas = () => {
             return;
         }
         
-        console.log('Draw effect triggered', { rooms: rooms.length, globalBounds, loading });
+        // Draw effect triggered
         
         const draw = () => {
             if (!canvasRef.current) {
@@ -276,13 +277,7 @@ export const MapEditor3DCanvas = () => {
             const cellSize = Math.min(30, Math.max(10, (Math.min(canvas.width, canvas.height) * 0.6) / maxWorldDim));
             const levelSpacing = cellSize * 2.5; // Space between levels in Z
             
-            console.log('Rendering:', {
-                canvas: `${canvas.width}x${canvas.height}`,
-                rooms: rooms.length,
-                bounds: globalBounds,
-                cellSize,
-                camera
-            });
+            // Rendering canvas
 
         // Draw rooms
         const roomProjections = [];
@@ -414,6 +409,65 @@ export const MapEditor3DCanvas = () => {
                 ctx.fillText(`${levelName} (Z=${level}) - ${roomsByLevel[level]?.length || 0} rooms`, proj.x, proj.y);
             }
         });
+
+        // Draw compass directions (N/S/E/W) - projected in 3D space so they rotate with the world
+        // Position them at the edges of the visible world
+        const compassDistance = Math.max(globalBounds.width, globalBounds.height) * cellSize * 0.6;
+        const compassZ = 0; // At ground level
+        
+        // North (positive Y in world coordinates)
+        const northProj = project3D(
+            0,
+            compassDistance,
+            compassZ,
+            { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+        );
+        
+        // South (negative Y in world coordinates)
+        const southProj = project3D(
+            0,
+            -compassDistance,
+            compassZ,
+            { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+        );
+        
+        // East (positive X in world coordinates)
+        const eastProj = project3D(
+            compassDistance,
+            0,
+            compassZ,
+            { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+        );
+        
+        // West (negative X in world coordinates)
+        const westProj = project3D(
+            -compassDistance,
+            0,
+            compassZ,
+            { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+        );
+        
+        // Only draw if in front of camera
+        const compassLabels = [
+            { proj: northProj, label: 'N', color: '#0f0' },
+            { proj: southProj, label: 'S', color: '#f00' },
+            { proj: eastProj, label: 'E', color: '#ff0' },
+            { proj: westProj, label: 'W', color: '#0ff' }
+        ];
+        
+        compassLabels.forEach(({ proj, label, color }) => {
+            if (proj.z > -10000) {
+                // Draw label with background for visibility
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                ctx.fillRect(proj.x - 20, proj.y - 20, 40, 40);
+                
+                ctx.fillStyle = color;
+                ctx.font = 'bold 32px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(label, proj.x, proj.y);
+            }
+        });
         };
         
         // Draw immediately
@@ -478,7 +532,8 @@ export const MapEditor3DCanvas = () => {
         return clickedRoom;
     };
 
-    // Convert 2D screen position to 3D world coordinates (simplified - projects to ground plane)
+    // Convert 2D screen position to 3D world coordinates
+    // Uses ray casting to find intersection with the ground plane
     const screenToWorld = (mouseX, mouseY, canvas, globalBounds, camera, targetZ = 0) => {
         if (!globalBounds) return null;
         
@@ -490,32 +545,46 @@ export const MapEditor3DCanvas = () => {
         const cellSize = Math.min(30, Math.max(10, (Math.min(canvas.width, canvas.height) * 0.6) / maxWorldDim));
         const levelSpacing = cellSize * 2.5;
         
-        // Convert screen coordinates to normalized coordinates
+        // Convert screen coordinates to normalized device coordinates (-1 to 1)
         const nx = (mouseX - canvas.width / 2) / (canvas.width / 2);
         const ny = (mouseY - canvas.height / 2) / (canvas.height / 2);
         
-        // Reverse the projection (simplified - approximate)
+        // Reverse the 3D projection
         const radX = camera.angleX * Math.PI / 180;
         const radY = camera.angleY * Math.PI / 180;
         
-        // Approximate reverse projection
         const distance = 1000;
         const z = targetZ * levelSpacing;
+        
+        // Reverse perspective projection
+        // We need to find the world X,Y that projects to screen nx,ny at depth z
         const scale = distance / (distance + z);
         
-        // Reverse rotation
-        const cosY = Math.cos(radY);
-        const sinY = Math.sin(radY);
-        const cosX = Math.cos(radX);
-        const sinX = Math.sin(radX);
+        // Reverse the rotation transformations
+        // First reverse the perspective scale
+        const worldX2D = nx * (canvas.width / 2) / (scale * camera.zoom);
+        const worldY2D = ny * (canvas.height / 2) / (scale * camera.zoom);
         
-        // Approximate world position
-        const worldX = (nx * canvas.width / (scale * camera.zoom)) / cellSize + centerX;
-        const worldY = (ny * canvas.height / (scale * camera.zoom)) / cellSize + centerY;
+        // Reverse X rotation
+        const cosX = Math.cos(-radX);
+        const sinX = Math.sin(-radX);
+        let x1 = worldX2D;
+        let y1 = worldY2D * cosX - z * sinX;
+        let z1 = worldY2D * sinX + z * cosX;
+        
+        // Reverse Y rotation
+        const cosY = Math.cos(-radY);
+        const sinY = Math.sin(-radY);
+        const worldX = x1 * cosY - z1 * sinY;
+        const worldY = y1;
+        
+        // Convert from 3D space units to grid coordinates
+        const gridX = Math.round(worldX / cellSize + centerX);
+        const gridY = Math.round(worldY / cellSize + centerY);
         
         return {
-            x: Math.round(worldX),
-            y: Math.round(worldY),
+            x: gridX,
+            y: gridY,
             z: targetZ
         };
     };
@@ -536,9 +605,12 @@ export const MapEditor3DCanvas = () => {
                 setSelectedRoom(clickedRoom);
             } else if (e.button === 0 && (e.ctrlKey || e.metaKey)) { // Ctrl/Cmd + Left click - start drag
                 e.preventDefault();
+                console.log('Starting drag on room:', clickedRoom.id, clickedRoom);
                 setDraggedRoom(clickedRoom);
                 setDragStart({ x: mouseX, y: mouseY });
                 setDragOffset({ x: 0, y: 0 });
+                // Store the initial world position
+                setDragStartWorldPos({ x: clickedRoom.x, y: clickedRoom.y, z: clickedRoom.z });
                 setIsDragging(true);
             }
         } else {
@@ -572,44 +644,126 @@ export const MapEditor3DCanvas = () => {
             const dy = mouseY - dragStart.y;
             setDragOffset({ x: dx, y: dy });
         } else {
-            // Drag camera
+            // Drag camera - allow continuous rotation
             const dx = mouseX - dragStart.x;
             const dy = mouseY - dragStart.y;
-            setCamera(prev => ({
-                ...prev,
-                angleY: prev.angleY + dx * 0.5,
-                angleX: Math.max(-90, Math.min(90, prev.angleX - dy * 0.5))
-            }));
+            setCamera(prev => {
+                // Allow continuous rotation for Y (no clamping during drag)
+                const newAngleY = prev.angleY + dx * 0.5;
+                
+                // Allow full 180 degree rotation for X
+                const newAngleX = Math.max(-180, Math.min(180, prev.angleX - dy * 0.5));
+                
+                return {
+                    ...prev,
+                    angleY: newAngleY,
+                    angleX: newAngleX
+                };
+            });
             setDragStart({ x: mouseX, y: mouseY });
         }
     };
 
+    // Convert screen-space offset to world-space offset accounting for camera rotation
+    // Uses a simpler approach: project two nearby points and calculate the difference
+    const screenOffsetToWorldOffset = (screenDX, screenDY, worldZ, camera, cellSize, canvasWidth, canvasHeight, centerX, centerY) => {
+        // Project the origin point (0, 0) in world space relative to center
+        const originProj = project3D(0, 0, worldZ, { ...camera, offsetX: canvasWidth / 2, offsetY: canvasHeight / 2 });
+        
+        // Calculate what world-space offset corresponds to the screen offset
+        // We'll use a small test offset in world space and see how it projects
+        const testWorldOffset = 1; // 1 unit in world space
+        const testXProj = project3D(testWorldOffset, 0, worldZ, { ...camera, offsetX: canvasWidth / 2, offsetY: canvasHeight / 2 });
+        const testYProj = project3D(0, testWorldOffset, worldZ, { ...camera, offsetX: canvasWidth / 2, offsetY: canvasHeight / 2 });
+        
+        // Calculate how many world units per screen pixel in X and Y directions
+        const worldUnitsPerPixelX = testWorldOffset / (testXProj.x - originProj.x);
+        const worldUnitsPerPixelY = testWorldOffset / (testYProj.y - originProj.y);
+        
+        // Convert screen offset to world offset
+        const worldDX = screenDX * worldUnitsPerPixelX;
+        const worldDY = screenDY * worldUnitsPerPixelY;
+        
+        // Convert from world units to grid coordinates
+        return {
+            x: worldDX / cellSize,
+            y: worldDY / cellSize
+        };
+    };
+
     const handleMouseUp = async (e) => {
-        if (draggedRoom && isDragging && (Math.abs(dragOffset.x) > 5 || Math.abs(dragOffset.y) > 5)) {
-            // Calculate new position
-            const canvas = canvasRef.current;
-            const rect = canvas.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
+        console.log('handleMouseUp called', { draggedRoom: !!draggedRoom, isDragging, dragStartWorldPos: !!dragStartWorldPos, dragOffset });
+        
+        if (draggedRoom && isDragging && dragStartWorldPos) {
+            console.log('Drag conditions met, dragOffset:', dragOffset);
             
-            const worldPos = screenToWorld(mouseX, mouseY, canvas, globalBounds, camera, draggedRoom.z);
-            
-            if (worldPos) {
+            // Only update if there was significant movement (lower threshold for testing)
+            if (Math.abs(dragOffset.x) > 2 || Math.abs(dragOffset.y) > 2) {
+                const canvas = canvasRef.current;
+                if (!canvas || !globalBounds) {
+                    console.log('Missing canvas or globalBounds');
+                    setDraggedRoom(null);
+                    setDragOffset({ x: 0, y: 0 });
+                    setDragStartWorldPos(null);
+                    setIsDragging(false);
+                    return;
+                }
+                
+                const centerX = (globalBounds.minX + globalBounds.maxX) / 2;
+                const centerY = (globalBounds.minY + globalBounds.maxY) / 2;
+                const worldWidth = globalBounds.width;
+                const worldHeight = globalBounds.height;
+                const maxWorldDim = Math.max(worldWidth, worldHeight, 1);
+                const cellSize = Math.min(30, Math.max(10, (Math.min(canvas.width, canvas.height) * 0.6) / maxWorldDim));
+                const levelSpacing = cellSize * 2.5;
+                const z = dragStartWorldPos.z * levelSpacing;
+                
+                // Convert screen-space drag offset to world-space offset
+                // This properly accounts for camera rotation
+                const worldOffset = screenOffsetToWorldOffset(
+                    dragOffset.x,
+                    dragOffset.y,
+                    z,
+                    camera,
+                    cellSize,
+                    canvas.width,
+                    canvas.height,
+                    centerX,
+                    centerY
+                );
+                
+                // Calculate new world position from initial position + offset
+                const newX = Math.round(dragStartWorldPos.x + worldOffset.x);
+                const newY = Math.round(dragStartWorldPos.y + worldOffset.y);
+                
+                console.log('Moving room:', {
+                    initial: dragStartWorldPos,
+                    dragOffset,
+                    camera: { angleX: camera.angleX, angleY: camera.angleY },
+                    worldOffset,
+                    newPos: { x: newX, y: newY, z: dragStartWorldPos.z }
+                });
+                
                 const success = await updateRoomCoordinates(
                     draggedRoom.id,
-                    worldPos.x,
-                    worldPos.y,
-                    worldPos.z
+                    newX,
+                    newY,
+                    dragStartWorldPos.z
                 );
                 
                 if (!success) {
                     console.log('Failed to update room coordinates');
+                } else {
+                    console.log('Room coordinates updated successfully');
                 }
+            } else {
+                console.log('Drag offset too small:', dragOffset);
             }
         }
         
         setDraggedRoom(null);
         setDragOffset({ x: 0, y: 0 });
+        setDragStartWorldPos(null);
         setIsDragging(false);
     };
 
@@ -665,8 +819,8 @@ export const MapEditor3DCanvas = () => {
                         <label>View Angle X: </label>
                         <input
                             type="range"
-                            min="-90"
-                            max="90"
+                            min="-180"
+                            max="180"
                             value={camera.angleX}
                             onChange={(e) => setCamera({ ...camera, angleX: parseInt(e.target.value) })}
                             style={{ width: '150px' }}
@@ -677,13 +831,13 @@ export const MapEditor3DCanvas = () => {
                         <label>View Angle Y: </label>
                         <input
                             type="range"
-                            min="0"
-                            max="360"
+                            min="-720"
+                            max="720"
                             value={camera.angleY}
                             onChange={(e) => setCamera({ ...camera, angleY: parseInt(e.target.value) })}
                             style={{ width: '150px' }}
                         />
-                        <span style={{ marginLeft: '10px' }}>{camera.angleY}°</span>
+                        <span style={{ marginLeft: '10px' }}>{Math.round(camera.angleY)}°</span>
                     </div>
                     <div>
                         <label>Zoom: </label>
