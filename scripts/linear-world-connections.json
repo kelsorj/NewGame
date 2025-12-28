@@ -1,8 +1,8 @@
 {
   "newExits": {
     "tuckborough": {
-      "west": "bag_end",
-      "east": "tookbank"
+      "east": "tookbank",
+      "southwest": "bag_end"
     },
     "tookbank": {
       "east": "michel_delving",
@@ -931,7 +931,7 @@
       "down": "staddle"
     },
     "bag_end": {
-      "east": "tuckborough"
+      "northeast": "tuckborough"
     },
     "hobbiton_square": {
       "east": "old_forest_buckland_entrance",
@@ -1643,7 +1643,7 @@
   "coordinates": {
     "bag_end": {
       "x": -3,
-      "y": 14,
+      "y": 13,
       "z": 0
     },
     "tuckborough": {

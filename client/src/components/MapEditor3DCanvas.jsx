@@ -812,11 +812,11 @@ export const MapEditor3DCanvas = () => {
             bottom: 0,
             margin: 0
         }}>
-            <div style={{ marginBottom: '20px', position: 'sticky', top: 0, background: '#0f0f1e', zIndex: 100, padding: '10px', width: '100%', boxSizing: 'border-box' }}>
-                <h1>🗺️ World Map Editor - 3D Canvas View</h1>
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '10px', flexWrap: 'wrap' }}>
-                    <div>
-                        <label>View Angle X: </label>
+            <div style={{ marginBottom: '20px', position: 'sticky', top: 0, background: '#0f0f1e', zIndex: 100, padding: '15px', width: '100%', boxSizing: 'border-box' }}>
+                <h1 style={{ margin: '0 0 15px 0', fontSize: '24px' }}>🗺️ World Map Editor - 3D Canvas View</h1>
+                <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '15px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <label style={{ whiteSpace: 'nowrap' }}>View Angle X: </label>
                         <input
                             type="range"
                             min="-180"
@@ -825,10 +825,10 @@ export const MapEditor3DCanvas = () => {
                             onChange={(e) => setCamera({ ...camera, angleX: parseInt(e.target.value) })}
                             style={{ width: '150px' }}
                         />
-                        <span style={{ marginLeft: '10px' }}>{camera.angleX}°</span>
+                        <span style={{ minWidth: '40px' }}>{camera.angleX}°</span>
                     </div>
-                    <div>
-                        <label>View Angle Y: </label>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <label style={{ whiteSpace: 'nowrap' }}>View Angle Y: </label>
                         <input
                             type="range"
                             min="-720"
@@ -837,10 +837,10 @@ export const MapEditor3DCanvas = () => {
                             onChange={(e) => setCamera({ ...camera, angleY: parseInt(e.target.value) })}
                             style={{ width: '150px' }}
                         />
-                        <span style={{ marginLeft: '10px' }}>{Math.round(camera.angleY)}°</span>
+                        <span style={{ minWidth: '50px' }}>{Math.round(camera.angleY)}°</span>
                     </div>
-                    <div>
-                        <label>Zoom: </label>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <label style={{ whiteSpace: 'nowrap' }}>Zoom: </label>
                         <input
                             type="range"
                             min="0.1"
@@ -850,10 +850,10 @@ export const MapEditor3DCanvas = () => {
                             onChange={(e) => setCamera({ ...camera, zoom: parseFloat(e.target.value) })}
                             style={{ width: '150px' }}
                         />
-                        <span style={{ marginLeft: '10px' }}>{camera.zoom.toFixed(1)}x</span>
+                        <span style={{ minWidth: '40px' }}>{camera.zoom.toFixed(1)}x</span>
                     </div>
                     {overlaps.length > 0 && (
-                        <span style={{ color: 'red', fontWeight: 'bold' }}>
+                        <span style={{ color: 'red', fontWeight: 'bold', whiteSpace: 'nowrap' }}>
                             ⚠️ {overlaps.length} overlap(s) detected!
                         </span>
                     )}
@@ -863,7 +863,8 @@ export const MapEditor3DCanvas = () => {
                         background: '#333', 
                         padding: '10px', 
                         borderRadius: '5px',
-                        marginBottom: '10px'
+                        marginBottom: '10px',
+                        fontSize: '14px'
                     }}>
                         <strong>{selectedRoom.name}</strong> ({selectedRoom.id})
                         <br />
@@ -872,7 +873,7 @@ export const MapEditor3DCanvas = () => {
                         Exits: {Object.keys(selectedRoom.exits || {}).join(', ') || 'none'}
                     </div>
                 )}
-                <div style={{ fontSize: '12px', color: '#888', marginTop: '5px' }}>
+                <div style={{ fontSize: '12px', color: '#888', marginTop: '10px', lineHeight: '1.4' }}>
                     <strong>Controls:</strong> Left click to select | <strong>Ctrl/Cmd + Left click + drag</strong> to move room | Drag background to rotate camera | Scroll to zoom
                 </div>
             </div>

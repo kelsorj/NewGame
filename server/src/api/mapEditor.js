@@ -264,12 +264,16 @@ export function updateRoomCoordinates(req, res) {
             }
         }
         
+        // Collect all rooms that were connected to the moved room (for local recalculation)
+        const connectedRoomIds = new Set();
+        
         // Update exits TO this room from others
         for (const [otherRoomId, otherExits] of Object.entries(exits)) {
             if (otherRoomId === roomId) continue;
             
             for (const [dir, targetId] of Object.entries(otherExits)) {
                 if (targetId === roomId && coordinates[otherRoomId]) {
+                    connectedRoomIds.add(otherRoomId);
                     const otherCoord = coordinates[otherRoomId];
                     
                     // Calculate distance
@@ -299,6 +303,98 @@ export function updateRoomCoordinates(req, res) {
                     }
                 }
             }
+        }
+        
+        // Also collect rooms that the moved room connects TO
+        if (exits[roomId]) {
+            for (const targetId of Object.values(exits[roomId])) {
+                if (targetId && coordinates[targetId]) {
+                    connectedRoomIds.add(targetId);
+                }
+            }
+        }
+        
+        // Recalculate all exits for connected rooms (local recalculation)
+        for (const connectedRoomId of connectedRoomIds) {
+            if (!coordinates[connectedRoomId]) continue;
+            
+            const connectedCoord = coordinates[connectedRoomId];
+            const updatedConnectedExits = {};
+            
+            // Recalculate exits FROM this connected room
+            if (exits[connectedRoomId]) {
+                for (const [dir, targetId] of Object.entries(exits[connectedRoomId])) {
+                    if (!coordinates[targetId]) continue;
+                    
+                    const targetCoord = coordinates[targetId];
+                    const dx = Math.abs(targetCoord.x - connectedCoord.x);
+                    const dy = Math.abs(targetCoord.y - connectedCoord.y);
+                    const dz = Math.abs(targetCoord.z - connectedCoord.z);
+                    
+                    const isAdjacent = 
+                        (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
+                        (dz === 1 && dx === 0 && dy === 0);
+                    
+                    if (isAdjacent) {
+                        const correctDir = calculateDirection(connectedCoord, targetCoord);
+                        if (correctDir) {
+                            updatedConnectedExits[correctDir] = targetId;
+                            
+                            // Update reverse connection
+                            if (!exits[targetId]) exits[targetId] = {};
+                            // Remove old reverse
+                            for (const [targetDir, targetTargetId] of Object.entries(exits[targetId])) {
+                                if (targetTargetId === connectedRoomId) {
+                                    delete exits[targetId][targetDir];
+                                }
+                            }
+                            // Add new reverse
+                            const oppositeDir = getOppositeDirection(correctDir);
+                            if (oppositeDir) {
+                                exits[targetId][oppositeDir] = connectedRoomId;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Auto-create missing adjacent connections for this connected room
+            for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
+                if (otherRoomId === connectedRoomId) continue;
+                
+                const dx = Math.abs(otherCoord.x - connectedCoord.x);
+                const dy = Math.abs(otherCoord.y - connectedCoord.y);
+                const dz = Math.abs(otherCoord.z - connectedCoord.z);
+                
+                const isAdjacent = 
+                    (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
+                    (dz === 1 && dx === 0 && dy === 0);
+                
+                if (isAdjacent) {
+                    const hasExit = Object.values(updatedConnectedExits).includes(otherRoomId);
+                    if (!hasExit) {
+                        const dir = calculateDirection(connectedCoord, otherCoord);
+                        if (dir) {
+                            updatedConnectedExits[dir] = otherRoomId;
+                            
+                            // Create reverse connection
+                            if (!exits[otherRoomId]) exits[otherRoomId] = {};
+                            const oppositeDir = getOppositeDirection(dir);
+                            if (oppositeDir) {
+                                // Remove any existing connection from otherRoomId to connectedRoomId
+                                for (const [existingDir, existingTarget] of Object.entries(exits[otherRoomId])) {
+                                    if (existingTarget === connectedRoomId) {
+                                        delete exits[otherRoomId][existingDir];
+                                    }
+                                }
+                                exits[otherRoomId][oppositeDir] = connectedRoomId;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            exits[connectedRoomId] = updatedConnectedExits;
         }
         
         if (saveCoordinatesAndExits(coordinates, exits)) {
