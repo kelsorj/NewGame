@@ -391,6 +391,10 @@ export const WorldMap = ({ playerState }) => {
                             const room = gridLayout.rooms.find(r => r.x === currentX && r.y === currentY);
                             const isCurrent = room?.id === playerState?.currentRoom;
                             
+                            // Special highlighting for important rooms
+                            const isBagEnd = room?.id === 'bag_end';
+                            const isMountDoom = room?.id === 'mount_doom_summit'; // Where the ring is destroyed
+                            
                             // Get exits for this room to show connection indicators
                             const roomExits = room?.exits || {};
                             const exitDirs = Object.keys(roomExits);
@@ -413,16 +417,49 @@ export const WorldMap = ({ playerState }) => {
                                 }
                             });
 
+                            // Determine background color and styling
+                            let backgroundColor = '#1a1a2e'; // Default empty
+                            let borderColor = undefined;
+                            let borderWidth = undefined;
+                            let boxShadow = undefined;
+                            
+                            if (room) {
+                                if (isBagEnd) {
+                                    backgroundColor = '#FFD700'; // Bright gold for Bag End
+                                    borderColor = '#FFA500'; // Orange border
+                                    borderWidth = '4px';
+                                    boxShadow = '0 0 15px rgba(255, 215, 0, 0.8), inset 0 0 10px rgba(255, 215, 0, 0.3)';
+                                } else if (isMountDoom) {
+                                    backgroundColor = '#FF0000'; // Bright red for Mount Doom
+                                    borderColor = '#8B0000'; // Dark red border
+                                    borderWidth = '4px';
+                                    boxShadow = '0 0 15px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.3)';
+                                } else if (isCurrent) {
+                                    backgroundColor = '#4a9eff'; // Blue for current room
+                                } else {
+                                    backgroundColor = '#2d5a87'; // Default room color
+                                }
+                            }
+                            
                             return (
                                 <div
                                     key={`${currentX}-${currentY}`}
                                     ref={isCurrent ? currentRoomRef : null}
-                                    className={`map-slot ${room ? 'has-room' : 'empty'} ${isCurrent ? 'is-current' : ''}`}
+                                    className={`map-slot ${room ? 'has-room' : 'empty'} ${isCurrent ? 'is-current' : ''} ${isBagEnd ? 'bag-end' : ''} ${isMountDoom ? 'mount-doom' : ''}`}
                                     title={room ? `${room.name}${exitDirs.length > 0 ? ` - Exits: ${exitDirs.join(', ')}` : ''}` : `(${currentX}, ${currentY}, ${currentLevel})`}
-                                    style={{ position: 'relative', overflow: 'visible' }}
+                                    style={{ 
+                                        position: 'relative', 
+                                        overflow: 'visible',
+                                        backgroundColor: backgroundColor,
+                                        border: borderWidth ? `${borderWidth} solid ${borderColor}` : undefined,
+                                        boxShadow: boxShadow,
+                                        zIndex: (isBagEnd || isMountDoom) ? 10 : undefined
+                                    }}
                                 >
                                     {isCurrent && <span className="player-marker">📍</span>}
-                                    {!isCurrent && room && <span className="room-marker">·</span>}
+                                    {isBagEnd && <span style={{ fontSize: '20px', color: '#000', fontWeight: 'bold', textShadow: '0 0 3px #fff' }}>🏠</span>}
+                                    {isMountDoom && <span style={{ fontSize: '20px', color: '#fff', fontWeight: 'bold', textShadow: '0 0 3px #000' }}>🔥</span>}
+                                    {!isCurrent && !isBagEnd && !isMountDoom && room && <span className="room-marker">·</span>}
                                     
                                     {/* Draw connection lines to adjacent rooms (including diagonals) */}
                                     {room && exitIndicators.map(({ dir, dx, dy, targetId }, idx) => {

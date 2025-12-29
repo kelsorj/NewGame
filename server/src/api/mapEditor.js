@@ -441,6 +441,150 @@ export function updateRoomExits(req, res) {
     }
 }
 
+// Update room description and items
+export function updateRoomData(req, res) {
+    try {
+        const { roomId, description, items } = req.body;
+        
+        if (!roomId) {
+            return res.status(400).json({ success: false, error: 'Room ID required' });
+        }
+        
+        if (!rooms[roomId]) {
+            return res.status(404).json({ success: false, error: 'Room not found' });
+        }
+        
+        // Update room data
+        if (description !== undefined) {
+            rooms[roomId].description = description;
+        }
+        
+        if (items !== undefined) {
+            rooms[roomId].items = Array.isArray(items) ? items : [];
+        }
+        
+        // Save to file (we need to write back to the appropriate room file)
+        // For now, we'll just return success - in production you'd want to save to file
+        res.json({ 
+            success: true, 
+            roomId,
+            description: rooms[roomId].description,
+            items: rooms[roomId].items
+        });
+    } catch (err) {
+        console.error('Error updating room data:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Toggle vertical connection between rooms
+export function toggleVerticalConnection(req, res) {
+    try {
+        const { roomId, direction, targetRoomId, enabled } = req.body;
+        
+        if (!roomId || !direction || (direction !== 'up' && direction !== 'down')) {
+            return res.status(400).json({ success: false, error: 'Invalid parameters' });
+        }
+        
+        if (!rooms[roomId]) {
+            return res.status(404).json({ success: false, error: 'Room not found' });
+        }
+        
+        const coordinates = loadCoordinates();
+        const exits = loadExits();
+        
+        if (!exits[roomId]) {
+            exits[roomId] = {};
+        }
+        
+        if (enabled) {
+            // Enable connection
+            if (targetRoomId && rooms[targetRoomId]) {
+                exits[roomId][direction] = targetRoomId;
+                
+                // Create reverse connection
+                const oppositeDir = direction === 'up' ? 'down' : 'up';
+                if (!exits[targetRoomId]) {
+                    exits[targetRoomId] = {};
+                }
+                // Remove any existing connection in opposite direction
+                for (const [dir, targetId] of Object.entries(exits[targetRoomId])) {
+                    if (targetId === roomId && (dir === 'up' || dir === 'down')) {
+                        delete exits[targetRoomId][dir];
+                    }
+                }
+                exits[targetRoomId][oppositeDir] = roomId;
+            }
+        } else {
+            // Disable connection
+            const oldTargetId = exits[roomId][direction];
+            delete exits[roomId][direction];
+            
+            // Remove reverse connection
+            if (oldTargetId && exits[oldTargetId]) {
+                const oppositeDir = direction === 'up' ? 'down' : 'up';
+                if (exits[oldTargetId][oppositeDir] === roomId) {
+                    delete exits[oldTargetId][oppositeDir];
+                }
+            }
+        }
+        
+        if (saveCoordinatesAndExits(coordinates, exits)) {
+            res.json({ 
+                success: true, 
+                roomId,
+                direction,
+                enabled,
+                exits: exits[roomId] || {}
+            });
+        } else {
+            res.status(500).json({ success: false, error: 'Failed to save' });
+        }
+    } catch (err) {
+        console.error('Error toggling vertical connection:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Get rooms at same x,y coordinates on different z levels
+export function getVerticalNeighbors(req, res) {
+    try {
+        const { roomId } = req.params;
+        
+        if (!rooms[roomId]) {
+            return res.status(404).json({ success: false, error: 'Room not found' });
+        }
+        
+        const coordinates = loadCoordinates();
+        const roomCoord = coordinates[roomId];
+        
+        if (!roomCoord) {
+            return res.json({ success: true, neighbors: [] });
+        }
+        
+        // Find all rooms at the same x,y but different z
+        const neighbors = [];
+        for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
+            if (otherRoomId !== roomId && 
+                otherCoord.x === roomCoord.x && 
+                otherCoord.y === roomCoord.y && 
+                otherCoord.z !== roomCoord.z) {
+                neighbors.push({
+                    id: otherRoomId,
+                    name: rooms[otherRoomId]?.name || otherRoomId,
+                    z: otherCoord.z,
+                    direction: otherCoord.z > roomCoord.z ? 'up' : 'down'
+                });
+            }
+        }
+        
+        res.json({ success: true, neighbors });
+    } catch (err) {
+        console.error('Error getting vertical neighbors:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
 // Get overlaps
 export function getOverlaps(req, res) {
     try {

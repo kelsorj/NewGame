@@ -47,19 +47,36 @@ export const MapEditor3DCanvas = () => {
         angleY: 0, // Start with North at top
         zoom: 1,
         offsetX: 0,
-        offsetY: 0
+        offsetY: 0,
+        panX: 0,  // Pan offset X
+        panY: 0   // Pan offset Y
     });
+    const [isPanning, setIsPanning] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
     const [hoveredRoom, setHoveredRoom] = useState(null);
     const [dragStartWorldPos, setDragStartWorldPos] = useState(null);
+    const [editingDescription, setEditingDescription] = useState(false);
+    const [editingItems, setEditingItems] = useState(false);
+    const [editDescription, setEditDescription] = useState('');
+    const [editItems, setEditItems] = useState('');
+    const [verticalNeighbors, setVerticalNeighbors] = useState([]);
 
     // Load map data
     useEffect(() => {
         loadMapData();
         loadOverlaps();
     }, []);
+
+    // Load vertical neighbors when room is selected
+    useEffect(() => {
+        if (selectedRoom) {
+            loadVerticalNeighbors(selectedRoom.id);
+        } else {
+            setVerticalNeighbors([]);
+        }
+    }, [selectedRoom]);
 
     const loadMapData = async () => {
         try {
@@ -94,6 +111,78 @@ export const MapEditor3DCanvas = () => {
             }
         } catch (err) {
             console.error('Error loading overlaps:', err);
+        }
+    };
+
+    const loadVerticalNeighbors = async (roomId) => {
+        try {
+            const response = await fetch(`${API_BASE}/vertical-neighbors/${roomId}`);
+            const data = await response.json();
+            if (data.success) {
+                setVerticalNeighbors(data.neighbors || []);
+            }
+        } catch (err) {
+            console.error('Error loading vertical neighbors:', err);
+            setVerticalNeighbors([]);
+        }
+    };
+
+    const updateRoomData = async (roomId, description, items) => {
+        try {
+            const response = await fetch(`${API_BASE}/room-data`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ roomId, description, items })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                await loadMapData();
+                // Update selected room if it's the one we edited
+                if (selectedRoom?.id === roomId) {
+                    const updatedRoom = rooms.find(r => r.id === roomId);
+                    if (updatedRoom) {
+                        setSelectedRoom(updatedRoom);
+                    }
+                }
+                return true;
+            } else {
+                alert(`Error: ${data.error}`);
+                return false;
+            }
+        } catch (err) {
+            alert(`Error: ${err.message}`);
+            return false;
+        }
+    };
+
+    const toggleVerticalConnection = async (roomId, direction, targetRoomId, enabled) => {
+        try {
+            const response = await fetch(`${API_BASE}/toggle-vertical`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ roomId, direction, targetRoomId, enabled })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                await loadMapData();
+                await loadVerticalNeighbors(roomId);
+                // Update selected room
+                if (selectedRoom?.id === roomId) {
+                    const updatedRoom = rooms.find(r => r.id === roomId);
+                    if (updatedRoom) {
+                        setSelectedRoom(updatedRoom);
+                    }
+                }
+                return true;
+            } else {
+                alert(`Error: ${data.error}`);
+                return false;
+            }
+        } catch (err) {
+            alert(`Error: ${err.message}`);
+            return false;
         }
     };
 
@@ -284,8 +373,8 @@ export const MapEditor3DCanvas = () => {
         rooms.forEach(room => {
             const z = room.z * levelSpacing;
             const proj = project3D(
-                (room.x - centerX) * cellSize,
-                (room.y - centerY) * cellSize,
+                (room.x - centerX) * cellSize + camera.panX,
+                (room.y - centerY) * cellSize + camera.panY,
                 z,
                 { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
             );
@@ -334,6 +423,10 @@ export const MapEditor3DCanvas = () => {
             const isDragged = draggedRoom?.id === room.id;
             const isHovered = hoveredRoom?.id === room.id && !isDragging;
             
+            // Special highlighting for important rooms
+            const isBagEnd = room.id === 'bag_end';
+            const isMountDoom = room.id === 'mount_doom_summit';
+            
             // Apply drag offset if this is the dragged room
             let drawX = proj.x;
             let drawY = proj.y;
@@ -344,27 +437,79 @@ export const MapEditor3DCanvas = () => {
             
             const size = Math.max(6, Math.min(25, cellSize * proj.scale * 0.5));
             
-            // Draw room
-            ctx.fillStyle = overlap 
-                ? '#ff4444' 
-                : isSelected 
-                    ? '#4a9eff' 
-                    : isHovered
-                        ? '#6ab0ff'
-                        : room.z < 0 
-                            ? '#5a2a5a' 
-                            : room.z > 0 
-                                ? '#5a5a2a' 
-                                : '#2d5a87';
+            // Draw room with special colors for important rooms
+            if (isBagEnd) {
+                ctx.fillStyle = '#FFD700'; // Bright gold
+            } else if (isMountDoom) {
+                ctx.fillStyle = '#FF0000'; // Bright red
+            } else if (overlap) {
+                ctx.fillStyle = '#ff4444';
+            } else if (isSelected) {
+                ctx.fillStyle = '#4a9eff';
+            } else if (isHovered) {
+                ctx.fillStyle = '#6ab0ff';
+            } else if (room.z < 0) {
+                ctx.fillStyle = '#5a2a5a';
+            } else if (room.z > 0) {
+                ctx.fillStyle = '#5a5a2a';
+            } else {
+                ctx.fillStyle = '#2d5a87';
+            }
             ctx.fillRect(drawX - size / 2, drawY - size / 2, size, size);
             
-            // Draw border
-            ctx.strokeStyle = isSelected ? '#fff' : isDragged ? '#ffff00' : '#4a9eff';
-            ctx.lineWidth = isSelected || isDragged ? 2 : 1;
+            // Draw border with special styling for important rooms
+            if (isBagEnd) {
+                ctx.strokeStyle = '#FFA500'; // Orange border
+                ctx.lineWidth = 3;
+            } else if (isMountDoom) {
+                ctx.strokeStyle = '#8B0000'; // Dark red border
+                ctx.lineWidth = 3;
+            } else if (isSelected) {
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 2;
+            } else if (isDragged) {
+                ctx.strokeStyle = '#ffff00';
+                ctx.lineWidth = 2;
+            } else {
+                ctx.strokeStyle = '#4a9eff';
+                ctx.lineWidth = 1;
+            }
             ctx.strokeRect(drawX - size / 2, drawY - size / 2, size, size);
             
-            // Draw dot
-            if (!overlap) {
+            // Draw glow effect for special rooms
+            if (isBagEnd || isMountDoom) {
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = isBagEnd ? 'rgba(255, 215, 0, 0.8)' : 'rgba(255, 0, 0, 0.8)';
+                ctx.strokeRect(drawX - size / 2, drawY - size / 2, size, size);
+                ctx.shadowBlur = 0;
+            }
+            
+            // Draw icon or dot
+            if (isBagEnd) {
+                // Draw a house icon (square with triangle roof)
+                ctx.fillStyle = '#000';
+                ctx.fillRect(drawX - size * 0.25, drawY, size * 0.5, size * 0.3);
+                ctx.beginPath();
+                ctx.moveTo(drawX - size * 0.3, drawY);
+                ctx.lineTo(drawX, drawY - size * 0.3);
+                ctx.lineTo(drawX + size * 0.3, drawY);
+                ctx.closePath();
+                ctx.fill();
+            } else if (isMountDoom) {
+                // Draw a flame icon (triangle with wavy top)
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.moveTo(drawX, drawY - size * 0.3);
+                ctx.lineTo(drawX - size * 0.2, drawY + size * 0.2);
+                ctx.lineTo(drawX + size * 0.2, drawY + size * 0.2);
+                ctx.closePath();
+                ctx.fill();
+                // Add a small circle for fire effect
+                ctx.fillStyle = '#FFD700';
+                ctx.beginPath();
+                ctx.arc(drawX, drawY, size * 0.15, 0, Math.PI * 2);
+                ctx.fill();
+            } else if (!overlap) {
                 ctx.fillStyle = isDragged ? '#ffff00' : '#4a9eff';
                 ctx.beginPath();
                 ctx.arc(drawX, drawY, Math.max(2, size * 0.2), 0, Math.PI * 2);
@@ -402,7 +547,15 @@ export const MapEditor3DCanvas = () => {
             );
             
             if (proj.z > -10000) {
-                const levelName = level === 0 ? 'Ground' : level > 0 ? `Mountain +${level}` : `Underground ${level}`;
+                let levelName;
+                if (level === 0) {
+                    levelName = 'Ground';
+                } else if (level > 0) {
+                    // For Minas Tirith and other structures, show level number
+                    levelName = level <= 7 ? `Level +${level}` : `Mountain +${level}`;
+                } else {
+                    levelName = `Underground ${level}`;
+                }
                 ctx.fillStyle = '#fff';
                 ctx.font = 'bold 14px Arial';
                 ctx.textAlign = 'left';
@@ -514,8 +667,8 @@ export const MapEditor3DCanvas = () => {
         rooms.forEach(room => {
             const z = room.z * levelSpacing;
             const proj = project3D(
-                (room.x - centerX) * cellSize,
-                (room.y - centerY) * cellSize,
+                (room.x - centerX) * cellSize + camera.panX,
+                (room.y - centerY) * cellSize + camera.panY,
                 z,
                 { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
             );
@@ -598,6 +751,16 @@ export const MapEditor3DCanvas = () => {
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
         
+        // Right-click or Shift+Left-click for panning
+        if (e.button === 2 || (e.button === 0 && e.shiftKey)) {
+            e.preventDefault();
+            setIsPanning(true);
+            setIsDragging(true);
+            setDragStart({ x: mouseX, y: mouseY });
+            setDraggedRoom(null);
+            return;
+        }
+        
         const clickedRoom = findRoomAtPosition(mouseX, mouseY, canvas, globalBounds, levels, rooms, camera);
         
         if (clickedRoom) {
@@ -614,7 +777,7 @@ export const MapEditor3DCanvas = () => {
                 setIsDragging(true);
             }
         } else {
-            // Start camera drag
+            // Start camera drag (left click on background)
             if (e.button === 0) {
                 setIsDragging(true);
                 setDragStart({ x: mouseX, y: mouseY });
@@ -639,28 +802,41 @@ export const MapEditor3DCanvas = () => {
         if (!isDragging) return;
         
         if (draggedRoom) {
-            // Calculate drag offset
+            // Calculate drag offset for room
             const dx = mouseX - dragStart.x;
             const dy = mouseY - dragStart.y;
             setDragOffset({ x: dx, y: dy });
         } else {
-            // Drag camera - allow continuous rotation
-            const dx = mouseX - dragStart.x;
-            const dy = mouseY - dragStart.y;
-            setCamera(prev => {
-                // Allow continuous rotation for Y (no clamping during drag)
-                const newAngleY = prev.angleY + dx * 0.5;
-                
-                // Allow full 180 degree rotation for X
-                const newAngleX = Math.max(-180, Math.min(180, prev.angleX - dy * 0.5));
-                
-                return {
+            // Check if panning (right-click or Shift+left-click)
+            if (isPanning || e.buttons === 2 || (e.buttons === 1 && e.shiftKey)) {
+                // Pan the camera
+                const dx = mouseX - dragStart.x;
+                const dy = mouseY - dragStart.y;
+                setCamera(prev => ({
                     ...prev,
-                    angleY: newAngleY,
-                    angleX: newAngleX
-                };
-            });
-            setDragStart({ x: mouseX, y: mouseY });
+                    panX: prev.panX + dx * 1.0,  // Increased sensitivity
+                    panY: prev.panY + dy * 1.0
+                }));
+                setDragStart({ x: mouseX, y: mouseY });
+            } else {
+                // Rotate camera (left click drag)
+                const dx = mouseX - dragStart.x;
+                const dy = mouseY - dragStart.y;
+                setCamera(prev => {
+                    // Allow continuous rotation for Y (no clamping during drag)
+                    const newAngleY = prev.angleY + dx * 0.5;
+                    
+                    // Allow full 180 degree rotation for X
+                    const newAngleX = Math.max(-180, Math.min(180, prev.angleX - dy * 0.5));
+                    
+                    return {
+                        ...prev,
+                        angleY: newAngleY,
+                        angleX: newAngleX
+                    };
+                });
+                setDragStart({ x: mouseX, y: mouseY });
+            }
         }
     };
 
@@ -692,6 +868,11 @@ export const MapEditor3DCanvas = () => {
     };
 
     const handleMouseUp = async (e) => {
+        // Reset panning state
+        if (isPanning) {
+            setIsPanning(false);
+        }
+        
         console.log('handleMouseUp called', { draggedRoom: !!draggedRoom, isDragging, dragStartWorldPos: !!dragStartWorldPos, dragOffset });
         
         if (draggedRoom && isDragging && dragStartWorldPos) {
@@ -874,20 +1055,210 @@ export const MapEditor3DCanvas = () => {
                 {selectedRoom && (
                     <div style={{ 
                         background: '#333', 
-                        padding: '10px', 
+                        padding: '15px', 
                         borderRadius: '5px',
                         marginBottom: '10px',
                         fontSize: '14px'
                     }}>
-                        <strong>{selectedRoom.name}</strong> ({selectedRoom.id})
-                        <br />
-                        Coordinates: ({selectedRoom.x}, {selectedRoom.y}, {selectedRoom.z})
-                        <br />
-                        Exits: {Object.keys(selectedRoom.exits || {}).join(', ') || 'none'}
+                        <div style={{ marginBottom: '10px' }}>
+                            <strong>{selectedRoom.name}</strong> ({selectedRoom.id})
+                            <br />
+                            Coordinates: ({selectedRoom.x}, {selectedRoom.y}, {selectedRoom.z})
+                            <br />
+                            Exits: {Object.keys(selectedRoom.exits || {}).join(', ') || 'none'}
+                        </div>
+
+                        {/* Description Editor */}
+                        <div style={{ marginBottom: '15px', padding: '10px', background: '#222', borderRadius: '4px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                                <strong>Description:</strong>
+                                {!editingDescription ? (
+                                    <button
+                                        onClick={() => {
+                                            setEditDescription(selectedRoom.description || '');
+                                            setEditingDescription(true);
+                                        }}
+                                        style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer' }}
+                                    >
+                                        Edit
+                                    </button>
+                                ) : (
+                                    <div>
+                                        <button
+                                            onClick={async () => {
+                                                const success = await updateRoomData(selectedRoom.id, editDescription, undefined);
+                                                if (success) {
+                                                    setEditingDescription(false);
+                                                }
+                                            }}
+                                            style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer', marginRight: '5px', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '3px' }}
+                                        >
+                                            Save
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setEditingDescription(false);
+                                                setEditDescription('');
+                                            }}
+                                            style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer', background: '#666', color: '#fff', border: 'none', borderRadius: '3px' }}
+                                        >
+                                            Cancel
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                            {editingDescription ? (
+                                <textarea
+                                    value={editDescription}
+                                    onChange={(e) => setEditDescription(e.target.value)}
+                                    style={{ 
+                                        width: '100%', 
+                                        minHeight: '100px', 
+                                        padding: '8px', 
+                                        background: '#111', 
+                                        color: '#fff', 
+                                        border: '1px solid #444',
+                                        borderRadius: '4px',
+                                        fontFamily: 'monospace',
+                                        fontSize: '12px'
+                                    }}
+                                />
+                            ) : (
+                                <div style={{ color: '#aaa', fontSize: '12px', maxHeight: '100px', overflowY: 'auto' }}>
+                                    {selectedRoom.description || 'No description'}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Items Editor */}
+                        <div style={{ marginBottom: '15px', padding: '10px', background: '#222', borderRadius: '4px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                                <strong>Items:</strong>
+                                {!editingItems ? (
+                                    <button
+                                        onClick={() => {
+                                            setEditItems((selectedRoom.items || []).join(', '));
+                                            setEditingItems(true);
+                                        }}
+                                        style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer' }}
+                                    >
+                                        Edit
+                                    </button>
+                                ) : (
+                                    <div>
+                                        <button
+                                            onClick={async () => {
+                                                const itemsArray = editItems.split(',').map(i => i.trim()).filter(i => i);
+                                                const success = await updateRoomData(selectedRoom.id, undefined, itemsArray);
+                                                if (success) {
+                                                    setEditingItems(false);
+                                                    setEditItems('');
+                                                }
+                                            }}
+                                            style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer', marginRight: '5px', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '3px' }}
+                                        >
+                                            Save
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setEditingItems(false);
+                                                setEditItems('');
+                                            }}
+                                            style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer', background: '#666', color: '#fff', border: 'none', borderRadius: '3px' }}
+                                        >
+                                            Cancel
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                            {editingItems ? (
+                                <input
+                                    type="text"
+                                    value={editItems}
+                                    onChange={(e) => setEditItems(e.target.value)}
+                                    placeholder="Comma-separated item IDs (e.g., walking_stick, lembas_bread)"
+                                    style={{ 
+                                        width: '100%', 
+                                        padding: '8px', 
+                                        background: '#111', 
+                                        color: '#fff', 
+                                        border: '1px solid #444',
+                                        borderRadius: '4px',
+                                        fontFamily: 'monospace',
+                                        fontSize: '12px'
+                                    }}
+                                />
+                            ) : (
+                                <div style={{ color: '#aaa', fontSize: '12px' }}>
+                                    {(selectedRoom.items || []).length > 0 ? selectedRoom.items.join(', ') : 'No items'}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Vertical Connections */}
+                        <div style={{ marginBottom: '15px', padding: '10px', background: '#222', borderRadius: '4px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                                <strong>Vertical Connections:</strong>
+                                <button
+                                    onClick={() => loadVerticalNeighbors(selectedRoom.id)}
+                                    style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '3px' }}
+                                >
+                                    Refresh
+                                </button>
+                            </div>
+                            {verticalNeighbors.length > 0 ? (
+                                verticalNeighbors.map((neighbor, idx) => {
+                                    const hasConnection = selectedRoom.exits?.[neighbor.direction] === neighbor.id;
+                                    let levelName;
+                                    if (neighbor.z === 0) {
+                                        levelName = 'Ground';
+                                    } else if (neighbor.z > 0) {
+                                        levelName = neighbor.z <= 7 ? `Level +${neighbor.z}` : `Mountain +${neighbor.z}`;
+                                    } else {
+                                        levelName = `Underground ${neighbor.z}`;
+                                    }
+                                    
+                                    return (
+                                        <div key={idx} style={{ 
+                                            display: 'flex', 
+                                            justifyContent: 'space-between', 
+                                            alignItems: 'center',
+                                            padding: '8px',
+                                            marginBottom: '5px',
+                                            background: hasConnection ? '#2a4a2a' : '#4a2a2a',
+                                            borderRadius: '4px'
+                                        }}>
+                                            <div>
+                                                <strong>{neighbor.direction === 'up' ? '↑' : '↓'}</strong> {neighbor.name} ({levelName})
+                                            </div>
+                                            <label style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={hasConnection}
+                                                    onChange={(e) => {
+                                                        toggleVerticalConnection(
+                                                            selectedRoom.id,
+                                                            neighbor.direction,
+                                                            neighbor.id,
+                                                            e.target.checked
+                                                        );
+                                                    }}
+                                                />
+                                                <span style={{ fontSize: '12px' }}>Connected</span>
+                                            </label>
+                                        </div>
+                                    );
+                                })
+                            ) : (
+                                <div style={{ color: '#888', fontSize: '12px', fontStyle: 'italic' }}>
+                                    No rooms at the same x/y coordinates on different levels.
+                                </div>
+                            )}
+                        </div>
                     </div>
                 )}
                 <div style={{ fontSize: '12px', color: '#888', marginTop: '10px', lineHeight: '1.4' }}>
-                    <strong>Controls:</strong> Left click to select | <strong>Ctrl/Cmd + Left click + drag</strong> to move room | Drag background to rotate camera | Scroll to zoom
+                    <strong>Controls:</strong> Left click to select | <strong>Ctrl/Cmd + Left click + drag</strong> to move room | <strong>Shift + Left click + drag</strong> or <strong>Right-click + drag</strong> to pan | Drag background to rotate camera | Scroll to zoom
                 </div>
             </div>
 
@@ -911,7 +1282,9 @@ export const MapEditor3DCanvas = () => {
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseUp}
-                    onContextMenu={(e) => e.preventDefault()}
+                    onContextMenu={(e) => {
+                        e.preventDefault(); // Prevent context menu, but allow right-click for panning
+                    }}
                 />
             </div>
 

@@ -1,4 +1,4 @@
-import { rooms } from '../server/src/data/rooms.js';
+dimport { rooms } from '../server/src/data/rooms.js';
 import fs from 'fs';
 
 console.log('='.repeat(70));

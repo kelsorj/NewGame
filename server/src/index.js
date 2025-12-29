@@ -79,6 +79,9 @@ app.post('/api/map/exits', mapEditor.updateRoomExits);
 app.get('/api/map/overlaps', mapEditor.getOverlaps);
 app.post('/api/map/cleanup', mapEditor.cleanupExits);
 app.post('/api/map/apply', mapEditor.applyChanges);
+app.post('/api/map/room-data', mapEditor.updateRoomData);
+app.post('/api/map/toggle-vertical', mapEditor.toggleVerticalConnection);
+app.get('/api/map/vertical-neighbors/:roomId', mapEditor.getVerticalNeighbors);
 
 // Initialize game systems
 console.log('Initializing Middle Earth Adventure Server...');

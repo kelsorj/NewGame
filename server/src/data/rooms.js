@@ -4,6 +4,7 @@ import { lothlorienFangornExpansion } from './rooms-expansion-batch3.js';
 import { rohanExpansion } from './rooms-expansion-batch4.js';
 import { gondorMordorExpansion } from './rooms-expansion-batch5.js';
 import { newRegionsExpansion } from './rooms-expansion-batch6.js';
+import { pathRooms } from './path-rooms.js';
 
 export const rooms = {
     ...shireExpansion,
@@ -12,6 +13,7 @@ export const rooms = {
     ...rohanExpansion,
     ...gondorMordorExpansion,
     ...newRegionsExpansion,
+    ...pathRooms,
     // THE SHIRE - Starting Area
     bag_end: {
         name: "Bag End",
