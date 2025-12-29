@@ -27,7 +27,8 @@ function loadExits() {
             path.join(__dirname, '../../../scripts/linear-world-connections.json'),
             'utf8'
         ));
-        return coordData.newExits || {};
+        // Support both 'exits' and 'newExits' for backward compatibility
+        return coordData.exits || coordData.newExits || {};
     } catch (err) {
         console.error('Error loading exits:', err);
         return {};
@@ -43,7 +44,7 @@ function saveCoordinatesAndExits(coordinates, exits) {
         ));
         
         coordData.coordinates = coordinates;
-        coordData.newExits = exits;
+        coordData.exits = exits; // Use 'exits' instead of 'newExits' for consistency
         
         writeFileSync(
             path.join(__dirname, '../../../scripts/linear-world-connections.json'),
@@ -572,11 +573,18 @@ export function getVerticalNeighbors(req, res) {
                 neighbors.push({
                     id: otherRoomId,
                     name: rooms[otherRoomId]?.name || otherRoomId,
+                    x: otherCoord.x,
+                    y: otherCoord.y,
                     z: otherCoord.z,
                     direction: otherCoord.z > roomCoord.z ? 'up' : 'down'
                 });
             }
         }
+        
+        // Sort by Z level (ascending)
+        neighbors.sort((a, b) => a.z - b.z);
+        
+        console.log(`Found ${neighbors.length} vertical neighbors for ${roomId} at (${roomCoord.x}, ${roomCoord.y}, ${roomCoord.z})`);
         
         res.json({ success: true, neighbors });
     } catch (err) {

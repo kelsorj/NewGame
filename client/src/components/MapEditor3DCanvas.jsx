@@ -88,7 +88,16 @@ export const MapEditor3DCanvas = () => {
             console.log('Map data response:', data);
             if (data.success) {
                 console.log(`Loaded ${data.rooms?.length || 0} rooms`);
-                setRooms(data.rooms || []);
+                const updatedRooms = data.rooms || [];
+                setRooms(updatedRooms);
+                
+                // Update selected room if it exists in the new data
+                if (selectedRoom) {
+                    const updatedSelectedRoom = updatedRooms.find(r => r.id === selectedRoom.id);
+                    if (updatedSelectedRoom) {
+                        setSelectedRoom(updatedSelectedRoom);
+                    }
+                }
             } else {
                 const errorMsg = data.error || 'Failed to load map data';
                 console.error('Error loading map:', errorMsg);
@@ -116,10 +125,17 @@ export const MapEditor3DCanvas = () => {
 
     const loadVerticalNeighbors = async (roomId) => {
         try {
+            console.log('Loading vertical neighbors for:', roomId);
             const response = await fetch(`${API_BASE}/vertical-neighbors/${roomId}`);
             const data = await response.json();
+            console.log('Vertical neighbors response:', data);
             if (data.success) {
-                setVerticalNeighbors(data.neighbors || []);
+                const neighbors = data.neighbors || [];
+                console.log(`Found ${neighbors.length} vertical neighbors:`, neighbors);
+                setVerticalNeighbors(neighbors);
+            } else {
+                console.error('Failed to load vertical neighbors:', data.error);
+                setVerticalNeighbors([]);
             }
         } catch (err) {
             console.error('Error loading vertical neighbors:', err);
@@ -166,15 +182,21 @@ export const MapEditor3DCanvas = () => {
 
             const data = await response.json();
             if (data.success) {
-                await loadMapData();
-                await loadVerticalNeighbors(roomId);
-                // Update selected room
+                // Immediately update the selected room with new exits from API response
                 if (selectedRoom?.id === roomId) {
-                    const updatedRoom = rooms.find(r => r.id === roomId);
-                    if (updatedRoom) {
-                        setSelectedRoom(updatedRoom);
-                    }
+                    const updatedExits = data.exits || {};
+                    setSelectedRoom(prev => ({
+                        ...prev,
+                        exits: updatedExits
+                    }));
                 }
+                
+                // Reload map data to get updated exits for all rooms
+                await loadMapData();
+                
+                // Reload vertical neighbors to refresh the list
+                await loadVerticalNeighbors(roomId);
+                
                 return true;
             } else {
                 alert(`Error: ${data.error}`);
@@ -1058,7 +1080,10 @@ export const MapEditor3DCanvas = () => {
                         padding: '15px', 
                         borderRadius: '5px',
                         marginBottom: '10px',
-                        fontSize: '14px'
+                        fontSize: '14px',
+                        maxHeight: '70vh',
+                        overflowY: 'auto',
+                        overflowX: 'hidden'
                     }}>
                         <div style={{ marginBottom: '10px' }}>
                             <strong>{selectedRoom.name}</strong> ({selectedRoom.id})
@@ -1196,19 +1221,39 @@ export const MapEditor3DCanvas = () => {
                         </div>
 
                         {/* Vertical Connections */}
-                        <div style={{ marginBottom: '15px', padding: '10px', background: '#222', borderRadius: '4px' }}>
+                        <div style={{ 
+                            marginBottom: '15px', 
+                            padding: '10px', 
+                            background: '#222', 
+                            borderRadius: '4px',
+                            border: '2px solid #4a9eff',
+                            position: 'relative'
+                        }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                                <strong>Vertical Connections:</strong>
+                                <strong style={{ color: '#4a9eff', fontSize: '14px' }}>Vertical Connections:</strong>
                                 <button
-                                    onClick={() => loadVerticalNeighbors(selectedRoom.id)}
+                                    onClick={() => {
+                                        console.log('Refresh button clicked for room:', selectedRoom.id);
+                                        loadVerticalNeighbors(selectedRoom.id);
+                                    }}
                                     style={{ padding: '5px 10px', fontSize: '12px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '3px' }}
                                 >
                                     Refresh
                                 </button>
                             </div>
+                            <div style={{ fontSize: '11px', color: '#aaa', marginBottom: '8px' }}>
+                                Room at ({selectedRoom.x}, {selectedRoom.y}, {selectedRoom.z}) - Looking for rooms at same X/Y, different Z
+                                <br />
+                                <span style={{ color: '#4a9eff' }}>Found {verticalNeighbors.length} vertical neighbors</span>
+                            </div>
                             {verticalNeighbors.length > 0 ? (
-                                verticalNeighbors.map((neighbor, idx) => {
-                                    const hasConnection = selectedRoom.exits?.[neighbor.direction] === neighbor.id;
+                                <div style={{ border: '2px solid #4a9eff', padding: '10px', borderRadius: '4px' }}>
+                                    <div style={{ color: '#4a9eff', fontSize: '14px', marginBottom: '10px', fontWeight: 'bold', textAlign: 'center' }}>
+                                        ✓ Found {verticalNeighbors.length} vertical neighbors - CHECKBOXES BELOW:
+                                    </div>
+                                    {verticalNeighbors.map((neighbor, idx) => {
+                                        const hasConnection = selectedRoom.exits?.[neighbor.direction] === neighbor.id;
+                                        console.log(`Rendering neighbor ${idx}:`, neighbor.id, 'hasConnection:', hasConnection, 'exits:', selectedRoom.exits);
                                     let levelName;
                                     if (neighbor.z === 0) {
                                         levelName = 'Ground';
@@ -1219,23 +1264,74 @@ export const MapEditor3DCanvas = () => {
                                     }
                                     
                                     return (
-                                        <div key={idx} style={{ 
+                                        <div key={`neighbor-${idx}`} style={{ 
                                             display: 'flex', 
                                             justifyContent: 'space-between', 
                                             alignItems: 'center',
-                                            padding: '8px',
-                                            marginBottom: '5px',
+                                            padding: '10px',
+                                            marginBottom: '8px',
                                             background: hasConnection ? '#2a4a2a' : '#4a2a2a',
-                                            borderRadius: '4px'
+                                            borderRadius: '4px',
+                                            border: '1px solid #666',
+                                            minHeight: '50px'
                                         }}>
-                                            <div>
-                                                <strong>{neighbor.direction === 'up' ? '↑' : '↓'}</strong> {neighbor.name} ({levelName})
+                                            <div style={{ flex: 1 }}>
+                                                <strong style={{ fontSize: '14px' }}>{neighbor.direction === 'up' ? '↑ UP' : '↓ DOWN'}</strong> 
+                                                <br />
+                                                <span style={{ fontSize: '12px' }}>{neighbor.name}</span>
+                                                <br />
+                                                <span style={{ fontSize: '10px', color: '#aaa' }}>({levelName}) at ({neighbor.x || '?'}, {neighbor.y || '?'}, {neighbor.z})</span>
                                             </div>
-                                            <label style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
+                                            <label style={{ 
+                                                display: 'flex', 
+                                                alignItems: 'center', 
+                                                gap: '8px', 
+                                                cursor: 'pointer',
+                                                userSelect: 'none',
+                                                padding: '4px 8px',
+                                                background: hasConnection ? '#1a4a1a' : '#3a1a1a',
+                                                borderRadius: '4px',
+                                                border: '1px solid #555'
+                                            }}>
+                                                <button
+                                                    type="button"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        e.stopPropagation();
+                                                        const newState = !hasConnection;
+                                                        console.log('Button clicked - toggling connection:', neighbor.direction, neighbor.id, 'from', hasConnection, 'to', newState);
+                                                        toggleVerticalConnection(
+                                                            selectedRoom.id,
+                                                            neighbor.direction,
+                                                            neighbor.id,
+                                                            newState
+                                                        );
+                                                    }}
+                                                    style={{
+                                                        width: '24px',
+                                                        height: '24px',
+                                                        cursor: 'pointer',
+                                                        backgroundColor: hasConnection ? '#4aff4a' : '#ff4a4a',
+                                                        border: '2px solid #fff',
+                                                        borderRadius: '4px',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        fontSize: '16px',
+                                                        fontWeight: 'bold',
+                                                        color: '#000',
+                                                        flexShrink: 0,
+                                                        marginRight: '8px'
+                                                    }}
+                                                    title={hasConnection ? 'Click to disconnect' : 'Click to connect'}
+                                                >
+                                                    {hasConnection ? '✓' : '○'}
+                                                </button>
                                                 <input
                                                     type="checkbox"
                                                     checked={hasConnection}
                                                     onChange={(e) => {
+                                                        console.log('Checkbox toggled:', neighbor.direction, neighbor.id, e.target.checked);
                                                         toggleVerticalConnection(
                                                             selectedRoom.id,
                                                             neighbor.direction,
@@ -1243,15 +1339,48 @@ export const MapEditor3DCanvas = () => {
                                                             e.target.checked
                                                         );
                                                     }}
+                                                    style={{
+                                                        width: '20px',
+                                                        height: '20px',
+                                                        cursor: 'pointer',
+                                                        accentColor: '#4a9eff',
+                                                        flexShrink: 0,
+                                                        marginRight: '8px'
+                                                    }}
                                                 />
-                                                <span style={{ fontSize: '12px' }}>Connected</span>
+                                                <span 
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        const newState = !hasConnection;
+                                                        toggleVerticalConnection(
+                                                            selectedRoom.id,
+                                                            neighbor.direction,
+                                                            neighbor.id,
+                                                            newState
+                                                        );
+                                                    }}
+                                                    style={{ 
+                                                        fontSize: '13px', 
+                                                        fontWeight: 'bold', 
+                                                        color: hasConnection ? '#4aff4a' : '#ff4a4a',
+                                                        cursor: 'pointer',
+                                                        textDecoration: 'underline'
+                                                    }}
+                                                >
+                                                    {hasConnection ? '✓ CONNECTED (click to disconnect)' : '○ NOT CONNECTED (click to connect)'}
+                                                </span>
                                             </label>
                                         </div>
                                     );
-                                })
+                                    })}
+                                </div>
                             ) : (
                                 <div style={{ color: '#888', fontSize: '12px', fontStyle: 'italic' }}>
-                                    No rooms at the same x/y coordinates on different levels.
+                                    No rooms found at the same x/y coordinates on different levels.
+                                    <br />
+                                    <span style={{ fontSize: '10px', color: '#666' }}>
+                                        (Checked {verticalNeighbors.length} neighbors)
+                                    </span>
                                 </div>
                             )}
                         </div>
