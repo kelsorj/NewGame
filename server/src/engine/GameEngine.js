@@ -256,22 +256,9 @@ export class GameEngine {
                     roomChanged: true
                 };
             } else {
-                // Get specific requirement message
-                const room = this.roomSystem.getRoom(result.roomId);
-                let message = "That way is blocked.";
-                if (room && room.requirements) {
-                    const missingReqs = [];
-                    for (const req of room.requirements) {
-                        if (req.type === 'item' && !playerState.inventory.includes(req.item)) {
-                            const itemName = this.inventorySystem.getItem(req.item)?.name || req.item;
-                            missingReqs.push(itemName);
-                        }
-                    }
-                    if (missingReqs.length > 0) {
-                        message = `You need ${missingReqs.join(' and ')} to proceed.`;
-                    }
-                }
-                return { message };
+                return {
+                    message: "That way is blocked. You need something to proceed."
+                };
             }
         }
 

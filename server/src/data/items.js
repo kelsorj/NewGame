@@ -714,13 +714,5 @@ export const items = {
         type: "quest",
         description: "A fragment of the One Ring, destroyed in the fires of Mount Doom. It no longer has power, but it is a reminder of what was accomplished.",
         value: 0
-    },
-
-    // Transportation
-    boat: {
-        name: "Boat",
-        type: "tool",
-        description: "A sturdy wooden boat, suitable for navigating rivers and waterways. Essential for traveling on water.",
-        value: 100
     }
 };

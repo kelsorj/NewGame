@@ -1,8 +1,2451 @@
 // Auto-generated path/road rooms
-// Generated: 2025-12-29T01:01:41.296Z
-// Total rooms: 2272
+// Generated: 2025-12-29T06:32:11.206Z
+// Total rooms: 2855
 
 export const pathRooms = {
+  "path_connect_buckland_kitchen_1": {
+    "name": "Path to buckland",
+    "description": "You are on a narrow path between connect and buckland. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_buckland_kitchen_2": {
+    "name": "Path to buckland",
+    "description": "You are on a narrow path between connect and buckland. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_buckland_kitchen_3": {
+    "name": "Path to buckland",
+    "description": "You are on a narrow path between connect and buckland. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_buckland_cellar_1": {
+    "name": "Path to buckland",
+    "description": "You are on a narrow path between connect and buckland. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_buckland_cellar_2": {
+    "name": "Path to buckland",
+    "description": "You are on a narrow path between connect and buckland. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_old_forest_barrow_downs_8": {
+    "name": "Path to forest",
+    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_old_forest_barrow_downs_13": {
+    "name": "Path to forest",
+    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_old_forest_barrow_downs_19": {
+    "name": "Path to forest",
+    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_old_forest_barrow_downs_24": {
+    "name": "Path to forest",
+    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_0_3_0_1": {
+    "name": "forest river 0 Bank",
+    "description": "You are on the bank of the forest river 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_0_7_1_0": {
+    "name": "forest river 0 Bank",
+    "description": "You are on the bank of the forest river 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_1_1_0": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_1_0_1": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_forest_river_1_3": {
+    "name": "forest river (Water)",
+    "description": "You are on the flowing waters of the forest river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_forest_river_1_3_1_0": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_5_1_0": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_5_0_1": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_forest_river_1_7": {
+    "name": "forest river (Water)",
+    "description": "You are on the flowing waters of the forest river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_forest_river_1_7_1_0": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_9_1_0": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_9_0_1": {
+    "name": "forest river 1 Bank",
+    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_forest_river_1_1": {
+    "name": "forest river (Water)",
+    "description": "You are on the flowing waters of the forest river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_forest_river_1_1_1": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_1_2": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_2_1": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_2_0_2": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_0_0_2": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_1_2_2": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_forest_river_2_0_1": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_forest_river_2_1": {
+    "name": "forest river (Water)",
+    "description": "You are on the flowing waters of the forest river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_forest_river_2_1_1": {
+    "name": "forest river Bank",
+    "description": "You are on the bank of the forest river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_bree_east_road_1": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between connect and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_bree_east_road_2": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between connect and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_2": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_3": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_4": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_5": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_6": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_7": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_8": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_9": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_14": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_bree_13": {
+    "name": "Path to Bree",
+    "description": "You are on a narrow path between Shire and Bree. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_8": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_13": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_18": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_24": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_29": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_34": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_weathertop_39": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_bree_weathertop_8": {
+    "name": "Road to Weathertop",
+    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_bree_weathertop_9": {
+    "name": "Road to Weathertop",
+    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_bree_weathertop_11": {
+    "name": "Road to Weathertop",
+    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_bree_weathertop_12": {
+    "name": "Road to Weathertop",
+    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_weathertop_approach_1": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between connect and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_weathertop_approach_2": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between connect and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_weathertop_summit_1": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between connect and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_weathertop_summit_2": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between connect and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_weathertop_summit_3": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between connect and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_weathertop_base_1": {
+    "name": "Path to Weathertop",
+    "description": "You are on a narrow path between connect and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_3": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_8": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_9": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_13": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_18": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_23": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_26": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_29": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_34": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_39": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_43": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_44": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_49": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_4": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_6": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_11": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_12": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_12": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_14": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_15": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_17": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_18": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_20": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_21": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_23": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_10": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_10": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_11": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_22": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_25": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_26": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_7": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_1": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_2": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_5": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_6": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rivendell_gardens_1": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between connect and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_4": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_weathertop_rivendell_5": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_7": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_bree_rivendell_8": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_elrond_study_1": {
+    "name": "Path to elrond",
+    "description": "You are on a narrow path between connect and elrond. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rivendell_library_2": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between connect and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rivendell_library_4": {
+    "name": "Path to Rivendell",
+    "description": "You are on a narrow path between connect and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_8": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_9": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_13": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_18": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_23": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_26": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_29": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_34": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_39": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_43": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_44": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rivendell_moria_49": {
+    "name": "Path to Moria",
+    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_3": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_4": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_6": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_8": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_9": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_11": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_12": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_14": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_5": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_7": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_10": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_13": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_15": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_1": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rivendell_moria_2": {
+    "name": "Road to Moria",
+    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_1": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_8": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_13": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_18": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_23": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_29": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_34": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_39": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_44": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_49": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_3": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_4": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_6": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_9": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_11": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_12": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_14": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_5": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_15": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_lothlorien_border_1": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between connect and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_moria_lothlorien_2": {
+    "name": "Path to Lothlorien",
+    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_1": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_6": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_8": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_13": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_16": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_18": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_23": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_26": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_29": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_34": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_36": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_39": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_49": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_3": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_4": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_5": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_9": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_fangorn_11": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_7_-1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_0_9": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_0_9_-1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_11_1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_11_-1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_13_1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_13_-1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_14_1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_15_1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_15_-1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_0_17_-1_0": {
+    "name": "entwash 0 Bank",
+    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_0_19": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_2_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_3": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_3_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_5": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_5_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_6_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_7": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_7_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_7_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_9": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_9_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_9_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_10_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_11": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_11_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_11_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_13": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_13_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_13_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_14_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_15": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_15_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_17_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_19": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_3_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_5_-1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_8_1_0": {
+    "name": "entwash 1 Bank",
+    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_2_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_3_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_3_-1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_5_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_6_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_2_7": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_2_7_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_7_-1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_2_9": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_2_9_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_9_-1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_10_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_2_11": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_2_11_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_11_-1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_3_1": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_3_1_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_1_-1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_2_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_3_3": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_3_3_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_3_-1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_3_5": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_3_5_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_5_-1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_3_7": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_3_7_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_7_-1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_8_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_9_1_0": {
+    "name": "entwash 3 Bank",
+    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_2_13": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_2_13_1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_13_-1_0": {
+    "name": "entwash 2 Bank",
+    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_3_9": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "river_entwash_1_1": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_1_1_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_2_1": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_2_1_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_2_2": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_2_2_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_2_2": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_1_2": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_2_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_1_2_2": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_0_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_2_1_2": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_0_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_0_2": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_1_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_entwash_3_1_2": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_entwash_1_2": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "river_entwash_3_2": {
+    "name": "entwash (Water)",
+    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_entwash_3_2_1": {
+    "name": "entwash Bank",
+    "description": "You are on the bank of the entwash. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_fangorn_border_1": {
+    "name": "Path to Fangorn",
+    "description": "You are on a narrow path between connect and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_8": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_13": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_16": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_18": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_23": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_26": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_29": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_34": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_36": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_39": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_44": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_46": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_rohan_49": {
+    "name": "Path to Rohan",
+    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_4": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_5": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_6": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_8": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_9": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_11": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_12": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_2": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_fangorn_rohan_3": {
+    "name": "Road to Rohan",
+    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_3": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_5": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_8": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_13": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_14": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_19": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_22": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_gondor_24": {
+    "name": "Path to Gondor",
+    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_3": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_4": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_5": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_6": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_8": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_9": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_11": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_1": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_rohan_gondor_2": {
+    "name": "Road to Gondor",
+    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_3": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_8": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_13": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_18": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_23": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_29": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_34": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_39": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_44": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_minas_tirith_mordor_49": {
+    "name": "Path to tirith",
+    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_3": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_4": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_5": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_6": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_8": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_9": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_11": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_12": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_13": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_14": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_7": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_1": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_minas_tirith_mordor_2": {
+    "name": "Road to tirith",
+    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
   "path_shire_old_forest_17": {
     "name": "Path to old",
     "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
@@ -101,34 +2544,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "path_old_forest_barrow_downs_8": {
-    "name": "Path to forest",
-    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_old_forest_barrow_downs_13": {
-    "name": "Path to forest",
-    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_old_forest_barrow_downs_19": {
-    "name": "Path to forest",
-    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_old_forest_barrow_downs_24": {
-    "name": "Path to forest",
-    "description": "You are on a narrow path between old and forest. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
   "path_barrow_downs_bree_8": {
     "name": "Path to downs",
     "description": "You are on a narrow path between barrow and downs. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
@@ -146,538 +2561,6 @@ export const pathRooms = {
   "path_barrow_downs_bree_19": {
     "name": "Path to downs",
     "description": "You are on a narrow path between barrow and downs. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_8": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_13": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_18": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_24": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_29": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_34": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_weathertop_39": {
-    "name": "Path to Weathertop",
-    "description": "You are on a narrow path between Bree and Weathertop. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_3": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_8": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_9": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_13": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_18": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_23": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_26": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_29": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_34": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_39": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_43": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_44": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_49": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_8": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_9": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_13": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_18": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_23": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_26": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_29": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_34": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_39": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_43": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_44": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rivendell_moria_49": {
-    "name": "Path to Moria",
-    "description": "You are on a narrow path between Rivendell and Moria. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_1": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_8": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_13": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_18": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_23": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_29": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_34": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_39": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_44": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_49": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_1": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_6": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_8": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_13": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_16": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_18": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_23": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_26": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_29": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_34": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_36": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_39": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_49": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_8": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_13": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_16": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_18": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_23": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_26": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_29": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_34": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_36": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_39": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_44": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_46": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_fangorn_rohan_49": {
-    "name": "Path to Rohan",
-    "description": "You are on a narrow path between Fangorn and Rohan. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_3": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_5": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_8": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_13": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_14": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_19": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_22": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_gondor_24": {
-    "name": "Path to Gondor",
-    "description": "You are on a narrow path between Rohan and Gondor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -713,76 +2596,6 @@ export const pathRooms = {
   "path_gondor_minas_tirith_24": {
     "name": "Path to minas",
     "description": "You are on a narrow path between Gondor and minas. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_3": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_8": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_13": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_18": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_23": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_29": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_34": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_39": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_44": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_minas_tirith_mordor_49": {
-    "name": "Path to tirith",
-    "description": "You are on a narrow path between minas and tirith. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -8368,118 +10181,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "path_weathertop_rivendell_4": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_6": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_11": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_12": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_3": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_4": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_6": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_9": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_11": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_12": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_14": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_3": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_4": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_5": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_9": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_lothlorien_fangorn_11": {
-    "name": "Path to Fangorn",
-    "description": "You are on a narrow path between Lothlorien and Fangorn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
   "path_lothlorien_mirkwood_4": {
     "name": "Path to Mirkwood",
     "description": "You are on a narrow path between Lothlorien and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
@@ -8550,153 +10251,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "road_bree_weathertop_8": {
-    "name": "Road to Weathertop",
-    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_bree_weathertop_9": {
-    "name": "Road to Weathertop",
-    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_bree_weathertop_11": {
-    "name": "Road to Weathertop",
-    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_3": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_4": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_6": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_8": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_9": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_11": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_12": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_14": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_4": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_5": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_6": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_8": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_9": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_11": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_fangorn_rohan_12": {
-    "name": "Road to Rohan",
-    "description": "You are on a well-maintained road between Fangorn and Rohan. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rohan_gondor_3": {
-    "name": "Road to Gondor",
-    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rohan_gondor_4": {
-    "name": "Road to Gondor",
-    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rohan_gondor_5": {
-    "name": "Road to Gondor",
-    "description": "You are on a well-maintained road between Rohan and Gondor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
   "road_gondor_minas_tirith_3": {
     "name": "Road to minas",
     "description": "You are on a well-maintained road between Gondor and minas. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
@@ -8707,76 +10261,6 @@ export const pathRooms = {
   "road_gondor_minas_tirith_4": {
     "name": "Road to minas",
     "description": "You are on a well-maintained road between Gondor and minas. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_3": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_4": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_5": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_6": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_8": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_9": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_11": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_12": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_13": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_minas_tirith_mordor_14": {
-    "name": "Road to tirith",
-    "description": "You are on a well-maintained road between minas and tirith. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -10008,318 +11492,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "riverbank_entwash_0_7_-1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_0_9": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_0_9_-1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_11_1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_11_-1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_13_1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_13_-1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_14_1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_15_1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_15_-1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_0_17_-1_0": {
-    "name": "entwash 0 Bank",
-    "description": "You are on the bank of the entwash 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_0_19": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_2_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_3": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_3_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_5": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_5_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_6_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_7": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_7_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_7_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_9": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_9_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_9_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_10_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_11": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_11_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_11_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_13": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_13_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_13_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_14_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_15": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_1_15_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_17_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_1_19": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
   "countryside_-17_-22": {
     "name": "Countryside",
     "description": "You are in the open countryside of Middle Earth. Rolling hills and fields stretch around you, with paths and roads visible in the distance.",
@@ -11363,62 +12535,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "path_bree_rivendell_12": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_14": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_15": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_17": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_18": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_20": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_21": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_23": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
   "path_fangorn_mirkwood_9": {
     "name": "Path to Mirkwood",
     "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
@@ -11471,195 +12587,6 @@ export const pathRooms = {
   "path_fangorn_mirkwood_32": {
     "name": "Path to Mirkwood",
     "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_3": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_4": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_6": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_9": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_11": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_12": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_14": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_17": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_18": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_20": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_21": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_23": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_25": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_26": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_rohan_mordor_28": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_3": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_6": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_9": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_10": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_11": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_12": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_13": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_14": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_15": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_17": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_18": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_21": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -12671,279 +13598,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "riverbank_entwash_1_3_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_5_-1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_1_8_1_0": {
-    "name": "entwash 1 Bank",
-    "description": "You are on the bank of the entwash 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_2_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_3_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_3_-1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_5_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_6_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_2_7": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_2_7_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_7_-1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_2_9": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_2_9_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_9_-1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_10_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_2_11": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_2_11_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_11_-1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_3_1": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_3_1_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_1_-1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_2_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_3_3": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_3_3_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_3_-1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_3_5": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_3_5_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_5_-1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_3_7": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_3_7_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_7_-1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_8_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_3_9_1_0": {
-    "name": "entwash 3 Bank",
-    "description": "You are on the bank of the entwash 3. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
   "river_bruinen_0_0": {
     "name": "bruinen (Water)",
     "description": "You are on the flowing waters of the bruinen. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
@@ -13860,69 +14514,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "road_bree_weathertop_12": {
-    "name": "Road to Weathertop",
-    "description": "You are on a well-maintained road between Bree and Weathertop. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_weathertop_rivendell_10": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Weathertop and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_5": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_7": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_10": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_13": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "road_rivendell_moria_15": {
-    "name": "Road to Moria",
-    "description": "You are on a well-maintained road between Rivendell and Moria. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_5": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_moria_lothlorien_15": {
-    "name": "Path to Lothlorien",
-    "description": "You are on a narrow path between Moria and Lothlorien. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
   "path_lothlorien_mirkwood_19": {
     "name": "Path to Mirkwood",
     "description": "You are on a narrow path between Lothlorien and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
@@ -13933,41 +14524,6 @@ export const pathRooms = {
   "path_lothlorien_mirkwood_21": {
     "name": "Path to Mirkwood",
     "description": "You are on a narrow path between Lothlorien and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_10": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_11": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_22": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_25": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_bree_rivendell_26": {
-    "name": "Path to Rivendell",
-    "description": "You are on a narrow path between Bree and Rivendell. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -14003,13 +14559,6 @@ export const pathRooms = {
   "path_fangorn_mirkwood_26": {
     "name": "Path to Mirkwood",
     "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "path_gondor_mordor_7": {
-    "name": "Path to Mordor",
-    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -14384,46 +14933,6 @@ export const pathRooms = {
     "items": [],
     "enemies": []
   },
-  "river_entwash_2_13": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_entwash_2_13_1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_entwash_2_13_-1_0": {
-    "name": "entwash 2 Bank",
-    "description": "You are on the bank of the entwash 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_entwash_3_9": {
-    "name": "entwash (Water)",
-    "description": "You are on the flowing waters of the entwash. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
   "riverbank_bruinen_1_1_0_-1": {
     "name": "bruinen 1 Bank",
     "description": "You are on the bank of the bruinen 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
@@ -14448,102 +14957,6 @@ export const pathRooms = {
   "riverbank_bruinen_2_5_0_1": {
     "name": "bruinen 2 Bank",
     "description": "You are on the bank of the bruinen 2. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_0_3_0_1": {
-    "name": "forest river 0 Bank",
-    "description": "You are on the bank of the forest river 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_0_7_1_0": {
-    "name": "forest river 0 Bank",
-    "description": "You are on the bank of the forest river 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_1_1_1_0": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_1_1_0_1": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_forest_river_1_3": {
-    "name": "forest river (Water)",
-    "description": "You are on the flowing waters of the forest river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_forest_river_1_3_1_0": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_1_5_1_0": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_1_5_0_1": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "river_forest_river_1_7": {
-    "name": "forest river (Water)",
-    "description": "You are on the flowing waters of the forest river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
-    "exits": {},
-    "items": [],
-    "enemies": [],
-    "requirements": [
-      {
-        "type": "item",
-        "item": "boat"
-      }
-    ]
-  },
-  "riverbank_forest_river_1_7_1_0": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_1_9_1_0": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
-    "exits": {},
-    "items": [],
-    "enemies": []
-  },
-  "riverbank_forest_river_1_9_0_1": {
-    "name": "forest river 1 Bank",
-    "description": "You are on the bank of the forest river 1. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
     "exits": {},
     "items": [],
     "enemies": []
@@ -16413,6 +16826,3770 @@ export const pathRooms = {
   "path_branch_144_173_12": {
     "name": "Path to 144",
     "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_21_38_7": {
+    "name": "Path to 21",
+    "description": "You are on a narrow path between branch and 21. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_10": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_85_10": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_103_2": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_103_9": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_103_12": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_103_19": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_6": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_7": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_9": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_12": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_16": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_107_15": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_107_16": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_102_8": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_102_14": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_110_3": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_110_5": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_110_6": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_110_9": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_84_89_8": {
+    "name": "Path to 84",
+    "description": "You are on a narrow path between branch and 84. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_84_91_3": {
+    "name": "Path to 84",
+    "description": "You are on a narrow path between branch and 84. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_87_110_14": {
+    "name": "Path to 87",
+    "description": "You are on a narrow path between branch and 87. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_103_6": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_105_10": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_105_11": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_105_13": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_107_3": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_107_11": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_107_14": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_107_18": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_109_13": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_93_102_8": {
+    "name": "Path to 93",
+    "description": "You are on a narrow path between branch and 93. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_96_105_8": {
+    "name": "Path to 96",
+    "description": "You are on a narrow path between branch and 96. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_96_105_9": {
+    "name": "Path to 96",
+    "description": "You are on a narrow path between branch and 96. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_96_109_10": {
+    "name": "Path to 96",
+    "description": "You are on a narrow path between branch and 96. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_96_109_13": {
+    "name": "Path to 96",
+    "description": "You are on a narrow path between branch and 96. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_102_111_4": {
+    "name": "Path to 102",
+    "description": "You are on a narrow path between branch and 102. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_102_111_6": {
+    "name": "Path to 102",
+    "description": "You are on a narrow path between branch and 102. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_102_111_7": {
+    "name": "Path to 102",
+    "description": "You are on a narrow path between branch and 102. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_102_111_8": {
+    "name": "Path to 102",
+    "description": "You are on a narrow path between branch and 102. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_102_111_9": {
+    "name": "Path to 102",
+    "description": "You are on a narrow path between branch and 102. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_105_110_5": {
+    "name": "Path to 105",
+    "description": "You are on a narrow path between branch and 105. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_105_110_7": {
+    "name": "Path to 105",
+    "description": "You are on a narrow path between branch and 105. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_105_110_8": {
+    "name": "Path to 105",
+    "description": "You are on a narrow path between branch and 105. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_131_8": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_136_8": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_129_158_9": {
+    "name": "Path to 129",
+    "description": "You are on a narrow path between branch and 129. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_129_158_19": {
+    "name": "Path to 129",
+    "description": "You are on a narrow path between branch and 129. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_132_157_15": {
+    "name": "Path to 132",
+    "description": "You are on a narrow path between branch and 132. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_132_161_12": {
+    "name": "Path to 132",
+    "description": "You are on a narrow path between branch and 132. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_160_15": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_21_38_5": {
+    "name": "Path to 21",
+    "description": "You are on a narrow path between branch and 21. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_24_31_4": {
+    "name": "Path to 24",
+    "description": "You are on a narrow path between branch and 24. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_24_37_11": {
+    "name": "Path to 24",
+    "description": "You are on a narrow path between branch and 24. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_20": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_93_5": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_8": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_105_10": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_107_3": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_107_7": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_107_13": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_104_6": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_87_110_12": {
+    "name": "Path to 87",
+    "description": "You are on a narrow path between branch and 87. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_87_110_15": {
+    "name": "Path to 87",
+    "description": "You are on a narrow path between branch and 87. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_107_4": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_107_8": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_90_109_12": {
+    "name": "Path to 90",
+    "description": "You are on a narrow path between branch and 90. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_93_102_14": {
+    "name": "Path to 93",
+    "description": "You are on a narrow path between branch and 93. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_139_4": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_132_11": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_weathertop_8_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_weathertop_8_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_weathertop_34_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_weathertop_34_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_road_bree_weathertop_8_1": {
+    "name": "Path to road",
+    "description": "You are on a narrow path between connect and road. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_road_bree_weathertop_8_2": {
+    "name": "Path to road",
+    "description": "You are on a narrow path between connect and road. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_road_bree_weathertop_8_3": {
+    "name": "Path to road",
+    "description": "You are on a narrow path between connect and road. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_road_bree_weathertop_9_1": {
+    "name": "Path to road",
+    "description": "You are on a narrow path between connect and road. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_84_95_3_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_84_109_15_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_84_111_16_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_84_111_17_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_90_103_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_90_107_10_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_93_106_5_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_93_106_17_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_93_106_17_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_96_103_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_96_107_8_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_102_109_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_102_109_8_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_114_129_5_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_129_158_10_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_129_158_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_132_159_9_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_135_158_18_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_135_164_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_144_173_11_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_144_173_13_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_21_34_3_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_21_36_2_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_21_36_7_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_117_128_7_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_117_136_10_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_120_135_7_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_132_159_16_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_132_161_15_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_135_158_12_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_135_160_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_144_171_9_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_144_173_7_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_144_173_12_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_90_107_3_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_90_109_13_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_93_102_8_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_96_109_10_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_trollshaws_1": {
+    "name": "Path to trollshaws",
+    "description": "You are on a narrow path between connect and trollshaws. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_trollshaws_2": {
+    "name": "Path to trollshaws",
+    "description": "You are on a narrow path between connect and trollshaws. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_mithril_mine_1": {
+    "name": "Path to mithril",
+    "description": "You are on a narrow path between connect and mithril. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_mithril_mine_2": {
+    "name": "Path to mithril",
+    "description": "You are on a narrow path between connect and mithril. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_east_gate_approach_1": {
+    "name": "Path to east",
+    "description": "You are on a narrow path between connect and east. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_anduin_midstream_1": {
+    "name": "Path to anduin",
+    "description": "You are on a narrow path between connect and anduin. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_dead_city_1": {
+    "name": "Path to dead",
+    "description": "You are on a narrow path between connect and dead. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_orthanc_base_1": {
+    "name": "Path to orthanc",
+    "description": "You are on a narrow path between connect and orthanc. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_house_of_stewards_1": {
+    "name": "Path to house",
+    "description": "You are on a narrow path between connect and house. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_0_7_0_-1": {
+    "name": "anduin river 0 Bank",
+    "description": "You are on the bank of the anduin river 0. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_21_32_1": {
+    "name": "Path to 21",
+    "description": "You are on a narrow path between branch and 21. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_24_37_7": {
+    "name": "Path to 24",
+    "description": "You are on a narrow path between branch and 24. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_27_32_3": {
+    "name": "Path to 27",
+    "description": "You are on a narrow path between branch and 27. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_27_32_5": {
+    "name": "Path to 27",
+    "description": "You are on a narrow path between branch and 27. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_27_32_6": {
+    "name": "Path to 27",
+    "description": "You are on a narrow path between branch and 27. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_27_32_8": {
+    "name": "Path to 27",
+    "description": "You are on a narrow path between branch and 27. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_27_32_9": {
+    "name": "Path to 27",
+    "description": "You are on a narrow path between branch and 27. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_27_40_3": {
+    "name": "Path to 27",
+    "description": "You are on a narrow path between branch and 27. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_56_15": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_56_16": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_56_17": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_56_18": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_56_20": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_60_19": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_62_9": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_62_10": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_62_12": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_62_13": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_62_14": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_33_62_15": {
+    "name": "Path to 33",
+    "description": "You are on a narrow path between branch and 33. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_12": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_13": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_15": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_18": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_36_61_21": {
+    "name": "Path to 36",
+    "description": "You are on a narrow path between branch and 36. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_57_86_16": {
+    "name": "Path to 57",
+    "description": "You are on a narrow path between branch and 57. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_57_86_17": {
+    "name": "Path to 57",
+    "description": "You are on a narrow path between branch and 57. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_57_86_18": {
+    "name": "Path to 57",
+    "description": "You are on a narrow path between branch and 57. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_60_65_2": {
+    "name": "Path to 60",
+    "description": "You are on a narrow path between branch and 60. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_60_87_17": {
+    "name": "Path to 60",
+    "description": "You are on a narrow path between branch and 60. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_60_87_18": {
+    "name": "Path to 60",
+    "description": "You are on a narrow path between branch and 60. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_60_87_19": {
+    "name": "Path to 60",
+    "description": "You are on a narrow path between branch and 60. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_60_87_20": {
+    "name": "Path to 60",
+    "description": "You are on a narrow path between branch and 60. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_60_87_21": {
+    "name": "Path to 60",
+    "description": "You are on a narrow path between branch and 60. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_8": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_9": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_10": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_11": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_13": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_14": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_15": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_16": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_17": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_76_18": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_78_9": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_78_19": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_80_12": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_80_14": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_80_18": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_8": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_10": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_12": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_13": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_15": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_16": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_82_18": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_88_12": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_63_88_13": {
+    "name": "Path to 63",
+    "description": "You are on a narrow path between branch and 63. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_79_11": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_79_12": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_79_15": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_81_10": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_81_16": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_83_13": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_83_16": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_87_5": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_87_7": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_10": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_11": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_13": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_14": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_15": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_17": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_18": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_19": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_20": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_66_95_21": {
+    "name": "Path to 66",
+    "description": "You are on a narrow path between branch and 66. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_69_76_11": {
+    "name": "Path to 69",
+    "description": "You are on a narrow path between branch and 69. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_69_76_12": {
+    "name": "Path to 69",
+    "description": "You are on a narrow path between branch and 69. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_69_78_18": {
+    "name": "Path to 69",
+    "description": "You are on a narrow path between branch and 69. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_77_8": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_77_9": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_77_11": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_77_12": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_81_14": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_89_14": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_95_13": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_95_15": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_95_16": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_72_95_19": {
+    "name": "Path to 72",
+    "description": "You are on a narrow path between branch and 72. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_75_94_18": {
+    "name": "Path to 75",
+    "description": "You are on a narrow path between branch and 75. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_93_4": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_78_93_6": {
+    "name": "Path to 78",
+    "description": "You are on a narrow path between branch and 78. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_92_3": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_92_6": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_81_104_5": {
+    "name": "Path to 81",
+    "description": "You are on a narrow path between branch and 81. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_84_103_13": {
+    "name": "Path to 84",
+    "description": "You are on a narrow path between branch and 84. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_84_103_14": {
+    "name": "Path to 84",
+    "description": "You are on a narrow path between branch and 84. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_87_96_7": {
+    "name": "Path to 87",
+    "description": "You are on a narrow path between branch and 87. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_87_104_15": {
+    "name": "Path to 87",
+    "description": "You are on a narrow path between branch and 87. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_133_9": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_6": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_7": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_8": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_9": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_10": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_11": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_12": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_14": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_15": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_17": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_19": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_20": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_21": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_114_143_22": {
+    "name": "Path to 114",
+    "description": "You are on a narrow path between branch and 114. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_126_7": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_126_8": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_126_10": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_132_7": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_132_8": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_132_9": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_132_10": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_144_12": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_144_16": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_144_17": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_144_18": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_117_144_19": {
+    "name": "Path to 117",
+    "description": "You are on a narrow path between branch and 117. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_133_13": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_3": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_4": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_5": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_7": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_8": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_10": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_11": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_13": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_15": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_120_143_18": {
+    "name": "Path to 120",
+    "description": "You are on a narrow path between branch and 120. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_128_6": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_128_7": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_128_9": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_128_11": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_128_13": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_144_8": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_144_12": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_3": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_5": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_6": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_8": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_9": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_11": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_12": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_13": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_123_152_15": {
+    "name": "Path to 123",
+    "description": "You are on a narrow path between branch and 123. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_132_159_11": {
+    "name": "Path to 132",
+    "description": "You are on a narrow path between branch and 132. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_132_161_14": {
+    "name": "Path to 132",
+    "description": "You are on a narrow path between branch and 132. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_6": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_8": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_9": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_10": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_13": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_14": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_156_15": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_158_11": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_162_9": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_135_162_10": {
+    "name": "Path to 135",
+    "description": "You are on a narrow path between branch and 135. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_138_157_7": {
+    "name": "Path to 138",
+    "description": "You are on a narrow path between branch and 138. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_4": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_5": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_6": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_7": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_9": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_10": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_11": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_12": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_169_13": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_171_7": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_171_8": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_144_173_9": {
+    "name": "Path to 144",
+    "description": "You are on a narrow path between branch and 144. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_snowbourn_banks_1": {
+    "name": "Path to snowbourn",
+    "description": "You are on a narrow path between connect and snowbourn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_snowbourn_banks_2": {
+    "name": "Path to snowbourn",
+    "description": "You are on a narrow path between connect and snowbourn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_snowbourn_banks_3": {
+    "name": "Path to snowbourn",
+    "description": "You are on a narrow path between connect and snowbourn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_snowbourn_banks_4": {
+    "name": "Path to snowbourn",
+    "description": "You are on a narrow path between connect and snowbourn. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_pelargir_port_1": {
+    "name": "Path to pelargir",
+    "description": "You are on a narrow path between connect and pelargir. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_pelargir_port_2": {
+    "name": "Path to pelargir",
+    "description": "You are on a narrow path between connect and pelargir. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_minas_morgul_gates_1": {
+    "name": "Path to minas",
+    "description": "You are on a narrow path between connect and minas. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_minas_morgul_gates_2": {
+    "name": "Path to minas",
+    "description": "You are on a narrow path between connect and minas. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_minas_morgul_gates_3": {
+    "name": "Path to minas",
+    "description": "You are on a narrow path between connect and minas. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_4_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_4_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_4_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_4_4": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_12_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_12_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_12_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_rohan_mordor_12_4": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_east_emnet_1": {
+    "name": "Path to east",
+    "description": "You are on a narrow path between connect and east. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_east_emnet_2": {
+    "name": "Path to east",
+    "description": "You are on a narrow path between connect and east. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_mount_doom_summit_1": {
+    "name": "Path to mount",
+    "description": "You are on a narrow path between connect and mount. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_mirkwood_1": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Lothlorien and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_mirkwood_2": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Lothlorien and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_mirkwood_erebor_1": {
+    "name": "Road to Erebor",
+    "description": "You are on a well-maintained road between Mirkwood and Erebor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_mirkwood_erebor_2": {
+    "name": "Road to Erebor",
+    "description": "You are on a well-maintained road between Mirkwood and Erebor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_2": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_3": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_4": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_5": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_0_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_0_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_0_2": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_0_2_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_0_2_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_1_2": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_1_2_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_2_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_1_3": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_1_3_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_3_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_1_4": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_1_4_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_4_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_2_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_2_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_4_1": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_4_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_4_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_4_2": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_4_2_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_4_2_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_5_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_5_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_5_2": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "riverbank_anduin_river_5_2_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_5_2_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_0_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_2_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_3_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_3_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_7_0_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_7_0_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_7_1_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_7_1_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_2_1_1": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_celebrant_0_0_2": {
+    "name": "celebrant Bank",
+    "description": "You are on the bank of the celebrant. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_celebrant_0_1_1": {
+    "name": "celebrant Bank",
+    "description": "You are on the bank of the celebrant. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_3_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_9_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_13_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_1_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_2_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_2_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_road_rivendell_moria_1_2": {
+    "name": "Path to road",
+    "description": "You are on a narrow path between connect and road. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_road_rivendell_moria_1_4": {
+    "name": "Path to road",
+    "description": "You are on a narrow path between connect and road. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_0_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_1_0_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_2_0_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_2_0_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_5_0_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_5_0_2": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_0_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_anduin_river_6_2_1": {
+    "name": "anduin river Bank",
+    "description": "You are on the bank of the anduin river. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_0_1_2": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_1_0_2": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_1_1_1": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_1_1_2": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_2_0_1": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_2_0_2": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_bruinen_2_1_2": {
+    "name": "bruinen Bank",
+    "description": "You are on the bank of the bruinen. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_celebrant_0_0_1": {
+    "name": "celebrant Bank",
+    "description": "You are on the bank of the celebrant. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_celebrant_0_1_2": {
+    "name": "celebrant Bank",
+    "description": "You are on the bank of the celebrant. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "riverbank_celebrant_1_0_1": {
+    "name": "celebrant Bank",
+    "description": "You are on the bank of the celebrant. The water flows steadily nearby, and you can see the opposite shore. A path follows the riverbank, and you can hear the gentle sound of flowing water.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_10_35_6": {
+    "name": "Path to 10",
+    "description": "You are on a narrow path between branch and 10. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_11_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_11_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_11_4": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_22_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_10_35_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_lothlorien_mirkwood_5": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Lothlorien and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_mirkwood_erebor_3": {
+    "name": "Road to Erebor",
+    "description": "You are on a well-maintained road between Mirkwood and Erebor. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_6": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_7": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_fangorn_mirkwood_8": {
+    "name": "Path to Mirkwood",
+    "description": "You are on a narrow path between Fangorn and Mirkwood. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "river_anduin_river_6_2": {
+    "name": "anduin river (Water)",
+    "description": "You are on the flowing waters of the anduin river. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "river_celebrant_2_1": {
+    "name": "celebrant (Water)",
+    "description": "You are on the flowing waters of the celebrant. The current is strong, and you need a boat to navigate safely. The riverbanks are visible on either side.",
+    "exits": {},
+    "items": [],
+    "enemies": [],
+    "requirements": [
+      {
+        "type": "item",
+        "item": "boat"
+      }
+    ]
+  },
+  "path_connect_path_weathertop_rivendell_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_7_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_7_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_8_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_8_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_1": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_2": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_3": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_4": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_5": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_6": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_overhill_1": {
+    "name": "Path to overhill",
+    "description": "You are on a narrow path between connect and overhill. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_scary_1": {
+    "name": "Path to scary",
+    "description": "You are on a narrow path between connect and scary. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_scary_2": {
+    "name": "Path to scary",
+    "description": "You are on a narrow path between connect and scary. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_needlehole_1": {
+    "name": "Path to needlehole",
+    "description": "You are on a narrow path between connect and needlehole. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_needlehole_2": {
+    "name": "Path to needlehole",
+    "description": "You are on a narrow path between connect and needlehole. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rushock_bog_1": {
+    "name": "Path to rushock",
+    "description": "You are on a narrow path between connect and rushock. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rushock_bog_2": {
+    "name": "Path to rushock",
+    "description": "You are on a narrow path between connect and rushock. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rushock_bog_3": {
+    "name": "Path to rushock",
+    "description": "You are on a narrow path between connect and rushock. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_rushock_bog_4": {
+    "name": "Path to rushock",
+    "description": "You are on a narrow path between connect and rushock. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_13_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_13_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_23_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_29_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_4_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_6_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_riverbank_forest_river_2_0_2_1": {
+    "name": "Path to riverbank",
+    "description": "You are on a narrow path between connect and riverbank. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_riverbank_forest_river_0_0_2_1": {
+    "name": "Path to riverbank",
+    "description": "You are on a narrow path between connect and riverbank. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_riverbank_forest_river_1_2_2_1": {
+    "name": "Path to riverbank",
+    "description": "You are on a narrow path between connect and riverbank. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_riverbank_forest_river_2_0_1_1": {
+    "name": "Path to riverbank",
+    "description": "You are on a narrow path between connect and riverbank. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_5_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_old_forest_5_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_old_forest_5_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_old_forest_5_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_old_forest_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_bree_5_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_bree_5_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_bree_5_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_bree_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_7": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_8": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_13": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_shire_old_forest_14": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between Shire and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "road_gondor_minas_tirith_1": {
+    "name": "Road to minas",
+    "description": "You are on a well-maintained road between Gondor and minas. The path is wide and clear, with markers indicating the way. Travelers and merchants occasionally pass by.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_0_35_6": {
+    "name": "Path to 0",
+    "description": "You are on a narrow path between branch and 0. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_0_35_7": {
+    "name": "Path to 0",
+    "description": "You are on a narrow path between branch and 0. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_waymeet_1": {
+    "name": "Path to waymeet",
+    "description": "You are on a narrow path between connect and waymeet. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_waymeet_2": {
+    "name": "Path to waymeet",
+    "description": "You are on a narrow path between connect and waymeet. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_waymeet_3": {
+    "name": "Path to waymeet",
+    "description": "You are on a narrow path between connect and waymeet. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_overhill_2": {
+    "name": "Path to overhill",
+    "description": "You are on a narrow path between connect and overhill. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_overhill_3": {
+    "name": "Path to overhill",
+    "description": "You are on a narrow path between connect and overhill. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_14_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_17_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_5_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_5_4": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_riverbank_forest_river_1_2_1_1": {
+    "name": "Path to riverbank",
+    "description": "You are on a narrow path between connect and riverbank. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_old_forest_entrance_1": {
+    "name": "Path to old",
+    "description": "You are on a narrow path between connect and old. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_old_forest_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_0_35_5": {
+    "name": "Path to 0",
+    "description": "You are on a narrow path between branch and 0. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_branch_20_35_6": {
+    "name": "Path to 20",
+    "description": "You are on a narrow path between branch and 20. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_weathertop_29_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_weathertop_39_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_weathertop_rivendell_2_3": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_6_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_bree_rivendell_4_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_old_forest_13_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_shire_bree_14_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_connect_elrond_study_1_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_0_35_5_1": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_path_branch_0_35_5_2": {
+    "name": "Path to path",
+    "description": "You are on a narrow path between connect and path. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_3": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_4": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_6": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_9": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_11": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_12": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_14": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_17": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_18": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_20": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_21": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_23": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_25": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_26": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_28": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_3": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_6": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_9": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_10": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_11": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_12": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_13": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_14": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_15": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_17": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_18": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_21": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_7": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_15": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_16": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_5": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_8": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_10": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_27": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_29": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_30": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_31": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_32": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_connect_mordor_plains_1": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between connect and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_1": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_2": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_1": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_gondor_mordor_4": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Gondor and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
+    "exits": {},
+    "items": [],
+    "enemies": []
+  },
+  "path_rohan_mordor_7": {
+    "name": "Path to Mordor",
+    "description": "You are on a narrow path between Rohan and Mordor. The trail winds through the landscape, marked by occasional stones and worn by the passage of many feet.",
     "exits": {},
     "items": [],
     "enemies": []

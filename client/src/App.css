@@ -41,6 +41,7 @@ body {
 
 .game-container {
   width: 100%;
+  max-width: 1400px;
   height: 90vh;
   display: flex;
   gap: 20px;
@@ -327,28 +328,15 @@ body {
   cursor: not-allowed;
 }
 
-/* Left Sidebar - Status and Help */
-.left-sidebar {
-  width: 320px;
-  background: var(--bg-tertiary);
-  border-right: 2px solid var(--border);
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  order: -1;
-  /* Move to left */
-}
-
-/* Right Sidebar - Map */
-.right-sidebar {
-  width: 500px;
+/* Sidebar */
+.sidebar {
+  width: 350px;
   background: var(--bg-tertiary);
   border-left: 2px solid var(--border);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -504,45 +492,13 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.map-location-info {
-  font-size: 14px;
-  color: var(--text-muted);
-  text-align: center;
-  margin-bottom: 8px;
-  padding: 4px 8px;
-  background: var(--bg-primary);
-  border-radius: 4px;
-}
-
 .map-container {
   background: var(--bg-primary);
   border-radius: 4px;
   border: 1px solid var(--border);
-  height: calc(90vh - 200px);
-  min-height: 500px;
+  max-height: 400px;
   overflow: auto;
-  padding: 0;
-  position: relative;
-  scroll-behavior: smooth;
-}
-
-.map-container::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.map-container::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-  border-radius: 4px;
-}
-
-.map-container::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
-}
-
-.map-container::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  padding: 10px;
 }
 
 .map-grid {
@@ -566,71 +522,15 @@ body {
   border: 1px solid var(--border);
 }
 
+.map-slot.is-current {
+  background: rgba(0, 255, 136, 0.2);
+  border: 2px solid var(--text-primary);
+  box-shadow: 0 0 10px var(--glow);
+  z-index: 1;
+}
+
 .map-slot.empty {
   opacity: 0.2;
-}
-
-/* Terrain-specific backgrounds */
-.map-slot.terrain-mountain {
-  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
-  border-color: #5a6578;
-}
-
-.map-slot.terrain-forest {
-  background: linear-gradient(135deg, #2f5233 0%, #1a3a1f 100%);
-  border-color: #3f6243;
-}
-
-.map-slot.terrain-city {
-  background: linear-gradient(135deg, #4a4a6a 0%, #2a2a4a 100%);
-  border-color: #5a5a7a;
-}
-
-.map-slot.terrain-village {
-  background: linear-gradient(135deg, #5a4a3a 0%, #3a2a1a 100%);
-  border-color: #6a5a4a;
-}
-
-.map-slot.terrain-dark {
-  background: linear-gradient(135deg, #3a1a1a 0%, #1a0a0a 100%);
-  border-color: #4a2a2a;
-  box-shadow: 0 0 8px rgba(139, 0, 0, 0.5);
-}
-
-.map-slot.terrain-water {
-  background: linear-gradient(135deg, #1a4a6a 0%, #0a2a4a 100%);
-  border-color: #2a5a7a;
-}
-
-.map-slot.terrain-cave {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-  border-color: #3a3a3a;
-}
-
-.map-slot.terrain-plains {
-  background: linear-gradient(135deg, #4a5a3a 0%, #2a3a1a 100%);
-  border-color: #5a6a4a;
-}
-
-/* Current room overrides terrain background slightly */
-.map-slot.bag-end {
-    background-color: #FFD700 !important;
-    border: 4px solid #FFA500 !important;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), inset 0 0 10px rgba(255, 215, 0, 0.3) !important;
-    z-index: 10;
-}
-
-.map-slot.mount-doom {
-    background-color: #FF0000 !important;
-    border: 4px solid #8B0000 !important;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.3) !important;
-    z-index: 10;
-}
-
-.map-slot.is-current {
-  border: 2px solid var(--text-primary);
-  box-shadow: 0 0 15px var(--glow);
-  z-index: 1;
 }
 
 .room-marker {
@@ -701,19 +601,9 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 1400px) {
-  .right-sidebar {
-    width: 400px;
-  }
-}
-
 @media (max-width: 1200px) {
-  .left-sidebar {
-    width: 280px;
-  }
-
-  .right-sidebar {
-    width: 350px;
+  .sidebar {
+    width: 300px;
   }
 }
 
@@ -724,10 +614,8 @@ body {
     min-height: 90vh;
   }
 
-  .left-sidebar,
-  .right-sidebar {
+  .sidebar {
     width: 100%;
     max-height: 400px;
-    order: 0;
   }
 }
