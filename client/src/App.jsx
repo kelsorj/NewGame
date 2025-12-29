@@ -1,10 +1,11 @@
 // Main App Component
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useWebSocket } from './hooks/useWebSocket';
 import { GameDisplay } from './components/GameDisplay';
 import { CommandInput } from './components/CommandInput';
 import { PlayerStatus } from './components/PlayerStatus';
 import { WorldMap } from './components/WorldMap';
+import { MapEditor } from './components/MapEditor';
 import './App.css';
 
 const WS_URL = 'ws://localhost:3001';
@@ -12,6 +13,13 @@ const WS_URL = 'ws://localhost:3001';
 function App() {
     const [playerName, setPlayerName] = useState('');
     const [hasJoined, setHasJoined] = useState(false);
+    const [showEditor, setShowEditor] = useState(false);
+
+    useEffect(() => {
+        // Check for editor query parameter
+        const params = new URLSearchParams(window.location.search);
+        setShowEditor(params.get('editor') === 'true');
+    }, []);
 
     const {
         isConnected,
@@ -33,6 +41,27 @@ function App() {
     const handleCommand = (command) => {
         sendCommand(command);
     };
+
+    // Show editor if ?editor=true
+    if (showEditor) {
+        return (
+            <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0, overflow: 'hidden' }}>
+                <div style={{ padding: '10px', background: '#1a1a2e', borderBottom: '2px solid #4a9eff', position: 'relative', zIndex: 1000 }}>
+                    <button 
+                        onClick={() => {
+                            setShowEditor(false);
+                            window.history.pushState({}, '', '/');
+                        }}
+                        style={{ padding: '10px 20px', cursor: 'pointer', marginRight: '10px' }}
+                    >
+                        ← Back to Game
+                    </button>
+                    <strong>World Map Editor</strong>
+                </div>
+                <MapEditor />
+            </div>
+        );
+    }
 
     return (
         <div className="app">
