@@ -31,9 +31,9 @@
       "z": 0
     },
     "buckland_cellar": {
-      "x": 6,
-      "y": 0,
-      "z": 0
+      "x": 5,
+      "y": 1,
+      "z": -1
     },
     "old_forest_buckland_entrance": {
       "x": 4,
@@ -46,8 +46,8 @@
       "z": 0
     },
     "brandywine_bridge": {
-      "x": 9,
-      "y": 0,
+      "x": 6,
+      "y": 1,
       "z": 0
     },
     "old_forest_exit": {
@@ -61,98 +61,98 @@
       "z": 0
     },
     "mirkwood_path_1": {
-      "x": 10,
-      "y": -2,
+      "x": 5,
+      "y": -1,
       "z": 0
     },
     "old_forest_entrance": {
-      "x": 10,
-      "y": -3,
+      "x": 5,
+      "y": -2,
       "z": 0
     },
     "old_forest_depth": {
-      "x": 10,
-      "y": -4,
+      "x": 6,
+      "y": -2,
       "z": 0
     },
     "withywindle": {
-      "x": 10,
-      "y": -5,
+      "x": 4,
+      "y": -3,
       "z": 0
     },
     "bombadil_house": {
-      "x": 10,
-      "y": -6,
+      "x": 4,
+      "y": -4,
       "z": 0
     },
     "fangorn_border": {
-      "x": 10,
-      "y": -7,
+      "x": 23,
+      "y": -15,
       "z": 0
     },
     "barrow_downs_approach": {
-      "x": 10,
-      "y": -8,
+      "x": 7,
+      "y": -1,
       "z": 0
     },
     "barrow_downs": {
-      "x": 10,
-      "y": -9,
+      "x": 7,
+      "y": -2,
       "z": 0
     },
     "barrow_chamber_1": {
-      "x": 10,
-      "y": -9,
+      "x": 7,
+      "y": -2,
       "z": -1
     },
     "barrow_chamber_2": {
-      "x": 11,
-      "y": -9,
+      "x": 6,
+      "y": -2,
       "z": -1
     },
     "barrow_chamber_3": {
-      "x": 12,
-      "y": -9,
+      "x": 6,
+      "y": -3,
       "z": -1
     },
     "bree_gate": {
-      "x": 9,
-      "y": -10,
+      "x": 8,
+      "y": 1,
       "z": 0
     },
     "bree_square": {
-      "x": 10,
-      "y": -11,
+      "x": 9,
+      "y": 1,
       "z": 0
     },
     "prancing_pony": {
-      "x": 11,
-      "y": -11,
+      "x": 10,
+      "y": 1,
       "z": 0
     },
     "bree_east_road": {
-      "x": 12,
-      "y": -11,
+      "x": 11,
+      "y": 1,
       "z": 0
     },
     "weathertop_approach": {
-      "x": 13,
-      "y": -11,
+      "x": 16,
+      "y": 1,
       "z": 0
     },
     "weathertop_summit": {
-      "x": 14,
-      "y": -11,
-      "z": 0
+      "x": 17,
+      "y": 1,
+      "z": 1
     },
     "weathertop_base": {
-      "x": 15,
-      "y": -11,
+      "x": 17,
+      "y": 1,
       "z": 0
     },
     "amon_hen": {
-      "x": 16,
-      "y": -11,
+      "x": 17,
+      "y": 2,
       "z": 0
     },
     "rivendell_gardens": {
@@ -286,23 +286,23 @@
       "z": 0
     },
     "gap_of_rohan": {
-      "x": 34,
-      "y": -3,
+      "x": 18,
+      "y": -17,
       "z": 0
     },
     "rohan_plains": {
-      "x": 35,
-      "y": -3,
+      "x": 25,
+      "y": -18,
       "z": 0
     },
     "edoras_approach": {
-      "x": 36,
-      "y": -3,
+      "x": 23,
+      "y": -21,
       "z": 0
     },
     "edoras_gates": {
-      "x": 37,
-      "y": -3,
+      "x": 23,
+      "y": -22,
       "z": 0
     },
     "meduseld": {
@@ -311,13 +311,13 @@
       "z": 0
     },
     "helms_gate": {
-      "x": 39,
-      "y": -3,
+      "x": 20,
+      "y": -20,
       "z": 0
     },
     "helms_deep_interior": {
-      "x": 40,
-      "y": -3,
+      "x": 20,
+      "y": -21,
       "z": 0
     },
     "ithilien_woods": {
@@ -336,48 +336,48 @@
       "z": 0
     },
     "minas_tirith_stables": {
-      "x": 40,
-      "y": 1,
+      "x": 35,
+      "y": -24,
       "z": 0
     },
     "citadel_guards_hall": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 7
     },
     "sixth_level": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 6
     },
     "fifth_level": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 5
     },
     "fourth_level": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 4
     },
     "third_level": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 3
     },
     "second_level": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 2
     },
     "first_level": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 1
     },
     "minas_tirith_gates": {
-      "x": 40,
-      "y": 2,
+      "x": 35,
+      "y": -25,
       "z": 0
     },
     "mayor_office": {
@@ -431,8 +431,8 @@
       "z": 0
     },
     "bucklebury": {
-      "x": 44,
-      "y": 9,
+      "x": 5,
+      "y": 0,
       "z": 0
     },
     "crickhollow": {
@@ -15389,143 +15389,186 @@
       "x": 500,
       "y": 144,
       "z": -1
+    },
+    "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch": {
+      "x": -1,
+      "y": -1,
+      "z": 0
+    },
+    "y1WkEVNk6Qb9GqPuT0iCToz0HM1vVl4P": {
+      "x": 0,
+      "y": -2,
+      "z": 0
+    },
+    "CXCuPcKKjyFy4aBGaSbX6dQcAxHLEegT": {
+      "x": 1,
+      "y": -3,
+      "z": 0
+    },
+    "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46": {
+      "x": 2,
+      "y": -4,
+      "z": 0
+    },
+    "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem": {
+      "x": 2,
+      "y": -5,
+      "z": 0
+    },
+    "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r": {
+      "x": 4,
+      "y": -7,
+      "z": 0
     }
   },
   "exits": {
     "bag_end": {
-      "south": "hobbiton_square",
       "east": "tuckborough",
-      "west": "michel_delving"
+      "west": "michel_delving",
+      "south": "hobbiton_square",
+      "southwest": "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch"
     },
     "tuckborough": {
-      "southwest": "hobbiton_square",
       "west": "bag_end",
-      "east": "tookbank"
+      "east": "tookbank",
+      "southwest": "hobbiton_square"
     },
     "tookbank": {
       "east": "brandy_hall",
       "west": "tuckborough"
     },
     "michel_delving": {
+      "east": "bag_end",
       "southeast": "hobbiton_square",
-      "east": "bag_end"
+      "south": "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch"
     },
     "brandy_hall": {
-      "east": "old_forest_buckland_entrance",
-      "west": "tookbank"
+      "west": "tookbank",
+      "east": "old_forest_buckland_entrance"
     },
     "buckland_kitchen": {
-      "southeast": "buckland_cellar",
-      "southwest": "old_forest_buckland_entrance"
+      "down": "buckland_cellar",
+      "east": "brandywine_bridge",
+      "southwest": "old_forest_buckland_entrance",
+      "south": "bucklebury"
     },
     "buckland_cellar": {
-      "northwest": "buckland_kitchen"
+      "up": "buckland_kitchen"
     },
     "old_forest_buckland_entrance": {
+      "west": "brandy_hall",
       "northeast": "buckland_kitchen",
-      "west": "brandy_hall"
+      "east": "bucklebury",
+      "southeast": "mirkwood_path_1"
     },
     "hobbiton_square": {
       "north": "bag_end",
       "northeast": "tuckborough",
-      "northwest": "michel_delving"
+      "northwest": "michel_delving",
+      "west": "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch",
+      "south": "y1WkEVNk6Qb9GqPuT0iCToz0HM1vVl4P"
     },
     "brandywine_bridge": {
-      "east": "old_forest_exit",
-      "southeast": "chetwood"
+      "west": "buckland_kitchen",
+      "southwest": "bucklebury"
     },
     "old_forest_exit": {
-      "south": "chetwood",
-      "west": "brandywine_bridge"
+      "north": "prancing_pony",
+      "northwest": "bree_square",
+      "northeast": "bree_east_road",
+      "south": "chetwood"
     },
     "chetwood": {
-      "north": "old_forest_exit",
-      "south": "mirkwood_path_1",
-      "northwest": "brandywine_bridge"
+      "north": "old_forest_exit"
     },
     "mirkwood_path_1": {
-      "north": "chetwood",
+      "northwest": "old_forest_buckland_entrance",
+      "north": "bucklebury",
+      "southeast": "old_forest_depth",
       "south": "old_forest_entrance"
     },
     "old_forest_entrance": {
+      "east": "old_forest_depth",
       "north": "mirkwood_path_1",
-      "south": "old_forest_depth"
+      "southwest": "withywindle"
     },
     "old_forest_depth": {
-      "north": "old_forest_entrance",
-      "south": "withywindle"
+      "northwest": "mirkwood_path_1",
+      "northeast": "barrow_downs_approach",
+      "east": "barrow_downs",
+      "west": "old_forest_entrance"
     },
     "withywindle": {
-      "north": "old_forest_depth",
+      "northeast": "old_forest_entrance",
       "south": "bombadil_house"
     },
     "bombadil_house": {
-      "north": "withywindle",
-      "south": "fangorn_border"
+      "north": "withywindle"
     },
-    "fangorn_border": {
-      "north": "bombadil_house",
-      "south": "barrow_downs_approach"
-    },
+    "fangorn_border": {},
     "barrow_downs_approach": {
-      "north": "fangorn_border",
+      "southwest": "old_forest_depth",
       "south": "barrow_downs"
     },
     "barrow_downs": {
+      "down": "barrow_chamber_1",
+      "west": "old_forest_depth",
       "north": "barrow_downs_approach",
-      "southwest": "bree_gate",
-      "down": "barrow_chamber_1"
+      "up": "barrow_chamber_1"
     },
     "barrow_chamber_1": {
+      "southwest": "barrow_chamber_3",
       "up": "barrow_downs",
-      "east": "barrow_chamber_2"
+      "west": "barrow_chamber_2",
+      "down": "barrow_downs"
     },
     "barrow_chamber_2": {
-      "east": "barrow_chamber_3",
-      "west": "barrow_chamber_1"
+      "south": "barrow_chamber_3",
+      "east": "barrow_chamber_1"
     },
     "barrow_chamber_3": {
-      "west": "barrow_chamber_2"
+      "northeast": "barrow_chamber_1",
+      "north": "barrow_chamber_2"
     },
     "bree_gate": {
-      "southeast": "bree_square",
-      "northeast": "barrow_downs"
+      "east": "bree_square"
     },
     "bree_square": {
+      "west": "bree_gate",
       "east": "prancing_pony",
-      "northwest": "bree_gate"
+      "southeast": "old_forest_exit"
     },
     "prancing_pony": {
-      "east": "bree_east_road",
-      "west": "bree_square"
+      "south": "old_forest_exit",
+      "west": "bree_square",
+      "east": "bree_east_road"
     },
     "bree_east_road": {
       "west": "prancing_pony",
-      "east": "weathertop_approach"
+      "southwest": "old_forest_exit"
     },
     "weathertop_approach": {
-      "west": "bree_east_road",
-      "east": "weathertop_summit"
-    },
-    "weathertop_summit": {
-      "west": "weathertop_approach",
+      "northeast": "amon_hen",
       "east": "weathertop_base"
     },
+    "weathertop_summit": {
+      "down": "weathertop_base"
+    },
     "weathertop_base": {
-      "west": "weathertop_summit",
-      "east": "amon_hen"
+      "up": "weathertop_summit",
+      "north": "amon_hen",
+      "west": "weathertop_approach"
     },
     "amon_hen": {
-      "west": "weathertop_base",
-      "east": "rivendell_gardens"
+      "southwest": "weathertop_approach",
+      "south": "weathertop_base"
     },
     "rivendell_gardens": {
-      "west": "amon_hen",
       "east": "elrond_study"
     },
     "elrond_study": {
-      "west": "rivendell_gardens",
-      "east": "rivendell_gates"
+      "east": "rivendell_gates",
+      "west": "rivendell_gardens"
     },
     "rivendell_gates": {
       "west": "elrond_study",
@@ -15623,39 +15666,24 @@
       "east": "entwash"
     },
     "entwash": {
-      "west": "wellinghall",
-      "east": "gap_of_rohan"
+      "west": "wellinghall"
     },
-    "gap_of_rohan": {
-      "west": "entwash",
-      "east": "rohan_plains"
-    },
-    "rohan_plains": {
-      "west": "gap_of_rohan",
-      "east": "edoras_approach"
-    },
+    "gap_of_rohan": {},
+    "rohan_plains": {},
     "edoras_approach": {
-      "west": "rohan_plains",
-      "east": "edoras_gates"
+      "south": "edoras_gates"
     },
     "edoras_gates": {
-      "west": "edoras_approach",
-      "east": "meduseld"
+      "north": "edoras_approach"
     },
-    "meduseld": {
-      "west": "edoras_gates",
-      "east": "helms_gate"
-    },
+    "meduseld": {},
     "helms_gate": {
-      "west": "meduseld",
-      "east": "helms_deep_interior"
+      "south": "helms_deep_interior"
     },
     "helms_deep_interior": {
-      "west": "helms_gate",
-      "north": "ithilien_woods"
+      "north": "helms_gate"
     },
     "ithilien_woods": {
-      "south": "helms_deep_interior",
       "north": "osgiliath_ruins"
     },
     "osgiliath_ruins": {
@@ -15663,52 +15691,48 @@
       "north": "pelennor_fields"
     },
     "pelennor_fields": {
-      "south": "osgiliath_ruins",
-      "north": "minas_tirith_stables"
+      "south": "osgiliath_ruins"
     },
     "minas_tirith_stables": {
-      "south": "pelennor_fields",
-      "north": "citadel_guards_hall"
+      "south": "minas_tirith_gates"
     },
     "citadel_guards_hall": {
-      "south": "minas_tirith_stables",
       "down": "sixth_level"
     },
     "sixth_level": {
-      "up": "citadel_guards_hall",
-      "down": "fifth_level"
+      "down": "fifth_level",
+      "up": "citadel_guards_hall"
     },
     "fifth_level": {
-      "up": "sixth_level",
-      "down": "fourth_level"
+      "down": "fourth_level",
+      "up": "sixth_level"
     },
     "fourth_level": {
-      "up": "fifth_level",
-      "down": "third_level"
+      "down": "third_level",
+      "up": "fifth_level"
     },
     "third_level": {
-      "up": "fourth_level",
-      "down": "second_level"
+      "down": "second_level",
+      "up": "fourth_level"
     },
     "second_level": {
-      "up": "third_level",
-      "down": "first_level"
+      "down": "first_level",
+      "up": "third_level"
     },
     "first_level": {
-      "up": "second_level",
-      "down": "minas_tirith_gates"
+      "down": "minas_tirith_gates",
+      "up": "second_level"
     },
     "minas_tirith_gates": {
-      "up": "first_level",
-      "north": "mayor_office"
+      "north": "minas_tirith_stables",
+      "up": "first_level"
     },
     "mayor_office": {
-      "south": "minas_tirith_gates",
       "north": "waymeet"
     },
     "waymeet": {
-      "south": "mayor_office",
-      "north": "overhill"
+      "north": "overhill",
+      "south": "mayor_office"
     },
     "overhill": {
       "south": "waymeet",
@@ -15739,20 +15763,20 @@
       "east": "green_hill_country"
     },
     "green_hill_country": {
-      "west": "rushock_bog",
-      "east": "bucklebury"
+      "west": "rushock_bog"
     },
     "bucklebury": {
-      "west": "green_hill_country",
-      "east": "crickhollow"
+      "north": "buckland_kitchen",
+      "northeast": "brandywine_bridge",
+      "west": "old_forest_buckland_entrance",
+      "south": "mirkwood_path_1"
     },
     "crickhollow": {
-      "west": "bucklebury",
       "east": "bombadil_garden"
     },
     "bombadil_garden": {
-      "west": "crickhollow",
-      "east": "combe"
+      "east": "combe",
+      "west": "crickhollow"
     },
     "combe": {
       "west": "bombadil_garden",
@@ -27716,6 +27740,73 @@
     "iron_mines_1": {
       "south": "deep_mines_hub",
       "west": "smelting_chambers"
+    },
+    "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch": {
+      "north": "michel_delving",
+      "northeast": "bag_end",
+      "east": "hobbiton_square",
+      "southeast": "y1WkEVNk6Qb9GqPuT0iCToz0HM1vVl4P"
+    },
+    "y1WkEVNk6Qb9GqPuT0iCToz0HM1vVl4P": {
+      "north": "hobbiton_square",
+      "northwest": "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch",
+      "southeast": "CXCuPcKKjyFy4aBGaSbX6dQcAxHLEegT"
+    },
+    "CXCuPcKKjyFy4aBGaSbX6dQcAxHLEegT": {
+      "northwest": "y1WkEVNk6Qb9GqPuT0iCToz0HM1vVl4P",
+      "southeast": "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46"
+    },
+    "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46": {
+      "northwest": "CXCuPcKKjyFy4aBGaSbX6dQcAxHLEegT",
+      "south": "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem"
+    },
+    "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem": {
+      "north": "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46"
+    },
+    "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r": {}
+  },
+  "roomDefinitions": {
+    "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch": {
+      "name": "White Downs",
+      "description": "You are in White Downs.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "y1WkEVNk6Qb9GqPuT0iCToz0HM1vVl4P": {
+      "name": "The Green Way",
+      "description": "You are in The Green Way.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "CXCuPcKKjyFy4aBGaSbX6dQcAxHLEegT": {
+      "name": "The Green Way",
+      "description": "You are in The Green Way.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46": {
+      "name": "The Green Way",
+      "description": "You are in The Green Way.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem": {
+      "name": "The Green Way",
+      "description": "You are in The Green Way.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r": {
+      "name": "Sarn Ford",
+      "description": "You are in Sarn Ford.",
+      "exits": {},
+      "items": [],
+      "enemies": []
     }
   }
 }

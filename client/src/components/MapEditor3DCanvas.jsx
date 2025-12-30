@@ -66,6 +66,22 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     const [visibleLevels, setVisibleLevels] = useState(new Set()); // Will be initialized with all levels
     const levelsInitializedRef = useRef(false); // Track if we've initialized visible levels
     const lastLevelsRef = useRef(''); // Track last levels string to detect actual changes
+    const [showCreateRoom, setShowCreateRoom] = useState(false);
+    const [newRoomData, setNewRoomData] = useState({ roomId: '', name: '', description: '', x: 0, y: 0, z: 0, items: '', enemies: '' });
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+    const [showSearchResults, setShowSearchResults] = useState(false);
+    const [rightClickWorldPos, setRightClickWorldPos] = useState(null);
+
+    // Generate a unique room ID (30+ character alphanumeric)
+    const generateRoomId = () => {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < 32; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
+    };
 
     // Load map data
     useEffect(() => {
@@ -400,6 +416,77 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     const getRoomOverlap = (room) => {
         return overlaps.find(ov => ov.rooms.some(r => r.id === room.id));
     };
+
+    // Center camera on a specific room
+    const centerOnRoom = (room) => {
+        if (!room || !canvasRef.current) return;
+        
+        // Calculate global bounds
+        const xs = rooms.map(r => r.x);
+        const ys = rooms.map(r => r.y);
+        const minX = Math.min(...xs);
+        const maxX = Math.max(...xs);
+        const minY = Math.min(...ys);
+        const maxY = Math.max(...ys);
+        const centerX = (minX + maxX) / 2;
+        const centerY = (minY + maxY) / 2;
+        
+        // Calculate cell size (same as in draw function)
+        const worldWidth = maxX - minX + 1;
+        const worldHeight = maxY - minY + 1;
+        const maxWorldDim = Math.max(worldWidth, worldHeight, 1);
+        const canvas = canvasRef.current;
+        const cellSize = Math.min(30, Math.max(10, (Math.min(canvas.width, canvas.height) * 0.6) / maxWorldDim));
+        
+        // Calculate pan offsets to center the room
+        const panX = -(room.x - centerX) * cellSize;
+        const panY = -(room.y - centerY) * cellSize;
+        
+        // Update camera to center on room
+        setCamera(prev => ({
+            ...prev,
+            panX: panX,
+            panY: panY
+        }));
+        
+        // Make sure the room's Z level is visible
+        setVisibleLevels(prev => {
+            const newSet = new Set(prev);
+            newSet.add(room.z);
+            return newSet;
+        });
+        
+        // Select the room
+        setSelectedRoom(room);
+    };
+
+    // Search for rooms by name
+    useEffect(() => {
+        if (!searchQuery.trim()) {
+            setSearchResults([]);
+            setShowSearchResults(false);
+            return;
+        }
+        
+        const query = searchQuery.toLowerCase();
+        const results = rooms
+            .filter(room => 
+                room.name.toLowerCase().includes(query) || 
+                room.id.toLowerCase().includes(query)
+            )
+            .slice(0, 10) // Limit to 10 results
+            .sort((a, b) => {
+                // Sort by relevance (exact matches first, then by name)
+                const aNameMatch = a.name.toLowerCase().startsWith(query);
+                const bNameMatch = b.name.toLowerCase().startsWith(query);
+                if (aNameMatch && !bNameMatch) return -1;
+                if (!aNameMatch && bNameMatch) return 1;
+                return a.name.localeCompare(b.name);
+            });
+        
+        setSearchResults(results);
+        setShowSearchResults(results.length > 0);
+    }, [searchQuery, rooms]);
 
     // Draw the 3D scene
     useEffect(() => {
@@ -801,9 +888,9 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     };
 
     // Convert 2D screen position to 3D world coordinates
-    // Uses ray casting to find intersection with the ground plane
+    // Uses iterative approach: find closest room, then calculate offset
     const screenToWorld = (mouseX, mouseY, canvas, globalBounds, camera, targetZ = 0) => {
-        if (!globalBounds) return null;
+        if (!globalBounds || rooms.length === 0) return null;
         
         const centerX = (globalBounds.minX + globalBounds.maxX) / 2;
         const centerY = (globalBounds.minY + globalBounds.maxY) / 2;
@@ -812,47 +899,132 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
         const maxWorldDim = Math.max(worldWidth, worldHeight, 1);
         const cellSize = Math.min(30, Math.max(10, (Math.min(canvas.width, canvas.height) * 0.6) / maxWorldDim));
         const levelSpacing = cellSize * 2.5;
-        
-        // Convert screen coordinates to normalized device coordinates (-1 to 1)
-        const nx = (mouseX - canvas.width / 2) / (canvas.width / 2);
-        const ny = (mouseY - canvas.height / 2) / (canvas.height / 2);
-        
-        // Reverse the 3D projection
-        const radX = camera.angleX * Math.PI / 180;
-        const radY = camera.angleY * Math.PI / 180;
-        
-        const distance = 1000;
         const z = targetZ * levelSpacing;
         
-        // Reverse perspective projection
-        // We need to find the world X,Y that projects to screen nx,ny at depth z
-        const scale = distance / (distance + z);
+        // Find the closest room to the click position
+        let closestRoom = null;
+        let minDist = Infinity;
         
-        // Reverse the rotation transformations
-        // First reverse the perspective scale
-        const worldX2D = nx * (canvas.width / 2) / (scale * camera.zoom);
-        const worldY2D = ny * (canvas.height / 2) / (scale * camera.zoom);
+        rooms.forEach(room => {
+            if (room.z !== targetZ) return; // Only check rooms on the target Z level
+            
+            const roomWorldX = (room.x - centerX) * cellSize + camera.panX;
+            const roomWorldY = (room.y - centerY) * cellSize + camera.panY;
+            const proj = project3D(
+                roomWorldX,
+                roomWorldY,
+                z,
+                { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+            );
+            
+            const dist = Math.sqrt((mouseX - proj.x) ** 2 + (mouseY - proj.y) ** 2);
+            if (dist < minDist) {
+                minDist = dist;
+                closestRoom = { room, proj, worldX: roomWorldX, worldY: roomWorldY };
+            }
+        });
         
-        // Reverse X rotation
-        const cosX = Math.cos(-radX);
-        const sinX = Math.sin(-radX);
-        let x1 = worldX2D;
-        let y1 = worldY2D * cosX - z * sinX;
-        let z1 = worldY2D * sinX + z * cosX;
+        if (!closestRoom) {
+            // No room found, use center-based calculation
+            const centerProj = project3D(
+                camera.panX,
+                camera.panY,
+                z,
+                { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+            );
+            
+            const screenDX = mouseX - centerProj.x;
+            const screenDY = mouseY - centerProj.y;
+            
+            // Project test points to calculate scale
+            const testXProj = project3D(
+                camera.panX + cellSize,
+                camera.panY,
+                z,
+                { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+            );
+            const testYProj = project3D(
+                camera.panX,
+                camera.panY + cellSize,
+                z,
+                { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+            );
+            
+            const worldUnitsPerPixelX = cellSize / Math.max(0.1, Math.abs(testXProj.x - centerProj.x));
+            const worldUnitsPerPixelY = cellSize / Math.max(0.1, Math.abs(testYProj.y - centerProj.y));
+            
+            const worldDX = screenDX * worldUnitsPerPixelX;
+            const worldDY = screenDY * worldUnitsPerPixelY;
+            
+            return {
+                x: Math.round(centerX + worldDX / cellSize),
+                y: Math.round(centerY + worldDY / cellSize),
+                z: targetZ
+            };
+        }
         
-        // Reverse Y rotation
-        const cosY = Math.cos(-radY);
-        const sinY = Math.sin(-radY);
-        const worldX = x1 * cosY - z1 * sinY;
-        const worldY = y1;
+        // Calculate screen offset from closest room
+        const screenDX = mouseX - closestRoom.proj.x;
+        const screenDY = mouseY - closestRoom.proj.y;
         
-        // Convert from 3D space units to grid coordinates
-        const gridX = Math.round(worldX / cellSize + centerX);
-        const gridY = Math.round(worldY / cellSize + centerY);
+        // Project test points near the closest room to calculate scale
+        const testXProj = project3D(
+            closestRoom.worldX + cellSize,
+            closestRoom.worldY,
+            z,
+            { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+        );
+        const testYProj = project3D(
+            closestRoom.worldX,
+            closestRoom.worldY + cellSize,
+            z,
+            { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+        );
+        
+        // Calculate how many world units per screen pixel
+        const worldUnitsPerPixelX = cellSize / Math.max(0.1, Math.abs(testXProj.x - closestRoom.proj.x));
+        const worldUnitsPerPixelY = cellSize / Math.max(0.1, Math.abs(testYProj.y - closestRoom.proj.y));
+        
+        // Convert screen offset to world offset
+        const worldDX = screenDX * worldUnitsPerPixelX;
+        const worldDY = screenDY * worldUnitsPerPixelY;
+        
+        // Convert from world space offset to grid coordinate offset
+        const gridDX = worldDX / cellSize;
+        const gridDY = worldDY / cellSize;
+        
+        // Calculate the target grid position
+        let targetX = Math.round(closestRoom.room.x + gridDX);
+        let targetY = Math.round(closestRoom.room.y + gridDY);
+        
+        // Check if this position overlaps with an existing room, and if so, find nearest empty space
+        const existingCoords = new Set(rooms.filter(r => r.z === targetZ).map(r => `${r.x},${r.y}`));
+        const targetKey = `${targetX},${targetY}`;
+        
+        if (existingCoords.has(targetKey)) {
+            // Find nearest empty space in a spiral pattern
+            let found = false;
+            for (let radius = 1; radius <= 5 && !found; radius++) {
+                for (let dx = -radius; dx <= radius && !found; dx++) {
+                    for (let dy = -radius; dy <= radius && !found; dy++) {
+                        if (Math.abs(dx) === radius || Math.abs(dy) === radius) {
+                            const testX = targetX + dx;
+                            const testY = targetY + dy;
+                            const testKey = `${testX},${testY}`;
+                            if (!existingCoords.has(testKey)) {
+                                targetX = testX;
+                                targetY = testY;
+                                found = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         return {
-            x: gridX,
-            y: gridY,
+            x: targetX,
+            y: targetY,
             z: targetZ
         };
     };
@@ -866,8 +1038,30 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
         
-        // Right-click or Shift+Left-click for panning
-        if (e.button === 2 || (e.button === 0 && e.shiftKey)) {
+        // Right-click to create room at mouse position
+        if (e.button === 2) {
+            e.preventDefault();
+            const worldPos = screenToWorld(mouseX, mouseY, canvas, globalBounds, camera, 0);
+            if (worldPos) {
+                setRightClickWorldPos(worldPos);
+                // Open create room dialog with coordinates pre-filled
+                setNewRoomData({
+                    roomId: generateRoomId(), // Auto-generate UID
+                    name: '',
+                    description: '',
+                    x: worldPos.x,
+                    y: worldPos.y,
+                    z: worldPos.z,
+                    items: '',
+                    enemies: ''
+                });
+                setShowCreateRoom(true);
+            }
+            return;
+        }
+        
+        // Shift+Left-click for panning
+        if (e.button === 0 && e.shiftKey) {
             e.preventDefault();
             setIsPanning(true);
             setIsDragging(true);
@@ -922,8 +1116,8 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
             const dy = mouseY - dragStart.y;
             setDragOffset({ x: dx, y: dy });
         } else {
-            // Check if panning (right-click or Shift+left-click)
-            if (isPanning || e.buttons === 2 || (e.buttons === 1 && e.shiftKey)) {
+            // Check if panning (Shift+left-click only now, right-click is for room creation)
+            if (isPanning || (e.buttons === 1 && e.shiftKey)) {
                 // Pan the camera
                 const dx = mouseX - dragStart.x;
                 const dy = mouseY - dragStart.y;
@@ -1189,6 +1383,145 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                     )}
                 </div>
                 
+                {/* Room Search */}
+                <div style={{ 
+                    position: 'relative',
+                    marginTop: '10px'
+                }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <label style={{ whiteSpace: 'nowrap', color: '#aaa' }}>🔍 Search Rooms:</label>
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                                setShowSearchResults(true);
+                            }}
+                            onFocus={() => {
+                                if (searchResults.length > 0) {
+                                    setShowSearchResults(true);
+                                }
+                            }}
+                            onBlur={() => {
+                                // Delay hiding to allow clicking on results
+                                setTimeout(() => setShowSearchResults(false), 200);
+                            }}
+                            placeholder="Type room name or ID..."
+                            style={{ 
+                                flex: 1,
+                                padding: '8px 12px',
+                                background: '#1a1a2e',
+                                color: '#fff',
+                                border: '1px solid #4a9eff',
+                                borderRadius: '4px',
+                                fontSize: '14px',
+                                minWidth: '200px'
+                            }}
+                        />
+                        {searchQuery && (
+                            <button
+                                onClick={() => {
+                                    setSearchQuery('');
+                                    setSearchResults([]);
+                                    setShowSearchResults(false);
+                                }}
+                                style={{
+                                    padding: '8px 12px',
+                                    background: '#666',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: '4px',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                ✕
+                            </button>
+                        )}
+                    </div>
+                    
+                    {/* Search Results Dropdown */}
+                    {showSearchResults && searchResults.length > 0 && (
+                        <div style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: 0,
+                            right: 0,
+                            marginTop: '5px',
+                            background: '#1a1a2e',
+                            border: '2px solid #4a9eff',
+                            borderRadius: '4px',
+                            maxHeight: '300px',
+                            overflowY: 'auto',
+                            zIndex: 1000,
+                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)'
+                        }}>
+                            {searchResults.map((room, idx) => (
+                                <div
+                                    key={room.id}
+                                    onClick={() => {
+                                        centerOnRoom(room);
+                                        setSearchQuery('');
+                                        setShowSearchResults(false);
+                                    }}
+                                    style={{
+                                        padding: '12px',
+                                        cursor: 'pointer',
+                                        borderBottom: idx < searchResults.length - 1 ? '1px solid #333' : 'none',
+                                        background: selectedRoom?.id === room.id ? '#2a4a2a' : 'transparent',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.background = '#2a4a4a';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.background = selectedRoom?.id === room.id ? '#2a4a2a' : 'transparent';
+                                    }}
+                                >
+                                    <div style={{ 
+                                        fontWeight: 'bold', 
+                                        color: '#4a9eff',
+                                        fontSize: '14px',
+                                        marginBottom: '4px'
+                                    }}>
+                                        {room.name}
+                                    </div>
+                                    <div style={{ 
+                                        fontSize: '11px', 
+                                        color: '#aaa',
+                                        marginBottom: '2px'
+                                    }}>
+                                        ID: {room.id}
+                                    </div>
+                                    <div style={{ 
+                                        fontSize: '11px', 
+                                        color: '#888'
+                                    }}>
+                                        Location: ({room.x}, {room.y}, {room.z})
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    
+                    {searchQuery && searchResults.length === 0 && (
+                        <div style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: 0,
+                            right: 0,
+                            marginTop: '5px',
+                            padding: '12px',
+                            background: '#1a1a2e',
+                            border: '2px solid #666',
+                            borderRadius: '4px',
+                            color: '#aaa',
+                            fontSize: '14px'
+                        }}>
+                            No rooms found matching "{searchQuery}"
+                        </div>
+                    )}
+                </div>
+                
                 {/* Level Visibility Toggle Panel */}
                 <div style={{ 
                     background: '#222', 
@@ -1333,7 +1666,7 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                         onMouseUp={handleMouseUp}
                         onMouseLeave={handleMouseUp}
                         onContextMenu={(e) => {
-                            e.preventDefault(); // Prevent context menu, but allow right-click for panning
+                            e.preventDefault(); // Prevent context menu, right-click is used for creating rooms
                         }}
                     />
                 </div>
@@ -1357,6 +1690,38 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                     )}
 
                     <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                        <button 
+                            onClick={() => {
+                                const newRoomId = generateRoomId();
+                                if (selectedRoom) {
+                                    setNewRoomData({
+                                        roomId: newRoomId,
+                                        name: '',
+                                        description: '',
+                                        x: selectedRoom.x,
+                                        y: selectedRoom.y,
+                                        z: selectedRoom.z,
+                                        items: '',
+                                        enemies: ''
+                                    });
+                                } else {
+                                    setNewRoomData({
+                                        roomId: newRoomId,
+                                        name: '',
+                                        description: '',
+                                        x: 0,
+                                        y: 0,
+                                        z: 0,
+                                        items: '',
+                                        enemies: ''
+                                    });
+                                }
+                                setShowCreateRoom(true);
+                            }}
+                            style={{ padding: '10px 20px', cursor: 'pointer', background: '#4aff4a', color: '#000', border: 'none', borderRadius: '4px', fontWeight: 'bold' }}
+                        >
+                            ➕ Create New Room
+                        </button>
                         <button 
                             onClick={loadMapData}
                             style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
@@ -1393,6 +1758,227 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                 </div>
             </div>
 
+            {/* Create Room Modal */}
+            {showCreateRoom && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'rgba(0, 0, 0, 0.8)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 10000
+                }}>
+                    <div style={{
+                        background: '#1a1a2e',
+                        border: '2px solid #4a9eff',
+                        borderRadius: '8px',
+                        padding: '20px',
+                        width: '500px',
+                        maxWidth: '90vw',
+                        maxHeight: '90vh',
+                        overflowY: 'auto'
+                    }}>
+                        <h2 style={{ marginTop: 0, marginBottom: '20px', color: '#4a9eff' }}>Create New Room</h2>
+                        {rightClickWorldPos && (
+                            <div style={{ 
+                                marginBottom: '15px', 
+                                padding: '10px', 
+                                background: '#4a2a4a', 
+                                borderRadius: '4px',
+                                border: '1px solid #ff4aff'
+                            }}>
+                                <div style={{ fontSize: '12px', color: '#ff4aff', marginBottom: '5px' }}>
+                                    🖱️ Right-clicked at: ({rightClickWorldPos.x}, {rightClickWorldPos.y}, {rightClickWorldPos.z})
+                                </div>
+                            </div>
+                        )}
+                        <div style={{ 
+                            marginBottom: '15px', 
+                            padding: '10px', 
+                            background: '#2a4a2a', 
+                            borderRadius: '4px',
+                            border: '1px solid #4aff4a'
+                        }}>
+                            <div style={{ fontSize: '12px', color: '#4aff4a', marginBottom: '5px' }}>
+                                ✓ Room ID auto-generated
+                            </div>
+                            <div style={{ fontSize: '11px', color: '#aaa', fontFamily: 'monospace', wordBreak: 'break-all' }}>
+                                {newRoomData.roomId}
+                            </div>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>Room Name (required):</label>
+                                <input
+                                    type="text"
+                                    value={newRoomData.name}
+                                    onChange={(e) => setNewRoomData({ ...newRoomData, name: e.target.value })}
+                                    placeholder="e.g., New Location"
+                                    style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px' }}
+                                />
+                            </div>
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>Description:</label>
+                                <textarea
+                                    value={newRoomData.description}
+                                    onChange={(e) => setNewRoomData({ ...newRoomData, description: e.target.value })}
+                                    placeholder="Room description..."
+                                    rows={4}
+                                    style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px', fontFamily: 'monospace' }}
+                                />
+                            </div>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
+                                <div>
+                                    <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>X:</label>
+                                    <input
+                                        type="number"
+                                        value={newRoomData.x}
+                                        onChange={(e) => setNewRoomData({ ...newRoomData, x: parseInt(e.target.value) || 0 })}
+                                        style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px' }}
+                                    />
+                                </div>
+                                <div>
+                                    <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>Y:</label>
+                                    <input
+                                        type="number"
+                                        value={newRoomData.y}
+                                        onChange={(e) => setNewRoomData({ ...newRoomData, y: parseInt(e.target.value) || 0 })}
+                                        style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px' }}
+                                    />
+                                </div>
+                                <div>
+                                    <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>Z:</label>
+                                    <input
+                                        type="number"
+                                        value={newRoomData.z}
+                                        onChange={(e) => setNewRoomData({ ...newRoomData, z: parseInt(e.target.value) || 0 })}
+                                        style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px' }}
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>Items (comma-separated):</label>
+                                <input
+                                    type="text"
+                                    value={newRoomData.items}
+                                    onChange={(e) => setNewRoomData({ ...newRoomData, items: e.target.value })}
+                                    placeholder="e.g., item1, item2"
+                                    style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px' }}
+                                />
+                            </div>
+                            <div>
+                                <label style={{ display: 'block', marginBottom: '5px', color: '#aaa' }}>Enemies (comma-separated):</label>
+                                <input
+                                    type="text"
+                                    value={newRoomData.enemies}
+                                    onChange={(e) => setNewRoomData({ ...newRoomData, enemies: e.target.value })}
+                                    placeholder="e.g., enemy1, enemy2"
+                                    style={{ width: '100%', padding: '8px', background: '#111', color: '#fff', border: '1px solid #444', borderRadius: '4px' }}
+                                />
+                            </div>
+                            <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+                                <button
+                                    onClick={async () => {
+                                        if (!newRoomData.name || newRoomData.name.trim() === '') {
+                                            alert('Room Name is required!');
+                                            return;
+                                        }
+                                        
+                                        // Ensure room ID is generated if somehow missing
+                                        if (!newRoomData.roomId || newRoomData.roomId.trim() === '') {
+                                            setNewRoomData({ ...newRoomData, roomId: generateRoomId() });
+                                            // Wait a tick for state to update
+                                            await new Promise(resolve => setTimeout(resolve, 0));
+                                        }
+                                        
+                                        try {
+                                            const itemsArray = newRoomData.items ? newRoomData.items.split(',').map(i => i.trim()).filter(i => i) : [];
+                                            const enemiesArray = newRoomData.enemies ? newRoomData.enemies.split(',').map(e => e.trim()).filter(e => e) : [];
+                                            
+                                            const requestBody = {
+                                                roomId: newRoomData.roomId || generateRoomId(),
+                                                name: newRoomData.name.trim(),
+                                                description: newRoomData.description || `You are in ${newRoomData.name}.`,
+                                                x: parseInt(newRoomData.x) || 0,
+                                                y: parseInt(newRoomData.y) || 0,
+                                                z: parseInt(newRoomData.z) || 0,
+                                                items: itemsArray,
+                                                enemies: enemiesArray
+                                            };
+                                            
+                                            console.log('Creating room with data:', requestBody);
+                                            
+                                            const response = await fetch(`${API_BASE}/create-room`, {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify(requestBody)
+                                            });
+                                            
+                                            const data = await response.json();
+                                            if (data.success) {
+                                                const createdRoomName = newRoomData.name;
+                                                setShowCreateRoom(false);
+                                                setNewRoomData({ roomId: generateRoomId(), name: '', description: '', x: 0, y: 0, z: 0, items: '', enemies: '' });
+                                                setRightClickWorldPos(null);
+                                                await loadMapData();
+                                                // Find and center on the newly created room
+                                                const newRooms = await fetch(`${API_BASE}/data`).then(r => r.json());
+                                                if (newRooms.success) {
+                                                    const createdRoom = newRooms.rooms.find(r => r.id === requestBody.roomId);
+                                                    if (createdRoom) {
+                                                        centerOnRoom(createdRoom);
+                                                    }
+                                                }
+                                                alert(`Room "${createdRoomName}" created successfully!`);
+                                            } else {
+                                                alert(`Error: ${data.error || 'Unknown error'}`);
+                                            }
+                                        } catch (err) {
+                                            console.error('Error creating room:', err);
+                                            alert(`Error: ${err.message || 'Failed to create room'}`);
+                                        }
+                                    }}
+                                    style={{ 
+                                        flex: 1, 
+                                        padding: '10px', 
+                                        cursor: 'pointer', 
+                                        background: '#4aff4a', 
+                                        color: '#000', 
+                                        border: 'none', 
+                                        borderRadius: '4px',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    Create Room
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        setShowCreateRoom(false);
+                                        setNewRoomData({ roomId: generateRoomId(), name: '', description: '', x: 0, y: 0, z: 0, items: '', enemies: '' });
+                                        setRightClickWorldPos(null);
+                                    }}
+                                    style={{ 
+                                        flex: 1, 
+                                        padding: '10px', 
+                                        cursor: 'pointer', 
+                                        background: '#666', 
+                                        color: '#fff', 
+                                        border: 'none', 
+                                        borderRadius: '4px'
+                                    }}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Right side: Room info panel */}
             <div style={{ 
                 width: '400px',
@@ -1424,11 +2010,128 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                             <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '5px' }}>
                                 ({selectedRoom.id})
                             </div>
-                            <div style={{ fontSize: '12px', color: '#aaa' }}>
+                            <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '10px' }}>
                                 Coordinates: ({selectedRoom.x}, {selectedRoom.y}, {selectedRoom.z})
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                                <span style={{ fontSize: '12px', color: '#aaa' }}>Z Level:</span>
+                                <button
+                                    onClick={async () => {
+                                        try {
+                                            const response = await fetch(`${API_BASE}/change-z-level`, {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({ roomId: selectedRoom.id, deltaZ: -1 })
+                                            });
+                                            const data = await response.json();
+                                            if (data.success) {
+                                                await loadMapData();
+                                                const updatedRoom = rooms.find(r => r.id === selectedRoom.id);
+                                                if (updatedRoom) setSelectedRoom(updatedRoom);
+                                            } else {
+                                                alert(`Error: ${data.error}`);
+                                            }
+                                        } catch (err) {
+                                            alert(`Error: ${err.message}`);
+                                        }
+                                    }}
+                                    style={{ 
+                                        padding: '5px 10px', 
+                                        fontSize: '12px', 
+                                        cursor: 'pointer',
+                                        background: '#4a9eff',
+                                        color: '#fff',
+                                        border: 'none',
+                                        borderRadius: '3px'
+                                    }}
+                                >
+                                    ⬇️ Down
+                                </button>
+                                <button
+                                    onClick={async () => {
+                                        try {
+                                            const response = await fetch(`${API_BASE}/change-z-level`, {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({ roomId: selectedRoom.id, deltaZ: 1 })
+                                            });
+                                            const data = await response.json();
+                                            if (data.success) {
+                                                await loadMapData();
+                                                const updatedRoom = rooms.find(r => r.id === selectedRoom.id);
+                                                if (updatedRoom) setSelectedRoom(updatedRoom);
+                                            } else {
+                                                alert(`Error: ${data.error}`);
+                                            }
+                                        } catch (err) {
+                                            alert(`Error: ${err.message}`);
+                                        }
+                                    }}
+                                    style={{ 
+                                        padding: '5px 10px', 
+                                        fontSize: '12px', 
+                                        cursor: 'pointer',
+                                        background: '#4a9eff',
+                                        color: '#fff',
+                                        border: 'none',
+                                        borderRadius: '3px'
+                                    }}
+                                >
+                                    ⬆️ Up
+                                </button>
                             </div>
                             <div style={{ fontSize: '12px', color: '#aaa', marginTop: '5px' }}>
                                 Current Exits: {Object.keys(selectedRoom.exits || {}).join(', ') || 'none'}
+                            </div>
+                            <div style={{ marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #555' }}>
+                                <button
+                                    onClick={async () => {
+                                        if (!confirm(`Are you sure you want to delete "${selectedRoom.name}"?\n\nThis will:\n- Remove the room from the world\n- Remove all connections to/from this room\n\nThis action cannot be undone!`)) {
+                                            return;
+                                        }
+                                        
+                                        if (!confirm(`FINAL CONFIRMATION: Delete "${selectedRoom.name}"?\n\nType "DELETE" in the next prompt to confirm.`)) {
+                                            return;
+                                        }
+                                        
+                                        const confirmText = prompt(`Type "DELETE" to confirm deletion of "${selectedRoom.name}":`);
+                                        if (confirmText !== 'DELETE') {
+                                            alert('Deletion cancelled. You must type "DELETE" exactly to confirm.');
+                                            return;
+                                        }
+                                        
+                                        try {
+                                            const response = await fetch(`${API_BASE}/delete-room`, {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({ roomId: selectedRoom.id })
+                                            });
+                                            const data = await response.json();
+                                            if (data.success) {
+                                                setSelectedRoom(null);
+                                                await loadMapData();
+                                                alert(`Room "${selectedRoom.name}" deleted successfully.`);
+                                            } else {
+                                                alert(`Error: ${data.error}`);
+                                            }
+                                        } catch (err) {
+                                            alert(`Error: ${err.message}`);
+                                        }
+                                    }}
+                                    style={{ 
+                                        padding: '8px 16px', 
+                                        fontSize: '12px', 
+                                        cursor: 'pointer',
+                                        background: '#ff4444',
+                                        color: '#fff',
+                                        border: 'none',
+                                        borderRadius: '4px',
+                                        width: '100%',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    🗑️ Delete Room
+                                </button>
                             </div>
                         </div>
 

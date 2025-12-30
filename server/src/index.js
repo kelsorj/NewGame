@@ -83,6 +83,9 @@ app.post('/api/map/apply', mapEditor.applyChanges);
 app.post('/api/map/room-data', mapEditor.updateRoomData);
 app.post('/api/map/toggle-vertical', mapEditor.toggleVerticalConnection);
 app.get('/api/map/vertical-neighbors/:roomId', mapEditor.getVerticalNeighbors);
+app.post('/api/map/change-z-level', mapEditor.changeRoomZLevel);
+app.post('/api/map/create-room', mapEditor.createRoom);
+app.post('/api/map/delete-room', mapEditor.deleteRoom);
 
 // Initialize game systems
 console.log('Initializing Middle Earth Adventure Server...');

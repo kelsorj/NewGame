@@ -50,6 +50,30 @@ function loadExitConfigs() {
 }
 
 // Save coordinates and exits
+function loadRoomDefinitions() {
+    try {
+        const filePath = path.join(__dirname, '../../../scripts/linear-world-connections.json');
+        const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+        return data.roomDefinitions || {};
+    } catch (err) {
+        console.error('Error loading room definitions:', err);
+        return {};
+    }
+}
+
+function saveRoomDefinitions(roomDefinitions) {
+    try {
+        const filePath = path.join(__dirname, '../../../scripts/linear-world-connections.json');
+        const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+        data.roomDefinitions = roomDefinitions;
+        writeFileSync(filePath, JSON.stringify(data, null, 2));
+        return true;
+    } catch (err) {
+        console.error('Error saving room definitions:', err);
+        return false;
+    }
+}
+
 function saveCoordinatesAndExits(coordinates, exits, exitConfigs = null) {
     try {
         const coordData = JSON.parse(readFileSync(
@@ -790,6 +814,252 @@ export function applyChanges(req, res) {
         });
     } catch (err) {
         console.error('Error applying changes:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Change room Z level (move up or down)
+export function changeRoomZLevel(req, res) {
+    try {
+        const { roomId, deltaZ } = req.body;
+        
+        if (!roomId || typeof deltaZ !== 'number') {
+            return res.status(400).json({ success: false, error: 'Invalid parameters' });
+        }
+        
+        const coordinates = loadCoordinates();
+        if (!coordinates[roomId]) {
+            return res.status(404).json({ success: false, error: 'Room not found' });
+        }
+        
+        const currentCoord = coordinates[roomId];
+        const newZ = currentCoord.z + deltaZ;
+        
+        // Check for overlaps at new Z level
+        for (const [id, coord] of Object.entries(coordinates)) {
+            if (id !== roomId && coord.x === currentCoord.x && coord.y === currentCoord.y && coord.z === newZ) {
+                return res.status(400).json({
+                    success: false,
+                    error: `Overlap detected with room: ${id} at Z=${newZ}`
+                });
+            }
+        }
+        
+        // Update Z coordinate
+        coordinates[roomId] = { ...currentCoord, z: newZ };
+        
+        // Clean up exits that are no longer adjacent (vertical connections are preserved)
+        const exits = loadExits();
+        const roomExits = exits[roomId] || {};
+        const updatedExits = {};
+        
+        for (const [dir, targetId] of Object.entries(roomExits)) {
+            if (!coordinates[targetId]) continue;
+            
+            const targetCoord = coordinates[targetId];
+            const dx = Math.abs(targetCoord.x - currentCoord.x);
+            const dy = Math.abs(targetCoord.y - currentCoord.y);
+            const dz = Math.abs(targetCoord.z - newZ);
+            
+            // Keep if still adjacent (horizontal or vertical)
+            const isAdjacent = 
+                (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
+                (dz === 1 && dx === 0 && dy === 0);
+            
+            if (isAdjacent) {
+                updatedExits[dir] = targetId;
+            } else {
+                // Remove connection from other room too
+                if (exits[targetId]) {
+                    for (const [targetDir, targetTargetId] of Object.entries(exits[targetId])) {
+                        if (targetTargetId === roomId) {
+                            delete exits[targetId][targetDir];
+                        }
+                    }
+                }
+            }
+        }
+        
+        exits[roomId] = updatedExits;
+        
+        if (saveCoordinatesAndExits(coordinates, exits)) {
+            res.json({ 
+                success: true, 
+                roomId, 
+                coordinates: coordinates[roomId],
+                exits: exits[roomId]
+            });
+        } else {
+            res.status(500).json({ success: false, error: 'Failed to save' });
+        }
+    } catch (err) {
+        console.error('Error changing Z level:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Create a new room
+export function createRoom(req, res) {
+    try {
+        const { roomId, name, description, x, y, z, items, enemies } = req.body;
+        
+        console.log('createRoom called with:', { roomId, name, x, y, z });
+        
+        if (!roomId) {
+            return res.status(400).json({ success: false, error: 'Room ID is required' });
+        }
+        
+        if (!name || name.trim() === '') {
+            return res.status(400).json({ success: false, error: 'Room name is required' });
+        }
+        
+        // Check if room already exists
+        if (rooms[roomId]) {
+            return res.status(400).json({ success: false, error: `Room with ID "${roomId}" already exists` });
+        }
+        
+        const coordinates = loadCoordinates();
+        
+        // Check for overlaps
+        const coordX = x !== undefined ? x : 0;
+        const coordY = y !== undefined ? y : 0;
+        const coordZ = z !== undefined ? z : 0;
+        
+        for (const [id, coord] of Object.entries(coordinates)) {
+            if (coord.x === coordX && coord.y === coordY && coord.z === coordZ) {
+                return res.status(400).json({
+                    success: false,
+                    error: `Overlap detected with room: ${id} at (${coordX}, ${coordY}, ${coordZ})`
+                });
+            }
+        }
+        
+        // Create room in rooms object (in-memory)
+        const newRoom = {
+            name: name,
+            description: description || `You are in ${name}.`,
+            exits: {},
+            items: items || [],
+            enemies: enemies || []
+        };
+        rooms[roomId] = newRoom;
+        
+        // Save room definition to JSON file
+        try {
+            const roomDefinitions = loadRoomDefinitions();
+            roomDefinitions[roomId] = newRoom;
+            if (!saveRoomDefinitions(roomDefinitions)) {
+                delete rooms[roomId];
+                return res.status(500).json({ success: false, error: 'Failed to save room definition to JSON file' });
+            }
+        } catch (err) {
+            console.error('Error saving room definition:', err);
+            delete rooms[roomId];
+            return res.status(500).json({ success: false, error: `Failed to save room definition: ${err.message}` });
+        }
+        
+        // Add coordinates
+        coordinates[roomId] = { x: coordX, y: coordY, z: coordZ };
+        
+        // Initialize exits
+        const exits = loadExits();
+        exits[roomId] = {};
+        
+        if (saveCoordinatesAndExits(coordinates, exits)) {
+            res.json({ 
+                success: true, 
+                roomId,
+                room: rooms[roomId],
+                coordinates: coordinates[roomId]
+            });
+        } else {
+            // Rollback
+            delete rooms[roomId];
+            res.status(500).json({ success: false, error: 'Failed to save' });
+        }
+    } catch (err) {
+        console.error('Error creating room:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Delete a room
+export function deleteRoom(req, res) {
+    try {
+        const { roomId } = req.body;
+        
+        if (!roomId) {
+            return res.status(400).json({ success: false, error: 'Room ID required' });
+        }
+        
+        if (!rooms[roomId]) {
+            return res.status(404).json({ success: false, error: 'Room not found' });
+        }
+        
+        // Prevent deletion of starting room
+        if (roomId === 'bag_end') {
+            return res.status(400).json({ success: false, error: 'Cannot delete the starting room (bag_end)' });
+        }
+        
+        const coordinates = loadCoordinates();
+        const exits = loadExits();
+        const exitConfigs = loadExitConfigs();
+        
+        // Remove from coordinates
+        delete coordinates[roomId];
+        
+        // Remove all exits pointing to this room
+        for (const [otherRoomId, otherExits] of Object.entries(exits)) {
+            if (otherRoomId === roomId) {
+                delete exits[otherRoomId];
+            } else {
+                const updatedExits = {};
+                for (const [dir, targetId] of Object.entries(otherExits)) {
+                    if (targetId !== roomId) {
+                        updatedExits[dir] = targetId;
+                    }
+                }
+                exits[otherRoomId] = updatedExits;
+            }
+        }
+        
+        // Remove exit configs
+        delete exitConfigs[roomId];
+        for (const [otherRoomId, configs] of Object.entries(exitConfigs)) {
+            const updatedConfigs = {};
+            for (const [dir, config] of Object.entries(configs)) {
+                // Check if this exit points to the deleted room
+                const targetId = exits[otherRoomId]?.[dir];
+                if (targetId !== roomId) {
+                    updatedConfigs[dir] = config;
+                }
+            }
+            if (Object.keys(updatedConfigs).length === 0) {
+                delete exitConfigs[otherRoomId];
+            } else {
+                exitConfigs[otherRoomId] = updatedConfigs;
+            }
+        }
+        
+        // Remove from rooms (in-memory)
+        delete rooms[roomId];
+        
+        // Remove from room definitions in JSON
+        const roomDefinitions = loadRoomDefinitions();
+        delete roomDefinitions[roomId];
+        saveRoomDefinitions(roomDefinitions);
+        
+        if (saveCoordinatesAndExits(coordinates, exits, exitConfigs)) {
+            res.json({ 
+                success: true, 
+                roomId,
+                message: 'Room deleted successfully'
+            });
+        } else {
+            res.status(500).json({ success: false, error: 'Failed to save' });
+        }
+    } catch (err) {
+        console.error('Error deleting room:', err);
         res.status(500).json({ success: false, error: err.message });
     }
 }

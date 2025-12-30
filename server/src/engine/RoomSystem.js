@@ -8,6 +8,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load exits and exit configurations from JSON file
+function loadDynamicRooms() {
+  try {
+    const filePath = path.join(__dirname, '../../../scripts/linear-world-connections.json');
+    const data = JSON.parse(readFileSync(filePath, 'utf-8'));
+    return data.roomDefinitions || {};
+  } catch (err) {
+    console.error('Error loading dynamic rooms:', err);
+    return {};
+  }
+}
+
 function loadExitsFromJSON() {
   try {
     const coordData = JSON.parse(readFileSync(
@@ -29,6 +40,11 @@ export class RoomSystem {
     this.rooms = rooms;
     // Load exits and exitConfig from JSON file and merge into rooms
     const { exits, exitConfigs } = loadExitsFromJSON();
+    
+    // Load dynamically created rooms from JSON file
+    const dynamicRooms = loadDynamicRooms();
+    // Merge dynamic rooms into this.rooms (dynamic rooms take precedence)
+    Object.assign(this.rooms, dynamicRooms);
     
     // Merge exits from JSON file (JSON takes precedence over hardcoded exits)
     // If a room has exits in JSON, use those. Otherwise, keep the hardcoded exits.
@@ -52,6 +68,19 @@ export class RoomSystem {
   }
 
   getRoom(roomId) {
+    // If room doesn't exist, try reloading dynamic rooms (in case it was just created)
+    if (!this.rooms[roomId]) {
+      const dynamicRooms = loadDynamicRooms();
+      if (dynamicRooms[roomId]) {
+        // Merge this new room into our rooms object
+        this.rooms[roomId] = dynamicRooms[roomId];
+        // Also load exits for this room
+        const { exits } = loadExitsFromJSON();
+        if (exits[roomId] && Object.keys(exits[roomId]).length > 0) {
+          this.rooms[roomId].exits = exits[roomId];
+        }
+      }
+    }
     return this.rooms[roomId];
   }
 
