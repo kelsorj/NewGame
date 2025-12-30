@@ -35,8 +35,22 @@ function loadExits() {
     }
 }
 
+// Load exit configurations (locked/hidden exits with keys)
+function loadExitConfigs() {
+    try {
+        const coordData = JSON.parse(readFileSync(
+            path.join(__dirname, '../../../scripts/linear-world-connections.json'),
+            'utf8'
+        ));
+        return coordData.exitConfigs || {};
+    } catch (err) {
+        console.error('Error loading exit configs:', err);
+        return {};
+    }
+}
+
 // Save coordinates and exits
-function saveCoordinatesAndExits(coordinates, exits) {
+function saveCoordinatesAndExits(coordinates, exits, exitConfigs = null) {
     try {
         const coordData = JSON.parse(readFileSync(
             path.join(__dirname, '../../../scripts/linear-world-connections.json'),
@@ -45,6 +59,9 @@ function saveCoordinatesAndExits(coordinates, exits) {
         
         coordData.coordinates = coordinates;
         coordData.exits = exits; // Use 'exits' instead of 'newExits' for consistency
+        if (exitConfigs !== null) {
+            coordData.exitConfigs = exitConfigs;
+        }
         
         writeFileSync(
             path.join(__dirname, '../../../scripts/linear-world-connections.json'),
@@ -63,11 +80,14 @@ export function getMapData(req, res) {
     try {
         const coordinates = loadCoordinates();
         const exits = loadExits();
+        const exitConfigs = loadExitConfigs();
         
         const mapData = Object.keys(rooms).map(roomId => {
             const room = rooms[roomId];
             const coord = coordinates[roomId] || { x: 0, y: 0, z: 0 };
             const roomExits = exits[roomId] || {};
+            // Merge exitConfig from JSON file with room data (room data takes precedence)
+            const roomExitConfig = { ...exitConfigs[roomId], ...(room.exitConfig || {}) };
             
             return {
                 id: roomId,
@@ -77,6 +97,7 @@ export function getMapData(req, res) {
                 y: coord.y,
                 z: coord.z,
                 exits: roomExits,
+                exitConfig: roomExitConfig,
                 items: room.items || [],
                 enemies: room.enemies || []
             };
@@ -225,6 +246,7 @@ export function updateRoomCoordinates(req, res) {
         }
         
         // Auto-create exits to adjacent rooms that don't have connections yet
+        // Connections are enabled by default, but can be manually disabled via the UI
         for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
             if (otherRoomId === roomId) continue;
             
@@ -360,6 +382,7 @@ export function updateRoomCoordinates(req, res) {
             }
             
             // Auto-create missing adjacent connections for this connected room
+            // Connections are enabled by default, but can be manually disabled via the UI
             for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
                 if (otherRoomId === connectedRoomId) continue;
                 
@@ -438,6 +461,45 @@ export function updateRoomExits(req, res) {
         }
     } catch (err) {
         console.error('Error updating exits:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Update exit configuration (locked/hidden exits with keys)
+export function updateExitConfig(req, res) {
+    try {
+        const { roomId, direction, config } = req.body;
+        
+        if (!roomId || !direction) {
+            return res.status(400).json({ success: false, error: 'Room ID and direction required' });
+        }
+        
+        if (!rooms[roomId]) {
+            return res.status(404).json({ success: false, error: 'Room not found' });
+        }
+        
+        const exitConfigs = loadExitConfigs();
+        if (!exitConfigs[roomId]) {
+            exitConfigs[roomId] = {};
+        }
+        
+        if (config === null || (config && Object.keys(config).length === 0)) {
+            // Remove config if null or empty
+            delete exitConfigs[roomId][direction];
+            if (Object.keys(exitConfigs[roomId]).length === 0) {
+                delete exitConfigs[roomId];
+            }
+        } else {
+            exitConfigs[roomId][direction] = config;
+        }
+        
+        if (saveCoordinatesAndExits(loadCoordinates(), loadExits(), exitConfigs)) {
+            res.json({ success: true, roomId, direction, config: exitConfigs[roomId]?.[direction] || null });
+        } else {
+            res.status(500).json({ success: false, error: 'Failed to save' });
+        }
+    } catch (err) {
+        console.error('Error updating exit config:', err);
         res.status(500).json({ success: false, error: err.message });
     }
 }
@@ -697,57 +759,16 @@ export function cleanupExits(req, res) {
             exits[roomId] = updatedExits;
         }
         
-        // Second pass: create missing connections between adjacent rooms
-        for (const [roomId, roomCoord] of Object.entries(coordinates)) {
-            if (!exits[roomId]) exits[roomId] = {};
-            
-            for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
-                if (otherRoomId === roomId) continue;
-                
-                const dx = Math.abs(otherCoord.x - roomCoord.x);
-                const dy = Math.abs(otherCoord.y - roomCoord.y);
-                const dz = Math.abs(otherCoord.z - roomCoord.z);
-                
-                // Check if adjacent
-                const isAdjacent = 
-                    (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
-                    (dz === 1 && dx === 0 && dy === 0);
-                
-                if (isAdjacent) {
-                    // Check if connection already exists
-                    const hasConnection = Object.values(exits[roomId]).includes(otherRoomId);
-                    
-                    if (!hasConnection) {
-                        // Create bidirectional connection
-                        const dir = calculateDirection(roomCoord, otherCoord);
-                        if (dir) {
-                            exits[roomId][dir] = otherRoomId;
-                            addedCount++;
-                            
-                            // Create reverse connection
-                            if (!exits[otherRoomId]) exits[otherRoomId] = {};
-                            const oppositeDir = getOppositeDirection(dir);
-                            if (oppositeDir) {
-                                // Remove any existing connection from otherRoomId to roomId
-                                for (const [existingDir, existingTarget] of Object.entries(exits[otherRoomId])) {
-                                    if (existingTarget === roomId) {
-                                        delete exits[otherRoomId][existingDir];
-                                    }
-                                }
-                                exits[otherRoomId][oppositeDir] = roomId;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // Second pass: AUTO-CONNECTION DISABLED - connections must be manually created
+        // This allows for dead-end rooms and manual control over connections
+        // The cleanup function now only removes non-adjacent exits, it does not create new connections
         
         if (saveCoordinatesAndExits(coordinates, exits)) {
             res.json({
                 success: true,
-                message: `Cleaned up ${removedCount} non-adjacent exits, added ${addedCount} missing adjacent connections`,
+                message: `Cleaned up ${removedCount} non-adjacent exits`,
                 removedCount,
-                addedCount
+                addedCount: 0 // No longer auto-creating connections
             });
         } else {
             res.status(500).json({ success: false, error: 'Failed to save' });

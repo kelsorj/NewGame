@@ -34,7 +34,7 @@ function project3D(x, y, z, camera) {
     };
 }
 
-export const MapEditor3DCanvas = () => {
+export const MapEditor3DCanvas = ({ onBackToGame }) => {
     const [rooms, setRooms] = useState([]);
     const [selectedRoom, setSelectedRoom] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -62,6 +62,10 @@ export const MapEditor3DCanvas = () => {
     const [editDescription, setEditDescription] = useState('');
     const [editItems, setEditItems] = useState('');
     const [verticalNeighbors, setVerticalNeighbors] = useState([]);
+    const [adjacentRooms, setAdjacentRooms] = useState([]);
+    const [visibleLevels, setVisibleLevels] = useState(new Set()); // Will be initialized with all levels
+    const levelsInitializedRef = useRef(false); // Track if we've initialized visible levels
+    const lastLevelsRef = useRef(''); // Track last levels string to detect actual changes
 
     // Load map data
     useEffect(() => {
@@ -77,6 +81,49 @@ export const MapEditor3DCanvas = () => {
             setVerticalNeighbors([]);
         }
     }, [selectedRoom]);
+
+    // Find adjacent rooms automatically when room is selected
+    useEffect(() => {
+        if (selectedRoom && rooms.length > 0) {
+            const adjacent = [];
+            const roomCoord = { x: selectedRoom.x, y: selectedRoom.y, z: selectedRoom.z };
+            
+            rooms.forEach(otherRoom => {
+                if (otherRoom.id === selectedRoom.id) return;
+                
+                const dx = Math.abs(otherRoom.x - roomCoord.x);
+                const dy = Math.abs(otherRoom.y - roomCoord.y);
+                const dz = Math.abs(otherRoom.z - roomCoord.z);
+                
+                // Check if adjacent (same level: dx<=1, dy<=1, or vertical: dz===1, dx===0, dy===0)
+                const isAdjacent = 
+                    (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
+                    (dz === 1 && dx === 0 && dy === 0);
+                
+                if (isAdjacent) {
+                    let dir = null;
+                    if (dz === 1) dir = 'up';
+                    else if (dz === -1) dir = 'down';
+                    else if (otherRoom.x > roomCoord.x && otherRoom.y === roomCoord.y) dir = 'east';
+                    else if (otherRoom.x < roomCoord.x && otherRoom.y === roomCoord.y) dir = 'west';
+                    else if (otherRoom.x === roomCoord.x && otherRoom.y > roomCoord.y) dir = 'north';
+                    else if (otherRoom.x === roomCoord.x && otherRoom.y < roomCoord.y) dir = 'south';
+                    else if (otherRoom.x > roomCoord.x && otherRoom.y > roomCoord.y) dir = 'northeast';
+                    else if (otherRoom.x < roomCoord.x && otherRoom.y > roomCoord.y) dir = 'northwest';
+                    else if (otherRoom.x > roomCoord.x && otherRoom.y < roomCoord.y) dir = 'southeast';
+                    else if (otherRoom.x < roomCoord.x && otherRoom.y < roomCoord.y) dir = 'southwest';
+                    
+                    if (dir) {
+                        adjacent.push({ room: otherRoom, direction: dir });
+                    }
+                }
+            });
+            
+            setAdjacentRooms(adjacent);
+        } else {
+            setAdjacentRooms([]);
+        }
+    }, [selectedRoom, rooms]);
 
     const loadMapData = async () => {
         try {
@@ -149,6 +196,35 @@ export const MapEditor3DCanvas = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ roomId, description, items })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                await loadMapData();
+                // Update selected room if it's the one we edited
+                if (selectedRoom?.id === roomId) {
+                    const updatedRoom = rooms.find(r => r.id === roomId);
+                    if (updatedRoom) {
+                        setSelectedRoom(updatedRoom);
+                    }
+                }
+                return true;
+            } else {
+                alert(`Error: ${data.error}`);
+                return false;
+            }
+        } catch (err) {
+            alert(`Error: ${err.message}`);
+            return false;
+        }
+    };
+
+    const updateExitConfig = async (roomId, direction, config) => {
+        try {
+            const response = await fetch(`${API_BASE}/exit-config`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ roomId, direction, config })
             });
 
             const data = await response.json();
@@ -252,6 +328,45 @@ export const MapEditor3DCanvas = () => {
     const levels = useMemo(() => {
         return Object.keys(roomsByLevel).map(Number).sort((a, b) => a - b);
     }, [roomsByLevel]);
+
+    // Initialize visible levels when levels change (all visible by default)
+    // Only initialize once, then only add new levels that appear
+    useEffect(() => {
+        if (levels.length > 0) {
+            // Create a stable string representation of levels to detect actual content changes
+            const levelsKey = levels.sort((a, b) => a - b).join(',');
+            
+            // Only update if the actual level values have changed (not just array reference)
+            if (levelsKey === lastLevelsRef.current) {
+                return; // Levels haven't actually changed, don't update visibility
+            }
+            
+            lastLevelsRef.current = levelsKey;
+            
+            setVisibleLevels(prev => {
+                // If not yet initialized, initialize with all levels
+                if (!levelsInitializedRef.current && prev.size === 0) {
+                    levelsInitializedRef.current = true;
+                    return new Set(levels);
+                }
+                // Otherwise, only add any new levels that appear (preserve existing visibility state)
+                const newVisible = new Set(prev);
+                let changed = false;
+                levels.forEach(level => {
+                    if (!newVisible.has(level)) {
+                        newVisible.add(level);
+                        changed = true;
+                    }
+                });
+                return changed ? newVisible : prev;
+            });
+        }
+    }, [levels]);
+
+    // Filter levels based on visibility
+    const visibleLevelsArray = useMemo(() => {
+        return levels.filter(level => visibleLevels.has(level));
+    }, [levels, visibleLevels]);
 
     // Update room coordinates
     const updateRoomCoordinates = async (roomId, x, y, z) => {
@@ -390,9 +505,12 @@ export const MapEditor3DCanvas = () => {
             
             // Rendering canvas
 
-        // Draw rooms
+        // Draw rooms (only from visible levels)
         const roomProjections = [];
         rooms.forEach(room => {
+            // Only render rooms from visible levels
+            if (!visibleLevels.has(room.z)) return;
+            
             const z = room.z * levelSpacing;
             const proj = project3D(
                 (room.x - centerX) * cellSize + camera.panX,
@@ -411,7 +529,7 @@ export const MapEditor3DCanvas = () => {
         roomProjections.sort((a, b) => b.proj.z - a.proj.z);
 
         // Draw grid background for each level (simplified - just draw corners)
-        levels.forEach((level) => {
+        visibleLevelsArray.forEach((level) => {
             const z = level * levelSpacing;
             const levelColor = level < 0 ? 'rgba(74, 0, 74, 0.1)' : level > 0 ? 'rgba(74, 74, 0, 0.1)' : 'rgba(22, 33, 62, 0.1)';
             
@@ -558,32 +676,7 @@ export const MapEditor3DCanvas = () => {
             }
         });
 
-        // Draw level labels
-        levels.forEach((level) => {
-            const z = level * levelSpacing;
-            const proj = project3D(
-                0,
-                (globalBounds.maxY - centerY + 3) * cellSize,
-                z,
-                { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
-            );
-            
-            if (proj.z > -10000) {
-                let levelName;
-                if (level === 0) {
-                    levelName = 'Ground';
-                } else if (level > 0) {
-                    // For Minas Tirith and other structures, show level number
-                    levelName = level <= 7 ? `Level +${level}` : `Mountain +${level}`;
-                } else {
-                    levelName = `Underground ${level}`;
-                }
-                ctx.fillStyle = '#fff';
-                ctx.font = 'bold 14px Arial';
-                ctx.textAlign = 'left';
-                ctx.fillText(`${levelName} (Z=${level}) - ${roomsByLevel[level]?.length || 0} rooms`, proj.x, proj.y);
-            }
-        });
+        // Level labels removed - now controlled by GUI toggle panel
 
         // Draw compass directions (N/S/E/W) - projected in 3D space so they rotate with the world
         // Position them at the edges of the visible world
@@ -669,7 +762,7 @@ export const MapEditor3DCanvas = () => {
                 cancelAnimationFrame(animationFrameId);
             }
         };
-    }, [rooms, globalBounds, levels, roomsByLevel, camera, selectedRoom, draggedRoom, overlaps, dragOffset, hoveredRoom]);
+    }, [rooms, globalBounds, levels, roomsByLevel, camera, selectedRoom, draggedRoom, overlaps, dragOffset, hoveredRoom, visibleLevels, visibleLevelsArray]);
 
     // Find room at mouse position
     const findRoomAtPosition = (mouseX, mouseY, canvas, globalBounds, levels, rooms, camera) => {
@@ -1015,22 +1108,43 @@ export const MapEditor3DCanvas = () => {
             bottom: 0,
             margin: 0,
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'row'
         }}>
+            {/* Left side: Canvas area */}
             <div style={{ 
-                flexShrink: 0,
-                position: 'sticky', 
-                top: 0, 
-                background: '#0f0f1e', 
-                zIndex: 100, 
-                padding: '15px', 
-                width: '100%', 
-                boxSizing: 'border-box',
-                maxHeight: '40vh',
-                overflowY: 'auto'
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                minWidth: 0,
+                overflow: 'hidden'
             }}>
-                <h1 style={{ margin: '0 0 15px 0', fontSize: '24px' }}>🗺️ World Map Editor - 3D Canvas View</h1>
+                {/* Top header with controls */}
+                <div style={{ 
+                    flexShrink: 0,
+                    background: '#0f0f1e', 
+                    zIndex: 100, 
+                    padding: '15px', 
+                    boxSizing: 'border-box',
+                    borderBottom: '2px solid #16213e'
+                }}>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '15px', flexWrap: 'wrap' }}>
+                    {onBackToGame && (
+                        <button 
+                            onClick={onBackToGame}
+                            style={{ 
+                                padding: '8px 16px', 
+                                cursor: 'pointer', 
+                                background: '#4a9eff',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                fontSize: '14px',
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            ← Back to Game
+                        </button>
+                    )}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                         <label style={{ whiteSpace: 'nowrap' }}>View Angle X: </label>
                         <input
@@ -1074,24 +1188,479 @@ export const MapEditor3DCanvas = () => {
                         </span>
                     )}
                 </div>
-                {selectedRoom && (
+                
+                {/* Level Visibility Toggle Panel */}
+                <div style={{ 
+                    background: '#222', 
+                    padding: '15px', 
+                    borderRadius: '5px',
+                    marginBottom: '15px',
+                    border: '2px solid #4a9eff'
+                }}>
                     <div style={{ 
-                        background: '#333', 
-                        padding: '15px', 
-                        borderRadius: '5px',
-                        marginBottom: '10px',
-                        fontSize: '14px',
-                        maxHeight: '70vh',
-                        overflowY: 'auto',
-                        overflowX: 'hidden'
+                        display: 'flex', 
+                        justifyContent: 'space-between', 
+                        alignItems: 'center',
+                        marginBottom: '10px'
                     }}>
-                        <div style={{ marginBottom: '10px' }}>
-                            <strong>{selectedRoom.name}</strong> ({selectedRoom.id})
-                            <br />
-                            Coordinates: ({selectedRoom.x}, {selectedRoom.y}, {selectedRoom.z})
-                            <br />
-                            Exits: {Object.keys(selectedRoom.exits || {}).join(', ') || 'none'}
+                        <strong style={{ color: '#4a9eff', fontSize: '16px' }}>Level Visibility:</strong>
+                        <div style={{ display: 'flex', gap: '10px' }}>
+                            <button
+                                onClick={() => setVisibleLevels(new Set(levels))}
+                                style={{ 
+                                    padding: '5px 10px', 
+                                    fontSize: '12px', 
+                                    cursor: 'pointer', 
+                                    background: '#4a9eff', 
+                                    color: '#fff', 
+                                    border: 'none', 
+                                    borderRadius: '3px' 
+                                }}
+                            >
+                                Show All
+                            </button>
+                            <button
+                                onClick={() => setVisibleLevels(new Set())}
+                                style={{ 
+                                    padding: '5px 10px', 
+                                    fontSize: '12px', 
+                                    cursor: 'pointer', 
+                                    background: '#666', 
+                                    color: '#fff', 
+                                    border: 'none', 
+                                    borderRadius: '3px' 
+                                }}
+                            >
+                                Hide All
+                            </button>
                         </div>
+                    </div>
+                    <div style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', 
+                        gap: '8px',
+                        maxHeight: '200px',
+                        overflowY: 'auto',
+                        padding: '5px'
+                    }}>
+                        {levels.map((level) => {
+                            const isVisible = visibleLevels.has(level);
+                            let levelName;
+                            if (level === 0) {
+                                levelName = 'Ground';
+                            } else if (level > 0) {
+                                levelName = level <= 7 ? `Level +${level}` : `Mountain +${level}`;
+                            } else {
+                                levelName = `Underground ${level}`;
+                            }
+                            const roomCount = roomsByLevel[level]?.length || 0;
+                            
+                            return (
+                                <label
+                                    key={level}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '8px',
+                                        padding: '8px',
+                                        background: isVisible ? '#2a4a2a' : '#4a2a2a',
+                                        borderRadius: '4px',
+                                        cursor: 'pointer',
+                                        border: `2px solid ${isVisible ? '#4aff4a' : '#666'}`,
+                                        userSelect: 'none'
+                                    }}
+                                >
+                                    <input
+                                        type="checkbox"
+                                        checked={isVisible}
+                                        onChange={(e) => {
+                                            const newVisible = new Set(visibleLevels);
+                                            if (e.target.checked) {
+                                                newVisible.add(level);
+                                            } else {
+                                                newVisible.delete(level);
+                                            }
+                                            setVisibleLevels(newVisible);
+                                        }}
+                                        style={{
+                                            width: '18px',
+                                            height: '18px',
+                                            cursor: 'pointer',
+                                            accentColor: '#4a9eff',
+                                            flexShrink: 0
+                                        }}
+                                    />
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{ 
+                                            fontWeight: 'bold', 
+                                            color: isVisible ? '#4aff4a' : '#aaa',
+                                            fontSize: '13px'
+                                        }}>
+                                            {levelName}
+                                        </div>
+                                        <div style={{ 
+                                            fontSize: '11px', 
+                                            color: '#888' 
+                                        }}>
+                                            Z={level} • {roomCount} rooms
+                                        </div>
+                                    </div>
+                                </label>
+                            );
+                        })}
+                    </div>
+                </div>
+                
+                </div>
+                
+                {/* Canvas */}
+                <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', padding: '20px' }}>
+                    <canvas
+                        ref={canvasRef}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            minHeight: '400px',
+                            background: '#0a0a1a',
+                            border: '2px solid #16213e',
+                            borderRadius: '5px',
+                            cursor: isDragging ? 'grabbing' : 'grab',
+                            display: 'block',
+                            boxSizing: 'border-box'
+                        }}
+                        onMouseDown={handleMouseDown}
+                        onMouseMove={handleMouseMove}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseUp}
+                        onContextMenu={(e) => {
+                            e.preventDefault(); // Prevent context menu, but allow right-click for panning
+                        }}
+                    />
+                </div>
+
+                {/* Bottom action buttons */}
+                <div style={{ 
+                    flexShrink: 0,
+                    padding: '15px',
+                    background: '#0f0f1e',
+                    borderTop: '2px solid #16213e'
+                }}>
+                    {overlaps.length > 0 && (
+                        <div style={{ marginBottom: '15px', background: '#ff4444', padding: '10px', borderRadius: '5px' }}>
+                            <strong>Overlaps Detected:</strong>
+                            {overlaps.map((ov, idx) => (
+                                <div key={idx} style={{ marginTop: '5px' }}>
+                                    <strong>{ov.coordinate}:</strong> {ov.rooms.map(r => r.name || r.id).join(', ')}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                        <button 
+                            onClick={loadMapData}
+                            style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
+                        >
+                            Refresh
+                        </button>
+                        <button 
+                            onClick={loadOverlaps}
+                            style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
+                        >
+                            Check Overlaps
+                        </button>
+                        <button 
+                            onClick={async () => {
+                                try {
+                                    const response = await fetch(`${API_BASE}/cleanup`, { method: 'POST' });
+                                    const data = await response.json();
+                                    if (data.success) {
+                                        alert(`Cleaned up ${data.removedCount} non-adjacent exits, added ${data.addedCount} missing connections`);
+                                        await loadMapData();
+                                        loadOverlaps();
+                                    } else {
+                                        alert(`Error: ${data.error}`);
+                                    }
+                                } catch (err) {
+                                    alert(`Error: ${err.message}`);
+                                }
+                            }}
+                            style={{ padding: '10px 20px', cursor: 'pointer', background: '#ff6b6b', color: '#fff', border: 'none', borderRadius: '4px' }}
+                        >
+                            Cleanup Non-Adjacent Exits
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Right side: Room info panel */}
+            <div style={{ 
+                width: '400px',
+                flexShrink: 0,
+                background: '#0f0f1e',
+                borderLeft: '2px solid #16213e',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+                height: '100vh',
+                position: 'relative',
+                boxSizing: 'border-box'
+            }}>
+                {selectedRoom ? (
+                    <div style={{ 
+                        padding: '15px', 
+                        paddingTop: '15px',
+                        fontSize: '14px',
+                        flex: 1,
+                        overflowY: 'auto',
+                        overflowX: 'visible',
+                        minHeight: 0,
+                        boxSizing: 'border-box'
+                    }}>
+                        <div style={{ marginBottom: '15px', padding: '10px', background: '#333', borderRadius: '4px' }}>
+                            <div style={{ marginBottom: '5px' }}>
+                                <strong style={{ fontSize: '16px' }}>{selectedRoom.name}</strong>
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#aaa', marginBottom: '5px' }}>
+                                ({selectedRoom.id})
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#aaa' }}>
+                                Coordinates: ({selectedRoom.x}, {selectedRoom.y}, {selectedRoom.z})
+                            </div>
+                            <div style={{ fontSize: '12px', color: '#aaa', marginTop: '5px' }}>
+                                Current Exits: {Object.keys(selectedRoom.exits || {}).join(', ') || 'none'}
+                            </div>
+                        </div>
+
+                        {/* Adjacent Rooms - Connect/Disconnect */}
+                        <div style={{ 
+                            marginBottom: '15px', 
+                            padding: '10px', 
+                            background: '#222', 
+                            borderRadius: '4px',
+                            border: '2px solid #ff9f40'
+                        }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                                <strong style={{ color: '#ff9f40', fontSize: '14px' }}>Adjacent Rooms:</strong>
+                            </div>
+                            {adjacentRooms.length > 0 ? (
+                                <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
+                                    {adjacentRooms.map((adj, idx) => {
+                                        const hasConnection = selectedRoom.exits?.[adj.direction] === adj.room.id;
+                                        return (
+                                            <div key={idx} style={{ 
+                                                display: 'flex', 
+                                                justifyContent: 'space-between', 
+                                                alignItems: 'center',
+                                                padding: '8px',
+                                                marginBottom: '5px',
+                                                background: hasConnection ? '#2a4a2a' : '#4a2a2a',
+                                                borderRadius: '4px',
+                                                border: `1px solid ${hasConnection ? '#4aff4a' : '#666'}`
+                                            }}>
+                                                <div style={{ flex: 1 }}>
+                                                    <div style={{ fontWeight: 'bold', fontSize: '13px' }}>
+                                                        {adj.direction.toUpperCase()}: {adj.room.name}
+                                                    </div>
+                                                    <div style={{ fontSize: '11px', color: '#aaa' }}>
+                                                        ({adj.room.x}, {adj.room.y}, {adj.room.z})
+                                                    </div>
+                                                </div>
+                                                <label style={{ 
+                                                    display: 'flex', 
+                                                    alignItems: 'center', 
+                                                    gap: '5px', 
+                                                    cursor: 'pointer'
+                                                }}>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={hasConnection}
+                                                        onChange={async (e) => {
+                                                            const enabled = e.target.checked;
+                                                            try {
+                                                                // Get opposite direction for bidirectional connection
+                                                                const oppositeDirs = {
+                                                                    'north': 'south', 'south': 'north',
+                                                                    'east': 'west', 'west': 'east',
+                                                                    'northeast': 'southwest', 'southwest': 'northeast',
+                                                                    'northwest': 'southeast', 'southeast': 'northwest',
+                                                                    'up': 'down', 'down': 'up'
+                                                                };
+                                                                const oppositeDir = oppositeDirs[adj.direction];
+                                                                
+                                                                // Update selected room's exits
+                                                                const newExits = enabled 
+                                                                    ? { ...selectedRoom.exits, [adj.direction]: adj.room.id }
+                                                                    : Object.fromEntries(Object.entries(selectedRoom.exits || {}).filter(([d]) => d !== adj.direction));
+                                                                
+                                                                const response = await fetch(`${API_BASE}/exits`, {
+                                                                    method: 'POST',
+                                                                    headers: { 'Content-Type': 'application/json' },
+                                                                    body: JSON.stringify({ 
+                                                                        roomId: selectedRoom.id, 
+                                                                        exits: newExits
+                                                                    })
+                                                                });
+                                                                const data = await response.json();
+                                                                if (data.success) {
+                                                                    // Also update the other room's exit (bidirectional)
+                                                                    if (oppositeDir) {
+                                                                        const otherRoom = rooms.find(r => r.id === adj.room.id);
+                                                                        if (otherRoom) {
+                                                                            const otherExits = enabled
+                                                                                ? { ...otherRoom.exits, [oppositeDir]: selectedRoom.id }
+                                                                                : Object.fromEntries(Object.entries(otherRoom.exits || {}).filter(([d]) => d !== oppositeDir));
+                                                                            
+                                                                            await fetch(`${API_BASE}/exits`, {
+                                                                                method: 'POST',
+                                                                                headers: { 'Content-Type': 'application/json' },
+                                                                                body: JSON.stringify({ 
+                                                                                    roomId: adj.room.id, 
+                                                                                    exits: otherExits
+                                                                                })
+                                                                            });
+                                                                        }
+                                                                    }
+                                                                    await loadMapData();
+                                                                }
+                                                            } catch (err) {
+                                                                alert(`Error: ${err.message}`);
+                                                            }
+                                                        }}
+                                                        style={{
+                                                            width: '18px',
+                                                            height: '18px',
+                                                            cursor: 'pointer',
+                                                            accentColor: '#ff9f40'
+                                                        }}
+                                                    />
+                                                    <span style={{ fontSize: '12px', color: hasConnection ? '#4aff4a' : '#ff4a4a' }}>
+                                                        {hasConnection ? 'Connected' : 'Not Connected'}
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <div style={{ color: '#888', fontSize: '12px', fontStyle: 'italic' }}>
+                                    No adjacent rooms found.
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Exit Configuration - Locked/Hidden Doors */}
+                        {Object.keys(selectedRoom.exits || {}).length > 0 && (
+                            <div style={{ 
+                                marginBottom: '15px', 
+                                padding: '10px', 
+                                background: '#222', 
+                                borderRadius: '4px',
+                                border: '2px solid #9f40ff'
+                            }}>
+                                <div style={{ marginBottom: '10px' }}>
+                                    <strong style={{ color: '#9f40ff', fontSize: '14px' }}>Exit Configuration:</strong>
+                                </div>
+                                <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                                    {Object.entries(selectedRoom.exits || {}).map(([direction, targetRoomId]) => {
+                                        const exitConfig = selectedRoom.exitConfig?.[direction] || {};
+                                        const isLocked = exitConfig.locked || false;
+                                        const isHidden = exitConfig.hidden || false;
+                                        const requiredKey = exitConfig.requiredKey || '';
+                                        
+                                        return (
+                                            <div key={direction} style={{ 
+                                                marginBottom: '10px', 
+                                                padding: '8px', 
+                                                background: '#333', 
+                                                borderRadius: '4px',
+                                                border: '1px solid #555'
+                                            }}>
+                                                <div style={{ marginBottom: '5px', fontWeight: 'bold', color: '#9f40ff' }}>
+                                                    {direction.toUpperCase()} → {rooms.find(r => r.id === targetRoomId)?.name || targetRoomId}
+                                                </div>
+                                                <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                                                    <label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px' }}>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={isLocked}
+                                                            onChange={async (e) => {
+                                                                const newConfig = {
+                                                                    ...exitConfig,
+                                                                    locked: e.target.checked,
+                                                                    hidden: isHidden,
+                                                                    requiredKey: requiredKey
+                                                                };
+                                                                if (!e.target.checked && !isHidden && !requiredKey) {
+                                                                    // Remove config if nothing is set
+                                                                    await updateExitConfig(selectedRoom.id, direction, null);
+                                                                } else {
+                                                                    await updateExitConfig(selectedRoom.id, direction, newConfig);
+                                                                }
+                                                            }}
+                                                            style={{ cursor: 'pointer' }}
+                                                        />
+                                                        <span>🔒 Locked</span>
+                                                    </label>
+                                                    <label style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px' }}>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={isHidden}
+                                                            onChange={async (e) => {
+                                                                const newConfig = {
+                                                                    ...exitConfig,
+                                                                    locked: isLocked,
+                                                                    hidden: e.target.checked,
+                                                                    requiredKey: requiredKey
+                                                                };
+                                                                if (!isLocked && !e.target.checked && !requiredKey) {
+                                                                    await updateExitConfig(selectedRoom.id, direction, null);
+                                                                } else {
+                                                                    await updateExitConfig(selectedRoom.id, direction, newConfig);
+                                                                }
+                                                            }}
+                                                            style={{ cursor: 'pointer' }}
+                                                        />
+                                                        <span>👁️ Hidden</span>
+                                                    </label>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px' }}>
+                                                        <label>Key:</label>
+                                                        <input
+                                                            type="text"
+                                                            value={requiredKey}
+                                                            placeholder="item_id (e.g., moria_key)"
+                                                            onChange={async (e) => {
+                                                                const newKey = e.target.value.trim();
+                                                                const newConfig = {
+                                                                    ...exitConfig,
+                                                                    locked: isLocked,
+                                                                    hidden: isHidden,
+                                                                    requiredKey: newKey
+                                                                };
+                                                                if (!isLocked && !isHidden && !newKey) {
+                                                                    await updateExitConfig(selectedRoom.id, direction, null);
+                                                                } else {
+                                                                    await updateExitConfig(selectedRoom.id, direction, newConfig);
+                                                                }
+                                                            }}
+                                                            style={{ 
+                                                                flex: 1, 
+                                                                padding: '4px', 
+                                                                background: '#111', 
+                                                                color: '#fff', 
+                                                                border: '1px solid #444',
+                                                                borderRadius: '3px',
+                                                                fontSize: '11px'
+                                                            }}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
 
                         {/* Description Editor */}
                         <div style={{ marginBottom: '15px', padding: '10px', background: '#222', borderRadius: '4px' }}>
@@ -1385,89 +1954,17 @@ export const MapEditor3DCanvas = () => {
                             )}
                         </div>
                     </div>
-                )}
-                <div style={{ fontSize: '12px', color: '#888', marginTop: '10px', lineHeight: '1.4' }}>
-                    <strong>Controls:</strong> Left click to select | <strong>Ctrl/Cmd + Left click + drag</strong> to move room | <strong>Shift + Left click + drag</strong> or <strong>Right-click + drag</strong> to pan | Drag background to rotate camera | Scroll to zoom
-                </div>
-            </div>
-
-            <div style={{ flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', padding: '0 20px' }}>
-                <canvas
-                    ref={canvasRef}
-                    style={{
-                        width: '100%',
-                        minWidth: '100%',
-                        maxWidth: '100%',
-                        flex: 1,
-                        minHeight: '400px',
-                        background: '#0a0a1a',
-                        border: '2px solid #16213e',
-                        borderRadius: '5px',
-                        cursor: isDragging ? 'grabbing' : 'grab',
-                        display: 'block',
-                        boxSizing: 'border-box'
-                    }}
-                    onMouseDown={handleMouseDown}
-                    onMouseMove={handleMouseMove}
-                    onMouseUp={handleMouseUp}
-                    onMouseLeave={handleMouseUp}
-                    onContextMenu={(e) => {
-                        e.preventDefault(); // Prevent context menu, but allow right-click for panning
-                    }}
-                />
-            </div>
-
-            <div style={{ 
-                flexShrink: 0,
-                padding: '20px',
-                background: '#0f0f1e',
-                borderTop: '2px solid #16213e'
-            }}>
-                {overlaps.length > 0 && (
-                    <div style={{ marginBottom: '15px', background: '#ff4444', padding: '10px', borderRadius: '5px' }}>
-                        <strong>Overlaps Detected:</strong>
-                        {overlaps.map((ov, idx) => (
-                            <div key={idx} style={{ marginTop: '5px' }}>
-                                <strong>{ov.coordinate}:</strong> {ov.rooms.map(r => r.name || r.id).join(', ')}
-                            </div>
-                        ))}
+                ) : (
+                    <div style={{ 
+                        padding: '20px', 
+                        color: '#888', 
+                        textAlign: 'center',
+                        fontSize: '14px'
+                    }}>
+                        <div style={{ marginBottom: '10px' }}>👆</div>
+                        <div>Select a room to view and edit its properties</div>
                     </div>
                 )}
-
-                <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                    <button 
-                        onClick={loadMapData}
-                        style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
-                    >
-                        Refresh
-                    </button>
-                    <button 
-                        onClick={loadOverlaps}
-                        style={{ padding: '10px 20px', cursor: 'pointer', background: '#4a9eff', color: '#fff', border: 'none', borderRadius: '4px' }}
-                    >
-                        Check Overlaps
-                    </button>
-                    <button 
-                        onClick={async () => {
-                            try {
-                                const response = await fetch(`${API_BASE}/cleanup`, { method: 'POST' });
-                                const data = await response.json();
-                                if (data.success) {
-                                    alert(`Cleaned up ${data.removedCount} non-adjacent exits, added ${data.addedCount} missing connections`);
-                                    await loadMapData();
-                                    loadOverlaps();
-                                } else {
-                                    alert(`Error: ${data.error}`);
-                                }
-                            } catch (err) {
-                                alert(`Error: ${err.message}`);
-                            }
-                        }}
-                        style={{ padding: '10px 20px', cursor: 'pointer', background: '#ff6b6b', color: '#fff', border: 'none', borderRadius: '4px' }}
-                    >
-                        Cleanup Non-Adjacent Exits
-                    </button>
-                </div>
             </div>
         </div>
     );

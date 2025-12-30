@@ -102,7 +102,7 @@
     },
     "barrow_chamber_1": {
       "x": 10,
-      "y": -10,
+      "y": -9,
       "z": -1
     },
     "barrow_chamber_2": {
@@ -796,8 +796,8 @@
       "z": 0
     },
     "lake_town_docks": {
-      "x": 82,
-      "y": 36,
+      "x": 81,
+      "y": 37,
       "z": 0
     },
     "lonely_mountain_approach": {
@@ -7616,8 +7616,8 @@
       "z": 0
     },
     "filler_75_39": {
-      "x": 285,
-      "y": 78,
+      "x": 286,
+      "y": 79,
       "z": 0
     },
     "filler_75_40": {
@@ -7841,8 +7841,8 @@
       "z": 0
     },
     "filler_79_42": {
-      "x": 302,
-      "y": 88,
+      "x": 303,
+      "y": 89,
       "z": 0
     },
     "filler_79_43": {
@@ -7916,8 +7916,8 @@
       "z": 0
     },
     "filler_81_40": {
-      "x": 317,
-      "y": 88,
+      "x": 316,
+      "y": 89,
       "z": 0
     },
     "filler_81_41": {
@@ -7991,8 +7991,8 @@
       "z": 0
     },
     "path_lothlorien_mirkwood_9": {
-      "x": 317,
-      "y": 103,
+      "x": 318,
+      "y": 102,
       "z": 0
     },
     "path_lothlorien_mirkwood_10": {
@@ -15473,13 +15473,15 @@
     },
     "barrow_chamber_1": {
       "up": "barrow_downs",
-      "northeast": "barrow_chamber_2"
+      "east": "barrow_chamber_2",
+      "west": "barrow_chamber_3"
     },
     "barrow_chamber_2": {
-      "southwest": "barrow_chamber_1"
+      "west": "barrow_chamber_1"
     },
     "barrow_chamber_3": {
-      "up": "bree_gate"
+      "up": "bree_gate",
+      "east": "barrow_chamber_1"
     },
     "bree_gate": {
       "down": "barrow_chamber_3",
@@ -15547,14 +15549,18 @@
     },
     "moria_entrance": {
       "west": "doors_of_durin",
-      "down": "durin_chamber"
+      "down": "durin_chamber",
+      "east": "east_gate_moria"
     },
     "durin_chamber": {
-      "up": "east_gate_moria"
+      "up": "east_gate_moria",
+      "down": "east_gate_moria"
     },
     "east_gate_moria": {
+      "east": "caras_galadhon",
       "down": "durin_chamber",
-      "east": "caras_galadhon"
+      "west": "moria_entrance",
+      "up": "durin_chamber"
     },
     "caras_galadhon": {
       "west": "east_gate_moria",
@@ -15818,31 +15824,42 @@
     },
     "royal_tombs": {
       "south": "hall_of_kings",
-      "north": "royal_armory"
+      "north": "royal_armory",
+      "down": "mithril_depths_2"
     },
     "royal_armory": {
-      "south": "royal_tombs",
-      "down": "smelting_chambers"
+      "down": "smelting_chambers",
+      "south": "royal_tombs"
     },
     "smelting_chambers": {
-      "up": "royal_armory",
-      "southeast": "deep_mines_hub"
+      "southwest": "mithril_depths_1",
+      "up": "the_unending_stair_middle",
+      "southeast": "deep_mines_hub",
+      "east": "iron_mines_1"
     },
     "deep_mines_hub": {
-      "northwest": "smelting_chambers"
+      "northwest": "smelting_chambers",
+      "southwest": "mithril_depths_2",
+      "north": "iron_mines_1"
     },
     "mithril_depths_1": {
+      "south": "iron_mines_2",
+      "northeast": "smelting_chambers",
       "southeast": "mithril_depths_2"
     },
     "mithril_depths_2": {
-      "northwest": "mithril_depths_1"
+      "up": "royal_tombs",
+      "northwest": "mithril_depths_1",
+      "west": "iron_mines_2",
+      "northeast": "deep_mines_hub"
     },
     "iron_mines_2": {
-      "up": "the_unending_stair_middle"
+      "north": "mithril_depths_1",
+      "east": "mithril_depths_2"
     },
     "the_unending_stair_middle": {
-      "down": "iron_mines_2",
-      "north": "goblin_ward"
+      "north": "goblin_ward",
+      "down": "smelting_chambers"
     },
     "goblin_ward": {
       "south": "the_unending_stair_middle",
@@ -16008,27 +16025,34 @@
     },
     "thranduil_halls_interior": {
       "west": "thranduil_halls_gate",
+      "northeast": "lake_town_docks",
       "east": "long_lake_path"
     },
     "long_lake_path": {
+      "north": "lake_town_docks",
       "west": "thranduil_halls_interior",
-      "east": "lake_town_docks"
+      "northeast": "lonely_mountain_approach"
     },
     "lake_town_docks": {
-      "west": "long_lake_path",
-      "north": "lonely_mountain_approach"
+      "southwest": "thranduil_halls_interior",
+      "south": "long_lake_path",
+      "east": "lonely_mountain_approach",
+      "northeast": "erebor_gates"
     },
     "lonely_mountain_approach": {
-      "south": "lake_town_docks",
+      "west": "lake_town_docks",
+      "southwest": "long_lake_path",
       "north": "erebor_gates"
     },
     "erebor_gates": {
-      "south": "lonely_mountain_approach",
-      "north": "erebor_great_hall"
+      "north": "erebor_great_hall",
+      "northeast": "path_weathertop_rivendell_34",
+      "southwest": "lake_town_docks",
+      "south": "lonely_mountain_approach"
     },
     "erebor_great_hall": {
-      "south": "erebor_gates",
-      "north": "erebor_treasury"
+      "north": "erebor_treasury",
+      "south": "erebor_gates"
     },
     "erebor_treasury": {
       "south": "erebor_great_hall",
@@ -16312,7 +16336,8 @@
     },
     "path_weathertop_rivendell_34": {
       "north": "path_weathertop_rivendell_29",
-      "east": "path_weathertop_rivendell_39"
+      "east": "path_weathertop_rivendell_39",
+      "southwest": "erebor_gates"
     },
     "path_weathertop_rivendell_39": {
       "west": "path_weathertop_rivendell_34",
@@ -21442,27 +21467,29 @@
     },
     "filler_74_44": {
       "north": "filler_74_43",
+      "southeast": "filler_75_39",
       "south": "filler_75_38"
     },
     "filler_75_38": {
-      "north": "filler_74_44",
-      "south": "filler_75_39"
+      "east": "filler_75_39",
+      "north": "filler_74_44"
     },
     "filler_75_39": {
-      "north": "filler_75_38",
-      "east": "filler_75_40"
+      "northwest": "filler_74_44",
+      "west": "filler_75_38",
+      "south": "filler_75_40"
     },
     "filler_75_40": {
-      "west": "filler_75_39",
+      "north": "filler_75_39",
       "east": "filler_75_42"
     },
     "filler_75_42": {
-      "west": "filler_75_40",
-      "east": "filler_75_43"
+      "east": "filler_75_43",
+      "west": "filler_75_40"
     },
     "filler_75_43": {
-      "west": "filler_75_42",
-      "east": "filler_75_44"
+      "east": "filler_75_44",
+      "west": "filler_75_42"
     },
     "filler_75_44": {
       "west": "filler_75_43",
@@ -21554,19 +21581,26 @@
     },
     "filler_78_37": {
       "south": "filler_77_52",
-      "north": "filler_78_38"
+      "north": "filler_78_38",
+      "northeast": "filler_79_41"
     },
     "filler_78_38": {
       "south": "filler_78_37",
-      "north": "filler_78_39"
+      "north": "filler_78_39",
+      "northeast": "filler_79_39",
+      "east": "filler_79_41"
     },
     "filler_78_39": {
       "south": "filler_78_38",
-      "north": "filler_78_41"
+      "north": "filler_78_41",
+      "east": "filler_79_39",
+      "southeast": "filler_79_41",
+      "northeast": "filler_79_38"
     },
     "filler_78_41": {
       "south": "filler_78_39",
-      "north": "filler_78_42"
+      "north": "filler_78_42",
+      "southeast": "filler_79_39"
     },
     "filler_78_42": {
       "south": "filler_78_41",
@@ -21618,31 +21652,40 @@
     },
     "filler_79_38": {
       "north": "filler_79_37",
-      "south": "filler_79_39"
+      "south": "filler_79_39",
+      "southwest": "filler_78_39"
     },
     "filler_79_39": {
       "north": "filler_79_38",
+      "southwest": "filler_78_38",
+      "west": "filler_78_39",
+      "northwest": "filler_78_41",
       "south": "filler_79_41"
     },
     "filler_79_41": {
+      "east": "filler_79_42",
       "north": "filler_79_39",
-      "south": "filler_79_42"
+      "southwest": "filler_78_37",
+      "west": "filler_78_38",
+      "northwest": "filler_78_39",
+      "southeast": "filler_79_43"
     },
     "filler_79_42": {
-      "north": "filler_79_41",
-      "east": "filler_79_43"
+      "west": "filler_79_41",
+      "south": "filler_79_43"
     },
     "filler_79_43": {
-      "west": "filler_79_42",
+      "north": "filler_79_42",
+      "northwest": "filler_79_41",
       "east": "filler_79_44"
     },
     "filler_79_44": {
-      "west": "filler_79_43",
-      "east": "filler_79_45"
+      "east": "filler_79_45",
+      "west": "filler_79_43"
     },
     "filler_79_45": {
-      "west": "filler_79_44",
-      "east": "filler_79_46"
+      "east": "filler_79_46",
+      "west": "filler_79_44"
     },
     "filler_79_46": {
       "west": "filler_79_45",
@@ -21682,27 +21725,33 @@
     },
     "filler_81_38": {
       "west": "filler_80_39",
+      "northeast": "filler_81_40",
       "east": "filler_81_39"
     },
     "filler_81_39": {
+      "north": "filler_81_40",
       "west": "filler_81_38",
-      "east": "filler_81_40"
+      "northeast": "filler_81_41"
     },
     "filler_81_40": {
-      "west": "filler_81_39",
-      "north": "filler_81_41"
+      "southwest": "filler_81_38",
+      "south": "filler_81_39",
+      "east": "filler_81_41",
+      "northeast": "filler_81_42"
     },
     "filler_81_41": {
-      "south": "filler_81_40",
+      "west": "filler_81_40",
+      "southwest": "filler_81_39",
       "north": "filler_81_42"
     },
     "filler_81_42": {
-      "south": "filler_81_41",
-      "north": "filler_81_43"
+      "north": "filler_81_43",
+      "southwest": "filler_81_40",
+      "south": "filler_81_41"
     },
     "filler_81_43": {
-      "south": "filler_81_42",
-      "north": "filler_81_44"
+      "north": "filler_81_44",
+      "south": "filler_81_42"
     },
     "filler_81_44": {
       "south": "filler_81_43",
@@ -21742,27 +21791,33 @@
     },
     "path_lothlorien_mirkwood_6": {
       "south": "path_lothlorien_mirkwood_4",
+      "northeast": "path_lothlorien_mirkwood_9",
       "north": "path_lothlorien_mirkwood_7"
     },
     "path_lothlorien_mirkwood_7": {
+      "east": "path_lothlorien_mirkwood_9",
       "south": "path_lothlorien_mirkwood_6",
-      "north": "path_lothlorien_mirkwood_9"
+      "northeast": "path_lothlorien_mirkwood_10"
     },
     "path_lothlorien_mirkwood_9": {
-      "south": "path_lothlorien_mirkwood_7",
-      "east": "path_lothlorien_mirkwood_10"
+      "southwest": "path_lothlorien_mirkwood_6",
+      "west": "path_lothlorien_mirkwood_7",
+      "north": "path_lothlorien_mirkwood_10",
+      "northeast": "path_lothlorien_mirkwood_12"
     },
     "path_lothlorien_mirkwood_10": {
-      "west": "path_lothlorien_mirkwood_9",
+      "south": "path_lothlorien_mirkwood_9",
+      "southwest": "path_lothlorien_mirkwood_7",
       "east": "path_lothlorien_mirkwood_12"
     },
     "path_lothlorien_mirkwood_12": {
-      "west": "path_lothlorien_mirkwood_10",
-      "east": "path_lothlorien_mirkwood_14"
+      "east": "path_lothlorien_mirkwood_14",
+      "southwest": "path_lothlorien_mirkwood_9",
+      "west": "path_lothlorien_mirkwood_10"
     },
     "path_lothlorien_mirkwood_14": {
-      "west": "path_lothlorien_mirkwood_12",
-      "east": "path_lothlorien_mirkwood_15"
+      "east": "path_lothlorien_mirkwood_15",
+      "west": "path_lothlorien_mirkwood_12"
     },
     "path_lothlorien_mirkwood_15": {
       "west": "path_lothlorien_mirkwood_14",
@@ -27653,6 +27708,10 @@
     },
     "mount_doom_sammath_naur": {
       "up": "mount_doom_summit"
+    },
+    "iron_mines_1": {
+      "south": "deep_mines_hub",
+      "west": "smelting_chambers"
     }
   }
 }

@@ -144,7 +144,12 @@ export class GameEngine {
             case 'equip':
                 return this.handleUse(args.join(' '), playerState);
 
+            case 'search':
             case 'examine':
+                if (verb === 'search') {
+                    return this.handleSearch(playerId, args.join(' '), playerState);
+                }
+                // Fall through to examine for 'examine' command
             case 'x':
                 return this.handleExamine(args.join(' '), playerState);
 
@@ -215,7 +220,7 @@ export class GameEngine {
     }
 
     handleMove(playerId, direction, playerState) {
-        const result = this.roomSystem.move(playerState.currentRoom, direction);
+        const result = this.roomSystem.move(playerState.currentRoom, direction, playerState);
 
         if (result.success) {
             if (this.roomSystem.canEnterRoom(result.roomId, playerState)) {
@@ -263,6 +268,45 @@ export class GameEngine {
         }
 
         return { message: result.message };
+    }
+
+    handleSearch(playerId, target, playerState) {
+        const room = this.roomSystem.getRoom(playerState.currentRoom);
+        if (!room) {
+            return { message: "You are nowhere!" };
+        }
+
+        // Search for hidden exits
+        const exitConfig = room.exitConfig || {};
+        const hiddenExits = Object.keys(exitConfig).filter(dir => {
+            const config = exitConfig[dir];
+            return config?.hidden && !config?.discovered;
+        });
+
+        if (hiddenExits.length === 0) {
+            return { message: "You search carefully but find nothing unusual." };
+        }
+
+        // Check if player has keys that reveal hidden exits
+        const discoveredExits = [];
+        for (const dir of hiddenExits) {
+            const config = exitConfig[dir];
+            if (config.requiredKey && playerState.inventory?.includes(config.requiredKey)) {
+                config.discovered = true;
+                discoveredExits.push(dir);
+            }
+        }
+
+        if (discoveredExits.length > 0) {
+            return { 
+                message: `🔍 You discover hidden passages: ${discoveredExits.join(', ')}! The ${room.exitConfig[discoveredExits[0]].requiredKey} in your possession seems to have revealed them.`
+            };
+        }
+
+        // No keys to reveal exits, but hint at hidden passages
+        return { 
+            message: "You notice something unusual about the walls... there might be hidden passages here, but you need something special to reveal them."
+        };
     }
 
     handleTake(itemName, playerState) {

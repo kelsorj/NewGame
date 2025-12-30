@@ -46,19 +46,10 @@ function App() {
     if (showEditor) {
         return (
             <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0, overflow: 'hidden' }}>
-                <div style={{ padding: '10px', background: '#1a1a2e', borderBottom: '2px solid #4a9eff', position: 'relative', zIndex: 1000 }}>
-                    <button 
-                        onClick={() => {
-                            setShowEditor(false);
-                            window.history.pushState({}, '', '/');
-                        }}
-                        style={{ padding: '10px 20px', cursor: 'pointer', marginRight: '10px' }}
-                    >
-                        ← Back to Game
-                    </button>
-                    <strong>World Map Editor</strong>
-                </div>
-                <MapEditor />
+                <MapEditor onBackToGame={() => {
+                    setShowEditor(false);
+                    window.history.pushState({}, '', '/');
+                }} />
             </div>
         );
     }
@@ -66,23 +57,22 @@ function App() {
     return (
         <div className="app">
             <div className="game-container">
-                <div className="main-panel">
-                    <div className="header">
-                        <h1 className="title">🏔️  MIDDLE EARTH ADVENTURE 🏔️</h1>
-                        <div className="connection-status">
-                            {isConnected ? (
-                                <span className="status-connected">● Connected</span>
-                            ) : (
-                                <span className="status-disconnected">● Disconnected</span>
-                            )}
-                        </div>
+                <div className="header">
+                    <h1 className="title">🏔️  MIDDLE EARTH ADVENTURE 🏔️</h1>
+                    <div className="connection-status">
+                        {isConnected ? (
+                            <span className="status-connected">● Connected</span>
+                        ) : (
+                            <span className="status-disconnected">● Disconnected</span>
+                        )}
                     </div>
+                </div>
 
-                    {!hasJoined ? (
-                        <div className="join-screen">
-                            <div className="join-container">
-                                <div className="ascii-art">
-                                    <pre>{`
+                {!hasJoined ? (
+                    <div className="join-screen">
+                        <div className="join-container">
+                            <div className="ascii-art">
+                                <pre>{`
     ___________
    /           \\
   |  WELCOME TO |
@@ -93,65 +83,63 @@ function App() {
         | |
        /   \\
 `}</pre>
+                            </div>
+
+                            <p className="join-description">
+                                Embark on an epic adventure through Middle Earth!<br />
+                                Explore mysterious lands, battle fearsome enemies,<br />
+                                solve ancient puzzles, and collect legendary treasures.
+                            </p>
+
+                            <form onSubmit={handleJoin} className="join-form">
+                                <input
+                                    type="text"
+                                    value={playerName}
+                                    onChange={(e) => setPlayerName(e.target.value)}
+                                    placeholder="Enter your name, adventurer..."
+                                    className="join-input"
+                                    maxLength={20}
+                                    autoFocus
+                                    disabled={!isConnected}
+                                />
+                                <button
+                                    type="submit"
+                                    className="join-button"
+                                    disabled={!isConnected || !playerName.trim()}
+                                >
+                                    Begin Adventure
+                                </button>
+                            </form>
+
+                            {!isConnected && (
+                                <div className="connection-warning">
+                                    ⚠️  Connecting to server...
                                 </div>
+                            )}
 
-                                <p className="join-description">
-                                    Embark on an epic adventure through Middle Earth!<br />
-                                    Explore mysterious lands, battle fearsome enemies,<br />
-                                    solve ancient puzzles, and collect legendary treasures.
-                                </p>
-
-                                <form onSubmit={handleJoin} className="join-form">
-                                    <input
-                                        type="text"
-                                        value={playerName}
-                                        onChange={(e) => setPlayerName(e.target.value)}
-                                        placeholder="Enter your name, adventurer..."
-                                        className="join-input"
-                                        maxLength={20}
-                                        autoFocus
-                                        disabled={!isConnected}
-                                    />
-                                    <button
-                                        type="submit"
-                                        className="join-button"
-                                        disabled={!isConnected || !playerName.trim()}
-                                    >
-                                        Begin Adventure
-                                    </button>
-                                </form>
-
-                                {!isConnected && (
-                                    <div className="connection-warning">
-                                        ⚠️  Connecting to server...
-                                    </div>
-                                )}
-
-                                <div className="join-tips">
-                                    <strong>Quick Tips:</strong>
-                                    <ul>
-                                        <li>Type 'help' for a list of commands</li>
-                                        <li>Use arrow keys to navigate command history</li>
-                                        <li>Multiple players can explore together!</li>
-                                    </ul>
-                                </div>
+                            <div className="join-tips">
+                                <strong>Quick Tips:</strong>
+                                <ul>
+                                    <li>Type 'help' for a list of commands</li>
+                                    <li>Use arrow keys to navigate command history</li>
+                                    <li>Multiple players can explore together!</li>
+                                </ul>
                             </div>
                         </div>
-                    ) : (
-                        <>
-                            <GameDisplay messages={messages} />
+                    </div>
+                ) : (
+                    <div className="game-content">
+                        <div className="left-panel">
+                            <PlayerStatus playerState={playerState} activePlayers={activePlayers} />
+                            
+                            <div className="game-display-container">
+                                <GameDisplay messages={messages} />
+                            </div>
+                            
                             <CommandInput
                                 onCommand={handleCommand}
                                 disabled={!isConnected || !hasJoined}
                             />
-                        </>
-                    )}
-                </div>
-
-                {hasJoined && (
-                    <>
-                        <div className="left-sidebar">
-                            <PlayerStatus playerState={playerState} activePlayers={activePlayers} />
 
                             <div className="help-panel">
                                 <div className="help-header">💡 Quick Commands</div>
@@ -167,10 +155,10 @@ function App() {
                             </div>
                         </div>
 
-                        <div className="right-sidebar">
+                        <div className="right-panel">
                             <WorldMap playerState={playerState} />
                         </div>
-                    </>
+                    </div>
                 )}
             </div>
         </div>
