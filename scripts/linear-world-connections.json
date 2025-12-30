@@ -15419,6 +15419,76 @@
       "x": 4,
       "y": -7,
       "z": 0
+    },
+    "GIJwqicfoRzchobmazm6HhXIJUBwilvb": {
+      "x": 3,
+      "y": -6,
+      "z": 0
+    },
+    "XW9KvfiXfreaMh5YHBidrJ1Qj3fNFHTc": {
+      "x": 5,
+      "y": -8,
+      "z": 0
+    },
+    "euRZnuCWFZlyW9dnz11Nei9Sdb8jjNHK": {
+      "x": 6,
+      "y": -9,
+      "z": 0
+    },
+    "gnhKUMslfeUGZ9SWFOJ3tD8dBKEhHBZ7": {
+      "x": 7,
+      "y": -10,
+      "z": 0
+    },
+    "XrSyEuxm35mIiuxd4X7vx24abtAN3AzJ": {
+      "x": 8,
+      "y": -11,
+      "z": 0
+    },
+    "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8": {
+      "x": 9,
+      "y": 2,
+      "z": 0
+    },
+    "Poz0RVUgwEu3HKKpJpSB7srmiLQpT5PV": {
+      "x": 9,
+      "y": 3,
+      "z": 0
+    },
+    "iln4krzcDfHUquAKrgw6GNs9QrfbhetK": {
+      "x": 9,
+      "y": 4,
+      "z": 0
+    },
+    "skbypE0WXsJtZRV8D498YMXbrH4fMAsq": {
+      "x": 9,
+      "y": 5,
+      "z": 0
+    },
+    "WXolSHAWuHpg2KK0JFIEfiWfZLMSGl66": {
+      "x": 8,
+      "y": 6,
+      "z": 0
+    },
+    "LL0UNGrqdcy8wy8xXRZ8tvs1i6yKZ6q7": {
+      "x": 8,
+      "y": 7,
+      "z": 0
+    },
+    "uedZzFzcE5lVQYNDRm2BS3JV6Wwn24NV": {
+      "x": 13,
+      "y": 2,
+      "z": 0
+    },
+    "EszGkZxXfifdnfgv3Uc27gcsMHRKkgJb": {
+      "x": 14,
+      "y": 0,
+      "z": 0
+    },
+    "zM2e9YKlVF4Dh3DZ8E4dJ2e0kwke1gzU": {
+      "x": 14,
+      "y": 2,
+      "z": 0
     }
   },
   "exits": {
@@ -15473,10 +15543,10 @@
       "southwest": "bucklebury"
     },
     "old_forest_exit": {
-      "north": "prancing_pony",
-      "northwest": "bree_square",
       "northeast": "bree_east_road",
-      "south": "chetwood"
+      "south": "chetwood",
+      "northwest": "bree_square",
+      "north": "prancing_pony"
     },
     "chetwood": {
       "north": "old_forest_exit"
@@ -15531,21 +15601,24 @@
       "north": "barrow_chamber_2"
     },
     "bree_gate": {
-      "east": "bree_square"
+      "east": "bree_square",
+      "northeast": "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8"
     },
     "bree_square": {
+      "southeast": "old_forest_exit",
       "west": "bree_gate",
       "east": "prancing_pony",
-      "southeast": "old_forest_exit"
+      "north": "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8"
     },
     "prancing_pony": {
       "south": "old_forest_exit",
+      "east": "bree_east_road",
       "west": "bree_square",
-      "east": "bree_east_road"
+      "northwest": "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8"
     },
     "bree_east_road": {
-      "west": "prancing_pony",
-      "southwest": "old_forest_exit"
+      "southwest": "old_forest_exit",
+      "west": "prancing_pony"
     },
     "weathertop_approach": {
       "northeast": "amon_hen",
@@ -27761,9 +27834,64 @@
       "south": "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem"
     },
     "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem": {
-      "north": "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46"
+      "north": "IqCl79fKD9bwXOd0zxT3IhPLE3Zuex46",
+      "southeast": "GIJwqicfoRzchobmazm6HhXIJUBwilvb"
     },
-    "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r": {}
+    "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r": {
+      "northwest": "GIJwqicfoRzchobmazm6HhXIJUBwilvb",
+      "southeast": "XW9KvfiXfreaMh5YHBidrJ1Qj3fNFHTc"
+    },
+    "GIJwqicfoRzchobmazm6HhXIJUBwilvb": {
+      "northwest": "n67BSjDUMtbc0I6DNAZIb92vmRtWRPem",
+      "southeast": "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r"
+    },
+    "XW9KvfiXfreaMh5YHBidrJ1Qj3fNFHTc": {
+      "northwest": "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r",
+      "southeast": "euRZnuCWFZlyW9dnz11Nei9Sdb8jjNHK"
+    },
+    "euRZnuCWFZlyW9dnz11Nei9Sdb8jjNHK": {
+      "northwest": "XW9KvfiXfreaMh5YHBidrJ1Qj3fNFHTc",
+      "southeast": "gnhKUMslfeUGZ9SWFOJ3tD8dBKEhHBZ7"
+    },
+    "gnhKUMslfeUGZ9SWFOJ3tD8dBKEhHBZ7": {
+      "northwest": "euRZnuCWFZlyW9dnz11Nei9Sdb8jjNHK",
+      "southeast": "XrSyEuxm35mIiuxd4X7vx24abtAN3AzJ"
+    },
+    "XrSyEuxm35mIiuxd4X7vx24abtAN3AzJ": {
+      "northwest": "gnhKUMslfeUGZ9SWFOJ3tD8dBKEhHBZ7"
+    },
+    "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8": {
+      "southwest": "bree_gate",
+      "south": "bree_square",
+      "southeast": "prancing_pony",
+      "north": "Poz0RVUgwEu3HKKpJpSB7srmiLQpT5PV"
+    },
+    "Poz0RVUgwEu3HKKpJpSB7srmiLQpT5PV": {
+      "south": "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8",
+      "north": "iln4krzcDfHUquAKrgw6GNs9QrfbhetK"
+    },
+    "iln4krzcDfHUquAKrgw6GNs9QrfbhetK": {
+      "south": "Poz0RVUgwEu3HKKpJpSB7srmiLQpT5PV",
+      "north": "skbypE0WXsJtZRV8D498YMXbrH4fMAsq"
+    },
+    "skbypE0WXsJtZRV8D498YMXbrH4fMAsq": {
+      "south": "iln4krzcDfHUquAKrgw6GNs9QrfbhetK",
+      "northwest": "WXolSHAWuHpg2KK0JFIEfiWfZLMSGl66"
+    },
+    "WXolSHAWuHpg2KK0JFIEfiWfZLMSGl66": {
+      "southeast": "skbypE0WXsJtZRV8D498YMXbrH4fMAsq",
+      "north": "LL0UNGrqdcy8wy8xXRZ8tvs1i6yKZ6q7"
+    },
+    "LL0UNGrqdcy8wy8xXRZ8tvs1i6yKZ6q7": {
+      "south": "WXolSHAWuHpg2KK0JFIEfiWfZLMSGl66"
+    },
+    "uedZzFzcE5lVQYNDRm2BS3JV6Wwn24NV": {
+      "east": "zM2e9YKlVF4Dh3DZ8E4dJ2e0kwke1gzU"
+    },
+    "EszGkZxXfifdnfgv3Uc27gcsMHRKkgJb": {},
+    "zM2e9YKlVF4Dh3DZ8E4dJ2e0kwke1gzU": {
+      "west": "uedZzFzcE5lVQYNDRm2BS3JV6Wwn24NV"
+    }
   },
   "roomDefinitions": {
     "Nt4hVaFImq7LmxE0tTFNDs7rjz2rSmch": {
@@ -27804,6 +27932,104 @@
     "GuKl5kFjRfUjrSnxE41XrZisGoW98l7r": {
       "name": "Sarn Ford",
       "description": "You are in Sarn Ford.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "GIJwqicfoRzchobmazm6HhXIJUBwilvb": {
+      "name": "The Green Way",
+      "description": "You are in The Green Way.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "XW9KvfiXfreaMh5YHBidrJ1Qj3fNFHTc": {
+      "name": "North-South Road",
+      "description": "You are in North-South Road.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "euRZnuCWFZlyW9dnz11Nei9Sdb8jjNHK": {
+      "name": "North-South Road",
+      "description": "You are in North-South Road.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "gnhKUMslfeUGZ9SWFOJ3tD8dBKEhHBZ7": {
+      "name": "North-South Road",
+      "description": "You are in North-South Road.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "XrSyEuxm35mIiuxd4X7vx24abtAN3AzJ": {
+      "name": "North-South Road",
+      "description": "You are in North-South Road.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "PhXycA8eiqoHoqVeHn9WOGrB2CPimos8": {
+      "name": "Road to Fornost",
+      "description": "You are in Road to Fornost.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "Poz0RVUgwEu3HKKpJpSB7srmiLQpT5PV": {
+      "name": "Road to Fornost",
+      "description": "You are in Road to Fornost.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "iln4krzcDfHUquAKrgw6GNs9QrfbhetK": {
+      "name": "Road to Fornost",
+      "description": "You are in Road to Fornost.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "skbypE0WXsJtZRV8D498YMXbrH4fMAsq": {
+      "name": "Road to Fornost",
+      "description": "You are in Road to Fornost.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "WXolSHAWuHpg2KK0JFIEfiWfZLMSGl66": {
+      "name": "Road to Fornost",
+      "description": "You are in Road to Fornost.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "LL0UNGrqdcy8wy8xXRZ8tvs1i6yKZ6q7": {
+      "name": "Fornost",
+      "description": "You are in Fornost.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "uedZzFzcE5lVQYNDRm2BS3JV6Wwn24NV": {
+      "name": "Midgewater Marshes",
+      "description": "You are in Midgewater Marshes.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "EszGkZxXfifdnfgv3Uc27gcsMHRKkgJb": {
+      "name": "Midgewater Marshes",
+      "description": "You are in Midgewater Marshes.",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    },
+    "zM2e9YKlVF4Dh3DZ8E4dJ2e0kwke1gzU": {
+      "name": "Midgewater Marshes",
+      "description": "You are in Midgewater Marshes.",
       "exits": {},
       "items": [],
       "enemies": []
