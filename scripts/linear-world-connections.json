@@ -16,18 +16,18 @@
       "z": 0
     },
     "michel_delving": {
-      "x": 3,
+      "x": -1,
       "y": 0,
       "z": 0
     },
     "brandy_hall": {
-      "x": 4,
+      "x": 3,
       "y": 0,
       "z": 0
     },
     "buckland_kitchen": {
       "x": 5,
-      "y": 0,
+      "y": 1,
       "z": 0
     },
     "buckland_cellar": {
@@ -36,13 +36,13 @@
       "z": 0
     },
     "old_forest_buckland_entrance": {
-      "x": 7,
+      "x": 4,
       "y": 0,
       "z": 0
     },
     "hobbiton_square": {
-      "x": 8,
-      "y": 0,
+      "x": 0,
+      "y": -1,
       "z": 0
     },
     "brandywine_bridge": {
@@ -111,12 +111,12 @@
       "z": -1
     },
     "barrow_chamber_3": {
-      "x": 9,
+      "x": 12,
       "y": -9,
       "z": -1
     },
     "bree_gate": {
-      "x": 10,
+      "x": 9,
       "y": -10,
       "z": 0
     },
@@ -15393,51 +15393,55 @@
   },
   "exits": {
     "bag_end": {
-      "east": "tuckborough"
+      "south": "hobbiton_square",
+      "east": "tuckborough",
+      "west": "michel_delving"
     },
     "tuckborough": {
+      "southwest": "hobbiton_square",
       "west": "bag_end",
       "east": "tookbank"
     },
     "tookbank": {
-      "west": "tuckborough",
-      "east": "michel_delving"
+      "east": "brandy_hall",
+      "west": "tuckborough"
     },
     "michel_delving": {
-      "west": "tookbank",
-      "east": "brandy_hall"
+      "southeast": "hobbiton_square",
+      "east": "bag_end"
     },
     "brandy_hall": {
-      "west": "michel_delving",
-      "east": "buckland_kitchen"
+      "east": "old_forest_buckland_entrance",
+      "west": "tookbank"
     },
     "buckland_kitchen": {
-      "west": "brandy_hall",
-      "east": "buckland_cellar"
+      "southeast": "buckland_cellar",
+      "southwest": "old_forest_buckland_entrance"
     },
     "buckland_cellar": {
-      "west": "buckland_kitchen",
-      "east": "old_forest_buckland_entrance"
+      "northwest": "buckland_kitchen"
     },
     "old_forest_buckland_entrance": {
-      "west": "buckland_cellar",
-      "east": "hobbiton_square"
+      "northeast": "buckland_kitchen",
+      "west": "brandy_hall"
     },
     "hobbiton_square": {
-      "west": "old_forest_buckland_entrance",
-      "east": "brandywine_bridge"
+      "north": "bag_end",
+      "northeast": "tuckborough",
+      "northwest": "michel_delving"
     },
     "brandywine_bridge": {
-      "west": "hobbiton_square",
-      "east": "old_forest_exit"
+      "east": "old_forest_exit",
+      "southeast": "chetwood"
     },
     "old_forest_exit": {
-      "west": "brandywine_bridge",
-      "south": "chetwood"
+      "south": "chetwood",
+      "west": "brandywine_bridge"
     },
     "chetwood": {
       "north": "old_forest_exit",
-      "south": "mirkwood_path_1"
+      "south": "mirkwood_path_1",
+      "northwest": "brandywine_bridge"
     },
     "mirkwood_path_1": {
       "north": "chetwood",
@@ -15469,31 +15473,31 @@
     },
     "barrow_downs": {
       "north": "barrow_downs_approach",
+      "southwest": "bree_gate",
       "down": "barrow_chamber_1"
     },
     "barrow_chamber_1": {
       "up": "barrow_downs",
-      "east": "barrow_chamber_2",
-      "west": "barrow_chamber_3"
+      "east": "barrow_chamber_2"
     },
     "barrow_chamber_2": {
+      "east": "barrow_chamber_3",
       "west": "barrow_chamber_1"
     },
     "barrow_chamber_3": {
-      "up": "bree_gate",
-      "east": "barrow_chamber_1"
+      "west": "barrow_chamber_2"
     },
     "bree_gate": {
-      "down": "barrow_chamber_3",
-      "south": "bree_square"
+      "southeast": "bree_square",
+      "northeast": "barrow_downs"
     },
     "bree_square": {
-      "north": "bree_gate",
-      "east": "prancing_pony"
+      "east": "prancing_pony",
+      "northwest": "bree_gate"
     },
     "prancing_pony": {
-      "west": "bree_square",
-      "east": "bree_east_road"
+      "east": "bree_east_road",
+      "west": "bree_square"
     },
     "bree_east_road": {
       "west": "prancing_pony",
