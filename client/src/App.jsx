@@ -136,21 +136,25 @@ function App() {
                                 <GameDisplay messages={messages} />
                             </div>
                             
-                            <CommandInput
-                                onCommand={handleCommand}
-                                disabled={!isConnected || !hasJoined}
-                            />
-
-                            <div className="help-panel">
-                                <div className="help-header">💡 Quick Commands</div>
-                                <div className="help-commands">
-                                    <div><code>look</code> - Examine surroundings</div>
-                                    <div><code>go [dir]</code> - Move direction</div>
-                                    <div><code>take [item]</code> - Pick up item</div>
-                                    <div><code>inventory</code> - View items</div>
-                                    <div><code>attack [enemy]</code> - Fight</div>
-                                    <div><code>use [item]</code> - Use/equip</div>
-                                    <div><code>help</code> - Full command list</div>
+                            <div className="command-section">
+                                <CommandInput
+                                    onCommand={handleCommand}
+                                    disabled={!isConnected || !hasJoined}
+                                />
+                                <div className="help-hint-container">
+                                    <div className="help-hint-icon">?</div>
+                                    <div className="help-hint-popup">
+                                        <div className="help-header">💡 Quick Commands</div>
+                                        <div className="help-commands">
+                                            <div><code>look</code> - Examine surroundings</div>
+                                            <div><code>go [dir]</code> - Move direction</div>
+                                            <div><code>take [item]</code> - Pick up item</div>
+                                            <div><code>inventory</code> - View items</div>
+                                            <div><code>attack [enemy]</code> - Fight</div>
+                                            <div><code>use [item]</code> - Use/equip</div>
+                                            <div><code>help</code> - Full command list</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
