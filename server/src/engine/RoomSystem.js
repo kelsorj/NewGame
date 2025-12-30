@@ -7,25 +7,40 @@ import path from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load exit configurations from JSON file
-function loadExitConfigs() {
+// Load exits and exit configurations from JSON file
+function loadExitsFromJSON() {
   try {
     const coordData = JSON.parse(readFileSync(
       path.join(__dirname, '../../../scripts/linear-world-connections.json'),
       'utf8'
     ));
-    return coordData.exitConfigs || {};
+    return {
+      exits: coordData.exits || coordData.newExits || {},
+      exitConfigs: coordData.exitConfigs || {}
+    };
   } catch (err) {
-    console.error('Error loading exit configs:', err);
-    return {};
+    console.error('Error loading exits/configs from JSON:', err);
+    return { exits: {}, exitConfigs: {} };
   }
 }
 
 export class RoomSystem {
   constructor(rooms) {
     this.rooms = rooms;
+    // Load exits and exitConfig from JSON file and merge into rooms
+    const { exits, exitConfigs } = loadExitsFromJSON();
+    
+    // Merge exits from JSON file (JSON takes precedence over hardcoded exits)
+    // If a room has exits in JSON, use those. Otherwise, keep the hardcoded exits.
+    for (const roomId in this.rooms) {
+      if (exits[roomId] && Object.keys(exits[roomId]).length > 0) {
+        // JSON has exits for this room - use them
+        this.rooms[roomId].exits = exits[roomId];
+      }
+      // If no exits in JSON, keep the original exits from rooms.js
+    }
+    
     // Merge exitConfig from JSON file into rooms
-    const exitConfigs = loadExitConfigs();
     for (const roomId in exitConfigs) {
       if (this.rooms[roomId]) {
         if (!this.rooms[roomId].exitConfig) {
