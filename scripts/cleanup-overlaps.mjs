@@ -1,116 +1,103 @@
-#!/usr/bin/env node
-
-/**
- * Cleanup Overlaps
- * 
- * Removes overlapping rooms from the world connections JSON file.
- * Keeps the first room at each coordinate and removes duplicates.
- */
+// Clean up any overlapping rooms, keeping the most important one at each position
 
 import { readFileSync, writeFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-console.log('Cleaning up overlaps in world connections...\n');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-// Load connections
-const connectionData = JSON.parse(readFileSync('scripts/linear-world-connections.json', 'utf8'));
-const coordinates = connectionData.coordinates || {};
-const exits = connectionData.exits || {};
+const worldDataPath = join(__dirname, 'linear-world-connections.json');
+const worldData = JSON.parse(readFileSync(worldDataPath, 'utf-8'));
 
-// Find overlaps
-const coordToRooms = new Map();
-for (const [roomId, coord] of Object.entries(coordinates)) {
-    const key = `${coord.x},${coord.y},${coord.z}`;
-    if (!coordToRooms.has(key)) {
-        coordToRooms.set(key, []);
+const coordinates = worldData.coordinates || {};
+const exits = worldData.exits || {};
+
+console.log('Cleaning up overlapping rooms...\n');
+
+// Room priority (higher = more important to keep)
+function getRoomPriority(roomId) {
+    const id = roomId.toLowerCase();
+    
+    // Key story rooms
+    if (id === 'bag_end') return 100;
+    if (id.includes('mount_doom')) return 95;
+    if (id.includes('barad_dur')) return 95;
+    if (id.includes('minas_tirith')) return 90;
+    if (id.includes('rivendell')) return 85;
+    if (id.includes('moria')) return 80;
+    if (id.includes('lorien')) return 80;
+    if (id.includes('edoras')) return 75;
+    if (id.includes('isengard')) return 75;
+    if (id.includes('erebor')) return 70;
+    
+    // Other named rooms
+    if (!id.includes('path_') && !id.includes('road_') && 
+        !id.includes('river_') && !id.includes('riverbank_')) {
+        return 50;
     }
-    coordToRooms.get(key).push(roomId);
+    
+    // Roads are slightly more important than paths
+    if (id.includes('road_')) return 20;
+    if (id.includes('path_')) return 15;
+    
+    // Rivers and banks
+    if (id.includes('river_') && !id.includes('riverbank')) return 10;
+    if (id.includes('riverbank')) return 5;
+    
+    return 1;
 }
 
-const overlaps = Array.from(coordToRooms.entries())
-    .filter(([_, rooms]) => rooms.length > 1);
+// Build coordinate map
+const coordMap = new Map();
+for (const [roomId, coord] of Object.entries(coordinates)) {
+    const key = `${coord.x},${coord.y},${coord.z || 0}`;
+    if (!coordMap.has(key)) {
+        coordMap.set(key, []);
+    }
+    coordMap.get(key).push({ roomId, priority: getRoomPriority(roomId) });
+}
 
-console.log(`Found ${overlaps.length} overlapping coordinates`);
-
-// Remove duplicates - keep the first room, remove the rest
+// Find and remove overlaps
 const roomsToRemove = new Set();
-let removedCount = 0;
+let overlapCount = 0;
 
-for (const [coord, rooms] of overlaps) {
-    // Keep the first room, mark the rest for removal
-    for (let i = 1; i < rooms.length; i++) {
-        roomsToRemove.add(rooms[i]);
-        removedCount++;
+for (const [key, roomList] of coordMap.entries()) {
+    if (roomList.length > 1) {
+        overlapCount++;
+        // Sort by priority (highest first)
+        roomList.sort((a, b) => b.priority - a.priority);
+        
+        // Keep the first one, remove the rest
+        for (let i = 1; i < roomList.length; i++) {
+            roomsToRemove.add(roomList[i].roomId);
+        }
     }
 }
 
-console.log(`Removing ${removedCount} duplicate rooms...`);
+console.log(`Found ${overlapCount} positions with overlaps`);
+console.log(`Removing ${roomsToRemove.size} overlapping rooms\n`);
 
-// Remove overlapping rooms from coordinates and exits
-const newCoordinates = {};
-const newExits = {};
-
-for (const [roomId, coord] of Object.entries(coordinates)) {
-    if (!roomsToRemove.has(roomId)) {
-        newCoordinates[roomId] = coord;
-    }
-}
-
-for (const [roomId, roomExits] of Object.entries(exits)) {
-    if (!roomsToRemove.has(roomId)) {
-        // Clean up exits that point to removed rooms
-        const cleanedExits = {};
-        for (const [dir, targetId] of Object.entries(roomExits)) {
-            if (!roomsToRemove.has(targetId)) {
-                cleanedExits[dir] = targetId;
+// Remove rooms
+for (const roomId of roomsToRemove) {
+    delete coordinates[roomId];
+    delete exits[roomId];
+    
+    // Remove references from other rooms
+    for (const [otherRoomId, otherExits] of Object.entries(exits)) {
+        if (!otherExits) continue;
+        for (const [dir, target] of Object.entries(otherExits)) {
+            if (target === roomId) {
+                delete otherExits[dir];
             }
         }
-        if (Object.keys(cleanedExits).length > 0) {
-            newExits[roomId] = cleanedExits;
-        }
     }
 }
 
-// Also clean up exits that reference removed rooms
-for (const [roomId, roomExits] of Object.entries(newExits)) {
-    const cleanedExits = {};
-    for (const [dir, targetId] of Object.entries(roomExits)) {
-        if (newCoordinates[targetId]) {
-            cleanedExits[dir] = targetId;
-        }
-    }
-    newExits[roomId] = cleanedExits;
-}
+// Save
+worldData.coordinates = coordinates;
+worldData.exits = exits;
+writeFileSync(worldDataPath, JSON.stringify(worldData, null, 2), 'utf-8');
 
-// Save cleaned data
-const output = {
-    coordinates: newCoordinates,
-    exits: newExits
-};
-
-writeFileSync('scripts/linear-world-connections.json', JSON.stringify(output, null, 2));
-
-// Verify no overlaps remain
-const verifyCoordToRooms = new Map();
-for (const [roomId, coord] of Object.entries(newCoordinates)) {
-    const key = `${coord.x},${coord.y},${coord.z}`;
-    if (!verifyCoordToRooms.has(key)) {
-        verifyCoordToRooms.set(key, []);
-    }
-    verifyCoordToRooms.get(key).push(roomId);
-}
-
-const remainingOverlaps = Array.from(verifyCoordToRooms.entries())
-    .filter(([_, rooms]) => rooms.length > 1);
-
-console.log(`\n✅ Cleanup complete!`);
-console.log(`   Removed: ${removedCount} duplicate rooms`);
-console.log(`   Remaining rooms: ${Object.keys(newCoordinates).length}`);
-console.log(`   Remaining overlaps: ${remainingOverlaps.length}`);
-
-if (remainingOverlaps.length > 0) {
-    console.log(`\n⚠️  Warning: ${remainingOverlaps.length} overlaps still remain:`);
-    remainingOverlaps.slice(0, 5).forEach(([coord, rooms]) => {
-        console.log(`   ${coord}: ${rooms.join(', ')}`);
-    });
-}
-
+console.log(`✅ Removed ${roomsToRemove.size} rooms`);
+console.log(`✅ Remaining rooms: ${Object.keys(coordinates).length}`);

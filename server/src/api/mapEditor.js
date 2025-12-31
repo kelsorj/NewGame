@@ -1064,3 +1064,158 @@ export function deleteRoom(req, res) {
     }
 }
 
+// Cleanup overlapping rooms
+export function cleanupOverlaps(req, res) {
+    try {
+        const worldDataPath = path.join(__dirname, '../../../scripts/linear-world-connections.json');
+        const worldData = JSON.parse(readFileSync(worldDataPath, 'utf-8'));
+        
+        const coordinates = worldData.coordinates || {};
+        const exits = worldData.exits || {};
+        
+        function isConnectionRoom(roomId) {
+            const id = roomId.toLowerCase();
+            return id.includes('path_') || id.includes('road_') || id.includes('river_') || 
+                   id.includes('riverbank_') || id.includes('branch_') || id.includes('quest_path_') ||
+                   id.includes('hobbit_path_');
+        }
+        
+        function isKeyRoom(roomId) {
+            const id = roomId.toLowerCase();
+            return id === 'bag_end' || id.includes('mount_doom') || id.includes('minas_tirith') ||
+                   id.includes('barad_dur') || id.includes('rivendell') || id.includes('moria') ||
+                   id.includes('lorien') || id.includes('edoras') || id.includes('helms_deep') ||
+                   id.includes('isengard') || id.includes('bree');
+        }
+        
+        // Build coordinate map
+        const coordMap = new Map();
+        for (const [roomId, coord] of Object.entries(coordinates)) {
+            const key = `${coord.x},${coord.y},${coord.z || 0}`;
+            if (!coordMap.has(key)) {
+                coordMap.set(key, []);
+            }
+            coordMap.get(key).push({ roomId, isConnection: isConnectionRoom(roomId), isKey: isKeyRoom(roomId) });
+        }
+        
+        // Find overlaps and decide what to keep
+        const roomsToRemove = new Set();
+        
+        for (const [key, roomList] of coordMap.entries()) {
+            if (roomList.length > 1) {
+                // Sort: key rooms first, then real rooms, then connection rooms
+                roomList.sort((a, b) => {
+                    if (a.isKey && !b.isKey) return -1;
+                    if (!a.isKey && b.isKey) return 1;
+                    if (!a.isConnection && b.isConnection) return -1;
+                    if (a.isConnection && !b.isConnection) return 1;
+                    return 0;
+                });
+                
+                // Keep the first one, remove all others
+                for (let i = 1; i < roomList.length; i++) {
+                    roomsToRemove.add(roomList[i].roomId);
+                }
+            }
+        }
+        
+        // Remove overlapping rooms
+        for (const roomId of roomsToRemove) {
+            delete coordinates[roomId];
+            delete exits[roomId];
+            
+            // Remove references from other rooms
+            for (const [otherRoomId, otherExits] of Object.entries(exits)) {
+                if (!otherExits) continue;
+                for (const [direction, targetId] of Object.entries(otherExits)) {
+                    if (targetId === roomId) {
+                        delete otherExits[direction];
+                    }
+                }
+            }
+        }
+        
+        // Save
+        worldData.coordinates = coordinates;
+        worldData.exits = exits;
+        writeFileSync(worldDataPath, JSON.stringify(worldData, null, 2), 'utf-8');
+        
+        res.json({ 
+            success: true, 
+            removedCount: roomsToRemove.size,
+            remainingRooms: Object.keys(coordinates).length
+        });
+    } catch (err) {
+        console.error('Error cleaning up overlaps:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+
+// Get terrain map for visualization
+export function getTerrainMap(req, res) {
+    try {
+        const terrainMapPath = path.join(__dirname, '../../../scripts/terrain-map.txt');
+        const terrainMapContent = readFileSync(terrainMapPath, 'utf-8');
+        
+        // Parse terrain map
+        const lines = terrainMapContent.split('\n').filter(l => l !== '');
+        const terrain = [];
+        const width = Math.max(...lines.map(l => l.length));
+        const height = lines.length;
+        
+        for (let y = 0; y < height; y++) {
+            const line = lines[y];
+            terrain[y] = [];
+            for (let x = 0; x < width; x++) {
+                const char = x < line.length ? line[x] : ' ';
+                // Map characters to terrain types
+                if (char === '^') terrain[y][x] = 'mountain';
+                else if (char === 'f' || char === '&') terrain[y][x] = 'forest';
+                else if (char === 'h') terrain[y][x] = 'hill';
+                else if (char === '|') terrain[y][x] = 'river';
+                else if (char === '*') terrain[y][x] = 'hobbit_path';
+                else if (char === 'L' || char === '~') terrain[y][x] = 'lake';
+                else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';
+                else if (char === ':' || char === 'G') terrain[y][x] = 'shire';
+                else if (char === 'p') terrain[y][x] = 'plains';
+                else if (char === 'm') terrain[y][x] = 'marsh';
+                else if (char === 'R') terrain[y][x] = 'region';
+                else terrain[y][x] = 'plains';
+            }
+        }
+        
+        // Convert ASCII coordinates to game coordinates (same as reorganization script)
+        const SCALE_X = 1.0;
+        const SCALE_Y = 1.0;
+        const OFFSET_X = -width / 2;
+        const OFFSET_Y = height / 2;
+        
+        const terrainData = [];
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+                const gameX = Math.round((x + OFFSET_X) * SCALE_X);
+                const gameY = Math.round((OFFSET_Y - y) * SCALE_Y);
+                terrainData.push({
+                    x: gameX,
+                    y: gameY,
+                    type: terrain[y][x]
+                });
+            }
+        }
+        
+        res.json({
+            success: true,
+            terrain: terrainData,
+            width,
+            height,
+            scaleX: SCALE_X,
+            scaleY: SCALE_Y,
+            offsetX: OFFSET_X,
+            offsetY: OFFSET_Y
+        });
+    } catch (err) {
+        console.error('Error loading terrain map:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+}
+

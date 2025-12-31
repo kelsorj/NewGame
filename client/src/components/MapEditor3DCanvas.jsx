@@ -72,6 +72,9 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResults, setShowSearchResults] = useState(false);
     const [rightClickWorldPos, setRightClickWorldPos] = useState(null);
+    const [showOverlaps, setShowOverlaps] = useState(false);
+    const [terrainMap, setTerrainMap] = useState(null);
+    const [showTerrain, setShowTerrain] = useState(true);
 
     // Generate a unique room ID (30+ character alphanumeric)
     const generateRoomId = () => {
@@ -87,7 +90,26 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     useEffect(() => {
         loadMapData();
         loadOverlaps();
+        loadTerrainMap();
     }, []);
+
+    // Load terrain map for visualization
+    const loadTerrainMap = async () => {
+        try {
+            const response = await fetch(`${API_BASE}/terrain-map`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success && data.terrain) {
+                    console.log(`Loaded terrain map: ${data.terrain.length} cells`);
+                    setTerrainMap(data.terrain);
+                }
+            } else {
+                console.log('Terrain map endpoint not available (this is optional)');
+            }
+        } catch (err) {
+            console.log('Terrain map not available (this is optional):', err.message);
+        }
+    };
 
     // Load vertical neighbors when room is selected
     useEffect(() => {
@@ -615,6 +637,41 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
         // Sort by Z (draw back to front)
         roomProjections.sort((a, b) => b.proj.z - a.proj.z);
 
+        // Draw terrain map as background (only on ground level and if enabled)
+        if (showTerrain && terrainMap && terrainMap.length > 0 && visibleLevels.has(0)) {
+            const terrainColors = {
+                mountain: 'rgba(100, 100, 100, 0.3)',  // Gray
+                forest: 'rgba(0, 100, 0, 0.2)',        // Green
+                hill: 'rgba(139, 90, 43, 0.2)',        // Brown
+                river: 'rgba(0, 100, 200, 0.3)',        // Blue
+                lake: 'rgba(0, 150, 255, 0.3)',        // Light blue
+                road: 'rgba(150, 150, 150, 0.2)',       // Light gray
+                shire: 'rgba(100, 200, 100, 0.2)',     // Light green
+                hobbit_path: 'rgba(255, 200, 0, 0.3)', // Yellow
+                marsh: 'rgba(50, 100, 50, 0.2)',        // Dark green
+                region: 'rgba(200, 200, 0, 0.2)',       // Yellow
+                plains: 'rgba(50, 50, 50, 0.05)'        // Very faint
+            };
+            
+            terrainMap.forEach(terrainCell => {
+                if (terrainCell.type === 'plains') return; // Skip plains to reduce clutter
+                
+                const terrainColor = terrainColors[terrainCell.type] || terrainColors.plains;
+                const proj = project3D(
+                    (terrainCell.x - centerX) * cellSize + camera.panX,
+                    (terrainCell.y - centerY) * cellSize + camera.panY,
+                    0,
+                    { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+                );
+                
+                if (proj.z > -10000) {
+                    const size = cellSize * proj.scale * 0.8;
+                    ctx.fillStyle = terrainColor;
+                    ctx.fillRect(proj.x - size / 2, proj.y - size / 2, size, size);
+                }
+            });
+        }
+
         // Draw grid background for each level (simplified - just draw corners)
         visibleLevelsArray.forEach((level) => {
             const z = level * levelSpacing;
@@ -849,7 +906,7 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                 cancelAnimationFrame(animationFrameId);
             }
         };
-    }, [rooms, globalBounds, levels, roomsByLevel, camera, selectedRoom, draggedRoom, overlaps, dragOffset, hoveredRoom, visibleLevels, visibleLevelsArray]);
+    }, [rooms, globalBounds, levels, roomsByLevel, camera, selectedRoom, draggedRoom, overlaps, dragOffset, hoveredRoom, visibleLevels, visibleLevelsArray, terrainMap, showTerrain]);
 
     // Find room at mouse position
     const findRoomAtPosition = (mouseX, mouseY, canvas, globalBounds, levels, rooms, camera) => {
@@ -1537,6 +1594,15 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                         marginBottom: '10px'
                     }}>
                         <strong style={{ color: '#4a9eff', fontSize: '16px' }}>Level Visibility:</strong>
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', marginRight: '10px' }}>
+                            <input
+                                type="checkbox"
+                                checked={showTerrain}
+                                onChange={(e) => setShowTerrain(e.target.checked)}
+                                style={{ width: '16px', height: '16px', cursor: 'pointer' }}
+                            />
+                            <span style={{ color: '#aaa', fontSize: '12px' }}>Show Terrain</span>
+                        </label>
                         <div style={{ display: 'flex', gap: '10px' }}>
                             <button
                                 onClick={() => setVisibleLevels(new Set(levels))}
@@ -1679,13 +1745,36 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                     borderTop: '2px solid #16213e'
                 }}>
                     {overlaps.length > 0 && (
-                        <div style={{ marginBottom: '15px', background: '#ff4444', padding: '10px', borderRadius: '5px' }}>
-                            <strong>Overlaps Detected:</strong>
-                            {overlaps.map((ov, idx) => (
-                                <div key={idx} style={{ marginTop: '5px' }}>
-                                    <strong>{ov.coordinate}:</strong> {ov.rooms.map(r => r.name || r.id).join(', ')}
+                        <div style={{ 
+                            marginBottom: '15px', 
+                            background: '#ff4444', 
+                            padding: '8px', 
+                            borderRadius: '5px',
+                            maxHeight: showOverlaps ? '300px' : 'auto',
+                            overflow: showOverlaps ? 'auto' : 'hidden'
+                        }}>
+                            <div 
+                                style={{ 
+                                    display: 'flex', 
+                                    justifyContent: 'space-between', 
+                                    alignItems: 'center',
+                                    cursor: 'pointer',
+                                    marginBottom: showOverlaps ? '8px' : '0'
+                                }}
+                                onClick={() => setShowOverlaps(!showOverlaps)}
+                            >
+                                <strong>⚠️ {overlaps.length} Overlap(s) Detected (Click to {showOverlaps ? 'hide' : 'show'})</strong>
+                                <span style={{ fontSize: '12px' }}>{showOverlaps ? '▼' : '▶'}</span>
+                            </div>
+                            {showOverlaps && (
+                                <div style={{ fontSize: '12px', maxHeight: '250px', overflowY: 'auto' }}>
+                                    {overlaps.map((ov, idx) => (
+                                        <div key={idx} style={{ marginTop: '5px', padding: '4px', background: 'rgba(0,0,0,0.2)', borderRadius: '3px' }}>
+                                            <strong>{ov.coordinate}:</strong> {ov.rooms.map(r => r.name || r.id).join(', ')}
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            )}
                         </div>
                     )}
 
@@ -1734,6 +1823,31 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                         >
                             Check Overlaps
                         </button>
+                        {overlaps.length > 0 && (
+                            <button 
+                                onClick={async () => {
+                                    if (confirm(`This will remove ${overlaps.length} overlapping rooms. Continue?`)) {
+                                        try {
+                                            // Call cleanup script via API or directly
+                                            const response = await fetch(`${API_BASE}/cleanup-overlaps`, { method: 'POST' });
+                                            const data = await response.json();
+                                            if (data.success) {
+                                                alert(`Cleaned up ${data.removedCount || overlaps.length} overlapping rooms`);
+                                                await loadMapData();
+                                                loadOverlaps();
+                                            } else {
+                                                alert(`Error: ${data.error || 'Failed to cleanup overlaps'}`);
+                                            }
+                                        } catch (err) {
+                                            alert(`Error: ${err.message}`);
+                                        }
+                                    }
+                                }}
+                                style={{ padding: '10px 20px', cursor: 'pointer', background: '#ff6b6b', color: '#fff', border: 'none', borderRadius: '4px', fontWeight: 'bold' }}
+                            >
+                                🧹 Cleanup Overlaps
+                            </button>
+                        )}
                         <button 
                             onClick={async () => {
                                 try {
