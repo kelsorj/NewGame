@@ -74,6 +74,7 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     const [rightClickWorldPos, setRightClickWorldPos] = useState(null);
     const [showOverlaps, setShowOverlaps] = useState(false);
     const [terrainMap, setTerrainMap] = useState(null);
+    const [terrainLabels, setTerrainLabels] = useState([]);
     const [showTerrain, setShowTerrain] = useState(true);
 
     // Generate a unique room ID (30+ character alphanumeric)
@@ -102,6 +103,10 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                 if (data.success && data.terrain) {
                     console.log(`Loaded terrain map: ${data.terrain.length} cells`);
                     setTerrainMap(data.terrain);
+                    if (data.labels) {
+                        console.log(`Loaded ${data.labels.length} terrain labels`);
+                        setTerrainLabels(data.labels);
+                    }
                 }
             } else {
                 console.log('Terrain map endpoint not available (this is optional)');
@@ -640,17 +645,20 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
         // Draw terrain map as background (only on ground level and if enabled)
         if (showTerrain && terrainMap && terrainMap.length > 0 && visibleLevels.has(0)) {
             const terrainColors = {
-                mountain: 'rgba(100, 100, 100, 0.3)',    // Gray - ^
-                forest: 'rgba(0, 100, 0, 0.2)',        // Green - f
-                hill: 'rgba(139, 90, 43, 0.2)',        // Brown - h
-                river: 'rgba(0, 100, 200, 0.3)',        // Blue - |
-                hobbit_route: 'rgba(255, 200, 0, 0.4)', // Yellow - * (route they took)
-                path: 'rgba(200, 200, 200, 0.25)',      // Light gray - p
-                road: 'rgba(150, 150, 150, 0.3)',       // Medium gray - R
-                gulf: 'rgba(0, 150, 255, 0.4)',         // Light blue - G (gulf of water)
-                marsh: 'rgba(50, 100, 50, 0.2)',        // Dark green - m
-                lake: 'rgba(0, 150, 255, 0.3)',         // Light blue - L, ~
-                shire: 'rgba(100, 200, 100, 0.2)',      // Light green - :
+                mountain: 'rgba(100, 100, 100, 0.4)',    // Gray - ^
+                forest: 'rgba(0, 100, 0, 0.3)',        // Green - f
+                hill: 'rgba(139, 90, 43, 0.3)',        // Brown - h
+                river: 'rgba(0, 100, 200, 0.4)',        // Blue - |
+                hobbit_route: 'rgba(255, 220, 0, 0.7)', // Bright Yellow - * (route they took) - VERY VISIBLE
+                path: 'rgba(240, 240, 240, 0.6)',      // Very light gray - p - VERY VISIBLE
+                road: 'rgba(200, 200, 200, 0.6)',       // Light gray - R - VERY VISIBLE
+                gulf: 'rgba(0, 150, 255, 0.5)',         // Light blue - G (gulf of water)
+                marsh: 'rgba(50, 100, 50, 0.3)',        // Dark green - m
+                coast: 'rgba(200, 200, 150, 0.4)',      // Beige/tan - C (coast)
+                ocean: 'rgba(0, 100, 200, 0.5)',        // Deep blue - O (ocean, deep)
+                sea: 'rgba(0, 150, 220, 0.45)',         // Medium blue - S (sea, not as deep as ocean)
+                lake: 'rgba(0, 150, 255, 0.4)',         // Light blue - L, ~
+                shire: 'rgba(100, 200, 100, 0.3)',      // Light green - :
                 plains: 'rgba(50, 50, 50, 0.05)'        // Very faint - blank
             };
             
@@ -666,11 +674,56 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                 );
                 
                 if (proj.z > -10000) {
-                    const size = cellSize * proj.scale * 0.8;
+                    const size = cellSize * proj.scale * 0.9; // Slightly larger for better visibility
                     ctx.fillStyle = terrainColor;
                     ctx.fillRect(proj.x - size / 2, proj.y - size / 2, size, size);
+                    
+                    // Add prominent border for paths, roads, and hobbit routes to make them more visible
+                    if (terrainCell.type === 'path' || terrainCell.type === 'road' || terrainCell.type === 'hobbit_route') {
+                        if (terrainCell.type === 'hobbit_route') {
+                            ctx.strokeStyle = 'rgba(255, 200, 0, 1.0)'; // Bright yellow border
+                        } else if (terrainCell.type === 'path') {
+                            ctx.strokeStyle = 'rgba(200, 200, 200, 0.9)'; // Light gray border
+                        } else if (terrainCell.type === 'road') {
+                            ctx.strokeStyle = 'rgba(150, 150, 150, 0.9)'; // Medium gray border
+                        }
+                        ctx.lineWidth = 2;
+                        ctx.strokeRect(proj.x - size / 2, proj.y - size / 2, size, size);
+                    }
                 }
             });
+            
+            // Draw terrain labels
+            if (terrainLabels && terrainLabels.length > 0) {
+                ctx.font = 'bold 14px Arial';
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'middle';
+                
+                terrainLabels.forEach(label => {
+                    const proj = project3D(
+                        (label.x - centerX) * cellSize + camera.panX,
+                        (label.y - centerY) * cellSize + camera.panY,
+                        0,
+                        { ...camera, offsetX: canvas.width / 2, offsetY: canvas.height / 2 }
+                    );
+                    
+                    if (proj.z > -10000) {
+                        const textX = proj.x + 8;
+                        const textY = proj.y;
+                        
+                        // Draw text with black outline for visibility
+                        ctx.strokeStyle = 'rgba(0, 0, 0, 1.0)';
+                        ctx.lineWidth = 4;
+                        ctx.lineJoin = 'round';
+                        ctx.miterLimit = 2;
+                        ctx.strokeText(label.text, textX, textY);
+                        
+                        // Draw white text on top
+                        ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
+                        ctx.fillText(label.text, textX, textY);
+                    }
+                });
+            }
         }
 
         // Draw grid background for each level (simplified - just draw corners)
@@ -907,7 +960,7 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                 cancelAnimationFrame(animationFrameId);
             }
         };
-    }, [rooms, globalBounds, levels, roomsByLevel, camera, selectedRoom, draggedRoom, overlaps, dragOffset, hoveredRoom, visibleLevels, visibleLevelsArray, terrainMap, showTerrain]);
+    }, [rooms, globalBounds, levels, roomsByLevel, camera, selectedRoom, draggedRoom, overlaps, dragOffset, hoveredRoom, visibleLevels, visibleLevelsArray, terrainMap, terrainLabels, showTerrain]);
 
     // Find room at mouse position
     const findRoomAtPosition = (mouseX, mouseY, canvas, globalBounds, levels, rooms, camera) => {

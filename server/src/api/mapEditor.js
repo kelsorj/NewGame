@@ -1160,14 +1160,46 @@ export function getTerrainMap(req, res) {
         // Parse terrain map
         const lines = terrainMapContent.split('\n').filter(l => l !== '');
         const terrain = [];
+        const labels = []; // Array of {x, y, text} for labels
         const width = Math.max(...lines.map(l => l.length));
         const height = lines.length;
         
         for (let y = 0; y < height; y++) {
             const line = lines[y];
             terrain[y] = [];
-            for (let x = 0; x < width; x++) {
+            
+            let x = 0;
+            while (x < width) {
                 const char = x < line.length ? line[x] : ' ';
+                
+                // Check for labels in parentheses
+                if (char === '(') {
+                    let labelEnd = line.indexOf(')', x);
+                    if (labelEnd > 0) {
+                        const labelText = line.substring(x + 1, labelEnd);
+                        // Convert ASCII coordinates to game coordinates
+                        const SCALE_X = 1.0;
+                        const SCALE_Y = 1.0;
+                        const OFFSET_X = -width / 2;
+                        const OFFSET_Y = height / 2;
+                        const gameX = Math.round((x + OFFSET_X) * SCALE_X);
+                        const gameY = Math.round((OFFSET_Y - y) * SCALE_Y);
+                        
+                        labels.push({
+                            x: gameX,
+                            y: gameY,
+                            text: labelText
+                        });
+                        
+                        // Fill label area with plains
+                        for (let i = x; i <= labelEnd && i < width; i++) {
+                            terrain[y][i] = 'plains';
+                        }
+                        x = labelEnd + 1;
+                        continue;
+                    }
+                }
+                
                 // Map characters to terrain types (corrected per user definitions)
                 if (char === '^') terrain[y][x] = 'mountain';
                 else if (char === 'f' || char === '&') terrain[y][x] = 'forest';
@@ -1178,10 +1210,15 @@ export function getTerrainMap(req, res) {
                 else if (char === 'R') terrain[y][x] = 'road';  // Road
                 else if (char === 'G') terrain[y][x] = 'gulf';  // Gulf of water
                 else if (char === 'm') terrain[y][x] = 'marsh';  // Marshes
+                else if (char === 'C') terrain[y][x] = 'coast';  // Coast
+                else if (char === 'O') terrain[y][x] = 'ocean';  // Ocean (deep)
+                else if (char === 'S') terrain[y][x] = 'sea';  // Sea (not as deep as ocean)
                 else if (char === 'L' || char === '~') terrain[y][x] = 'lake';  // Lake/water
                 else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';  // Road markers
                 else if (char === ':') terrain[y][x] = 'shire';  // Shire area
                 else terrain[y][x] = 'plains';
+                
+                x++;
             }
         }
         
@@ -1207,6 +1244,7 @@ export function getTerrainMap(req, res) {
         res.json({
             success: true,
             terrain: terrainData,
+            labels: labels, // Include labels in response
             width,
             height,
             scaleX: SCALE_X,

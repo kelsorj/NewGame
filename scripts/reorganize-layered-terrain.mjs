@@ -91,13 +91,15 @@ function parseTerrainMap(mapString) {
     // Keep all lines, including empty ones, to preserve full map size
     const lines = mapString.split('\n').filter(l => l !== ''); // Only remove completely empty lines
     const terrain = [];
-    const labels = new Map();
+    const labels = new Map(); // Map of "x,y" -> label name
+    const regionLabels = new Map(); // Map of region name -> array of {x, y} coordinates
     
     for (let y = 0; y < lines.length; y++) {
         const line = lines[y];
         terrain[y] = [];
         
-        for (let x = 0; x < line.length; x++) {
+        let x = 0;
+        while (x < line.length) {
             const char = line[x];
             
             // Check for labels in parentheses
@@ -105,12 +107,25 @@ function parseTerrainMap(mapString) {
                 let labelEnd = line.indexOf(')', x);
                 if (labelEnd > 0) {
                     const label = line.substring(x + 1, labelEnd);
-                    labels.set(`${x},${y}`, label);
-                    // Fill label area with plains
-                    for (let i = x; i < labelEnd; i++) {
-                        terrain[y][i] = 'plains';
+                    const labelKey = `${x},${y}`;
+                    labels.set(labelKey, label);
+                    
+                    // Store ALL labels (both regions and locations) with their exact coordinates
+                    // Normalize label name (remove spaces, convert to lowercase)
+                    const labelName = label.replace(/\s+/g, '_').toLowerCase();
+                    if (!regionLabels.has(labelName)) {
+                        regionLabels.set(labelName, []);
                     }
-                    x = labelEnd;
+                    // Store the starting X coordinate of the label
+                    regionLabels.get(labelName).push({ x, y });
+                    
+                    // Fill label area with plains
+                    for (let i = x; i <= labelEnd; i++) {
+                        if (i < line.length) {
+                            terrain[y][i] = 'plains';
+                        }
+                    }
+                    x = labelEnd + 1;
                     continue;
                 }
             }
@@ -125,20 +140,26 @@ function parseTerrainMap(mapString) {
             else if (char === 'R') terrain[y][x] = 'road';  // Road
             else if (char === 'G') terrain[y][x] = 'gulf';  // Gulf of water
             else if (char === 'm') terrain[y][x] = 'marsh';  // Marshes
+            else if (char === 'C') terrain[y][x] = 'coast';  // Coast
+            else if (char === 'O') terrain[y][x] = 'ocean';  // Ocean (deep)
+            else if (char === 'S') terrain[y][x] = 'sea';  // Sea (not as deep as ocean)
             else if (char === 'L' || char === '~') terrain[y][x] = 'lake';  // Lake/water
             else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';  // Road markers
             else if (char === ':') terrain[y][x] = 'shire';  // Shire area
             else terrain[y][x] = 'plains';
+            
+            x++;
         }
     }
     
-    return { terrain, labels, width: Math.max(...lines.map(l => l.length)), height: lines.length };
+    return { terrain, labels, regionLabels, width: Math.max(...lines.map(l => l.length)), height: lines.length };
 }
 
-const { terrain, labels, width, height } = parseTerrainMap(userTerrainMap);
+const { terrain, labels, regionLabels, width, height } = parseTerrainMap(userTerrainMap);
 
 console.log(`\nParsed terrain map: ${width}x${height}`);
-console.log(`Found ${labels.size} labeled regions`);
+console.log(`Found ${labels.size} labeled locations`);
+console.log(`Found ${regionLabels.size} region labels:`, Array.from(regionLabels.keys()).join(', '));
 
 // Convert ASCII coordinates to game coordinates
 // Scale appropriately for the map dimensions
@@ -160,6 +181,51 @@ function getTerrain(x, y) {
         return 'plains';
     }
     return terrain[y][x] || 'plains';
+}
+
+// Map room IDs to region names based on region labels
+function getRoomRegion(roomId) {
+    const id = roomId.toLowerCase();
+    
+    // Check against all region labels
+    for (const [regionName, coords] of regionLabels.entries()) {
+        // Normalize region name for matching (remove underscores, spaces)
+        const normalizedRegion = regionName.replace(/_/g, '').replace(/\s+/g, '');
+        
+        // Check if room ID contains the region name
+        if (id.includes(normalizedRegion) || id.includes(regionName)) {
+            return regionName;
+        }
+        
+        // Also check common variations
+        const regionVariations = {
+            'arthedain': ['arthedain', 'arth', 'north_kingdom'],
+            'ettenmoors': ['etten', 'moors', 'trollshaws'],
+            'iron_hills': ['iron', 'ironhills'],
+            'arnor': ['arnor', 'north_kingdom'],
+            'rhudaur': ['rhudaur', 'rhudaur'],
+            'rhun': ['rhun', 'easterlings'],
+            'rhovanion': ['rhovanion', 'wilderland'],
+            'cardolan': ['cardolan', 'south_kingdom'],
+            'east_bight': ['east_bight', 'eastbight'],
+            'harlinon': ['harlinon', 'harlindon'],
+            'shire': ['shire', 'hobbit', 'bag_end'],
+            'mirkwood': ['mirkwood', 'greenwood'],
+            'gondor': ['gondor', 'minas_tirith', 'osgiliath'],
+            'rohan': ['rohan', 'edoras', 'helms_deep'],
+            'mordor': ['mordor', 'barad_dur', 'mount_doom']
+        };
+        
+        if (regionVariations[regionName]) {
+            for (const variation of regionVariations[regionName]) {
+                if (id.includes(variation)) {
+                    return regionName;
+                }
+            }
+        }
+    }
+    
+    return null; // No region match
 }
 
 // Map room IDs to terrain-appropriate locations
@@ -250,14 +316,28 @@ const roomsByTerrain = {
     road: [],
     gulf: [],
     marsh: [],
+    coast: [],
+    ocean: [],
+    sea: [],
     shire: [],
     lake: [],
     plains: []
 };
 
+const roomsByRegion = new Map(); // Map of region name -> array of room IDs
+
 for (const roomId of Object.keys(coordinates)) {
     const terrainType = getRoomTerrainType(roomId);
     roomsByTerrain[terrainType].push(roomId);
+    
+    // Also group by region
+    const region = getRoomRegion(roomId);
+    if (region) {
+        if (!roomsByRegion.has(region)) {
+            roomsByRegion.set(region, []);
+        }
+        roomsByRegion.get(region).push(roomId);
+    }
 }
 
 console.log('\nRooms by terrain type:');
@@ -265,11 +345,92 @@ for (const [type, rooms] of Object.entries(roomsByTerrain)) {
     console.log(`  ${type.padEnd(15)}: ${rooms.length} rooms`);
 }
 
+if (roomsByRegion.size > 0) {
+    console.log('\nRooms by region:');
+    for (const [region, rooms] of roomsByRegion.entries()) {
+        console.log(`  ${region.padEnd(20)}: ${rooms.length} rooms`);
+    }
+}
+
 // Place rooms on terrain
 console.log('\nPlacing rooms on terrain...');
 
 const occupiedPositions = new Set();
 const placedRooms = new Map();
+
+// First, place rooms at exact label coordinates
+// Match room IDs to label names and place them at the exact label position
+console.log('\n0. Placing rooms at exact label coordinates...');
+const labelPlacements = new Map(); // Track which labels have been used
+
+// For each label, find all matching rooms and place them
+for (const [labelName, labelCoords] of regionLabels.entries()) {
+    if (labelCoords.length === 0) continue;
+    
+    const normalizedLabel = labelName.replace(/_/g, '').replace(/\s+/g, '').toLowerCase();
+    const matchingRooms = [];
+    
+    // Find all rooms that match this label
+    for (const roomId of Object.keys(coordinates)) {
+        if (placedRooms.has(roomId)) continue; // Already placed
+        
+        const id = roomId.toLowerCase();
+        
+        // Check various matching patterns
+        if (id.includes(normalizedLabel) || normalizedLabel.includes(id) || 
+            id === labelName || id === normalizedLabel ||
+            id.startsWith(normalizedLabel) || normalizedLabel.startsWith(id)) {
+            matchingRooms.push(roomId);
+        }
+    }
+    
+    if (matchingRooms.length === 0) continue;
+    
+    // Use the first coordinate for this label
+    const labelCoord = labelCoords[0];
+    const centerGameCoord = asciiToGame(labelCoord.x, labelCoord.y);
+    
+    // Place the first room at the exact label coordinate
+    // Place additional rooms in a spiral around it
+    // Use larger radius for labels with many rooms
+    const maxRadius = Math.max(5, Math.ceil(Math.sqrt(matchingRooms.length)) + 2);
+    let placedCount = 0;
+    for (let i = 0; i < matchingRooms.length; i++) {
+        const roomId = matchingRooms[i];
+        let found = false;
+        
+        // First room goes at exact coordinate, others spiral out
+        for (let radius = 0; radius < maxRadius && !found; radius++) {
+            for (let dx = -radius; dx <= radius && !found; dx++) {
+                for (let dy = -radius; dy <= radius && !found; dy++) {
+                    if (radius > 0 && Math.abs(dx) !== radius && Math.abs(dy) !== radius) continue;
+                    
+                    const testX = centerGameCoord.x + dx;
+                    const testY = centerGameCoord.y + dy;
+                    const key = `${testX},${testY}`;
+                    
+                    if (!occupiedPositions.has(key)) {
+                        const oldCoord = coordinates[roomId];
+                        coordinates[roomId] = {
+                            x: testX,
+                            y: testY,
+                            z: oldCoord?.z || 0
+                        };
+                        occupiedPositions.add(key);
+                        placedRooms.set(roomId, { x: testX, y: testY });
+                        placedCount++;
+                        found = true;
+                    }
+                }
+            }
+        }
+    }
+    
+    if (placedCount > 0) {
+        labelPlacements.set(labelName, matchingRooms.slice(0, placedCount));
+        console.log(`   Placed ${placedCount} / ${matchingRooms.length} room(s) at ${labelName}`);
+    }
+}
 
 // First, place hobbit route rooms (key locations)
 console.log('\n1. Placing hobbit route locations...');
