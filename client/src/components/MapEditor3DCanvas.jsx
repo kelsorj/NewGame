@@ -640,17 +640,18 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
         // Draw terrain map as background (only on ground level and if enabled)
         if (showTerrain && terrainMap && terrainMap.length > 0 && visibleLevels.has(0)) {
             const terrainColors = {
-                mountain: 'rgba(100, 100, 100, 0.3)',  // Gray
-                forest: 'rgba(0, 100, 0, 0.2)',        // Green
-                hill: 'rgba(139, 90, 43, 0.2)',        // Brown
-                river: 'rgba(0, 100, 200, 0.3)',        // Blue
-                lake: 'rgba(0, 150, 255, 0.3)',        // Light blue
-                road: 'rgba(150, 150, 150, 0.2)',       // Light gray
-                shire: 'rgba(100, 200, 100, 0.2)',     // Light green
-                hobbit_path: 'rgba(255, 200, 0, 0.3)', // Yellow
-                marsh: 'rgba(50, 100, 50, 0.2)',        // Dark green
-                region: 'rgba(200, 200, 0, 0.2)',       // Yellow
-                plains: 'rgba(50, 50, 50, 0.05)'        // Very faint
+                mountain: 'rgba(100, 100, 100, 0.3)',    // Gray - ^
+                forest: 'rgba(0, 100, 0, 0.2)',        // Green - f
+                hill: 'rgba(139, 90, 43, 0.2)',        // Brown - h
+                river: 'rgba(0, 100, 200, 0.3)',        // Blue - |
+                hobbit_route: 'rgba(255, 200, 0, 0.4)', // Yellow - * (route they took)
+                path: 'rgba(200, 200, 200, 0.25)',      // Light gray - p
+                road: 'rgba(150, 150, 150, 0.3)',       // Medium gray - R
+                gulf: 'rgba(0, 150, 255, 0.4)',         // Light blue - G (gulf of water)
+                marsh: 'rgba(50, 100, 50, 0.2)',        // Dark green - m
+                lake: 'rgba(0, 150, 255, 0.3)',         // Light blue - L, ~
+                shire: 'rgba(100, 200, 100, 0.2)',      // Light green - :
+                plains: 'rgba(50, 50, 50, 0.05)'        // Very faint - blank
             };
             
             terrainMap.forEach(terrainCell => {

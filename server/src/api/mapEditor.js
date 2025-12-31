@@ -1168,18 +1168,19 @@ export function getTerrainMap(req, res) {
             terrain[y] = [];
             for (let x = 0; x < width; x++) {
                 const char = x < line.length ? line[x] : ' ';
-                // Map characters to terrain types
+                // Map characters to terrain types (corrected per user definitions)
                 if (char === '^') terrain[y][x] = 'mountain';
                 else if (char === 'f' || char === '&') terrain[y][x] = 'forest';
                 else if (char === 'h') terrain[y][x] = 'hill';
                 else if (char === '|') terrain[y][x] = 'river';
-                else if (char === '*') terrain[y][x] = 'hobbit_path';
-                else if (char === 'L' || char === '~') terrain[y][x] = 'lake';
-                else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';
-                else if (char === ':' || char === 'G') terrain[y][x] = 'shire';
-                else if (char === 'p') terrain[y][x] = 'plains';
-                else if (char === 'm') terrain[y][x] = 'marsh';
-                else if (char === 'R') terrain[y][x] = 'region';
+                else if (char === '*') terrain[y][x] = 'hobbit_route';  // Route they took in the hobbit
+                else if (char === 'p') terrain[y][x] = 'path';  // Path
+                else if (char === 'R') terrain[y][x] = 'road';  // Road
+                else if (char === 'G') terrain[y][x] = 'gulf';  // Gulf of water
+                else if (char === 'm') terrain[y][x] = 'marsh';  // Marshes
+                else if (char === 'L' || char === '~') terrain[y][x] = 'lake';  // Lake/water
+                else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';  // Road markers
+                else if (char === ':') terrain[y][x] = 'shire';  // Shire area
                 else terrain[y][x] = 'plains';
             }
         }

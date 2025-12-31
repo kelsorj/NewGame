@@ -115,17 +115,19 @@ function parseTerrainMap(mapString) {
                 }
             }
             
-            // Map characters to terrain types
+            // Map characters to terrain types (corrected per user definitions)
             if (char === '^') terrain[y][x] = 'mountain';
             else if (char === 'f' || char === '&') terrain[y][x] = 'forest';
             else if (char === 'h') terrain[y][x] = 'hill';
             else if (char === '|') terrain[y][x] = 'river';
-            else if (char === '*') terrain[y][x] = 'hobbit_path';
-            else if (char === 'L' || char === '~') terrain[y][x] = 'lake';
-            else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';
-            else if (char === ':') terrain[y][x] = 'shire';
-            else if (char === 'p') terrain[y][x] = 'plains';
-            else if (char === 'R') terrain[y][x] = 'region';
+            else if (char === '*') terrain[y][x] = 'hobbit_route';  // Route they took in the hobbit
+            else if (char === 'p') terrain[y][x] = 'path';  // Path
+            else if (char === 'R') terrain[y][x] = 'road';  // Road
+            else if (char === 'G') terrain[y][x] = 'gulf';  // Gulf of water
+            else if (char === 'm') terrain[y][x] = 'marsh';  // Marshes
+            else if (char === 'L' || char === '~') terrain[y][x] = 'lake';  // Lake/water
+            else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';  // Road markers
+            else if (char === ':') terrain[y][x] = 'shire';  // Shire area
             else terrain[y][x] = 'plains';
         }
     }
@@ -198,23 +200,39 @@ function getRoomTerrainType(roomId) {
         return 'lake';
     }
     
-    // Roads
-    if (id.includes('road') || (id.includes('path') && !id.includes('hobbit'))) {
-        return 'road';
-    }
-    
-    // Shire
-    if (id.includes('shire') || id.includes('hobbit') || id.includes('bag_end')) {
+    // Shire (check before hobbit_route since bag_end is in shire)
+    if (id.includes('shire') || id.includes('hobbit') || id === 'bag_end') {
         return 'shire';
     }
     
-    // Hobbit path locations
-    if (id === 'bag_end' || id.includes('bree') || id.includes('rivendell') ||
+    // Hobbit route locations (the path they took in the book)
+    if (id.includes('bree') || id.includes('rivendell') ||
         id.includes('moria') || id.includes('lorien') || id.includes('rohan') ||
         id.includes('gondor') || id.includes('minas_tirith') || id.includes('mordor') ||
         id.includes('mount_doom') || id.includes('dale') || id.includes('fornost') ||
-        id.includes('annuminas')) {
-        return 'hobbit_path';
+        id.includes('annuminas') || id.includes('weathertop') || id.includes('amon_sul')) {
+        return 'hobbit_route';
+    }
+    
+    // Paths (generic paths, not roads)
+    if (id.includes('path') && !id.includes('hobbit') && !id.includes('road') && 
+        !id.includes('river') && !id.includes('ford')) {
+        return 'path';
+    }
+    
+    // Roads
+    if (id.includes('road') || id.includes('east_road') || id.includes('great_road')) {
+        return 'road';
+    }
+    
+    // Marshes
+    if (id.includes('marsh') || id.includes('midgewater')) {
+        return 'marsh';
+    }
+    
+    // Gulfs
+    if (id.includes('gulf') || id.includes('lhun') || id.includes('forochel')) {
+        return 'gulf';
     }
     
     // Default to plains
@@ -227,8 +245,11 @@ const roomsByTerrain = {
     forest: [],
     hill: [],
     river: [],
-    hobbit_path: [],
+    hobbit_route: [],
+    path: [],
     road: [],
+    gulf: [],
+    marsh: [],
     shire: [],
     lake: [],
     plains: []
@@ -250,22 +271,22 @@ console.log('\nPlacing rooms on terrain...');
 const occupiedPositions = new Set();
 const placedRooms = new Map();
 
-// First, place hobbit path rooms (key locations)
-console.log('\n1. Placing hobbit path locations...');
-const hobbitPathPositions = [];
+// First, place hobbit route rooms (key locations)
+console.log('\n1. Placing hobbit route locations...');
+const hobbitRoutePositions = [];
 for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-        if (getTerrain(x, y) === 'hobbit_path') {
+        if (getTerrain(x, y) === 'hobbit_route') {
             const gameCoord = asciiToGame(x, y);
-            hobbitPathPositions.push(gameCoord);
+            hobbitRoutePositions.push(gameCoord);
         }
     }
 }
 
-// Place hobbit path rooms
-for (let i = 0; i < Math.min(roomsByTerrain.hobbit_path.length, hobbitPathPositions.length); i++) {
-    const roomId = roomsByTerrain.hobbit_path[i];
-    const pos = hobbitPathPositions[i];
+// Place hobbit route rooms
+for (let i = 0; i < Math.min(roomsByTerrain.hobbit_route.length, hobbitRoutePositions.length); i++) {
+    const roomId = roomsByTerrain.hobbit_route[i];
+    const pos = hobbitRoutePositions[i];
     const key = `${pos.x},${pos.y}`;
     
     if (!occupiedPositions.has(key)) {
@@ -282,7 +303,7 @@ for (let i = 0; i < Math.min(roomsByTerrain.hobbit_path.length, hobbitPathPositi
 
 // Place other rooms by terrain type
 for (const [terrainType, rooms] of Object.entries(roomsByTerrain)) {
-    if (terrainType === 'hobbit_path') continue;
+    if (terrainType === 'hobbit_route') continue;
     
     console.log(`\n2. Placing ${terrainType} rooms...`);
     const candidates = [];
@@ -426,7 +447,7 @@ console.log(`\nTotal rooms: ${Object.keys(coordinates).length}`);
 console.log(`Terrain map: ${width}x${height}`);
 console.log(`\nKey locations placed:`);
 for (const { roomId, pos } of Array.from(placedRooms.entries()).slice(0, 10).map(([id, p]) => ({ roomId: id, pos: p }))) {
-    if (roomsByTerrain.hobbit_path.includes(roomId)) {
+    if (roomsByTerrain.hobbit_route && roomsByTerrain.hobbit_route.includes(roomId)) {
         console.log(`  ${roomId}: (${pos.x}, ${pos.y})`);
     }
 }
