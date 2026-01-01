@@ -132,6 +132,7 @@ function parseTerrainMap(mapString) {
             
             // Map characters to terrain types (corrected per user definitions)
             if (char === '^') terrain[y][x] = 'mountain';
+            else if (char === 'M') terrain[y][x] = 'mount_doom';  // Mount Doom
             else if (char === 'f' || char === '&') terrain[y][x] = 'forest';
             else if (char === 'h') terrain[y][x] = 'hill';
             else if (char === '|') terrain[y][x] = 'river';
@@ -232,6 +233,13 @@ function getRoomRegion(roomId) {
 function getRoomTerrainType(roomId) {
     const id = roomId.toLowerCase();
     
+    // Mount Doom (check before mountains)
+    if (id.includes('mount_doom') || id.includes('sammath') || id.includes('doom_summit') ||
+        id.includes('doom_approach') || id.includes('doom_naur') || 
+        (id.includes('doom') && !id.includes('doom_doom'))) {
+        return 'mount_doom';
+    }
+    
     // Mountains
     if (id.includes('mountain') || id.includes('peak') || id.includes('summit') ||
         id.includes('misty') || id.includes('grey_mountain') || id.includes('ered') ||
@@ -272,11 +280,13 @@ function getRoomTerrainType(roomId) {
     }
     
     // Hobbit route locations (the path they took in the book)
-    if (id.includes('bree') || id.includes('rivendell') ||
+    // BUT exclude minas_tirith and mount_doom rooms - they should be placed at their specific labels
+    if ((id.includes('bree') || id.includes('rivendell') ||
         id.includes('moria') || id.includes('lorien') || id.includes('rohan') ||
-        id.includes('gondor') || id.includes('minas_tirith') || id.includes('mordor') ||
-        id.includes('mount_doom') || id.includes('dale') || id.includes('fornost') ||
-        id.includes('annuminas') || id.includes('weathertop') || id.includes('amon_sul')) {
+        id.includes('gondor') || id.includes('mordor') ||
+        id.includes('dale') || id.includes('fornost') ||
+        id.includes('annuminas') || id.includes('weathertop') || id.includes('amon_sul')) &&
+        !id.includes('minas_tirith') && !id.includes('mount_doom') && !id.includes('sammath')) {
         return 'hobbit_route';
     }
     
@@ -308,6 +318,7 @@ function getRoomTerrainType(roomId) {
 // Group rooms by terrain type
 const roomsByTerrain = {
     mountain: [],
+    mount_doom: [],
     forest: [],
     hill: [],
     river: [],
@@ -363,6 +374,22 @@ const placedRooms = new Map();
 console.log('\n0. Placing rooms at exact label coordinates...');
 const labelPlacements = new Map(); // Track which labels have been used
 
+// Explicit mappings for key rooms to labels
+const explicitRoomMappings = {
+    'bag_end': ['hobbiton', 'the_shire', 'shire'],
+    'mount_doom_summit': ['mount_doom'],
+    'mount_doom_sammath_naur': ['mount_doom'],
+    'mount_doom_approach': ['mount_doom'],
+    'the_dark_tower': ['the_dark_tower', 'barad_dur'],
+    'barad_dur': ['the_dark_tower', 'barad_dur']
+};
+
+// Explicit region mappings for rooms that should be placed near specific labels
+const regionProximityMappings = {
+    'minas_tirith': 'mount_doom', // Minas Tirith should be near Mount Doom
+    'gondor': 'mount_doom' // Gondor should be near Mount Doom
+};
+
 // For each label, find all matching rooms and place them
 for (const [labelName, labelCoords] of regionLabels.entries()) {
     if (labelCoords.length === 0) continue;
@@ -375,6 +402,53 @@ for (const [labelName, labelCoords] of regionLabels.entries()) {
         if (placedRooms.has(roomId)) continue; // Already placed
         
         const id = roomId.toLowerCase();
+        
+        // Check explicit mappings first
+        if (explicitRoomMappings[id]) {
+            if (explicitRoomMappings[id].some(m => m === labelName || m === normalizedLabel)) {
+                matchingRooms.push(roomId);
+                continue;
+            }
+        }
+        
+        // Special case: bag_end should match hobbiton
+        if (id === 'bag_end' && (labelName === 'hobbiton' || normalizedLabel === 'hobbiton')) {
+            matchingRooms.push(roomId);
+            continue;
+        }
+        
+        // Special case: mount_doom rooms should match mount_doom label
+        if ((id.includes('mount_doom') || id.includes('sammath')) && 
+            (labelName === 'mount_doom' || normalizedLabel.includes('mountdoom'))) {
+            matchingRooms.push(roomId);
+            continue;
+        }
+        
+        // Special case: minas_tirith rooms should match minas_tirith label
+        // Handle both 'Minas Tirith' (with space) and 'minas_tirith' (with underscore)
+        if (id.includes('minas_tirith') || (id.includes('tirith') && !id.includes('morgul'))) {
+            // Check if this label is for Minas Tirith (handle various forms)
+            const labelLower = labelName.toLowerCase();
+            if (labelLower === 'minas_tirith' || (labelLower.includes('minas') && labelLower.includes('tirith')) ||
+                normalizedLabel.includes('minastirith') || normalizedLabel.includes('minas_tirith')) {
+                matchingRooms.push(roomId);
+                continue;
+            }
+        }
+        
+        // Special case: gondor rooms should match gondor label
+        if (id.includes('gondor') && !id.includes('minas_tirith') &&
+            (labelName === 'gondor' || normalizedLabel.includes('gondor'))) {
+            matchingRooms.push(roomId);
+            continue;
+        }
+        
+        // Special case: osgiliath rooms should match osgiliath label
+        if (id.includes('osgiliath') && 
+            (labelName === 'osgiliath' || normalizedLabel.includes('osgiliath'))) {
+            matchingRooms.push(roomId);
+            continue;
+        }
         
         // Check various matching patterns
         if (id.includes(normalizedLabel) || normalizedLabel.includes(id) || 
@@ -432,8 +506,44 @@ for (const [labelName, labelCoords] of regionLabels.entries()) {
     }
 }
 
+// Place Mount Doom rooms on Mount Doom terrain (M)
+console.log('\n1. Placing Mount Doom rooms on Mount Doom terrain...');
+const mountDoomRooms = roomsByTerrain.mount_doom.filter(id => !placedRooms.has(id));
+const mountDoomPositions = [];
+for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+        if (getTerrain(x, y) === 'mount_doom') {
+            const gameCoord = asciiToGame(x, y);
+            mountDoomPositions.push(gameCoord);
+        }
+    }
+}
+
+// Place Mount Doom rooms
+if (mountDoomRooms.length > 0 && mountDoomPositions.length > 0) {
+    let placedCount = 0;
+    for (let i = 0; i < mountDoomRooms.length && i < mountDoomPositions.length; i++) {
+        const roomId = mountDoomRooms[i];
+        const pos = mountDoomPositions[i];
+        const key = `${pos.x},${pos.y}`;
+        
+        if (!occupiedPositions.has(key)) {
+            const oldCoord = coordinates[roomId];
+            coordinates[roomId] = {
+                x: pos.x,
+                y: pos.y,
+                z: oldCoord?.z || 0
+            };
+            occupiedPositions.add(key);
+            placedRooms.set(roomId, { x: pos.x, y: pos.y });
+            placedCount++;
+        }
+    }
+    console.log(`   Placed ${placedCount} / ${mountDoomRooms.length} Mount Doom rooms`);
+}
+
 // First, place hobbit route rooms (key locations)
-console.log('\n1. Placing hobbit route locations...');
+console.log('\n2. Placing hobbit route locations...');
 const hobbitRoutePositions = [];
 for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
@@ -464,9 +574,14 @@ for (let i = 0; i < Math.min(roomsByTerrain.hobbit_route.length, hobbitRoutePosi
 
 // Place other rooms by terrain type
 for (const [terrainType, rooms] of Object.entries(roomsByTerrain)) {
-    if (terrainType === 'hobbit_route') continue;
+    // Skip hobbit_route and mount_doom (placed separately)
+    if (terrainType === 'hobbit_route' || terrainType === 'mount_doom') continue;
     
-    console.log(`\n2. Placing ${terrainType} rooms...`);
+    // Filter out already placed rooms
+    const unplacedRooms = rooms.filter(id => !placedRooms.has(id));
+    if (unplacedRooms.length === 0) continue;
+    
+    console.log(`\n3. Placing ${terrainType} rooms...`);
     const candidates = [];
     
     // Find all positions with this terrain type
@@ -493,7 +608,7 @@ for (const [terrainType, rooms] of Object.entries(roomsByTerrain)) {
     let candidateIndex = 0;
     let placedCount = 0;
     
-    for (const roomId of rooms) {
+    for (const roomId of unplacedRooms) {
         let placed = false;
         let attempts = 0;
         const maxAttempts = 5000;

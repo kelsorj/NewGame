@@ -646,6 +646,7 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
         if (showTerrain && terrainMap && terrainMap.length > 0 && visibleLevels.has(0)) {
             const terrainColors = {
                 mountain: 'rgba(100, 100, 100, 0.4)',    // Gray - ^
+                mount_doom: 'rgba(200, 50, 0, 0.6)',    // Dark red/orange - M (Mount Doom)
                 forest: 'rgba(0, 100, 0, 0.3)',        // Green - f
                 hill: 'rgba(139, 90, 43, 0.3)',        // Brown - h
                 river: 'rgba(0, 100, 200, 0.4)',        // Blue - |

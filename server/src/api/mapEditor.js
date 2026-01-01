@@ -1202,6 +1202,7 @@ export function getTerrainMap(req, res) {
                 
                 // Map characters to terrain types (corrected per user definitions)
                 if (char === '^') terrain[y][x] = 'mountain';
+                else if (char === 'M') terrain[y][x] = 'mount_doom';  // Mount Doom
                 else if (char === 'f' || char === '&') terrain[y][x] = 'forest';
                 else if (char === 'h') terrain[y][x] = 'hill';
                 else if (char === '|') terrain[y][x] = 'river';

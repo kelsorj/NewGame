@@ -1,0 +1,397 @@
+{
+  "bag_end": {
+    "name": "Bag End",
+    "description": "You stand in the cozy hobbit-hole of Bag End, the most comfortable dwelling in all the Shire. Round windows set deep in the hillside let in cheerful sunlight that dances across polished wooden floors. The smell of fine pipeweed lingers in the air, mingling with the scent of fresh bread from the kitchen. Shelves line the walls, filled with books, maps, and curiosities from distant lands. A large round green door, painted a cheerful yellow, leads outside to the well-tended garden where flowers bloom in riotous colors.",
+    "items": [
+      "walking_stick",
+      "lembas_bread"
+    ],
+    "enemies": [],
+    "exits": {
+      "east": "hobbiton_square"
+    }
+  },
+  "hobbiton_square": {
+    "name": "Hobbiton Square",
+    "description": "The central square of Hobbiton, with a market well and several shops. Hobbits go about their daily business, and the smell of fresh bread and pipeweed fills the air.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "west": "bag_end",
+      "east": "buckland_kitchen"
+    }
+  },
+  "buckland_kitchen": {
+    "name": "Buckland Kitchen",
+    "description": "A warm kitchen in Brandy Hall, filled with the smells of cooking. The Brandybucks are known for their hospitality.",
+    "items": [
+      "apple_pie"
+    ],
+    "enemies": [],
+    "exits": {
+      "west": "hobbiton_square",
+      "east": "old_forest_entrance"
+    }
+  },
+  "old_forest_entrance": {
+    "name": "Old Forest Entrance",
+    "description": "The edge of the Old Forest, where the trees grow close and dark. The forest seems to watch you with ancient eyes.",
+    "items": [],
+    "enemies": [
+      "old_man_willow"
+    ],
+    "exits": {
+      "west": "buckland_kitchen",
+      "east": "bree_inn"
+    }
+  },
+  "bree_inn": {
+    "name": "The Prancing Pony",
+    "description": "A cozy inn in the town of Bree, where travelers from all over Middle-earth gather. The common room is warm and welcoming, with a fire crackling in the hearth.",
+    "items": [
+      "ale",
+      "bread"
+    ],
+    "enemies": [],
+    "exits": {
+      "west": "old_forest_entrance",
+      "east": "bree_town_square"
+    }
+  },
+  "bree_town_square": {
+    "name": "Bree Town Square",
+    "description": "The central square of Bree, where the Big Folk and Little Folk meet. The town gate stands to the east.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "west": "bree_inn",
+      "east": "weathertop_summit"
+    }
+  },
+  "weathertop_summit": {
+    "name": "Weathertop Summit",
+    "description": "The ruins of an ancient watchtower on Amon Sûl. The Ringwraiths attacked here. You can see for miles in all directions.",
+    "items": [
+      "broken_sword"
+    ],
+    "enemies": [
+      "ringwraith"
+    ],
+    "exits": {
+      "west": "bree_town_square",
+      "east": "rivendell_house"
+    }
+  },
+  "rivendell_house": {
+    "name": "The House of Elrond",
+    "description": "The Last Homely House east of the Sea. Beautiful elven architecture blends with nature. The sound of waterfalls and elven songs fills the air.",
+    "items": [
+      "elven_sword",
+      "lembas_bread"
+    ],
+    "enemies": [],
+    "exits": {
+      "west": "weathertop_summit",
+      "up": "rivendell_council"
+    }
+  },
+  "rivendell_council": {
+    "name": "Council of Elrond",
+    "description": "The chamber where the Fellowship was formed. A great table stands in the center, and maps of Middle-earth line the walls.",
+    "items": [
+      "map_of_middle_earth"
+    ],
+    "enemies": [],
+    "exits": {
+      "down": "rivendell_house",
+      "east": "misty_mountains_pass"
+    }
+  },
+  "misty_mountains_pass": {
+    "name": "High Pass of the Misty Mountains",
+    "description": "A treacherous mountain pass. Snow and wind make travel difficult. The path is narrow and dangerous.",
+    "items": [],
+    "enemies": [
+      "stone_giant",
+      "goblin"
+    ],
+    "exits": {
+      "west": "rivendell_council",
+      "east": "moria_gate"
+    }
+  },
+  "moria_gate": {
+    "name": "The Doors of Durin",
+    "description": "The western gate of Moria, carved with elven runes. 'Speak, friend, and enter' is written above. The doors are sealed.",
+    "items": [],
+    "enemies": [
+      "watcher_in_the_water"
+    ],
+    "exits": {
+      "west": "misty_mountains_pass",
+      "east": "moria_hall"
+    }
+  },
+  "moria_hall": {
+    "name": "The Great Hall of Moria",
+    "description": "A vast underground hall, once the greatest city of the dwarves. Now dark and empty, filled with the echoes of a lost civilization.",
+    "items": [
+      "mithril_ore"
+    ],
+    "enemies": [
+      "orc",
+      "cave_troll"
+    ],
+    "exits": {
+      "west": "moria_gate",
+      "east": "moria_bridge"
+    }
+  },
+  "moria_bridge": {
+    "name": "The Bridge of Khazad-dûm",
+    "description": "A narrow stone bridge spanning a chasm. The Balrog of Morgoth waits in the depths below.",
+    "items": [],
+    "enemies": [
+      "balrog"
+    ],
+    "exits": {
+      "west": "moria_hall",
+      "east": "lothlorien_forest"
+    }
+  },
+  "lothlorien_forest": {
+    "name": "The Golden Wood",
+    "description": "The forest of Lothlórien, where time seems to stand still. The trees are ancient and golden, and elven voices sing in the distance.",
+    "items": [
+      "lembas_bread",
+      "elven_cloak"
+    ],
+    "enemies": [],
+    "exits": {
+      "west": "moria_bridge",
+      "east": "caras_galadhon"
+    }
+  },
+  "caras_galadhon": {
+    "name": "Caras Galadhon",
+    "description": "The city of the Galadhrim, built in the treetops. White and golden, it seems to glow with an inner light. The Lady Galadriel dwells here.",
+    "items": [
+      "phial_of_galadriel",
+      "elven_rope"
+    ],
+    "enemies": [],
+    "exits": {
+      "west": "lothlorien_forest",
+      "south": "anduin_river_bank"
+    }
+  },
+  "anduin_river_bank": {
+    "name": "Anduin River Bank",
+    "description": "The Great River of Middle-earth. The Fellowship traveled by boat along this river, past the Argonath and into Rauros.",
+    "items": [
+      "boat"
+    ],
+    "enemies": [],
+    "exits": {
+      "north": "caras_galadhon",
+      "south": "rohan_plains"
+    }
+  },
+  "rohan_plains": {
+    "name": "The Plains of Rohan",
+    "description": "Endless grasslands stretch to the horizon. Wild horses run free across the plains. In the distance, you see smoke rising from settlements.",
+    "items": [
+      "wild_horse"
+    ],
+    "enemies": [
+      "wild_horse_aggressive"
+    ],
+    "exits": {
+      "north": "anduin_river_bank",
+      "south": "edoras_gates"
+    }
+  },
+  "edoras_gates": {
+    "name": "Gates of Edoras",
+    "description": "The gates of the capital of Rohan. Guards in mail stand watch. Beyond, the city climbs the hill toward the Golden Hall.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "north": "rohan_plains",
+      "up": "meduseld"
+    }
+  },
+  "meduseld": {
+    "name": "Meduseld - The Golden Hall",
+    "description": "The great hall of Théoden King. Pillars of wood support a roof thatched with gold. Long tables line the hall, and banners of the mark hang from the rafters.",
+    "items": [
+      "rohirric_sword",
+      "horn_of_rohan"
+    ],
+    "enemies": [],
+    "exits": {
+      "down": "edoras_gates",
+      "south": "minas_tirith_gates"
+    }
+  },
+  "minas_tirith_gates": {
+    "name": "Gates of Minas Tirith",
+    "description": "The White City, the capital of Gondor. Seven levels rise above the Pelennor Fields. The White Tree stands in the courtyard.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "north": "meduseld",
+      "up": "minas_tirith_level_1",
+      "east": "osgiliath_ruins"
+    }
+  },
+  "minas_tirith_level_1": {
+    "name": "First Level of Minas Tirith",
+    "description": "The lowest level of the White City. Shops and houses line the streets. The gate to the Pelennor Fields is here.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_gates",
+      "up": "minas_tirith_level_2"
+    }
+  },
+  "minas_tirith_level_2": {
+    "name": "Second Level of Minas Tirith",
+    "description": "The second level, with more houses and a marketplace. The streets are wide and well-maintained.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_level_1",
+      "up": "minas_tirith_level_3"
+    }
+  },
+  "minas_tirith_level_3": {
+    "name": "Third Level of Minas Tirith",
+    "description": "The third level, where many of the city's craftsmen work. The sound of hammers and forges fills the air.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_level_2",
+      "up": "minas_tirith_level_4"
+    }
+  },
+  "minas_tirith_level_4": {
+    "name": "Fourth Level of Minas Tirith",
+    "description": "The fourth level, with gardens and fountains. The houses here are larger and more elegant.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_level_3",
+      "up": "minas_tirith_level_5"
+    }
+  },
+  "minas_tirith_level_5": {
+    "name": "Fifth Level of Minas Tirith",
+    "description": "The fifth level, where the Houses of Healing are located. The air is filled with the scent of herbs and healing.",
+    "items": [
+      "athelas"
+    ],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_level_4",
+      "up": "minas_tirith_level_6"
+    }
+  },
+  "minas_tirith_level_6": {
+    "name": "Sixth Level of Minas Tirith",
+    "description": "The sixth level, with the Citadel's barracks and training grounds. Guards patrol the walls.",
+    "items": [],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_level_5",
+      "up": "minas_tirith_citadel"
+    }
+  },
+  "minas_tirith_citadel": {
+    "name": "The Citadel of Minas Tirith",
+    "description": "The seventh and highest level, where the White Tree grows and the Steward's Hall stands. The view of the Pelennor Fields is breathtaking.",
+    "items": [
+      "white_tree_seed"
+    ],
+    "enemies": [],
+    "exits": {
+      "down": "minas_tirith_level_6"
+    }
+  },
+  "osgiliath_ruins": {
+    "name": "Ruins of Osgiliath",
+    "description": "The ancient capital of Gondor, now in ruins. The Great Bridge spans the Anduin here. The city was destroyed in the war.",
+    "items": [
+      "ancient_coin"
+    ],
+    "enemies": [
+      "orc",
+      "nazgul"
+    ],
+    "exits": {
+      "west": "minas_tirith_gates",
+      "east": "mordor_gate"
+    }
+  },
+  "mordor_gate": {
+    "name": "The Black Gate of Mordor",
+    "description": "The massive gate that guards the entrance to Mordor. Two great towers stand on either side. The Eye of Sauron watches from Barad-dûr.",
+    "items": [],
+    "enemies": [
+      "orc",
+      "troll",
+      "nazgul"
+    ],
+    "exits": {
+      "west": "osgiliath_ruins",
+      "east": "barad_dur"
+    }
+  },
+  "barad_dur": {
+    "name": "Barad-dûr - The Dark Tower",
+    "description": "The fortress of Sauron, the Dark Lord. A massive tower of black stone, from which the Eye watches all of Middle-earth. The very air is heavy with evil.",
+    "items": [],
+    "enemies": [
+      "sauron",
+      "nazgul"
+    ],
+    "exits": {
+      "west": "mordor_gate",
+      "east": "mount_doom_approach"
+    }
+  },
+  "mount_doom_approach": {
+    "name": "Approach to Mount Doom",
+    "description": "The slopes of Orodruin, the Mountain of Fire. The air is thick with ash and the smell of sulfur. The ground trembles with the mountain's power.",
+    "items": [],
+    "enemies": [
+      "gollum"
+    ],
+    "exits": {
+      "west": "barad_dur",
+      "up": "mount_doom_summit"
+    }
+  },
+  "mount_doom_summit": {
+    "name": "Mount Doom Summit",
+    "description": "The Crack of Doom, where the One Ring was forged and where it must be destroyed. Fire and lava flow from the depths. The Ring calls to you.",
+    "items": [],
+    "enemies": [
+      "gollum"
+    ],
+    "exits": {
+      "down": "mount_doom_sammath_naur"
+    }
+  },
+  "mount_doom_sammath_naur": {
+    "name": "Sammath Naur - The Chamber of Fire",
+    "description": "The deepest chamber of Mount Doom, where the Ring was forged. Here, in the heart of the mountain, the Ring can be destroyed. The heat is unbearable.",
+    "items": [],
+    "enemies": [
+      "gollum"
+    ],
+    "exits": {
+      "up": "mount_doom_summit"
+    }
+  }
+}
