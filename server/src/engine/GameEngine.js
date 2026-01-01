@@ -24,6 +24,13 @@ export class GameEngine {
         this.gameState = gameState;
     }
 
+    reloadMap() {
+        console.log('[GameEngine] Reloading map...');
+        this.roomSystem.reload();
+        // If we had other systems that cached map data, we'd reload them here too.
+        return true;
+    }
+
     normalizeDirection(dir) {
         if (!dir) return null;
         const directionMap = {
@@ -149,7 +156,7 @@ export class GameEngine {
                 if (verb === 'search') {
                     return this.handleSearch(playerId, args.join(' '), playerState);
                 }
-                // Fall through to examine for 'examine' command
+            // Fall through to examine for 'examine' command
             case 'x':
                 return this.handleExamine(args.join(' '), playerState);
 
@@ -298,13 +305,13 @@ export class GameEngine {
         }
 
         if (discoveredExits.length > 0) {
-            return { 
+            return {
                 message: `🔍 You discover hidden passages: ${discoveredExits.join(', ')}! The ${room.exitConfig[discoveredExits[0]].requiredKey} in your possession seems to have revealed them.`
             };
         }
 
         // No keys to reveal exits, but hint at hidden passages
-        return { 
+        return {
             message: "You notice something unusual about the walls... there might be hidden passages here, but you need something special to reveal them."
         };
     }

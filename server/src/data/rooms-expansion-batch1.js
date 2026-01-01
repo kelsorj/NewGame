@@ -15,7 +15,7 @@ export const shireExpansion = {
 
     tookbank: {
         name: "Tookbank",
-        description: "A small hill with several hobbit-holes. The Took family has lived here for generations. The view of the Shire is magnificent.",
+        description: "A rolling hill dotted with the comfortable smials of the extended Took clan. The view from here is one of the finest in the Westfarthing, commanding a sweeping panorama of the Green Hill Country to the east and the ominous darkening of the Old Forest to the south. The sound of hobbit-children playing games on the slopes fills the air, and the smell of roasting meat wafts from the chimneys of the wealthier holes below.",
         exits: { 'west': 'tuckborough', 'east': 'michel_delving', 'south': 'weathertop_approach', 'southeast': 'weathertop_summit', 'southwest': 'bombadil_house' },
         items: ['ancient_coin'],
         enemies: []
@@ -39,7 +39,7 @@ export const shireExpansion = {
 
     waymeet: {
         name: "Waymeet",
-        description: "A crossroads where several roads meet. A signpost points in all directions. Travelers often rest here before continuing their journey.",
+        description: "A major crossroads where the Great East Road meets the Northway. It is a place of transit and trade, where wagons laden with goods from the Farthing rumble past at all hours. An old wooden signpost stands in the center of the muddy junction, pointing the way to Michel Delving, Hobbiton, and points beyond. Travelers often stop here to water their ponies and exchange news before continuing on their journeys.",
         exits: { 'west': 'michel_delving', 'north': 'overhill', 'southwest': 'weathertop_summit' },
         items: ['travelers_guide'],
         enemies: []
@@ -47,7 +47,7 @@ export const shireExpansion = {
 
     overhill: {
         name: "Overhill",
-        description: "A small village on a hill overlooking the Shire. The hobbits here are known for their excellent view and hospitality.",
+        description: "Perched on the northern slopes above Hobbiton, Overhill offers a quieter existence than its busy neighbor below. The air is crisp and clean, and the gardens here are famous for their hardiness. From the edge of the village, you can look down upon the Hill and Bag End, spotting the distant smoke of the Gaffer's fires. It is a place of simple folk who appreciate a good view and a quiet pint.",
         exits: { 'south': 'waymeet', 'north': 'buckland_kitchen', 'southeast': 'bree_gate', 'down': 'moria_entrance' },
         items: ['spyglass'],
         enemies: []
@@ -55,7 +55,7 @@ export const shireExpansion = {
 
     scary: {
         name: "Scary",
-        description: "A tiny hamlet near the Old Forest. The hobbits here are more cautious than most, having lived so close to the dark woods.",
+        description: "A remote hamlet nestled against the rising hills of the Northfarthing, uncomfortably close to the Hills of Scary where goblins were once said to hide. The hobbits here are grim-faced and tough, accustomed to hard work in the quarries. The village is built of grey stone rather than brick or wood, giving it a somewhat fortress-like appearance. Fog often rolls down from the hills, shrouding the village in mist.",
         exits: { 'east': 'mayor_office', 'south': 'needlehole', 'southeast': 'barad_dur_throne_room', 'southwest': 'morgul_vale' },
         items: ['warding_charm'],
         enemies: []
@@ -63,7 +63,7 @@ export const shireExpansion = {
 
     needlehole: {
         name: "Needlehole",
-        description: "A small village known for its skilled craftsmen. The sound of hammers and saws fills the air.",
+        description: "A village of industrious dwarves and hobbits, named for the narrow split in the rock through which the stream flows. The ringing of hammers on anvils is the music of this place, for Needlehole is known for its tools and ironwork. Smoke rises from the smithies, and the streets are paved with crushed stone. It is a place of craft and metal, distinct from the farming villages of the rest of the Shire.",
         exits: { 'north': 'scary', 'south': 'longbottom', 'northwest': 'morgul_vale' },
         items: ['craftsman_tools'],
         enemies: []
@@ -71,7 +71,7 @@ export const shireExpansion = {
 
     longbottom: {
         name: "Longbottom",
-        description: "Famous for its pipe-weed farms. The fields stretch for miles, and the sweet smell of tobacco fills the air.",
+        description: "The air here is thick and sweet with the scent of the finest pipe-weed in all of Middle-earth. Fields of broad-leafed plants stretch as far as the eye can see, tended by generations of the Hornblower family. The sun seems to shine warmer here in the Southfarthing, and the pace of life is slow and contented. Drying sheds line the road, their slatted walls leaking the rich aroma of curing leaf.",
         exits: { 'north': 'needlehole', 'east': 'sackville_manor', 'northwest': 'morgul_pass', 'west': 'cirith_ungol' },
         items: ['longbottom_leaf', 'pipeweed_pouch'],
         enemies: []
@@ -79,7 +79,7 @@ export const shireExpansion = {
 
     sackville_manor: {
         name: "Sackville Manor",
-        description: "An ostentatious hobbit-hole belonging to the Sackville-Bagginses. Everything is overly decorated and pretentious.",
+        description: "An ostentatious hobbit-hole that tries too hard to be 'grand', much like its inhabitants, the Sackville-Bagginses. The furniture is stiff and uncomfortable, the doilies are excessive, and the silverware is suspiciously similar to some missing from Bag End. The air smells of lavender water and unspoken judgment. It is a place where one wipes one's feet twice before entering, and then is likely scolded anyway.",
         exits: { 'west': 'longbottom', 'east': 'whitwell', 'northeast': 'fornost_gates', 'south': 'barad_dur_approach' },
         items: ['silver_spoon', 'fancy_doorknob'],
         enemies: []
@@ -87,7 +87,7 @@ export const shireExpansion = {
 
     whitwell: {
         name: "Whitwell",
-        description: "A peaceful village with a beautiful well in the center. The water is said to be the purest in the Shire.",
+        description: "Named for the ancient white stone well in its center, Whitwell is a peaceful village in the Tookland. The water drawn here is cool and sweet, said to be the purest in the Shire. Hobbits gather around the well to gossip and trade news. The pace of life here is even slower than the rest of the Shire, if such a thing is possible.",
         exits: { 'west': 'sackville_manor', 'northeast': 'rushock_bog', 'southeast': 'house_of_stewards' },
         items: ['pure_water'],
         enemies: []
@@ -95,7 +95,7 @@ export const shireExpansion = {
 
     rushock_bog: {
         name: "Rushock Bog",
-        description: "A marshy area with strange plants and insects. The ground squelches underfoot. Few hobbits venture here.",
+        description: "A misty, damp stretch of land where the water table rises to meet the grass. Reeds and cattails grow in thick clumps, and the ground squelches alarmingly underfoot with every step. Strange insects buzz in the humid air, and the fog seems to have a personality of its own, curling and twisting around the stunted willows. It's a place most sensible hobbits avoid.",
         exits: { 'southwest': 'whitwell', 'east': 'green_hill_country', 'north': 'royal_armory', 'southeast': 'deep_mines_hub' },
         items: ['bog_herb'],
         enemies: ['giant_midge_swarm']
@@ -103,7 +103,7 @@ export const shireExpansion = {
 
     green_hill_country: {
         name: "Green Hill Country",
-        description: "Rolling green hills dotted with hobbit-holes. This is some of the most beautiful countryside in the Shire.",
+        description: "This region of the Shire is renowned for its beauty, a landscape of rolling emerald hills and hidden valleys. The sun seems to linger longer here, and the grass is a vibrant, healthy green. Hobbit-holes are tucked discreetly into the hillsides, their round doors painted in bright cheerful colors. It is the very picture of pastoral peace.",
         exits: { 'west': 'rushock_bog', 'east': 'bucklebury', 'northwest': 'royal_armory' },
         items: ['wildflower_bouquet'],
         enemies: []
@@ -129,7 +129,7 @@ export const shireExpansion = {
 
     buckland_kitchen: {
         name: "Buckland Kitchen",
-        description: "A massive kitchen where the Brandybucks prepare feasts. The ovens are always warm, and the smell of baking bread fills the air.",
+        description: "The heart of Brandy Hall, this massive kitchen is a scene of constant, organized chaos. Dozens of ovens radiate heat, filling the air with the mouthwatering scents of baking bread, roasting meats, and simmering soups. Cooks and scullery maids bustle about with purpose, dodging around huge tables piled high with ingredients. It is said that a Brandybuck breakfast is a meal to be reckoned with.",
         exits: { 'south': 'overhill', 'north': 'buckland_cellar', 'east': 'bree_east_road' },
         items: ['fresh_bread', 'honey_cake'],
         enemies: []
@@ -137,7 +137,7 @@ export const shireExpansion = {
 
     buckland_cellar: {
         name: "Buckland Cellar",
-        description: "A vast wine cellar with barrels stacked to the ceiling. The Brandybucks are famous for their wine-making.",
+        description: "Cool, dark, and smelling of damp wood and fermentation, the Brandy Hall cellars are legendary. Barrels of '1420' and other fine vintages are stacked to the ceiling in endless rows. Dust motes dance in the beams of lantern light, revealing shelves lined with jars of pickles and preserves. It is a treasure trove of culinary delights.",
         exits: { 'south': 'buckland_kitchen', 'north': 'crickhollow' },
         items: ['aged_wine', 'wine_cork'],
         enemies: []
@@ -145,7 +145,7 @@ export const shireExpansion = {
 
     crickhollow: {
         name: "Crickhollow",
-        description: "A small hobbit-hole in Buckland. It looks cozy and welcoming, with a well-tended garden.",
+        description: "A quiet, secluded house in Buckland, surrounded by a well-tended garden and a high hedge. It feels removed from the rest of the world, a perfect hiding place. Inside, the rooms are comfortable and homely, but with a sense of waiting emptiness. This was Frodo's 'new home' before his flight, and it still holds an air of secrecy.",
         exits: { 'south': 'buckland_cellar', 'west': 'old_forest_buckland_entrance', 'southeast': 'weathertop_base' },
         items: ['garden_tool'],
         enemies: []
@@ -153,7 +153,7 @@ export const shireExpansion = {
 
     old_forest_buckland_entrance: {
         name: "Old Forest - Buckland Entrance",
-        description: "Another entrance to the Old Forest, this one from Buckland. The trees seem even more menacing here.",
+        description: "A small, rusted iron gate set into the High Hay offers a second way into the Old Forest. The trees on the other side seem to crowd the gate, as if pressing against the bars. A cold draft blows through the gaps, carrying the scent of decay and stagnant water. To step through is to leave the safety of the Shire behind.",
         exits: { 'east': 'crickhollow', 'west': 'hobbiton_square', 'south': 'midgewater_marshes' },
         items: [],
         enemies: ['huorn']
@@ -164,7 +164,7 @@ export const shireExpansion = {
     // Note: bombadil_house already exists, so we expand from it
     bombadil_garden: {
         name: "Tom's Garden",
-        description: "A beautiful garden full of strange and wonderful plants. Tom Bombadil tends it with care, and everything grows in abundance.",
+        description: "A riot of color and life, Tom Bombadil's garden is a place where nature grows with a wild, joyful abandon. Giant sunflowers nod their heads, beans climb rapidly up poles, and the air is thick with the scent of herbs and flowers. Bees drone contentedly, and the feeling of safety and peace is absolute. Here, the malice of the Old Forest cannot reach.",
         exits: { 'south': 'brandy_hall', 'north': 'barrow_downs_approach', 'east': 'niphredil_meadow' }, // connects to existing bombadil_house
         items: ['magical_herb', 'garden_seed'],
         enemies: []
@@ -172,7 +172,7 @@ export const shireExpansion = {
 
     old_forest_exit: {
         name: "Old Forest - Eastern Exit",
-        description: "You've made it through the Old Forest! The trees thin out, and you can see open country ahead.",
+        description: "The oppressive canopy of the Old Forest finally breaks, revealing the open sky and the rolling downs ahead. The air tastes fresh and clean after the stagnant gloom of the woods. You have escaped the trees, but the journey is far from over. The land ahead is empty and wild.",
         exits: { 'east': 'bywater', 'south': 'mirkwood_path_1', 'southwest': 'troll_cave' },
         items: ['forest_trophy'],
         enemies: []
@@ -182,7 +182,7 @@ export const shireExpansion = {
 
     barrow_downs_approach: {
         name: "Approach to the Barrow-downs",
-        description: "The land rises into hills covered with ancient barrows. A sense of dread fills the air. The dead sleep here, but not peacefully.",
+        description: "The cheerful green of the Shire fades into a greyer, wilder landscape. The hills ahead rise steeply, their summits crowned with ancient stones and their slopes shrouded in a clinging mist. The air grows noticeably colder, and a sense of unease settles over you. The path winds upward into the fog, leading to the burial grounds of the Kings of Men.",
         exits: { 'south': 'bombadil_garden', 'north': 'barrow_downs', 'east': 'nameless_tunnels' },
         items: [],
         enemies: []
@@ -190,7 +190,7 @@ export const shireExpansion = {
 
     barrow_downs: {
         name: "The Barrow-downs",
-        description: "Ancient burial mounds dot the landscape. Mist clings to the ground, and you hear whispers on the wind. This is a place of the dead.",
+        description: "You stand amidst the Great Barrows, massive green mounds that hide the tombs of ancient kings. The fog here is thick and cold, obscuring the sun and muffling all sound. Strange, pale lights sometimes flicker in the distance, and the wind sounds like a despairing moan. It is easy to lose one's way here, and even easier to lose one's hope. This is a domain of the dead.",
         exits: { 'south': 'barrow_downs_approach', 'west': 'barrow_chamber_1', 'northeast': 'hall_of_fire_guest', 'southeast': 'khazad_dum_chasm_view', 'east': 'henneth_annun' },
         items: [],
         enemies: ['barrow_wight']
@@ -198,7 +198,7 @@ export const shireExpansion = {
 
     barrow_chamber_1: {
         name: "Barrow Chamber - First Mound",
-        description: "A dark chamber within an ancient barrow. Old weapons and treasures lie scattered about. The air is cold and still.",
+        description: "You have entered the dark interior of a barrow. The air is stagnant and smells of dry rot. In the center of the chamber, a stone bier lies empty, surrounded by rusted weapons and tarnished gold—items buried with the dead to serve them in the afterlife. The darkness seems to press against your light, and shadows dance on the walls.",
         exits: { 'east': 'barrow_downs', 'west': 'barrow_chamber_2', 'northeast': 'elrond_study', 'northwest': 'hidden_flet', 'southwest': 'rivendell_guest_house' },
         items: ['ancient_sword', 'barrow_treasure'],
         enemies: ['barrow_wight']
@@ -206,7 +206,7 @@ export const shireExpansion = {
 
     barrow_chamber_2: {
         name: "Barrow Chamber - Second Mound",
-        description: "Another burial chamber, this one larger. Stone coffins line the walls. Something moves in the shadows.",
+        description: "The air in this larger chamber is freezing cold. Stone coffins line the walls, their lids cracked or pushed aside. Dust covers everything. You hear a scratching sound coming from the shadows, like bone scraping against stone. This tomb has been disturbed, and its profound silence feels threatening.",
         exits: { 'east': 'barrow_chamber_1', 'west': 'barrow_chamber_3', 'north': 'hidden_flet' },
         items: ['ancient_shield', 'barrow_gold'],
         enemies: ['barrow_wight']
@@ -214,7 +214,7 @@ export const shireExpansion = {
 
     barrow_chamber_3: {
         name: "Barrow Chamber - Third Mound",
-        description: "The largest of the barrow chambers. A great stone table sits in the center, covered with ancient artifacts.",
+        description: "The deepest and largest of the barrows contains a great stone table in its center, laid out with gold and jewels that glitter coldly in the gloom. An ancient sword lies across the table, its blade notched but still sharp. This was the resting place of a great prince of old, but now a Wight claims lordship here. The air is thick with malice.",
         exits: { 'east': 'barrow_chamber_2', 'west': 'combe', 'northeast': 'hidden_flet' },
         items: ['barrow_blade', 'ancient_crown'],
         enemies: ['barrow_wight']
@@ -222,7 +222,7 @@ export const shireExpansion = {
 
     weathertop_approach: {
         name: "Approach to Weathertop",
-        description: "The hill of Weathertop rises ahead. You can see the ruins of an ancient watchtower at the summit. This was once a place of great importance.",
+        description: "The hills rise sharply here, culminating in the great peak of Amon Sûl. The slopes are covered in rough grass and treacherous shale. The ruins of the ancient watchtower crown the summit like a broken tooth. A sense of history hangs over the place, but also a sense of recent danger. The wind whips around the hill, cold and biting.",
         exits: { 'west': 'bombadil_house', 'east': 'weathertop_summit', 'northwest': 'tuckborough', 'north': 'tookbank', 'south': 'rivendell_forge', 'southeast': 'hollin_gate' },
         items: [],
         enemies: []
@@ -230,7 +230,7 @@ export const shireExpansion = {
 
     weathertop_summit: {
         name: "Weathertop Summit",
-        description: "The ruins of Amon Sûl, the ancient watchtower. The view is spectacular - you can see for miles in every direction. A fire pit shows recent use.",
+        description: "You stand within the ring of stones that marks the summit of Weathertop. The view is commanding, stretching for leagues in every direction across Eriador. In the center of the ring, the stones are blackened and cracked by fire. This was once a great watchtower of Arnor, holding a Palantír, but now it is a ruin, haunted by the memory of the Witch-king's attack on the Ringbearer.",
         exits: { 'west': 'weathertop_approach', 'east': 'chetwood', 'northwest': 'tookbank', 'northeast': 'waymeet', 'southeast': 'mirror_chamber', 'southwest': 'rivendell_forge' },
         items: ['watchtower_lens', 'ancient_rune'],
         enemies: ['ringwraith']
@@ -240,7 +240,7 @@ export const shireExpansion = {
 
     combe: {
         name: "Combe",
-        description: "A small village near Bree. The people here are friendly but cautious of strangers. The inn serves good ale.",
+        description: "A small, secluded village tucked into a deep valley northeast of Bree. The inhabitants here are a mix of Men and Hobbits, though they tend to be more rustic and suspicious of strangers than the Bree-folk. Woodsmoke hangs low in the valley, and the inn offers a decent, if simple, meal. It feels removed from the bustle of the Great Road.",
         exits: { 'east': 'barrow_chamber_3', 'south': 'archet' },
         items: ['combe_ale'],
         enemies: []
@@ -248,15 +248,15 @@ export const shireExpansion = {
 
     archet: {
         name: "Archet",
-        description: "A tiny hamlet surrounded by woods. The people keep to themselves and are suspicious of outsiders.",
+        description: "Hidden deep within the gloom of the Chetwood, Archet is a tiny settlement of woodcutters and foresters. The houses are built of rough logs, and the forest presses close on all sides. It is a shadowy place, even at noon, and the villagers largely keep to themselves. They know the secrets of the woods better than anyone.",
         exits: { 'north': 'combe', 'south': 'staddle', 'southwest': 'mayor_office' },
         items: ['wooden_whistle'],
         enemies: []
     },
 
     chetwood: {
-        name: "Chetwood",
-        description: "A dense forest between the villages. Bandits sometimes hide here, preying on travelers.",
+        name: "The Chetwood",
+        description: "A dense, ancient forest that lies to the east of Bree. While not as malevolent as the Old Forest, the Chetwood is still a wild and easy place to get lost in. The trees are mostly oak and ash, and the undergrowth is thick. Bandits and outlaws are known to sometimes hide here, preying on unwary travelers.",
         exits: { 'west': 'weathertop_summit', 'northeast': 'bree_gate', 'south': 'mirror_chamber' },
         items: ['forest_berry'],
         enemies: ['brigand']
@@ -264,7 +264,7 @@ export const shireExpansion = {
 
     staddle: {
         name: "Staddle",
-        description: "A farming village. The people here are hardworking and honest. Fields of grain stretch in all directions.",
+        description: "Located on the gentler slopes of the Bree-hill, Staddle is primarily a hobbit village. It is known for its agriculture, with pipe-weed patches and vegetable gardens surrounding the smials. The community is tight-knit and hardworking, supplying much of the food for Bree. The atmosphere is peaceful and domestic.",
         exits: { 'north': 'archet', 'south': 'fornost_approach', 'southwest': 'barad_dur_throne_room' },
         items: ['grain_sack', 'farm_tool'],
         enemies: []
@@ -290,7 +290,7 @@ export const shireExpansion = {
 
     fornost_ruins: {
         name: "Fornost Ruins",
-        description: "The ruined streets of the ancient city. Buildings have collapsed, and nature is reclaiming the stone. Something moves in the shadows.",
+        description: "You walk amongst the rubble of a lost kingdom. The streets are choked with weeds and piles of fallen masonry. Everywhere you look, you see the remnants of grandeur—a shattered column, a broken statue, a mosaic floor half-hidden by dirt. But the silence is heavy and unnatural. Shadows seem to flit between the ruins, and you feel the weight of unseen eyes watching your every move.",
         exits: { 'west': 'fornost_gates', 'northeast': 'fornost_temple', 'up': 'erebor_gates' },
         items: ['ancient_coin', 'ruined_artifact'],
         enemies: ['orc_warrior', 'warg']
@@ -298,7 +298,7 @@ export const shireExpansion = {
 
     fornost_temple: {
         name: "Fornost Temple",
-        description: "A ruined temple, its roof collapsed. Ancient altars and statues remain, covered in moss and vines.",
+        description: "The remains of a great temple stand open to the sky, its dome long since collapsed. The altar is cracked, and vines crawl over the statues of the Valar that once lined the walls. It is a desolate place, where the sanctity of the past has been violated by time and decay. Yet, a faint aura of power still lingers, a whisper of the reverence this place once commanded.",
         exits: { 'southwest': 'fornost_ruins', 'east': 'fornost_palace', 'west': 'royal_armory' },
         items: ['temple_relic', 'ancient_scroll'],
         enemies: ['barrow_wight']
@@ -306,7 +306,7 @@ export const shireExpansion = {
 
     fornost_palace: {
         name: "Fornost Palace",
-        description: "The ruins of the royal palace. Once magnificent, now only broken walls and empty halls remain.",
+        description: "The shell of the royal palace stands as a hollow reminder of the Kings of Arnor. The great hall is roofless, its floor a mosaic of broken tiles. Throne and tapestry have rotted away, leaving only bare stone walls that echo with the wind. It is a place of melancholy beauty, a gravestone for a kingdom.",
         exits: { 'west': 'fornost_temple', 'east': 'fornost_keep', 'southeast': 'iron_mines_2' },
         items: ['royal_seal', 'palace_treasure'],
         enemies: ['ringwraith']
@@ -314,7 +314,7 @@ export const shireExpansion = {
 
     fornost_keep: {
         name: "Fornost Keep",
-        description: "The highest point of the ruined city. The keep still stands, though damaged. From here you can see the entire ruined city.",
+        description: "The keep is the most intact structure in the city, a high tower that offers a strategic view of the surrounding lands. The stairs are treacherous, and parts of the battlements have crumbled away. From here, you can see the full extent of the devastation—the city spread out like a broken corpse below. It is a lonely and desolate vigil.",
         exits: { 'west': 'fornost_palace', 'north': 'annuminas_approach', 'south': 'iron_mines_2', 'east': 'the_unending_stair_middle' },
         items: ['keep_banner', 'ancient_map'],
         enemies: ['orc_warrior']
@@ -340,7 +340,7 @@ export const shireExpansion = {
 
     annuminas_tower: {
         name: "Annúminas Tower",
-        description: "The highest tower of the ancient city, still standing above the water. The view of Lake Evendim is breathtaking.",
+        description: "A solitude tower of white stone rises from the water, the last intact remnant of the city's upper citadel. From its balcony, you gaze out across the expanse of Lake Evendim. The water is a deep, tranquil blue, and the ruins below shimmer like a sunken dream. It is a place of peace and contemplation, far from the troubles of the world.",
         exits: { 'south': 'annuminas_ruins', 'north': 'lake_evendim', 'northeast': 'minas_tirith_houses_of_healing', 'southwest': 'nameless_tunnels', 'west': 'henneth_annun' },
         items: ['tower_crystal', 'ancient_compass'],
         enemies: []
@@ -348,7 +348,7 @@ export const shireExpansion = {
 
     lake_evendim: {
         name: "Lake Evendim",
-        description: "A vast, beautiful lake. The ruins of Annúminas can be seen beneath the clear water. The lake is said to be enchanted.",
+        description: "You are on the shores of Nenuial, the Lake of Twilight. The water is crystal clear and cool. The ruins of Annúminas visible beneath the surface give the lake a haunted, magical quality. It is said that the Lady of the Lake sometimes appears here, and that the water has healing properties. The silence is profound.",
         exits: { 'south': 'annuminas_tower', 'west': 'hall_of_fire_guest', 'southeast': 'deep_coomb' },
         items: ['lake_pearl', 'enchanted_water'],
         enemies: ['water_wraith']

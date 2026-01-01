@@ -282,7 +282,7 @@ export const rooms = {
 
     twenty_first_hall: {
         name: "Twenty-First Hall",
-        description: "A massive hall supported by huge pillars. The ceiling is lost in darkness high above. Three passages lead deeper into Moria. Faded dwarven runes cover the walls.",
+        description: "You stand in the Twenty-First Hall, a vast chamber that serves as a testament to the grandeur of Khazad-dûm. Massive pillars of hewn stone rise like a petrified forest into the crushing darkness above, their heights lost to shadow. The air is cold and still, heavy with the dust of ages and the silence of a tomb. Faded runes on the walls tell stories of kings long dead, and the debris of ancient battles litters the floor. Three dark archways yawn in the gloom, mocking mouths leading deeper into the mountain's perilous heart.",
         exits: { 'southeast': 'moria_entrance', 'west': 'balin_tomb' },
         items: ['ancient_hammer', 'iron_ore'],
         enemies: ['orc_warrior', 'goblin']
@@ -290,7 +290,7 @@ export const rooms = {
 
     balin_tomb: {
         name: "Chamber of Mazarbul - Balin's Tomb",
-        description: "A square chamber with a shaft of light falling through a crack in the ceiling. A great stone chest stands in the center - the tomb of Balin, Lord of Moria. A tattered book lies beside it.",
+        description: "A square chamber bathed in a single, brilliantly white shaft of light that pierces the darkness from a high fissure in the ceiling. In the center of this illumination stands a simple block of white stone, stern and solemn: the Tomb of Balin, Lord of Moria. Dust motes dance in the light, the only movement in this silent crypt. Near the tomb, a tattered, leather-bound book lies in the dust, its pages seemingly frozen in time, waiting for a hand to turn them.",
         exits: { 'east': 'twenty_first_hall', 'west': 'durin_chamber' },
         items: ['book_of_mazarbul', 'mithril_chain', 'balin_crown'],
         enemies: [],
@@ -299,7 +299,7 @@ export const rooms = {
 
     seventh_level: {
         name: "Seventh Level",
-        description: "A maze of passages and chambers. You hear the sound of drums echoing from below: 'doom, doom.' Torchlight flickers on ancient walls.",
+        description: "You are on the Seventh Level of Moria, a dizzying maze of interlocking passages and carved chambers. The air here vibrates with a low, rhythmic thrumming—the sound of drums in the deep. 'Doom, doom,' they echo, a heartbeat of malice from the abyss below. Torchlight catches the edges of sharp stone and dark pits, casting long, dancing shadows that seem to reach for you.",
         exits: { 'north': 'elf_path_entrance', 'east': 'fangorn_border', 'northwest': 'the_silent_glade', 'west': 'fangorn_hidden_path', 'southwest': 'anduin_approach' },
         items: [],
         enemies: ['goblin', 'orc_warrior', 'orc_warrior']
@@ -307,7 +307,7 @@ export const rooms = {
 
     sixth_level: {
         name: "Sixth Level - Goblin Territory",
-        description: "The goblins have claimed this level. Crude fortifications block the passages. You hear guttural voices and the clatter of weapons.",
+        description: "The Sixth Level has been utterly overrun. Crude, jagged barricades of scrap metal and bone block different corridors, marking the boundaries of goblin territory. The walls are smeared with filth and crude graffiti. Guttural voices and the clatter of poorly forged steel echo from the darkness ahead, and the smell of unwashed bodies and roasting questionable meat is overpowering.",
         exits: { 'east': 'lossarnach_valleys', 'northwest': 'fifth_level', 'southwest': 'entwash_delta', 'northeast': 'aldburg', 'north': 'snowbourn_banks', 'west': 'west_emnet' },
         items: [],
         enemies: ['goblin', 'goblin', 'goblin_chieftain']
@@ -323,7 +323,7 @@ export const rooms = {
 
     fifth_level: {
         name: "Fifth Level",
-        description: "Ancient forges line this level. Cold and dark now, but you can imagine dwarven smiths once laboring here, crafting legendary weapons and armor.",
+        description: "This level once housed the great forges of Khazad-dûm. Rows of massive, cold furnaces line the walls like silent sentinels. Though the fires have long gone out, you can almost hear the phantom ringing of hammers on anvils and see the ghostly glow of molten metal. It is a place of lost industry and silenced craft, now home only to the scratching of scavengers.",
         exits: { 'southeast': 'sixth_level', 'south': 'fourth_level' },
         items: ['forge_hammer', 'coal'],
         enemies: ['goblin']
@@ -331,7 +331,7 @@ export const rooms = {
 
     fourth_level: {
         name: "Fourth Level",
-        description: "Water drips from the ceiling forming pools on the floor. The air is damp and cold. You hear distant echoes - or are they whispers?",
+        description: "The air on the Fourth Level is damp and chill. Water drips incessantly from the high ceiling, forming stagnant black pools on the uneven floor. The sound of the dripping water echoes maddeningly in the silence. Occasionally, you hear other sounds—slithering, wet footsteps, or distant whispers that might just be the wind playing tricks on your mind in the dark.",
         exits: { 'north': 'fifth_level', 'south': 'third_level', 'southwest': 'entwash_headwaters', 'northeast': 'osgiliath_ruins' },
         items: [],
         enemies: ['cave_troll']
@@ -339,7 +339,7 @@ export const rooms = {
 
     third_level: {
         name: "Third Level - The Deeps",
-        description: "You have descended into the deep places of the world. The stones here are ancient beyond reckoning. A faint heat rises from below.",
+        description: "You have descended into the deep foundations of the mountain. The stonework here is massive and primitive, hewn from the living rock in ages past. The air is thick and heavy, and a faint, unsettling heat radiates from the floor, hinting at the volcanic fires that burn far, far below. The weight of the mountain above feels crushing here.",
         exits: { 'north': 'fourth_level', 'south': 'second_level', 'east': 'dunharrow_firtree_grove', 'northeast': 'osgiliath_ruins' },
         items: ['deep_crystal'],
         enemies: ['orc_warrior']
@@ -347,7 +347,7 @@ export const rooms = {
 
     durin_chamber: {
         name: "Durin's Chamber",
-        description: "A sacred chamber dedicated to Durin the Deathless, eldest of the Seven Fathers of the Dwarves. His likeness is carved into the rock, crowned and bearing the tools of his craft.",
+        description: "A small, sacred chamber dedicated to Durin the Deathless, the first father of the Dwarves. A magnificent relief carving of the King covers the far wall, his eyes set with gems that glint in the darkness. He is depicted crowned and holding the tools of his craft, looking out over his kingdom with a stern, protecting gaze. The room feels untouched by the filth of the goblins, protected perhaps by some ancient ward or reverence.",
         exits: { 'east': 'balin_tomb', 'west': 'mithril_mine', 'up': 'old_forest_depth' },
         items: ['durin_axe', 'seven_stars_token'],
         enemies: []
@@ -355,7 +355,7 @@ export const rooms = {
 
     second_level: {
         name: "Second Level - Abandoned Mines",
-        description: "Vast mines stretch out in all directions. The dwarves delved greedily and deep here, seeking mithril. Something changed when they delved too deep...",
+        description: "The Second Level opens into a series of vast, echoing mines that stretch endlessly into the dark. Here, the dwarves delved with a hunger that bordered on madness, seeking the precious mithril. The supports look strained, and the rock face is scarred with frantic pick-marks. The silence here is unnatural, heavy with the memory of the calamity that befell the miners when they dug too greedily and too deep.",
         exits: { 'north': 'third_level', 'south': 'first_level', 'southeast': 'west_emnet', 'northeast': 'osgiliath_ruins' },
         items: ['pickaxe'],
         enemies: ['goblin', 'orc_warrior']
@@ -363,7 +363,7 @@ export const rooms = {
 
     mithril_mine: {
         name: "The Mithril Vein",
-        description: "At last! A seam of mithril - the truest silver, more precious than gold. It gleams in your torchlight like starlight frozen in stone.",
+        description: "Your light reflects off a sight that would make a dwarf king weep with joy. Running through the rough grey stone is a broad vein of mithril—true-silver, the most precious metal in Middle-earth. It shines with its own inner light, like a river of captured starlight frozen in the rock. The beauty of it is mesmerizing, almost blinding in the surrounding gloom, promising wealth and power beyond measure.",
         exits: { 'east': 'durin_chamber', 'south': 'bridge_of_khazad_dum', 'up': 'old_forest_entrance' },
         items: ['mithril_ore', 'mithril_ore', 'mithril_nugget'],
         enemies: []
@@ -371,7 +371,7 @@ export const rooms = {
 
     first_level: {
         name: "First Level - The Lowest Deep",
-        description: "The deepest level of Moria. The heat is oppressive now. Far below, you sense something ancient and terrible stirring in darkness. This is the place they should never have delved.",
+        description: "This is the First Level, the very roots of the mountain. The heat here is oppressive, a stifling blanket that makes it hard to breathe. The darkness feels tangible, pressing against your eyes. Far, far below in the black abyss, you can sense something ancient and terrible stirring, a malice that has slept for eons and is now waking. This is a place where no mortal beat should tread.",
         exits: { 'north': 'second_level', 'northeast': 'osgiliath_ruins' },
         items: [],
         enemies: ['orc_warrior', 'goblin']
@@ -387,7 +387,7 @@ export const rooms = {
 
     east_gate_approach: {
         name: "Approach to the East Gate",
-        description: "The halls grow lighter. Ahead you can see daylight - the East Gate! Freedom from the darkness of Moria is at hand.",
+        description: "The suffocating darkness of the mines begins to lift, replaced by a grey, filtered light drifting from ahead. The air grows cooler and fresher, carrying the scent of snow and pine. The rough-hewn tunnel widens, and you can see the outline of a massive archway against the brightness. The promise of the outside world beckons, a stark contrast to the oppressive weight of stone behind you.",
         exits: { 'north': 'goblin_warren', 'northeast': 'mines_level1', 'southwest': 'annuminas_tower' },
         items: ['health_potion', 'lembas_bread'],
         enemies: []
@@ -395,7 +395,7 @@ export const rooms = {
 
     east_gate_moria: {
         name: "East Gate of Moria",
-        description: "You stumble out into daylight, half-blinded after the darkness. The Dimrill Dale spreads below, and beyond rise the peaks of the Misty Mountains.",
+        description: "You step out from the shadows of the mountain into the blinding light of day. The Great Gates of Moria loom behind you, shattered and broken, a testament to the evil that drove the dwarves from their home. Before you lies the Dimrill Dale, a valley of wild beauty beneath the peaks of the Misty Mountains. To the east, the land falls away toward the Anduin, and the air is filled with the sound of wind rushing through the high passes.",
         exits: { 'north': 'bridge_of_khazad_dum', 'south': 'endless_stair_top', 'up': 'rivendell_gates' },
         items: [],
         enemies: []
@@ -403,7 +403,7 @@ export const rooms = {
 
     dimrill_dale: {
         name: "Dimrill Dale",
-        description: "A hidden valley on the eastern side of the Misty Mountains. The Mirrormere lake lies still and dark, reflecting the mountain peaks. This was once the heart of the Dwarven realm.",
+        description: "The valley of Nanduhirion, known as the Dimrill Dale, cradles a dark, still lake—the Mirrormere. Even in the brightness of day, the water reflects only the stars, and standing stone markers of the old dwarven road line the path. It was here that Azog was slain, and the ground remembers the blood of the War of the Dwarves and Orcs. The peaks of Caradhras, Celebdil, and Fanuidhol watch silently from above.",
         exits: { 'east': 'erebor_armory', 'down': 'mayor_office' },
         items: ['mirrormere_water'],
         enemies: []
@@ -412,7 +412,7 @@ export const rooms = {
     // Additional side chambers and passages
     mines_level1: {
         name: "Upper Mines",
-        description: "Mining tunnels from the upper levels. Tools and carts lie abandoned as if the miners left in great haste.",
+        description: "You are in the upper mining levels, where the dwarves first began their delvings. Discarded tools, overturned carts, and piles of rubble litter the tunnels, signs of a hasty retreat. The walls are pockmarked with holes where gems were pried from the rock. The air is dry and dusty, and the silence is absolute.",
         exits: { 'southwest': 'east_gate_approach', 'east': 'mines_level2', 'north': 'barad_dur_chamber' },
         items: ['miners_lamp', 'iron_ore'],
         enemies: ['goblin', 'goblin']
@@ -420,7 +420,7 @@ export const rooms = {
 
     mines_level2: {
         name: "Deep Mines",
-        description: "Deeper mining tunnels. The walls glitter with veins of various ores. The dwarves were master miners.",
+        description: "The tunnels here go deeper, winding into the very heart of the Silvertine. Veins of quartz and traces of gold glitter in the walls, hinting at the wealth that was extracted here. The craftsmanship of the supports is masterful, yet they strain under the weight of the mountain. Shadowy side-passages lead off into the unknown.",
         exits: { 'west': 'mines_level1', 'east': 'anduin_midstream', 'northwest': 'barad_dur_chamber' },
         items: ['silver_ore', 'copper_ore'],
         enemies: ['cave_troll', 'goblin']
@@ -428,7 +428,7 @@ export const rooms = {
 
     endless_stair_top: {
         name: "Top of the Endless Stair",
-        description: "An impossibly long spiral staircase winds down into darkness, carved from a single stone pillar. The dwarves built wonders that will never be matched.",
+        description: "You stand at the dizzying height of the Endless Stair, looking down into a spiral of darkness that seems to go on forever. Carved from the central pillar of the mountain summit, the steps are narrow and worn smooth by the passage of Durin's Folk. The wind howls here at the top of the world, and a sense of vertigo pulls at you.",
         exits: { 'north': 'east_gate_moria', 'south': 'endless_stair_bottom', 'up': 'withywindle' },
         items: [],
         enemies: []
@@ -436,7 +436,7 @@ export const rooms = {
 
     endless_stair_bottom: {
         name: "Bottom of the Endless Stair",
-        description: "After a seemingly endless descent, you reach the bottom of the stair. Ancient halls stretch in all directions.",
+        description: "At the roots of the mountain lies the foundation of the Endless Stair. The air is stale and ancient. From here, the steps wind upwards thousands of feet to the peak of Zirakzigil. The darkness around you is absolute, and the weight of the mountain above is palpable.",
         exits: { 'north': 'endless_stair_top', 'up': 'silverlode_crossing' },
         items: ['ancient_key'],
         enemies: ['orc_warrior']
@@ -445,7 +445,7 @@ export const rooms = {
     // Connection to Lothlórien (for future expansion)
     lothlorien_border: {
         name: "Border of Lothlórien",
-        description: "Golden mallorn trees rise before you, marking the borders of the elven realm of Lothlórien. You sense you are being watched.",
+        description: "The trees change as you cross the Nimbus, becoming taller and silver-barked with leaves of gold that do not fall. This is the Golden Wood, a realm of timeless magic. The air shimmers with a faint, golden haze, and a sense of watching eyes surrounds you—not hostile, but wary. You have entered a land that belongs to an older age.",
         exits: { 'northwest': 'silverlode_crossing', 'east': 'cerin_amroth' },
         items: [],
         enemies: []
@@ -454,7 +454,7 @@ export const rooms = {
     // LOTHLÓ RIEN - The Golden Wood
     cerin_amroth: {
         name: "Cerin Amroth",
-        description: "A high hill crowned with two great trees. Their bark is silver and gold, and their leaves are golden. Between them runs a white stair. The air itself seems to shimmer.",
+        description: "You stand upon the mound of Cerin Amroth, the heart of the ancient forest. Two great circles of trees surround the hill, their golden leaves whispering in the breeze. White niphredil and golden elanor bloom in the grass, unfading. It is a place of unmarred beauty and poignant memory, where time seems to hold its breath.",
         exits: { 'west': 'lothlorien_border', 'east': 'caras_galadhon', 'north': 'rivendell_library', 'northeast': 'rivendell_forge' },
         items: ['golden_leaf', 'silver_bark'],
         enemies: []
@@ -462,7 +462,7 @@ export const rooms = {
 
     caras_galadhon: {
         name: "Caras Galadhon - City of the Trees",
-        description: "The great city of the Galadhrim, built among the massive mallorn trees. Platforms and flets are connected by rope ladders and walkways. The largest tree holds the halls of Celeborn and Galadriel.",
+        description: "The city of the Galadhrim rises into the canopy of the massive mallorn trees. It is a city of light and song, with no walls of stone but defended by the power of the Lady of the Wood. Winding stairs and rope bridges connect the platforms, or 'flets', high above the ground. Lanterns of silver and gold and elf-glass shine like stars among the branches.",
         exits: { 'west': 'cerin_amroth', 'east': 'galadriel_court', 'northwest': 'rivendell_library', 'north': 'rivendell_forge', 'northeast': 'hollin_gate' },
         items: ['lembas_bread', 'miruvor'],
         enemies: []
@@ -470,7 +470,7 @@ export const rooms = {
 
     galadriel_court: {
         name: "Court of Galadriel",
-        description: "High in the tallest mallorn stands the chamber of the Lord and Lady of Lórien. Lady Galadriel regards you with eyes of timeless wisdom. A silver basin filled with water stands nearby - the Mirror of Galadriel.",
+        description: "High in the crown of the greatest mallorn tree, you stand before the Lord and Lady of Lothlórien. The platform is wide and open to the stars. Lady Galadriel, tall and white-robed, regards you with eyes that have seen the light of the Two Trees of Valinor. Her presence is at once terrifying and beautiful. Nearby, on a low pedestal, sits a shallow silver basin filled with water—the Mirror.",
         exits: { 'west': 'caras_galadhon', 'northeast': 'mirror_chamber' },
         items: ['phial_of_galadriel', 'elven_rope'],
         enemies: []
@@ -478,7 +478,7 @@ export const rooms = {
 
     mirror_chamber: {
         name: "Chamber of the Mirror",
-        description: "A quiet chamber where Galadriel's Mirror stands - a silver basin on a pedestal. The water within shows visions of things that were, things that are, and some things that have not yet come to pass.",
+        description: "A secluded glade within the city, sheltered by ancient roots and filled with a soft, silvery light. Here stands the Mirror of Galadriel, a basin of silver on a branching pedestal. The water is dark and still, yet if you gaze into it, it may show things that were, things that are, and things that yet may be. The air is heavy with prophecy and the weight of choices yet to be made.",
         exits: { 'southwest': 'galadriel_court', 'northeast': 'silverlode_banks', 'northwest': 'weathertop_summit', 'north': 'chetwood', 'west': 'hollin_gate', 'down': 'durin_throne_hall' },
         items: [],
         enemies: [],
@@ -487,7 +487,7 @@ export const rooms = {
 
     silverlode_banks: {
         name: "Banks of the Silverlode",
-        description: "The river Celebrant, called Silverlode, flows swiftly with crystalline water. Its banks are lined with golden elanor flowers and pale niphredil.",
+        description: "The fast-flowing waters of the Celebrant, the Silverlode, rush past you, cold and clear from the mountains. The banks are carpeted with soft grass and golden flowers. The river sings as it flows, a merry, bubbling song that eases the heart. To the east, the river joins the Great Anduin, marking the end of the Golden Wood.",
         exits: { 'southwest': 'mirror_chamber', 'northeast': 'anduin_approach' },
         items: ['elanor_flower', 'crystal_water'],
         enemies: []
@@ -495,7 +495,7 @@ export const rooms = {
 
     anduin_approach: {
         name: "Anduin River - Lothlórien Quays",
-        description: "The Great River Anduin flows majestically southward. Elven boats are moored here, waiting to carry travelers downstream.",
+        description: "Here at the confluence of the Silverlode and the Anduin, elven swan-boats bob gently at wooden quays. The Great River is wide and powerful here, a road of water leading south to Gondor and the Sea. The trees of Lothlórien lean out over the water, as if reluctant to let travelers depart from their protection into the wilder lands downstream.",
         exits: { 'southwest': 'silverlode_banks', 'north': 'fangorn_hidden_path', 'northeast': 'seventh_level' },
         items: ['elven_boat'],
         enemies: []
@@ -503,7 +503,7 @@ export const rooms = {
 
     anduin_midstream: {
         name: "Anduin - Midstream",
-        description: "You drift on the Great River. The current is strong. Wild forested hills rise on either bank, and to the east, the dark eaves of Mirkwood loom.",
+        description: "The current of the Anduin is strong and deep, carrying you swiftly between high banks. To the West, the green hills of Rohan roll by; to the East, the rocky, barren lands bordering the Emyn Muil. The river is a grey highway, lonely and vast. Occasionally, strange birds fly overhead, their calls echoing over the water.",
         exits: { 'west': 'mines_level2', 'east': 'parth_galen', 'northeast': 'long_lake_path' },
         items: [],
         enemies: []
@@ -511,7 +511,7 @@ export const rooms = {
 
     parth_galen: {
         name: "Parth Galen",
-        description: "A green lawn beside the Anduin. A hill rises nearby - Amon Hen, the Hill of Sight. This is where the Fellowship was broken.",
+        description: "A wide green sward runs down to the water's edge at the foot of Amon Hen. This is Parth Galen, a place of decisions and breaking. The lawn is fair and smooth, but the shadow of the hill lies over it. Abandoned campfires and the trampled grass speak of a company that rested here before fracturing.",
         exits: { 'west': 'anduin_midstream', 'north': 'amon_hen' },
         items: [],
         enemies: ['uruk_hai', 'uruk_hai']
@@ -519,7 +519,7 @@ export const rooms = {
 
     amon_hen: {
         name: "Amon Hen - Hill of Sight",
-        description: "Ancient stone steps lead to a high seat. From here, one can see far across Middle Earth in all directions - if one dares to look.",
+        description: "You have climbed the ancient stairs to the Seat of Seeing upon Amon Hen. The stone chair is cracked and weathered, but the magic of the high place remains. From here, your gaze can travel unfettered across the continent—to the smoking mountain in the East, the white city in the South, and the dark forests of the North. It is a place of clarity, but also of vulnerability.",
         exits: { 'south': 'parth_galen', 'north': 'rauros_falls_approach', 'west': 'long_lake_path', 'northwest': 'lake_town_docks' },
         items: ['seeing_helm'],
         enemies: []
@@ -528,7 +528,7 @@ export const rooms = {
     // ROHAN - Land of the Horse Lords
     rauros_falls_approach: {
         name: "Approach to Rauros Falls",
-        description: "The roar of the great falls fills the air. Mist rises like smoke. This is Rauros, where Anduin plunges down from Nen Hithoel.",
+        description: "The thunder of the Falls of Rauros effectively drowns out all other sound. The Great River, squeezed between the hills of Emyn Muil, plunges over a sheer precipice into the wet mists below. The spray rises like a permanent cloud, soaking everything for miles. It is a majestic and terrifying display of nature's power, marking the end of the navigable river.",
         exits: { 'south': 'amon_hen', 'north': 'dead_city', 'northwest': 'erebor_great_hall' },
         items: [],
         enemies: []
@@ -536,7 +536,7 @@ export const rooms = {
 
     gap_of_rohan: {
         name: "Gap of Rohan",
-        description: "A wide pass between the Misty Mountains and the White Mountains. The wind sweeps across endless grasslands. This is the realm of Rohan, land of the horse-lords.",
+        description: "A strategic pass between the southern end of the Misty Mountains and the northern tip of the White Mountains. The Adorn and Isen rivers flow through this gap, and the wind whips constantly across the open plains. Long grass ripples like a sea in the breeze, and to the north, the wizard's tower of Orthanc rises like a warning finger. This land is often contested, a gateway between the civilized lands of the south and the wilds of the north.",
         exits: { 'northwest': 'west_emnet', 'south': 'rohan_plains', 'northeast': 'lossarnach_valleys' },
         items: [],
         enemies: ['uruk_hai', 'warg_rider']
@@ -552,7 +552,7 @@ export const rooms = {
 
     edoras_approach: {
         name: "Road to Edoras",
-        description: "A broad road leads up to the hill-city of Edoras. You can see the Golden Hall of Meduseld shining on the hilltop, its roof thatched with gold.",
+        description: "The road winds through the green mounds of the barrows of the Kings of Rohan. Simbelmynë flowers grow thick and white upon the graves, like snow that never melts. Ahead, the fortified hill of Edoras rises sharply from the plains, crowned by the Golden Hall of Meduseld, which shines like a star in the daylight. The sound of a horn blows on the wind, clear and challenging.",
         exits: { 'north': 'rohan_plains', 'east': 'edoras_gates', 'northeast': 'fangorn_eaves' },
         items: [],
         enemies: []
@@ -560,7 +560,7 @@ export const rooms = {
 
     edoras_gates: {
         name: "Gates of Edoras",
-        description: "The gates of the capital of Rohan. Guards in mail stand watch. Beyond, the city climbs the hill toward the Golden Hall.",
+        description: "The heavy wooden gates of Edoras are reinforced with iron bands and guarded by the Royal Guard of Rohan. These men are tall and stern, clad in mail that gleams like silver, with green shields bearing the white sun emblem. A paved road climbs steeply upward through the wooden houses of the town, leading to the summit where the Golden Hall waits.",
         exits: { 'west': 'edoras_approach', 'east': 'meduseld', 'northeast': 'fangorn_depths' },
         items: [],
         enemies: []
@@ -568,7 +568,7 @@ export const rooms = {
 
     meduseld: {
         name: "Meduseld - The Golden Hall",
-        description: "The great hall of Théoden King. Pillars of wood support a roof thatched with gold. Long tables line the hall, and banners of the mark hang from the rafters. The throne stands on a dais.",
+        description: "The Golden Hall of Meduseld stands as a beacon of light atop the hill of Edoras. Massive wooden pillars, carved with the intricate forms of galloping horses, support a soaring roof that gleams with gold even in the dimmest light. Inside, the air is thick with the scent of woodsmoke and roasted meat. Rich tapestries depicting the legends of the Mark hang from the walls, stirring gently in the draft. At the far end, upon a raised dais, stands the throne of Théoden King, commanding the long tables where the Riders of Rohan gather to feast and sing of deeds of valor.",
         exits: { 'west': 'edoras_gates', 'east': 'harrowdale', 'northwest': 'fangorn_eaves', 'northeast': 'wellinghall' },
         items: ['rohirric_sword', 'horn_of_rohan'],
         enemies: []
@@ -584,7 +584,7 @@ export const rooms = {
 
     dunharrow: {
         name: "Dunharrow",
-        description: "An ancient fortress carved into the mountainside. Standing stones line the path - the Púkel-men, relics of an older age. The Dark Door looms at the head of the valley.",
+        description: "A natural fortress formed by a tiered cliff, Dunharrow is a place of refuge for the people of Rohan. The path upward zigzags across the cliff face, marked at every turn by the Púkel-men—ancient, weather-worn statues of squat, brooding figures left by a forgotten people. At the top lies the Firienfeld, a wide green upland, and beyond it, under the shadow of the Dwimorberg, stands the dark, forbidding entrance to the Paths of the Dead.",
         exits: { 'west': 'harrowdale', 'north': 'paths_of_dead', 'northwest': 'wellinghall' },
         items: ['ancient_stones'],
         enemies: []
@@ -592,7 +592,7 @@ export const rooms = {
 
     paths_of_dead: {
         name: "The Paths of the Dead",
-        description: "A black tunnel leads into the mountain. Cold air breathes out from the darkness. Whispers echo in languages long forgotten. Only the dead dwell here.",
+        description: "You stand before the Dark Door, the entrance to the forbidden mountain paths. A chill wind issues from the opening, carrying with it the scent of dust and ancient decay. Fear grips your heart, an instinctual warning that the living are not welcome here. The tunnel beyond is absolute blackness, where whispers seem to echo just on the edge of hearing—the voices of Oathbreakers who failed their king and were cursed to linger until their debt is paid.",
         exits: { 'south': 'dunharrow', 'north': 'helms_gate', 'northwest': 'entwash', 'west': 'wellinghall' },
         items: [],
         enemies: ['dead_men', 'dead_men', 'dead_king']
@@ -600,7 +600,7 @@ export const rooms = {
 
     dead_city: {
         name: "City of the Dead",
-        description: "An underground city of the dead. Countless skeletons in ancient armor line the walls, waiting... waiting for the king to return and fulfill their oath.",
+        description: "Deep within the mountain lies a macabre city, its buildings carved from the cold stone of the cavern. But the inhabitants are long gone—at least, their living forms are. Skeletal remains clad in rusted mail line the walls and fill the doorways, standing guard over empty halls. The darkness here is alive with the presence of the Sleepless Dead, a spectral army waiting in the gloom. The weight of their broken oath hangs heavy in the air.",
         exits: { 'south': 'rauros_falls_approach', 'north': 'glittering_caves', 'southwest': 'lake_town_docks', 'west': 'erebor_great_hall' },
         items: ['oath_stone', 'dead_crown'],
         enemies: []
@@ -608,7 +608,7 @@ export const rooms = {
 
     helms_gate: {
         name: "Helm's Gate",
-        description: "The entrance to Helm's Deep, a great gorge cut into the White Mountains. Massive walls block the way - the Deeping Wall. This fortress has never fallen.",
+        description: "The entrance to the Hornburg is guarded by the Deeping Wall, a massive fortification of stone that spans the mouth of the gorge. It is said that no enemy has ever breached the Deeping Wall while men defended it. The fortress looms above on a spur of rock, a masterpiece of defensive architecture. The Deeping Stream flows through a culvert in the wall, providing water to the defenders. The air is tense, as if the stones themselves remember the great battles fought here.",
         exits: { 'south': 'paths_of_dead', 'north': 'helms_deep_interior', 'northwest': 'mirkwood_edge', 'southwest': 'wellinghall', 'west': 'entwash' },
         items: [],
         enemies: ['uruk_hai', 'uruk_hai', 'uruk_hai']
@@ -624,7 +624,7 @@ export const rooms = {
 
     glittering_caves: {
         name: "Glittering Caves of Aglarond",
-        description: "Vast caverns filled with formations of crystal and stone. Columns of calcite rise like trees. The walls sparkle with a thousand gems. 'Such beauty!' Gimli would say.",
+        description: "Words fail to capture the breathtaking beauty of Aglarond. Vast caverns open up before you, filled with forests of calcite columns that rise from the floor and hang from the ceiling. When your light strikes them, the walls explode into a kaleidoscope of glittering colors—gems, crystals, and veins of precious ore sparkle like a starry night. The sound of water dripping into clear pools creates a musical chiming that echoes through the halls. It is a wonder of the world, hidden deep beneath the roots of the mountain.",
         exits: { 'south': 'dead_city', 'west': 'isengard_gates' },
         items: ['cave_crystal', 'cave_pearl', 'star_gem'],
         enemies: []
@@ -633,7 +633,7 @@ export const rooms = {
     // FANGORN FOREST - Domain of the Ents
     fangorn_border: {
         name: "Edge of Fangorn Forest",
-        description: "The ancient forest of Fangorn stretches before you. The trees are impossibly old and tall. A sense of watchfulness pervades the air. You hear creaking and groaning from deep within.",
+        description: "The ancient forest of Fangorn looms before you, a wall of dark green that seems to swallow the light. The trees here are colossal, their trunks gnarled and moss-covered, their branches twisted like old limbs. A sense of immense age and watchful patience pervades the air. You hear the deep groaning of wood settling and the rustle of leaves, though there is no wind. To enter here is to step into a world that remembers the days before the sun and moon.",
         exits: { 'west': 'seventh_level', 'east': 'fangorn_eaves', 'northwest': 'elf_path_entrance' },
         items: [],
         enemies: []
@@ -641,7 +641,7 @@ export const rooms = {
 
     fangorn_eaves: {
         name: "Eaves of Fangorn",
-        description: "Just within the edge of the forest. Great beech trees tower overhead. Shadows deepen quickly here. Something is moving between the trees...",
+        description: "You stand just within the eaves of the forest, where the light of the outside world struggles to penetrate the dense canopy of beech/oak leaves. Shadows lengthen and deepen here, playing tricks on your eyes. Was that a tree moving in the distance, or just a trick of the light? The air is cool and smells of loam and ancient sap. The silence is profound, broken only by the occasional snap of a twig that sounds like a thunderclap.",
         exits: { 'west': 'fangorn_border', 'east': 'fangorn_depths', 'southeast': 'meduseld', 'southwest': 'edoras_approach' },
         items: ['entdraught'],
         enemies: []
@@ -649,7 +649,7 @@ export const rooms = {
 
     fangorn_depths: {
         name: "Deep in Fangorn",
-        description: "The heart of the ancient forest. Trees so old their names are forgotten crowd close. Time moves differently here. You hear a sound like slow, deep laughter.",
+        description: "You are deep within the heart of Fangorn, where the trees are so old they have forgotten the names of the first elves. This is a place where time moves at the pace of growing roots. The trees crowd close, their bark like rough skin, their roots raised like knees. A low, humming vibration fills the air—the song of the forest itself, slow and deep and resonant. You feel like an intruder in a convocation of giants.",
         exits: { 'west': 'fangorn_eaves', 'east': 'wellinghall', 'southwest': 'edoras_gates', 'northeast': 'entwash' },
         items: ['ancient_oak_heart'],
         enemies: []
@@ -657,7 +657,7 @@ export const rooms = {
 
     wellinghall: {
         name: "Wellinghall - Hall of the Ents",
-        description: "A great natural amphitheater among the trees. A clear stream cascades down the rocks. Treebeard the Ent dwells here - oldest of living things in Middle Earth. 'Hroom, hom!' he grumbles.",
+        description: "You have found Wellinghall, the home of Treebeard. It is a great natural bay in the mountainside, floored with soft grass and roofed by the interlacing branches of living trees. A clear stream flows from the rock, splashing into a stone basin before winding away through the roots. The air is fresh and filled with a sense of slow, deliberate peace. It is here that the Ents gather to drink the Ent-draught and speak in their long, rumbling language.",
         exits: { 'west': 'fangorn_depths', 'north': 'entwash', 'southeast': 'dunharrow', 'northeast': 'helms_gate', 'southwest': 'meduseld', 'east': 'paths_of_dead' },
         items: ['ent_staff'],
         enemies: []
@@ -665,7 +665,7 @@ export const rooms = {
 
     entwash: {
         name: "The Entwash",
-        description: "A river flowing from Fangorn Forest into the plains. The water is clear and cold. Great willow trees line the banks.",
+        description: "The Entwash flows swiftly from the roots of the Misty Mountains, its water clear, cold, and invigorated with the magic of Fangorn. Great willow trees line the banks, their branches trailing in the current. The land here is marshy and fens stretch out towards the Anduin. It is a place of transition between the ancient forest and the open plains of Rohan, where the wildness of the wood meets the wind of the grasslands.",
         exits: { 'south': 'wellinghall', 'north': 'mirkwood_edge', 'southeast': 'paths_of_dead', 'east': 'helms_gate', 'southwest': 'fangorn_depths' },
         items: [],
         enemies: []
@@ -673,7 +673,7 @@ export const rooms = {
 
     east_emnet: {
         name: "East Emnet",
-        description: "The eastern plains of Rohan. Grass waves in the wind like a green sea. You can see riders in the distance - the rohirrim on patrol.",
+        description: "The expansive grasslands of the East Emnet roll away to the horizon, a sea of green under a wide sky. The wind ripples through the tall grass, creating waves that race across the landscape. Herds of wild horses can be seen grazing in the distance. The land is rugged and wild, patrolled by the Riders of Rohan who keep watch against the dark things that creep from the East. It is a land of freedom and open air.",
         exits: { 'south': 'helms_deep_interior', 'west': 'minas_tirith_stables' },
         items: [],
         enemies: []
@@ -681,7 +681,7 @@ export const rooms = {
 
     isengard_gates: {
         name: "Gates of Isengard",
-        description: "The ring of Isengard - a great circular wall of stone. Within stands Orthanc, the black tower of Saruman. Smoke and flame rise from forges beneath. The gates are broken, smashed by the Ents.",
+        description: "What were once the impregnable Gates of Isengard now lie in twisted ruins. The massive stone archway has been shattered, and the great iron doors lie crumpled on the ground, warped by the strength of the Ents. The Ring of Isengard, the great circular wall, is breached and flooded. Inside, rubble and filth litter the ground, but rising above the devastation is the black spike of Orthanc, untouched and terrifying, a monument to Saruman's hubris.",
         exits: { 'east': 'glittering_caves', 'west': 'orthanc_base', 'south': 'erebor_great_hall', 'southwest': 'green_dragon' },
         items: [],
         enemies: ['uruk_hai', 'uruk_hai']
@@ -689,15 +689,15 @@ export const rooms = {
 
     orthanc_base: {
         name: "Base of Orthanc",
-        description: "The tower of Orthanc rises 500 feet, black and adamantine. It has four sheer faces and four sharp corners. No ladder or stair reaches its peak. This was Saruman's fortress.",
+        description: "You stand at the foot of Orthanc, and your neck cranes back to see its summit. The tower is a seamless pinnacle of black adamantine stone, rising five hundred feet into the air. It splits into four sharp horns at the top, like the prongs of a crown. The stone is cold to the touch and seemingly indestructible. There is no door or window at ground level, only a single stair leading to a high door. The power of Saruman still clings to this place like a shroud.",
         exits: { 'east': 'isengard_gates', 'west': 'orthanc_chamber', 'southwest': 'woody_end' },
         items: ['broken_staff'],
         enemies: []
     },
 
     orthanc_chamber: {
-        name: "Orthanc - Saruman's  Chamber",
-        description: "The high chamber of Orthanc. Great windows look out in all directions. Books and diagrams are scattered about - Saruman's studies of the old lore. A palantír once stood here.",
+        name: "Orthanc - Saruman's Chamber",
+        description: "The high brooding chamber of Saruman offers a commanding view of the devastation below. Tall, narrow windows look out to the four points of the compass. The room is filled with the remnants of his dark studies—shelves of dusty tomes, charts of the heavens, and strange mechanical devices. In the center stands a plinth of black stone where the Palantír once rested. The air is stale and carries the metallic tang of magic used for dark purposes.",
         exits: { 'east': 'orthanc_base', 'west': 'rath_dinen', 'south': 'woody_end', 'southwest': 'brandywine_bridge' },
         items: ['saruman_scrolls', 'palantir'],
         enemies: []
@@ -706,15 +706,15 @@ export const rooms = {
     // GONDOR - The Realm of the Stewards
     osgiliath_ruins: {
         name: "Ruins of Osgiliath",
-        description: "The once-great city of Osgiliath lies in ruins. The Anduin flows through the middle, and broken bridges span the water. Orcs patrol the eastern bank. The road to Minas Tirith lies west.",
-        exits: { 'southwest': 'first_level', 'east': 'pelennor_fields', 'southeast': 'snowbourn_banks', 'northwest': 'shelob_lair', 'west': 'mordor_plains' },
+        description: "The once-great capital of Gondor lies broken before you, its white stone shattered and blackened by war. The great bridge has been thrown down, leaving only jagged spans of masonry reaching out over the wide, dark waters of the Anduin. Weeds force their way through the cracked paving stones of the royal road. The silence is heavy and watchful, broken only by the distant screech of a Nazgûl or the harsh guttural speech of checking orc patrols. Shadows stretch long here, and every ruined archway feels like a potential ambush.",
+        exits: { 'southwest': 'mt_level_1', 'east': 'pelennor_fields', 'southeast': 'snowbourn_banks', 'northwest': 'shelob_lair', 'west': 'mordor_plains' },
         items: ['ancient_gondorian_coin'],
         enemies: ['orc_warrior', 'orc_scout']
     },
 
     pelennor_fields: {
         name: "Pelennor Fields",
-        description: "The great fields before Minas Tirith. Farmland stretches to the walls of the White City. The Rammas Echor - the outer wall - has been breached in places. You can see the White Tower rising in the distance.",
+        description: "The fertile plains of the Pelennor stretch out between the river and the white walls of Minas Tirith. Once a quilt of rich farmland and orchards, the fields are now scarred by the machinery of war. The Rammas Echor, the great encircling wall, lies in breached ruin to the north. In the distance, the White City rises in majestic tiers against the dark flank of Mount Mindolluin, a beacon of hope amidst the gathering storm.",
         exits: { 'west': 'osgiliath_ruins', 'east': 'minas_tirith_gates', 'southeast': 'aldburg', 'north': 'barad_dur_approach' },
         items: ['gondorian_banner'],
         enemies: ['orc_warrior']
@@ -722,71 +722,71 @@ export const rooms = {
 
     minas_tirith_gates: {
         name: "Gates of Minas Tirith",
-        description: "The Great Gate of Minas Tirith, the White City. Seven tiers rise above you, each level higher than the last. The White Tower of Ecthelion pierces the sky. Guards in white and silver stand watch.",
-        exits: { 'west': 'pelennor_fields', 'east': 'white_tower', 'south': 'aldburg', 'southwest': 'snowbourn_banks', 'north': 'barad_dur_base' },
+        description: "You stand before the Great Gate of the City of Kings. Constructed of iron and mithril, it is a formidable barrier against the darkness of the East. Guards in the livery of the White Tree—black surcoats embroidered with silver—stand vigilant with tall spears. Beyond the gate, the city rises steeply in seven concentric circles, each more fortified than the last, culminating in the white needle of the Tower of Ecthelion piercing the sky.",
+        exits: { 'west': 'pelennor_fields', 'east': 'white_tower', 'south': 'aldburg', 'southwest': 'snowbourn_banks', 'north': 'barad_dur_base', 'up': 'mt_level_1' },
         items: [],
         enemies: []
     },
 
-    first_level: {
+    mt_level_1: {
         name: "First Level - Minas Tirith",
-        description: "The lowest level of the city. Houses and shops line the streets. The White Tree fountain stands in the center. The way up leads to the Citadel.",
-        exits: { north: 'minas_tirith_stables', up: 'second_level', down: 'minas_tirith_gates' },
+        description: "The lowest circle of the White City bustles with the daily life of Gondor's common folk. Sturdy stone houses and busy shops line the wide, paved streets, their facades bleached white by the sun. In the center of a small square stands a fountain, its water clear and cool, though the stone is worn by centuries of use. The massive outer wall, the Othram, looms protective and reassuring, while the distinct incline of the city leads your eye upward toward the Citadel. The air here smells of baking bread, roasting meat, and the stone dust of constant repairs.",
+        exits: { north: 'minas_tirith_stables', up: 'mt_level_2', down: 'minas_tirith_gates' },
         items: ['white_tree_sapling'],
         enemies: []
     },
 
-    second_level: {
+    mt_level_2: {
         name: "Second Level - Minas Tirith",
-        description: "Houses of stone and wood, built into the mountainside. The streets are clean and well-kept. You can see the Citadel above.",
-        exits: { north: 'deep_mines_hub', south: 'third_level', east: 'fourth_level', west: 'iron_mines_2', northeast: 'mithril_mine', southeast: 'sixth_level', southwest: 'goblin_warren', up: 'third_level', down: 'first_level' },
+        description: "Rising above the noise of the lower city, the Second Level is a place of quiet dignity. Graceful houses of pale stone are built directly into the mountainside, their windows commanding sweeping views of the Pelennor Fields below. The streets are impeccably clean, lined with statutes of minor heroes and well-tended planters. Soldiers patrol in pairs, their silver armor gleaming, ensuring the peace of the realm. Looking up, the towering prow of the Citadel cuts the sky like the hull of a great stone ship.",
+        exits: { north: 'deep_mines_hub', south: 'mt_level_3', east: 'mt_level_4', west: 'iron_mines_2', northeast: 'mithril_mine', southeast: 'mt_level_6', southwest: 'goblin_warren', up: 'mt_level_3', down: 'mt_level_1' },
         items: ['gondorian_sword'],
         enemies: []
     },
 
-    third_level: {
+    mt_level_3: {
         name: "Third Level - Minas Tirith",
-        description: "The level of the Houses of Healing. White buildings with gardens. The air is filled with the scent of athelas.",
-        exits: { north: 'second_level', south: 'minas_tirith_houses_of_healing', east: 'sixth_level', west: 'goblin_warren', northeast: 'fourth_level', northwest: 'iron_mines_2', southeast: 'citadel_guards_hall', southwest: 'hall_of_kings', up: 'fourth_level', down: 'second_level' },
+        description: "The Third Level is a sanctuary of peace and healing, dominated by the Houses of Healing. Gardens of herbs and flowers fill the air with fragrant scents—athelas, sage, and lavender—masking the harsh smells of war. White buildings with arched colonnades offer shade and rest for the weary. Healers in grey robes move silently between the halls, tending to the sick and wounded. It is a place of respite, where the clamor of battle seems distant and the preservation of life is the only law.",
+        exits: { north: 'mt_level_2', south: 'minas_tirith_houses_of_healing', east: 'mt_level_6', west: 'goblin_warren', northeast: 'mt_level_4', northwest: 'iron_mines_2', southeast: 'citadel_guards_hall', southwest: 'hall_of_kings', up: 'mt_level_4', down: 'mt_level_2' },
         items: ['athelas', 'healing_herbs'],
         enemies: []
     },
 
-    fourth_level: {
+    mt_level_4: {
         name: "Fourth Level - Minas Tirith",
-        description: "Barracks and armories. The soldiers of Gondor train here. You hear the ring of steel on steel.",
-        exits: { north: 'mithril_mine', south: 'sixth_level', west: 'second_level', northeast: 'fifth_level', northwest: 'deep_mines_hub', southwest: 'third_level', up: 'fifth_level', down: 'third_level' },
+        description: "This level echoes with the martial spirit of Gondor. Large barracks and extensive armories dominate the streetscape. The ringing of steel on steel is constant as soldiers drill in the courtyards, preparing for the defense of the realm. Racks of spears, stacks of shields, and rows of polished helms are visible through open doors. The men here are grim and focused, the elite defenders of the White City, ever watchful towards the East.",
+        exits: { north: 'mithril_mine', south: 'mt_level_6', west: 'mt_level_2', northeast: 'mt_level_5', northwest: 'deep_mines_hub', southwest: 'mt_level_3', up: 'mt_level_5', down: 'mt_level_3' },
         items: ['gondorian_armor'],
         enemies: []
     },
 
-    fifth_level: {
+    mt_level_5: {
         name: "Fifth Level - Minas Tirith",
-        description: "The level of the Great Hall. Tapestries depicting the history of Gondor line the walls.",
-        exits: { north: 'nameless_tunnels', west: 'mithril_mine', northwest: 'the_dark_lake', southeast: 'lossarnach_valleys', southwest: 'fourth_level', up: 'sixth_level', down: 'fourth_level' },
+        description: "The Fifth Level is known for its grand libraries and the Great Hall of Records. Magnificent tapestries depicting the long history of Gondor—from the fall of Númenor to the wars against Angmar—line the walls of the public spaces. Scholars and scribes hurry between buildings, clutching scrolls and books. It is a place of memory, where the glory of the past is preserved against the fading of the world.",
+        exits: { north: 'nameless_tunnels', west: 'mithril_mine', northwest: 'the_dark_lake', southeast: 'lossarnach_valleys', southwest: 'mt_level_4', up: 'mt_level_6', down: 'mt_level_4' },
         items: ['ancient_tapestry'],
         enemies: []
     },
 
-    sixth_level: {
+    mt_level_6: {
         name: "Sixth Level - Minas Tirith",
-        description: "The level of the Citadel. The White Tower looms above. This is the heart of Gondor.",
-        exits: { north: 'fourth_level', south: 'citadel_guards_hall', west: 'third_level', northwest: 'second_level', southeast: 'mithril_depths_2', southwest: 'minas_tirith_houses_of_healing', up: 'white_tower', down: 'fifth_level' },
+        description: "The uppermost circle of the city, save for the Citadel itself. This is the Circle of the Citadel, a place of high nobility and ancient reinforcement. The walls here are immaculately white, and the pavement is of white stone. From the parapets, one can see the vast shadow of Mordor on the eastern horizon, a constant reminder of the vigilance required of those who dwell here. The entrance to the Court of the Fountain lies ahead.",
+        exits: { north: 'mt_level_4', south: 'citadel_guards_hall', west: 'mt_level_3', northwest: 'mt_level_2', southeast: 'mithril_depths_2', southwest: 'minas_tirith_houses_of_healing', up: 'white_tower', down: 'mt_level_5' },
         items: ['gondorian_crown'],
         enemies: []
     },
 
     white_tower: {
         name: "White Tower of Ecthelion",
-        description: "The highest point of Minas Tirith. From here you can see for leagues in every direction. The throne of the Stewards stands empty, awaiting the return of the King.",
-        exits: { 'west': 'minas_tirith_gates', 'north': 'house_of_stewards', 'southwest': 'aldburg', 'southeast': 'mirkwood_depths', 'south': 'thranduil_halls_interior', 'northeast': 'mount_doom_approach' },
+        description: "The White Tower stands as the crowning jewel of Minas Tirith, visible for leagues in every direction. The polished white stone gleams in the sun, a defiant symbol of light. Inside, the Hall of Kings is vast and silent, rows of black marble pillars leading to the empty throne. The Steward's Chair sits at the foot of the dais, waiting. From the high windows, you can see the shadow of Mordor gathering in the east, a dark stain on the horizon.",
+        exits: { 'west': 'minas_tirith_gates', 'north': 'house_of_stewards', 'southwest': 'aldburg', 'southeast': 'mirkwood_depths', 'south': 'thranduil_halls_interior', 'northeast': 'mount_doom_approach', 'down': 'mt_level_6' },
         items: ['palantir_of_minas_tirith', 'steward_crown'],
         enemies: []
     },
 
     rath_dinen: {
         name: "Rath Dínen - Street of the Dead",
-        description: "The silent street where the Kings and Stewards of Gondor are laid to rest. Tombs line both sides. A sense of ancient majesty and sorrow fills the air.",
+        description: "A silent road winds between crumbling stone mausoleums and overgrown gardens. This is Rath Dínen, the Silent Street, where the nobles of Gondor bury their dead. The air is cold and still, disturbed only by the rustle of dead leaves and the caw of a crow. Shadows seem to detach themselves from the tombs, watching your passage with cold resentment.",
         exits: { 'east': 'orthanc_chamber', 'south': 'tunnel_exit', 'southeast': 'woody_end', 'southwest': 'stock_road' },
         items: [],
         enemies: []
@@ -794,7 +794,7 @@ export const rooms = {
 
     house_of_stewards: {
         name: "House of the Stewards",
-        description: "The tomb of the Stewards of Gondor. White marble and silver. The tombs of Denethor and his forefathers lie here.",
+        description: "A domed grand mausoleum of white marble, housing the remains of the Stewards who have ruled Gondor in the King's absence. Inside, the air is musty and sweet with the smell of preservatives. Stone effigies of the Stewards lie in repose, their hands folded over their swords. It is a sombre place, weighted with the history of the realm and the burden of rule.",
         exits: { 'south': 'white_tower', 'north': 'minas_morgul_gates', 'northwest': 'whitwell' },
         items: ['steward_ring', 'ancient_scroll'],
         enemies: []
@@ -843,9 +843,9 @@ export const rooms = {
 
     mordor_plains: {
         name: "Plains of Mordor",
-        description: "A wasteland of ash and rock. Nothing grows here. The sky is dark with smoke. Orc patrols march in the distance. Mount Doom dominates the horizon.",
-        exits: { 'north': 'shelob_lair', 'northeast': 'black_gate', 'southeast': 'dunharrow_firtree_grove', 'south': 'second_level', 'east': 'osgiliath_ruins' },
-        items: [],
+        description: "A desolate, ash-covered wasteland stretches before you. The air is thick with sulfurous fumes, making it hard to breathe. Jagged rocks poke through the grey dust like broken bones. In the distance, the red eye of Sauron watches from atop the Dark Tower. This is the heart of the enemy's domain.",
+        exits: { 'north': 'shelob_lair', 'northeast': 'black_gate', 'southeast': 'dunharrow_firtree_grove', 'south': 'mt_level_2', 'east': 'osgiliath_ruins' },
+        items: ['broken_orc_blade'],
         enemies: ['orc_warrior', 'orc_warrior', 'warg_rider']
     },
 

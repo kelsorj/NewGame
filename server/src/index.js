@@ -26,6 +26,12 @@ app.use((req, res, next) => {
 // Serve static files
 app.use(express.json());
 
+// Inject GameEngine into request for API access
+app.use((req, res, next) => {
+    req.gameEngine = gameEngine;
+    next();
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.json({

@@ -37,7 +37,32 @@ function loadExitsFromJSON() {
 
 export class RoomSystem {
   constructor(rooms) {
+    this.initialRooms = { ...rooms }; // Keep a copy of the original hardcoded rooms
     this.rooms = rooms;
+    this.loadData();
+  }
+
+  loadData() {
+    // Reset rooms to initial state (to avoid stale data when reloading)
+    // We need to preserve the object reference if possible, or just re-assign properties
+    // For simplicity, we'll re-apply the initial rooms to the current rooms object
+    // But we encounter a problem: if we replace this.rooms, references elsewhere might break.
+    // So we should modify this.rooms in place.
+
+    // First, clear existing dynamic data if this is a reload? 
+    // Actually, just re-merging might be safer.
+    // Let's reset to initial hardcoded state first.
+    for (const id in this.rooms) {
+      if (!this.initialRooms[id]) {
+        delete this.rooms[id]; // Remove rooms that were dynamic
+      } else {
+        // Reset properties to initial state
+        Object.assign(this.rooms[id], this.initialRooms[id]);
+      }
+    }
+    // Add back initial rooms that might have been deleted? 
+    // (Assuming hardcoded rooms don't get deleted)
+
     // Load exits and exitConfig from JSON file and merge into rooms
     const { exits, exitConfigs } = loadExitsFromJSON();
 
@@ -65,6 +90,14 @@ export class RoomSystem {
         Object.assign(this.rooms[roomId].exitConfig, exitConfigs[roomId]);
       }
     }
+
+    console.log(`[RoomSystem] Loaded ${Object.keys(this.rooms).length} rooms.`);
+  }
+
+  reload() {
+    console.log('[RoomSystem] Reloading map data...');
+    this.loadData();
+    return true;
   }
 
   getRoom(roomId) {

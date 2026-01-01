@@ -80,13 +80,13 @@ function saveCoordinatesAndExits(coordinates, exits, exitConfigs = null) {
             path.join(__dirname, '../../../scripts/linear-world-connections.json'),
             'utf8'
         ));
-        
+
         coordData.coordinates = coordinates;
         coordData.exits = exits; // Use 'exits' instead of 'newExits' for consistency
         if (exitConfigs !== null) {
             coordData.exitConfigs = exitConfigs;
         }
-        
+
         writeFileSync(
             path.join(__dirname, '../../../scripts/linear-world-connections.json'),
             JSON.stringify(coordData, null, 2),
@@ -105,14 +105,14 @@ export function getMapData(req, res) {
         const coordinates = loadCoordinates();
         const exits = loadExits();
         const exitConfigs = loadExitConfigs();
-        
+
         const mapData = Object.keys(rooms).map(roomId => {
             const room = rooms[roomId];
             const coord = coordinates[roomId] || { x: 0, y: 0, z: 0 };
             const roomExits = exits[roomId] || {};
             // Merge exitConfig from JSON file with room data (room data takes precedence)
             const roomExitConfig = { ...exitConfigs[roomId], ...(room.exitConfig || {}) };
-            
+
             return {
                 id: roomId,
                 name: room.name,
@@ -126,7 +126,7 @@ export function getMapData(req, res) {
                 enemies: room.enemies || []
             };
         });
-        
+
         res.json({
             success: true,
             rooms: mapData,
@@ -143,26 +143,26 @@ function calculateDirection(from, to) {
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const dz = to.z - from.z;
-    
+
     // Vertical movement
     if (dz > 0) return 'up';
     if (dz < 0) return 'down';
-    
+
     // Horizontal movement
     if (dx === 0 && dy === 0) return null; // Same position
-    
+
     // Cardinal directions
     if (dx === 0 && dy > 0) return 'north';
     if (dx === 0 && dy < 0) return 'south';
     if (dx > 0 && dy === 0) return 'east';
     if (dx < 0 && dy === 0) return 'west';
-    
+
     // Diagonal directions
     if (dx > 0 && dy > 0) return 'northeast';
     if (dx < 0 && dy > 0) return 'northwest';
     if (dx > 0 && dy < 0) return 'southeast';
     if (dx < 0 && dy < 0) return 'southwest';
-    
+
     return null; // Too far or invalid
 }
 
@@ -187,19 +187,19 @@ function getOppositeDirection(dir) {
 export function updateRoomCoordinates(req, res) {
     try {
         const { roomId, x, y, z } = req.body;
-        
+
         if (!roomId || typeof x !== 'number' || typeof y !== 'number' || typeof z !== 'number') {
             return res.status(400).json({ success: false, error: 'Invalid parameters' });
         }
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         const coordinates = loadCoordinates();
         const exits = loadExits();
         const oldCoord = coordinates[roomId];
-        
+
         // Check for overlaps
         const overlaps = [];
         for (const [id, coord] of Object.entries(coordinates)) {
@@ -207,7 +207,7 @@ export function updateRoomCoordinates(req, res) {
                 overlaps.push(id);
             }
         }
-        
+
         if (overlaps.length > 0) {
             return res.status(400).json({
                 success: false,
@@ -215,37 +215,37 @@ export function updateRoomCoordinates(req, res) {
                 overlaps
             });
         }
-        
+
         // Update coordinates
         coordinates[roomId] = { x, y, z };
         const newCoord = { x, y, z };
-        
+
         // Update exits FROM this room to others
         if (exits[roomId]) {
             const updatedExits = {};
             for (const [dir, targetId] of Object.entries(exits[roomId])) {
                 if (coordinates[targetId]) {
                     const targetCoord = coordinates[targetId];
-                    
+
                     // Calculate distance
                     const dx = Math.abs(targetCoord.x - newCoord.x);
                     const dy = Math.abs(targetCoord.y - newCoord.y);
                     const dz = Math.abs(targetCoord.z - newCoord.z);
-                    
+
                     // Only keep connections to adjacent rooms (1 unit away, or 1 unit diagonally)
                     // For same level: max 1 unit in x and y
                     // For different levels: must be exactly 1 unit in z and same x,y
-                    const isAdjacent = 
+                    const isAdjacent =
                         (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) || // Same level, adjacent
                         (dz === 1 && dx === 0 && dy === 0); // Different level, directly above/below
-                    
+
                     if (isAdjacent) {
                         const newDir = calculateDirection(newCoord, targetCoord);
-                        
+
                         if (newDir) {
                             // Update the direction
                             updatedExits[newDir] = targetId;
-                            
+
                             // Update reverse connection
                             if (!exits[targetId]) exits[targetId] = {};
                             // Remove old reverse connection
@@ -268,32 +268,32 @@ export function updateRoomCoordinates(req, res) {
         } else {
             exits[roomId] = {};
         }
-        
+
         // Auto-create exits to adjacent rooms that don't have connections yet
         // Connections are enabled by default, but can be manually disabled via the UI
         for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
             if (otherRoomId === roomId) continue;
-            
+
             const dx = Math.abs(otherCoord.x - newCoord.x);
             const dy = Math.abs(otherCoord.y - newCoord.y);
             const dz = Math.abs(otherCoord.z - newCoord.z);
-            
+
             // Check if adjacent
-            const isAdjacent = 
+            const isAdjacent =
                 (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
                 (dz === 1 && dx === 0 && dy === 0);
-            
+
             if (isAdjacent) {
                 // Check if we already have an exit to this room
                 const hasExit = Object.values(exits[roomId] || {}).includes(otherRoomId);
-                
+
                 if (!hasExit) {
                     // Create bidirectional connection
                     const dir = calculateDirection(newCoord, otherCoord);
                     if (dir) {
                         if (!exits[roomId]) exits[roomId] = {};
                         exits[roomId][dir] = otherRoomId;
-                        
+
                         // Create reverse connection
                         if (!exits[otherRoomId]) exits[otherRoomId] = {};
                         const oppositeDir = getOppositeDirection(dir);
@@ -310,32 +310,32 @@ export function updateRoomCoordinates(req, res) {
                 }
             }
         }
-        
+
         // Collect all rooms that were connected to the moved room (for local recalculation)
         const connectedRoomIds = new Set();
-        
+
         // Update exits TO this room from others
         for (const [otherRoomId, otherExits] of Object.entries(exits)) {
             if (otherRoomId === roomId) continue;
-            
+
             for (const [dir, targetId] of Object.entries(otherExits)) {
                 if (targetId === roomId && coordinates[otherRoomId]) {
                     connectedRoomIds.add(otherRoomId);
                     const otherCoord = coordinates[otherRoomId];
-                    
+
                     // Calculate distance
                     const dx = Math.abs(newCoord.x - otherCoord.x);
                     const dy = Math.abs(newCoord.y - otherCoord.y);
                     const dz = Math.abs(newCoord.z - otherCoord.z);
-                    
+
                     // Only keep connections to adjacent rooms
-                    const isAdjacent = 
+                    const isAdjacent =
                         (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) || // Same level, adjacent
                         (dz === 1 && dx === 0 && dy === 0); // Different level, directly above/below
-                    
+
                     if (isAdjacent) {
                         const newDir = calculateDirection(otherCoord, newCoord);
-                        
+
                         if (newDir) {
                             // Update the direction
                             delete exits[otherRoomId][dir];
@@ -351,7 +351,7 @@ export function updateRoomCoordinates(req, res) {
                 }
             }
         }
-        
+
         // Also collect rooms that the moved room connects TO
         if (exits[roomId]) {
             for (const targetId of Object.values(exits[roomId])) {
@@ -360,33 +360,33 @@ export function updateRoomCoordinates(req, res) {
                 }
             }
         }
-        
+
         // Recalculate all exits for connected rooms (local recalculation)
         for (const connectedRoomId of connectedRoomIds) {
             if (!coordinates[connectedRoomId]) continue;
-            
+
             const connectedCoord = coordinates[connectedRoomId];
             const updatedConnectedExits = {};
-            
+
             // Recalculate exits FROM this connected room
             if (exits[connectedRoomId]) {
                 for (const [dir, targetId] of Object.entries(exits[connectedRoomId])) {
                     if (!coordinates[targetId]) continue;
-                    
+
                     const targetCoord = coordinates[targetId];
                     const dx = Math.abs(targetCoord.x - connectedCoord.x);
                     const dy = Math.abs(targetCoord.y - connectedCoord.y);
                     const dz = Math.abs(targetCoord.z - connectedCoord.z);
-                    
-                    const isAdjacent = 
+
+                    const isAdjacent =
                         (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
                         (dz === 1 && dx === 0 && dy === 0);
-                    
+
                     if (isAdjacent) {
                         const correctDir = calculateDirection(connectedCoord, targetCoord);
                         if (correctDir) {
                             updatedConnectedExits[correctDir] = targetId;
-                            
+
                             // Update reverse connection
                             if (!exits[targetId]) exits[targetId] = {};
                             // Remove old reverse
@@ -404,27 +404,27 @@ export function updateRoomCoordinates(req, res) {
                     }
                 }
             }
-            
+
             // Auto-create missing adjacent connections for this connected room
             // Connections are enabled by default, but can be manually disabled via the UI
             for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
                 if (otherRoomId === connectedRoomId) continue;
-                
+
                 const dx = Math.abs(otherCoord.x - connectedCoord.x);
                 const dy = Math.abs(otherCoord.y - connectedCoord.y);
                 const dz = Math.abs(otherCoord.z - connectedCoord.z);
-                
-                const isAdjacent = 
+
+                const isAdjacent =
                     (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
                     (dz === 1 && dx === 0 && dy === 0);
-                
+
                 if (isAdjacent) {
                     const hasExit = Object.values(updatedConnectedExits).includes(otherRoomId);
                     if (!hasExit) {
                         const dir = calculateDirection(connectedCoord, otherCoord);
                         if (dir) {
                             updatedConnectedExits[dir] = otherRoomId;
-                            
+
                             // Create reverse connection
                             if (!exits[otherRoomId]) exits[otherRoomId] = {};
                             const oppositeDir = getOppositeDirection(dir);
@@ -441,14 +441,19 @@ export function updateRoomCoordinates(req, res) {
                     }
                 }
             }
-            
+
             exits[connectedRoomId] = updatedConnectedExits;
         }
-        
+
         if (saveCoordinatesAndExits(coordinates, exits)) {
-            res.json({ 
-                success: true, 
-                roomId, 
+            // Trigger hot reload
+            if (req.gameEngine) {
+                req.gameEngine.reloadMap();
+            }
+
+            res.json({
+                success: true,
+                roomId,
                 coordinates: { x, y, z },
                 exits: exits[roomId] || {},
                 message: 'Coordinates and exits updated'
@@ -466,19 +471,23 @@ export function updateRoomCoordinates(req, res) {
 export function updateRoomExits(req, res) {
     try {
         const { roomId, exits } = req.body;
-        
+
         if (!roomId || !exits || typeof exits !== 'object') {
             return res.status(400).json({ success: false, error: 'Invalid parameters' });
         }
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         const currentExits = loadExits();
         currentExits[roomId] = exits;
-        
+
         if (saveCoordinatesAndExits(loadCoordinates(), currentExits)) {
+            // Trigger hot reload
+            if (req.gameEngine) {
+                req.gameEngine.reloadMap();
+            }
             res.json({ success: true, roomId, exits });
         } else {
             res.status(500).json({ success: false, error: 'Failed to save' });
@@ -493,20 +502,20 @@ export function updateRoomExits(req, res) {
 export function updateExitConfig(req, res) {
     try {
         const { roomId, direction, config } = req.body;
-        
+
         if (!roomId || !direction) {
             return res.status(400).json({ success: false, error: 'Room ID and direction required' });
         }
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         const exitConfigs = loadExitConfigs();
         if (!exitConfigs[roomId]) {
             exitConfigs[roomId] = {};
         }
-        
+
         if (config === null || (config && Object.keys(config).length === 0)) {
             // Remove config if null or empty
             delete exitConfigs[roomId][direction];
@@ -516,8 +525,12 @@ export function updateExitConfig(req, res) {
         } else {
             exitConfigs[roomId][direction] = config;
         }
-        
+
         if (saveCoordinatesAndExits(loadCoordinates(), loadExits(), exitConfigs)) {
+            // Trigger hot reload
+            if (req.gameEngine) {
+                req.gameEngine.reloadMap();
+            }
             res.json({ success: true, roomId, direction, config: exitConfigs[roomId]?.[direction] || null });
         } else {
             res.status(500).json({ success: false, error: 'Failed to save' });
@@ -532,28 +545,28 @@ export function updateExitConfig(req, res) {
 export function updateRoomData(req, res) {
     try {
         const { roomId, description, items } = req.body;
-        
+
         if (!roomId) {
             return res.status(400).json({ success: false, error: 'Room ID required' });
         }
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         // Update room data
         if (description !== undefined) {
             rooms[roomId].description = description;
         }
-        
+
         if (items !== undefined) {
             rooms[roomId].items = Array.isArray(items) ? items : [];
         }
-        
+
         // Save to file (we need to write back to the appropriate room file)
         // For now, we'll just return success - in production you'd want to save to file
-        res.json({ 
-            success: true, 
+        res.json({
+            success: true,
             roomId,
             description: rooms[roomId].description,
             items: rooms[roomId].items
@@ -568,27 +581,27 @@ export function updateRoomData(req, res) {
 export function toggleVerticalConnection(req, res) {
     try {
         const { roomId, direction, targetRoomId, enabled } = req.body;
-        
+
         if (!roomId || !direction || (direction !== 'up' && direction !== 'down')) {
             return res.status(400).json({ success: false, error: 'Invalid parameters' });
         }
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         const coordinates = loadCoordinates();
         const exits = loadExits();
-        
+
         if (!exits[roomId]) {
             exits[roomId] = {};
         }
-        
+
         if (enabled) {
             // Enable connection
             if (targetRoomId && rooms[targetRoomId]) {
                 exits[roomId][direction] = targetRoomId;
-                
+
                 // Create reverse connection
                 const oppositeDir = direction === 'up' ? 'down' : 'up';
                 if (!exits[targetRoomId]) {
@@ -606,7 +619,7 @@ export function toggleVerticalConnection(req, res) {
             // Disable connection
             const oldTargetId = exits[roomId][direction];
             delete exits[roomId][direction];
-            
+
             // Remove reverse connection
             if (oldTargetId && exits[oldTargetId]) {
                 const oppositeDir = direction === 'up' ? 'down' : 'up';
@@ -615,10 +628,15 @@ export function toggleVerticalConnection(req, res) {
                 }
             }
         }
-        
+
         if (saveCoordinatesAndExits(coordinates, exits)) {
-            res.json({ 
-                success: true, 
+            // Trigger hot reload
+            if (req.gameEngine) {
+                req.gameEngine.reloadMap();
+            }
+
+            res.json({
+                success: true,
                 roomId,
                 direction,
                 enabled,
@@ -637,24 +655,24 @@ export function toggleVerticalConnection(req, res) {
 export function getVerticalNeighbors(req, res) {
     try {
         const { roomId } = req.params;
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         const coordinates = loadCoordinates();
         const roomCoord = coordinates[roomId];
-        
+
         if (!roomCoord) {
             return res.json({ success: true, neighbors: [] });
         }
-        
+
         // Find all rooms at the same x,y but different z
         const neighbors = [];
         for (const [otherRoomId, otherCoord] of Object.entries(coordinates)) {
-            if (otherRoomId !== roomId && 
-                otherCoord.x === roomCoord.x && 
-                otherCoord.y === roomCoord.y && 
+            if (otherRoomId !== roomId &&
+                otherCoord.x === roomCoord.x &&
+                otherCoord.y === roomCoord.y &&
                 otherCoord.z !== roomCoord.z) {
                 neighbors.push({
                     id: otherRoomId,
@@ -666,12 +684,12 @@ export function getVerticalNeighbors(req, res) {
                 });
             }
         }
-        
+
         // Sort by Z level (ascending)
         neighbors.sort((a, b) => a.z - b.z);
-        
+
         console.log(`Found ${neighbors.length} vertical neighbors for ${roomId} at (${roomCoord.x}, ${roomCoord.y}, ${roomCoord.z})`);
-        
+
         res.json({ success: true, neighbors });
     } catch (err) {
         console.error('Error getting vertical neighbors:', err);
@@ -684,7 +702,7 @@ export function getOverlaps(req, res) {
     try {
         const coordinates = loadCoordinates();
         const overlapMap = new Map();
-        
+
         for (const [roomId, coord] of Object.entries(coordinates)) {
             const key = `${coord.x},${coord.y},${coord.z}`;
             if (!overlapMap.has(key)) {
@@ -692,7 +710,7 @@ export function getOverlaps(req, res) {
             }
             overlapMap.get(key).push(roomId);
         }
-        
+
         const overlaps = Array.from(overlapMap.entries())
             .filter(([_, roomList]) => roomList.length > 1)
             .map(([coord, roomList]) => ({
@@ -703,7 +721,7 @@ export function getOverlaps(req, res) {
                     ...coordinates[id]
                 }))
             }));
-        
+
         res.json({ success: true, overlaps });
     } catch (err) {
         console.error('Error getting overlaps:', err);
@@ -718,29 +736,29 @@ export function cleanupExits(req, res) {
         const exits = loadExits();
         let removedCount = 0;
         let addedCount = 0;
-        
+
         // First pass: remove non-adjacent exits
         for (const [roomId, roomExits] of Object.entries(exits)) {
             if (!coordinates[roomId]) continue;
             const roomCoord = coordinates[roomId];
             const updatedExits = {};
-            
+
             for (const [dir, targetId] of Object.entries(roomExits)) {
                 if (!coordinates[targetId]) {
                     removedCount++;
                     continue; // Target doesn't exist
                 }
-                
+
                 const targetCoord = coordinates[targetId];
                 const dx = Math.abs(targetCoord.x - roomCoord.x);
                 const dy = Math.abs(targetCoord.y - roomCoord.y);
                 const dz = Math.abs(targetCoord.z - roomCoord.z);
-                
+
                 // Only keep adjacent connections
-                const isAdjacent = 
+                const isAdjacent =
                     (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
                     (dz === 1 && dx === 0 && dy === 0);
-                
+
                 if (isAdjacent) {
                     // Verify direction is correct
                     const expectedDir = calculateDirection(roomCoord, targetCoord);
@@ -750,7 +768,7 @@ export function cleanupExits(req, res) {
                         // Direction changed, update it
                         updatedExits[expectedDir] = targetId;
                         removedCount++;
-                        
+
                         // Update reverse connection
                         if (!exits[targetId]) exits[targetId] = {};
                         // Remove old reverse
@@ -768,7 +786,7 @@ export function cleanupExits(req, res) {
                 } else {
                     // Too far, remove connection
                     removedCount++;
-                    
+
                     // Remove reverse connection
                     if (exits[targetId]) {
                         for (const [targetDir, targetTargetId] of Object.entries(exits[targetId])) {
@@ -779,15 +797,19 @@ export function cleanupExits(req, res) {
                     }
                 }
             }
-            
+
             exits[roomId] = updatedExits;
         }
-        
+
         // Second pass: AUTO-CONNECTION DISABLED - connections must be manually created
         // This allows for dead-end rooms and manual control over connections
         // The cleanup function now only removes non-adjacent exits, it does not create new connections
-        
+
         if (saveCoordinatesAndExits(coordinates, exits)) {
+            // Trigger hot reload
+            if (req.gameEngine) {
+                req.gameEngine.reloadMap();
+            }
             res.json({
                 success: true,
                 message: `Cleaned up ${removedCount} non-adjacent exits`,
@@ -822,19 +844,19 @@ export function applyChanges(req, res) {
 export function changeRoomZLevel(req, res) {
     try {
         const { roomId, deltaZ } = req.body;
-        
+
         if (!roomId || typeof deltaZ !== 'number') {
             return res.status(400).json({ success: false, error: 'Invalid parameters' });
         }
-        
+
         const coordinates = loadCoordinates();
         if (!coordinates[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         const currentCoord = coordinates[roomId];
         const newZ = currentCoord.z + deltaZ;
-        
+
         // Check for overlaps at new Z level
         for (const [id, coord] of Object.entries(coordinates)) {
             if (id !== roomId && coord.x === currentCoord.x && coord.y === currentCoord.y && coord.z === newZ) {
@@ -844,28 +866,28 @@ export function changeRoomZLevel(req, res) {
                 });
             }
         }
-        
+
         // Update Z coordinate
         coordinates[roomId] = { ...currentCoord, z: newZ };
-        
+
         // Clean up exits that are no longer adjacent (vertical connections are preserved)
         const exits = loadExits();
         const roomExits = exits[roomId] || {};
         const updatedExits = {};
-        
+
         for (const [dir, targetId] of Object.entries(roomExits)) {
             if (!coordinates[targetId]) continue;
-            
+
             const targetCoord = coordinates[targetId];
             const dx = Math.abs(targetCoord.x - currentCoord.x);
             const dy = Math.abs(targetCoord.y - currentCoord.y);
             const dz = Math.abs(targetCoord.z - newZ);
-            
+
             // Keep if still adjacent (horizontal or vertical)
-            const isAdjacent = 
+            const isAdjacent =
                 (dz === 0 && dx <= 1 && dy <= 1 && (dx + dy) > 0) ||
                 (dz === 1 && dx === 0 && dy === 0);
-            
+
             if (isAdjacent) {
                 updatedExits[dir] = targetId;
             } else {
@@ -879,13 +901,13 @@ export function changeRoomZLevel(req, res) {
                 }
             }
         }
-        
+
         exits[roomId] = updatedExits;
-        
+
         if (saveCoordinatesAndExits(coordinates, exits)) {
-            res.json({ 
-                success: true, 
-                roomId, 
+            res.json({
+                success: true,
+                roomId,
                 coordinates: coordinates[roomId],
                 exits: exits[roomId]
             });
@@ -902,29 +924,29 @@ export function changeRoomZLevel(req, res) {
 export function createRoom(req, res) {
     try {
         const { roomId, name, description, x, y, z, items, enemies } = req.body;
-        
+
         console.log('createRoom called with:', { roomId, name, x, y, z });
-        
+
         if (!roomId) {
             return res.status(400).json({ success: false, error: 'Room ID is required' });
         }
-        
+
         if (!name || name.trim() === '') {
             return res.status(400).json({ success: false, error: 'Room name is required' });
         }
-        
+
         // Check if room already exists
         if (rooms[roomId]) {
             return res.status(400).json({ success: false, error: `Room with ID "${roomId}" already exists` });
         }
-        
+
         const coordinates = loadCoordinates();
-        
+
         // Check for overlaps
         const coordX = x !== undefined ? x : 0;
         const coordY = y !== undefined ? y : 0;
         const coordZ = z !== undefined ? z : 0;
-        
+
         for (const [id, coord] of Object.entries(coordinates)) {
             if (coord.x === coordX && coord.y === coordY && coord.z === coordZ) {
                 return res.status(400).json({
@@ -933,7 +955,7 @@ export function createRoom(req, res) {
                 });
             }
         }
-        
+
         // Create room in rooms object (in-memory)
         const newRoom = {
             name: name,
@@ -943,7 +965,7 @@ export function createRoom(req, res) {
             enemies: enemies || []
         };
         rooms[roomId] = newRoom;
-        
+
         // Save room definition to JSON file
         try {
             const roomDefinitions = loadRoomDefinitions();
@@ -957,17 +979,17 @@ export function createRoom(req, res) {
             delete rooms[roomId];
             return res.status(500).json({ success: false, error: `Failed to save room definition: ${err.message}` });
         }
-        
+
         // Add coordinates
         coordinates[roomId] = { x: coordX, y: coordY, z: coordZ };
-        
+
         // Initialize exits
         const exits = loadExits();
         exits[roomId] = {};
-        
+
         if (saveCoordinatesAndExits(coordinates, exits)) {
-            res.json({ 
-                success: true, 
+            res.json({
+                success: true,
                 roomId,
                 room: rooms[roomId],
                 coordinates: coordinates[roomId]
@@ -987,27 +1009,27 @@ export function createRoom(req, res) {
 export function deleteRoom(req, res) {
     try {
         const { roomId } = req.body;
-        
+
         if (!roomId) {
             return res.status(400).json({ success: false, error: 'Room ID required' });
         }
-        
+
         if (!rooms[roomId]) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
-        
+
         // Prevent deletion of starting room
         if (roomId === 'bag_end') {
             return res.status(400).json({ success: false, error: 'Cannot delete the starting room (bag_end)' });
         }
-        
+
         const coordinates = loadCoordinates();
         const exits = loadExits();
         const exitConfigs = loadExitConfigs();
-        
+
         // Remove from coordinates
         delete coordinates[roomId];
-        
+
         // Remove all exits pointing to this room
         for (const [otherRoomId, otherExits] of Object.entries(exits)) {
             if (otherRoomId === roomId) {
@@ -1022,7 +1044,7 @@ export function deleteRoom(req, res) {
                 exits[otherRoomId] = updatedExits;
             }
         }
-        
+
         // Remove exit configs
         delete exitConfigs[roomId];
         for (const [otherRoomId, configs] of Object.entries(exitConfigs)) {
@@ -1040,18 +1062,18 @@ export function deleteRoom(req, res) {
                 exitConfigs[otherRoomId] = updatedConfigs;
             }
         }
-        
+
         // Remove from rooms (in-memory)
         delete rooms[roomId];
-        
+
         // Remove from room definitions in JSON
         const roomDefinitions = loadRoomDefinitions();
         delete roomDefinitions[roomId];
         saveRoomDefinitions(roomDefinitions);
-        
+
         if (saveCoordinatesAndExits(coordinates, exits, exitConfigs)) {
-            res.json({ 
-                success: true, 
+            res.json({
+                success: true,
                 roomId,
                 message: 'Room deleted successfully'
             });
@@ -1069,25 +1091,25 @@ export function cleanupOverlaps(req, res) {
     try {
         const worldDataPath = path.join(__dirname, '../../../scripts/linear-world-connections.json');
         const worldData = JSON.parse(readFileSync(worldDataPath, 'utf-8'));
-        
+
         const coordinates = worldData.coordinates || {};
         const exits = worldData.exits || {};
-        
+
         function isConnectionRoom(roomId) {
             const id = roomId.toLowerCase();
-            return id.includes('path_') || id.includes('road_') || id.includes('river_') || 
-                   id.includes('riverbank_') || id.includes('branch_') || id.includes('quest_path_') ||
-                   id.includes('hobbit_path_');
+            return id.includes('path_') || id.includes('road_') || id.includes('river_') ||
+                id.includes('riverbank_') || id.includes('branch_') || id.includes('quest_path_') ||
+                id.includes('hobbit_path_');
         }
-        
+
         function isKeyRoom(roomId) {
             const id = roomId.toLowerCase();
             return id === 'bag_end' || id.includes('mount_doom') || id.includes('minas_tirith') ||
-                   id.includes('barad_dur') || id.includes('rivendell') || id.includes('moria') ||
-                   id.includes('lorien') || id.includes('edoras') || id.includes('helms_deep') ||
-                   id.includes('isengard') || id.includes('bree');
+                id.includes('barad_dur') || id.includes('rivendell') || id.includes('moria') ||
+                id.includes('lorien') || id.includes('edoras') || id.includes('helms_deep') ||
+                id.includes('isengard') || id.includes('bree');
         }
-        
+
         // Build coordinate map
         const coordMap = new Map();
         for (const [roomId, coord] of Object.entries(coordinates)) {
@@ -1097,10 +1119,10 @@ export function cleanupOverlaps(req, res) {
             }
             coordMap.get(key).push({ roomId, isConnection: isConnectionRoom(roomId), isKey: isKeyRoom(roomId) });
         }
-        
+
         // Find overlaps and decide what to keep
         const roomsToRemove = new Set();
-        
+
         for (const [key, roomList] of coordMap.entries()) {
             if (roomList.length > 1) {
                 // Sort: key rooms first, then real rooms, then connection rooms
@@ -1111,19 +1133,19 @@ export function cleanupOverlaps(req, res) {
                     if (a.isConnection && !b.isConnection) return 1;
                     return 0;
                 });
-                
+
                 // Keep the first one, remove all others
                 for (let i = 1; i < roomList.length; i++) {
                     roomsToRemove.add(roomList[i].roomId);
                 }
             }
         }
-        
+
         // Remove overlapping rooms
         for (const roomId of roomsToRemove) {
             delete coordinates[roomId];
             delete exits[roomId];
-            
+
             // Remove references from other rooms
             for (const [otherRoomId, otherExits] of Object.entries(exits)) {
                 if (!otherExits) continue;
@@ -1134,14 +1156,14 @@ export function cleanupOverlaps(req, res) {
                 }
             }
         }
-        
+
         // Save
         worldData.coordinates = coordinates;
         worldData.exits = exits;
         writeFileSync(worldDataPath, JSON.stringify(worldData, null, 2), 'utf-8');
-        
-        res.json({ 
-            success: true, 
+
+        res.json({
+            success: true,
             removedCount: roomsToRemove.size,
             remainingRooms: Object.keys(coordinates).length
         });
@@ -1156,22 +1178,22 @@ export function getTerrainMap(req, res) {
     try {
         const terrainMapPath = path.join(__dirname, '../../../scripts/terrain-map.txt');
         const terrainMapContent = readFileSync(terrainMapPath, 'utf-8');
-        
+
         // Parse terrain map
         const lines = terrainMapContent.split('\n').filter(l => l !== '');
         const terrain = [];
         const labels = []; // Array of {x, y, text} for labels
         const width = Math.max(...lines.map(l => l.length));
         const height = lines.length;
-        
+
         for (let y = 0; y < height; y++) {
             const line = lines[y];
             terrain[y] = [];
-            
+
             let x = 0;
             while (x < width) {
                 const char = x < line.length ? line[x] : ' ';
-                
+
                 // Check for labels in parentheses
                 if (char === '(') {
                     let labelEnd = line.indexOf(')', x);
@@ -1184,13 +1206,13 @@ export function getTerrainMap(req, res) {
                         const OFFSET_Y = height / 2;
                         const gameX = Math.round((x + OFFSET_X) * SCALE_X);
                         const gameY = Math.round((OFFSET_Y - y) * SCALE_Y);
-                        
+
                         labels.push({
                             x: gameX,
                             y: gameY,
                             text: labelText
                         });
-                        
+
                         // Fill label area with plains
                         for (let i = x; i <= labelEnd && i < width; i++) {
                             terrain[y][i] = 'plains';
@@ -1199,7 +1221,7 @@ export function getTerrainMap(req, res) {
                         continue;
                     }
                 }
-                
+
                 // Map characters to terrain types (corrected per user definitions)
                 if (char === '^') terrain[y][x] = 'mountain';
                 else if (char === 'M') terrain[y][x] = 'mount_doom';  // Mount Doom
@@ -1218,17 +1240,17 @@ export function getTerrainMap(req, res) {
                 else if (char === '=' || char === '/' || char === '\\') terrain[y][x] = 'road';  // Road markers
                 else if (char === ':') terrain[y][x] = 'shire';  // Shire area
                 else terrain[y][x] = 'plains';
-                
+
                 x++;
             }
         }
-        
+
         // Convert ASCII coordinates to game coordinates (same as reorganization script)
         const SCALE_X = 1.0;
         const SCALE_Y = 1.0;
         const OFFSET_X = -width / 2;
         const OFFSET_Y = height / 2;
-        
+
         const terrainData = [];
         for (let y = 0; y < height; y++) {
             for (let x = 0; x < width; x++) {
@@ -1241,7 +1263,7 @@ export function getTerrainMap(req, res) {
                 });
             }
         }
-        
+
         res.json({
             success: true,
             terrain: terrainData,

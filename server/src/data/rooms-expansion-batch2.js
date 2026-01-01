@@ -14,7 +14,7 @@ export const moriaRivendellExpansion = {
 
     hall_of_fire_guest: {
         name: "The Hall of Fire",
-        description: "A great hall where a fire is always burning. On either side of the hearth are pillows and carpets where elves sit and listen to songs and tales. The atmosphere is one of profound peace.",
+        description: "A great hall filled with soft light and the warmth of a fire that never burns down. It is a place of quiet reflection and song, where elves gather to tell tales of ages past. Shadows dance upon the high, carved pillars, but they are not menacing here. The peace of Imladris is deepest in this room, soothing the weary soul.",
         exits: { 'east': 'lake_evendim', 'west': 'elrond_study', 'southwest': 'barrow_downs', 'south': 'wold_of_rohan' },
         items: ['harp', 'ancient_scroll'],
         enemies: []
@@ -22,7 +22,7 @@ export const moriaRivendellExpansion = {
 
     elrond_study: {
         name: "Elrond's Private Study",
-        description: "A circular room filled with ancient maps and star-charts. Elrond Half-elven spends much of his time here, contemplating the fate of Middle Earth.",
+        description: "A circular room lined with shelves containing scrolls and books from the First Age. Ancient maps and star-charts cover the tables, marking the movements of the Enemy. The air smells of ink and old parchment. Here, Elrond Half-elven, Master of Rivendell, contemplates the fate of Middle-earth, his wisdom a light against the gathering shadow.",
         exits: { 'east': 'hall_of_fire_guest', 'west': 'waterfall_walkway', 'southwest': 'barrow_chamber_1', 'southeast': 'henneth_annun' },
         items: ['vilya_reflection', 'ancient_map'],
         enemies: []
@@ -30,7 +30,7 @@ export const moriaRivendellExpansion = {
 
     waterfall_walkway: {
         name: "Waterfall Walkway",
-        description: "A narrow bridge of stone that hangs over a spectacular waterfall. The mist rises to dampen your face, and the roar of the water is deafening but beautiful.",
+        description: "A slender bridge of white stone arches gracefully over a thundering waterfall. The spray creates perpetual rainbows in the air, cooling your face. Below, the water crashes into a deep pool with a roar that drowns out all other sound. It is a place of raw natural beauty, tamed only by the delicate architecture of the elves.",
         exits: { 'east': 'elrond_study', 'west': 'hidden_flet' },
         items: ['crystalline_water'],
         enemies: []
@@ -38,7 +38,7 @@ export const moriaRivendellExpansion = {
 
     hidden_flet: {
         name: "Hidden Flet",
-        description: "A platform built high in the branches of a massive pine tree. From here, you can see the entire valley of Imladris stretching out below.",
+        description: "High in the canopy of a massive pine, this wooden platform offers a secluded vantage point. The valley of Imladris spreads out below like a hidden jewel, protecting its inhabitants from the eyes of the world. The wind sighs through the pine needles, a soft and comforting sound.",
         exits: { 'east': 'waterfall_walkway', 'south': 'rivendell_guest_house', 'southeast': 'barrow_chamber_1', 'southwest': 'barrow_chamber_3' },
         items: ['elven_spyglass'],
         enemies: []
@@ -46,7 +46,7 @@ export const moriaRivendellExpansion = {
 
     rivendell_guest_house: {
         name: "The Guest House",
-        description: "A comfortable lodging for travelers of all races. The beds are soft and the air is filled with the scent of pine and lavender.",
+        description: "A large, airy building designed for the comfort of travelers. Vines climb the wooden pillars, and the windows look out over the gardens. The beds are soft, and the simple meals provided here are more restorative than the richest feasts of kings. It is a house of healing and rest.",
         exits: { 'north': 'hidden_flet', 'south': 'hall_of_kings', 'northeast': 'barrow_chamber_1' },
         items: ['fresh_linen', 'healing_salve'],
         enemies: []
@@ -64,7 +64,7 @@ export const moriaRivendellExpansion = {
 
     hall_of_kings: {
         name: "Hall of Kings",
-        description: "A long gallery lined with statues of the great kings of Moria. Their stone eyes seem to watch you with ancient pride and sorrow.",
+        description: "A somber gallery hewn from black stone, lined with the statues of the Kings of Durin's Folk. The statues are colossal, their stone eyes staring sternly into the darkness. Dust lies thick on the floor, undisturbed for centuries. The silence here is heavy with the weight of a fallen kingdom.",
         exits: { 'north': 'rivendell_guest_house', 'south': 'royal_armory', 'up': 'erebor_treasury' },
         items: ['king_statuette'],
         enemies: []
@@ -72,7 +72,7 @@ export const moriaRivendellExpansion = {
 
     royal_tombs: {
         name: "Royal Tombs of Khazad-dûm",
-        description: "The final resting place of the kings of Durin's line. The stone sarcophagi are intricately carved and covered in ancient dwarven runes.",
+        description: "The air here is cold and still. Rows of stone sarcophagi stretch into the gloom, holding the remains of the Lords of Moria. The lids are carved with the likenesses of the dead, their hands clasping stone axes upon their chests. It is a sacred place, now desecrated by the presence of orcs and worse things.",
         exits: { 'south': 'durin_throne_hall', 'north': 'doors_of_durin' },
         items: ['ancient_crown', 'mithril_ring'],
         enemies: ['dwarven_wraith']
@@ -80,7 +80,7 @@ export const moriaRivendellExpansion = {
 
     royal_armory: {
         name: "Royal Armory",
-        description: "A vast chamber once filled with the finest weapons and armor crafted by dwarven smiths. Most has been looted, but some relics remain hidden in the dust.",
+        description: "Racks that once held thousands of axes and shields now stand mostly empty or overturned. The floor is littered with broken metal and rust changes the color of the stone. Yet, in the corners, one might still find a weapon of old integrity, untouched by the slow decay of the mines.",
         exits: { 'north': 'hall_of_kings', 'south': 'smelting_chambers', 'east': 'fornost_temple', 'southeast': 'green_hill_country', 'southwest': 'minas_morgul_interior' },
         items: ['heavy_dwarven_axe', 'iron_shield'],
         enemies: ['orc_captain']
@@ -88,7 +88,7 @@ export const moriaRivendellExpansion = {
 
     smelting_chambers: {
         name: "Smelting Chambers",
-        description: "Huge furnaces once blazed here, melting the ores brought up from the deep mines. The heat is long gone, but the smell of sulfur remains.",
+        description: "Giant blast furnaces, cold for centuries, loom like dark towers in this cavern. The walls are stained with soot and the smell of sulfur and ash is still pungent. Piles of slag and unrefined ore lie forgotten, a testament to the sudden end of industry here. The heat that once forged a kingdom has long since faded.",
         exits: { 'north': 'royal_armory', 'southeast': 'deep_mines_hub', 'northeast': 'fornost_temple', 'northwest': 'gorgoroth_plateau' },
         items: ['iron_bar', 'coal'],
         enemies: ['goblin', 'goblin']
@@ -96,7 +96,7 @@ export const moriaRivendellExpansion = {
 
     deep_mines_hub: {
         name: "Deep Mines Hub",
-        description: "A central point where several mining tunnels converge. Ropes, pulleys, and broken carts litter the floor.",
+        description: "A chaotic junction of mine-tracks and lift shafts. Rusted chains hang from great wheels in the ceiling, and overturned ore-carts block the way. This was once the bustling heart of the mining operations, where the wealth of the mountain was brought up from the deeps. Now, it is a silent, dusty tomb.",
         exits: { 'northwest': 'smelting_chambers', 'east': 'mithril_depths_1' },
         items: ['rusty_pickaxe'],
         enemies: ['cave_troll']
@@ -104,7 +104,7 @@ export const moriaRivendellExpansion = {
 
     mithril_depths_1: {
         name: "Mithril Depths - Upper Vein",
-        description: "A tunnel carved through the hard rock in search of the elusive mithril. Tiny flecks of silver still glitter in the walls.",
+        description: "You have reached the legendary Mithril lodes. The rock here is different—harder, darker, yet glittering with tiny flecks of silver fire. The tunnel is narrow and follows the seam of the precious metal deep into the earth. It was for this prize that the dwarves delved too greedily and too deep, and the shadow of that greed still hangs heavy in the air.",
         exits: { 'west': 'deep_mines_hub', 'east': 'mithril_depths_2', 'north': 'bucklebury', 'southeast': 'mallorn_sanctuary' },
         items: ['mithril_pebble'],
         enemies: ['goblin_miner']
@@ -112,7 +112,7 @@ export const moriaRivendellExpansion = {
 
     mithril_depths_2: {
         name: "Mithril Depths - The Mother Lode",
-        description: "A vast cavern where the greatest vein of mithril was ever found. The walls are a shimmering tapestry of natural silver.",
+        description: "A breathtaking cavern opens up before you, its walls shimmering with the light of pure mithril. This was the heart of the dwarves' wealth, the greatest concentration of 'true-silver' ever found. Even now, after centuries of looting, the walls glow with a soft, ethereal light. But there is a coldness here that seeps into your bones, a warning that this treasure is guarded by the memory of Durin's Bane.",
         exits: { 'west': 'mithril_depths_1', 'east': 'iron_mines_1', 'north': 'elven_craft_hall', 'northeast': 'iron_mines_2' },
         items: ['mithril_shard', 'star_gem'],
         enemies: ['moria_stalker']
@@ -120,7 +120,7 @@ export const moriaRivendellExpansion = {
 
     iron_mines_1: {
         name: "Iron Mines - Level 1",
-        description: "The source of the iron that armed the dwarven legions. The air is thick with red dust.",
+        description: "The air here is thick with red dust that coats your throat and lungs. This is where the iron that armed the legions of Khazad-dûm was mined. Rusty tracks crisscross the floor, and discarded pickaxes lie rusting in the gloom. The work here was hard and brutal, and the very stone seems to remember the sweat and toil of the miners.",
         exits: { 'west': 'mithril_depths_2', 'north': 'iron_mines_2', 'northwest': 'elven_craft_hall', 'south': 'celebrant_banks', 'southeast': 'anduin_confluence', 'southwest': 'mallorn_sanctuary' },
         items: ['heavy_iron_ore'],
         enemies: []
@@ -128,7 +128,7 @@ export const moriaRivendellExpansion = {
 
     iron_mines_2: {
         name: "Iron Mines - The Pit",
-        description: "A deep pit where the richest iron was extracted. The descent is steep and dangerous.",
+        description: "A massive, funnel-shaped pit drops away into darkness, spiral paths cut into its sides. This was the main extraction point for the iron ore. The vertigo is intense as you look over the edge. Far below, you can hear the chittering of things that have made nests in the abandoned deeps. It is a long way down.",
         exits: { 'south': 'iron_mines_1', 'northeast': 'the_unending_stair_middle', 'northwest': 'fornost_palace', 'north': 'fornost_keep', 'southwest': 'mithril_depths_2' },
         items: ['pure_iron_ore'],
         enemies: ['giant_spider']
@@ -136,7 +136,7 @@ export const moriaRivendellExpansion = {
 
     the_unending_stair_middle: {
         name: "The Unending Stair - Middle Section",
-        description: "The great stair continues its spiral. You are far below the peaks and far above the roots of the mountains.",
+        description: "You are on the legendary Endless Stair, suspended in the void between the roots of the mountain and its peak. Steps carved from the living rock spiral endlessly up and down. To look over the edge is to stare into eternity. The air is thin and cold, and the only sound is the wind howling through the shaft like a trapped spirit.",
         exits: { 'southwest': 'iron_mines_2', 'north': 'goblin_ward', 'west': 'fornost_keep', 'northeast': 'deeping_stream_upper' },
         items: [],
         enemies: []
@@ -144,7 +144,7 @@ export const moriaRivendellExpansion = {
 
     goblin_ward: {
         name: "The Goblin Ward",
-        description: "A section of the mines that has been crudeley reinforced by the goblins. Gutteral voices echo through the tunnels.",
+        description: "The architecture changes here—crude, jagged structures of wood and bone have been lashed onto the ancient stonework. The smell is foul, a mix of rot and unwashed bodies. This area has been claimed by the goblins of the Misty Mountains. Graffiti smears the walls, and the darkness is full of guttural whispers and the clatter of weapons.",
         exits: { 'south': 'the_unending_stair_middle', 'north': 'goblin_watchtower', 'northeast': 'hornburg_armory' },
         items: ['goblin_scimitar'],
         enemies: ['goblin_sentry', 'goblin_sentry']
@@ -152,7 +152,7 @@ export const moriaRivendellExpansion = {
 
     goblin_watchtower: {
         name: "Goblin Watchtower",
-        description: "A crude structure built from stolen dwarven stones and wood. It overlooks the Seventh Level.",
+        description: "A rickety wooden platform built out over a precipice, serving as a lookout post for the goblin hordes. From here, they watch the movements in the lower halls. The construction is shoddy but effective, bristling with spikes and crude barricades. It commands a strategic view of the Seventh Level and beyond.",
         exits: { 'south': 'goblin_ward', 'west': 'khazad_dum_chasm_view' },
         items: ['black_arrow'],
         enemies: ['goblin_archer']
@@ -161,7 +161,7 @@ export const moriaRivendellExpansion = {
     // Bridge of Khazad-dum expansion
     khazad_dum_chasm_view: {
         name: "Chasm Viewpoint",
-        description: "A side ledge that offers a terrifying view of the bottomless chasm over which the bridge spans. The air is hot and smells of ancient fire.",
+        description: "You stand on a crumbling ledge overlooking the great chasm of Khazad-dûm. The abyss dominates everything, a void of absolute darkness that swallows the light of your torch. Far, far below, you can see the faint, red glow of fire, and the heat rising from the depths carries the smell of sulfur and ancient stone. It is a terrifying glimpse into the heart of the mountain.",
         exits: { 'east': 'goblin_watchtower', 'west': 'nameless_tunnels', 'northwest': 'barrow_downs', 'south': 'niphredil_meadow', 'north': 'wold_of_rohan' },
         items: ['scorched_stone'],
         enemies: []
@@ -170,7 +170,7 @@ export const moriaRivendellExpansion = {
     // Deep Places
     nameless_tunnels: {
         name: "The Nameless Tunnels",
-        description: "Dark, narrow tunnels below the lowest level of Moria. These were not carved by dwarves, but by things older and more terrible.",
+        description: "These tunnels are not of dwarven make. They are smooth, round, and slimy, bored through the rock by something immensely old and powerful. The air is cold and damp, and a unnatural silence presses in on your ears. There is a sense of being an intruder in a place where light has never shone. Something watches from the dark.",
         exits: { 'east': 'khazad_dum_chasm_view', 'west': 'the_dark_lake', 'northwest': 'barrow_downs', 'northeast': 'annuminas_tower', 'north': 'wold_of_rohan' },
         items: ['slime_puddle'],
         enemies: ['nameless_thing']
@@ -178,7 +178,7 @@ export const moriaRivendellExpansion = {
 
     the_dark_lake: {
         name: "The Dark Lake",
-        description: "A vast underground lake where the water is as black as ink. Strange, sightless fish swim in the depths.",
+        description: "A vast, sunless sea lies before you, its surface black and still as oil. The ceiling is lost in the gloom above. Strange ripples disturb the water, though there is no wind. The shore is lined with glowing fungi that cast a sickly pale light. It is a place of nightmares, where blind things gnaw at the roots of the world.",
         exits: { 'east': 'nameless_tunnels', 'west': 'galadhrm_flet_1' },
         items: ['glowing_mushroom'],
         enemies: ['water_creature']
