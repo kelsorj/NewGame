@@ -1065,29 +1065,38 @@ function placeRoomsOnTerrain(allRooms, terrainData) {
         
         // Place all rooms from this location
         let placedCount = 0;
+        
+        // Group rooms by z-level for better placement
+        const roomsByZ = {};
+        for (const { roomId, room } of roomList) {
+            const z = room.z || 0;
+            if (!roomsByZ[z]) roomsByZ[z] = [];
+            roomsByZ[z].push({ roomId, room });
+        }
+        
+        // First, place all z=0 rooms in a spiral pattern
+        const z0Rooms = roomsByZ[0] || [];
+        const z0Positions = []; // Store positions for vertical stacking
+        
         let spiralRadius = 0;
         let angle = 0;
         
-        for (const { roomId, room } of roomList) {
+        for (const { roomId, room } of z0Rooms) {
             let placed = false;
             let attempts = 0;
             
             while (!placed && attempts < 1000) {
-                // Use spiral pattern for placement
                 const dx = Math.round(Math.cos(angle) * spiralRadius);
                 const dy = Math.round(Math.sin(angle) * spiralRadius);
                 
                 const testX = baseCoord.x + dx;
-                const testY = baseCoord.y + dy + (room.z || 0); // Adjust for z-level
-                const key = `${testX},${testY},${room.z || 0}`;
+                const testY = baseCoord.y + dy;
+                const key = `${testX},${testY},0`;
                 
                 if (!occupiedPositions.has(key)) {
-                    coordinates[roomId] = {
-                        x: testX,
-                        y: testY,
-                        z: room.z || 0
-                    };
+                    coordinates[roomId] = { x: testX, y: testY, z: 0 };
                     occupiedPositions.add(key);
+                    z0Positions.push({ x: testX, y: testY }); // Store for vertical stacking
                     placed = true;
                     placedCount++;
                 }
@@ -1098,6 +1107,35 @@ function placeRoomsOnTerrain(allRooms, terrainData) {
                     spiralRadius += 1;
                 }
                 attempts++;
+            }
+        }
+        
+        // Now place rooms at other z-levels at the EXACT same x,y as z=0 rooms (vertically stacked)
+        // This ensures vertical connections work properly
+        for (const [zLevel, zRoomList] of Object.entries(roomsByZ)) {
+            const z = Number(zLevel);
+            if (z === 0) continue; // Already placed
+            
+            // For each room at this z-level, place it at the same x,y as a z=0 room
+            let posIndex = 0;
+            for (const { roomId, room } of zRoomList) {
+                // Cycle through z=0 positions to stack vertically
+                if (z0Positions.length > 0) {
+                    const pos = z0Positions[posIndex % z0Positions.length];
+                    const key = `${pos.x},${pos.y},${z}`;
+                    
+                    // Always place at same x,y as z=0 room, even if occupied (different z-levels can share x,y)
+                    coordinates[roomId] = { x: pos.x, y: pos.y, z: z };
+                    occupiedPositions.add(key);
+                    placedCount++;
+                    posIndex++;
+                } else {
+                    // No z=0 rooms, place at base coordinate
+                    const key = `${baseCoord.x},${baseCoord.y},${z}`;
+                    coordinates[roomId] = { x: baseCoord.x, y: baseCoord.y, z: z };
+                    occupiedPositions.add(key);
+                    placedCount++;
+                }
             }
         }
         
