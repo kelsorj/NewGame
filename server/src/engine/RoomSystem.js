@@ -40,22 +40,22 @@ export class RoomSystem {
     this.rooms = rooms;
     // Load exits and exitConfig from JSON file and merge into rooms
     const { exits, exitConfigs } = loadExitsFromJSON();
-    
+
     // Load dynamically created rooms from JSON file
     const dynamicRooms = loadDynamicRooms();
     // Merge dynamic rooms into this.rooms (dynamic rooms take precedence)
     Object.assign(this.rooms, dynamicRooms);
-    
+
     // Merge exits from JSON file (JSON takes precedence over hardcoded exits)
     // If a room has exits in JSON, use those. Otherwise, keep the hardcoded exits.
     for (const roomId in this.rooms) {
-      if (exits[roomId] && Object.keys(exits[roomId]).length > 0) {
-        // JSON has exits for this room - use them
+      if (exits[roomId]) {
+        // JSON has exits for this room - use them (even if empty, meaning no exits)
         this.rooms[roomId].exits = exits[roomId];
       }
       // If no exits in JSON, keep the original exits from rooms.js
     }
-    
+
     // Merge exitConfig from JSON file into rooms
     for (const roomId in exitConfigs) {
       if (this.rooms[roomId]) {
@@ -76,7 +76,7 @@ export class RoomSystem {
         this.rooms[roomId] = dynamicRooms[roomId];
         // Also load exits for this room
         const { exits } = loadExitsFromJSON();
-        if (exits[roomId] && Object.keys(exits[roomId]).length > 0) {
+        if (exits[roomId]) {
           this.rooms[roomId].exits = exits[roomId];
         }
       }
@@ -96,7 +96,7 @@ export class RoomSystem {
       const exitDescriptions = exits.map(dir => {
         const exitConfig = room.exitConfig?.[dir];
         let exitText = dir;
-        
+
         if (exitConfig) {
           // Check if hidden and not discovered
           if (exitConfig.hidden && !exitConfig.discovered) {
@@ -109,8 +109,8 @@ export class RoomSystem {
           } else if (exitConfig.locked) {
             if (exitConfig.requiredKey) {
               const hasKey = playerState?.inventory?.includes(exitConfig.requiredKey);
-              exitText = hasKey 
-                ? `${dir} (locked, but you have the key)` 
+              exitText = hasKey
+                ? `${dir} (locked, but you have the key)`
                 : `${dir} (🔒 locked, needs ${exitConfig.requiredKey})`;
             } else {
               exitText = `${dir} (🔒 locked)`;
@@ -119,10 +119,10 @@ export class RoomSystem {
             exitText = `${dir} (hidden passage)`;
           }
         }
-        
+
         return exitText;
       }).filter(Boolean); // Remove null entries (hidden exits)
-      
+
       if (exitDescriptions.length > 0) {
         description += `\n🚪 Exits: ${exitDescriptions.join(', ')}`;
       }
@@ -131,7 +131,7 @@ export class RoomSystem {
     // Get current room state (items/enemies that are actually present)
     let currentItems = room.items || [];
     let currentEnemies = room.enemies || [];
-    
+
     if (gameState) {
       const roomState = gameState.getRoomState(roomId, room.items || [], room.enemies || []);
       currentItems = roomState.items;
@@ -168,7 +168,7 @@ export class RoomSystem {
     // Check for exit configuration (locked/hidden)
     const exitConfig = room.exitConfig?.[direction];
     const nextRoomId = room.exits?.[direction];
-    
+
     if (!nextRoomId) {
       return {
         success: false,
