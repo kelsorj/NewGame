@@ -12423,7 +12423,14 @@
   },
   "exits": {
     "bag_end": {
-      "east": "hobbiton_square"
+      "east": "hobbiton_square",
+      "north": "hobbiton_inn",
+      "northwest": "hobbiton_smial_1",
+      "northeast": "hobbiton_market",
+      "west": "hobbiton_smial_2",
+      "southwest": "hobbiton_smial_3",
+      "south": "hobbiton_smial_4",
+      "southeast": "hobbiton_smial_5"
     },
     "hobbiton_square": {
       "west": "bag_end",
@@ -12439,35 +12446,41 @@
       "west": "hobbiton_square",
       "east": "hobbiton_garden_2",
       "south": "hobbiton_square",
-      "southeast": "hobbiton_garden_1"
+      "southeast": "hobbiton_garden_1",
+      "southwest": "bag_end"
     },
     "hobbiton_inn": {
       "west": "hobbiton_market",
       "east": "hobbiton_smial_1",
-      "southeast": "hobbiton_square"
+      "southeast": "hobbiton_square",
+      "south": "bag_end"
     },
     "hobbiton_smial_1": {
       "west": "hobbiton_inn",
-      "east": "hobbiton_smial_2"
+      "east": "hobbiton_smial_2",
+      "southeast": "bag_end"
     },
     "hobbiton_smial_2": {
       "west": "hobbiton_smial_1",
-      "east": "hobbiton_smial_3"
+      "east": "bag_end"
     },
     "hobbiton_smial_3": {
       "west": "hobbiton_smial_2",
-      "east": "hobbiton_smial_4"
+      "east": "hobbiton_smial_4",
+      "northeast": "bag_end"
     },
     "hobbiton_smial_4": {
       "west": "hobbiton_smial_3",
       "east": "hobbiton_smial_5",
-      "northeast": "hobbiton_square"
+      "northeast": "hobbiton_square",
+      "north": "bag_end"
     },
     "hobbiton_smial_5": {
       "west": "hobbiton_smial_4",
       "east": "hobbiton_garden_1",
       "north": "hobbiton_square",
-      "northeast": "hobbiton_garden_1"
+      "northeast": "hobbiton_garden_1",
+      "northwest": "bag_end"
     },
     "hobbiton_garden_1": {
       "east": "shire_farm_1",
