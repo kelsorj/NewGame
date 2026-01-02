@@ -170,6 +170,22 @@ puzzle_id: {
 }
 ```
 
+### Map Editor
+
+The game includes a visual 3D Map Editor for manipulating rooms and connections.
+
+**Accessing the Editor:**
+1. Start both client and server (`npm run dev` in both folders).
+2. Open your browser to `http://localhost:3000/?editor=true`.
+
+**Features:**
+- **Visual Layout**: View valid room coordinates in a 3D grid.
+- **Drag & Drop**: Move rooms to new coordinates (x, y, z).
+- **Auto-Connect**: Adjacent rooms automatically form connections (can be toggled).
+- **Data Persistence**: Changes are saved to `scripts/linear-world-connections.json`.
+
+**Note**: The editor modifies the coordinate system used to generate the map. It does not directly modify the text descriptions in `rooms.js`.
+
 ## Technologies
 
 - **Frontend**: React, Vite, WebSocket
