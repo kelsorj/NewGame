@@ -105,6 +105,7 @@ export function getMapData(req, res) {
         const coordinates = loadCoordinates();
         const exits = loadExits();
         const exitConfigs = loadExitConfigs();
+        const roomDefinitions = loadRoomDefinitions();
 
         const mapData = Object.keys(rooms).map(roomId => {
             const room = rooms[roomId];
@@ -113,16 +114,27 @@ export function getMapData(req, res) {
             // Merge exitConfig from JSON file with room data (room data takes precedence)
             const roomExitConfig = { ...exitConfigs[roomId], ...(room.exitConfig || {}) };
 
+            // Apply naming/desc/item overrides from DB
+            const overrides = roomDefinitions[roomId] || {};
+            const finalName = overrides.name !== undefined ? overrides.name : room.name;
+            const finalDesc = overrides.description !== undefined ? overrides.description : room.description;
+            const finalItems = overrides.items !== undefined ? overrides.items : (room.items || []);
+
+            // Also update in-memory room object to match (so game logic sees it if it uses this reference)
+            if (overrides.name) room.name = overrides.name;
+            if (overrides.description) room.description = overrides.description;
+            if (overrides.items) room.items = overrides.items;
+
             return {
                 id: roomId,
-                name: room.name,
-                description: room.description,
+                name: finalName,
+                description: finalDesc,
                 x: coord.x,
                 y: coord.y,
                 z: coord.z,
                 exits: roomExits,
                 exitConfig: roomExitConfig,
-                items: room.items || [],
+                items: finalItems,
                 enemies: room.enemies || []
             };
         });
@@ -554,28 +566,46 @@ export function updateRoomData(req, res) {
             return res.status(404).json({ success: false, error: 'Room not found' });
         }
 
-        // Update room data
+        // Load existing definitions
+        const roomDefinitions = loadRoomDefinitions();
+        if (!roomDefinitions[roomId]) {
+            roomDefinitions[roomId] = {};
+        }
+
+        // Update room data in memory and in definitions object
         if (name !== undefined) {
             rooms[roomId].name = name;
+            roomDefinitions[roomId].name = name;
         }
 
         if (description !== undefined) {
             rooms[roomId].description = description;
+            roomDefinitions[roomId].description = description;
         }
 
         if (items !== undefined) {
-            rooms[roomId].items = Array.isArray(items) ? items : [];
+            const itemsArray = Array.isArray(items) ? items : [];
+            rooms[roomId].items = itemsArray;
+            roomDefinitions[roomId].items = itemsArray;
         }
 
-        // Save to file (we need to write back to the appropriate room file)
-        // For now, we'll just return success - in production you'd want to save to file
-        res.json({
-            success: true,
-            roomId,
-            name: rooms[roomId].name,
-            description: rooms[roomId].description,
-            items: rooms[roomId].items
-        });
+        // Save to file
+        if (saveRoomDefinitions(roomDefinitions)) {
+            // Trigger hot reload if available
+            if (req.gameEngine) {
+                req.gameEngine.reloadMap();
+            }
+
+            res.json({
+                success: true,
+                roomId,
+                name: rooms[roomId].name,
+                description: rooms[roomId].description,
+                items: rooms[roomId].items
+            });
+        } else {
+            res.status(500).json({ success: false, error: 'Failed to save room definitions' });
+        }
     } catch (err) {
         console.error('Error updating room data:', err);
         res.status(500).json({ success: false, error: err.message });

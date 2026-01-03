@@ -243,14 +243,18 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
 
             const data = await response.json();
             if (data.success) {
-                await loadMapData();
-                // Update selected room if it's the one we edited
+                // Optimistically update selectedRoom with the data we just sent/received
+                // ensuring the UI reflects changes immediately without waiting for loadMapData
                 if (selectedRoom?.id === roomId) {
-                    const updatedRoom = rooms.find(r => r.id === roomId);
-                    if (updatedRoom) {
-                        setSelectedRoom(updatedRoom);
-                    }
+                    setSelectedRoom(prev => ({
+                        ...prev,
+                        name: data.name !== undefined ? data.name : prev.name,
+                        description: data.description !== undefined ? data.description : prev.description,
+                        items: data.items !== undefined ? data.items : prev.items
+                    }));
                 }
+
+                await loadMapData();
                 return true;
             } else {
                 alert(`Error: ${data.error}`);
@@ -1236,7 +1240,7 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
                 setCamera(prev => ({
                     ...prev,
                     panX: prev.panX + dx * 1.0,  // Increased sensitivity
-                    panY: prev.panY + dy * 1.0
+                    panY: prev.panY - dy * 1.0   // Invert Y to match natural dragging
                 }));
                 setDragStart({ x: mouseX, y: mouseY });
             } else {
@@ -1370,24 +1374,82 @@ export const MapEditor3DCanvas = ({ onBackToGame }) => {
     };
 
     // Set up wheel handler with proper passive handling
+    // Unified zoom handler
+    const handleZoom = (delta, zoomCenter) => {
+        setCamera(prev => {
+            const newZoom = Math.max(0.1, Math.min(5, prev.zoom - delta));
+
+            // If we have a zoom center (mouse position), we could potentially zoom towards it
+            // For now, simple center zoom is usually less disorienting for isometric maps
+
+            return {
+                ...prev,
+                zoom: newZoom
+            };
+        });
+    };
+
+    // Set up wheel and touch gesture handlers
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
+        // Wheel Zoom
         const handleWheel = (e) => {
             e.preventDefault();
-            setCamera(prev => ({
-                ...prev,
-                zoom: Math.max(0.1, Math.min(3, prev.zoom - e.deltaY * 0.001))
-            }));
+            // Normalizing deltaY for different browsers/devices
+            const delta = Math.sign(e.deltaY) * 0.05;
+            handleZoom(delta);
+        };
+
+        // Touch handling for pinch zoom
+        let initialPinchDistance = null;
+        let lastZoom = 1;
+
+        const handleTouchStart = (e) => {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const dx = e.touches[0].clientX - e.touches[1].clientX;
+                const dy = e.touches[0].clientY - e.touches[1].clientY;
+                initialPinchDistance = Math.sqrt(dx * dx + dy * dy);
+                lastZoom = camera.zoom;
+            }
+        };
+
+        const handleTouchMove = (e) => {
+            if (e.touches.length === 2 && initialPinchDistance) {
+                e.preventDefault();
+                const dx = e.touches[0].clientX - e.touches[1].clientX;
+                const dy = e.touches[0].clientY - e.touches[1].clientY;
+                const currentDistance = Math.sqrt(dx * dx + dy * dy);
+
+                // Calculate zoom factor based on distance change
+                const scale = currentDistance / initialPinchDistance;
+
+                // Apply absolute zoom based on initial pinch state
+                setCamera(prev => ({
+                    ...prev,
+                    zoom: Math.max(0.1, Math.min(5, lastZoom * scale))
+                }));
+            }
+        };
+
+        const handleTouchEnd = () => {
+            initialPinchDistance = null;
         };
 
         canvas.addEventListener('wheel', handleWheel, { passive: false });
+        canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+        canvas.addEventListener('touchend', handleTouchEnd);
 
         return () => {
             canvas.removeEventListener('wheel', handleWheel);
+            canvas.removeEventListener('touchstart', handleTouchStart);
+            canvas.removeEventListener('touchmove', handleTouchMove);
+            canvas.removeEventListener('touchend', handleTouchEnd);
         };
-    }, []);
+    }, [camera.zoom]); // Re-bind when zoom changes to capture correct 'lastZoom' state for touch
 
     if (loading) {
         return <div className="map-editor-3d">Loading map data...</div>;
