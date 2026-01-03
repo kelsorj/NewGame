@@ -96,18 +96,18 @@
       "z": 0
     },
     "buckland_guest_room_3": {
-      "x": -148,
-      "y": 49,
+      "x": -146,
+      "y": 47,
       "z": 0
     },
     "buckland_library": {
-      "x": -148,
-      "y": 48,
+      "x": -147,
+      "y": 46,
       "z": 0
     },
     "buckland_pantry": {
-      "x": -148,
-      "y": 47,
+      "x": -146,
+      "y": 50,
       "z": 0
     },
     "buckland_entrance": {
@@ -116,13 +116,13 @@
       "z": 0
     },
     "buckland_garden": {
-      "x": -146,
-      "y": 47,
+      "x": -145,
+      "y": 48,
       "z": 0
     },
     "buckland_courtyard": {
-      "x": -145,
-      "y": 48,
+      "x": -146,
+      "y": 46,
       "z": 0
     },
     "buckland_cellar": {
@@ -131,33 +131,33 @@
       "z": -1
     },
     "old_forest_path_1": {
-      "x": -145,
-      "y": 49,
+      "x": -156,
+      "y": 46,
       "z": 0
     },
     "old_forest_path_2": {
-      "x": -146,
-      "y": 50,
+      "x": -155,
+      "y": 46,
       "z": 0
     },
     "old_forest_path_3": {
-      "x": -147,
-      "y": 50,
+      "x": -154,
+      "y": 46,
       "z": 0
     },
     "old_forest_path_4": {
-      "x": -148,
-      "y": 50,
+      "x": -152,
+      "y": 46,
       "z": 0
     },
     "old_forest_path_5": {
-      "x": -149,
-      "y": 49,
+      "x": -153,
+      "y": 46,
       "z": 0
     },
     "old_forest_path_6": {
-      "x": -149,
-      "y": 48,
+      "x": -151,
+      "y": 46,
       "z": 0
     },
     "old_forest_path_7": {
@@ -166,73 +166,73 @@
       "z": 0
     },
     "old_forest_path_8": {
-      "x": -148,
-      "y": 46,
+      "x": -145,
+      "y": 47,
       "z": 0
     },
     "old_forest_path_9": {
-      "x": -147,
-      "y": 46,
+      "x": -144,
+      "y": 47,
       "z": 0
     },
     "old_forest_path_10": {
-      "x": -146,
-      "y": 46,
+      "x": -143,
+      "y": 47,
       "z": 0
     },
     "old_forest_path_11": {
-      "x": -145,
+      "x": -142,
       "y": 47,
       "z": 0
     },
     "old_forest_path_12": {
-      "x": -144,
-      "y": 48,
-      "z": 0
-    },
-    "old_forest_path_13": {
-      "x": -144,
-      "y": 49,
-      "z": 0
-    },
-    "old_forest_path_14": {
-      "x": -145,
-      "y": 51,
-      "z": 0
-    },
-    "old_forest_path_15": {
-      "x": -147,
-      "y": 51,
-      "z": 0
-    },
-    "old_forest_path_16": {
-      "x": -148,
-      "y": 51,
-      "z": 0
-    },
-    "old_forest_path_17": {
-      "x": -149,
-      "y": 50,
-      "z": 0
-    },
-    "old_forest_path_18": {
-      "x": -150,
-      "y": 48,
-      "z": 0
-    },
-    "old_forest_path_19": {
-      "x": -150,
+      "x": -141,
       "y": 47,
       "z": 0
     },
-    "old_forest_path_20": {
+    "old_forest_path_13": {
+      "x": -140,
+      "y": 47,
+      "z": 0
+    },
+    "old_forest_path_14": {
+      "x": -139,
+      "y": 47,
+      "z": 0
+    },
+    "old_forest_path_15": {
+      "x": -136,
+      "y": 47,
+      "z": 0
+    },
+    "old_forest_path_16": {
       "x": -149,
       "y": 46,
       "z": 0
     },
-    "old_man_willow": {
+    "old_forest_path_17": {
       "x": -148,
-      "y": 45,
+      "y": 47,
+      "z": 0
+    },
+    "old_forest_path_18": {
+      "x": -137,
+      "y": 47,
+      "z": 0
+    },
+    "old_forest_path_19": {
+      "x": -150,
+      "y": 46,
+      "z": 0
+    },
+    "old_forest_path_20": {
+      "x": -138,
+      "y": 47,
+      "z": 0
+    },
+    "old_man_willow": {
+      "x": -145,
+      "y": 46,
       "z": 0
     },
     "tuckborough": {
@@ -246,8 +246,8 @@
       "z": 0
     },
     "michel_delving": {
-      "x": -163,
-      "y": 42,
+      "x": -185,
+      "y": 46,
       "z": 0
     },
     "stock": {
@@ -311,7 +311,7 @@
       "z": 0
     },
     "bree_inn_room_2": {
-      "x": -123,
+      "x": -124,
       "y": 45,
       "z": 0
     },
@@ -322,17 +322,17 @@
     },
     "bree_town_square": {
       "x": -123,
-      "y": 43,
+      "y": 45,
       "z": 0
     },
     "bree_market": {
-      "x": -122,
-      "y": 43,
+      "x": -124,
+      "y": 46,
       "z": 0
     },
     "bree_house_1": {
-      "x": -121,
-      "y": 43,
+      "x": -120,
+      "y": 46,
       "z": 0
     },
     "bree_house_2": {
@@ -361,18 +361,18 @@
       "z": 0
     },
     "bree_gate_west": {
-      "x": -124,
+      "x": -125,
       "y": 45,
       "z": 0
     },
     "bree_road_north": {
-      "x": -124,
-      "y": 44,
+      "x": -125,
+      "y": 46,
       "z": 0
     },
     "bree_road_south": {
       "x": -124,
-      "y": 43,
+      "y": 44,
       "z": 0
     },
     "bree_inn_cellar": {
@@ -12462,25 +12462,30 @@
     },
     "hobbiton_smial_2": {
       "west": "hobbiton_smial_1",
-      "east": "bag_end"
+      "east": "bag_end",
+      "southwest": "bywater"
     },
     "hobbiton_smial_3": {
-      "west": "hobbiton_smial_2",
+      "west": "bywater",
       "east": "hobbiton_smial_4",
-      "northeast": "bag_end"
+      "northeast": "bag_end",
+      "southeast": "stock"
     },
     "hobbiton_smial_4": {
       "west": "hobbiton_smial_3",
       "east": "hobbiton_smial_5",
       "northeast": "hobbiton_square",
-      "north": "bag_end"
+      "north": "bag_end",
+      "south": "stock"
     },
     "hobbiton_smial_5": {
       "west": "hobbiton_smial_4",
       "east": "hobbiton_garden_1",
       "north": "hobbiton_square",
       "northeast": "hobbiton_garden_1",
-      "northwest": "bag_end"
+      "northwest": "bag_end",
+      "southwest": "stock",
+      "south": "scary"
     },
     "hobbiton_garden_1": {
       "east": "shire_farm_1",
@@ -12516,13 +12521,22 @@
       "west": "hobbiton_road_north"
     },
     "buckland_kitchen": {
+      "down": "buckland_cellar",
+      "north": "buckland_guest_room_2",
+      "southwest": "old_forest_path_17",
+      "south": "buckland_entrance",
       "east": "buckland_hall",
-      "west": "hobbiton_square",
-      "down": "buckland_cellar"
+      "northeast": "buckland_guest_room_1",
+      "southeast": "buckland_guest_room_3"
     },
     "buckland_hall": {
+      "northwest": "buckland_guest_room_2",
       "west": "buckland_kitchen",
-      "east": "buckland_cellar"
+      "southwest": "buckland_entrance",
+      "east": "buckland_garden",
+      "north": "buckland_guest_room_1",
+      "south": "buckland_guest_room_3",
+      "southeast": "old_forest_path_8"
     },
     "buckland_cellar": {
       "west": "buckland_hall",
@@ -12530,35 +12544,59 @@
       "up": "buckland_kitchen"
     },
     "buckland_guest_room_1": {
-      "west": "buckland_cellar",
-      "east": "buckland_guest_room_2"
+      "west": "buckland_guest_room_2",
+      "southwest": "buckland_kitchen",
+      "southeast": "buckland_garden",
+      "south": "buckland_hall",
+      "north": "buckland_pantry"
     },
     "buckland_guest_room_2": {
-      "west": "buckland_guest_room_1",
-      "east": "buckland_guest_room_3"
+      "south": "buckland_kitchen",
+      "southeast": "buckland_hall",
+      "east": "buckland_guest_room_1",
+      "northeast": "buckland_pantry"
     },
     "buckland_guest_room_3": {
-      "west": "buckland_guest_room_2",
-      "east": "buckland_library"
+      "northwest": "buckland_kitchen",
+      "southwest": "buckland_library",
+      "west": "buckland_entrance",
+      "southeast": "old_man_willow",
+      "south": "buckland_courtyard",
+      "northeast": "buckland_garden",
+      "north": "buckland_hall",
+      "east": "old_forest_path_8"
     },
     "buckland_library": {
-      "west": "buckland_guest_room_3",
-      "east": "buckland_pantry"
+      "northwest": "old_forest_path_17",
+      "north": "buckland_entrance",
+      "east": "buckland_courtyard",
+      "northeast": "buckland_guest_room_3"
     },
     "buckland_pantry": {
-      "west": "buckland_library",
-      "east": "buckland_entrance"
+      "southwest": "buckland_guest_room_2",
+      "south": "buckland_guest_room_1"
     },
     "buckland_entrance": {
-      "west": "buckland_pantry",
-      "east": "buckland_garden"
+      "west": "old_forest_path_17",
+      "north": "buckland_kitchen",
+      "south": "buckland_library",
+      "southeast": "buckland_courtyard",
+      "northeast": "buckland_hall",
+      "east": "buckland_guest_room_3"
     },
     "buckland_garden": {
-      "west": "buckland_entrance",
-      "east": "buckland_courtyard"
+      "west": "buckland_hall",
+      "northwest": "buckland_guest_room_1",
+      "southwest": "buckland_guest_room_3",
+      "south": "old_forest_path_8",
+      "southeast": "old_forest_path_9"
     },
     "buckland_courtyard": {
-      "west": "buckland_garden"
+      "west": "buckland_library",
+      "northwest": "buckland_entrance",
+      "east": "old_man_willow",
+      "north": "buckland_guest_room_3",
+      "northeast": "old_forest_path_8"
     },
     "old_forest_path_1": {
       "east": "old_forest_path_2"
@@ -12569,43 +12607,50 @@
     },
     "old_forest_path_3": {
       "west": "old_forest_path_2",
-      "east": "old_forest_path_4"
-    },
-    "old_forest_path_4": {
-      "west": "old_forest_path_3",
       "east": "old_forest_path_5"
     },
-    "old_forest_path_5": {
-      "west": "old_forest_path_4",
+    "old_forest_path_4": {
+      "west": "old_forest_path_5",
       "east": "old_forest_path_6"
     },
+    "old_forest_path_5": {
+      "west": "old_forest_path_3",
+      "east": "old_forest_path_4"
+    },
     "old_forest_path_6": {
-      "west": "old_forest_path_5",
-      "east": "old_forest_path_7"
+      "west": "old_forest_path_4",
+      "east": "old_forest_path_19"
     },
     "old_forest_path_7": {
-      "west": "old_forest_path_6",
-      "east": "old_forest_path_8"
+      "southwest": "old_forest_path_19",
+      "south": "old_forest_path_16",
+      "east": "old_forest_path_17"
     },
     "old_forest_path_8": {
-      "west": "old_forest_path_7",
+      "south": "old_man_willow",
+      "southwest": "buckland_courtyard",
+      "north": "buckland_garden",
+      "northwest": "buckland_hall",
+      "west": "buckland_guest_room_3",
       "east": "old_forest_path_9"
     },
     "old_forest_path_9": {
-      "west": "old_forest_path_8",
-      "east": "old_forest_path_10"
+      "east": "old_forest_path_10",
+      "southwest": "old_man_willow",
+      "northwest": "buckland_garden",
+      "west": "old_forest_path_8"
     },
     "old_forest_path_10": {
-      "west": "old_forest_path_9",
-      "east": "old_forest_path_11"
+      "east": "old_forest_path_11",
+      "west": "old_forest_path_9"
     },
     "old_forest_path_11": {
-      "west": "old_forest_path_10",
-      "east": "old_forest_path_12"
+      "east": "old_forest_path_12",
+      "west": "old_forest_path_10"
     },
     "old_forest_path_12": {
-      "west": "old_forest_path_11",
-      "east": "old_forest_path_13"
+      "east": "old_forest_path_13",
+      "west": "old_forest_path_11"
     },
     "old_forest_path_13": {
       "west": "old_forest_path_12",
@@ -12613,53 +12658,61 @@
     },
     "old_forest_path_14": {
       "west": "old_forest_path_13",
-      "east": "old_forest_path_15"
-    },
-    "old_forest_path_15": {
-      "west": "old_forest_path_14",
-      "east": "old_forest_path_16"
-    },
-    "old_forest_path_16": {
-      "west": "old_forest_path_15",
-      "east": "old_forest_path_17"
-    },
-    "old_forest_path_17": {
-      "west": "old_forest_path_16",
-      "east": "old_forest_path_18"
-    },
-    "old_forest_path_18": {
-      "west": "old_forest_path_17",
-      "east": "old_forest_path_19"
-    },
-    "old_forest_path_19": {
-      "west": "old_forest_path_18",
       "east": "old_forest_path_20"
     },
-    "old_forest_path_20": {
+    "old_forest_path_15": {
+      "west": "old_forest_path_18"
+    },
+    "old_forest_path_16": {
       "west": "old_forest_path_19",
-      "east": "old_man_willow"
+      "north": "old_forest_path_7",
+      "northeast": "old_forest_path_17"
+    },
+    "old_forest_path_17": {
+      "southwest": "old_forest_path_16",
+      "west": "old_forest_path_7",
+      "northeast": "buckland_kitchen",
+      "southeast": "buckland_library",
+      "east": "buckland_entrance"
+    },
+    "old_forest_path_18": {
+      "west": "old_forest_path_20",
+      "east": "old_forest_path_15"
+    },
+    "old_forest_path_19": {
+      "west": "old_forest_path_6",
+      "east": "old_forest_path_16",
+      "northeast": "old_forest_path_7"
+    },
+    "old_forest_path_20": {
+      "west": "old_forest_path_14",
+      "east": "old_forest_path_18"
     },
     "old_man_willow": {
-      "west": "old_forest_path_20"
+      "west": "buckland_courtyard",
+      "northwest": "buckland_guest_room_3",
+      "north": "old_forest_path_8",
+      "northeast": "old_forest_path_9"
     },
     "tuckborough": {
-      "east": "bywater"
+      "south": "bywater"
     },
     "bywater": {
-      "west": "tuckborough",
-      "east": "michel_delving"
+      "north": "tuckborough",
+      "northeast": "hobbiton_smial_2",
+      "east": "hobbiton_smial_3"
     },
-    "michel_delving": {
-      "west": "bywater",
-      "east": "stock"
-    },
+    "michel_delving": {},
     "stock": {
-      "west": "michel_delving",
-      "east": "scary"
+      "east": "scary",
+      "northwest": "hobbiton_smial_3",
+      "north": "hobbiton_smial_4",
+      "northeast": "hobbiton_smial_5"
     },
     "scary": {
+      "east": "hobbiton_road",
       "west": "stock",
-      "east": "hobbiton_road"
+      "north": "hobbiton_smial_5"
     },
     "hobbiton_road": {
       "west": "scary",
@@ -12693,77 +12746,132 @@
       "west": "shire_inn"
     },
     "bree_inn_common_room": {
-      "east": "path_bree_to_weathertop_1",
-      "west": "path_shire_to_bree_15",
-      "down": "bree_inn_cellar"
+      "east": "bree_inn_kitchen",
+      "northeast": "bree_inn_stable",
+      "north": "bree_inn_room_1",
+      "west": "bree_inn_room_3",
+      "down": "bree_inn_cellar",
+      "northwest": "bree_town_square",
+      "up": "bree_inn_cellar"
     },
     "bree_inn_kitchen": {
+      "northeast": "bree_house_3",
+      "east": "bree_house_2",
       "west": "bree_inn_common_room",
-      "east": "bree_inn_stable"
+      "north": "bree_inn_stable",
+      "northwest": "bree_inn_room_1"
     },
     "bree_inn_stable": {
-      "west": "bree_inn_kitchen",
-      "east": "bree_inn_room_1"
+      "northwest": "bree_house_5",
+      "east": "bree_house_3",
+      "northeast": "bree_house_1",
+      "southeast": "bree_house_2",
+      "north": "bree_house_4",
+      "southwest": "bree_inn_common_room",
+      "south": "bree_inn_kitchen",
+      "west": "bree_inn_room_1"
     },
     "bree_inn_room_1": {
-      "west": "bree_inn_stable",
-      "east": "bree_inn_room_2"
+      "north": "bree_house_5",
+      "northwest": "bree_gate_east",
+      "northeast": "bree_house_4",
+      "south": "bree_inn_common_room",
+      "southeast": "bree_inn_kitchen",
+      "east": "bree_inn_stable",
+      "southwest": "bree_inn_room_3",
+      "west": "bree_town_square"
     },
     "bree_inn_room_2": {
-      "west": "bree_inn_room_1",
-      "east": "bree_inn_room_3"
+      "south": "bree_road_south",
+      "north": "bree_market",
+      "northeast": "bree_gate_east",
+      "west": "bree_gate_west",
+      "northwest": "bree_road_north",
+      "southeast": "bree_inn_room_3",
+      "east": "bree_town_square"
     },
     "bree_inn_room_3": {
-      "west": "bree_inn_room_2",
-      "east": "bree_inn_cellar"
+      "west": "bree_road_south",
+      "northwest": "bree_inn_room_2",
+      "east": "bree_inn_common_room",
+      "northeast": "bree_inn_room_1",
+      "north": "bree_town_square"
     },
     "bree_inn_cellar": {
-      "west": "bree_inn_room_3",
-      "east": "bree_town_square",
-      "up": "bree_inn_common_room"
+      "up": "bree_inn_common_room",
+      "down": "bree_inn_common_room"
     },
     "bree_town_square": {
-      "west": "bree_inn_cellar",
-      "east": "bree_market"
+      "northeast": "bree_house_5",
+      "southwest": "bree_road_south",
+      "northwest": "bree_market",
+      "west": "bree_inn_room_2",
+      "north": "bree_gate_east",
+      "southeast": "bree_inn_common_room",
+      "east": "bree_inn_room_1",
+      "south": "bree_inn_room_3"
     },
     "bree_market": {
-      "west": "bree_town_square",
-      "east": "bree_house_1"
+      "south": "bree_inn_room_2",
+      "east": "bree_gate_east",
+      "southwest": "bree_gate_west",
+      "west": "bree_road_north",
+      "southeast": "bree_town_square"
     },
     "bree_house_1": {
-      "west": "bree_market",
-      "east": "bree_house_2"
+      "south": "bree_house_3",
+      "west": "bree_house_4",
+      "southwest": "bree_inn_stable"
     },
     "bree_house_2": {
-      "west": "bree_house_1",
-      "east": "bree_house_3"
+      "north": "bree_house_3",
+      "west": "bree_inn_kitchen",
+      "northwest": "bree_inn_stable"
     },
     "bree_house_3": {
-      "west": "bree_house_2",
-      "east": "bree_house_4"
+      "north": "bree_house_1",
+      "south": "bree_house_2",
+      "northwest": "bree_house_4",
+      "southwest": "bree_inn_kitchen",
+      "west": "bree_inn_stable"
     },
     "bree_house_4": {
-      "west": "bree_house_3",
-      "east": "bree_house_5"
+      "west": "bree_house_5",
+      "southeast": "bree_house_3",
+      "east": "bree_house_1",
+      "south": "bree_inn_stable",
+      "southwest": "bree_inn_room_1"
     },
     "bree_house_5": {
-      "west": "bree_house_4",
-      "east": "bree_gate_east"
+      "west": "bree_gate_east",
+      "east": "bree_house_4",
+      "southeast": "bree_inn_stable",
+      "south": "bree_inn_room_1",
+      "southwest": "bree_town_square"
     },
     "bree_gate_east": {
-      "west": "bree_house_5",
-      "east": "bree_gate_west"
+      "east": "bree_house_5",
+      "west": "bree_market",
+      "southwest": "bree_inn_room_2",
+      "southeast": "bree_inn_room_1",
+      "south": "bree_town_square"
     },
     "bree_gate_west": {
-      "west": "bree_gate_east",
-      "east": "bree_road_north"
+      "southeast": "bree_road_south",
+      "northeast": "bree_market",
+      "east": "bree_inn_room_2",
+      "north": "bree_road_north"
     },
     "bree_road_north": {
-      "west": "bree_gate_west",
-      "east": "bree_road_south"
+      "east": "bree_market",
+      "southeast": "bree_inn_room_2",
+      "south": "bree_gate_west"
     },
     "bree_road_south": {
-      "west": "bree_road_north"
+      "north": "bree_inn_room_2",
+      "northwest": "bree_gate_west",
+      "east": "bree_inn_room_3",
+      "northeast": "bree_town_square"
     },
     "rivendell_entrance": {
       "east": "path_rivendell_to_moria_1",
@@ -25189,11 +25297,11 @@
       "east": "path_shire_to_bree_3"
     },
     "path_shire_to_bree_3": {
-      "west": "path_shire_to_bree_2",
+      "west": "path_shire_to_bree_15",
       "east": "path_shire_to_bree_4"
     },
     "path_shire_to_bree_4": {
-      "west": "path_shire_to_bree_3",
+      "west": "path_bree_to_weathertop_1",
       "east": "path_shire_to_bree_5"
     },
     "path_shire_to_bree_5": {
@@ -25237,12 +25345,13 @@
       "east": "path_shire_to_bree_15"
     },
     "path_shire_to_bree_15": {
-      "west": "path_shire_to_bree_14",
-      "east": "bree_inn_common_room"
+      "east": "path_shire_to_bree_3",
+      "north": "path_bree_to_weathertop_13",
+      "northwest": "path_weathertop_to_rivendell_6"
     },
     "path_bree_to_weathertop_1": {
-      "west": "bree_inn_common_room",
-      "east": "path_bree_to_weathertop_2"
+      "east": "path_shire_to_bree_4",
+      "west": "path_bree_to_weathertop_14"
     },
     "path_bree_to_weathertop_2": {
       "west": "path_bree_to_weathertop_1",
@@ -25290,11 +25399,12 @@
     },
     "path_bree_to_weathertop_13": {
       "west": "path_bree_to_weathertop_12",
-      "east": "path_bree_to_weathertop_14"
+      "east": "path_bree_to_weathertop_14",
+      "south": "path_shire_to_bree_15"
     },
     "path_bree_to_weathertop_14": {
       "west": "path_bree_to_weathertop_13",
-      "east": "path_bree_to_weathertop_15"
+      "east": "path_bree_to_weathertop_1"
     },
     "path_bree_to_weathertop_15": {
       "west": "path_bree_to_weathertop_14",
@@ -25342,7 +25452,8 @@
     },
     "path_weathertop_to_rivendell_6": {
       "west": "path_weathertop_to_rivendell_5",
-      "east": "path_weathertop_to_rivendell_7"
+      "east": "path_weathertop_to_rivendell_7",
+      "southeast": "path_shire_to_bree_15"
     },
     "path_weathertop_to_rivendell_7": {
       "west": "path_weathertop_to_rivendell_6",

@@ -544,7 +544,7 @@ export function updateExitConfig(req, res) {
 // Update room description and items
 export function updateRoomData(req, res) {
     try {
-        const { roomId, description, items } = req.body;
+        const { roomId, name, description, items } = req.body;
 
         if (!roomId) {
             return res.status(400).json({ success: false, error: 'Room ID required' });
@@ -555,6 +555,10 @@ export function updateRoomData(req, res) {
         }
 
         // Update room data
+        if (name !== undefined) {
+            rooms[roomId].name = name;
+        }
+
         if (description !== undefined) {
             rooms[roomId].description = description;
         }
@@ -568,6 +572,7 @@ export function updateRoomData(req, res) {
         res.json({
             success: true,
             roomId,
+            name: rooms[roomId].name,
             description: rooms[roomId].description,
             items: rooms[roomId].items
         });
