@@ -1686,98 +1686,98 @@
       "z": -1
     },
     "moria_deep_level_1_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -1
     },
     "moria_deep_level_1_chamber_23": {
-      "x": -58,
+      "x": -60,
       "y": 21,
-      "z": -1
+      "z": 1
     },
     "moria_deep_level_1_chamber_24": {
-      "x": -58,
-      "y": 22,
+      "x": -59,
+      "y": 18,
       "z": -1
     },
     "moria_deep_level_1_chamber_25": {
       "x": -59,
-      "y": 22,
-      "z": -1
+      "y": 20,
+      "z": 1
     },
     "moria_deep_level_1_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -1
-    },
-    "moria_deep_level_1_chamber_27": {
-      "x": -60,
+      "x": -63,
       "y": 21,
       "z": -1
     },
+    "moria_deep_level_1_chamber_27": {
+      "x": -62,
+      "y": 21,
+      "z": 0
+    },
     "moria_deep_level_1_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -1
+      "x": -61,
+      "y": 21,
+      "z": 1
     },
     "moria_deep_level_1_chamber_29": {
-      "x": -59,
+      "x": -60,
       "y": 20,
-      "z": -1
+      "z": 1
     },
     "moria_deep_level_1_chamber_30": {
-      "x": -58,
-      "y": 20,
-      "z": -1
+      "x": -60,
+      "y": 21,
+      "z": 2
     },
     "moria_deep_level_1_chamber_31": {
-      "x": -57,
+      "x": -56,
       "y": 21,
       "z": -1
     },
     "moria_deep_level_1_chamber_32": {
       "x": -57,
-      "y": 22,
+      "y": 19,
       "z": -1
     },
     "moria_deep_level_1_chamber_33": {
       "x": -58,
-      "y": 23,
+      "y": 24,
       "z": -1
     },
     "moria_deep_level_1_chamber_34": {
       "x": -59,
-      "y": 23,
+      "y": 24,
       "z": -1
     },
     "moria_deep_level_1_chamber_35": {
-      "x": -60,
+      "x": -61,
       "y": 23,
       "z": -1
     },
     "moria_deep_level_1_chamber_36": {
-      "x": -61,
+      "x": -62,
       "y": 22,
       "z": -1
     },
     "moria_deep_level_1_chamber_37": {
-      "x": -61,
-      "y": 21,
+      "x": -63,
+      "y": 22,
       "z": -1
     },
     "moria_deep_level_1_chamber_38": {
-      "x": -61,
+      "x": -62,
       "y": 20,
       "z": -1
     },
     "moria_deep_level_1_chamber_39": {
-      "x": -60,
+      "x": -61,
       "y": 19,
       "z": -1
     },
     "moria_deep_level_1_chamber_40": {
-      "x": -59,
-      "y": 19,
+      "x": -60,
+      "y": 18,
       "z": -1
     },
     "moria_deep_level_2_chamber_1": {
@@ -1886,72 +1886,72 @@
       "z": -2
     },
     "moria_deep_level_2_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -2
     },
     "moria_deep_level_2_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -2
+      "x": -60,
+      "y": 24,
+      "z": -1
     },
     "moria_deep_level_2_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -2
+      "x": -59,
+      "y": 17,
+      "z": -1
     },
     "moria_deep_level_2_chamber_25": {
       "x": -59,
-      "y": 22,
+      "y": 18,
       "z": -2
     },
     "moria_deep_level_2_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -2
+      "x": -59,
+      "y": 18,
+      "z": 0
     },
     "moria_deep_level_2_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -2
+      "x": -59,
+      "y": 19,
+      "z": 1
     },
     "moria_deep_level_2_chamber_28": {
-      "x": -60,
+      "x": -59,
       "y": 20,
-      "z": -2
+      "z": 2
     },
     "moria_deep_level_2_chamber_29": {
       "x": -59,
-      "y": 20,
-      "z": -2
+      "y": 23,
+      "z": 1
     },
     "moria_deep_level_2_chamber_30": {
-      "x": -58,
-      "y": 20,
-      "z": -2
+      "x": -59,
+      "y": 24,
+      "z": 0
     },
     "moria_deep_level_2_chamber_31": {
-      "x": -57,
+      "x": -56,
       "y": 21,
       "z": -2
     },
     "moria_deep_level_2_chamber_32": {
       "x": -57,
-      "y": 22,
-      "z": -2
+      "y": 21,
+      "z": 1
     },
     "moria_deep_level_2_chamber_33": {
-      "x": -58,
+      "x": -57,
       "y": 23,
-      "z": -2
+      "z": -1
     },
     "moria_deep_level_2_chamber_34": {
-      "x": -59,
+      "x": -58,
       "y": 23,
-      "z": -2
+      "z": 1
     },
     "moria_deep_level_2_chamber_35": {
-      "x": -60,
+      "x": -61,
       "y": 23,
       "z": -2
     },
@@ -2061,72 +2061,72 @@
       "z": -3
     },
     "moria_deep_level_3_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -3
     },
     "moria_deep_level_3_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -3
+      "x": -59,
+      "y": 25,
+      "z": -1
     },
     "moria_deep_level_3_chamber_24": {
       "x": -58,
-      "y": 22,
-      "z": -3
+      "y": 18,
+      "z": -1
     },
     "moria_deep_level_3_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -3
-    },
-    "moria_deep_level_3_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -3
-    },
-    "moria_deep_level_3_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -3
-    },
-    "moria_deep_level_3_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -3
-    },
-    "moria_deep_level_3_chamber_29": {
-      "x": -59,
-      "y": 20,
-      "z": -3
-    },
-    "moria_deep_level_3_chamber_30": {
       "x": -58,
       "y": 20,
-      "z": -3
+      "z": 1
+    },
+    "moria_deep_level_3_chamber_26": {
+      "x": -55,
+      "y": 21,
+      "z": -1
+    },
+    "moria_deep_level_3_chamber_27": {
+      "x": -64,
+      "y": 21,
+      "z": -1
+    },
+    "moria_deep_level_3_chamber_28": {
+      "x": -63,
+      "y": 20,
+      "z": -1
+    },
+    "moria_deep_level_3_chamber_29": {
+      "x": -63,
+      "y": 21,
+      "z": -2
+    },
+    "moria_deep_level_3_chamber_30": {
+      "x": -63,
+      "y": 21,
+      "z": 0
     },
     "moria_deep_level_3_chamber_31": {
-      "x": -57,
+      "x": -56,
       "y": 21,
       "z": -3
     },
     "moria_deep_level_3_chamber_32": {
-      "x": -57,
-      "y": 22,
-      "z": -3
+      "x": -56,
+      "y": 20,
+      "z": -1
     },
     "moria_deep_level_3_chamber_33": {
       "x": -58,
-      "y": 23,
-      "z": -3
+      "y": 24,
+      "z": -2
     },
     "moria_deep_level_3_chamber_34": {
-      "x": -59,
-      "y": 23,
-      "z": -3
+      "x": -58,
+      "y": 24,
+      "z": 0
     },
     "moria_deep_level_3_chamber_35": {
-      "x": -60,
+      "x": -61,
       "y": 23,
       "z": -3
     },
@@ -2236,72 +2236,72 @@
       "z": -4
     },
     "moria_deep_level_4_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -4
     },
     "moria_deep_level_4_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -4
+      "x": -62,
+      "y": 19,
+      "z": -1
     },
     "moria_deep_level_4_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -4
+      "x": -62,
+      "y": 20,
+      "z": -2
     },
     "moria_deep_level_4_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -4
+      "x": -62,
+      "y": 20,
+      "z": 0
     },
     "moria_deep_level_4_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -4
+      "x": -62,
+      "y": 21,
+      "z": 1
     },
     "moria_deep_level_4_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -4
+      "x": -62,
+      "y": 22,
+      "z": -2
     },
     "moria_deep_level_4_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -4
+      "x": -62,
+      "y": 22,
+      "z": 0
     },
     "moria_deep_level_4_chamber_29": {
-      "x": -59,
-      "y": 20,
-      "z": -4
+      "x": -62,
+      "y": 23,
+      "z": -1
     },
     "moria_deep_level_4_chamber_30": {
-      "x": -58,
-      "y": 20,
-      "z": -4
+      "x": -61,
+      "y": 18,
+      "z": -1
     },
     "moria_deep_level_4_chamber_31": {
-      "x": -57,
+      "x": -56,
       "y": 21,
       "z": -4
     },
     "moria_deep_level_4_chamber_32": {
-      "x": -57,
-      "y": 22,
-      "z": -4
+      "x": -56,
+      "y": 21,
+      "z": 0
     },
     "moria_deep_level_4_chamber_33": {
-      "x": -58,
+      "x": -57,
       "y": 23,
-      "z": -4
+      "z": -2
     },
     "moria_deep_level_4_chamber_34": {
-      "x": -59,
-      "y": 23,
-      "z": -4
+      "x": -58,
+      "y": 25,
+      "z": -1
     },
     "moria_deep_level_4_chamber_35": {
-      "x": -60,
+      "x": -61,
       "y": 23,
       "z": -4
     },
@@ -2411,72 +2411,72 @@
       "z": -5
     },
     "moria_deep_level_5_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -5
     },
     "moria_deep_level_5_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -5
+      "x": -61,
+      "y": 19,
+      "z": -2
     },
     "moria_deep_level_5_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -5
+      "x": -61,
+      "y": 19,
+      "z": 0
     },
     "moria_deep_level_5_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -5
+      "x": -61,
+      "y": 20,
+      "z": 1
     },
     "moria_deep_level_5_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -5
+      "x": -61,
+      "y": 21,
+      "z": 2
     },
     "moria_deep_level_5_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -5
+      "x": -61,
+      "y": 22,
+      "z": 1
     },
     "moria_deep_level_5_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -5
+      "x": -61,
+      "y": 23,
+      "z": 0
     },
     "moria_deep_level_5_chamber_29": {
-      "x": -59,
-      "y": 20,
-      "z": -5
+      "x": -61,
+      "y": 24,
+      "z": -1
     },
     "moria_deep_level_5_chamber_30": {
-      "x": -58,
-      "y": 20,
-      "z": -5
+      "x": -60,
+      "y": 17,
+      "z": -1
     },
     "moria_deep_level_5_chamber_31": {
-      "x": -57,
+      "x": -56,
       "y": 21,
       "z": -5
     },
     "moria_deep_level_5_chamber_32": {
-      "x": -57,
+      "x": -56,
       "y": 22,
-      "z": -5
+      "z": -1
     },
     "moria_deep_level_5_chamber_33": {
-      "x": -58,
+      "x": -57,
       "y": 23,
-      "z": -5
+      "z": 0
     },
     "moria_deep_level_5_chamber_34": {
       "x": -59,
-      "y": 23,
-      "z": -5
+      "y": 24,
+      "z": -2
     },
     "moria_deep_level_5_chamber_35": {
-      "x": -60,
+      "x": -61,
       "y": 23,
       "z": -5
     },
@@ -2586,49 +2586,49 @@
       "z": -6
     },
     "moria_deep_level_6_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -6
     },
     "moria_deep_level_6_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -6
+      "x": -60,
+      "y": 18,
+      "z": -2
     },
     "moria_deep_level_6_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -6
+      "x": -60,
+      "y": 18,
+      "z": 0
     },
     "moria_deep_level_6_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -6
+      "x": -60,
+      "y": 19,
+      "z": 1
     },
     "moria_deep_level_6_chamber_26": {
       "x": -60,
-      "y": 22,
-      "z": -6
+      "y": 20,
+      "z": 2
     },
     "moria_deep_level_6_chamber_27": {
       "x": -60,
       "y": 21,
-      "z": -6
+      "z": 3
     },
     "moria_deep_level_6_chamber_28": {
       "x": -60,
-      "y": 20,
-      "z": -6
+      "y": 23,
+      "z": 1
     },
     "moria_deep_level_6_chamber_29": {
-      "x": -59,
-      "y": 20,
-      "z": -6
+      "x": -60,
+      "y": 24,
+      "z": -2
     },
     "moria_deep_level_6_chamber_30": {
-      "x": -58,
-      "y": 20,
-      "z": -6
+      "x": -60,
+      "y": 24,
+      "z": 0
     },
     "moria_deep_level_7_chamber_1": {
       "x": -59,
@@ -2736,49 +2736,49 @@
       "z": -7
     },
     "moria_deep_level_7_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -7
     },
     "moria_deep_level_7_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -7
+      "x": -60,
+      "y": 25,
+      "z": -1
     },
     "moria_deep_level_7_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -7
+      "x": -59,
+      "y": 16,
+      "z": -1
     },
     "moria_deep_level_7_chamber_25": {
       "x": -59,
-      "y": 22,
-      "z": -7
+      "y": 17,
+      "z": -2
     },
     "moria_deep_level_7_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -7
+      "x": -59,
+      "y": 17,
+      "z": 0
     },
     "moria_deep_level_7_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -7
+      "x": -59,
+      "y": 18,
+      "z": -3
     },
     "moria_deep_level_7_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -7
+      "x": -59,
+      "y": 18,
+      "z": 1
     },
     "moria_deep_level_7_chamber_29": {
       "x": -59,
-      "y": 20,
-      "z": -7
+      "y": 19,
+      "z": 2
     },
     "moria_deep_level_7_chamber_30": {
-      "x": -58,
+      "x": -59,
       "y": 20,
-      "z": -7
+      "z": 3
     },
     "moria_deep_level_8_chamber_1": {
       "x": -59,
@@ -2886,49 +2886,49 @@
       "z": -8
     },
     "moria_deep_level_8_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -8
     },
     "moria_deep_level_8_chamber_23": {
-      "x": -58,
+      "x": -59,
       "y": 21,
-      "z": -8
+      "z": 4
     },
     "moria_deep_level_8_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -8
+      "x": -59,
+      "y": 23,
+      "z": 2
     },
     "moria_deep_level_8_chamber_25": {
       "x": -59,
-      "y": 22,
-      "z": -8
+      "y": 24,
+      "z": -3
     },
     "moria_deep_level_8_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -8
+      "x": -59,
+      "y": 24,
+      "z": 1
     },
     "moria_deep_level_8_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -8
+      "x": -59,
+      "y": 25,
+      "z": -2
     },
     "moria_deep_level_8_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -8
+      "x": -59,
+      "y": 25,
+      "z": 0
     },
     "moria_deep_level_8_chamber_29": {
       "x": -59,
-      "y": 20,
-      "z": -8
+      "y": 26,
+      "z": -1
     },
     "moria_deep_level_8_chamber_30": {
       "x": -58,
-      "y": 20,
-      "z": -8
+      "y": 17,
+      "z": -1
     },
     "moria_deep_level_9_chamber_1": {
       "x": -59,
@@ -3036,49 +3036,49 @@
       "z": -9
     },
     "moria_deep_level_9_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -9
     },
     "moria_deep_level_9_chamber_23": {
       "x": -58,
-      "y": 21,
-      "z": -9
+      "y": 18,
+      "z": -2
     },
     "moria_deep_level_9_chamber_24": {
       "x": -58,
-      "y": 22,
-      "z": -9
+      "y": 18,
+      "z": 0
     },
     "moria_deep_level_9_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -9
+      "x": -58,
+      "y": 19,
+      "z": 1
     },
     "moria_deep_level_9_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -9
-    },
-    "moria_deep_level_9_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -9
-    },
-    "moria_deep_level_9_chamber_28": {
-      "x": -60,
-      "y": 20,
-      "z": -9
-    },
-    "moria_deep_level_9_chamber_29": {
-      "x": -59,
-      "y": 20,
-      "z": -9
-    },
-    "moria_deep_level_9_chamber_30": {
       "x": -58,
       "y": 20,
-      "z": -9
+      "z": 2
+    },
+    "moria_deep_level_9_chamber_27": {
+      "x": -57,
+      "y": 18,
+      "z": -1
+    },
+    "moria_deep_level_9_chamber_28": {
+      "x": -57,
+      "y": 19,
+      "z": -2
+    },
+    "moria_deep_level_9_chamber_29": {
+      "x": -57,
+      "y": 19,
+      "z": 0
+    },
+    "moria_deep_level_9_chamber_30": {
+      "x": -57,
+      "y": 20,
+      "z": 1
     },
     "moria_deep_level_10_chamber_1": {
       "x": -59,
@@ -3186,49 +3186,49 @@
       "z": -10
     },
     "moria_deep_level_10_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -10
     },
     "moria_deep_level_10_chamber_23": {
-      "x": -58,
+      "x": -57,
       "y": 21,
-      "z": -10
+      "z": 2
     },
     "moria_deep_level_10_chamber_24": {
-      "x": -58,
+      "x": -57,
       "y": 22,
-      "z": -10
+      "z": 1
     },
     "moria_deep_level_10_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -10
+      "x": -57,
+      "y": 24,
+      "z": -1
     },
     "moria_deep_level_10_chamber_26": {
-      "x": -60,
-      "y": 22,
-      "z": -10
+      "x": -56,
+      "y": 19,
+      "z": -1
     },
     "moria_deep_level_10_chamber_27": {
-      "x": -60,
-      "y": 21,
-      "z": -10
+      "x": -56,
+      "y": 20,
+      "z": -2
     },
     "moria_deep_level_10_chamber_28": {
-      "x": -60,
+      "x": -56,
       "y": 20,
-      "z": -10
+      "z": 0
     },
     "moria_deep_level_10_chamber_29": {
-      "x": -59,
-      "y": 20,
-      "z": -10
+      "x": -56,
+      "y": 21,
+      "z": 1
     },
     "moria_deep_level_10_chamber_30": {
-      "x": -58,
-      "y": 20,
-      "z": -10
+      "x": -56,
+      "y": 22,
+      "z": -2
     },
     "moria_deep_level_11_chamber_1": {
       "x": -59,
@@ -3336,24 +3336,24 @@
       "z": -11
     },
     "moria_deep_level_11_chamber_22": {
-      "x": -59,
+      "x": -62,
       "y": 21,
       "z": -11
     },
     "moria_deep_level_11_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -11
+      "x": -56,
+      "y": 22,
+      "z": 0
     },
     "moria_deep_level_11_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -11
+      "x": -56,
+      "y": 23,
+      "z": -1
     },
     "moria_deep_level_11_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -11
+      "x": -55,
+      "y": 20,
+      "z": -1
     },
     "moria_deep_level_12_chamber_1": {
       "x": -59,
@@ -3461,24 +3461,24 @@
       "z": -12
     },
     "moria_deep_level_12_chamber_22": {
-      "x": -59,
+      "x": -55,
       "y": 21,
-      "z": -12
+      "z": -2
     },
     "moria_deep_level_12_chamber_23": {
-      "x": -58,
+      "x": -55,
       "y": 21,
-      "z": -12
+      "z": 0
     },
     "moria_deep_level_12_chamber_24": {
-      "x": -58,
+      "x": -55,
       "y": 22,
-      "z": -12
+      "z": -1
     },
     "moria_deep_level_12_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -12
+      "x": -54,
+      "y": 21,
+      "z": -1
     },
     "moria_deep_level_13_chamber_1": {
       "x": -59,
@@ -3586,24 +3586,24 @@
       "z": -13
     },
     "moria_deep_level_13_chamber_22": {
-      "x": -59,
+      "x": -65,
       "y": 21,
-      "z": -13
+      "z": -1
     },
     "moria_deep_level_13_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -13
+      "x": -64,
+      "y": 20,
+      "z": -1
     },
     "moria_deep_level_13_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -13
+      "x": -64,
+      "y": 21,
+      "z": -2
     },
     "moria_deep_level_13_chamber_25": {
-      "x": -59,
-      "y": 22,
-      "z": -13
+      "x": -64,
+      "y": 21,
+      "z": 0
     },
     "moria_deep_level_14_chamber_1": {
       "x": -59,
@@ -3713,22 +3713,22 @@
     "moria_deep_level_14_chamber_22": {
       "x": -59,
       "y": 21,
-      "z": -14
+      "z": -16
     },
     "moria_deep_level_14_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -14
+      "x": -63,
+      "y": 19,
+      "z": -1
     },
     "moria_deep_level_14_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -14
+      "x": -63,
+      "y": 20,
+      "z": -2
     },
     "moria_deep_level_14_chamber_25": {
-      "x": -59,
+      "x": -64,
       "y": 22,
-      "z": -14
+      "z": -1
     },
     "moria_deep_level_15_chamber_1": {
       "x": -59,
@@ -3836,24 +3836,24 @@
       "z": -15
     },
     "moria_deep_level_15_chamber_22": {
-      "x": -59,
+      "x": -60,
       "y": 21,
-      "z": -15
+      "z": -16
     },
     "moria_deep_level_15_chamber_23": {
-      "x": -58,
-      "y": 21,
-      "z": -15
+      "x": -59,
+      "y": 20,
+      "z": -16
     },
     "moria_deep_level_15_chamber_24": {
-      "x": -58,
-      "y": 22,
-      "z": -15
+      "x": -63,
+      "y": 20,
+      "z": 0
     },
     "moria_deep_level_15_chamber_25": {
       "x": -59,
       "y": 22,
-      "z": -15
+      "z": -16
     },
     "lothlorien_entrance": {
       "x": 7,
@@ -5823,27 +5823,27 @@
     "minas_tirith_level_1_room_21": {
       "x": 67,
       "y": -52,
-      "z": 1
+      "z": -1
     },
     "minas_tirith_level_1_room_22": {
-      "x": 68,
+      "x": 64,
       "y": -52,
       "z": 1
     },
     "minas_tirith_level_1_room_23": {
-      "x": 68,
-      "y": -51,
-      "z": 1
+      "x": 66,
+      "y": -52,
+      "z": -1
     },
     "minas_tirith_level_1_room_24": {
       "x": 67,
-      "y": -51,
+      "y": -55,
       "z": 1
     },
     "minas_tirith_level_1_room_25": {
-      "x": 66,
-      "y": -51,
-      "z": 1
+      "x": 67,
+      "y": -53,
+      "z": -1
     },
     "minas_tirith_level_2_room_1": {
       "x": 67,
@@ -5946,29 +5946,29 @@
       "z": 2
     },
     "minas_tirith_level_2_room_21": {
-      "x": 67,
+      "x": 64,
       "y": -52,
       "z": 2
     },
     "minas_tirith_level_2_room_22": {
-      "x": 68,
-      "y": -52,
-      "z": 2
-    },
-    "minas_tirith_level_2_room_23": {
-      "x": 68,
-      "y": -51,
-      "z": 2
-    },
-    "minas_tirith_level_2_room_24": {
       "x": 67,
       "y": -51,
-      "z": 2
+      "z": -1
+    },
+    "minas_tirith_level_2_room_23": {
+      "x": 67,
+      "y": -49,
+      "z": 1
+    },
+    "minas_tirith_level_2_room_24": {
+      "x": 68,
+      "y": -52,
+      "z": -1
     },
     "minas_tirith_level_2_room_25": {
-      "x": 66,
-      "y": -51,
-      "z": 2
+      "x": 67,
+      "y": -52,
+      "z": -2
     },
     "minas_tirith_level_3_room_1": {
       "x": 67,
@@ -6071,29 +6071,29 @@
       "z": 3
     },
     "minas_tirith_level_3_room_21": {
-      "x": 67,
-      "y": -52,
-      "z": 3
+      "x": 69,
+      "y": -53,
+      "z": 1
     },
     "minas_tirith_level_3_room_22": {
-      "x": 68,
+      "x": 64,
       "y": -52,
       "z": 3
     },
     "minas_tirith_level_3_room_23": {
-      "x": 68,
-      "y": -51,
-      "z": 3
+      "x": 63,
+      "y": -52,
+      "z": 1
     },
     "minas_tirith_level_3_room_24": {
-      "x": 67,
-      "y": -51,
-      "z": 3
+      "x": 64,
+      "y": -53,
+      "z": 1
     },
     "minas_tirith_level_3_room_25": {
-      "x": 66,
-      "y": -51,
-      "z": 3
+      "x": 70,
+      "y": -52,
+      "z": 1
     },
     "minas_tirith_level_4_room_1": {
       "x": 67,
@@ -7131,59 +7131,59 @@
       "z": 1
     },
     "barad_dur_level_1_chamber_2": {
-      "x": 135,
+      "x": 134,
       "y": -45,
       "z": 1
     },
     "barad_dur_level_1_chamber_3": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 1
     },
     "barad_dur_level_1_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 1
     },
     "barad_dur_level_1_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 1
     },
     "barad_dur_level_1_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 1
     },
     "barad_dur_level_1_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 1
     },
     "barad_dur_level_1_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 1
+      "z": 2
     },
     "barad_dur_level_1_chamber_9": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 1
     },
     "barad_dur_level_1_chamber_10": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 1
     },
     "barad_dur_level_1_chamber_11": {
       "x": 135,
-      "y": -45,
-      "z": 1
+      "y": -46,
+      "z": 2
     },
     "barad_dur_level_1_chamber_12": {
       "x": 135,
       "y": -45,
-      "z": 1
+      "z": -1
     },
     "barad_dur_level_2_chamber_1": {
       "x": 135,
@@ -7192,57 +7192,57 @@
     },
     "barad_dur_level_2_chamber_2": {
       "x": 135,
-      "y": -45,
-      "z": 2
+      "y": -43,
+      "z": 1
     },
     "barad_dur_level_2_chamber_3": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 2
     },
     "barad_dur_level_2_chamber_4": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 2
     },
     "barad_dur_level_2_chamber_5": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 2
     },
     "barad_dur_level_2_chamber_6": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 2
     },
     "barad_dur_level_2_chamber_7": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 2
+      "z": 3
     },
     "barad_dur_level_2_chamber_8": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 2
     },
     "barad_dur_level_2_chamber_9": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 2
     },
     "barad_dur_level_2_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 2
+      "y": -46,
+      "z": 3
     },
     "barad_dur_level_2_chamber_11": {
       "x": 135,
-      "y": -45,
-      "z": 2
+      "y": -44,
+      "z": 3
     },
     "barad_dur_level_2_chamber_12": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 2
     },
     "barad_dur_level_3_chamber_1": {
@@ -7251,58 +7251,58 @@
       "z": 3
     },
     "barad_dur_level_3_chamber_2": {
-      "x": 135,
-      "y": -45,
-      "z": 3
+      "x": 136,
+      "y": -46,
+      "z": 1
     },
     "barad_dur_level_3_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 3
     },
     "barad_dur_level_3_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 3
     },
     "barad_dur_level_3_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 3
     },
     "barad_dur_level_3_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 3
+      "z": 4
     },
     "barad_dur_level_3_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 3
     },
     "barad_dur_level_3_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 3
     },
     "barad_dur_level_3_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 3
+      "y": -46,
+      "z": 4
     },
     "barad_dur_level_3_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 3
+      "y": -44,
+      "z": 4
     },
     "barad_dur_level_3_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 3
     },
     "barad_dur_level_3_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 3
     },
     "barad_dur_level_4_chamber_1": {
@@ -7311,58 +7311,58 @@
       "z": 4
     },
     "barad_dur_level_4_chamber_2": {
-      "x": 135,
-      "y": -45,
-      "z": 4
+      "x": 136,
+      "y": -44,
+      "z": 1
     },
     "barad_dur_level_4_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 4
     },
     "barad_dur_level_4_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 4
     },
     "barad_dur_level_4_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 4
     },
     "barad_dur_level_4_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 4
+      "z": 5
     },
     "barad_dur_level_4_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 4
     },
     "barad_dur_level_4_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 4
     },
     "barad_dur_level_4_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 4
+      "y": -46,
+      "z": 5
     },
     "barad_dur_level_4_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 4
+      "y": -44,
+      "z": 5
     },
     "barad_dur_level_4_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 4
     },
     "barad_dur_level_4_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 4
     },
     "barad_dur_level_5_chamber_1": {
@@ -7371,58 +7371,58 @@
       "z": 5
     },
     "barad_dur_level_5_chamber_2": {
-      "x": 135,
+      "x": 137,
       "y": -45,
-      "z": 5
+      "z": 1
     },
     "barad_dur_level_5_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 5
     },
     "barad_dur_level_5_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 5
     },
     "barad_dur_level_5_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 5
     },
     "barad_dur_level_5_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 5
+      "z": 6
     },
     "barad_dur_level_5_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 5
     },
     "barad_dur_level_5_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 5
     },
     "barad_dur_level_5_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 5
+      "y": -46,
+      "z": 6
     },
     "barad_dur_level_5_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 5
+      "y": -44,
+      "z": 6
     },
     "barad_dur_level_5_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 5
     },
     "barad_dur_level_5_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 5
     },
     "barad_dur_level_6_chamber_1": {
@@ -7431,58 +7431,58 @@
       "z": 6
     },
     "barad_dur_level_6_chamber_2": {
-      "x": 135,
+      "x": 132,
       "y": -45,
-      "z": 6
+      "z": 1
     },
     "barad_dur_level_6_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 6
     },
     "barad_dur_level_6_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 6
     },
     "barad_dur_level_6_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 6
     },
     "barad_dur_level_6_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 6
+      "z": 7
     },
     "barad_dur_level_6_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 6
     },
     "barad_dur_level_6_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 6
     },
     "barad_dur_level_6_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 6
+      "y": -46,
+      "z": 7
     },
     "barad_dur_level_6_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 6
+      "y": -44,
+      "z": 7
     },
     "barad_dur_level_6_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 6
     },
     "barad_dur_level_6_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 6
     },
     "barad_dur_level_7_chamber_1": {
@@ -7491,58 +7491,58 @@
       "z": 7
     },
     "barad_dur_level_7_chamber_2": {
-      "x": 135,
-      "y": -45,
-      "z": 7
+      "x": 133,
+      "y": -46,
+      "z": 1
     },
     "barad_dur_level_7_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 7
     },
     "barad_dur_level_7_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 7
     },
     "barad_dur_level_7_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 7
     },
     "barad_dur_level_7_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 7
+      "z": 8
     },
     "barad_dur_level_7_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 7
     },
     "barad_dur_level_7_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 7
     },
     "barad_dur_level_7_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 7
+      "y": -46,
+      "z": 8
     },
     "barad_dur_level_7_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 7
+      "y": -44,
+      "z": 8
     },
     "barad_dur_level_7_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 7
     },
     "barad_dur_level_7_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 7
     },
     "barad_dur_level_8_chamber_1": {
@@ -7551,58 +7551,58 @@
       "z": 8
     },
     "barad_dur_level_8_chamber_2": {
-      "x": 135,
-      "y": -45,
-      "z": 8
+      "x": 133,
+      "y": -44,
+      "z": 1
     },
     "barad_dur_level_8_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 8
     },
     "barad_dur_level_8_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 8
     },
     "barad_dur_level_8_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 8
     },
     "barad_dur_level_8_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 8
+      "z": 9
     },
     "barad_dur_level_8_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 8
     },
     "barad_dur_level_8_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 8
     },
     "barad_dur_level_8_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 8
+      "y": -46,
+      "z": 9
     },
     "barad_dur_level_8_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 8
+      "y": -44,
+      "z": 9
     },
     "barad_dur_level_8_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 8
     },
     "barad_dur_level_8_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 8
     },
     "barad_dur_level_9_chamber_1": {
@@ -7611,58 +7611,58 @@
       "z": 9
     },
     "barad_dur_level_9_chamber_2": {
-      "x": 135,
-      "y": -45,
-      "z": 9
+      "x": 134,
+      "y": -47,
+      "z": 1
     },
     "barad_dur_level_9_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 9
     },
     "barad_dur_level_9_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 9
     },
     "barad_dur_level_9_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 9
     },
     "barad_dur_level_9_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 9
+      "z": 10
     },
     "barad_dur_level_9_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 9
     },
     "barad_dur_level_9_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 9
     },
     "barad_dur_level_9_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 9
+      "y": -46,
+      "z": 10
     },
     "barad_dur_level_9_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 9
+      "y": -44,
+      "z": 10
     },
     "barad_dur_level_9_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 9
     },
     "barad_dur_level_9_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 9
     },
     "barad_dur_level_10_chamber_1": {
@@ -7671,58 +7671,58 @@
       "z": 10
     },
     "barad_dur_level_10_chamber_2": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 10
+      "z": -1
     },
     "barad_dur_level_10_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 10
     },
     "barad_dur_level_10_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 10
     },
     "barad_dur_level_10_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 10
     },
     "barad_dur_level_10_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 10
+      "z": 11
     },
     "barad_dur_level_10_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 10
     },
     "barad_dur_level_10_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 10
     },
     "barad_dur_level_10_chamber_9": {
       "x": 135,
-      "y": -45,
-      "z": 10
+      "y": -46,
+      "z": 11
     },
     "barad_dur_level_10_chamber_10": {
       "x": 135,
-      "y": -45,
-      "z": 10
+      "y": -44,
+      "z": 11
     },
     "barad_dur_level_10_chamber_11": {
       "x": 135,
-      "y": -45,
+      "y": -43,
       "z": 10
     },
     "barad_dur_level_10_chamber_12": {
-      "x": 135,
-      "y": -45,
+      "x": 136,
+      "y": -46,
       "z": 10
     },
     "barad_dur_level_11_chamber_1": {
@@ -7731,38 +7731,38 @@
       "z": 11
     },
     "barad_dur_level_11_chamber_2": {
-      "x": 135,
-      "y": -45,
-      "z": 11
+      "x": 134,
+      "y": -43,
+      "z": 1
     },
     "barad_dur_level_11_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 11
     },
     "barad_dur_level_11_chamber_4": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 11
     },
     "barad_dur_level_11_chamber_5": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 11
     },
     "barad_dur_level_11_chamber_6": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 11
+      "z": 12
     },
     "barad_dur_level_11_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -44,
       "z": 11
     },
     "barad_dur_level_11_chamber_8": {
       "x": 135,
-      "y": -45,
+      "y": -47,
       "z": 11
     },
     "barad_dur_level_12_chamber_1": {
@@ -7772,38 +7772,38 @@
     },
     "barad_dur_level_12_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 12
     },
     "barad_dur_level_12_chamber_3": {
       "x": 135,
-      "y": -45,
-      "z": 12
+      "y": -48,
+      "z": 1
     },
     "barad_dur_level_12_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 12
     },
     "barad_dur_level_12_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 12
     },
     "barad_dur_level_12_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 12
     },
     "barad_dur_level_12_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 12
     },
     "barad_dur_level_12_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 12
+      "z": 13
     },
     "barad_dur_level_13_chamber_1": {
       "x": 135,
@@ -7812,38 +7812,38 @@
     },
     "barad_dur_level_13_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 13
     },
     "barad_dur_level_13_chamber_3": {
       "x": 135,
-      "y": -45,
-      "z": 13
+      "y": -46,
+      "z": -1
     },
     "barad_dur_level_13_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 13
     },
     "barad_dur_level_13_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 13
     },
     "barad_dur_level_13_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 13
     },
     "barad_dur_level_13_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 13
     },
     "barad_dur_level_13_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 13
+      "z": 14
     },
     "barad_dur_level_14_chamber_1": {
       "x": 135,
@@ -7852,38 +7852,38 @@
     },
     "barad_dur_level_14_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 14
     },
     "barad_dur_level_14_chamber_3": {
       "x": 135,
       "y": -45,
-      "z": 14
+      "z": -2
     },
     "barad_dur_level_14_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 14
     },
     "barad_dur_level_14_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 14
     },
     "barad_dur_level_14_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 14
     },
     "barad_dur_level_14_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 14
     },
     "barad_dur_level_14_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 14
+      "z": 15
     },
     "barad_dur_level_15_chamber_1": {
       "x": 135,
@@ -7892,38 +7892,38 @@
     },
     "barad_dur_level_15_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 15
     },
     "barad_dur_level_15_chamber_3": {
       "x": 135,
-      "y": -45,
-      "z": 15
+      "y": -44,
+      "z": -1
     },
     "barad_dur_level_15_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 15
     },
     "barad_dur_level_15_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 15
     },
     "barad_dur_level_15_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 15
     },
     "barad_dur_level_15_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 15
     },
     "barad_dur_level_15_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 15
+      "z": 16
     },
     "barad_dur_level_16_chamber_1": {
       "x": 135,
@@ -7932,38 +7932,38 @@
     },
     "barad_dur_level_16_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 16
     },
     "barad_dur_level_16_chamber_3": {
       "x": 135,
-      "y": -45,
-      "z": 16
+      "y": -42,
+      "z": 1
     },
     "barad_dur_level_16_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 16
     },
     "barad_dur_level_16_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 16
     },
     "barad_dur_level_16_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 16
     },
     "barad_dur_level_16_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 16
     },
     "barad_dur_level_16_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 16
+      "z": 17
     },
     "barad_dur_level_17_chamber_1": {
       "x": 135,
@@ -7972,38 +7972,38 @@
     },
     "barad_dur_level_17_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 17
     },
     "barad_dur_level_17_chamber_3": {
-      "x": 135,
-      "y": -45,
-      "z": 17
+      "x": 136,
+      "y": -47,
+      "z": 1
     },
     "barad_dur_level_17_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 17
     },
     "barad_dur_level_17_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 17
     },
     "barad_dur_level_17_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 17
     },
     "barad_dur_level_17_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 17
     },
     "barad_dur_level_17_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 17
+      "z": 18
     },
     "barad_dur_level_18_chamber_1": {
       "x": 135,
@@ -8012,38 +8012,38 @@
     },
     "barad_dur_level_18_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 18
     },
     "barad_dur_level_18_chamber_3": {
-      "x": 135,
-      "y": -45,
-      "z": 18
+      "x": 136,
+      "y": -46,
+      "z": 2
     },
     "barad_dur_level_18_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 18
     },
     "barad_dur_level_18_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 18
     },
     "barad_dur_level_18_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 18
     },
     "barad_dur_level_18_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 18
     },
     "barad_dur_level_18_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 18
+      "z": 19
     },
     "barad_dur_level_19_chamber_1": {
       "x": 135,
@@ -8052,38 +8052,38 @@
     },
     "barad_dur_level_19_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 19
     },
     "barad_dur_level_19_chamber_3": {
-      "x": 135,
+      "x": 136,
       "y": -45,
-      "z": 19
+      "z": -1
     },
     "barad_dur_level_19_chamber_4": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 19
     },
     "barad_dur_level_19_chamber_5": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 19
     },
     "barad_dur_level_19_chamber_6": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 19
     },
     "barad_dur_level_19_chamber_7": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 19
     },
     "barad_dur_level_19_chamber_8": {
-      "x": 135,
+      "x": 134,
       "y": -45,
-      "z": 19
+      "z": 20
     },
     "barad_dur_level_20_chamber_1": {
       "x": 135,
@@ -8092,37 +8092,37 @@
     },
     "barad_dur_level_20_chamber_2": {
       "x": 135,
-      "y": -45,
+      "y": -46,
       "z": 20
     },
     "barad_dur_level_20_chamber_3": {
-      "x": 135,
-      "y": -45,
-      "z": 20
+      "x": 136,
+      "y": -44,
+      "z": 2
     },
     "barad_dur_level_20_chamber_4": {
       "x": 135,
       "y": -45,
-      "z": 20
+      "z": 21
     },
     "barad_dur_level_20_chamber_5": {
       "x": 135,
-      "y": -45,
+      "y": -44,
       "z": 20
     },
     "barad_dur_level_20_chamber_6": {
-      "x": 135,
+      "x": 136,
       "y": -45,
       "z": 20
     },
     "barad_dur_level_20_chamber_7": {
-      "x": 135,
+      "x": 133,
       "y": -45,
       "z": 20
     },
     "barad_dur_level_20_chamber_8": {
-      "x": 135,
-      "y": -45,
+      "x": 134,
+      "y": -46,
       "z": 20
     },
     "mount_doom_path_1": {
@@ -10471,74 +10471,74 @@
       "z": -1
     },
     "elvenking_halls_level_1_room_2": {
-      "x": 66,
+      "x": 65,
       "y": 65,
       "z": -1
     },
     "elvenking_halls_level_1_room_3": {
       "x": 66,
-      "y": 65,
+      "y": 64,
       "z": -1
     },
     "elvenking_halls_level_1_room_4": {
       "x": 66,
       "y": 65,
-      "z": -1
+      "z": 0
     },
     "elvenking_halls_level_1_room_5": {
       "x": 66,
-      "y": 65,
+      "y": 66,
       "z": -1
     },
     "elvenking_halls_level_1_room_6": {
-      "x": 66,
+      "x": 67,
       "y": 65,
       "z": -1
     },
     "elvenking_halls_level_1_room_7": {
-      "x": 66,
+      "x": 64,
       "y": 65,
       "z": -1
     },
     "elvenking_halls_level_1_room_8": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 64,
       "z": -1
     },
     "elvenking_halls_level_1_room_9": {
-      "x": 66,
+      "x": 65,
       "y": 65,
-      "z": -1
+      "z": -2
     },
     "elvenking_halls_level_1_room_10": {
-      "x": 66,
+      "x": 65,
       "y": 65,
-      "z": -1
+      "z": 0
     },
     "elvenking_halls_level_1_room_11": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 66,
       "z": -1
     },
     "elvenking_halls_level_1_room_12": {
       "x": 66,
-      "y": 65,
+      "y": 63,
       "z": -1
     },
     "elvenking_halls_level_1_room_13": {
       "x": 66,
-      "y": 65,
-      "z": -1
+      "y": 64,
+      "z": -2
     },
     "elvenking_halls_level_1_room_14": {
       "x": 66,
-      "y": 65,
-      "z": -1
+      "y": 64,
+      "z": 0
     },
     "elvenking_halls_level_1_room_15": {
       "x": 66,
       "y": 65,
-      "z": -1
+      "z": 1
     },
     "elvenking_halls_level_2_room_1": {
       "x": 66,
@@ -10547,72 +10547,72 @@
     },
     "elvenking_halls_level_2_room_2": {
       "x": 66,
-      "y": 65,
-      "z": -2
+      "y": 66,
+      "z": 0
     },
     "elvenking_halls_level_2_room_3": {
       "x": 66,
-      "y": 65,
+      "y": 66,
       "z": -2
     },
     "elvenking_halls_level_2_room_4": {
-      "x": 66,
+      "x": 67,
       "y": 65,
       "z": -2
     },
     "elvenking_halls_level_2_room_5": {
-      "x": 66,
+      "x": 64,
       "y": 65,
       "z": -2
     },
     "elvenking_halls_level_2_room_6": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 64,
       "z": -2
     },
     "elvenking_halls_level_2_room_7": {
-      "x": 66,
+      "x": 65,
       "y": 65,
-      "z": -2
+      "z": -3
     },
     "elvenking_halls_level_2_room_8": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 66,
       "z": -2
     },
     "elvenking_halls_level_2_room_9": {
       "x": 66,
-      "y": 65,
+      "y": 63,
       "z": -2
     },
     "elvenking_halls_level_2_room_10": {
       "x": 66,
-      "y": 65,
-      "z": -2
+      "y": 64,
+      "z": -3
     },
     "elvenking_halls_level_2_room_11": {
       "x": 66,
-      "y": 65,
-      "z": -2
+      "y": 66,
+      "z": -3
     },
     "elvenking_halls_level_2_room_12": {
       "x": 66,
-      "y": 65,
+      "y": 67,
       "z": -2
     },
     "elvenking_halls_level_2_room_13": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 64,
       "z": -2
     },
     "elvenking_halls_level_2_room_14": {
-      "x": 66,
+      "x": 67,
       "y": 65,
-      "z": -2
+      "z": -3
     },
     "elvenking_halls_level_2_room_15": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 66,
       "z": -2
     },
     "elvenking_halls_level_3_room_1": {
@@ -10622,71 +10622,71 @@
     },
     "elvenking_halls_level_3_room_2": {
       "x": 66,
-      "y": 65,
-      "z": -3
+      "y": 67,
+      "z": -1
     },
     "elvenking_halls_level_3_room_3": {
-      "x": 66,
+      "x": 64,
       "y": 65,
       "z": -3
     },
     "elvenking_halls_level_3_room_4": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 64,
       "z": -3
     },
     "elvenking_halls_level_3_room_5": {
-      "x": 66,
+      "x": 65,
       "y": 65,
-      "z": -3
+      "z": -4
     },
     "elvenking_halls_level_3_room_6": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 66,
       "z": -3
     },
     "elvenking_halls_level_3_room_7": {
       "x": 66,
-      "y": 65,
+      "y": 63,
       "z": -3
     },
     "elvenking_halls_level_3_room_8": {
       "x": 66,
-      "y": 65,
-      "z": -3
+      "y": 64,
+      "z": -4
     },
     "elvenking_halls_level_3_room_9": {
       "x": 66,
-      "y": 65,
-      "z": -3
+      "y": 66,
+      "z": -4
     },
     "elvenking_halls_level_3_room_10": {
       "x": 66,
-      "y": 65,
+      "y": 67,
       "z": -3
     },
     "elvenking_halls_level_3_room_11": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 64,
       "z": -3
     },
     "elvenking_halls_level_3_room_12": {
-      "x": 66,
+      "x": 67,
       "y": 65,
-      "z": -3
+      "z": -4
     },
     "elvenking_halls_level_3_room_13": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 66,
       "z": -3
     },
     "elvenking_halls_level_3_room_14": {
-      "x": 66,
+      "x": 68,
       "y": 65,
       "z": -3
     },
     "elvenking_halls_level_3_room_15": {
-      "x": 66,
+      "x": 63,
       "y": 65,
       "z": -3
     },
@@ -10696,72 +10696,72 @@
       "z": -4
     },
     "elvenking_halls_level_4_room_2": {
-      "x": 66,
-      "y": 65,
-      "z": -4
+      "x": 67,
+      "y": 64,
+      "z": -1
     },
     "elvenking_halls_level_4_room_3": {
-      "x": 66,
+      "x": 64,
       "y": 65,
       "z": -4
     },
     "elvenking_halls_level_4_room_4": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 64,
       "z": -4
     },
     "elvenking_halls_level_4_room_5": {
-      "x": 66,
+      "x": 65,
       "y": 65,
-      "z": -4
+      "z": -5
     },
     "elvenking_halls_level_4_room_6": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 66,
       "z": -4
     },
     "elvenking_halls_level_4_room_7": {
       "x": 66,
-      "y": 65,
+      "y": 63,
       "z": -4
     },
     "elvenking_halls_level_4_room_8": {
       "x": 66,
-      "y": 65,
-      "z": -4
+      "y": 64,
+      "z": -5
     },
     "elvenking_halls_level_4_room_9": {
       "x": 66,
       "y": 65,
-      "z": -4
+      "z": -6
     },
     "elvenking_halls_level_4_room_10": {
       "x": 66,
-      "y": 65,
-      "z": -4
+      "y": 66,
+      "z": -5
     },
     "elvenking_halls_level_4_room_11": {
       "x": 66,
-      "y": 65,
+      "y": 67,
       "z": -4
     },
     "elvenking_halls_level_4_room_12": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 64,
       "z": -4
     },
     "elvenking_halls_level_4_room_13": {
-      "x": 66,
+      "x": 67,
       "y": 65,
-      "z": -4
+      "z": -5
     },
     "elvenking_halls_level_4_room_14": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 66,
       "z": -4
     },
     "elvenking_halls_level_4_room_15": {
-      "x": 66,
+      "x": 68,
       "y": 65,
       "z": -4
     },
@@ -10771,72 +10771,72 @@
       "z": -5
     },
     "elvenking_halls_level_5_room_2": {
-      "x": 66,
+      "x": 67,
       "y": 65,
-      "z": -5
+      "z": 0
     },
     "elvenking_halls_level_5_room_3": {
-      "x": 66,
+      "x": 64,
       "y": 65,
       "z": -5
     },
     "elvenking_halls_level_5_room_4": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 64,
       "z": -5
     },
     "elvenking_halls_level_5_room_5": {
-      "x": 66,
+      "x": 65,
       "y": 65,
-      "z": -5
+      "z": -6
     },
     "elvenking_halls_level_5_room_6": {
-      "x": 66,
-      "y": 65,
+      "x": 65,
+      "y": 66,
       "z": -5
     },
     "elvenking_halls_level_5_room_7": {
       "x": 66,
-      "y": 65,
+      "y": 63,
       "z": -5
     },
     "elvenking_halls_level_5_room_8": {
       "x": 66,
-      "y": 65,
-      "z": -5
+      "y": 64,
+      "z": -6
     },
     "elvenking_halls_level_5_room_9": {
       "x": 66,
       "y": 65,
-      "z": -5
+      "z": -7
     },
     "elvenking_halls_level_5_room_10": {
       "x": 66,
-      "y": 65,
-      "z": -5
+      "y": 66,
+      "z": -6
     },
     "elvenking_halls_level_5_room_11": {
       "x": 66,
-      "y": 65,
+      "y": 67,
       "z": -5
     },
     "elvenking_halls_level_5_room_12": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 64,
       "z": -5
     },
     "elvenking_halls_level_5_room_13": {
-      "x": 66,
+      "x": 67,
       "y": 65,
-      "z": -5
+      "z": -6
     },
     "elvenking_halls_level_5_room_14": {
-      "x": 66,
-      "y": 65,
+      "x": 67,
+      "y": 66,
       "z": -5
     },
     "elvenking_halls_level_5_room_15": {
-      "x": 66,
+      "x": 68,
       "y": 65,
       "z": -5
     },
@@ -11021,99 +11021,99 @@
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_2": {
-      "x": -12,
+      "x": -13,
       "y": 84,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_3": {
       "x": -12,
-      "y": 84,
+      "y": 83,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_4": {
       "x": -12,
       "y": 84,
-      "z": -1
+      "z": 0
     },
     "goblin_tunnels_level_1_chamber_5": {
       "x": -12,
-      "y": 84,
+      "y": 85,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_6": {
-      "x": -12,
+      "x": -11,
       "y": 84,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_7": {
-      "x": -12,
+      "x": -14,
       "y": 84,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_8": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 83,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_9": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -1
+      "z": -2
     },
     "goblin_tunnels_level_1_chamber_10": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -1
+      "z": 0
     },
     "goblin_tunnels_level_1_chamber_11": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 85,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_12": {
       "x": -12,
-      "y": 84,
+      "y": 82,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_13": {
       "x": -12,
-      "y": 84,
-      "z": -1
+      "y": 83,
+      "z": -2
     },
     "goblin_tunnels_level_1_chamber_14": {
       "x": -12,
-      "y": 84,
-      "z": -1
+      "y": 83,
+      "z": 0
     },
     "goblin_tunnels_level_1_chamber_15": {
       "x": -12,
       "y": 84,
-      "z": -1
+      "z": 1
     },
     "goblin_tunnels_level_1_chamber_16": {
       "x": -12,
-      "y": 84,
-      "z": -1
+      "y": 85,
+      "z": -2
     },
     "goblin_tunnels_level_1_chamber_17": {
       "x": -12,
-      "y": 84,
-      "z": -1
+      "y": 85,
+      "z": 0
     },
     "goblin_tunnels_level_1_chamber_18": {
       "x": -12,
-      "y": 84,
+      "y": 86,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_19": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 83,
       "z": -1
     },
     "goblin_tunnels_level_1_chamber_20": {
-      "x": -12,
+      "x": -11,
       "y": 84,
-      "z": -1
+      "z": -2
     },
     "goblin_tunnels_level_2_chamber_1": {
       "x": -12,
@@ -11121,99 +11121,99 @@
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_2": {
-      "x": -12,
+      "x": -11,
       "y": 84,
-      "z": -2
+      "z": 0
     },
     "goblin_tunnels_level_2_chamber_3": {
-      "x": -12,
+      "x": -14,
       "y": 84,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_4": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 83,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_5": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -2
+      "z": -3
     },
     "goblin_tunnels_level_2_chamber_6": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 85,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_7": {
       "x": -12,
-      "y": 84,
+      "y": 82,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_8": {
       "x": -12,
-      "y": 84,
-      "z": -2
+      "y": 83,
+      "z": -3
     },
     "goblin_tunnels_level_2_chamber_9": {
       "x": -12,
-      "y": 84,
-      "z": -2
+      "y": 85,
+      "z": -3
     },
     "goblin_tunnels_level_2_chamber_10": {
       "x": -12,
-      "y": 84,
+      "y": 86,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_11": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 83,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_12": {
-      "x": -12,
+      "x": -11,
       "y": 84,
-      "z": -2
+      "z": -3
     },
     "goblin_tunnels_level_2_chamber_13": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 85,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_14": {
-      "x": -12,
+      "x": -10,
       "y": 84,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_15": {
-      "x": -12,
+      "x": -15,
       "y": 84,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_16": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 83,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_17": {
-      "x": -12,
+      "x": -14,
       "y": 84,
-      "z": -2
+      "z": -3
     },
     "goblin_tunnels_level_2_chamber_18": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 85,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_19": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 82,
       "z": -2
     },
     "goblin_tunnels_level_2_chamber_20": {
-      "x": -12,
-      "y": 84,
-      "z": -2
+      "x": -13,
+      "y": 83,
+      "z": -3
     },
     "goblin_tunnels_level_3_chamber_1": {
       "x": -12,
@@ -11221,99 +11221,99 @@
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_2": {
-      "x": -12,
-      "y": 84,
-      "z": -3
+      "x": -11,
+      "y": 85,
+      "z": -1
     },
     "goblin_tunnels_level_3_chamber_3": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -3
+      "z": -4
     },
     "goblin_tunnels_level_3_chamber_4": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 85,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_5": {
       "x": -12,
-      "y": 84,
+      "y": 82,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_6": {
       "x": -12,
-      "y": 84,
-      "z": -3
+      "y": 83,
+      "z": -4
     },
     "goblin_tunnels_level_3_chamber_7": {
       "x": -12,
-      "y": 84,
-      "z": -3
+      "y": 85,
+      "z": -4
     },
     "goblin_tunnels_level_3_chamber_8": {
       "x": -12,
-      "y": 84,
+      "y": 86,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_9": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 83,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_10": {
-      "x": -12,
+      "x": -11,
       "y": 84,
-      "z": -3
+      "z": -4
     },
     "goblin_tunnels_level_3_chamber_11": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 85,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_12": {
-      "x": -12,
+      "x": -10,
       "y": 84,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_13": {
-      "x": -12,
+      "x": -15,
       "y": 84,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_14": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 83,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_15": {
-      "x": -12,
+      "x": -14,
       "y": 84,
-      "z": -3
+      "z": -4
     },
     "goblin_tunnels_level_3_chamber_16": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 85,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_17": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 82,
       "z": -3
     },
     "goblin_tunnels_level_3_chamber_18": {
-      "x": -12,
-      "y": 84,
-      "z": -3
+      "x": -13,
+      "y": 83,
+      "z": -4
     },
     "goblin_tunnels_level_3_chamber_19": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -3
+      "z": -5
     },
     "goblin_tunnels_level_3_chamber_20": {
-      "x": -12,
-      "y": 84,
-      "z": -3
+      "x": -13,
+      "y": 85,
+      "z": -4
     },
     "goblin_tunnels_level_4_chamber_1": {
       "x": -12,
@@ -11321,98 +11321,98 @@
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_2": {
-      "x": -12,
+      "x": -10,
       "y": 84,
-      "z": -4
+      "z": -1
     },
     "goblin_tunnels_level_4_chamber_3": {
       "x": -12,
-      "y": 84,
+      "y": 82,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_4": {
       "x": -12,
-      "y": 84,
-      "z": -4
+      "y": 83,
+      "z": -5
     },
     "goblin_tunnels_level_4_chamber_5": {
       "x": -12,
       "y": 84,
-      "z": -4
+      "z": -6
     },
     "goblin_tunnels_level_4_chamber_6": {
       "x": -12,
-      "y": 84,
-      "z": -4
+      "y": 85,
+      "z": -5
     },
     "goblin_tunnels_level_4_chamber_7": {
       "x": -12,
-      "y": 84,
+      "y": 86,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_8": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 83,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_9": {
-      "x": -12,
+      "x": -11,
       "y": 84,
-      "z": -4
+      "z": -5
     },
     "goblin_tunnels_level_4_chamber_10": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 85,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_11": {
-      "x": -12,
+      "x": -10,
       "y": 84,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_12": {
-      "x": -12,
+      "x": -15,
       "y": 84,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_13": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 83,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_14": {
-      "x": -12,
+      "x": -14,
       "y": 84,
-      "z": -4
+      "z": -5
     },
     "goblin_tunnels_level_4_chamber_15": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 85,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_16": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 82,
       "z": -4
     },
     "goblin_tunnels_level_4_chamber_17": {
-      "x": -12,
-      "y": 84,
-      "z": -4
+      "x": -13,
+      "y": 83,
+      "z": -5
     },
     "goblin_tunnels_level_4_chamber_18": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -4
+      "z": -6
     },
     "goblin_tunnels_level_4_chamber_19": {
-      "x": -12,
-      "y": 84,
-      "z": -4
+      "x": -13,
+      "y": 85,
+      "z": -5
     },
     "goblin_tunnels_level_4_chamber_20": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 86,
       "z": -4
     },
     "goblin_tunnels_level_5_chamber_1": {
@@ -11421,98 +11421,98 @@
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_2": {
-      "x": -12,
+      "x": -15,
       "y": 84,
-      "z": -5
+      "z": -1
     },
     "goblin_tunnels_level_5_chamber_3": {
       "x": -12,
-      "y": 84,
+      "y": 82,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_4": {
       "x": -12,
-      "y": 84,
-      "z": -5
+      "y": 83,
+      "z": -6
     },
     "goblin_tunnels_level_5_chamber_5": {
       "x": -12,
       "y": 84,
-      "z": -5
+      "z": -7
     },
     "goblin_tunnels_level_5_chamber_6": {
       "x": -12,
-      "y": 84,
-      "z": -5
+      "y": 85,
+      "z": -6
     },
     "goblin_tunnels_level_5_chamber_7": {
       "x": -12,
-      "y": 84,
+      "y": 86,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_8": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 83,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_9": {
-      "x": -12,
+      "x": -11,
       "y": 84,
-      "z": -5
+      "z": -6
     },
     "goblin_tunnels_level_5_chamber_10": {
-      "x": -12,
-      "y": 84,
+      "x": -11,
+      "y": 85,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_11": {
-      "x": -12,
+      "x": -10,
       "y": 84,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_12": {
-      "x": -12,
+      "x": -15,
       "y": 84,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_13": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 83,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_14": {
-      "x": -12,
+      "x": -14,
       "y": 84,
-      "z": -5
+      "z": -6
     },
     "goblin_tunnels_level_5_chamber_15": {
-      "x": -12,
-      "y": 84,
+      "x": -14,
+      "y": 85,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_16": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 82,
       "z": -5
     },
     "goblin_tunnels_level_5_chamber_17": {
-      "x": -12,
-      "y": 84,
-      "z": -5
+      "x": -13,
+      "y": 83,
+      "z": -6
     },
     "goblin_tunnels_level_5_chamber_18": {
-      "x": -12,
+      "x": -13,
       "y": 84,
-      "z": -5
+      "z": -7
     },
     "goblin_tunnels_level_5_chamber_19": {
-      "x": -12,
-      "y": 84,
-      "z": -5
+      "x": -13,
+      "y": 85,
+      "z": -6
     },
     "goblin_tunnels_level_5_chamber_20": {
-      "x": -12,
-      "y": 84,
+      "x": -13,
+      "y": 86,
       "z": -5
     },
     "path_shire_to_bree_1": {
@@ -12419,6 +12419,921 @@
       "x": -105,
       "y": 47,
       "z": 0
+    },
+    "tookbank": {
+      "x": 0,
+      "y": -3,
+      "z": 0
+    },
+    "mayor_office": {
+      "x": 0,
+      "y": -4,
+      "z": 0
+    },
+    "waymeet": {
+      "x": 0,
+      "y": -6,
+      "z": 0
+    },
+    "overhill": {
+      "x": 3,
+      "y": -5,
+      "z": 0
+    },
+    "needlehole": {
+      "x": 5,
+      "y": -4,
+      "z": 0
+    },
+    "longbottom": {
+      "x": 6,
+      "y": -4,
+      "z": 0
+    },
+    "sackville_manor": {
+      "x": 7,
+      "y": -4,
+      "z": 0
+    },
+    "whitwell": {
+      "x": 8,
+      "y": -6,
+      "z": 0
+    },
+    "rushock_bog": {
+      "x": 7,
+      "y": -5,
+      "z": 0
+    },
+    "green_hill_country": {
+      "x": 5,
+      "y": -8,
+      "z": 0
+    },
+    "bucklebury": {
+      "x": 9,
+      "y": -5,
+      "z": 0
+    },
+    "brandy_hall": {
+      "x": 0,
+      "y": -7,
+      "z": 0
+    },
+    "crickhollow": {
+      "x": 0,
+      "y": -9,
+      "z": 0
+    },
+    "old_forest_buckland_entrance": {
+      "x": 14,
+      "y": -8,
+      "z": 0
+    },
+    "bombadil_garden": {
+      "x": -12,
+      "y": -7,
+      "z": 0
+    },
+    "old_forest_exit": {
+      "x": -9,
+      "y": 4,
+      "z": 0
+    },
+    "barrow_downs_approach": {
+      "x": -13,
+      "y": 7,
+      "z": 0
+    },
+    "barrow_downs": {
+      "x": -12,
+      "y": 5,
+      "z": 0
+    },
+    "barrow_chamber_1": {
+      "x": -2,
+      "y": -5,
+      "z": 0
+    },
+    "barrow_chamber_2": {
+      "x": -3,
+      "y": -6,
+      "z": 0
+    },
+    "barrow_chamber_3": {
+      "x": -4,
+      "y": -8,
+      "z": 0
+    },
+    "weathertop_approach": {
+      "x": -4,
+      "y": -9,
+      "z": 0
+    },
+    "combe": {
+      "x": -5,
+      "y": -8,
+      "z": 0
+    },
+    "archet": {
+      "x": -6,
+      "y": -8,
+      "z": 0
+    },
+    "chetwood": {
+      "x": -106,
+      "y": 47,
+      "z": 0
+    },
+    "staddle": {
+      "x": -6,
+      "y": -9,
+      "z": 0
+    },
+    "fornost_approach": {
+      "x": -7,
+      "y": -9,
+      "z": 0
+    },
+    "fornost_gates": {
+      "x": -7,
+      "y": -10,
+      "z": 0
+    },
+    "fornost_ruins": {
+      "x": -7,
+      "y": -11,
+      "z": 0
+    },
+    "fornost_temple": {
+      "x": -8,
+      "y": -11,
+      "z": 0
+    },
+    "fornost_palace": {
+      "x": -8,
+      "y": -12,
+      "z": 0
+    },
+    "fornost_keep": {
+      "x": -9,
+      "y": -12,
+      "z": 0
+    },
+    "annuminas_approach": {
+      "x": -9,
+      "y": -13,
+      "z": 0
+    },
+    "annuminas_ruins": {
+      "x": -10,
+      "y": -13,
+      "z": 0
+    },
+    "annuminas_tower": {
+      "x": -10,
+      "y": -14,
+      "z": 0
+    },
+    "lake_evendim": {
+      "x": -11,
+      "y": -14,
+      "z": 0
+    },
+    "rivendell_gardens": {
+      "x": 53,
+      "y": 46,
+      "z": -1
+    },
+    "hall_of_fire_guest": {
+      "x": -11,
+      "y": -15,
+      "z": 0
+    },
+    "elrond_study": {
+      "x": -12,
+      "y": -15,
+      "z": 0
+    },
+    "waterfall_walkway": {
+      "x": -12,
+      "y": -16,
+      "z": 0
+    },
+    "hidden_flet": {
+      "x": -13,
+      "y": -16,
+      "z": 0
+    },
+    "rivendell_guest_house": {
+      "x": -14,
+      "y": -16,
+      "z": 0
+    },
+    "hall_of_kings": {
+      "x": -15,
+      "y": -16,
+      "z": 0
+    },
+    "royal_armory": {
+      "x": -16,
+      "y": -16,
+      "z": 0
+    },
+    "smelting_chambers": {
+      "x": -17,
+      "y": -16,
+      "z": 0
+    },
+    "deep_mines_hub": {
+      "x": -18,
+      "y": -16,
+      "z": 0
+    },
+    "mithril_depths_1": {
+      "x": -19,
+      "y": -16,
+      "z": 0
+    },
+    "mithril_depths_2": {
+      "x": -20,
+      "y": -16,
+      "z": 0
+    },
+    "iron_mines_1": {
+      "x": -21,
+      "y": -16,
+      "z": 0
+    },
+    "iron_mines_2": {
+      "x": -22,
+      "y": -16,
+      "z": 0
+    },
+    "the_unending_stair_middle": {
+      "x": -23,
+      "y": -16,
+      "z": 0
+    },
+    "goblin_ward": {
+      "x": -24,
+      "y": -16,
+      "z": 0
+    },
+    "goblin_watchtower": {
+      "x": -25,
+      "y": -16,
+      "z": 0
+    },
+    "khazad_dum_chasm_view": {
+      "x": -26,
+      "y": -16,
+      "z": 0
+    },
+    "nameless_tunnels": {
+      "x": -27,
+      "y": -16,
+      "z": 0
+    },
+    "the_dark_lake": {
+      "x": -28,
+      "y": -16,
+      "z": 0
+    },
+    "galadhrm_flet_1": {
+      "x": -29,
+      "y": -16,
+      "z": 0
+    },
+    "niphredil_meadow": {
+      "x": -30,
+      "y": -16,
+      "z": 0
+    },
+    "singing_groves": {
+      "x": -31,
+      "y": -16,
+      "z": 0
+    },
+    "elven_craft_hall": {
+      "x": -32,
+      "y": -16,
+      "z": 0
+    },
+    "mallorn_sanctuary": {
+      "x": -33,
+      "y": -16,
+      "z": 0
+    },
+    "celebrant_banks": {
+      "x": -34,
+      "y": -16,
+      "z": 0
+    },
+    "anduin_confluence": {
+      "x": -35,
+      "y": -16,
+      "z": 0
+    },
+    "skinbark_grove": {
+      "x": -36,
+      "y": -16,
+      "z": 0
+    },
+    "leaflock_meadow": {
+      "x": -37,
+      "y": -16,
+      "z": 0
+    },
+    "westfold_plains": {
+      "x": -38,
+      "y": -16,
+      "z": 0
+    },
+    "eastfold_plains": {
+      "x": -39,
+      "y": -16,
+      "z": 0
+    },
+    "starkhorn_foothills": {
+      "x": -40,
+      "y": -16,
+      "z": 0
+    },
+    "dimholt_road": {
+      "x": -41,
+      "y": -16,
+      "z": 0
+    },
+    "hidden_valley_white_mountains": {
+      "x": 105,
+      "y": -44,
+      "z": 0
+    },
+    "deeping_stream_upper": {
+      "x": -42,
+      "y": -16,
+      "z": 0
+    },
+    "hornburg_armory": {
+      "x": -43,
+      "y": -16,
+      "z": 0
+    },
+    "deep_coomb": {
+      "x": -44,
+      "y": -16,
+      "z": 0
+    },
+    "wold_of_rohan": {
+      "x": -45,
+      "y": -16,
+      "z": 0
+    },
+    "ithilien_woods": {
+      "x": -10,
+      "y": -13,
+      "z": -1
+    },
+    "henneth_annun": {
+      "x": -11,
+      "y": -13,
+      "z": -1
+    },
+    "minas_tirith_houses_of_healing": {
+      "x": -12,
+      "y": -13,
+      "z": -1
+    },
+    "citadel_guards_hall": {
+      "x": -13,
+      "y": -13,
+      "z": -1
+    },
+    "pelargir_port": {
+      "x": -14,
+      "y": -13,
+      "z": -1
+    },
+    "minas_morgul_gates": {
+      "x": -7,
+      "y": -9,
+      "z": -1
+    },
+    "minas_morgul_interior": {
+      "x": -8,
+      "y": -9,
+      "z": -1
+    },
+    "gorgoroth_plateau": {
+      "x": -9,
+      "y": -9,
+      "z": -1
+    },
+    "barad_dur_throne_room": {
+      "x": 99,
+      "y": -43,
+      "z": -6
+    },
+    "durthang_fortress": {
+      "x": 98,
+      "y": -43,
+      "z": -6
+    },
+    "grey_havens_docks": {
+      "x": -15,
+      "y": -13,
+      "z": -1
+    },
+    "havens_approach": {
+      "x": -16,
+      "y": -13,
+      "z": -1
+    },
+    "mirkwood_edge": {
+      "x": 54,
+      "y": 46,
+      "z": -1
+    },
+    "mirkwood_depths": {
+      "x": 54,
+      "y": 46,
+      "z": 1
+    },
+    "rhosgobel": {
+      "x": -17,
+      "y": -13,
+      "z": -1
+    },
+    "thranduil_halls_gate": {
+      "x": -18,
+      "y": -13,
+      "z": -1
+    },
+    "thranduil_halls_interior": {
+      "x": 53,
+      "y": 46,
+      "z": 1
+    },
+    "long_lake_path": {
+      "x": -19,
+      "y": -13,
+      "z": -1
+    },
+    "lake_town_docks": {
+      "x": -20,
+      "y": -13,
+      "z": -1
+    },
+    "lonely_mountain_approach": {
+      "x": 105,
+      "y": -45,
+      "z": 0
+    },
+    "erebor_gates": {
+      "x": 104,
+      "y": -45,
+      "z": 0
+    },
+    "erebor_great_hall": {
+      "x": -21,
+      "y": -13,
+      "z": -1
+    },
+    "erebor_treasury": {
+      "x": 104,
+      "y": -46,
+      "z": 0
+    },
+    "erebor_armory": {
+      "x": 103,
+      "y": -46,
+      "z": 0
+    },
+    "green_dragon": {
+      "x": -22,
+      "y": -13,
+      "z": -1
+    },
+    "woody_end": {
+      "x": -23,
+      "y": -13,
+      "z": -1
+    },
+    "brandywine_bridge": {
+      "x": -24,
+      "y": -13,
+      "z": -1
+    },
+    "stock_road": {
+      "x": -25,
+      "y": -13,
+      "z": -1
+    },
+    "marish": {
+      "x": -26,
+      "y": -13,
+      "z": -1
+    },
+    "old_forest_entrance": {
+      "x": 52,
+      "y": 46,
+      "z": -1
+    },
+    "old_forest_depth": {
+      "x": 51,
+      "y": 46,
+      "z": -1
+    },
+    "withywindle": {
+      "x": 50,
+      "y": 46,
+      "z": -1
+    },
+    "bombadil_house": {
+      "x": 49,
+      "y": 46,
+      "z": -1
+    },
+    "bree_gate": {
+      "x": -107,
+      "y": 47,
+      "z": 0
+    },
+    "bree_square": {
+      "x": -108,
+      "y": 47,
+      "z": 0
+    },
+    "prancing_pony": {
+      "x": -27,
+      "y": -13,
+      "z": -1
+    },
+    "bree_east_road": {
+      "x": -109,
+      "y": 47,
+      "z": 0
+    },
+    "weathertop_base": {
+      "x": -110,
+      "y": 47,
+      "z": 0
+    },
+    "midgewater_marshes": {
+      "x": -111,
+      "y": 47,
+      "z": 0
+    },
+    "weatherhills": {
+      "x": -112,
+      "y": 47,
+      "z": 0
+    },
+    "last_bridge": {
+      "x": 53,
+      "y": 45,
+      "z": -1
+    },
+    "trollshaws": {
+      "x": -113,
+      "y": 47,
+      "z": 0
+    },
+    "troll_cave": {
+      "x": -114,
+      "y": 47,
+      "z": 0
+    },
+    "ford_of_bruinen": {
+      "x": 52,
+      "y": 45,
+      "z": -1
+    },
+    "rivendell_gates": {
+      "x": 51,
+      "y": 45,
+      "z": -1
+    },
+    "rivendell_hall": {
+      "x": 50,
+      "y": 45,
+      "z": -1
+    },
+    "rivendell_library": {
+      "x": 49,
+      "y": 45,
+      "z": -1
+    },
+    "rivendell_forge": {
+      "x": 48,
+      "y": 45,
+      "z": -1
+    },
+    "hollin_gate": {
+      "x": 47,
+      "y": 45,
+      "z": -1
+    },
+    "doors_of_durin": {
+      "x": -186,
+      "y": 46,
+      "z": 0
+    },
+    "moria_entrance": {
+      "x": -187,
+      "y": 46,
+      "z": 0
+    },
+    "twenty_first_hall": {
+      "x": -188,
+      "y": 46,
+      "z": 0
+    },
+    "balin_tomb": {
+      "x": -189,
+      "y": 46,
+      "z": 0
+    },
+    "goblin_warren": {
+      "x": -28,
+      "y": -13,
+      "z": -1
+    },
+    "durin_chamber": {
+      "x": -190,
+      "y": 46,
+      "z": 0
+    },
+    "mithril_mine": {
+      "x": -191,
+      "y": 46,
+      "z": 0
+    },
+    "bridge_of_khazad_dum": {
+      "x": -192,
+      "y": 46,
+      "z": 0
+    },
+    "east_gate_approach": {
+      "x": -29,
+      "y": -13,
+      "z": -1
+    },
+    "east_gate_moria": {
+      "x": -193,
+      "y": 46,
+      "z": 0
+    },
+    "dimrill_dale": {
+      "x": 103,
+      "y": -47,
+      "z": 0
+    },
+    "mines_level1": {
+      "x": -30,
+      "y": -13,
+      "z": -1
+    },
+    "mines_level2": {
+      "x": -31,
+      "y": -13,
+      "z": -1
+    },
+    "endless_stair_top": {
+      "x": -194,
+      "y": 46,
+      "z": 0
+    },
+    "endless_stair_bottom": {
+      "x": -195,
+      "y": 46,
+      "z": 0
+    },
+    "cerin_amroth": {
+      "x": 49,
+      "y": 44,
+      "z": -1
+    },
+    "caras_galadhon": {
+      "x": 48,
+      "y": 44,
+      "z": -1
+    },
+    "galadriel_court": {
+      "x": 47,
+      "y": 44,
+      "z": -1
+    },
+    "mirror_chamber": {
+      "x": 46,
+      "y": 44,
+      "z": -1
+    },
+    "silverlode_banks": {
+      "x": 45,
+      "y": 44,
+      "z": -1
+    },
+    "anduin_approach": {
+      "x": 44,
+      "y": 44,
+      "z": -1
+    },
+    "anduin_midstream": {
+      "x": -32,
+      "y": -13,
+      "z": -1
+    },
+    "parth_galen": {
+      "x": -33,
+      "y": -13,
+      "z": -1
+    },
+    "amon_hen": {
+      "x": -34,
+      "y": -13,
+      "z": -1
+    },
+    "rauros_falls_approach": {
+      "x": -35,
+      "y": -13,
+      "z": -1
+    },
+    "edoras_approach": {
+      "x": -19,
+      "y": -33,
+      "z": -1
+    },
+    "meduseld": {
+      "x": -21,
+      "y": -33,
+      "z": 0
+    },
+    "harrowdale": {
+      "x": -22,
+      "y": -33,
+      "z": 0
+    },
+    "dunharrow": {
+      "x": -23,
+      "y": -33,
+      "z": 0
+    },
+    "paths_of_dead": {
+      "x": -24,
+      "y": -33,
+      "z": 0
+    },
+    "dead_city": {
+      "x": -36,
+      "y": -13,
+      "z": -1
+    },
+    "helms_gate": {
+      "x": -25,
+      "y": -33,
+      "z": 0
+    },
+    "helms_deep_interior": {
+      "x": -26,
+      "y": -33,
+      "z": 0
+    },
+    "glittering_caves": {
+      "x": -37,
+      "y": -13,
+      "z": -1
+    },
+    "fangorn_eaves": {
+      "x": -21,
+      "y": -34,
+      "z": 0
+    },
+    "fangorn_depths": {
+      "x": -22,
+      "y": -34,
+      "z": 0
+    },
+    "wellinghall": {
+      "x": -23,
+      "y": -34,
+      "z": 0
+    },
+    "entwash": {
+      "x": -24,
+      "y": -34,
+      "z": 0
+    },
+    "east_emnet": {
+      "x": -27,
+      "y": -33,
+      "z": 0
+    },
+    "isengard_gates": {
+      "x": -38,
+      "y": -13,
+      "z": -1
+    },
+    "orthanc_base": {
+      "x": -39,
+      "y": -13,
+      "z": -1
+    },
+    "orthanc_chamber": {
+      "x": -40,
+      "y": -13,
+      "z": -1
+    },
+    "mt_level_2": {
+      "x": -18,
+      "y": -17,
+      "z": 0
+    },
+    "mt_level_3": {
+      "x": -19,
+      "y": -17,
+      "z": 0
+    },
+    "mt_level_4": {
+      "x": -191,
+      "y": 45,
+      "z": 0
+    },
+    "mt_level_5": {
+      "x": -27,
+      "y": -17,
+      "z": 0
+    },
+    "mt_level_6": {
+      "x": -192,
+      "y": 45,
+      "z": 0
+    },
+    "white_tower": {
+      "x": 54,
+      "y": 45,
+      "z": 1
+    },
+    "rath_dinen": {
+      "x": -41,
+      "y": -13,
+      "z": -1
+    },
+    "house_of_stewards": {
+      "x": 53,
+      "y": 45,
+      "z": 1
+    },
+    "morgul_vale": {
+      "x": 97,
+      "y": -43,
+      "z": -6
+    },
+    "morgul_pass": {
+      "x": 96,
+      "y": -43,
+      "z": -6
+    },
+    "cirith_ungol": {
+      "x": 95,
+      "y": -43,
+      "z": -6
+    },
+    "shelob_lair": {
+      "x": 94,
+      "y": -43,
+      "z": -6
+    },
+    "tunnel_exit": {
+      "x": -42,
+      "y": -13,
+      "z": -1
+    },
+    "mordor_plains": {
+      "x": 93,
+      "y": -43,
+      "z": -6
+    },
+    "black_gate": {
+      "x": 92,
+      "y": -43,
+      "z": -6
+    },
+    "barad_dur_approach": {
+      "x": 91,
+      "y": -43,
+      "z": -6
+    },
+    "barad_dur_base": {
+      "x": 90,
+      "y": -43,
+      "z": -6
+    },
+    "barad_dur_chamber": {
+      "x": -43,
+      "y": -13,
+      "z": -1
     }
   },
   "exits": {
@@ -18798,87 +19713,181 @@
       "down": "meduseld_level_4_room_8"
     },
     "helms_deep_1": {
-      "east": "helms_deep_2"
+      "east": "helms_deep_2",
+      "northeast": "helms_deep_3",
+      "north": "helms_deep_4",
+      "northwest": "helms_deep_5",
+      "west": "helms_deep_6",
+      "southwest": "helms_deep_7",
+      "south": "helms_deep_8",
+      "southeast": "helms_deep_9"
     },
     "helms_deep_2": {
+      "east": "helms_deep_10",
+      "northeast": "helms_deep_11",
+      "southeast": "helms_deep_21",
       "west": "helms_deep_1",
-      "east": "helms_deep_3"
+      "north": "helms_deep_3",
+      "northwest": "helms_deep_4",
+      "southwest": "helms_deep_8",
+      "south": "helms_deep_9"
     },
     "helms_deep_3": {
-      "west": "helms_deep_2",
-      "east": "helms_deep_4"
+      "southeast": "helms_deep_10",
+      "east": "helms_deep_11",
+      "north": "helms_deep_12",
+      "northwest": "helms_deep_13",
+      "southwest": "helms_deep_1",
+      "south": "helms_deep_2",
+      "west": "helms_deep_4"
     },
     "helms_deep_4": {
-      "west": "helms_deep_3",
-      "east": "helms_deep_5"
+      "northeast": "helms_deep_12",
+      "north": "helms_deep_13",
+      "northwest": "helms_deep_14",
+      "south": "helms_deep_1",
+      "southeast": "helms_deep_2",
+      "east": "helms_deep_3",
+      "west": "helms_deep_5",
+      "southwest": "helms_deep_6"
     },
     "helms_deep_5": {
-      "west": "helms_deep_4",
-      "east": "helms_deep_6"
+      "west": "helms_deep_15",
+      "southwest": "helms_deep_16",
+      "northwest": "misty_mountains_path_2",
+      "northeast": "helms_deep_13",
+      "north": "helms_deep_14",
+      "southeast": "helms_deep_1",
+      "east": "helms_deep_4",
+      "south": "helms_deep_6"
     },
     "helms_deep_6": {
-      "west": "helms_deep_5",
-      "east": "helms_deep_7"
+      "northwest": "helms_deep_15",
+      "west": "helms_deep_16",
+      "southwest": "helms_deep_17",
+      "east": "helms_deep_1",
+      "northeast": "helms_deep_4",
+      "north": "helms_deep_5",
+      "south": "helms_deep_7",
+      "southeast": "helms_deep_8"
     },
     "helms_deep_7": {
-      "west": "helms_deep_6",
+      "south": "helms_deep_18",
+      "southeast": "helms_deep_19",
+      "northwest": "helms_deep_16",
+      "west": "helms_deep_17",
+      "southwest": "misty_mountains_path_5",
+      "northeast": "helms_deep_1",
+      "north": "helms_deep_6",
       "east": "helms_deep_8"
     },
     "helms_deep_8": {
+      "southwest": "helms_deep_18",
+      "south": "helms_deep_19",
+      "southeast": "helms_deep_20",
+      "north": "helms_deep_1",
+      "northeast": "helms_deep_2",
+      "northwest": "helms_deep_6",
       "west": "helms_deep_7",
       "east": "helms_deep_9"
     },
     "helms_deep_9": {
-      "west": "helms_deep_8",
-      "east": "helms_deep_10"
+      "northeast": "helms_deep_10",
+      "southwest": "helms_deep_19",
+      "south": "helms_deep_20",
+      "east": "helms_deep_21",
+      "southeast": "misty_mountains_path_8",
+      "northwest": "helms_deep_1",
+      "north": "helms_deep_2",
+      "west": "helms_deep_8"
     },
     "helms_deep_10": {
-      "west": "helms_deep_9",
-      "east": "helms_deep_11"
+      "east": "helms_deep_11",
+      "west": "helms_deep_2",
+      "northwest": "helms_deep_3",
+      "southwest": "helms_deep_9"
     },
     "helms_deep_11": {
-      "west": "helms_deep_10",
-      "east": "helms_deep_12"
+      "northwest": "helms_deep_12",
+      "southwest": "helms_deep_2",
+      "west": "helms_deep_3"
     },
     "helms_deep_12": {
-      "west": "helms_deep_11",
-      "east": "helms_deep_13"
+      "southeast": "helms_deep_11",
+      "northeast": "helms_deep_24",
+      "northwest": "helms_deep_25",
+      "west": "helms_deep_13",
+      "south": "helms_deep_3",
+      "southwest": "helms_deep_4"
     },
     "helms_deep_13": {
-      "west": "helms_deep_12",
-      "east": "helms_deep_14"
+      "east": "helms_deep_12",
+      "north": "helms_deep_25",
+      "northwest": "misty_mountains_path_1",
+      "west": "helms_deep_14",
+      "southeast": "helms_deep_3",
+      "south": "helms_deep_4",
+      "southwest": "helms_deep_5"
     },
     "helms_deep_14": {
-      "west": "helms_deep_13",
-      "east": "helms_deep_15"
+      "east": "helms_deep_13",
+      "southwest": "helms_deep_15",
+      "northeast": "helms_deep_25",
+      "north": "misty_mountains_path_1",
+      "west": "misty_mountains_path_2",
+      "southeast": "helms_deep_4",
+      "south": "helms_deep_5"
     },
     "helms_deep_15": {
-      "west": "helms_deep_14",
-      "east": "helms_deep_16"
+      "northeast": "helms_deep_14",
+      "east": "helms_deep_5",
+      "southeast": "helms_deep_6"
     },
     "helms_deep_16": {
       "west": "helms_deep_15",
-      "east": "helms_deep_17"
+      "northeast": "helms_deep_5",
+      "east": "helms_deep_6",
+      "southeast": "helms_deep_7"
     },
     "helms_deep_17": {
       "west": "helms_deep_16",
-      "east": "helms_deep_18"
+      "southeast": "helms_deep_18",
+      "northeast": "helms_deep_6",
+      "east": "helms_deep_7"
     },
     "helms_deep_18": {
-      "west": "helms_deep_17",
-      "east": "helms_deep_19"
+      "northwest": "helms_deep_17",
+      "west": "misty_mountains_path_5",
+      "east": "helms_deep_19",
+      "south": "misty_mountains_path_6",
+      "southeast": "tookbank",
+      "north": "helms_deep_7",
+      "northeast": "helms_deep_8"
     },
     "helms_deep_19": {
       "west": "helms_deep_18",
-      "east": "helms_deep_20"
+      "east": "helms_deep_20",
+      "southwest": "misty_mountains_path_6",
+      "southeast": "misty_mountains_path_7",
+      "south": "tookbank",
+      "northwest": "helms_deep_7",
+      "north": "helms_deep_8",
+      "northeast": "helms_deep_9"
     },
     "helms_deep_20": {
+      "northeast": "helms_deep_21",
       "west": "helms_deep_19",
-      "east": "helms_deep_21"
+      "east": "misty_mountains_path_8",
+      "south": "misty_mountains_path_7",
+      "southwest": "tookbank",
+      "northwest": "helms_deep_8",
+      "north": "helms_deep_9"
     },
     "helms_deep_21": {
-      "west": "helms_deep_20",
-      "east": "helms_deep_22"
+      "east": "helms_deep_22",
+      "southwest": "helms_deep_20",
+      "northwest": "helms_deep_2",
+      "west": "helms_deep_9"
     },
     "helms_deep_22": {
       "west": "helms_deep_21",
@@ -18890,10 +19899,14 @@
     },
     "helms_deep_24": {
       "west": "helms_deep_23",
-      "east": "helms_deep_25"
+      "east": "helms_deep_25",
+      "southwest": "helms_deep_12"
     },
     "helms_deep_25": {
-      "west": "helms_deep_24"
+      "west": "helms_deep_24",
+      "southeast": "helms_deep_12",
+      "south": "helms_deep_13",
+      "southwest": "helms_deep_14"
     },
     "minas_tirith_level_0_room_1": {
       "east": "osgiliath_ruin_1",
@@ -24594,11 +25607,14 @@
       "up": "elvenking_halls_level_4_room_15"
     },
     "misty_mountains_path_1": {
-      "east": "misty_mountains_path_2"
+      "east": "misty_mountains_path_2",
+      "southeast": "helms_deep_13",
+      "south": "helms_deep_14"
     },
     "misty_mountains_path_2": {
       "west": "misty_mountains_path_1",
-      "east": "misty_mountains_path_3"
+      "east": "helms_deep_14",
+      "southeast": "helms_deep_5"
     },
     "misty_mountains_path_3": {
       "west": "misty_mountains_path_2",
@@ -24610,19 +25626,31 @@
     },
     "misty_mountains_path_5": {
       "west": "misty_mountains_path_4",
-      "east": "misty_mountains_path_6"
+      "east": "helms_deep_18",
+      "southeast": "misty_mountains_path_6",
+      "northeast": "helms_deep_7"
     },
     "misty_mountains_path_6": {
-      "west": "misty_mountains_path_5",
-      "east": "misty_mountains_path_7"
+      "northwest": "misty_mountains_path_5",
+      "north": "helms_deep_18",
+      "northeast": "helms_deep_19",
+      "southeast": "mayor_office",
+      "east": "tookbank",
+      "south": "misty_mountains_path_18"
     },
     "misty_mountains_path_7": {
-      "west": "misty_mountains_path_6",
-      "east": "misty_mountains_path_8"
+      "northeast": "misty_mountains_path_8",
+      "northwest": "helms_deep_19",
+      "north": "helms_deep_20",
+      "southwest": "mayor_office",
+      "south": "misty_mountains_path_19",
+      "west": "tookbank"
     },
     "misty_mountains_path_8": {
-      "west": "misty_mountains_path_7",
-      "east": "misty_mountains_path_9"
+      "west": "helms_deep_20",
+      "east": "misty_mountains_path_9",
+      "southwest": "misty_mountains_path_7",
+      "northwest": "helms_deep_9"
     },
     "misty_mountains_path_9": {
       "west": "misty_mountains_path_8",
@@ -24658,19 +25686,26 @@
     },
     "misty_mountains_path_17": {
       "west": "misty_mountains_path_16",
-      "east": "misty_mountains_path_18"
+      "east": "misty_mountains_path_18",
+      "south": "misty_mountains_path_29"
     },
     "misty_mountains_path_18": {
-      "west": "misty_mountains_path_17",
-      "east": "misty_mountains_path_19"
+      "east": "mayor_office",
+      "north": "misty_mountains_path_6",
+      "northeast": "tookbank",
+      "south": "misty_mountains_path_30",
+      "southwest": "barrow_chamber_1"
     },
     "misty_mountains_path_19": {
-      "west": "misty_mountains_path_18",
-      "east": "misty_mountains_path_20"
+      "west": "mayor_office",
+      "north": "misty_mountains_path_7",
+      "northwest": "tookbank",
+      "south": "misty_mountains_path_31"
     },
     "misty_mountains_path_20": {
       "west": "misty_mountains_path_19",
-      "east": "misty_mountains_path_21"
+      "east": "misty_mountains_path_21",
+      "southeast": "misty_mountains_path_32"
     },
     "misty_mountains_path_21": {
       "west": "misty_mountains_path_20",
@@ -24705,20 +25740,28 @@
       "east": "misty_mountains_path_29"
     },
     "misty_mountains_path_29": {
-      "west": "misty_mountains_path_28",
-      "east": "misty_mountains_path_30"
+      "north": "misty_mountains_path_17",
+      "southwest": "path_shire_to_bree_6",
+      "southeast": "barrow_chamber_1"
     },
     "misty_mountains_path_30": {
-      "west": "misty_mountains_path_29",
-      "east": "misty_mountains_path_31"
+      "northeast": "mayor_office",
+      "southeast": "waymeet",
+      "north": "misty_mountains_path_18",
+      "south": "path_shire_to_bree_7",
+      "west": "barrow_chamber_1"
     },
     "misty_mountains_path_31": {
-      "west": "misty_mountains_path_30",
-      "east": "misty_mountains_path_32"
+      "northwest": "mayor_office",
+      "north": "misty_mountains_path_19",
+      "southeast": "path_shire_to_bree_8",
+      "southwest": "waymeet"
     },
     "misty_mountains_path_32": {
-      "west": "misty_mountains_path_31",
-      "east": "misty_mountains_path_33"
+      "southwest": "overhill",
+      "northwest": "misty_mountains_path_20",
+      "southeast": "path_bree_to_weathertop_6",
+      "east": "needlehole"
     },
     "misty_mountains_path_33": {
       "west": "misty_mountains_path_32",
@@ -24729,7 +25772,8 @@
       "east": "misty_mountains_path_35"
     },
     "misty_mountains_path_35": {
-      "west": "misty_mountains_path_34"
+      "west": "misty_mountains_path_34",
+      "east": "path_shire_to_bree_11"
     },
     "goblin_tunnels_level_1_chamber_1": {
       "east": "goblin_tunnels_level_1_chamber_2",
@@ -25309,16 +26353,22 @@
       "east": "path_shire_to_bree_6"
     },
     "path_shire_to_bree_6": {
-      "west": "path_shire_to_bree_5",
-      "east": "path_shire_to_bree_7"
+      "northeast": "misty_mountains_path_29",
+      "southeast": "barrow_chamber_2",
+      "west": "path_bree_to_weathertop_3",
+      "southwest": "path_bree_to_weathertop_16"
     },
     "path_shire_to_bree_7": {
-      "west": "path_shire_to_bree_6",
-      "east": "path_shire_to_bree_8"
+      "southeast": "brandy_hall",
+      "south": "path_bree_to_weathertop_4",
+      "east": "waymeet",
+      "north": "misty_mountains_path_30",
+      "northwest": "barrow_chamber_1"
     },
     "path_shire_to_bree_8": {
-      "west": "path_shire_to_bree_7",
-      "east": "path_shire_to_bree_9"
+      "northwest": "misty_mountains_path_31",
+      "northeast": "overhill",
+      "south": "path_bree_to_weathertop_5"
     },
     "path_shire_to_bree_9": {
       "west": "path_shire_to_bree_8",
@@ -25329,8 +26379,8 @@
       "east": "path_shire_to_bree_11"
     },
     "path_shire_to_bree_11": {
-      "west": "path_shire_to_bree_10",
-      "east": "path_shire_to_bree_12"
+      "west": "misty_mountains_path_35",
+      "northeast": "path_bree_to_weathertop_9"
     },
     "path_shire_to_bree_12": {
       "west": "path_shire_to_bree_11",
@@ -25359,19 +26409,24 @@
     },
     "path_bree_to_weathertop_3": {
       "west": "path_bree_to_weathertop_2",
-      "east": "path_bree_to_weathertop_4"
+      "east": "path_shire_to_bree_6"
     },
     "path_bree_to_weathertop_4": {
-      "west": "path_bree_to_weathertop_3",
-      "east": "path_bree_to_weathertop_5"
+      "southwest": "path_bree_to_weathertop_17",
+      "east": "brandy_hall",
+      "northeast": "waymeet",
+      "north": "path_shire_to_bree_7"
     },
     "path_bree_to_weathertop_5": {
       "west": "path_bree_to_weathertop_4",
-      "east": "path_bree_to_weathertop_6"
+      "east": "path_bree_to_weathertop_6",
+      "north": "path_shire_to_bree_8"
     },
     "path_bree_to_weathertop_6": {
-      "west": "path_bree_to_weathertop_5",
-      "east": "path_bree_to_weathertop_7"
+      "northwest": "misty_mountains_path_32",
+      "north": "needlehole",
+      "southeast": "path_bree_to_weathertop_19",
+      "northeast": "longbottom"
     },
     "path_bree_to_weathertop_7": {
       "west": "path_bree_to_weathertop_6",
@@ -25383,7 +26438,8 @@
     },
     "path_bree_to_weathertop_9": {
       "west": "path_bree_to_weathertop_8",
-      "east": "path_bree_to_weathertop_10"
+      "east": "path_bree_to_weathertop_10",
+      "southwest": "path_shire_to_bree_11"
     },
     "path_bree_to_weathertop_10": {
       "west": "path_bree_to_weathertop_9",
@@ -25412,19 +26468,22 @@
     },
     "path_bree_to_weathertop_16": {
       "west": "path_bree_to_weathertop_15",
-      "east": "path_bree_to_weathertop_17"
+      "east": "path_bree_to_weathertop_17",
+      "northeast": "path_shire_to_bree_6"
     },
     "path_bree_to_weathertop_17": {
       "west": "path_bree_to_weathertop_16",
-      "east": "path_bree_to_weathertop_18"
+      "east": "path_bree_to_weathertop_18",
+      "northeast": "path_bree_to_weathertop_4"
     },
     "path_bree_to_weathertop_18": {
       "west": "path_bree_to_weathertop_17",
       "east": "path_bree_to_weathertop_19"
     },
     "path_bree_to_weathertop_19": {
-      "west": "path_bree_to_weathertop_18",
-      "east": "path_bree_to_weathertop_20"
+      "northwest": "path_bree_to_weathertop_6",
+      "southeast": "path_weathertop_to_rivendell_23",
+      "northeast": "rushock_bog"
     },
     "path_bree_to_weathertop_20": {
       "west": "path_bree_to_weathertop_19",
@@ -25520,8 +26579,9 @@
       "east": "path_weathertop_to_rivendell_23"
     },
     "path_weathertop_to_rivendell_23": {
-      "west": "path_weathertop_to_rivendell_22",
-      "east": "path_weathertop_to_rivendell_24"
+      "southeast": "path_rivendell_to_moria_9",
+      "northwest": "path_bree_to_weathertop_19",
+      "northeast": "whitwell"
     },
     "path_weathertop_to_rivendell_24": {
       "west": "path_weathertop_to_rivendell_23",
@@ -25565,7 +26625,8 @@
     },
     "path_rivendell_to_moria_9": {
       "west": "path_rivendell_to_moria_8",
-      "east": "path_rivendell_to_moria_10"
+      "east": "path_rivendell_to_moria_10",
+      "northwest": "path_weathertop_to_rivendell_23"
     },
     "path_rivendell_to_moria_10": {
       "west": "path_rivendell_to_moria_9",
@@ -26018,6 +27079,94 @@
     "weathertop_summit": {
       "west": "path_bree_to_weathertop_20",
       "east": "path_weathertop_to_rivendell_1"
+    },
+    "tookbank": {
+      "northwest": "helms_deep_18",
+      "north": "helms_deep_19",
+      "northeast": "helms_deep_20",
+      "south": "mayor_office",
+      "west": "misty_mountains_path_6",
+      "east": "misty_mountains_path_7",
+      "southeast": "misty_mountains_path_19",
+      "southwest": "misty_mountains_path_18"
+    },
+    "mayor_office": {
+      "northwest": "misty_mountains_path_6",
+      "northeast": "misty_mountains_path_7",
+      "east": "misty_mountains_path_19",
+      "north": "tookbank",
+      "southeast": "misty_mountains_path_31",
+      "west": "misty_mountains_path_18",
+      "southwest": "misty_mountains_path_30"
+    },
+    "waymeet": {
+      "northeast": "misty_mountains_path_31",
+      "south": "brandy_hall",
+      "southwest": "path_bree_to_weathertop_4",
+      "northwest": "misty_mountains_path_30",
+      "west": "path_shire_to_bree_7"
+    },
+    "overhill": {
+      "southwest": "path_shire_to_bree_8",
+      "northeast": "misty_mountains_path_32"
+    },
+    "needlehole": {
+      "west": "misty_mountains_path_32",
+      "south": "path_bree_to_weathertop_6",
+      "east": "longbottom"
+    },
+    "longbottom": {
+      "southwest": "path_bree_to_weathertop_6",
+      "west": "needlehole",
+      "southeast": "rushock_bog",
+      "east": "sackville_manor"
+    },
+    "sackville_manor": {
+      "south": "rushock_bog",
+      "west": "longbottom"
+    },
+    "whitwell": {
+      "southwest": "path_weathertop_to_rivendell_23",
+      "northwest": "rushock_bog",
+      "northeast": "bucklebury"
+    },
+    "rushock_bog": {
+      "southwest": "path_bree_to_weathertop_19",
+      "northwest": "longbottom",
+      "north": "sackville_manor",
+      "southeast": "whitwell"
+    },
+    "green_hill_country": {},
+    "bucklebury": {
+      "southwest": "whitwell"
+    },
+    "brandy_hall": {
+      "west": "path_bree_to_weathertop_4",
+      "north": "waymeet",
+      "northwest": "path_shire_to_bree_7"
+    },
+    "crickhollow": {},
+    "old_forest_buckland_entrance": {},
+    "bombadil_garden": {},
+    "old_forest_exit": {},
+    "barrow_downs_approach": {},
+    "barrow_downs": {},
+    "barrow_chamber_1": {
+      "northeast": "misty_mountains_path_18",
+      "northwest": "misty_mountains_path_29",
+      "east": "misty_mountains_path_30",
+      "southeast": "path_shire_to_bree_7",
+      "southwest": "barrow_chamber_2"
+    },
+    "barrow_chamber_2": {
+      "northwest": "path_shire_to_bree_6",
+      "northeast": "barrow_chamber_1"
+    },
+    "barrow_chamber_3": {
+      "south": "weathertop_approach"
+    },
+    "weathertop_approach": {
+      "north": "barrow_chamber_3"
     }
   },
   "roomDefinitions": {
